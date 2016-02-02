@@ -1,13 +1,5 @@
 # Removing System Encryption
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** written in first person. (Discuss in [Talk:Removing System Encryption#](https://wiki.archlinux.org/index.php/Talk:Removing_System_Encryption))
-
 Removing system encryption with [dm-crypt and LUKS](/index.php/Dm-crypt "Dm-crypt").
 
 ## Contents

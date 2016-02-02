@@ -2,7 +2,7 @@
 
 From the project [home page](http://www.ffmpeg.org/):
 
-NaN
+	_FFmpeg is a complete, cross-platform solution to record, convert and stream audio and video. It includes libavcodec - the leading audio/video codec library._
 
 ## Contents
 
@@ -225,7 +225,7 @@ $ ffmpeg -i _video_.VOB -acodec copy -vcodec mpeg4 -vtag DX50 -pass 2 -mbd 2 -tr
 
 *   (Desired File Size in MB - Audio File Size in MB) **x** 8192 kb/MB **/** Length of Media in Seconds (s) **=** [Bitrate](https://en.wikipedia.org/wiki/Bitrate "wikipedia:Bitrate") in kb/s
 
-NaN
+*   (3900 MB - 275 MB) = 3625 MB **x** 8192 kb/MB **/** 8830 s = 3363 kb/s required to achieve an approximate total output file size of 3900 MB
 
 ### x264 video stabilization
 
@@ -470,7 +470,11 @@ $ ffmpeg -i _video_.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
 
 *   **libvorbis quality settings (VBR)**
 
-NaN
+*   `-aq 4` = 128 kb/s
+*   `-aq 5` = 160 kb/s
+*   `-aq 6` = 192 kb/s
+*   `-aq 7` = 224 kb/s
+*   `-aq 8` = 256 kb/s
 
 *   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages/libvorbis-aotuv/)<sup><small>AUR</small></sup>.
 

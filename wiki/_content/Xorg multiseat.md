@@ -1,21 +1,5 @@
 # Xorg multiseat
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Show how PulseAudio can be configured for multiple users without running PulseAudio system-wide. Explain how Multiseat be done using only one video card (and/or X Server) and without Xephyr. (Discuss in [Talk:Xorg multiseat#](https://wiki.archlinux.org/index.php/Talk:Xorg_multiseat))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Written in first person, more like a blog post. (Discuss in [Talk:Xorg multiseat#](https://wiki.archlinux.org/index.php/Talk:Xorg_multiseat))
-
 Multiseat is a certain setup where multiple users work simultaneously on one computer. This is achieved by having two monitors, two keyboards and two mice. The advantages are quite obvious:
 
 *   Less power consumption (only one computer)
@@ -466,7 +450,7 @@ As soon as you [attach](#Attaching_devices_to_a_seat) the sound card to the seat
 
 If two users want to use the sound card simultaneously, it is necessary to use a sound server, [PulseAudio](/index.php/PulseAudio "PulseAudio") being most prevalent. Usually, the PulseAudio server runs only for active user and does not allow for multiple user instances. Solution to this problem is using the system-wide PulseAudio server. Although this approach is discouraged by its authors, it is probably most applicable setup.
 
-NaN
+	Configuring for system-wide PulseAudio
 
 *   Create user pulse and put him into group audio (PulseAudio drops root privileges and changes to user pulse. Group membership allows for device access.)
 *   Create group pulse-access and put users, who will play sound locally into it (Group membership is used for access control for local access to PA daemon.)
@@ -476,7 +460,7 @@ NaN
 
 In `/var/run/pulse` should appear files for communication with daemon, namely pid and native.
 
-NaN
+	User access
 
 You can check communication with system daemon as non-root by e.g. `pactl -s "unix:/var/run/pulse/native" list`.
 
@@ -486,7 +470,7 @@ It is possible to enable automatic connection to local daemon in /etc/pulse/clie
 
 The users should be able to connect to PA server. All the cons for system-wide daemon become essentially pros, e.g. ability to control volume of other users streams in pavucontrol.
 
-NaN
+	Troubleshooting
 
 It is possible to enable the http interface to PA for debugging in /etc/pulse/default.pa `load-module module-http-protocol-tcp` and then connect to it at [http://localhost:4714/](http://localhost:4714/)
 

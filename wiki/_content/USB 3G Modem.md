@@ -7,14 +7,6 @@ Related articles
 *   [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd")
 *   [Category:Modems](/index.php/Category:Modems "Category:Modems")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** does not conform to [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:USB 3G Modem#](https://wiki.archlinux.org/index.php/Talk:USB_3G_Modem))
-
 A number of mobile telephone networks around the world offer mobile internet connections over UMTS (or EDGE or GSM) using a portable USB modem device.
 
 ## Contents

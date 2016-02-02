@@ -1,13 +1,5 @@
 # Hostsblock
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Still too short, if there's not much information to be added, consider merging the content to a more generic article. (Discuss in [Talk:Hostsblock#](https://wiki.archlinux.org/index.php/Talk:Hostsblock))
-
 Related articles
 
 *   [Privoxy](/index.php/Privoxy "Privoxy")

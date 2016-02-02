@@ -2,7 +2,7 @@
 
 From [Wikipedia, the free encyclopedia](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)"):
 
-NaN
+	_Mumble is a voice over IP (VoIP) application primarily designed for use by gamers, similar to programs such as TeamSpeak and Ventrilo._
 
 This page goes over installation and configuration of both the client portion of the software (Mumble) and the server portion (Murmur).
 
@@ -63,14 +63,6 @@ The default Murmur config file is at `/etc/murmur.ini` and is heavily commented.
 
 #### Self-Signed Certificate
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Not sure if this works when reverse lookups don't work properly. (Discuss in [Talk:Mumble#](https://wiki.archlinux.org/index.php/Talk:Mumble))
-
 By default, murmur will generate a default self-signed certificate. Clients connecting to the server will warn users about the host name not matching and the certificate being untrusted. If your server is in DNS, you can get rid of the hostname mismatch by creating your own self-signed certificate.
 
 Create a secure directory for the certificate and key to live in and switch to it.
@@ -102,14 +94,6 @@ sslCert=/var/lib/murmur/ssl/voip.example.com.crt
 ## Troubleshooting
 
 ### Joystick Binds Not Working or Mouse Binds Get Stuck
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This workaround is no longer effective on the latest mumble versions. [github issue](https://github.com/mumble-voip/mumble/issues/1319#issuecomment-130133952) (Discuss in [Talk:Mumble#](https://wiki.archlinux.org/index.php/Talk:Mumble))
 
 Kernel input devices by default are unreadable by Mumble. This causes Mumble to fall back onto a buggy global bind system. This can be fixed temporarily with
 

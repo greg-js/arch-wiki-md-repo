@@ -1,13 +1,5 @@
 # Lenovo Thinkpad Edge E455
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Lenovo Thinkpad Edge E455#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Thinkpad_Edge_E455))
-
 | **Device** | **Status** | **Modules** |
 | AMD | Working | xf86-video-ati |
 | Ethernet | Working | r8169 |

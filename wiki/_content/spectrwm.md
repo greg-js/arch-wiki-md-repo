@@ -2,7 +2,7 @@
 
 From [spectrwm website](http://spectrwm.org/):
 
-NaN
+	_spectrwm is a small dynamic tiling window manager for [Xorg](/index.php/Xorg "Xorg"). It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and does not require one to learn a language to do any configuration. It was written by hackers for hackers and it strives to be small, compact and fast._
 
 Spectrwm is written in C and configured with a text configuration file. It was previously known as scrotwm.
 

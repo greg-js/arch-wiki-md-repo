@@ -49,11 +49,11 @@ There are some forks available, with various bugfixes:
 
 *   **xcompmgr-dana** — One of the first forks of Xcompmgr.
 
-NaN
+	[http://oliwer.net/xcompmgr-dana/](http://oliwer.net/xcompmgr-dana/) || [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcompmgr-dana)]</sup>
 
 *   **[Compton](/index.php/Compton "Compton")** — A fork of Xcompmgr that contains most of the previous fixes as well as many others.
 
-NaN
+	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton-git](https://aur.archlinux.org/packages/compton-git/)<sup><small>AUR</small></sup>
 
 ## Configuration
 

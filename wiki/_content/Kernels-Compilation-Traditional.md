@@ -1,13 +1,5 @@
 # Kernels/Compilation/Traditional
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System").**
-
-**Notes:** Benefit over using a PKGBUILD, besides "tradition"? (Discuss in [Talk:Kernels/Compilation/Traditional#](https://wiki.archlinux.org/index.php/Talk:Kernels/Compilation/Traditional))
-
 This article is an introduction to building custom kernels from **kernel.org sources**. This method of compiling kernels is the traditional method common to all distributions. If this seems too complicated, see some alternatives at: [Kernels#Compilation](/index.php/Kernels#Compilation "Kernels")
 
 ## Contents

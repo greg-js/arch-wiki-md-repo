@@ -314,7 +314,7 @@ The following cases can be distinguished:
     *   By default the LUKS header is stored at the beginning of the device and using TRIM is useful to protect header modifications. If for example a compromised LUKS password is revoked, without TRIM the old header will in general still be available for reading until overwritten by another operation; if the drive is stolen in the meanwhile, the attackers could in theory find a way to locate the old header and use it to decrypt the content with the compromised password. See [cryptsetup FAQ, section 5.19 What about SSDs, Flash and Hybrid Drives?](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#5-security-aspects) and [Full disk encryption on an ssd](https://www.reddit.com/r/archlinux/comments/2f370s/full_disk_encryption_on_an_ssd/ck5p5c5).
     *   TRIM can be left disabled if the security issues stated at the top of this section are considered a worse threat than the above bullet.
 
-NaN
+	See also [Securely wipe disk#Flash memory](/index.php/Securely_wipe_disk#Flash_memory "Securely wipe disk").
 
 *   The device is encrypted with dm-crypt plain mode, or the LUKS header is stored [separately](/index.php/Dm-crypt/Specialties#Encrypted_system_using_a_remote_LUKS_header "Dm-crypt/Specialties"):
     *   If plausible deniability is required, TRIM should **never** be used because of the considerations at the top of this section, or the use of encryption will be given away.
@@ -420,14 +420,6 @@ Maybe you have a requirement for using the `encrypt` hook on a non-root partitio
 The big advantage is you can have everything automated, while setting up `/etc/crypttab` with an external key file (i.e. the keyfile is not on any internal hard drive partition) can be a pain - you need to make sure the USB/FireWire/... device gets mounted before the encrypted partition, which means you have to change the order of `/etc/fstab` (at least).
 
 Of course, if the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package gets upgraded, you will have to change this script again. Unlike `/etc/crypttab`, only one partition is supported, but with some further hacking one should be able to have multiple partitions unlocked.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Why not use the supported Grub2 right away? See also [Mkinitcpio#Using_RAID](/index.php/Mkinitcpio#Using_RAID "Mkinitcpio") (Discuss in [Talk:Dm-crypt/Specialties#](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Specialties))
 
 If you want to do this on a software RAID partition, there is one more thing you need to do. Just setting the `/dev/mdX` device in `/lib/initcpio/hooks/encrypt` is not enough; the `encrypt` hook will fail to find the key for some reason, and not prompt for a passphrase either. It looks like the RAID devices are not brought up until after the `encrypt` hook is run. You can solve this by putting the RAID array in `/boot/grub/menu.lst`, like
 

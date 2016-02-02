@@ -1,21 +1,5 @@
 # ASUS Eee PC 1201NL
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Asus Eee PC 1201n](/index.php/Asus_Eee_PC_1201n "Asus Eee PC 1201n").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:ASUS Eee PC 1201NL#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_1201NL))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Does not comply with [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:ASUS Eee PC 1201NL#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_1201NL))
-
 | **Device** | **Status** | **Modules** |
 | Nvidia GeForce 9400M | **Working** | nvidia |
 | Ethernet | **Working** | atl1e |

@@ -5,14 +5,6 @@ Related articles
 *   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
 *   [Benchmarking](/index.php/Benchmarking "Benchmarking")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Benchmarking](/index.php/Benchmarking "Benchmarking").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Benchmarking/Data storage devices#](https://wiki.archlinux.org/index.php/Talk:Benchmarking/Data_storage_devices))
-
 This article covers several Linux-native apps that benchmark I/O devices such as HDDs, SSDs, USB thumb drives, etc. There is also a "database" section specific to SSDs meant to capture user-entered benchmark results.
 
 ## Contents

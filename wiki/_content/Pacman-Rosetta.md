@@ -1,13 +1,5 @@
 # Pacman/Rosetta
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** _testdb_ has been removed in pacman 5.0 [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Pacman/Rosetta#](https://wiki.archlinux.org/index.php/Talk:Pacman/Rosetta))
-
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
 This page uses a table to display the correspondence of [package management](https://en.wikipedia.org/wiki/Package_manager "wikipedia:Package manager") commands among some of the most popular Linux distributions. The original inspiration was given by [openSUSE's Software Management Command Line Comparison](http://old-en.opensuse.org/Software_Management_Command_Line_Comparison).

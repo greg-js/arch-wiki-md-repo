@@ -68,14 +68,6 @@ _pacman_ is written in the C programming language and uses the _.pkg.tar.xz_ pac
 
 ## Usage
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** pacman 5.0 added some new operations: `-F` and `-D` [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Pacman#](https://wiki.archlinux.org/index.php/Talk:Pacman))
-
 What follows is just a small sample of the operations that _pacman_ can perform. To read more examples, refer to [man pacman](https://www.archlinux.org/pacman/pacman.8.html).
 
 **Tip:** For those who have used other Linux distributions before, there is a helpful [Pacman Rosetta](/index.php/Pacman_Rosetta "Pacman Rosetta") article.
@@ -189,14 +181,6 @@ _pacman_ saves important configuration files when removing certain applications 
 **Note:** _pacman_ will not remove configurations that the application itself creates (for example "dotfiles" in the home folder).
 
 ### Upgrading packages
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [System maintenance](/index.php/System_maintenance "System maintenance").**
-
-**Notes:** (Discuss in [Talk:Pacman#Don't rush upgrades](https://wiki.archlinux.org/index.php/Talk:Pacman#Don.27t_rush_upgrades))
 
 **Warning:** Arch only supports full system upgrades. See [System maintenance#Partial upgrades are unsupported](/index.php/System_maintenance#Partial_upgrades_are_unsupported "System maintenance") and [#Installing packages](#Installing_packages) for details.
 
@@ -498,14 +482,6 @@ where `/path/to/common/settings` file contains the same options for both configu
 
 ### Repositories
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** mirrorlist contains only official repositories, even though some [unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") also provide their own mirrors. (Discuss in [Talk:Pacman#](https://wiki.archlinux.org/index.php/Talk:Pacman))
-
 This section defines which [repositories](/index.php/Official_repositories "Official repositories") to use, as referred to in `/etc/pacman.conf`. They can be stated here directly or included from another file (such as `/etc/pacman.d/mirrorlist`), thus making it necessary to maintain only one list. See [Mirrors](/index.php/Mirrors "Mirrors") article for mirror configuration.
 
 The order of repositories in the configuration files matters; repositories listed first will take precedence over those listed later in the file when packages in two repositories have identical names, regardless of version number.
@@ -581,14 +557,6 @@ The solution is to delete the offending entry in `/var/lib/pacman/local/`.
 Install [pkgfile](/index.php/Pkgfile "Pkgfile") which uses a separate database with all files and their associated packages.
 
 ### pacman is broken beyond repair
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Any broken dependency of _pacman_ also breaks _pacman_, but many dependencies are not mentioned (run `pactree -l pacman | sort -u | cut -f 1 -d ' '` to see them all). The info below is likely just a specific case where only two dependencies were broken. (Discuss in [Talk:Pacman#](https://wiki.archlinux.org/index.php/Talk:Pacman))
 
 In the case that _pacman_ is broken beyond repair, manually download the necessary packages ([openssl](https://www.archlinux.org/packages/?name=openssl), [libarchive](https://www.archlinux.org/packages/?name=libarchive), and [pacman](https://www.archlinux.org/packages/?name=pacman)) and extract them to root. The _pacman_ binary will be restored along with its default configuration file. Afterwards, reinstall these packages with _pacman_ to maintain package database integrity. Additional information and an example (outdated) script that automates the process is available in [this](https://bbs.archlinux.org/viewtopic.php?id=95007) forum post.
 

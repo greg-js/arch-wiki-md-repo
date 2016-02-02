@@ -1,21 +1,5 @@
 # Artigo a2000
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Artigo a2000#](https://wiki.archlinux.org/index.php/Talk:Artigo_a2000))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This is a scribble note, not an article (Discuss in [Talk:Artigo a2000#](https://wiki.archlinux.org/index.php/Talk:Artigo_a2000))
-
 ```
 # modprobe via_velocity speed_duplex=2
 

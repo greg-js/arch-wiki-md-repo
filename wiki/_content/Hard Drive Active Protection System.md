@@ -79,14 +79,6 @@ And reload the configuration.
 
 ## GUI Utilities
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Use Template:App (Discuss in [Talk:Hard Drive Active Protection System#](https://wiki.archlinux.org/index.php/Talk:Hard_Drive_Active_Protection_System))
-
 Utilities exist to monitor hdapsd's status so you know what is going on while you are using your laptop. These are entirely optional, but very handy.
 
 ### gnome-hdaps-applet

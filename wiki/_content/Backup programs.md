@@ -42,15 +42,15 @@ See also [Wikipedia:Comparison of file synchronization software](https://en.wiki
 
 *   **Free File Sync** — Free File Sync helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.
 
-NaN
+	[http://freefilesync.sourceforge.net/](http://freefilesync.sourceforge.net/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)<sup><small>AUR</small></sup>
 
 *   **git-annex** — Creates a synchronised folder on each of your OSX and Linux computers, Android devices, removable drives, NAS appliances, and cloud services.
 
-NaN
+	[http://git-annex.branchable.com/](http://git-annex.branchable.com/) || [git-annex](https://www.archlinux.org/packages/?name=git-annex)
 
 *   **Grsync** — GTK+ interface to rsync
 
-NaN
+	[http://www.opbyte.it/grsync/](http://www.opbyte.it/grsync/) || [grsync](https://www.archlinux.org/packages/?name=grsync)
 
 *   **osync.sh** — Osync is a robust bidirectional file synchronization tool written in bash and based on rsync. It works on local and / or remote directories via ssh tunnels. It's mainly targeted to be launched as cron task, with features turned towards automation among:
     *   Execution time control
@@ -60,7 +60,7 @@ NaN
     *   Before and /or after time controlled local and / or remote command execution
     *   File monitor mode
 
-NaN
+	[http://www.netpower.fr/osync](http://www.netpower.fr/osync) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[rsync](/index.php/Rsync "Rsync")** — A file transfer program to keep remote files in sync.
     *   rsync almost always makes a mirror of the source.
@@ -70,15 +70,15 @@ NaN
     *   Can run over SSH (port 22) or native rsync protocol (port 873).
     *   Win32 version available.
 
-NaN
+	[http://rsync.samba.org/](http://rsync.samba.org/) || [rsync](https://www.archlinux.org/packages/?name=rsync)
 
 *   **SparkleShare** — Collaboration and sharing tool based on git written in C Sharp.
 
-NaN
+	[http://sparkleshare.org/](http://sparkleshare.org/) || [sparkleshare](https://www.archlinux.org/packages/?name=sparkleshare)
 
 *   **[Syncthing](/index.php/Syncthing "Syncthing")** — Open-source file synchronization client/server application, written in Go, implementing its own, equally free Block Exchange Protocol.
 
-NaN
+	[https://syncthing.net/](https://syncthing.net/) || [syncthing](https://www.archlinux.org/packages/?name=syncthing) [syncthing-gtk](https://www.archlinux.org/packages/?name=syncthing-gtk)
 
 *   **Synkron** — A folder synchronization tool.
     *   Syncs multiple folders.
@@ -86,11 +86,11 @@ NaN
     *   Restores files.
     *   Cross-platform support.
 
-NaN
+	[http://synkron.sourceforge.net/](http://synkron.sourceforge.net/) || [synkron](https://aur.archlinux.org/packages/synkron/)<sup><small>AUR</small></sup>
 
 *   **[Unison](/index.php/Unison "Unison")** — A program that synchronizes files between two machines over network (LAN or Inet) using a smart diff method + rsync. Allows the user to interactively choose which changes to push, pull, or merge.
 
-NaN
+	[http://www.cis.upenn.edu/~bcpierce/unison/](http://www.cis.upenn.edu/~bcpierce/unison/) || [unison](https://www.archlinux.org/packages/?name=unison)
 
 ## Incremental backups
 
@@ -122,22 +122,6 @@ See also [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfile
 *   **Other platforms**: supported operating systems other than Linux.
 *   **Active**: whether the project is currently maintained.
 *   **Notes**: additional notes.
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Enter values in the cells marked with "?". Also replace the "Yes" with more specific values. (Discuss in [Talk:Backup programs#](https://wiki.archlinux.org/index.php/Talk:Backup_programs))
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The values in the table need double-checking. (Discuss in [Talk:Backup programs#](https://wiki.archlinux.org/index.php/Talk:Backup_programs))
 
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | FS monitoring | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Notes |
 | [Arch Backup](http://code.google.com/p/archlinux-stuff/) | [arch-backup](https://www.archlinux.org/packages/?name=arch-backup)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> |  ? | configurable | ? | ? | ? | ? | ? | ? | ? | ? | Yes | No |  ? | ? | Multiple backup targets. |
@@ -190,7 +174,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
 
-NaN
+	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://aur.archlinux.org/packages/s3cmd/)<sup><small>AUR</small></sup>
 
 *   **CloudBacko** — Enterprise-grade cloud backup tool for Linux, Mac and Windows.
     *   Closed source. Free, Lite and Pro versions available.
@@ -201,7 +185,7 @@ NaN
     *   GUI frontend for Linux in Pro version.
     *   Virtual machine backup available in Pro version.
 
-NaN
+	[http://www.cloudbacko.com/](http://www.cloudbacko.com/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Copy](https://en.wikipedia.org/wiki/Barracuda_Networks#Products "wikipedia:Barracuda Networks")** — A fair solution to shared folders.
     *   15GB free.
@@ -210,7 +194,7 @@ NaN
     *   Almost any platform supported.
     *   Offers AES-256 encryption.
 
-NaN
+	[https://www.copy.com/home/](https://www.copy.com/home/) || [copy-agent](https://aur.archlinux.org/packages/copy-agent/)<sup><small>AUR</small></sup>
 
 *   **[CrashPlan](/index.php/CrashPlan "CrashPlan")** — An online/offsite backup solution.
     *   Unlimited online space for very reasonable pricing.
@@ -220,7 +204,7 @@ NaN
     *   Software is free for local use.
     *   Restore prevents simultaneous backing up
 
-NaN
+	[http://www.crashplan.com/](http://www.crashplan.com/) || [crashplan](https://aur.archlinux.org/packages/crashplan/)<sup><small>AUR</small></sup>
 
 *   **[Dropbox](/index.php/Dropbox "Dropbox")** — A popular file-sharing service.
     *   A daemon monitors a specified directory, and uploads incremental changes to dropbox.com.
@@ -230,13 +214,13 @@ NaN
     *   Community written add-ons.
     *   Free accounts have 2GB storage.
 
-NaN
+	[http://www.dropbox.com](http://www.dropbox.com) || [dropbox](https://aur.archlinux.org/packages/dropbox/)<sup><small>AUR</small></sup> [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/)<sup><small>AUR</small></sup>
 
 *   **[Google Drive](https://en.wikipedia.org/wiki/Google_Drive "wikipedia:Google Drive")** — A file storage and synchronization service provided by Google.
     *   Provides cloud storage, file sharing and collaborative editing.
     *   Multiple clients are available.
 
-NaN
+	[https://drive.google.com](https://drive.google.com) || [google-drive-ocamlfuse](https://aur.archlinux.org/packages/google-drive-ocamlfuse/)<sup><small>AUR</small></sup> (free), [drive](https://aur.archlinux.org/packages/drive/)<sup><small>AUR</small></sup> (free), [grive](https://aur.archlinux.org/packages/grive/)<sup><small>AUR</small></sup> (free), [insync](/index.php/Insync "Insync") (non-free)
 
 *   **[iDrive](https://en.wikipedia.org/wiki/IDrive_Inc. "wikipedia:IDrive Inc.")** — Universal Online Backup.
     *   Multiple Device Backup.
@@ -246,33 +230,33 @@ NaN
     *   Remote Manage.
     *   No GUI Front end for Linux, command line based. A wrapper script is available to make it easier to use.
 
-NaN
+	[https://www.idrive.com/](https://www.idrive.com/) || [idevsutil](https://aur.archlinux.org/packages/idevsutil/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idevsutil)]</sup>, [idrive-wrapper](https://aur.archlinux.org/packages/idrive-wrapper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/idrive-wrapper)]</sup>
 
 *   **[Jungle Disk](https://en.wikipedia.org/wiki/Jungle_Disk "wikipedia:Jungle Disk")** — An online backup tool that stores its data in Amazon S3 or Rackspace Cloud Files.
     *   A GNOME Files extension.
     *   Only paid plans available.
 
-NaN
+	[http://www.jungledisk.com/](http://www.jungledisk.com/) || [nautilus-jungledisk](https://aur.archlinux.org/packages/nautilus-jungledisk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nautilus-jungledisk)]</sup>
 
 *   **[MEGA](https://en.wikipedia.org/wiki/Mega_(website) "wikipedia:Mega (website)")** — Successor to the MegaUpload file-sharing service.
     *   Free accounts are 50GB with paid plans available for more space.
     *   Offers encryption and de-duplication.
     *   Usually accessed through its web interface but other tools exist.
 
-NaN
+	[https://mega.co.nz](https://mega.co.nz) || [megatools](https://aur.archlinux.org/packages/megatools/)<sup><small>AUR</small></sup>, [megasync](https://aur.archlinux.org/packages/megasync/)<sup><small>AUR</small></sup>, [megafuse](https://aur.archlinux.org/packages/megafuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/megafuse)]</sup>
 
 *   **Nutstore** — A cloud service that lets you sync and share files anywhere.
     *   Multiple file folders sync.
     *   Service for Chinese users.
 
-NaN
+	[http://jianguoyun.com/](http://jianguoyun.com/) || [nutstore](https://aur.archlinux.org/packages/nutstore/)<sup><small>AUR</small></sup>
 
 *   **[SpiderOak](https://en.wikipedia.org/wiki/SpiderOak "wikipedia:SpiderOak")** — An online backup tool for Windows, Mac and Linux users to back up, share, sync, access and store their data.
     *   Free account holds 2GB as a 60-day trial.
     *   Includes file sharing and a public directory.
     *   Incremental backup and sync are both supported.
 
-NaN
+	[https://spideroak.com/](https://spideroak.com/) || [spideroak-one](https://aur.archlinux.org/packages/spideroak-one/)<sup><small>AUR</small></sup>
 
 *   **[Storage Made Easy](https://en.wikipedia.org/wiki/Storage_Made_Easy "wikipedia:Storage Made Easy")** — Provides unified access to numerous cloud storage services, as well as its own storage.
     *   Free and paid version available.
@@ -280,7 +264,7 @@ NaN
     *   Supports local directory via fuse, as well as web access.
     *   Supports many cloud storage services, such as Box, Dropbox, Google Drive, Onedrive, and others.
 
-NaN
+	[http://storagemadeeasy.com/](http://storagemadeeasy.com/) || [smestorage](https://aur.archlinux.org/packages/smestorage/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/smestorage)]</sup>
 
 *   **[Tarsnap](https://en.wikipedia.org/wiki/Tarsnap "wikipedia:Tarsnap")** — A secure online backup service for BSD, Linux, OS X, Solaris and Windows (through Cygwin).
     *   Compressed encrypted backups to Amazon S3 Servers.
@@ -290,11 +274,11 @@ NaN
     *   Command line only client.
     *   Pay only for usage (bandwidth and storage).
 
-NaN
+	[http://www.tarsnap.com](http://www.tarsnap.com) || [tarsnap](https://www.archlinux.org/packages/?name=tarsnap)
 
 *   **[Yandex Disk](/index.php/Yandex_Disk "Yandex Disk")** — Free cloud storage service created by Yandex.ru that gives you access to your photos, videos and documents from any internet-enabled device.
 
-NaN
+	[https://disk.yandex.ru/](https://disk.yandex.ru/) || [yandex-disk](https://aur.archlinux.org/packages/yandex-disk/)<sup><small>AUR</small></sup>
 
 #### Multi-service clients
 
@@ -304,11 +288,11 @@ NaN
     *   Integrated into the GNOME Files file manager.
     *   Inherits several features of duplicity.
 
-NaN
+	[https://launchpad.net/deja-dup](https://launchpad.net/deja-dup) || [deja-dup](https://www.archlinux.org/packages/?name=deja-dup)
 
 *   **Duplicati** — Backup client that securely stores encrypted, incremental, compressed backups on cloud storage services and remote file servers. It works with Amazon S3, Windows Live SkyDrive, Google Drive (Google Docs), Rackspace Cloud Files or WebDAV, SSH, FTP (and many more). Duplicati is open source and free.
 
-NaN
+	[http://www.duplicati.com/](http://www.duplicati.com/) || [duplicati-latest](https://aur.archlinux.org/packages/duplicati-latest/)<sup><small>AUR</small></sup>
 
 *   **[Duplicity](/index.php/Duplicity "Duplicity")** — A simple command-line utility which allows encrypted compressed incremental backup to nearly any storage.
     *   Supports gpg encryption and signing.
@@ -316,7 +300,7 @@ NaN
     *   Supports full or incremental backups, incremental backup stores only difference between new and old file.
     *   Supports pushing over [many protocols](http://duplicity.nongnu.org/duplicity.1.html#sect7).
 
-NaN
+	[http://www.nongnu.org/duplicity/](http://www.nongnu.org/duplicity/) || [duplicity](https://www.archlinux.org/packages/?name=duplicity)
 
 *   **[Duply](/index.php/Duply "Duply")** — Front-end for duplicity which simplifies running it by:
     *   keeping recurring settings in profiles per backup job;
@@ -325,11 +309,11 @@ NaN
     *   executing pre/post scripts;
     *   precondition checking for flawless duplicity operation.
 
-NaN
+	[http://www.duply.net/](http://www.duply.net/) || [duply](https://aur.archlinux.org/packages/duply/)<sup><small>AUR</small></sup>
 
 *   **rclone** — Rclone is a command line program to sync files and directories to and from Google Drive, Amazon S3, Openstack Swift / Rackspace cloud files / Memset Memstore, Dropbox, Google Cloud Storage and The local filesystem.
 
-NaN
+	[http://rclone.org/](http://rclone.org/) || [rclone](https://aur.archlinux.org/packages/rclone/)<sup><small>AUR</small></sup>
 
 ### Cooperative
 
@@ -347,81 +331,57 @@ A [cooperative storage cloud](https://en.wikipedia.org/wiki/Cooperative_storage_
     *   Ability to have synchronized folders between nodes (Dropbox-like).
     *   Closed source, using mono. Windows clients available.
 
-NaN
+	[http://www.symform.com/](http://www.symform.com/) || [symform](https://aur.archlinux.org/packages/symform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/symform)]</sup>
 
 ### Custom infrastructure
 
 *   **Cozy** — A personal cloud you can hack, host and delete.
 
-NaN
+	[https://cozy.io](https://cozy.io) || [cozy-standalone](https://aur.archlinux.org/packages/cozy-standalone/)<sup><small>AUR</small></sup> [cozy-nginx](https://aur.archlinux.org/packages/cozy-nginx/)<sup><small>AUR</small></sup> [cozy-apache](https://aur.archlinux.org/packages/cozy-apache/)<sup><small>AUR</small></sup>
 
 *   **[OpenStack](/index.php/OpenStack "OpenStack")** — Controls large pools of compute, storage, and networking resources throughout a datacenter, managed through a dashboard or via the OpenStack API. OpenStack works with popular enterprise and open source technologies making it ideal for heterogeneous infrastructure.
 
-NaN
+	[http://www.openstack.org/](http://www.openstack.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[ownCloud](/index.php/OwnCloud "OwnCloud")** — Software suite that provides a location-independent storage area for data.
 
-NaN
+	[http://owncloud.org/](http://owncloud.org/) || [owncloud](https://www.archlinux.org/packages/?name=owncloud)
 
 *   **[Pydio](/index.php/Pydio "Pydio")** — Mature open source web application for file sharing and synchronization.
 
-NaN
+	[https://pydio.com/](https://pydio.com/) || [pydio](https://aur.archlinux.org/packages/pydio/)<sup><small>AUR</small></sup>
 
 *   **[Seafile](/index.php/Seafile "Seafile")** — Open source cloud storage system, with advanced support for file syncing, privacy protection and teamwork.
 
-NaN
+	[http://seafile.com/](http://seafile.com/) || [seafile-server](https://aur.archlinux.org/packages/seafile-server/)<sup><small>AUR</small></sup> [seafile-client](https://aur.archlinux.org/packages/seafile-client/)<sup><small>AUR</small></sup> [seafile-client-cli](https://aur.archlinux.org/packages/seafile-client-cli/)<sup><small>AUR</small></sup> [seafile-client-qt5](https://aur.archlinux.org/packages/seafile-client-qt5/)<sup><small>AUR</small></sup>
 
 *   **StackSync** — Open-source scalable Personal Cloud that can adapt to the necessities of organizations. It puts a special emphasis on security by encrypting data on the client side before it is sent to the server.
 
-NaN
+	[http://stacksync.org/](http://stacksync.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Syncany** — Cloud storage and filesharing application with a focus on security and abstraction of storage.
 
-NaN
+	[https://www.syncany.org/](https://www.syncany.org/) || [syncany](https://aur.archlinux.org/packages/syncany/)<sup><small>AUR</small></sup>
 
 ## Distributed file systems
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [File systems](/index.php/File_systems "File systems").**
-
-**Notes:** Somebody knowledgeable on clustered/distributed file systems should consider the merge. (Discuss in [Talk:Backup programs#Distributed file systems](https://wiki.archlinux.org/index.php/Talk:Backup_programs#Distributed_file_systems))
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Is the section heading correct? Is this a too heteregenous group of software pieces? (Discuss in [Talk:Backup programs#Distributed file systems](https://wiki.archlinux.org/index.php/Talk:Backup_programs#Distributed_file_systems))
-
 *   **[Ceph](/index.php/Ceph "Ceph")** — Distributed object store and file system designed to provide excellent performance, reliability and scalability.
 
-NaN
+	[https://ceph.com/](https://ceph.com/) || [ceph](https://www.archlinux.org/packages/?name=ceph)
 
 *   **GlusterFS** — Cluster file system capable of scaling to several peta-bytes.
 
-NaN
+	[http://www.gluster.org/](http://www.gluster.org/) || [glusterfs](https://www.archlinux.org/packages/?name=glusterfs)
 
 *   **Sheepdog** — Distributed object storage system for volume and container services and manages the disks and nodes intelligently.
 
-NaN
+	[https://sheepdog.github.io/sheepdog/](https://sheepdog.github.io/sheepdog/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Tahoe-LAFS](https://en.wikipedia.org/wiki/Tahoe-LAFS "wikipedia:Tahoe-LAFS")** — Tahoe Least-Authority Filesystem is a free and open, secure, decentralized, fault-tolerant, peer-to-peer distributed data store and distributed file system.
 
-NaN
+	[https://tahoe-lafs.org/](https://tahoe-lafs.org/) || [tahoe-lafs](https://aur.archlinux.org/packages/tahoe-lafs/)<sup><small>AUR</small></sup>
 
 ## Data cloning
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Disk cloning#Disk cloning software](/index.php/Disk_cloning#Disk_cloning_software "Disk cloning").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Backup programs#](https://wiki.archlinux.org/index.php/Talk:Backup_programs))
 
 Another type of backups are those used in case of a disaster. These include application that allow easy backup of entire filesystems and recovery in case of failure, usually in the form of a Live CD or USB drive. The contains complete system images from one or more specific points in time and are frequently used by to record known good configurations.
 
@@ -432,7 +392,7 @@ See also [Disk cloning](/index.php/Disk_cloning "Disk cloning").
     *   Primarily archive-based (zip), but will do file-based backup as well.
     *   Delta backup supported (stores only changes).
 
-NaN
+	[http://areca.sourceforge.net/](http://areca.sourceforge.net/) || [areca](https://aur.archlinux.org/packages/areca/)<sup><small>AUR</small></sup>
 
 *   **[Clonezilla](https://en.wikipedia.org/wiki/Clonezilla "wikipedia:Clonezilla")** — A disaster recovery, disk cloning, disk imaging and deployment solution.
     *   Boots from live CD, USB flash drive, or PXE server.
@@ -440,7 +400,7 @@ NaN
     *   Uses Partclone (default), Partimage (optional), ntfsclone (optional), or dd to image or clone a partition.
     *   Multicasting server to restore to many machines at once.
 
-NaN
+	[http://clonezilla.org/](http://clonezilla.org/) || [clonezilla](https://www.archlinux.org/packages/?name=clonezilla)
 
 *   **[DAR](https://en.wikipedia.org/wiki/DAR_(Disk_Archiver) "wikipedia:DAR (Disk Archiver)")** — A full-featured command-line backup tool, short for Disk ARchive.
     *   It uses its own format for archives (so you need to have it around when you want to restore).
@@ -449,7 +409,7 @@ NaN
     *   Supports basic encryption.
     *   Automatic backup using [cron](/index.php/Cron "Cron") is possible with [sarab](https://aur.archlinux.org/packages/sarab/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sarab)]</sup>.
 
-NaN
+	[http://dar.linux.free.fr/](http://dar.linux.free.fr/) || [dar](https://aur.archlinux.org/packages/dar/)<sup><small>AUR</small></sup> [kdar](https://aur.archlinux.org/packages/kdar/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdar)]</sup> (fontend)
 
 *   **FSArchiver** — A safe and flexible file-system backup and deployment tool
     *   Support for basic file attributes (permissions, owner, ...).
@@ -464,7 +424,7 @@ NaN
     *   Encryption of the archive using a password. Based on blowfish from libcrypto from [OpenSSL](/index.php/OpenSSL "OpenSSL").
     *   Support backup of a mounted root filesystem (-A option).
 
-NaN
+	[http://www.fsarchiver.org/Main_Page](http://www.fsarchiver.org/Main_Page) || [fsarchiver](https://www.archlinux.org/packages/?name=fsarchiver)
 
 *   **[Mondo Rescue](https://en.wikipedia.org/wiki/Mondo_Rescue "wikipedia:Mondo Rescue")** — A disaster recovery solution to create backup media that can be used to redeploy the damaged system.
     *   Image-based backups, supporting Linux/Windows.
@@ -475,13 +435,13 @@ NaN
     *   Can backup/restore over NFS, from CDs, tape drives and and other media.
     *   Can verify backups.
 
-NaN
+	[http://www.mondorescue.org/](http://www.mondorescue.org/) || [mondo](https://aur.archlinux.org/packages/mondo/)<sup><small>AUR</small></sup>
 
 *   **[Partclone](/index.php/Partclone "Partclone")** — A tool that can be used to back up and restore a partition while considering only used blocks.
     *   Supports ext2, ext3, hfs+, reiser3.5, reiser3.6, reiser4, ext4 and btrfs.
     *   Supports compression.
 
-NaN
+	[http://partclone.org/](http://partclone.org/) || [partclone](https://www.archlinux.org/packages/?name=partclone)
 
 *   **[Partimage](https://en.wikipedia.org/wiki/Partimage "wikipedia:Partimage")** — A disk cloning utility for Linux/UNIX environments.
     *   Has a Live CD.
@@ -489,7 +449,7 @@ NaN
     *   Compression.
     *   Saving to multiple CDs or DVDs or across a network using Samba/NFS.
 
-NaN
+	[http://www.partimage.org/Main_Page](http://www.partimage.org/Main_Page) || [partimage](https://www.archlinux.org/packages/?name=partimage)
 
 *   **Q7Z** — P7Zip GUI for Linux, which attempts to simplify data compression and backup. It can create the following archive types: 7z, BZip2, Zip, GZip, Tar.
     *   Updates existing archives quickly.
@@ -497,13 +457,13 @@ NaN
     *   Create or extract protected archives.
     *   Lessen effort by using archiving profiles and lists.
 
-NaN
+	[http://k7z.sourceforge.net/](http://k7z.sourceforge.net/) || [q7z](https://aur.archlinux.org/packages/q7z/)<sup><small>AUR</small></sup>
 
 *   **[Redo Backup and Recovery](https://en.wikipedia.org/wiki/Redo_Backup_and_Recovery "wikipedia:Redo Backup and Recovery")** — A backup and disaster recovery application that runs from a bootable Linux CD image.
     *   Is capable of bare-metal backup and recovery of disk partitions.
     *   Uses [xPUD](http://www.xpud.org/) and [Partclone](/index.php/Partclone "Partclone") for the backend.
 
-NaN
+	[http://www.redobackup.org/](http://www.redobackup.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **System Tar & Restore** — Backup and Restore your system using tar or Transfer it with rsync
     *   CLI and Dialog interfaces
@@ -513,7 +473,7 @@ NaN
     *   Uses rsync to transfer a running system
     *   Supports Grub2, Syslinux, EFISTUB/efibootmgr and Systemd/bootctl
 
-NaN
+	[https://github.com/tritonas00/system-tar-and-restore](https://github.com/tritonas00/system-tar-and-restore) || [system-tar-and-restore](https://aur.archlinux.org/packages/system-tar-and-restore/)<sup><small>AUR</small></sup>
 
 ## Version control systems
 
@@ -527,7 +487,7 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
     *   Support for working with some other revision control systems
     *   Complete Unicode support.
 
-NaN
+	[http://bazaar.canonical.com/en/](http://bazaar.canonical.com/en/) || [bzr](https://www.archlinux.org/packages/?name=bzr)
 
 *   **[Darcs](https://en.wikipedia.org/wiki/Darcs "wikipedia:Darcs")** — A distributed revision control system that was designed to replace traditional, centralized source control systems such as CVS and Subversion.
     *   Offline mode.
@@ -535,7 +495,7 @@ NaN
     *   Written in Haskell.
     *   Not very fast.
 
-NaN
+	[http://darcs.net/](http://darcs.net/) || [darcs](https://www.archlinux.org/packages/?name=darcs)
 
 *   **[Git](/index.php/Git "Git")** — A distributed revision control and source code management system with an emphasis on speed.
     *   Very easy creation, merging, and deletion of branches.
@@ -543,7 +503,7 @@ NaN
     *   Has a "staging area" or "index", this is an intermediate area where commits can be formatted and reviewed before completing the commit.
     *   Does not handle binary files very well.
 
-NaN
+	[http://git-scm.com/](http://git-scm.com/) || [git](https://www.archlinux.org/packages/?name=git)
 
 *   **[Mercurial](/index.php/Mercurial "Mercurial")** — A distributed version control system written in Python and similar in many ways to Git.
     *   Platform independent.
@@ -551,7 +511,7 @@ NaN
     *   A set of commands consistent with Subversion.
     *   Supports tags.
 
-NaN
+	[http://mercurial.selenic.com/](http://mercurial.selenic.com/) || [mercurial](https://www.archlinux.org/packages/?name=mercurial)
 
 *   **[Subversion](/index.php/Subversion "Subversion")** — A full-featured centralized version control system originally designed to be a better CVS.
     *   Renamed/copied/moved/removed files retain full revision history.
@@ -559,7 +519,7 @@ NaN
     *   Costs proportional to change size, not to data size.
     *   Allows arbitrary metadata ("properties") to be attached to any file or directory.
 
-NaN
+	[http://subversion.apache.org/](http://subversion.apache.org/) || [subversion](https://www.archlinux.org/packages/?name=subversion)
 
 ## See also
 

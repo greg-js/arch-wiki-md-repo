@@ -573,14 +573,6 @@ This may be required for booting from ISO images.
 
 ### Chainloading other Linux systems
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Among other inaccuracies... 1_ There is no obligation to install yet another boot loader if you already have one related to the other partition/OS (e.g. GRUB2 installed in the MBR or in the VBR of the partition being chainloaded to). 2_ Syslinux (in any of its derivatives) is never "installed to the MBR", so mentioning the MBR in this section without any explanation of what it is being meant or how to do it in practical terms is just adding confusion. 3_ Typos and misspelling. 4_No need to explain (yet again) how to install some (other) bootloader to some (other) partition / OS; just how to chainload from Syslinux to that other partition / bootloader / OS. (Discuss in [Talk:Syslinux#](https://wiki.archlinux.org/index.php/Talk:Syslinux))
-
 Chainloading another bootloader such as Windows' is pretty obvious, as there is a definite bootloader to chain to. But with Syslinux, it is only able to load files residing on the same partition as the configuration file. Thus, if you have another version of Linux on a separate partition, without a shared `/boot`, it becomes _necessary_ to employ Extlinux rather than the other OS's default bootloader (eg. GRUB2). Essentially, Extlinux can be installed on the partition superblock/[VBR](https://en.wikipedia.org/wiki/Volume_boot_record "wikipedia:Volume boot record") and be called as a _separate bootloader_ right from the MBR installed by Syslinux. Extlinux is part of the Syslinux project and is included with the [syslinux](https://www.archlinux.org/packages/?name=syslinux) package.
 
 The following instructions assume you have Syslinux installed already. These instructions will also assume that the typical Arch Linux configuration path of `/boot/syslinux` is being used and the chainloaded system's `/` is on `/dev/sda3`.
@@ -790,14 +782,6 @@ Syslinux supports booting from ISO images directly using the [memdisk](http://ww
 
 ### Serial console
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Working with the serial console](/index.php/Working_with_the_serial_console "Working with the serial console").**
-
-**Notes:** General page about topic not specific to Syslinux, already provides examples for GRUB. (Discuss in [Talk:Syslinux#](https://wiki.archlinux.org/index.php/Talk:Syslinux))
-
 To enable Serial Console add the `SERIAL port [baudrate]` to the top of `syslinux.cfg` file. "port" is a number (0 for `/dev/ttyS0`), if "baudrate" is omitted, the baud rate default is 9600 bps. The serial parameters are hardcoded to 8 bits, no parity and 1 stop bit.[[1]](http://www.syslinux.org/wiki/index.php/SYSLINUX#SERIAL_port_.5Bbaudrate_.5Bflowcontrol.5D.5D)
 
  `syslinux.cfg` 
@@ -833,14 +817,14 @@ boot: ../vmlinuz-linux root=/dev/sda2 rw initrd=../initramfs-linux.img
 
 If you do not have access to `boot:` in [ramfs](/index.php/Ramdisk "Ramdisk"), and therefore temporarily unable to boot kernel again,
 
-NaN
+	1\. Create a temporary directory, in order to mount your root partition (if it does not exist already):
 
 ```
  # mkdir -p /new_root
 
 ```
 
-NaN
+	2\. Mount `/` under `/new_root` (in case `/boot/` is on the same partition, otherwise you will need to mount them both):
 
 **Note:** Busybox cannot mount `/boot` if it is on its own ext2 partition.
 
@@ -849,7 +833,9 @@ NaN
 
 ```
 
-NaN
+	3\. Use `vim` and edit `syslinux.cfg` again to suit your needs and save file.
+
+	4\. Reboot.
 
 ### Fsck fails on root partition
 

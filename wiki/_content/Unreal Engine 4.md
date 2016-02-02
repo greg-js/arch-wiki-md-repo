@@ -28,14 +28,6 @@ The content of this article was originally written on [this page](https://wiki.u
 
 ## Installation
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This must be translated into a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") and uploaded to the [AUR](/index.php/AUR "AUR"), and simply linked from here. (Discuss in [Talk:Unreal Engine 4#](https://wiki.archlinux.org/index.php/Talk:Unreal_Engine_4))
-
 ### Compile from source code
 
 #### Satisfy dependencies

@@ -1,16 +1,8 @@
 # Nmap
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** DNS resolution; Ping scanning; Default options; Idle scan; FTP bounce; Timing options; (Discuss in [Talk:Nmap#](https://wiki.archlinux.org/index.php/Talk:Nmap))
-
 From the [official website](http://nmap.org/):
 
-NaN
+	_Nmap (“Network Mapper”) is an open source tool for network exploration and security auditing. It was designed to rapidly scan large networks, although it works fine against single hosts. Nmap uses raw IP packets in novel ways to determine what hosts are available on the network, what services (application name and version) those hosts are offering, what operating systems (and OS versions) they are running, what type of packet filters/firewalls are in use, and dozens of other characteristics. While Nmap is commonly used for security audits, many systems and network administrators find it useful for routine tasks such as network inventory, managing service upgrade schedules, and monitoring host or service uptime._
 
 **Warning:** Invoking network scan techniques on systems, hosts or network ranges other than those under the own responsibility is illegal in quite a few jurisdictions. Double-check you scan your own hosts only (see [#List scan](#List_scan)), or re-confirm the approval of the respective owner, before executing a scan!
 
@@ -211,19 +203,19 @@ It has 4 parameters:
 
 *   `--psd-weight-threshold _threshold_`, default value: `21`
 
-NaN
+	Total weight of the latest TCP/UDP packets with different destination ports coming from the same host to be treated as port scan sequence.
 
 *   `--psd-delay-threshold _delay_`, default value: `300` (3 seconds)
 
-NaN
+	Delay (in hundredths of second) for the packets with different destination ports coming from the same host to be treated as possible port scan subsequence.
 
 *   `--psd-lo-ports-weight _weight_`, default value: `3`
 
-NaN
+	Weight of the packet with privileged (<=1024) destination port.
 
 *   `--psd-hi-ports-weight _weight_`, default value: `1`
 
-NaN
+	Weight of the packet with non-priviliged (>1024) destination port.
 
 The principle behind PSD is simple. If requests from a single IP have gained a value more than _threshold_ in _delay_ seconds, then the IP is classified as a port scanner. In a math expression:
 
@@ -374,19 +366,19 @@ Nmap has built-in support for for file output alongside with terminal output:
 
 *   `-oN _filename_`
 
-NaN
+	Normal output, same as the terminal output
 
 *   `-oX _filename_`
 
-NaN
+	XML output, contains very detailed information about the scan, easy to parse with software
 
 *   `-oG _filename_`
 
-NaN
+	Grepable output, deprecated
 
 *   `-oA`
 
-NaN
+	All of the above combined. Creates files called `_sitename_.nmap`, `_sitename_.xml` and `_sitename_.gnmap` if no filename is specified
 
 For example to output to the terminal, to file and to XML file:
 

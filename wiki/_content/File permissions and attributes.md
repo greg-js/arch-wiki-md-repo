@@ -7,14 +7,6 @@ Related articles
 *   [Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists")
 *   [Capabilities](/index.php/Capabilities "Capabilities")
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Missing description of the three additional bits for SUID, SGID and Sticky. (Discuss in [Talk:File permissions and attributes#](https://wiki.archlinux.org/index.php/Talk:File_permissions_and_attributes))
-
 ## Contents
 
 *   [1 Viewing permissions](#Viewing_permissions)

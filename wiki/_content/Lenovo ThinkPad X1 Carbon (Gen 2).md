@@ -60,14 +60,6 @@ Version: ThinkPad X1 Carbon 2nd
 
 ### Legacy-BIOS
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO (Discuss in [Talk:Lenovo ThinkPad X1 Carbon (Gen 2)#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_2)))
-
 ### UEFI
 
 Installing the system from an [Archboot](/index.php/Archboot "Archboot") device just works.
@@ -160,14 +152,6 @@ fi
 ```
 
 #### Remapping keys using xkb
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This is not the intended usage of [XKB](/index.php/XKB "XKB"), these changes will be lost on every update of [xkeyboard-config](https://www.archlinux.org/packages/?name=xkeyboard-config) package which owns the files. (Discuss in [Talk:Lenovo ThinkPad X1 Carbon (Gen 2)#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X1_Carbon_(Gen_2)))
 
 ##### Backtick (`) and Tilde (~)
 

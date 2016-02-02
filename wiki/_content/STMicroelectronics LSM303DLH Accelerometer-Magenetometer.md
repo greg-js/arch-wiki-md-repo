@@ -1,13 +1,5 @@
 # STMicroelectronics LSM303DLH Accelerometer/Magenetometer
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:STMicroelectronics LSM303DLH Accelerometer/Magenetometer#](https://wiki.archlinux.org/index.php/Talk:STMicroelectronics_LSM303DLH_Accelerometer/Magenetometer))
-
 The LSM303DLH is a 3-axis accelerometer and magnetometer.
 
 **Note:** As of kernel 3.13, it looks like this device is already recognized by the vanilla kernel. As an example, [this bash script](http://pastebin.com/742KTaS6), autostarted in the background, will perform automatic screen (and touchscreen) rotation for a Dell Inspiron 7347 convertible. This is just a working example, a proper method would also make use of the integrated gyroscope for faster reaction times.
@@ -71,23 +63,7 @@ Although, it seems to be a problem with the driver.
 
 ### Enabling the device
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:STMicroelectronics LSM303DLH Accelerometer/Magenetometer#](https://wiki.archlinux.org/index.php/Talk:STMicroelectronics_LSM303DLH_Accelerometer/Magenetometer))
-
 ### Reading the output of the device
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:STMicroelectronics LSM303DLH Accelerometer/Magenetometer#](https://wiki.archlinux.org/index.php/Talk:STMicroelectronics_LSM303DLH_Accelerometer/Magenetometer))
 
 ## See also
 

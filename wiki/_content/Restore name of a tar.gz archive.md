@@ -6,14 +6,6 @@ Related articles
 *   [File recovery](/index.php/File_recovery "File recovery")
 *   [Sort images by resolution](/index.php/Sort_images_by_resolution "Sort images by resolution")
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Those scripts have a code issue! (Discuss in [Talk:Restore name of a tar.gz archive#](https://wiki.archlinux.org/index.php/Talk:Restore_name_of_a_tar.gz_archive))
-
 ## Introduction
 
 Here describes about how you can restore normal names for the most of a recovered tar.gz archives by [photorec](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery"). First you need to create a file with a more detailed information about files, see: [post recovery tasks](/index.php/File_recovery#Creating_a_database_with_more_details_about_files "File recovery"). Restored tar.gz files with photorec might look like `./recup_dir.996/f864593944_wmmaiload-1.0.5.tar.gz` or `./recup_dir.996/f864589184.tar.gz`.

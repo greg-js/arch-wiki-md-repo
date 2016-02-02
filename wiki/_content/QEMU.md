@@ -7,7 +7,7 @@ Related articles
 
 From the [QEMU about page](http://wiki.qemu.org/Main_Page):
 
-NaN
+	_QEMU is a generic and open source machine emulator and virtualizer._
 
 When used as a machine emulator, QEMU can run OSes and programs made for one machine (e.g. an ARM board) on a different machine (e.g. your x86 PC). By using dynamic translation, it achieves very good performance.
 
@@ -94,14 +94,6 @@ QEMU can use other hypervisors like [Xen](/index.php/Xen "Xen") or [KVM](/index.
 *   [11 See also](#See_also)
 
 ## Installing QEMU
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** See [FS#45977](https://bugs.archlinux.org/task/45977). (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
 
 [Install](/index.php/Install "Install") the [qemu](https://www.archlinux.org/packages/?name=qemu) package.
 
@@ -420,14 +412,6 @@ You can, of course, safely set any bootloader on this disk image using QEMU, pro
 
 ## Networking
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Network topologies (sections [#Host-only networking](#Host-only_networking), [#Internal networking](#Internal_networking) and info spread out across other sections) should not be described alongside the various virtual interfaces implementations, such as [#User-mode networking](#User-mode_networking), [#Tap networking with QEMU](#Tap_networking_with_QEMU), [#Networking with VDE2](#Networking_with_VDE2). (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
-
 The performance of virtual networking should be better with tap devices and bridges than with user-mode networking or vde because tap devices and bridges are implemented in-kernel.
 
 In addition, networking performance can be improved by assigning virtual machines a [virtio](http://wiki.libvirt.org/page/Virtio) network device rather than the default emulation of an e1000 NIC. See [#Installing virtio drivers](#Installing_virtio_drivers) for more information.
@@ -578,14 +562,6 @@ $ qemu-system-i386 -net nic -net bridge,br=_bridge0_ -net nic,vlan=1 -net bridge
 
 #### Creating bridge manually
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section needs serious cleanup and may contain out-of-date information. (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
-
 **Tip:** Since QEMU 1.1, the [network bridge helper](http://wiki.qemu.org/Features/HelperNetworking) can set tun/tap up for you without the need for additional scripting. See [#Bridged networking using qemu-bridge-helper](#Bridged_networking_using_qemu-bridge-helper).
 
 The following describes how to bridge a virtual machine to a host interface such as `eth0`, which is probably the most common configuration. This configuration makes it appear that the virtual machine is located directly on the external network, on the same Ethernet segment as the physical host machine.
@@ -702,14 +678,6 @@ Alternatively, you can configure [iptables](/index.php/Iptables "Iptables") to a
 
 #### Network sharing between physical device and a Tap device through iptables
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Internet_sharing](/index.php/Internet_sharing "Internet sharing").**
-
-**Notes:** Duplication, not specific to QEMU. (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
-
 Bridged networking works fine between a wired interface (Eg. eth0), and it's easy to setup. However if the host gets connected to the network through a wireless device, then bridging is not possible.
 
 See [https://wiki.archlinux.org/index.php/Network_bridge#Wireless_interface_on_a_bridge](https://wiki.archlinux.org/index.php/Network_bridge#Wireless_interface_on_a_bridge) as a reference.
@@ -763,14 +731,6 @@ The forwarding rules shown are stateless, and for pure forwarding. One could thi
 Bonus: Whether the connection is wired or wireless, if one gets connected through VPN to a remote site with a tun device, supposing the tun device opened for that connection is tun0, and the prior iptables rules are applied, then the remote connection gets also shared with the guest. This avoids the need for the guest to also open a VPN connection. Again, as the guest networking needs to be static, then if connecting the host remotely this way, one most probably will need to edit the DNS servers on the guest.
 
 ### Networking with VDE2
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section needs serious cleanup and may contain out-of-date information. (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
 
 #### What is VDE?
 
@@ -1211,7 +1171,17 @@ WantedBy=multi-user.target
 
 Then create per-VM configuration files, named `/etc/conf.d/qemu.d/_vm_name_`, with the following variables set:
 
-NaN
+	type
+
+	QEMU binary to call. If specified, will be prepended with `/usr/bin/qemu-` and that binary will be used to start the VM. I.e. you can boot e.g. `qemu-system-arm` images with `type="system-arm"`.
+
+	args
+
+	QEMU command line to start with. Will always be prepended with `-name ${vm} -nographic`.
+
+	haltcmd
+
+	Command to shut down a VM safely. I am using `-monitor telnet:..` and power off my VMs via ACPI by sending `system_powerdown` to monitor. You can use SSH or some other ways.
 
 Example configs:
 
@@ -1300,14 +1270,6 @@ If KSM is running, and there are pages to be merged (i.e. at least two similar V
 
 ### Spice support
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section needs much more information and shall be placed under the [#Graphics](#Graphics) section . (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
-
 The [SPICE project](http://spice-space.org/) aims to provide a complete, open-source solution for interaction with virtualized desktop devices. Its main focus is to provide high-quality remote access to QEMU virtual machines.
 
 The official [qemu](https://www.archlinux.org/packages/?name=qemu) package is built with SPICE support.
@@ -1318,14 +1280,6 @@ You can start your VM:
 $ qemu-system-i386 -vga qxl -spice port=5930,disable-ticketing,addr=::1
 
 ```
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** _spicec_ has been removed in [spice](https://www.archlinux.org/packages/?name=spice)-0.12.6 [[3]](http://cgit.freedesktop.org/spice/spice/tree/NEWS?id=f0aeb9db000a34a46b51c5d95229171ff1eee307#n3). (Discuss in [Talk:QEMU#](https://wiki.archlinux.org/index.php/Talk:QEMU))
 
 Then connect with a spice client
 

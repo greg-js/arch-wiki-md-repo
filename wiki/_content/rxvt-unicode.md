@@ -291,14 +291,6 @@ Here `-1` decreases the spacing by one pixel, but can be adjusted as needed.
 
 ## Perl extensions
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Bias towards url-select while matcher and url-select are mostly equivalent, as well as man page duplication (Discuss in [Talk:Rxvt-unicode#](https://wiki.archlinux.org/index.php/Talk:Rxvt-unicode))
-
 We can enable URxvt perl extensions by including the following line:
 
 ```

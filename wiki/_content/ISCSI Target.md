@@ -209,14 +209,6 @@ Lun 0 Path=/root/os.img,Type=fileio
 
 ### Start server services
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Mentions rc.d scripts and rc.conf. (Discuss in [Talk:ISCSI Target#](https://wiki.archlinux.org/index.php/Talk:ISCSI_Target))
-
 ```
 rc.d start iscsi-target
 

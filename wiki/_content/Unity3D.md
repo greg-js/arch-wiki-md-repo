@@ -2,7 +2,7 @@
 
 From [Unity - Game engine, tools and multiplatform](https://unity3d.com/unity):
 
-NaN
+	_Unity is a flexible and powerful development platform for creating multiplatform 3D and 2D games and interactive experiences. It's a complete ecosystem for anyone who aims to build a business on creating high-end content and connecting to their most loyal and enthusiastic players and customers._
 
 Not to be confused with Canonical's [Unity](/index.php/Unity "Unity").
 

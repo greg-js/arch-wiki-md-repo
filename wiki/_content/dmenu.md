@@ -57,14 +57,6 @@ _dmenu_ will look for executables in the directories defined in your `$PATH`. Se
 
 ### Fonts
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Since dmenu 4.6 XFT font rendering is enabled by default: [4.6 Release Notes](http://lists.suckless.org/dev/1511/27503.html). Specifying fonts via [X logical font description](https://en.wikipedia.org/wiki/XLFD "wikipedia:XLFD") does not work anymore. Instead [fontconfig](https://www.archlinux.org/packages/?name=fontconfig)'s [font.conf syntax](http://www.freedesktop.org/software/fontconfig/fontconfig-user.html) is used. (Discuss in [Talk:Dmenu#](https://wiki.archlinux.org/index.php/Talk:Dmenu))
-
 _dmenu_ can display fonts using the [X logical font description](https://en.wikipedia.org/wiki/XLFD "wikipedia:XLFD") as found using the tool _xfontsel_, which is provided by [xorg-xfontsel](https://www.archlinux.org/packages/?name=xorg-xfontsel). This example will run dmenu using the [terminus-font](https://www.archlinux.org/packages/?name=terminus-font):
 
 ```

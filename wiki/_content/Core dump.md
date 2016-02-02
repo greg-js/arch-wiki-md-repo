@@ -80,14 +80,6 @@ Now you have a coredump file called `core.2071`.
 
 ### Where do they go?
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** systemd modifies the `kernel.core_pattern` kernel parameter at runtime, overriding that of `/usr/lib/sysctl.d/50-coredump.conf`. See [#Using systemd](#Using_systemd) for a better solution. (Discuss in [Talk:Core dump#](https://wiki.archlinux.org/index.php/Talk:Core_dump))
-
 The `kernel.core_pattern` [sysctl](/index.php/Sysctl "Sysctl") decides where automatic core dumps go:
 
 ```

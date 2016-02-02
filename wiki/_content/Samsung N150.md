@@ -353,14 +353,6 @@ w /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor - - - - ondemand
 
 [Samsung Tools](https://launchpad.net/samsung-tools) can be installed to quickly get the `Fn` key combinations work. It is available in AUR ([samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)<sup><small>AUR</small></sup>).
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.local (Discuss in [Talk:Samsung N150#](https://wiki.archlinux.org/index.php/Talk:Samsung_N150))
-
 Several of the special `Fn` key combinations work out of the box with the N150, but most do not. Unusual scancodes are reported to the kernel, which does not know how to convert these codes to keycodes natively. Worse, many of the scancodes produce a key press event without a corresponding key release event. Appending the following lines to /etc/rc.local will enable all `Fn` keys and map them properly:
 
 ```

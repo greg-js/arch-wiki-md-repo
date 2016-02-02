@@ -1,21 +1,5 @@
 # Fsniper
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** [initscripts](/index.php?title=Initscripts&action=edit&redlink=1 "Initscripts (page does not exist)") has been superseded by [systemd](/index.php/Systemd "Systemd") (Discuss in [Talk:Fsniper#](https://wiki.archlinux.org/index.php/Talk:Fsniper))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** no content of note (Discuss in [Talk:Fsniper#](https://wiki.archlinux.org/index.php/Talk:Fsniper))
-
 Fsniper is a directory monitor that can be used to execute predefined actions on files that enter the monitored directory. This can, for example, be used to monitor your downloads folder and sort downloaded files automatically into your file system.
 
 Unlike cron jobs or bash scripts, fsniper uses [inotify](https://en.wikipedia.org/wiki/inotify "wikipedia:inotify") to monitor file changes. This enable it to react immediately and efficiently to changes of the file system.

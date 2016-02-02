@@ -169,14 +169,6 @@ rst.x4055.x4049.x3827.rs.dns-oarc.net.
 
 ### Redundant DNSCrypt providers
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Needs some tweaks to comply with [Help:Style](/index.php/Help:Style "Help:Style"), e.g avoid writing in first person and link to [enable](/index.php/Enable "Enable"), [start](/index.php/Start "Start") and similar instead of explicit systemctl commands. (Discuss in [Talk:DNSCrypt#](https://wiki.archlinux.org/index.php/Talk:DNSCrypt))
-
 Obtaining redundancy requires a simple edit to the above Unbound example and the addition of a second instance of the dnscrypt-proxy and service. Please be sure that the above Unbound example is working prior to proceeding, as this tip extends the previous example.
 
 Extend the above [Unbound](/index.php/Unbound "Unbound") configuration in `/etc/unbound/unbound.conf` to include an additional forward address that uses a different port. Port 41 is used in the below example:

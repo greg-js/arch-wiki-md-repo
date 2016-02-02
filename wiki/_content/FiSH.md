@@ -1,13 +1,5 @@
 # FiSH
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:FiSH#](https://wiki.archlinux.org/index.php/Talk:FiSH))
-
 FiSH is a plugin/module that facilitates encrypted chatting over IRC. It's available for mIRC, xChat and Irssi.
 
 ## Contents
@@ -18,14 +10,6 @@ FiSH is a plugin/module that facilitates encrypted chatting over IRC. It's avail
 *   [4 See also](#See_also)
 
 ## Adding FiSH to mIRC
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO (Discuss in [Talk:FiSH#](https://wiki.archlinux.org/index.php/Talk:FiSH))
 
 ## Adding FiSH to xChat
 

@@ -99,15 +99,15 @@ Go to _Properties > Set Launch Options_, e.g.:
 
 *   `console`
 
-NaN
+	Activate the console in the application to change detailed applications settings.
 
 *   `dxlevel`
 
-NaN
+	Set the application's DirectX level, e.g. 90 for DirectX Version 9.0\. It is recommended to use the video card's DirectX version to prevent crashes. See the official Valve Software wiki [https://developer.valvesoftware.com/wiki/DirectX_Versions](https://developer.valvesoftware.com/wiki/DirectX_Versions) for details.
 
 *   `width` and `height`
 
-NaN
+	Set the screen resolution. In some cases the graphic settings are not saved in the application and the applications always starts in the default resolution.
 
 Please refer to [https://developer.valvesoftware.com/wiki/Command_Line_Options](https://developer.valvesoftware.com/wiki/Command_Line_Options) for a complete list of launch options.
 

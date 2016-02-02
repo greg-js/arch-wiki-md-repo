@@ -1,13 +1,5 @@
 # Weewx
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Need to update style to follow [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Weewx#](https://wiki.archlinux.org/index.php/Talk:Weewx))
-
 [Weewx](http://weewx.com/) is a free, open source, software program, written in Python, which interacts with your weather station to produce graphs, reports, and HTML pages.
 
 ## Contents

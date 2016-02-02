@@ -1,13 +1,5 @@
 # Digitenne
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** kernel26 (Discuss in [Talk:Digitenne#](https://wiki.archlinux.org/index.php/Talk:Digitenne))
-
 This page describes the procedure to watch encrypted DVB-T broadcasts in the Netherlands
 
 ## Contents

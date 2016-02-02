@@ -18,14 +18,6 @@ The purpose of this page is to provide general overview of power management in A
     *   [udev](/index.php/Udev "Udev") rules
 2.  Configuration of userspace tools, which interact with the kernel and react to its events. Many userspace tools also allow to modify kernel configuration in a "user-friendly" way. See [#Userspace tools](#Userspace_tools) for the options.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Expand overview: what is included in the term "power management" -- poweroff/reboot actions, ACPI events, suspend/hibernate, power saving, anything else? (Discuss in [Talk:Power management#](https://wiki.archlinux.org/index.php/Talk:Power_management))
-
 ## Contents
 
 *   [1 Userspace tools](#Userspace_tools)
@@ -73,28 +65,28 @@ These are the more popular scripts and tools designed to help power saving:
 
 *   **aclidswitch** — Simple Power Management tool to define custom lid, brightness and low battery actions depending on the laptop's AC state.
 
-NaN
+	[https://github.com/orschiro/aclidswitch](https://github.com/orschiro/aclidswitch) || [aclidswitch-git](https://aur.archlinux.org/packages/aclidswitch-git/)<sup><small>AUR</small></sup>
 
 *   **[acpid](/index.php/Acpid "Acpid")** — A daemon for delivering ACPI power management events with netlink support.
 
-NaN
+	[http://sourceforge.net/projects/acpid2/](http://sourceforge.net/projects/acpid2/) || [acpid](https://www.archlinux.org/packages/?name=acpid)
 
 *   **[Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")** — Utility to configure laptop power saving settings, considered by many to be the de facto utility for power saving though may take a bit of configuration.
 
-NaN
+	[https://github.com/rickysarraf/laptop-mode-tools](https://github.com/rickysarraf/laptop-mode-tools) || [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup>
 
 *   **[pm-utils](/index.php/Pm-utils "Pm-utils")** — Suspend and powerstate setting framework (largely undeveloped now).
 
-NaN
+	[http://pm-utils.freedesktop.org/](http://pm-utils.freedesktop.org/) || [pm-utils](https://www.archlinux.org/packages/?name=pm-utils)
 
 *   **[powertop](/index.php/Powertop "Powertop")** — A tool to diagnose issues with power consumption and power management to help set power saving settings.
 
-NaN
+	[https://01.org/powertop/](https://01.org/powertop/) || [powertop](https://www.archlinux.org/packages/?name=powertop)
 
 *   [systemd](/index.php/Systemd "Systemd")
 *   **[TLP](/index.php/TLP "TLP")** — Advanced power management for Linux.
 
-NaN
+	[http://linrunner.de/tlp](http://linrunner.de/tlp) || [tlp](https://www.archlinux.org/packages/?name=tlp)
 
 ## Power management with systemd
 
@@ -444,14 +436,6 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 ### Bluetooth
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** The device should likely be disabled with hciconfig first. (Discuss in [Talk:Power management#](https://wiki.archlinux.org/index.php/Talk:Power_management))
-
 To disable bluetooth completely, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the `btusb` and `bluetooth` modules.
 
 To turn off bluetooth only temporarily, use [rfkill](https://www.archlinux.org/packages/?name=rfkill):
@@ -629,14 +613,6 @@ Also little things like setting the [noatime](/index.php/Fstab#atime_options "Fs
 See [Udisks#udisks: Devices do not remain unmounted](/index.php/Udisks#udisks:_Devices_do_not_remain_unmounted "Udisks").
 
 ## Tools and scripts
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Merged from [Power saving](/index.php/Power_saving "Power saving"), needs reorganization to fit into this page. (Discuss in [Talk:Power management#](https://wiki.archlinux.org/index.php/Talk:Power_management))
 
 ### Using a script and an udev rule
 

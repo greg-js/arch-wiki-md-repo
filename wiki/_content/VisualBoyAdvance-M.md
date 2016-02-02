@@ -16,23 +16,23 @@ It is a fork of VisualBoyAdvance, a now closed project. VBA-M combines features 
 
 *   **VBA-M (GTK)** — Nintendo GameBoy Advance emulator - GTK version
 
-NaN
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk](https://www.archlinux.org/packages/?name=vbam-gtk)
 
 *   **VBA-M (wx)** — Nintendo GameBoy Advance emulator - wx version
 
-NaN
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx](https://www.archlinux.org/packages/?name=vbam-wx)
 
 *   **VBA-M (SDL)** — Nintendo GameBoy Advance emulator - SDL version
 
-NaN
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-sdl](https://www.archlinux.org/packages/?name=vbam-sdl)
 
 *   **VBA-M (GTK) (development version)** — Gameboy Advance Emulator combining features of all VBA forks - GTK GUI - SVN version
 
-NaN
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk-svn](https://aur.archlinux.org/packages/vbam-gtk-svn/)<sup><small>AUR</small></sup>
 
 *   **VBA-M (wx) (development version)** — Improved (Super) Game Boy Color/Advance emulator - wxWidgets GUI, SVN version
 
-NaN
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx-svn](https://aur.archlinux.org/packages/vbam-wx-svn/)<sup><small>AUR</small></sup>
 
 ## Usage
 
@@ -56,14 +56,6 @@ For VBA-M, execute `gvbam ~/path/to/foo.*` or `gvbam` to load the ROM from the i
 | Capture | F12 (0125) |
 
 ## Troubleshooting
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Old advice needs to be verified as still useful, if it is to be kept. (Discuss in [Talk:VisualBoyAdvance-M#Please try to reproduce the problems described in Troubleshooting](https://wiki.archlinux.org/index.php/Talk:VisualBoyAdvance-M#Please_try_to_reproduce_the_problems_described_in_Troubleshooting))
 
 ### OpenGL crashes
 

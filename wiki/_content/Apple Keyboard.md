@@ -1,13 +1,5 @@
 # Apple Keyboard
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Continues the tradition of Apple* articles of violating [Help:Style](/index.php/Help:Style "Help:Style") in every way imaginable (Discuss in [Talk:Apple Keyboard#](https://wiki.archlinux.org/index.php/Talk:Apple_Keyboard))
-
 ## Contents
 
 *   [1 More Information](#More_Information)

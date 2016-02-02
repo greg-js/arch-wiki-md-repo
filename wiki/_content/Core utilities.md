@@ -88,7 +88,7 @@ EOF
 
 ```
 
-NaN
+	A better alternative is the _echo_ command:
 
 ```
 $ echo "\
@@ -111,19 +111,15 @@ By default, _dd_ outputs nothing until the task has finished. To monitor the pro
 
 ### dd spin-offs
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [Disk cloning](/index.php/Disk_cloning "Disk cloning").**
-
-**Notes:** See [Talk:Disk_cloning#ddrescue](/index.php/Talk:Disk_cloning#ddrescue "Talk:Disk cloning"). (Discuss in [Talk:Core utilities#](https://wiki.archlinux.org/index.php/Talk:Core_utilities))
-
 Other _dd_-like programs feature periodical status output, e.g. a simple progress bar.
 
-NaN
+	dcfldd 
 
-NaN
+	[dcfldd](https://www.archlinux.org/packages/?name=dcfldd) is an enhanced version of dd with features useful for forensics and security. It accepts most of dd's parameters and includes status output. The last stable version of dcfldd was released on December 19, 2006.<sup>[[1]](http://dcfldd.sourceforge.net/)</sup>
+
+	ddrescue 
+
+	GNU [ddrescue](https://www.archlinux.org/packages/?name=ddrescue) is a data recovery tool. It is capable of ignoring read errors, which is a useless feature for disk wiping in almost any case. See the [official manual](http://www.gnu.org/software/ddrescue/manual/ddrescue_manual.html) for details.
 
 ## grep
 
@@ -253,14 +249,6 @@ The [Network configuration](/index.php/Network_configuration "Network configurat
 
 ## less
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** less is a complex beast, and this section should explain some of the basic less commands - not go on a bunch of tangents like colored output (Discuss in [Talk:Core utilities#](https://wiki.archlinux.org/index.php/Talk:Core_utilities))
-
 [less](https://en.wikipedia.org/wiki/less_(Unix) "wikipedia:less (Unix)") is a terminal pager program used to view the contents of a text file one screen at a time. Whilst similar to other pagers such as [more](https://en.wikipedia.org/wiki/more_(command) "wikipedia:more (command)") and [pg](https://en.wikipedia.org/wiki/pg_(Unix) "wikipedia:pg (Unix)"), _less_ offers a more advanced interface and complete [feature-set](http://www.greenwoodsoftware.com/less/faq.html).
 
 See [List of applications#Terminal pagers](/index.php/List_of_applications#Terminal_pagers "List of applications") for alternatives.
@@ -349,11 +337,15 @@ In case that the program does not provide any similar option, it is possible to 
 
 *   **stdoutisatty** — A small program which catches the `isatty` function call.
 
-NaN
+	[https://github.com/lilydjwg/stdoutisatty](https://github.com/lilydjwg/stdoutisatty). || [stdoutisatty-git](https://aur.archlinux.org/packages/stdoutisatty-git/)<sup><small>AUR</small></sup>
+
+	Example: `stdoutisatty _program_ | less`
 
 *   **unbuffer** — A tclsh script comes with expect, it invokes desired program within a pty.
 
-NaN
+	[http://expect.sourceforge.net/example/unbuffer.man.html](http://expect.sourceforge.net/example/unbuffer.man.html) || [expect](https://www.archlinux.org/packages/?name=expect)
+
+	Example: `unbuffer _program_ | less`
 
 Alternatively, using [zpty](http://zsh.sourceforge.net/Doc/Release/Zsh-Modules.html#The-zsh_002fzpty-Module) module from [zsh](/index.php/Zsh "Zsh"): [[2]](http://lilydjwg.is-programmer.com/2011/6/29/using-zpty-module-of-zsh.27677.html)
 
@@ -399,11 +391,11 @@ $ pty _program_ | less
 
 *   Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
 
-NaN
+	`alias ls='ls --color=auto'`
 
 The next step will further enhance the colored _ls_ output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
 
-NaN
+	`eval $(dircolors -b)`
 
 ## mkdir
 
@@ -411,7 +403,9 @@ NaN
 
 *   To create a directory and its whole hierarchy, the `-p` switch is used, otherwise an error is printed. As users are supposed to know what they want, `-p` switch may be used as a default:
 
-NaN
+	 `alias mkdir='mkdir -p -v'` 
+
+	The `-v` switch make it verbose.
 
 *   Changing mode of a just created directory using _chmod_ is not necessary as the `-m` option lets you define the access permissions.
 
@@ -423,7 +417,9 @@ NaN
 
 *   It can be very dangerous so it is prudent to limit its scope:
 
-NaN
+	 `alias mv=' timeout 8 mv -iv'` 
+
+	This alias suspends _mv_ after eight seconds, asks confirmation to delete three or more files, lists the operations in progress and does not store itself in the shell history file if the shell is configured to ignore space starting commands.
 
 ## od
 
@@ -453,7 +449,11 @@ Use of _strace_ shows that `pv` is stopped with `SIGTTOU`.
 
 *   It can be very dangerous, so it is prudent to limit its scope:
 
-NaN
+	 `alias rm=' timeout 3 rm -Iv --one-file-system'` 
+
+	This alias suspends _rm_ after three seconds, asks confirmation to delete three or more files, lists the operations in progress, does not involve more than one file systems and does not store itself in the shell history file if the shell is configured to ignore space starting commands. Substitute `-I` with `-i` if you prefer to confirm even for one file.
+
+	Zsh users may want to put `noglob` before `timeout` to avoid implicit expansions.
 
 *   To remove directories known to be empty, use _rmdir_ as it fails in case of files inside the target.
 

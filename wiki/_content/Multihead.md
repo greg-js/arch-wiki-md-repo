@@ -309,14 +309,6 @@ There are no negative coordinates, the setup's leftmost and highest possibly tar
 
 ## Application support
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This section contains outdated information, mostly specific to Xinerama. (Discuss in [Talk:Multihead#](https://wiki.archlinux.org/index.php/Talk:Multihead))
-
 This section lists tips for individual applications.
 
 *   mplayer: use `-xineramascreen 1` to make the video play on screen #1 (the second screen.) Add `xineramascreen=1` to `~/.mplayer/config` to make permanent.

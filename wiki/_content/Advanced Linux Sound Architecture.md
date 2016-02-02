@@ -345,14 +345,6 @@ pcm.default.slave.pcm.card 0;
 
 ### Set the default sound card
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Explain the difference between a "card" and a "device." `amixer --help` suggests the two are not synonymous (Discuss in [Talk:Advanced Linux Sound Architecture#](https://wiki.archlinux.org/index.php/Talk:Advanced_Linux_Sound_Architecture))
-
 If your sound card order changes on boot, you can specify their order in any file ending with `.conf` in `/etc/modprobe.d` (`/etc/modprobe.d/alsa-base.conf` is suggested). For example, if you want your mia sound card to be #0:
 
  `/etc/modprobe.d/alsa-base.conf` 

@@ -72,11 +72,25 @@ Despite redundancy implied by most RAID levels, RAID does not guarantee that dat
 
 There are many different [levels of RAID](https://en.wikipedia.org/wiki/Standard_RAID_levels "wikipedia:Standard RAID levels"), please find hereafter the most commonly used ones.
 
-NaN
+	[RAID 0](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_0 "wikipedia:Standard RAID levels")
+
+	Uses striping to combine disks. Even though it _does not provide redundancy_, it is still considered RAID. It does, however, _provide a big speed benefit_. If the speed increase is worth the possibility of data loss (for [swap](/index.php/Swap "Swap") partition for example), choose this RAID level. On a server, RAID 1 and RAID 5 arrays are more appropriate. The size of a RAID 0 array block device is the size of the smallest component partition times the number of component partitions.
+
+	[RAID 1](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_1 "wikipedia:Standard RAID levels")
+
+	The most straightforward RAID level: straight mirroring. As with other RAID levels, it only makes sense if the partitions are on different physical disk drives. If one of those drives fails, the block device provided by the RAID array will continue to function as normal. The example will be using RAID 1 for everything except [swap](/index.php/Swap "Swap") and temporary data. Please note that with a software implementation, the RAID 1 level is the only option for the boot partition, because bootloaders reading the boot partition do not understand RAID, but a RAID 1 component partition can be read as a normal partition. The size of a RAID 1 array block device is the size of the smallest component partition.
+
+	[RAID 5](https://en.wikipedia.org/wiki/Standard_RAID_levels#RAID_5 "wikipedia:Standard RAID levels")
+
+	Requires 3 or more physical drives, and provides the redundancy of RAID 1 combined with the speed and size benefits of RAID 0\. RAID 5 uses striping, like RAID 0, but also stores parity blocks _distributed across each member disk_. In the event of a failed disk, these parity blocks are used to reconstruct the data on a replacement disk. RAID 5 can withstand the loss of one member disk.
+
+**Note:** RAID 5 is a common choice due to its combination of speed and data redundancy. The caveat is that if one drive were to fail and another drive failed before that drive was replaced, all data will be lost.
 
 ### Nested RAID levels
 
-NaN
+	[RAID 1+0](https://en.wikipedia.org/wiki/Nested_RAID_levels#RAID_1_.2B_0 "wikipedia:Nested RAID levels")
+
+	Commonly referred to as _RAID 10_, is a nested RAID that combines two of the standard levels of RAID to gain performance and additional redundancy. It is the best alternative to RAID 5 when redundancy is crucial.
 
 ### RAID level comparison
 
@@ -113,11 +127,24 @@ NaN
 
 The RAID devices can be managed in different ways:
 
-NaN
+	Software RAID
 
-NaN
+	This is the easier implementation as it does not rely on obscure proprietary firmware and software to be used. The array is managed by the operating system either by:
 
-NaN
+*   by an abstraction layer (e.g. [mdadm](#Installation));
+
+    **Note:** This is the method we will use later in this guide.
+
+*   by a logical volume manager (e.g. [LVM](/index.php/LVM "LVM"));
+*   by a component of a file system (e.g. [ZFS](/index.php/ZFS "ZFS"), [Btrfs](/index.php/Btrfs "Btrfs")).
+
+	Hardware RAID
+
+	The array is directly managed by a dedicated hardware card installed in the PC to which the disks are directly connected. The RAID logic runs on an on-board processor independently of [the host processor (CPU)](https://en.wikipedia.org/wiki/Central_processing_unit "wikipedia:Central processing unit"). Although this solution is independent of any operating system, the latter requires a driver in order to function properly with the hardware RAID controller. The RAID array can either be configured via an option rom interface or, depending on the manufacturer, with a dedicated application when the OS has been installed. The configuration is transparent for the Linux kernel: it doesn't see the disks separately.
+
+	[FakeRAID](/index.php/Fakeraid "Fakeraid")
+
+	This type of RAID is properly called BIOS or Onboard RAID, but is falsely advertised as hardware RAID. The array is managed by pseudo-RAID controllers where the RAID logic is implemented in an option rom or in the firmware itself [with a EFI SataDriver](http://www.win-raid.com/t19f13-Intel-EFI-RAID-quot-SataDriver-quot-BIOS-Modules.html) (in case of [UEFI](/index.php/UEFI "UEFI")), but are not full hardware RAID controllers with _all_ RAID features implemented. Therefore, this type of RAID is sometimes called FakeRAID. [dmraid](https://www.archlinux.org/packages/?name=dmraid) from the [official repositories](/index.php/Official_repositories "Official repositories"), will be used to deal with these controllers. Here are some examples of FakeRAID controllers: [Intel Rapid Storage](https://en.wikipedia.org/wiki/Intel_Rapid_Storage_Technology "wikipedia:Intel Rapid Storage Technology"), JMicron JMB36x RAID ROM, AMD RAID, ASMedia 106x, and NVIDIA MediaShield.
 
 ### Which type of RAID do I have?
 
@@ -323,14 +350,6 @@ Always check the mdadm.conf configuration file using a text editor after running
 Continue with the installation procedure until you reach the step “Create initial ramdisk environment”, then follow the next section.
 
 ### Add mdadm hook to mkinitcpio.conf
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [Mkinitcpio#Common hooks](/index.php/Mkinitcpio#Common_hooks "Mkinitcpio") also suggests adding `mdmon` to the `BINARIES` section. See also [[1]](https://bbs.archlinux.org/viewtopic.php?id=148947) and [[2]](http://unix.stackexchange.com/questions/57440/cant-remount-local-file-systems-for-read-write-raid1). (Discuss in [Talk:RAID#](https://wiki.archlinux.org/index.php/Talk:RAID))
 
 **Note:** This should be done whilst chrooted.
 

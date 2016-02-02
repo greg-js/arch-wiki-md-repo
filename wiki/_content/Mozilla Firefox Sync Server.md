@@ -1,18 +1,10 @@
 # Mozilla Firefox Sync Server
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Various [style](/index.php/Help:Style "Help:Style") problems. Personal comments should go in the Discussion page. (Discuss in [Talk:Mozilla Firefox Sync Server#](https://wiki.archlinux.org/index.php/Talk:Mozilla_Firefox_Sync_Server))
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Firefox_Sync "wikipedia:Firefox Sync"):
 
-NaN
+	_Firefox Sync, originally branded Mozilla Weave, is a browser synchronization feature that allows users to partially synchronize bookmarks, browsing history, preferences, passwords, filled forms, add-ons and the last 25 opened tabs across multiple computers._
 
-NaN
+	_It keeps user data on Mozilla servers, but the data is encrypted in such a way that no third party, not even Mozilla, can access user information. It is also possible for the user to host their own Firefox Sync servers, or indeed, for any entity to do so._
 
 This page details how you should proceed to host your own (Mozilla) Firefox Sync Server (shortened to FFSync), version 1.1 or version 1.5, and how to host your own Firefox Account server.
 
@@ -239,14 +231,6 @@ location /ffsync/ {
 ```
 
 #### Not recommended setup with default web server
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** vague statement ("outdated"), see [Help:Style#Language register](/index.php/Help:Style#Language_register "Help:Style") (Discuss in [Talk:Mozilla Firefox Sync Server#](https://wiki.archlinux.org/index.php/Talk:Mozilla_Firefox_Sync_Server))
 
 (Outdated) systemd service unit:
 

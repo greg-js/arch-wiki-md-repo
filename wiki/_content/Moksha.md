@@ -17,19 +17,19 @@ For additional functionality, one may wish to install the following:
 
 *   **moksha-module-deskshow** — Deskshow Moksha module
 
-NaN
+	[https://github.com/JeffHoogland/moksha-modules-extra](https://github.com/JeffHoogland/moksha-modules-extra) || [moksha-module-deskshow-git](https://aur.archlinux.org/packages/moksha-module-deskshow-git/)<sup><small>AUR</small></sup>
 
 *   **moksha-module-emprint** — Emprint Moksha module
 
-NaN
+	[https://github.com/JeffHoogland/moksha-modules-extra](https://github.com/JeffHoogland/moksha-modules-extra) || [moksha-module-emprint-git](https://aur.archlinux.org/packages/moksha-module-emprint-git/)<sup><small>AUR</small></sup>
 
 *   **moksha-modules-extra** — Miscellaneous extra Moksha modules
 
-NaN
+	[https://github.com/JeffHoogland/moksha-modules-extra](https://github.com/JeffHoogland/moksha-modules-extra) || [moksha-modules-extra-git](https://aur.archlinux.org/packages/moksha-modules-extra-git/)<sup><small>AUR</small></sup>
 
 *   **moksha-radiance-theme** — Moksha Radiance from git sources
 
-NaN
+	[https://github.com/JeffHoogland/MokshaRadiance](https://github.com/JeffHoogland/MokshaRadiance) || [moksha-radiance-theme-git](https://aur.archlinux.org/packages/moksha-radiance-theme-git/)<sup><small>AUR</small></sup>
 
 ## See also
 

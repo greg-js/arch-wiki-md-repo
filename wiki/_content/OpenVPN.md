@@ -587,14 +587,6 @@ For a host to be able to forward IPv4 packets between the LAN and VPN, it must b
 
 #### Routing tables
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Investigate if a routing protocol like RIP, QUAGGA, BIRD, etc can be used (Discuss in [Talk:OpenVPN#](https://wiki.archlinux.org/index.php/Talk:OpenVPN))
-
 By default, all IP packets on a LAN addressed to a different subnet get sent to the default gateway. If the LAN/VPN gateway is also the default gateway, there is no problem and the packets get properly forwarded. If not, the gateway has no way of knowing where to send the packets. There are a couple of solutions to this problem.
 
 *   Add a static route to the default gateway routing the VPN subnet to the LAN/VPN gateway's IP address.
@@ -695,23 +687,7 @@ down /etc/openvpn/update-resolv-conf
 
 Now, when your launch your OpenVPN connection, you should find that your resolv.conf file is updated accordingly, and also returns to normal when your close the connection.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The above does not work on shutdown when following [#Drop root privileges after connecting](#Drop_root_privileges_after_connecting). (Discuss in [Talk:OpenVPN#Dropping root privileges: sub-section in DNS is out-of-sync](https://wiki.archlinux.org/index.php/Talk:OpenVPN#Dropping_root_privileges:_sub-section_in_DNS_is_out-of-sync))
-
 ## L2 Ethernet bridging
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Please add a well thought out section on L2 bridging. (Discuss in [Talk:OpenVPN#](https://wiki.archlinux.org/index.php/Talk:OpenVPN))
 
 For now see: [OpenVPN Bridge](/index.php/OpenVPN_Bridge "OpenVPN Bridge")
 
@@ -727,14 +703,6 @@ If you are having resolve issues when starting your profile:
 RESOLVE: Cannot resolve host address: example.com: Name or service not known
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Ordering "After=network.target" does not work universally. See [network.target](http://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/). Further, not the original unit in `/usr/lib` should be modified but a copy, cross-referencing [Systemd#Editing provided units](/index.php/Systemd#Editing_provided_units "Systemd"). (Discuss in [Talk:OpenVPN#](https://wiki.archlinux.org/index.php/Talk:OpenVPN))
 
 Then, **only if your network setup can be started before OpenVPN**, you should force OpenVPN to wait for the network by adding `Requires=network.target` and `After=network.target` to the OpenVPN systemd service file:
 

@@ -7,7 +7,7 @@ Related articles
 
 According to the [official website](http://www.gnupg.org):
 
-NaN
+	GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as [PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).
 
 ## Contents
 
@@ -216,14 +216,6 @@ Type `help` in the edit key sub menu for more commands.
 
 ### Exporting subkey
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** gpg seems to complain about the master key missing when attempting to change the passphrase on a stripped subkey. (Discuss in [Talk:GnuPG#](https://wiki.archlinux.org/index.php/Talk:GnuPG))
-
 If you plan to use the same key across multiple devices, you may want to strip out your master key and only keep the bare minimum encryption subkey on less secure systems.
 
 First, find out which subkey you want to export.
@@ -308,22 +300,6 @@ $ gpg --list-secret-keys
 ```
 
 ## gpg-agent
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Much of this is outdated and unnecessary info. (Discuss in [Talk:GnuPG#gpg-agent deletion](https://wiki.archlinux.org/index.php/Talk:GnuPG#gpg-agent_deletion))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** [#GPG_AGENT_INFO](#GPG_AGENT_INFO) is deprecated since [gnupg](https://www.archlinux.org/packages/?name=gnupg)-2.1\. See [#Unattended passphrase](#Unattended_passphrase) for new method. (Discuss in [Talk:GnuPG#](https://wiki.archlinux.org/index.php/Talk:GnuPG))
 
 _gpg-agent_ is mostly used as daemon to request and cache the password for the keychain. This is useful if GnuPG is used from an external program like a mail client. It can be activated by adding following line in `gpg.conf`:
 
@@ -648,14 +624,6 @@ Another user reported that _KGpg_ failed to start until the `~/.gnupg` folder is
 
 ### Conflicts between gnome-keyring and gpg-agent
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** See [#GPG_AGENT_INFO](#GPG_AGENT_INFO) (Discuss in [Talk:GnuPG#](https://wiki.archlinux.org/index.php/Talk:GnuPG))
-
 While the Gnome keyring implements a GPG agent component, as of GnuPG version 2.1, GnuPG ignores the `GPG_AGENT_INFO` environment variable, so that Gnome keyring can no longer be used as a GPG agent.
 
 However, since version 0.9.6 the package [pinentry](https://www.archlinux.org/packages/?name=pinentry) provides the `pinentry-gnome3` program. You may set the following option in your `gpg-agent.conf` file
@@ -698,14 +666,6 @@ If gpg hanged with a certain keyserver when trying to receive keys, you might ne
 Your user might not have the permission to access the smartcard which results in a `card error` to be thrown, even though the card is correctly set up and inserted.
 
 One possible solution is to add a new group `scard` including the users who need access to the smartcard.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Is `MODE="664"` necessary? Assigning a group, `MODE="660"` may be enough? (Discuss in [Talk:GnuPG#](https://wiki.archlinux.org/index.php/Talk:GnuPG))
 
 Then use an [udev](/index.php/Udev#Writing_udev_rules "Udev") rule, similar to the following:
 

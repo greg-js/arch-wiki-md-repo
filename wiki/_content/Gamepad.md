@@ -330,14 +330,6 @@ Alternatively you can install [python-steamcontroller-git](https://aur.archlinux
 
 #### Wine
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Binaries from questionable hoster. There is also [x360ce](https://github.com/x360ce/x360ce), but it is most likely different project. (Discuss in [Talk:Gamepad#](https://wiki.archlinux.org/index.php/Talk:Gamepad))
-
 [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
 
  `xbox360cemu.ini` 
@@ -599,14 +591,6 @@ Assuming the device in question is `/dev/input/js0`. After you placed the rule r
 Then replug the device making you trouble. The joystick and event devices should be gone, although their number will still be reserved. But the files are out of the way.
 
 ### Steam Controller Not Pairing
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Under what circumstances do the recommendations under [#Steam Controller](#Steam_Controller) not work? When are these alternatives required? (Discuss in [Talk:Gamepad#](https://wiki.archlinux.org/index.php/Talk:Gamepad))
 
 If the Steam Controller will not pair wirelessly but works when wired make you may need to create the following udev rule, suggested by Valve[[1]](https://steamcommunity.com/app/353370/discussions/0/490123197956024380/).
 

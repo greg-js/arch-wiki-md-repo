@@ -55,14 +55,6 @@ Edit the installation script:
 
 As pstops is not installed in a standard location, the path will need to be hard-coded.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The original author "could not remember" why this is needed, or whether it was required at all (Discuss in [Talk:Packaging Brother printer drivers#](https://wiki.archlinux.org/index.php/Talk:Packaging_Brother_printer_drivers))
-
 This may also need to be added.
 
 ```

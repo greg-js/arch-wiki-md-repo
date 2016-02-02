@@ -1,21 +1,5 @@
 # Juniper VPN
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Using first person, needs more [style](/index.php/Help:Style "Help:Style") fixes. (Discuss in [Talk:Juniper VPN#](https://wiki.archlinux.org/index.php/Talk:Juniper_VPN))
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Low quality workarounds (Discuss in [Talk:Juniper VPN#](https://wiki.archlinux.org/index.php/Talk:Juniper_VPN))
-
 ## Contents
 
 *   [1 Preferred installation method](#Preferred_installation_method)
@@ -65,7 +49,17 @@ cafile=/etc/ssl/bar-chain.pem
 certfile=
 ```
 
-NaN
+	cafile
+
+	ca chain to verify the host certificate
+
+	certfile
+
+	host certificate in DER format. Cafile or certfile must be configured, you can download them from your VPN sign-in page (certificate information, export certificate).
+
+	realm
+
+	You can find out your realm by viewing the page source of your VPN sign-in page: just search for the word realm in it.
 
 5) Start / stop network connect:
 

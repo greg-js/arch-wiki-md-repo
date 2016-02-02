@@ -1,13 +1,5 @@
 # DirectFB
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** No content besides unintelligible sentences and reference to a few AUR packages (Discuss in [Talk:DirectFB#](https://wiki.archlinux.org/index.php/Talk:DirectFB))
-
 [DirectFB](http://directfb.org/) stands for Direct Frame Buffer. It is a software library for GNU/Linux/Unix-based operating systems with a small memory footprint that provides graphics acceleration, input device handling and abstraction layer, and integrated windowing system with support for translucent windows and multiple display layers on top of the Linux framebuffer without requiring any kernel modifications.[2] DirectFB is free software licensed under the terms of the GNU Lesser General Public License (LGPL).
 
 ## Installation

@@ -105,14 +105,6 @@ Another aspect of the strength of the passphrase is that it must not be easily r
 
 ### Password hashes
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention [key derivation functions](https://en.wikipedia.org/wiki/Key_derivation_function "wikipedia:Key derivation function"), in particular PBKDF2, bcrypt and scrypt, how to use them, advantages and disadvantages, especially regarding custom-hardware-based brute-force attacks. (Discuss in [Talk:Security#Removal of incorrect warning](https://wiki.archlinux.org/index.php/Talk:Security#Removal_of_incorrect_warning))
-
 By default, Arch stores the hashed user passwords in the root-only-readable `/etc/shadow` file, separated from the other user parameters stored in the world-readable `/etc/passwd` file, see [Users and groups#User database](/index.php/Users_and_groups#User_database "Users and groups"). See also [#Restricting root](#Restricting_root).
 
 Passwords are set with the **passwd** command, which [stretches](https://en.wikipedia.org/wiki/Key_stretching "wikipedia:Key stretching") them with the [crypt](https://en.wikipedia.org/wiki/Crypt_(C) "wikipedia:Crypt (C)") function and then saves them in `/etc/shadow`. See also [SHA password hashes](/index.php/SHA_password_hashes "SHA password hashes"). The passwords are also [salted](https://en.wikipedia.org/wiki/Salt_(cryptography) "wikipedia:Salt (cryptography)") in order to defend them against [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table "wikipedia:Rainbow table") attacks.
@@ -160,14 +152,6 @@ Once the computer is powered on and the drive is mounted, however, its data beco
 Certain programs, like [Dm-crypt](/index.php/Dm-crypt "Dm-crypt"), allow the user to encrypt a loop file as a virtual volume. This is a reasonable alternative to full disk encryption when only certain parts of the system need be secure.
 
 ### File systems
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** You don't mount a partition, but a file system; i.e. this is not related to [partitioning](/index.php/Partitioning "Partitioning"). In `fs.protected_hardlinks` etc., the "fs" stands for "file system". (Discuss in [Talk:Security#](https://wiki.archlinux.org/index.php/Talk:Security))
 
 The kernel now prevents security issues related to hardlinks and symlinks if the `fs.protected_hardlinks` and `fs.protected_symlinks` sysctl switches are enabled, so there is no longer a major security benefit from separating out world-writable directories.
 

@@ -182,14 +182,6 @@ If you get certificate related errors, you may need to retrieve the server's cer
 
 ### Step #1: Get the certificates
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This may not always be needed, e.g. for gmail `CertificateFile /etc/ssl/certs/ca-certificates.crt` in the config file may be suffcient (Discuss in [Talk:Isync#Step #1: Get the certificates](https://wiki.archlinux.org/index.php/Talk:Isync#Step_.231:_Get_the_certificates))
-
 ```
 
 $ mkdir ~/.cert

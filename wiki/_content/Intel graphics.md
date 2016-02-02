@@ -256,7 +256,7 @@ See [Backlight](/index.php/Backlight "Backlight").
 
 From `man 4 intel`:
 
-NaN
+	_There are a couple of backends available for accelerating the DDX. "UXA" (Unified Acceleration Architecture) is the mature backend that was introduced to support the GEM driver model. It is in the process of being superseded by "SNA" (Sandybridge's New Acceleration). Until that process is complete, the ability to choose which backend to use remains for backwards compatibility._
 
 _SNA_ is the default acceleration method in [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel). If you are experience issues with _SNA_ (e.g. pixelated graphics, corrupt text, etc.), try using _UXA_ instead, which can be done by adding the following line to your [configuration file](#Configuration):
 

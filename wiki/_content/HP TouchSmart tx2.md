@@ -242,11 +242,15 @@ not tested
 
 **Ethernet** : RTL8111/8168B PCI Express Gigabit Ethernet controller
 
-NaN
+	module: _r8169_ in kernel
 
 **Wifi** : Broadcom Corporation BCM4322 802.11a/b/g/n
 
-NaN
+	Followed setup on [Broadcom BCM4312](/index.php/Broadcom_BCM4312 "Broadcom BCM4312")
+
+	module(s): _!b43 !ssb !lib80211 lib80211_crypt_tkip wl_
+
+	_the module must be reinstalled after each kernel update in order for wifi to work._
 
 ### Audio
 

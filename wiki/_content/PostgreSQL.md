@@ -269,21 +269,13 @@ template1 | postgres | UTF8      | C         | C     |
 
 *   **[phpPgAdmin](/index.php/PhpPgAdmin "PhpPgAdmin")** — Web-based administration tool for PostgreSQL.
 
-NaN
+	[http://phppgadmin.sourceforge.net](http://phppgadmin.sourceforge.net) || [phppgadmin](https://www.archlinux.org/packages/?name=phppgadmin)
 
 *   **pgAdmin** — GUI-based administration tool for PostgreSQL.
 
-NaN
+	[http://www.pgadmin.org/](http://www.pgadmin.org/) || [pgadmin3](https://www.archlinux.org/packages/?name=pgadmin3)
 
 ## Setup HHVM to work with PostgreSQL
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** hhvm-pgsql fails to compile against HHVM 3.7.0, but upstream has not resolved the problem yet. See [https://github.com/PocketRent/hhvm-pgsql/issues/82](https://github.com/PocketRent/hhvm-pgsql/issues/82) (Discuss in [Talk:PostgreSQL#Setting up HHVM](https://wiki.archlinux.org/index.php/Talk:PostgreSQL#Setting_up_HHVM))
 
 ```
 $ git clone [https://github.com/PocketRent/hhvm-pgsql.git](https://github.com/PocketRent/hhvm-pgsql.git)

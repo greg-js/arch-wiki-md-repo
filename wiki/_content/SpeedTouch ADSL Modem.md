@@ -1,13 +1,5 @@
 # SpeedTouch ADSL Modem
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Written like a blog post (Discuss in [Talk:SpeedTouch ADSL Modem#](https://wiki.archlinux.org/index.php/Talk:SpeedTouch_ADSL_Modem))
-
 This article will hopefully enable you to connect to the internet using your SpeedTouch modem. If you did not already know, the process is not exactly easy, and this guide is here to help you.
 
 Obviously, this has been built using my own experience (with a SpeedTouch 330) and knowledge from elsewhere. If you feel anything should be contributed, feel free to add or edit any information you see fit.

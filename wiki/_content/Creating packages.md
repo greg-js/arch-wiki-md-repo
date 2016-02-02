@@ -103,7 +103,13 @@ Example PKGBUILDs are located in `/usr/share/pacman/`. An explanation of possibl
 
 _makepkg_ defines two variables that you should use as part of the build and install process:
 
-NaN
+	`srcdir`
+
+	This points to the directory where _makepkg_ extracts or symlinks all files in the source array.
+
+	`pkgdir`
+
+	This points to the directory where _makepkg_ bundles the installed package, which becomes the root directory of your built package.
 
 All of them contain _absolute_ paths, which means, you do not have to worry about your working directory if you use these variables properly.
 

@@ -161,14 +161,6 @@ Additionally, [powertop](/index.php/Powertop "Powertop") may also be employed to
 
 ### Pink & green artifacts in video or webcam output
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** kept for users of other distros until the fix is released upstream. (Discuss in [Talk:Dell XPS 13 (2015)#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13_(2015)))
-
 Update [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) if you haven't already; this should fix the issue.
 
 ### Graphical artifacting/instability after S3 resume

@@ -1,13 +1,5 @@
 # Lenovo ThinkPad X220
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad X220#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X220))
-
 ## Contents
 
 *   [1 Setup](#Setup)
@@ -41,14 +33,6 @@ The graphics driver is provided by the [xf86-video-intel](https://www.archlinux.
 Though this model does have physical Trackpoint buttons, the middle-button-scroll does not work by default. In order to make it work, you need to install the [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput) package from the [Official repositories](/index.php/Official_repositories "Official repositories").
 
 As the Clickpad is buttonless, middle- and right-click support can be enabled by following the instructions [on the Synaptics page](/index.php/Synaptics#Buttonless_touchpads_.28aka_ClickPads.29 "Synaptics").
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad X220#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X220))
 
 Trackpoint properties like speed and sensitivity can be configured using either the sysfs or [udev rules](/index.php/Udev_rules "Udev rules").
 

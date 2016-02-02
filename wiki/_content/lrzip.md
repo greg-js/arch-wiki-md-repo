@@ -2,7 +2,7 @@
 
 From the project [web page](http://ck.kolivas.org/apps/lrzip/):
 
-NaN
+	[Long Range ZIP](http://lrzip.kolivas.org/) (or Lzma RZIP) is a compression program optimised for large files. The larger the file and the more memory you have, the better the compression advantage this will provide, especially once the files are larger than 100MB. The advantage can be chosen to be either size (much smaller than bzip2) or speed (much faster than bzip2).
 
 ## Contents
 

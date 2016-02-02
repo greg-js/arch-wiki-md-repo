@@ -1,13 +1,5 @@
 # Arch package security
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Arch package security#](https://wiki.archlinux.org/index.php/Talk:Arch_package_security))
-
 ## Current state of affairs
 
 A package can become malicious (we consider original sources safe) either intentionally or unintentionally. In the first case packager prepares the package (by modifying sources, adding scripts, modifying build scripts) with intention to make harm to user system or data. In the second case packager by mistake or omission creates the package that if installed puts the user's system in jeopardy.

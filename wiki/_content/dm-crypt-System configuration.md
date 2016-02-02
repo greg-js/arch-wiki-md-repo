@@ -1,13 +1,5 @@
 # dm-crypt/System configuration
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Aggregate here all the generic information on system configuration from the other sub-articles of [Dm-crypt](/index.php/Dm-crypt "Dm-crypt"). (Discuss in [Talk:Dm-crypt/System configuration#](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/System_configuration))
-
 Back to [Dm-crypt](/index.php/Dm-crypt "Dm-crypt").
 
 **Tip:** If in need to remotely unlock root or other early-boot filesystems (headless machine, distant servers...), follow the specific instructions from [Dm-crypt/Specialties#Remote unlocking of encrypted root](/index.php/Dm-crypt/Specialties#Remote_unlocking_of_the_root_.28or_other.29_partition "Dm-crypt/Specialties").

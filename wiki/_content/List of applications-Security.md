@@ -34,145 +34,145 @@ See also [Wikipedia:Comparison of firewalls](https://en.wikipedia.org/wiki/Compa
 
 *   **[Arpwatch](https://en.wikipedia.org/wiki/Arpwatch "wikipedia:Arpwatch")** — Tool that monitors ethernet activity and keeps a database of Ethernet/IP address pairings.
 
-NaN
+	[http://ee.lbl.gov/](http://ee.lbl.gov/) || [arpwatch](https://www.archlinux.org/packages/?name=arpwatch)
 
 *   **Bro** — Powerful network analysis framework that is much different from the typical IDS you may know.
 
-NaN
+	[https://www.bro.org/](https://www.bro.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **EtherApe** — Graphical network monitor for Unix modeled after etherman. Featuring link layer, IP and TCP modes, it displays network activity graphically. Hosts and links change in size with traffic. Color coded protocols display.
 
-NaN
+	[http://etherape.sourceforge.net/](http://etherape.sourceforge.net/) || [etherape](https://www.archlinux.org/packages/?name=etherape)
 
 *   **[Honeyd](/index.php/Honeyd "Honeyd")** — Tool that allows the user to set up and run multiple virtual hosts on a computer network.
 
-NaN
+	[http://www.honeyd.org/](http://www.honeyd.org/) || [honeyd](https://aur.archlinux.org/packages/honeyd/)<sup><small>AUR</small></sup>
 
 *   **IPTraf** — Console-based network monitoring utility.
 
-NaN
+	[https://fedorahosted.org/iptraf-ng/](https://fedorahosted.org/iptraf-ng/) || [iptraf-ng](https://www.archlinux.org/packages/?name=iptraf-ng)
 
 *   **Kismet** — 802.11 layer2 wireless network detector, sniffer, and intrusion detection system.
 
-NaN
+	[http://www.kismetwireless.net/](http://www.kismetwireless.net/) || [kismet](https://www.archlinux.org/packages/?name=kismet)
 
 *   **Nemesis** — Command-line network packet crafting and injection utility.
 
-NaN
+	[http://nemesis.sourceforge.net/](http://nemesis.sourceforge.net/) || [nemesis](https://www.archlinux.org/packages/?name=nemesis)
 
 *   **[Nmap](/index.php/Nmap "Nmap")** — Security scanner used to discover hosts and services on a computer network, thus creating a "map" of the network.
 
-NaN
+	[http://nmap.org/](http://nmap.org/) || [nmap](https://www.archlinux.org/packages/?name=nmap)
 
 *   **[Ntop](/index.php/Ntop "Ntop")** — Network probe that shows network usage in a way similar to what top does for processes.
 
-NaN
+	[http://www.ntop.org/](http://www.ntop.org/) || [ntop](https://www.archlinux.org/packages/?name=ntop)
 
 *   **[Snort](/index.php/Snort "Snort")** — Network intrusion prevention and detection system.
 
-NaN
+	[http://www.snort.org/](http://www.snort.org/) || [snort](https://aur.archlinux.org/packages/snort/)<sup><small>AUR</small></sup>
 
 *   **[Sshguard](/index.php/Sshguard "Sshguard")** — Daemon that protects SSH and other services against brute-force attacts, similar to Fail2ban.
 
-NaN
+	[http://www.sshguard.net/](http://www.sshguard.net/) || [sshguard](https://www.archlinux.org/packages/?name=sshguard)
 
 *   **[Suricata](/index.php/Suricata "Suricata")** — High performance Network IDS, IPS and Network Security Monitoring engine.
 
-NaN
+	[http://suricata-ids.org/](http://suricata-ids.org/) || [suricata](https://aur.archlinux.org/packages/suricata/)<sup><small>AUR</small></sup>
 
 *   **[Tcpdump](https://en.wikipedia.org/wiki/tcpdump "wikipedia:tcpdump")** — Common console-based packet analyzer that allows the user to intercept and display TCP/IP and other packets being transmitted or received over a network.
 
-NaN
+	[http://www.tcpdump.org/](http://www.tcpdump.org/) || [tcpdump](https://www.archlinux.org/packages/?name=tcpdump)
 
 *   **[vnStat](/index.php/VnStat "VnStat")** — Console-based network traffic monitor that keeps a log of network traffic for the selected interfaces.
 
-NaN
+	[http://humdi.net/vnstat/](http://humdi.net/vnstat/) || [vnstat](https://www.archlinux.org/packages/?name=vnstat)
 
 *   **[Wireshark](/index.php/Wireshark "Wireshark")** — Network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.
 
-NaN
+	[http://www.wireshark.org/](http://www.wireshark.org/) || [wireshark-cli](https://www.archlinux.org/packages/?name=wireshark-cli) [wireshark-gtk](https://www.archlinux.org/packages/?name=wireshark-gtk)
 
 #### Threat and vulnerability detection
 
 *   **AFICK** — Security tool that allows to monitor the changes on your files systems, and so can detect intrusions.
 
-NaN
+	[http://afick.sourceforge.net/](http://afick.sourceforge.net/) || [afick](https://aur.archlinux.org/packages/afick/)<sup><small>AUR</small></sup>
 
 *   **Lynis** — Security and system auditing tool to harden Unix/Linux systems.
 
-NaN
+	[https://cisofy.com/lynis/](https://cisofy.com/lynis/) || [lynis](https://www.archlinux.org/packages/?name=lynis)
 
 *   **[Metasploit Framework](/index.php/Metasploit_Framework "Metasploit Framework")** — An advanced open-source platform for developing, testing, and using exploit code.
 
-NaN
+	[http://www.metasploit.com/](http://www.metasploit.com/) || [metasploit](https://aur.archlinux.org/packages/metasploit/)<sup><small>AUR</small></sup>
 
 *   **[Nessus](/index.php/Nessus "Nessus")** — Comprehensive vulnerability scanning program.
 
-NaN
+	[http://www.nessus.org/products/nessus](http://www.nessus.org/products/nessus) || [nessus](https://aur.archlinux.org/packages/nessus/)<sup><small>AUR</small></sup>
 
 *   **[OpenVAS](/index.php/OpenVAS "OpenVAS")** — Framework of several services and tools offering a comprehensive and powerful vulnerability scanning and vulnerability management solution. FOSS Nessus fork.
 
-NaN
+	[http://www.openvas.org/](http://www.openvas.org/) || [openvas](https://www.archlinux.org/groups/x86_64/openvas/)
 
 *   **Osiris** — Tool for monitoring system integrity and changes across a network.
 
-NaN
+	[https://launchpad.net/osiris](https://launchpad.net/osiris) || [osiris](https://www.archlinux.org/packages/?name=osiris)
 
 *   **OSSEC** — Open Source Host-based Intrusion Detection System that performs log analysis, file integrity checking, policy monitoring, rootkit detection, real-time alerting and active response.
 
-NaN
+	[http://www.ossec.net/](http://www.ossec.net/) || [ossec-agent](https://aur.archlinux.org/packages/ossec-agent/)<sup><small>AUR</small></sup> [ossec-local](https://aur.archlinux.org/packages/ossec-local/)<sup><small>AUR</small></sup> [ossec-server](https://aur.archlinux.org/packages/ossec-server/)<sup><small>AUR</small></sup>
 
 *   **Samhain** — Host-based intrusion detection system (HIDS) provides file integrity checking and log file monitoring/analysis, as well as rootkit detection, port monitoring, detection of rogue SUID executables, and hidden processes.
 
-NaN
+	[http://www.la-samhna.de/samhain/index.html](http://www.la-samhna.de/samhain/index.html) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Tiger** — Security tool that can be use both as a security audit and intrusion detection system.
 
-NaN
+	[http://www.nongnu.org/tiger/](http://www.nongnu.org/tiger/) || [tiger](https://aur.archlinux.org/packages/tiger/)<sup><small>AUR</small></sup>
 
 *   **[Tripwire](https://en.wikipedia.org/wiki/Open_Source_Tripwire "wikipedia:Open Source Tripwire")** — Intrusion detection system.
 
-NaN
+	[http://tripwire.sourceforge.net/](http://tripwire.sourceforge.net/) || [tripwire](https://aur.archlinux.org/packages/tripwire/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tripwire)]</sup>
 
 #### File security
 
 *   **[AIDE](/index.php/AIDE "AIDE")** — File and directory integrity checker.
 
-NaN
+	[http://aide.sourceforge.net/](http://aide.sourceforge.net/) || [aide](https://www.archlinux.org/packages/?name=aide)
 
 *   **Logcheck** — Simple utility which is designed to allow a system administrator to view the logfiles which are produced upon hosts under their control.
 
-NaN
+	[https://logcheck.alioth.debian.org/](https://logcheck.alioth.debian.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **[Logwatch](/index.php/Logwatch "Logwatch")** — Customizable log analysis system.
 
-NaN
+	[http://sourceforge.net/projects/logwatch/](http://sourceforge.net/projects/logwatch/) || [logwatch](https://www.archlinux.org/packages/?name=logwatch)
 
 *   **OpenDLP** — OpenDLP is a free and open source, agent- and agentless-based, centrally-managed, massively distributable data loss prevention tool.
 
-NaN
+	[https://code.google.com/p/opendlp/](https://code.google.com/p/opendlp/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **Swatch** — Utility that can monitor just about any type of log.
 
-NaN
+	[http://swatch.sourceforge.net/](http://swatch.sourceforge.net/) || [swatch](https://aur.archlinux.org/packages/swatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/swatch)]</sup>
 
 #### Anti malware
 
 *   **chkrootkit** — Locally checks for signs of a rootkit.
 
-NaN
+	[http://www.chkrootkit.org/](http://www.chkrootkit.org/) || [chkrootkit](https://aur.archlinux.org/packages/chkrootkit/)<sup><small>AUR</small></sup>
 
 *   **[ClamAV](/index.php/ClamAV "ClamAV")** — Open source antivirus engine for detecting trojans, viruses, malware & other malicious threats.
 
-NaN
+	[http://www.clamav.net/](http://www.clamav.net/) || [clamav](https://www.archlinux.org/packages/?name=clamav)
 
 *   **Linux Malware Detect** — Malware scanner designed around the threats faced in shared hosted environments.
 
-NaN
+	[https://www.rfxn.com/projects/linux-malware-detect/](https://www.rfxn.com/projects/linux-malware-detect/) || [maldet](https://aur.archlinux.org/packages/maldet/)<sup><small>AUR</small></sup>
 
 *   **Rootkit Hunter** — Checks machines for the presence of rootkits and other unwanted tools.
 
-NaN
+	[http://rkhunter.sourceforge.net/](http://rkhunter.sourceforge.net/) || [rkhunter](https://www.archlinux.org/packages/?name=rkhunter)
 
 #### Backup programs
 
@@ -186,216 +186,216 @@ See also [Wikipedia:Comparison of backup software](https://en.wikipedia.org/wiki
 
 *   **Cinnamon Screensaver** — Screen locker for the Cinnamon desktop.
 
-NaN
+	[https://github.com/linuxmint/cinnamon-screensaver](https://github.com/linuxmint/cinnamon-screensaver) || [cinnamon-screensaver](https://www.archlinux.org/packages/?name=cinnamon-screensaver)
 
 *   **GNOME Screensaver** — Screen locker for the GNOME Flashback desktop.
 
-NaN
+	[https://wiki.gnome.org/Projects/GnomeScreensaver](https://wiki.gnome.org/Projects/GnomeScreensaver) || [gnome-screensaver](https://www.archlinux.org/packages/?name=gnome-screensaver)
 
 *   **i3lock** — A simple screen locker. Provides user feedback, uses PAM authentication, supports DPMS. The background can be set to an image or solid color.
 
-NaN
+	[http://i3wm.org/i3lock/](http://i3wm.org/i3lock/) || [i3lock](https://www.archlinux.org/packages/?name=i3lock)
 
 *   **i3lock-blur** — Fork of _i3lock_ which can use your desktop with the blur effect applied as a background.
 
-NaN
+	[http://github.com/karulont/i3lock-blur](http://github.com/karulont/i3lock-blur) || [i3lock-blur](https://aur.archlinux.org/packages/i3lock-blur/)<sup><small>AUR</small></sup>
 
 *   **i3lock-wrapper** — A simple wrapper around _i3lock_ which sets up a blurred screenshot of the desktop as a background image.
 
-NaN
+	[https://github.com/ashinkarov/i3-extras](https://github.com/ashinkarov/i3-extras) || [i3lock-wrapper](https://aur.archlinux.org/packages/i3lock-wrapper/)<sup><small>AUR</small></sup>
 
 *   **Light-locker** — A simple locker (forked from _gnome-screensaver_) that aims to have simple, sane, secure defaults and be well integrated with the desktop while not carrying any desktop-specific dependencies. It relies on [LightDM](/index.php/LightDM "LightDM") for locking and unlocking your session via ConsoleKit/UPower or _logind/systemd_
 
-NaN
+	[https://github.com/the-cavalry/light-locker](https://github.com/the-cavalry/light-locker) || [light-locker](https://www.archlinux.org/packages/?name=light-locker)
 
 *   **MATE Screensaver** — Screensaver and locker for MATE Desktop Environment.
 
-NaN
+	[https://github.com/mate-desktop/mate-screensaver](https://github.com/mate-desktop/mate-screensaver) || [mate-screensaver](https://www.archlinux.org/packages/?name=mate-screensaver)
 
 *   **physlock** — Screen and console locker.
 
-NaN
+	[https://github.com/muennich/physlock](https://github.com/muennich/physlock) || [physlock](https://aur.archlinux.org/packages/physlock/)<sup><small>AUR</small></sup>
 
 *   **sflock** — Simple screen locker utility for X, based on slock. Provides a very basic user feedback.
 
-NaN
+	[https://github.com/benruijl/sflock](https://github.com/benruijl/sflock) || [sflock-git](https://aur.archlinux.org/packages/sflock-git/)<sup><small>AUR</small></sup>
 
 *   **slock** — Very simple and lightweight X screen locker. Offers only a black background when locked, there are no animations or text fields.
 
-NaN
+	[http://tools.suckless.org/slock](http://tools.suckless.org/slock) || [slock](https://www.archlinux.org/packages/?name=slock)
 
 *   **sxlock** — Fork of sflock with a few enhancements. Provides basic user feedback, uses PAM authentication, supports DPMS and RandR. Supports `sxlock.service` to lock the screen on suspend/hibernation. See the [README](https://github.com/lahwaacz/sxlock/blob/master/README.md) for more information.
 
-NaN
+	[https://github.com/lahwaacz/sxlock](https://github.com/lahwaacz/sxlock) || [sxlock-git](https://aur.archlinux.org/packages/sxlock-git/)<sup><small>AUR</small></sup>
 
 *   **vlock** — TTY locker. A mirror of the [original vlock](https://lists.archlinux.org/pipermail/aur-general/2013-July/024662.html) is available at [github](https://github.com/WorMzy/vlock).
 
-NaN
+	[http://www.kbd-project.org](http://www.kbd-project.org) || [kbd](https://www.archlinux.org/packages/?name=kbd)
 
 *   **xlockmore** — Simple X11 screen lock with PAM support.
 
-NaN
+	[http://www.tux.org/~bagleyd/xlockmore.html](http://www.tux.org/~bagleyd/xlockmore.html) || [xlockmore](https://www.archlinux.org/packages/?name=xlockmore)
 
 *   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — Screen saver and locker for the X Window System.
 
-NaN
+	[http://www.jwz.org/xscreensaver/](http://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
 
 *   **XSecureLock** — X11 screen lock utility designed with the primary goal of security.
 
-NaN
+	[https://github.com/google/xsecurelock](https://github.com/google/xsecurelock) || [xsecurelock-git](https://aur.archlinux.org/packages/xsecurelock-git/)<sup><small>AUR</small></sup>
 
 #### Hash checkers
 
 *   **cfv** — Tiny utility to both test and create checksum files, support `.sfv`, `.csv`, `.crc`, `.md5`, `md5sum`, `sha1sum`, `.torrent`, `par`, and `.par2` files.
 
-NaN
+	[http://cfv.sourceforge.net/](http://cfv.sourceforge.net/) || [cfv](https://www.archlinux.org/packages/?name=cfv)
 
 *   **GtkHash** — A GTK+ utility for computing message digests or checksums
 
-NaN
+	[http://gtkhash.sourceforge.net/](http://gtkhash.sourceforge.net/) || [gtkhash](https://aur.archlinux.org/packages/gtkhash/)<sup><small>AUR</small></sup>
 
 *   **hashdeep** — A cross-platform tools to computer hashes, or message digests, for any number of files
 
-NaN
+	[http://md5deep.sourceforge.net/](http://md5deep.sourceforge.net/) || [md5deep](https://aur.archlinux.org/packages/md5deep/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/md5deep)]</sup>
 
 *   **Parano** — A GNOME frontend for creating/editing/checking MD5 and SFV files
 
-NaN
+	[http://parano.berlios.de/](http://parano.berlios.de/) || [parano](https://aur.archlinux.org/packages/parano/)<sup><small>AUR</small></sup>
 
 *   **Quick Hash GUI** — A GUI to enable the rapid selection and subsequent hashing of files (individually or recursively throughout a folder structure) text and (on Linux) disks.
 
-NaN
+	[http://sourceforge.net/projects/quickhash/](http://sourceforge.net/projects/quickhash/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **RHash** — Utility for verifying hash sums (SFV, CRC, etc). Supports lots of algorithms.
 
-NaN
+	[http://rhash.anz.ru/](http://rhash.anz.ru/) || [rhash](https://www.archlinux.org/packages/?name=rhash)
 
 *   **MassHash** — A set of file hashing tools (both CLI and GTK+ GUI) written in Python. Supported algorithms include MD5, SHA-1, SHA-224, SHA-256, SHA-384, SHA-512.
 
-NaN
+	[http://jdleicher.github.io/MassHash/](http://jdleicher.github.io/MassHash/) || [masshash](https://aur.archlinux.org/packages/masshash/)<sup><small>AUR</small></sup>
 
 #### Encryption, signing, steganography
 
 *   **ccrypt** — A command-line utility for encrypting and decrypting files and streams.
 
-NaN
+	[http://ccrypt.sourceforge.net/](http://ccrypt.sourceforge.net/) || [ccrypt](https://www.archlinux.org/packages/?name=ccrypt)
 
 *   **[Enigmail](https://en.wikipedia.org/wiki/Enigmail "wikipedia:Enigmail")** — _a security extension to Mozilla Thunderbird and Seamonkey. It enables you to write and receive email messages signed and/or encrypted with the OpenPGP standard._
 
-NaN
+	[https://enigmail.net](https://enigmail.net) || [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup>
 
 *   **[GnuPG](/index.php/GnuPG "GnuPG")** — The GNU project's complete and free implementation of the OpenPGP standard as defined by RFC4880\. Free and Open Source replacement of PGP, mostly used for digital signing of packages.
 
-NaN
+	[http://gnupg.org/](http://gnupg.org/) || [gnupg](https://www.archlinux.org/packages/?name=gnupg)
 
 *   **gzsteg** — A utiltiy that can hide data in gzip compressed files
 
-NaN
+	[http://www.nic.funet.fi/pub/crypt/steganography/](http://www.nic.funet.fi/pub/crypt/steganography/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=gzsteg)</small>
 
 *   **[KGpg](https://en.wikipedia.org/wiki/KGPG "wikipedia:KGPG")** — _a simple interface for GnuPG_ for KDE.
 
-NaN
+	[https://www.kde.org/applications/utilities/kgpg/](https://www.kde.org/applications/utilities/kgpg/) || [kdeutils-kgpg](https://www.archlinux.org/packages/?name=kdeutils-kgpg)
 
 *   **[Seahorse](https://en.wikipedia.org/wiki/Seahorse_(software) "wikipedia:Seahorse (software)")** — _GNOME application for managing encryption keys and passwords in the GnomeKeyring._
 
-NaN
+	[https://wiki.gnome.org/Apps/Seahorse/](https://wiki.gnome.org/Apps/Seahorse/) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
 *   **silenteye** — A steganography application written in C++, use Qt4 library.
 
-NaN
+	[http://www.silenteye.org/](http://www.silenteye.org/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=silenteye)</small>
 
 *   **snow** — Steganography program for concealing messages in text files
 
-NaN
+	[http://www.darkside.com.au/snow/](http://www.darkside.com.au/snow/) || [snow](https://aur.archlinux.org/packages/snow/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/snow)]</sup>
 
 *   **steghide** — A steganography utility that is able to hide data in various kinds of image and audio files.
 
-NaN
+	[http://steghide.sourceforge.net](http://steghide.sourceforge.net) || [steghide](https://www.archlinux.org/packages/?name=steghide)
 
 *   **stegparty** — A steganography utility hides text by typoing text existing text files.
 
-NaN
+	[https://github.com/countrygeek/stegparty](https://github.com/countrygeek/stegparty) || [stegparty](https://aur.archlinux.org/packages/stegparty/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/stegparty)]</sup>
 
 #### Password managers
 
 *   **Console Password Manager** — Curses based password manager using PGP-encryption.
 
-NaN
+	[http://github.com/comotion/cpm](http://github.com/comotion/cpm) || [cpm](https://aur.archlinux.org/packages/cpm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cpm)]</sup>
 
 *   **Figaro's Password Manager 2** — GTK2 port of [Figaro's Password Manager](http://fpm.sourceforge.net/) with some new enhancements.
 
-NaN
+	[http://als.regnet.cz/fpm2/](http://als.regnet.cz/fpm2/) || [fpm2](https://aur.archlinux.org/packages/fpm2/)<sup><small>AUR</small></sup>
 
 *   **GPass** — Password manegement software for GNOME2 desktop.
 
-NaN
+	[http://projects.netlab.jp/gpass/](http://projects.netlab.jp/gpass/) || [gpass](https://aur.archlinux.org/packages/gpass/)<sup><small>AUR</small></sup>
 
 *   **GPassword Manager** — Simple, lightweight and cross-platform utility for managing and accessing passwords.
 
-NaN
+	[http://sourceforge.net/projects/gpasswordman/](http://sourceforge.net/projects/gpasswordman/) || [gpasswordman](https://aur.archlinux.org/packages/gpasswordman/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gpasswordman)]</sup>
 
 *   **Gtkpass** — Gtkpass is a GTK and Libkpass-based password manager for KeePass 1.x databases.
 
-NaN
+	[https://sourceforge.net/projects/gtkpass/](https://sourceforge.net/projects/gtkpass/) || [gtkpass](https://aur.archlinux.org/packages/gtkpass/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtkpass)]</sup>
 
 *   **Ked Password Manager** — A password manager that helps to manage large numbers of passwords.
 
-NaN
+	[http://kedpm.sourceforge.net](http://kedpm.sourceforge.net) || [kedpm](https://aur.archlinux.org/packages/kedpm/)<sup><small>AUR</small></sup>
 
 *   **[KeePass Password Safe](/index.php/KeePass "KeePass")** — Free open source Mono-based password manager, which helps you to manage your passwords in a secure way.
 
-NaN
+	[http://keepass.info/](http://keepass.info/) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
 *   **KeePassC** — KeePassC is a curses-based password manager compatible to KeePass v.1.x and KeePassX.
 
-NaN
+	[https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)<sup><small>AUR</small></sup>
 
 *   **KeePassX** — Free and open source Qt-based password manager. Compatible with KeePass v.1.x and KeePass v.2.x.
 
-NaN
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2)
 
 *   **MyPasswords** — What you need for managing your passwords, including the passwords of your online accounts, bank accounts and ... with the corresponding URLs.
 
-NaN
+	[http://sourceforge.net/projects/mypasswords7/](http://sourceforge.net/projects/mypasswords7/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 *   **MyPasswordSafe** — Easy-to-use QT based password manager, compatible with Password Safe files (and therefore pwsafe).
 
-NaN
+	[http://www.semanticgap.com/myps/](http://www.semanticgap.com/myps/) || [mypasswordsafe](https://aur.archlinux.org/packages/mypasswordsafe/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mypasswordsafe)]</sup>
 
 *   **Pasaffe** — Easy to use password manager for Gnome with a Password Safe 3.0 compatible database.
 
-NaN
+	[https://launchpad.net/pasaffe](https://launchpad.net/pasaffe) || [pasaffe](https://aur.archlinux.org/packages/pasaffe/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pasaffe)]</sup>
 
 *   **[pass](/index.php/Pass "Pass")** — Simple console based password manager
 
-NaN
+	[http://www.passwordstore.org/](http://www.passwordstore.org/) || [pass](https://www.archlinux.org/packages/?name=pass)
 
 *   **Password Gorilla** — A cross-platform password manager.
 
-NaN
+	[https://github.com/zdia/gorilla/wiki/](https://github.com/zdia/gorilla/wiki/) || [password-gorilla](https://aur.archlinux.org/packages/password-gorilla/)<sup><small>AUR</small></sup>
 
 *   **Password Safe** — Simple and secure password manager.
 
-NaN
+	[http://passwordsafe.sourceforge.net/](http://passwordsafe.sourceforge.net/) || [passwordsafe](https://aur.archlinux.org/packages/passwordsafe/)<sup><small>AUR</small></sup>
 
 *   **pwsafe** — Unix commandline program that manages encrypted password databases.
 
-NaN
+	[http://nsd.dyndns.org/pwsafe/](http://nsd.dyndns.org/pwsafe/) || [pwsafe](https://www.archlinux.org/packages/?name=pwsafe)
 
 *   **QPass** — Easy to use password manager with built-in password generator.
 
-NaN
+	[http://qpass.sourceforge.net](http://qpass.sourceforge.net) || [qpass](https://aur.archlinux.org/packages/qpass/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qpass)]</sup>
 
 *   **Revelation** — Password manager for the GNOME desktop.
 
-NaN
+	[http://revelation.olasagasti.info/](http://revelation.olasagasti.info/) || [revelation](https://aur.archlinux.org/packages/revelation/)<sup><small>AUR</small></sup>
 
 *   **Seahorse** — GNOME application for managing encryption keys and passwords in the GnomeKeyring.
 
-NaN
+	[https://wiki.gnome.org/Apps/Seahorse](https://wiki.gnome.org/Apps/Seahorse) || [seahorse](https://www.archlinux.org/packages/?name=seahorse)
 
 *   **Universal Password Manager** — Allows you to store usernames, passwords, URLs and generic notes in an encrypted database protected by one master password.
 
-NaN
+	[http://upm.sourceforge.net/](http://upm.sourceforge.net/) || [upm](https://aur.archlinux.org/packages/upm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/upm)]</sup>
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415904](https://wiki.archlinux.org/index.php?title=List_of_applications/Security&oldid=415904)"

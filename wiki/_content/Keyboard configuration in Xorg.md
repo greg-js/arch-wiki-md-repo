@@ -83,14 +83,6 @@ There are some "unofficial" utilities which allow to print specific information 
 
 ## Setting keyboard layout
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Udev also comes into play (for example when plugging in a keyboard), undoing changes by _setxkbmap_ (Discuss in [Talk:Keyboard configuration in Xorg#](https://wiki.archlinux.org/index.php/Talk:Keyboard_configuration_in_Xorg))
-
 Keyboard layout in Xorg can be set in multiple ways. Here is an explanation of used options:
 
 *   `XkbModel` selects the keyboard model. This has an influence only for some extra keys your keyboard might have. The safe fallback are `pc104` or `pc105`. But for instance laptops usually have some extra keys, and sometimes you can make them work by simply setting a proper model.
@@ -319,14 +311,6 @@ A more resistant way to set the typematic delay and rate is to make them the _se
 See `man xserver` for a full list of X server options and refer to your [display manager](/index.php/Display_manager "Display manager") for information about how to pass these options.
 
 #### Using XServer options
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The AutoRepeat Option has been removed from the keyboad driver version 1.4.0 [https://bugzilla.redhat.com/show_bug.cgi?id=601853#c12](https://bugzilla.redhat.com/show_bug.cgi?id=601853#c12) (Discuss in [Talk:Keyboard configuration in Xorg#](https://wiki.archlinux.org/index.php/Talk:Keyboard_configuration_in_Xorg))
 
 Add this line to `/etc/X11/xorg.conf.d/00-keyboard.conf`:
 

@@ -186,7 +186,7 @@ _The name is a contraction of Minimal SYStem 2, and aims to provide support to f
 
 _We wanted a package management system to provide easy installation of packages, and ported Arch Linux's Pacman. This brings many powerful features such as dependency resolution and simple complete system upgrades, as well as providing the build system (makepkg) which is used to make these packages."_
 
-NaN
+	Source: [MSYS2 | SourceForge.net](http://sourceforge.net/projects/msys2/)
 
 *   Homepage: [http://sourceforge.net/p/msys2/](http://sourceforge.net/p/msys2/)
 *   Forums: [http://sourceforge.net/p/msys2/discussion/](http://sourceforge.net/p/msys2/discussion/)
@@ -297,7 +297,7 @@ Enlisy is an i686 optimized Linux distribution for Pentium 2 based processors an
 
 _"Frugalware Linux is a general-purpose Linux distribution designed for intermediate users who are familiar with command-line operations. It is based on Slackware, but uses a different package management system, Pacman."_
 
-NaN
+	Source: [Wikipedia](https://en.wikipedia.org/wiki/Frugalware "wikipedia:Frugalware")
 
 *   Homepage: [http://frugalware.org/](http://frugalware.org/)
 *   Forums: [http://forums.frugalware.org/](http://forums.frugalware.org/)

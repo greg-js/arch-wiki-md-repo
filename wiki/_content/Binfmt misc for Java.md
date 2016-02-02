@@ -1,16 +1,8 @@
 # Binfmt misc for Java
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Mentions rc.local (Discuss in [Talk:Binfmt misc for Java#](https://wiki.archlinux.org/index.php/Talk:Binfmt_misc_for_Java))
-
 From [Wikipedia](https://en.wikipedia.org/wiki/binfmt_misc "wikipedia:binfmt misc"):
 
-NaN
+	"_binfmt_misc is a capability of the Linux kernel which allows arbitrary executable file formats to be recognized and passed to certain user space applications, such as emulators and virtual machines._"
 
 In plain language, this allows you to take a [Java](/index.php/Java "Java") jar file that you would ordinarily run via a line such as
 

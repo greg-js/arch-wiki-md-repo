@@ -147,14 +147,6 @@ $ dvdbackup -i /dev/dvd -o ~ -M
 
 ## Writing to disc
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Optical Disc Drive](/index.php/Optical_Disc_Drive "Optical Disc Drive").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Dvdbackup#](https://wiki.archlinux.org/index.php/Talk:Dvdbackup))
-
 See [DVD Writing](/index.php/DVD_Writing "DVD Writing").
 
 ### Creating an ISO

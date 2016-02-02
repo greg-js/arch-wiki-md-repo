@@ -5,14 +5,6 @@ Related articles
 *   [IBM ThinkPad X60](/index.php/IBM_ThinkPad_X60 "IBM ThinkPad X60")
 *   [IBM ThinkPad X60s](/index.php/IBM_ThinkPad_X60s "IBM ThinkPad X60s")
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** numerous references to initscripts and [HAL](/index.php/HAL "HAL") (Discuss in [Talk:Lenovo Thinkpad X60 Tablet#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Thinkpad_X60_Tablet))
-
 Installation instructions for the Lenovo Thinkpad X60 Tablet.
 
 ## Contents
@@ -378,7 +370,7 @@ Restart acpid:
 
 Specifications can be found here [on ThinkWiki](http://www.thinkwiki.org/wiki/Category:X60_Tablet)
 
-NaN
+	lspci
 
 ```
 00:00.0 Host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
@@ -407,7 +399,7 @@ NaN
 
 ```
 
-NaN
+	lsusb
 
 ```
 Bus 005 Device 003: ID 0a5c:2110 Broadcom Corp. 

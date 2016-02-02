@@ -1,13 +1,5 @@
 # Dell XPS 13
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** This page is a work in progress. (Discuss in [Talk:Dell XPS 13#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13))
-
 ## Contents
 
 *   [1 Disambiguation](#Disambiguation)

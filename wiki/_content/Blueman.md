@@ -64,14 +64,6 @@ Now you will need to move the script to an appropriate location (e.g., `/usr/loc
 
 The last step is to change the line in _Blueman tray icon > Local Services > Transfer > Advanced_ to `obex_thunar.sh %d`.
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** It would appear that `thunar obex://%d` is not functional. Also note that changing command should not be necessary as the system default file manager will be used by default - see release notes for 1.99.alpha2 (Discuss in [Talk:Blueman#thunar obex:// support](https://wiki.archlinux.org/index.php/Talk:Blueman#thunar_obex:.2F.2F_support))
-
 **Tip:** If you do not want to create a script, you could just replace this command: `nautilus --browse obex://` with this one: `thunar obex://` in _Local Services > Transfer > Advanced_
 
 ### Blueman and PulseAudio
@@ -101,14 +93,6 @@ $ systemctl reboot
 If you see a notification saying `Incoming file over Bluetooth` then this means that the device isn't marked as trusted. Mark it as trusted and try sending the file again.
 
 ### No adapters detected
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Is [rfkill](https://www.archlinux.org/packages/?name=rfkill) genuinely required? It's not a [blueman](https://www.archlinux.org/packages/?name=blueman) dependency and my bluetooth adaptor is detected just fine by blueman without it. (Discuss in [Talk:Blueman#](https://wiki.archlinux.org/index.php/Talk:Blueman))
 
 If your Bluetooth applet or manager doesn't show or detect any Bluetooth adapter, you might be missing [rfkill](https://www.archlinux.org/packages/?name=rfkill). Restart might be required.
 

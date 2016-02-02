@@ -1,13 +1,5 @@
 # Tile-windows
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Tile-windows#](https://wiki.archlinux.org/index.php/Talk:Tile-windows))
-
 Related articles
 
 *   [fluxbox](/index.php/Fluxbox "Fluxbox")

@@ -1,13 +1,5 @@
 # KDM
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** KDM is no longer available in the official repositories.[[1]](https://www.archlinux.org/news/dropping-plasma-4/) (Discuss in [Talk:KDM#](https://wiki.archlinux.org/index.php/Talk:KDM))
-
 Related articles
 
 *   [Display manager](/index.php/Display_manager "Display manager")

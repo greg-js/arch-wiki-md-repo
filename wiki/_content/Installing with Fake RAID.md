@@ -35,9 +35,9 @@ The purpose of this guide is to enable use of a RAID set created by the on-board
 
 From [Wikipedia:RAID](https://en.wikipedia.org/wiki/RAID "wikipedia:RAID"):
 
-NaN
+	_Operating system-based RAID doesn't always protect the boot process and is generally impractical on desktop versions of Windows. Hardware RAID controllers are expensive and proprietary. To fill this gap, cheap "RAID controllers" were introduced that do not contain a RAID controller chip, but simply a standard disk controller chip with special firmware and drivers. During early stage boot-up, the RAID is implemented by the firmware. When a protected-mode operating system kernel such as Linux or a modern version of Microsoft Windows is loaded, the drivers take over._
 
-NaN
+	_These controllers are described by their manufacturers as RAID controllers, and it is rarely made clear to purchasers that the burden of RAID processing is borne by the host computer's central processing unit -- not the RAID controller itself -- thus introducing the aforementioned CPU overhead which hardware controllers do not suffer from. Firmware controllers often can only use certain types of hard drives in their RAID arrays (e.g. SATA for Intel Matrix RAID, as there is neither SCSI nor PATA support in modern Intel ICH southbridges; however, motherboard makers implement RAID controllers outside of the southbridge on some motherboards). Before their introduction, a "RAID controller" implied that the controller did the processing, and the new type has become known in technically knowledgeable circles as "fake RAID" even though the RAID itself is implemented correctly. Adaptec calls them "host RAID"._
 
 See also [FakeRaidHowto @ Community Ubuntu Documentation](https://help.ubuntu.com/community/FakeRaidHowto) for more information.
 
@@ -48,14 +48,6 @@ Despite the terminology, "fake RAID" via [dmraid](https://www.archlinux.org/pack
 In Linux 2.4, the ATARAID kernel framework provided support for fake RAID (software RAID assisted by the BIOS). For Linux 2.6 the device-mapper framework can, among other nice things like [LVM](/index.php/LVM "LVM") and EVMS, do the same kind of work as ATARAID in 2.4\. Whilst the new code handling the RAID I/O still runs in the kernel, device-mapper is generally configured by a userspace application. It was clear that when using the device-mapper for RAID, detection would go to userspace.
 
 Heinz Maulshagen created the dmraid tool to detect RAID sets and create mappings for them. The controllers supported are (mostly cheap) fake RAID IDE/SATA controllers which contain BIOS functions. Common examples include: Promise FastTrak controllers; HighPoint HPT37x; Intel Matrix RAID; Silicon Image Medley; and NVIDIA nForce.
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The installation steps do not reflect the current ArchLinux installation procedure. Need to be updated. Btw, it appears that Intel now recommends mdadm instead of dmraid (see Discussion). Update in progress. See "MBR Install" below for an example of a install using the MBR disk partition layout using intel FakeRAID and mdadm... (Discuss in [Talk:Installing with Fake RAID#](https://wiki.archlinux.org/index.php/Talk:Installing_with_Fake_RAID))
 
 ## Preparation
 
@@ -82,14 +74,6 @@ Heinz Maulshagen created the dmraid tool to detect RAID sets and create mappings
 See [Installation guide#Pre-installation](/index.php/Installation_guide#Pre-installation "Installation guide") for details.
 
 ## MBR Install Example Using mdadm on and Intel FakeRAID
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** see [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:Installing with Fake RAID#](https://wiki.archlinux.org/index.php/Talk:Installing_with_Fake_RAID))
 
 This is here because I spent hours making this work because there is so much information out there on different ways to do it, plus outdated information. It may need integrated into this page better, with more explanation and Archlinux WIKI syntax but I am wrapping this up ATM. This is a basic command line dump that shows a successful RAID setup using the MBR partition structure.
 
@@ -387,14 +371,15 @@ Error: Unable to determine major/minor number of root device '/dev/mapper/nvidia
 
 To work around this problem:
 
-NaN
+*   boot the Fallback kernel
+*   insert the 'sleep' hook in the HOOKS line of /etc/mkinitcpio.conf after the 'udev' hook like this:
 
 ```
 HOOKS="base udev sleep autodetect block dmraid filesystems"
 
 ```
 
-NaN
+*   rebuild the kernel image and reboot
 
 ### dmraid mirror fails to activate
 

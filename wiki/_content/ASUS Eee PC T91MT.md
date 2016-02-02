@@ -1,13 +1,5 @@
 # ASUS Eee PC T91MT
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Laptop/Asus](/index.php/Laptop/Asus "Laptop/Asus").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:ASUS Eee PC T91MT#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_T91MT))
-
 | **Device** | **Status** | **Modules** |
 | Graphics | **Not working** | Intel GMA 500 |
 | Ethernet | **Working** |  ??? |

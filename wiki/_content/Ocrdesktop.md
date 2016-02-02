@@ -1,13 +1,5 @@
 # Ocrdesktop
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This wiki page is a work in progress by chrys. (Discuss in [Talk:Ocrdesktop#](https://wiki.archlinux.org/index.php/Talk:Ocrdesktop))
-
 OCRdesktop is a useful accessibility tool to grab content from the screen as text via OCR technology.
 
 It takes an image of the current window or workspace, prepares it for better results and uses tesseract to recognize text on it. The result is presented in a caret enabled text area, in a detailed list with coordinates and confidence or in the clipboard. It also can emulate clicks on the text. It consists of two main parts.

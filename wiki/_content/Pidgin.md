@@ -2,7 +2,7 @@
 
 From the project [home page](http://www.pidgin.im/):
 
-NaN
+	_Pidgin is an easy to use and free chat client used by millions. Connect to AIM, MSN, Yahoo, and more chat networks all at once._
 
 ## Contents
 
@@ -36,7 +36,7 @@ NaN
 
 *   **Pidgin Light** — Light Pidgin version without GStreamer, Tcl/Tk, XScreenSaver, video/voice support.
 
-NaN
+	[http://pidgin.im/](http://pidgin.im/) || [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)<sup><small>AUR</small></sup>
 
 You may also want to install additional plugins from the [purple-plugin-pack](https://www.archlinux.org/packages/?name=purple-plugin-pack).
 

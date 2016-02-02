@@ -13,7 +13,7 @@ Related articles
 
 From project [home page](http://lxde.org/):
 
-NaN
+	_The "Lightweight X11 Desktop Environment" is an extremely fast-performing and energy-saving desktop environment. Maintained by an international community of developers, it comes with a beautiful interface, multi-language support, standard keyboard short cuts and additional features like tabbed file browsing. LXDE uses less CPU and less RAM than other environments. It is especially designed for cloud computers with low hardware specifications, such as, netbooks, mobile devices (e.g. MIDs) or older computers._
 
 ## Contents
 
@@ -69,14 +69,6 @@ See also [Start X at login](/index.php/Start_X_at_login "Start X at login").
 ## Tips and tricks
 
 ### Application menu editing
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Desktop entries](/index.php/Desktop_entries "Desktop entries").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:LXDE#](https://wiki.archlinux.org/index.php/Talk:LXDE))
 
 The application menu works by resolving the `.desktop` files located in `/usr/share/applications`. Many desktop environments run programs that supersede these settings to allow customization of the menu. LXDE has yet to create an application menu editor but you can manually build them yourself if you are so inclined. Third party menu editor can be found in [AUR](/index.php/AUR "AUR") - [lxmed](https://aur.archlinux.org/packages/lxmed/)<sup><small>AUR</small></sup>
 
@@ -168,14 +160,6 @@ LXDE does not come with a screen locker of its own; see [List of applications/Se
 
 ### lxpanel icons
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `.local/share/` preferred (Discuss in [Talk:LXDE#](https://wiki.archlinux.org/index.php/Talk:LXDE))
-
 Default icons used by lxpanel are stored in `/usr/share/pixmaps` and any custom icons you want lxpanel to use need to be saved there as well.
 
 You can change default icons for applications by taking the following steps:
@@ -237,14 +221,6 @@ This requires installation of [upower](https://www.archlinux.org/packages/?name=
 ## Troubleshooting
 
 ### NTFS with Chinese characters
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [NTFS-3G](/index.php/NTFS-3G "NTFS-3G").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:LXDE#](https://wiki.archlinux.org/index.php/Talk:LXDE))
 
 For a storage device with an NTFS filesystem, you will need to install the [NTFS-3G](/index.php/NTFS-3G "NTFS-3G") package. Generally, PCManFM works well with NTFS filesystems, however there is one bug affecting NTFS users that if you have files or directories on an NTFS filesystem, the names of which contain non-latin characters (e.g. Chinese characters) may disappear when opening (or auto-mounting) the NTFS volume. This happens because the lxsession mount-helper is not correctly parsing the policies and locale options. There is a workaround for this:
 

@@ -146,7 +146,9 @@ You can use the global `:g/` command to search for patterns and then execute a c
 
 Command Outcome
 
-NaN
+	g/^#/d Delete all lines that begins with #
+
+	g/^$/d Delete all lines that are empty
 
 ### Saving, quitting, and opening
 

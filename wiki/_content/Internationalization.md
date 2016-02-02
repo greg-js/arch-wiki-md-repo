@@ -4,7 +4,8 @@ This is the main article on the internationalization of an Arch Linux installati
 
 The article makes use of subpages for instructions specific for languages:
 
-NaN
+| [Internationalization/Indic](/index.php/Internationalization/Indic "Internationalization/Indic") | [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese") | [Internationalization/Korean](/index.php/Internationalization/Korean "Internationalization/Korean") |
+| [Internationalization/Korean (한국어)](/index.php/Internationalization/Korean_(%ED%95%9C%EA%B5%AD%EC%96%B4) "Internationalization/Korean (한국어)") |
 
 ## Contents
 
@@ -31,22 +32,6 @@ See [Locale](/index.php/Locale "Locale").
 See [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console") and [Keyboard configuration in Xorg](/index.php/Keyboard_configuration_in_Xorg "Keyboard configuration in Xorg").
 
 ## Input methods in Xorg
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** A brief introduction of _input methods_ should be added, similar to [Internationalization/Korean#Input_in_Xorg](/index.php/Internationalization/Korean#Input_in_Xorg "Internationalization/Korean"). (Discuss in [Talk:Internationalization#](https://wiki.archlinux.org/index.php/Talk:Internationalization))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Does the subsection structure still fit and is appropriate for the main article? Can you help with integrating the comments referred to in [ArchWiki:Requests#Input_methods](/index.php/ArchWiki:Requests#Input_methods "ArchWiki:Requests") to improve the article? (Discuss in [Talk:Internationalization#](https://wiki.archlinux.org/index.php/Talk:Internationalization))
 
 *   [gcin](/index.php/Gcin "Gcin")
 *   [fcitx](/index.php/Fcitx "Fcitx")
@@ -88,7 +73,7 @@ XSETTINGS provides a common API to configure common desktop settings. Similar da
 
 The if GTK+ has debugging enabled, the loaded modules can be seen by
 
-NaN
+	 `application --gtk-debug modules` 
 
 Otherwise, the modules can be seen by scanning the linked libraries in gdb after attaching to the process.
 

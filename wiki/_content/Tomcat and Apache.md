@@ -1,21 +1,5 @@
 # Tomcat and Apache
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Tomcat](/index.php/Tomcat "Tomcat").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Tomcat and Apache#](https://wiki.archlinux.org/index.php/Talk:Tomcat_and_Apache))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.d references. Needs update to [Systemd](/index.php/Systemd "Systemd"). (Discuss in [Talk:Tomcat and Apache#](https://wiki.archlinux.org/index.php/Talk:Tomcat_and_Apache))
-
 This document describes the steps needed to install Apache Tomcat. It also optionally describes how to integrate Tomcat with the Apache Web Server, and how to configure MySQL to work with Tomcat Servlets and JSPs.
 
 ## Contents

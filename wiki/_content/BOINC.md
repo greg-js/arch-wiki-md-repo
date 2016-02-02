@@ -2,11 +2,11 @@
 
 From the [BOINC website](http://boinc.berkeley.edu/):
 
-NaN
+	Use the idle time on your computer (Windows, Mac, or Linux) to cure diseases, study global warming, discover pulsars, and do many other types of scientific research. It's safe, secure, and easy.
 
 From [Wikipedia:BOINC](https://en.wikipedia.org/wiki/BOINC "wikipedia:BOINC"):
 
-NaN
+	The Berkeley Open Infrastructure for Network Computing (BOINC) is a non-commercial middleware system for volunteer and grid computing. It was originally developed to support the SETI@home project before it became useful as a platform for other distributed applications in areas as diverse as mathematics, medicine, molecular biology, climatology, and astrophysics. The intent of BOINC is to make it possible for researchers to tap into the enormous processing power of personal computers around the world.
 
 ## Contents
 
@@ -111,7 +111,13 @@ Also, if it is important to you, check if the project makes the data and results
 
 Some projects provide only 32bit applications which may require 32bit libraries to run work units or show graphics. You will find most of these libraries in the [multilib] repository.
 
-NaN
+	To run WUs (e.g. Climateprediction)
+
+	[lib32-glibc](https://www.archlinux.org/packages/?name=lib32-glibc), [lib32-glib2](https://www.archlinux.org/packages/?name=lib32-glib2)
+
+	To show graphics (e.g. Several projects of WCG, Climateprediction)
+
+	[lib32-pango](https://www.archlinux.org/packages/?name=lib32-pango), [lib32-libxdamage](https://www.archlinux.org/packages/?name=lib32-libxdamage), [lib32-libxi](https://www.archlinux.org/packages/?name=lib32-libxi), [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl), [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libjpeg6)]</sup> (AUR), and [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
 
 ## Troubleshooting
 
@@ -136,22 +142,6 @@ To do this on boot, create the following tmpfiles.d config:
  `/etc/tmpfiles.d/ondemand-ignore-nice.conf`  `w /sys/devices/system/cpu/cpufreq/ondemand/ignore_nice_load - - - - 1` 
 
 ### Unable to download with World Community Grid
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Pointing to modified PKGBUILD without explaining the differences from the official one is just wrong. (Discuss in [Talk:BOINC#](https://wiki.archlinux.org/index.php/Talk:BOINC))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Modified PKGBUILD should be in [AUR](/index.php/AUR "AUR") (Discuss in [Talk:BOINC#](https://wiki.archlinux.org/index.php/Talk:BOINC))
 
 If you are unable to download new work units for the World Community Grid project, [makepkg](/index.php?title=Rebuild&action=edit&redlink=1 "Rebuild (page does not exist)") [openssl](https://www.archlinux.org/packages/?name=openssl) using a [modified PKGBUILD](http://pastebin.com/pYcYf4dr). Then [restart](/index.php/Restart "Restart") `boinc.service`.
 

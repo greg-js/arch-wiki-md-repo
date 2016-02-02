@@ -228,9 +228,19 @@ Now we need to tell courier the who is who on this box -- who we serve e-mail fo
 
 For example, lets say you have a server at _blahfarm.com_. Usually they make your server a host on their domain. This is likely something like _server234.blahfarm.com_ . Now, you want your server available from the web by a more meaningful and even cooler name, so you buy (or rent) a domain name like _my-cool-domain.ca_ . In this case the setup looks like this:
 
-NaN
+	locals:
 
-NaN
+	localhost
+
+	server237.blahfarm.com
+
+	hosteddomains:
+
+	my-cool-domain.ca
+
+	project1.my-cool-domain.ca
+
+	smtp.my-cool-domain.ca
 
 **Note:** Any subdomain like _project1.my-cool-domain.ca_ or _smtp.my-cool-domain.ca_ also must also be in `/etc/courier/hosteddomains` if you want to have email addresses like _info@project1.my-cool-domain.ca_
 

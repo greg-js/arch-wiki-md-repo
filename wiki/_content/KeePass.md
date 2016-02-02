@@ -19,35 +19,27 @@ There are two major implementations of KeePass, both of which are included in of
 
 *   **[KeePass](https://en.wikipedia.org/wiki/KeePass "wikipedia:KeePass")** — An easy-to-use password manager for Windows, Linux, Mac OS X and mobile devices. It also has optional autotype and clipboard support respectively when `xdotool` and `xsel` are installed. Supports importing from [many formats](http://keepass.info/help/base/importexport.html).
 
-NaN
+	[http://keepass.info](http://keepass.info) || [keepass](https://www.archlinux.org/packages/?name=keepass)
 
 *   **[KeePassX](https://en.wikipedia.org/wiki/KeePassX "wikipedia:KeePassX")** — KeePassX is a cross platform port of the Windows application _Keepass Password Safe (v1.x)_. KeePassX only supports the KeePass 2.x (.kdbx) password database format in the 2.0 branch. However, you can create an export in KeePass 1.x database format (.kdb) from KeePass 2.x, which can be imported to KeePassX. One may also import PwManager databases and KWallet XML databases. While KeepassX does not support plugins on its master branch, the KeepassX-HTTP branch supports KeepassHTTP protocol. Thus, it allows integration through browser addons such as ChromeIPass and PassIFox.
 
-NaN
+	[http://www.keepassx.org/](http://www.keepassx.org/) || [keepassx](https://www.archlinux.org/packages/?name=keepassx) [keepassx2](https://www.archlinux.org/packages/?name=keepassx2) [keepassx-http](https://aur.archlinux.org/packages/keepassx-http/)<sup><small>AUR</small></sup>
 
 Other lesser known implementations are found in the AUR:
 
 *   **keepassc** — A curses-based password manager compatible to KeePass v.1.x and KeePassX. It also uses `xsel` for clipboard functions.
 
-NaN
+	[https://raymontag.github.com/keepassc](https://raymontag.github.com/keepassc) || [keepassc](https://aur.archlinux.org/packages/keepassc/)<sup><small>AUR</small></sup>
 
 *   **kpcli** — A command line browser of KeePassX database files `*.kdb`.
 
-NaN
+	[http://sourceforge.net/projects/kpcli/](http://sourceforge.net/projects/kpcli/) || [kpcli](https://aur.archlinux.org/packages/kpcli/)<sup><small>AUR</small></sup>
 
 *   **keeweb** — A desktop webapp compatible to KeePass 2.x.
 
-NaN
+	[https://github.com/antelle/keeweb](https://github.com/antelle/keeweb) || [keeweb-desktop](https://aur.archlinux.org/packages/keeweb-desktop/)<sup><small>AUR</small></sup>
 
 ## Integration
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** KeepassHTTP requires KeePass, however a compatible version of KeePassX is available [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1548135#p1548135) (Discuss in [Talk:KeePass#](https://wiki.archlinux.org/index.php/Talk:KeePass))
 
 Many [plugins and extensions](http://keepass.info/plugins.html) are available for integrating KeePass to other software.
 

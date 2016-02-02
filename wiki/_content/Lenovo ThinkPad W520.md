@@ -1,21 +1,5 @@
 # Lenovo ThinkPad W520
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad W520#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_W520))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Notepad-like style (Discuss in [Talk:Lenovo ThinkPad W520#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_W520))
-
 ## Contents
 
 *   [1 Note](#Note)
@@ -96,14 +80,6 @@ $ intel-virtual-output -f
     *   [PulseAudio#Choppy sound](/index.php/PulseAudio#Choppy_sound "PulseAudio")
 
 ## Ultranav - Trackpoint and Touchpad
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** Merge into the main article, then just link to it instead of duplicating content. (Discuss in [Talk:Lenovo ThinkPad W520#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_W520))
 
 Trackpoint and Touchpad will work out of the box, but some tweaking is required for further configuration.
 

@@ -8,7 +8,9 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC "wikipedia:파이썬"):
 
-NaN
+	_파이썬(Python)은 1991년 프로그래머인 귀도 반 로섬(Guido van Rossum) 이 발표한 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑(dynamically typed) 대화형 언어이다. 파이썬이라는 이름은 귀도가 좋아하는 코미디 〈Monty Python's Flying Circus〉에서 따온 것이다._
+
+	_파이썬은 비영리의 파이썬 소프트웨어 재단이 관리하는 개방형, 공동체 기반 개발 모델을 가지고 있다. C언어로 구현된 C파이썬 구현이 사실상의 표준이다._
 
 ## Contents
 

@@ -44,14 +44,6 @@ In order to turn off UEFI booting you will need to boot into your BIOS and chang
 
 ### UEFI
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [GRUB#UEFI systems](/index.php/GRUB#UEFI_systems "GRUB").**
-
-**Notes:** unnecessary duplication (Discuss in [Talk:Lenovo ThinkPad X1 Carbon#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X1_Carbon))
-
 Use [archboot](/index.php/Archboot "Archboot") to install or see [https://bbs.archlinux.org/viewtopic.php?pid=1288500#p1288500](https://bbs.archlinux.org/viewtopic.php?pid=1288500#p1288500)
 
 1\. You follow the guide from here and skip the part about errors and refind: [Create_UEFI_bootable_USB_from_ISO](/index.php/Unified_Extensible_Firmware_Interface#Create_UEFI_bootable_USB_from_ISO "Unified Extensible Firmware Interface")

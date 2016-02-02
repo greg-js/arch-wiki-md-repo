@@ -86,7 +86,7 @@ In order to use hibernation, you need to create a [swap](/index.php/Swap "Swap")
 
 Even if your swap partition is smaller than RAM, you still have a big chance of hibernating successfully. According to [kernel documentation](https://www.kernel.org/doc/Documentation/power/interface.txt):
 
-NaN
+	_`/sys/power/image_size` controls the size of the image created by the suspend-to-disk mechanism. It can be written a string representing a non-negative integer that will be used as an upper limit of the image size, in bytes. The suspend-to-disk mechanism will do its best to ensure the image size will not exceed that number. However, if this turns out to be impossible, it will try to suspend anyway using the smallest image possible. In particular, if "0" is written to this file, the suspend image will be as small as possible. Reading from this file will display the current image size limit, which is set to 2/5 of available RAM by default._
 
 You may either decrease the value of `/sys/power/image_size` to make the suspend image as small as possible (for small swap partitions), or increase it to possibly speed up the hibernation process.
 
@@ -136,11 +136,11 @@ In the example the value of `_swap_file_offset_` is `38912`.
 
 *   When an [initramfs](/index.php/Initramfs "Initramfs") with the `base` hook is used, which is the default, the `resume` hook is required in `/etc/mkinitcpio.conf`. Whether by label or by UUID, the swap partition is referred to with a udev device node, so the `resume` hook must go _after_ the `udev` hook. This example was made starting from the default hook configuration:
 
-NaN
+	 `HOOKS="base udev **resume** autodetect modconf block filesystems keyboard fsck"` 
 
-NaN
+	Remember to [rebuild the initramfs](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") for these changes to take effect.
 
-NaN
+**Note:** [LVM](/index.php/LVM "LVM") users should add the `resume` hook after `lvm2`.
 
 *   When an initramfs with the `systemd` hook is used, a resume mechanism is already provided, and no further hooks need to be added.
 
@@ -163,14 +163,6 @@ There have been many reports about the screen going black without easily viewabl
 If [Wake-on-LAN](/index.php/Wake-on-LAN "Wake-on-LAN") is active, the network interface card will consume power even if the computer is hibernated.
 
 ### Instantaneous wakeups from suspend
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** "Some devices" "are reported" - please provide a bug report and specific models (Discuss in [Talk:Power management/Suspend and hibernate#](https://wiki.archlinux.org/index.php/Talk:Power_management/Suspend_and_hibernate))
 
 Some USB devices are reported to mess with the ACPI wakeup triggers after being plugged in once, causing the system to wake from suspension instantaneously. This is usually resolved by a reboot, but can also be fixed by disabling wakeup through USB. To view the current configuration:
 

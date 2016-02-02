@@ -1,13 +1,5 @@
 # User-mode Linux
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Dead project (last activity in 2007), [inaccurate information](/index.php/Talk:User-mode_Linux "Talk:User-mode Linux") (Discuss in [Talk:User-mode Linux#Needs work](https://wiki.archlinux.org/index.php/Talk:User-mode_Linux#Needs_work))
-
 User-mode-Linux (UML) is a method to run Linux inside Linux as a normal process. Please check [[1]](http://user-mode-linux.sourceforge.net/) for in-depth information what UML is and how it works.
 
 ## Contents

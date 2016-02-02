@@ -5,14 +5,6 @@ Related articles
 *   [Network bridge](/index.php/Network_bridge "Network bridge")
 *   [netctl](/index.php/Netctl "Netctl")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Network bridge](/index.php/Network_bridge "Network bridge").**
-
-**Notes:** I suggest to move the netctl-specific parts of this article into a subsection of "Network bridge" (Discuss in [Talk:Bridge with netctl#](https://wiki.archlinux.org/index.php/Talk:Bridge_with_netctl))
-
 Make sure [netctl](/index.php/Netctl "Netctl") is installed.
 
 Copy `/etc/netctl/examples/bridge` to `/etc/netctl/bridge`.

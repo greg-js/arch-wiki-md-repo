@@ -1,13 +1,5 @@
 # Xilinx ISE WebPACK
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See in particular [Help:Style#Command line text](/index.php/Help:Style#Command_line_text "Help:Style"). (Discuss in [Talk:Xilinx ISE WebPACK#](https://wiki.archlinux.org/index.php/Talk:Xilinx_ISE_WebPACK))
-
 The Xilinx ISE WebPACK is a complete FPGA/CPLD programmable logic design suite providing:
 
 *   Specification of programmable logic via schematic capture or Verilog/VHDL
@@ -224,14 +216,6 @@ SUBSYSTEM=="usb", ATTRS{idVendor}=="xxxx", ATTRS{idProduct}=="xxxx", GROUP="user
 If it still doesn't work, you can make further reading in [Xilinx_JTAG_Linux](http://www.george-smart.co.uk/wiki/Xilinx_JTAG_Linux). The magic git repo there may be help.
 
 ### Xilinx Platform Cable USB-JTAG Drivers
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Building as root is dangerous! (Discuss in [Talk:Xilinx ISE WebPACK#](https://wiki.archlinux.org/index.php/Talk:Xilinx_ISE_WebPACK))
 
 Make sure you have installed [fxload](https://aur.archlinux.org/packages/fxload/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") . We need to build driver from source (git and some make stuff need to be installed, make will say what programs or libraries are missed):
 

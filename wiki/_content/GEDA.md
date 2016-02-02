@@ -1,13 +1,5 @@
 # GEDA
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:GEDA#](https://wiki.archlinux.org/index.php/Talk:GEDA))
-
 The gEDA project has produced and continues working on a full GPL'd suite and toolkit of Electronic Design Automation tools. These tools are used for electrical circuit design, schematic capture, simulation, prototyping, and production. Currently, the gEDA project offers a mature suite of free software applications for electronics design, including schematic capture, attribute management, bill of materials (BOM) generation, netlisting into over 20 netlist formats, analog and digital simulation, and printed circuit board (PCB) layout.
 
 The gEDA project was started because of the lack of free EDA tools for POSIX systems with the primary purpose of advancing the state of free hardware or open source hardware. The suite is mainly being developed on the GNU/Linux platform with some development effort going into making sure the tools run on other platforms as well.

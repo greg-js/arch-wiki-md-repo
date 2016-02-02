@@ -83,14 +83,6 @@ There is a number of front-ends available for controlling the PulseAudio daemon:
 
 ### Configuration files
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [PulseAudio/Configuration](/index.php/PulseAudio/Configuration "PulseAudio/Configuration").**
-
-**Notes:** Configuration should stay in the main article, so the linked page should be merged here. Split [#Troubleshooting](#Troubleshooting) instead if this page is found too long. (Discuss in [Talk:PulseAudio#Abandoned draft](https://wiki.archlinux.org/index.php/Talk:PulseAudio#Abandoned_draft))
-
 By default, PulseAudio is configured to automatically detect all sound cards and manage them. It takes control of all detected ALSA devices and redirect all audio streams to itself, making the PulseAudio daemon the central configuration point. The daemon should work mostly out of the box, only requiring a few minor tweaks.
 
 PulseAudio will first look for configuration files in home directory `~/.config/pulse`, then in system wide `/etc/pulse`.
@@ -205,7 +197,7 @@ You may want to use ALSA directly in most of your applications while still being
 
 *   Edit `/etc/pulse/default.pa`.
 
-NaN
+	Find and uncomment lines which load back-end drivers. Add **device** parameters as follows. Then find and comment lines which load autodetect modules.
 
 ```
 load-module module-alsa-sink **device=dmix**
@@ -225,7 +217,7 @@ $ chmod +x ~/.kde4/env/kmix_disable_pulse.sh
 
 *   Now, reboot your computer and try running ALSA and PulseAudio applications at the same time. They both should produce sound simultaneously.
 
-NaN
+	Use [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) to control PulseAudio volume if needed.
 
 ### OSS
 
@@ -284,14 +276,6 @@ Be sure to remove the `dev=default` option of the alsa driver or adjust it to sp
 
 ## Equalizer
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** As of [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio)-7.0-2, the `module-equalizer-sink` is unsupported, see [Talk:PulseAudio#Equalizer module is unsupported](/index.php/Talk:PulseAudio#Equalizer_module_is_unsupported "Talk:PulseAudio"). (Discuss in [Talk:PulseAudio#](https://wiki.archlinux.org/index.php/Talk:PulseAudio))
-
 PulseAudio has an integrated 10-band equalizer system. In order to use the equalizer do the following:
 
 Install [pulseaudio-equalizer](https://www.archlinux.org/packages/?name=pulseaudio-equalizer):
@@ -332,14 +316,6 @@ load-module module-dbus-protocol
 
 ### QEMU
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [QEMU](/index.php/QEMU "QEMU").**
-
-**Notes:** QEMU is the most complex of the "applications" described in this section, merging to the main article would provide better context. (Discuss in [Talk:PulseAudio#](https://wiki.archlinux.org/index.php/Talk:PulseAudio))
-
 The audio driver used by QEMU is set with the `QEMU_AUDIO_DRV` environment variable:
 
 ```
@@ -360,14 +336,6 @@ The listed options can be exported as environment variables, for example:
 $ export QEMU_PA_SINK=alsa_output.pci-0000_04_01.0.analog-stereo.monitor
 $ export QEMU_PA_SOURCE=input
 ```
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The following is not specific to PulseAudio. (Discuss in [Talk:PulseAudio#](https://wiki.archlinux.org/index.php/Talk:PulseAudio))
 
 To get list of the supported emulation audio drivers
 
@@ -566,14 +534,6 @@ If you want to make the change persistent you will have to add it to your local 
 load-module module-switch-on-connect
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Editing `/usr/bin/start-pulseaudio-x11` will not survive package upgrade. The offending module can be unloaded in the config before loading `module-switch-on-connect`, see [Talk:Bluetooth_headset#GDMs_pulseaudio_instance_captures_bluetooth_headset](/index.php/Talk:Bluetooth_headset#GDMs_pulseaudio_instance_captures_bluetooth_headset "Talk:Bluetooth headset"). (Discuss in [Talk:PulseAudio#](https://wiki.archlinux.org/index.php/Talk:PulseAudio))
 
 On KDE/Plasma5 you should furthermore disable module-device-manager. As soon as Plasma5 is started it loads (via start-pulseaudio-x11) the module module-device-manager for pulseaudio to manage the devices. But that module apparently conflicts with module-switch-on-connect. Therefore you should disable that module by editing /bin/start-pulseaudio-x11 and commenting the lines for KDE. Simply logout and login again and in order to renew your pulseaudio session. On connect switching should now work properly.
 

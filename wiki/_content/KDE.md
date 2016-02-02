@@ -179,11 +179,11 @@ Note that the [SDDM](/index.php/SDDM "SDDM") login screen is not part of this th
 
 **Tip:** For Qt and GTK theme consistency, see [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
-NaN
+	Qt4
 
 For Qt4 applications to have a consistent appearance, there are two options: Install [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4) and then pick Breeze as GUI Style in `qtconfig-qt4`; or install [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) and pick GTK+ as GUI Style.
 
-NaN
+	GTK+
 
 The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in _System Settings > Application Style > GNOME Application Style_.
 
@@ -331,14 +331,6 @@ KDE now uses **inotify** directly from the kernel with **kdirwatch** (included i
 
 ### Autostarting applications
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** See [KDE Wallet#Using the KDE Wallet to store ssh keys](/index.php/KDE_Wallet#Using_the_KDE_Wallet_to_store_ssh_keys "KDE Wallet"). Merge general information here. (Discuss in [Talk:KDE#](https://wiki.archlinux.org/index.php/Talk:KDE))
-
 Plasma can autostart applications and run scripts on startup and shutdown. To autostart an application, start `systemsettings` and navigate to _Startup and Shutdown_ -> _Autostart_ and add the program or shell script of your choice. Note that programs can be autostarted on login only, whilst shell scripts can also be run on shutdown or even before Plasma itself starts. For applications, a `.desktop` file will be created in the `~/.config/autostart` directory. For shell scripts, a symlink will be created in one the following directories:
 
 *   `~/.config/autostart-scripts` - for starting at login.
@@ -467,7 +459,7 @@ Name=/home/username/.local/akonadi/akonadi.db
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Phonon_(software) "wikipedia:Phonon (software)"):
 
-NaN
+	_“Phonon is the multimedia API provided by KDE and is the standard abstraction for handling multimedia streams within KDE software and also used by several Qt applications._
 
 Phonon was originally created to allow KDE and Qt software to be independent of any single multimedia framework such as GStreamer or xine and to provide a stable API for a major version's lifetime.”
 
@@ -703,14 +695,6 @@ See [Qt#Configuration of Qt apps under environments other than KDE](/index.php/Q
 Make sure you have the proper driver for your card installed, so that your desktop is at least 2D accelerated. Follow these articles for more information: [ATI](/index.php/ATI "ATI"), [NVIDIA](/index.php/NVIDIA "NVIDIA"), [Intel](/index.php/Intel "Intel") for more information, in order to make sure that everything is all right. The open-source ATI and Intel drivers and the proprietary (binary) Nvidia driver should theoretically provide the best 2D and 3D acceleration.
 
 ##### The Raster engine workaround
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** xrender is not default in plasma 5\. XRender should not be recommended anymore. (Discuss in [Talk:KDE#](https://wiki.archlinux.org/index.php/Talk:KDE))
 
 If this does not solve your problems, your driver may not provide a good **XRender** acceleration which the current Qt painter engine relies on by default.
 

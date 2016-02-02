@@ -18,12 +18,20 @@ More information on these and other configuration options can be found with `man
 
 When starting Rygel from the command line, there are several options that might help you troubleshoot any strange behaviour. Find out more about these options with `man rygel`.
 
-NaN
+	`-g, --log-level=LIST`
 
-NaN
+	Comma-separated list of of DOMAIN:LEVEL pairs. DOMAIN can be "*", "rygel" or the name of a plugin. Levels are 1 for critical, 2 for error, 3 for warning, 4 for info and 5 for debug.
 
-NaN
+	`-d, --disable-plugin=PLUGIN`
 
-NaN
+	Disable PLUGIN
+
+	`-t, --disable-transcoding`
+
+	Disable transcoding.
+
+	`-c, --config=CONFIG_FILE`
+
+	Load the specified config file instead of /etc/rygel.conf or $HOME/.config/rygel.conf
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Rygel&oldid=414062](https://wiki.archlinux.org/index.php?title=Rygel&oldid=414062)"

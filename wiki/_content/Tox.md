@@ -2,7 +2,7 @@
 
 From the project [home page](https://tox.chat/):
 
-NaN
+	_Tox is a distributed, secure messenger with audio and video chat capabilities._
 
 ## Installation
 
@@ -10,45 +10,37 @@ Tox core and Tox clients are developed separatedly. You need to install [toxcore
 
 *   **µTox (uTox)** — Lightweight Tox client
 
-NaN
+	[https://github.com/notsecure/uTox](https://github.com/notsecure/uTox) || [utox-git](https://aur.archlinux.org/packages/utox-git/)<sup><small>AUR</small></sup>
 
 *   **qTox** — Powerful Tox client written in QT
 
-NaN
+	[https://wiki.tox.chat/clients/qtox](https://wiki.tox.chat/clients/qtox) || [qtox-git](https://aur.archlinux.org/packages/qtox-git/)<sup><small>AUR</small></sup>
 
 *   **Toxic** — ncurses-based CLI
 
-NaN
+	[https://wiki.tox.chat/clients/toxic](https://wiki.tox.chat/clients/toxic) || [toxic-git](https://aur.archlinux.org/packages/toxic-git/)<sup><small>AUR</small></sup>
 
 *   **Ratox** — FIFO based client
 
-NaN
+	[http://ratox.2f30.org/](http://ratox.2f30.org/) || [ratox-git](https://aur.archlinux.org/packages/ratox-git/)<sup><small>AUR</small></sup>
 
 *   **gTox** — GTK3-Style Tox-Client
 
-NaN
+	[https://github.com/KoKuToru/gTox/](https://github.com/KoKuToru/gTox/) || [gtox-git](https://aur.archlinux.org/packages/gtox-git/)<sup><small>AUR</small></sup>
 
 *   **Blight** — Cross-platform graphical user interface for Tox
 
-NaN
+	|| Not in AUR
 
 *   **Tox Pidgin Protocol Plugin** — a plugin for Pidgin which allows the use of the Tox protocol within Pidgin
 
-NaN
+	[http://tox.dhs.org/](http://tox.dhs.org/) || [tox-prpl-git](https://aur.archlinux.org/packages/tox-prpl-git/)<sup><small>AUR</small></sup>
 
 ## Run a node
 
 To be able to connect to others, Tox needs to connect to a [DHT node](https://wiki.tox.chat/users/nodes) first. All DHT nodes are connected to each other, and since everyone is connected to at least one DHT node, you can connect to others one way or the other.
 
 Move the service file to the correct location
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** systemd can't recognize files in its default location, really? Also conf files should be in the package, not described here. (Discuss in [Talk:Tox#](https://wiki.archlinux.org/index.php/Talk:Tox))
 
 By default, the service file for the tox bootstrap is in /usr/lib/systemd/system, where systemd cannot locate it, so it must be moved to /etc/systemd/system
 

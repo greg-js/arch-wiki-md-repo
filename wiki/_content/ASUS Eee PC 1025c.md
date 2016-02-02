@@ -1,13 +1,5 @@
 # ASUS Eee PC 1025c
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** (Discuss in [Talk:ASUS Eee PC 1025c#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_1025c))
-
 **Note:** This laptop uses a [Poulsbo](/index.php/Poulsbo "Poulsbo") GPU. Hardware acceleration is currently unsupported.
 
 ## Contents

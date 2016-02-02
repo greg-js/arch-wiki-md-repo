@@ -245,14 +245,6 @@ rEFInd is compatible with the EFI system partition created by a UEFI Windows ins
 
 ## Tools
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface").**
-
-**Notes:** Although rEFInd has a special interface for these common tools, they are not a feature of rEFInd. (Discuss in [Talk:REFInd#](https://wiki.archlinux.org/index.php/Talk:REFInd))
-
 rEFInd supports running various 3rd-party tools. Tools need to be installed separately. Edit `showtools` in `refind.conf` to choose which ones to show.
 
  `$esp/EFI/refind/refind.conf` 

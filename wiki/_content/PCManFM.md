@@ -11,7 +11,7 @@ Related articles
 
 From the project [home page](http://wiki.lxde.org/en/PCManFM):
 
-NaN
+	_PCMan File Manager (PCManFM) is a file manager application developed by Hong Jen Yee from Taiwan which is meant to be a replacement for Nautilus, Konqueror and Thunar. Released under the GNU General Public License, PCManFM is free software. PCManFM is the standard file manager in [LXDE](/index.php/LXDE "LXDE"), which is also developed by the same author in conjunction with other developers._
 
 ## Contents
 
@@ -115,14 +115,6 @@ Less experienced users should be aware that a file manager alone - especially wh
 ## Tips and tricks
 
 ### Thumbnail support
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [File manager functionality#Thumbnail Previews](/index.php/File_manager_functionality#Thumbnail_Previews "File manager functionality").**
-
-**Notes:** This section is not specific to PCManFM. (Discuss in [Talk:PCManFM#](https://wiki.archlinux.org/index.php/Talk:PCManFM))
 
 PCManFM supports image thumbnails out of the box. However, in order to view thumbnails of other file types, PCManFM uses the information provided in the files located at `/usr/share/thumbnailers`. The packages which provide a thumbnailer usually add the corresponding _.thumbnail_ file at `/usr/share/thumbnailers`. For example, in order to get thumbnails for OpenDocument files, you may install [libgsf](https://www.archlinux.org/packages/?name=libgsf) from the official repositories. For video files' thumbnails, the package [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) is required. For PDF files, you may install [evince](https://www.archlinux.org/packages/?name=evince) from the official repositories, which provides `evince-thumbnailer` and the corresponding file at `/usr/share/thumbnailers`. However, if you prefer not to install `evince`, you can also replicate the functionality of `evince-thumbnailer` using [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)'s `convert` command. This is accomplished by creating a new file with the _.thumbnail_ extension (e.g.: `imagemagick-pdf.thumbnailer`) at `/usr/share/thumbnailers` with the following content:
 

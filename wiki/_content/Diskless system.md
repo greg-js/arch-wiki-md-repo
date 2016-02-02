@@ -9,7 +9,7 @@ Related articles
 
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
 
-NaN
+	_A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server._
 
 ## Contents
 
@@ -148,14 +148,6 @@ Create a [sparse file](https://en.wikipedia.org/wiki/Sparse_file "wikipedia:Spar
 
 ### Bootstrapping installation
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `mkarchroot` is mentioned only in the following sentence. (Discuss in [Talk:Diskless system#](https://wiki.archlinux.org/index.php/Talk:Diskless_system))
-
 Install [devtools](https://www.archlinux.org/packages/?name=devtools) and [arch-install-scripts](https://www.archlinux.org/packages/?name=arch-install-scripts), and run `mkarchroot`.
 
 ```
@@ -207,14 +199,6 @@ In addition to the setup mentioned here, you should also set up your [hostname](
 
 #### GRUB
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [GRUB](/index.php/GRUB "GRUB").**
-
-**Notes:** (Discuss in [Talk:Diskless system#](https://wiki.archlinux.org/index.php/Talk:Diskless_system))
-
 Though poorly documented, GRUB supports being loaded via PXE.
 
 ```
@@ -260,14 +244,6 @@ In late boot, you will want to switch your root filesystem mount to both `rw`, a
 
 #### Program state directories
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** systemd does not use persistent logging by default when /var/log/journal is in tmpfs and/or does not exist (Discuss in [Talk:Diskless system#](https://wiki.archlinux.org/index.php/Talk:Diskless_system))
-
 You could mount `/var/log`, for example, as tmpfs so that logs from multiple hosts do not mix unpredictably, and do the same with `/var/spool/cups`, so the 20 instances of cups using the same spool do not fight with each other and make 1,498 print jobs and eat an entire ream of paper (or worse: toner cartridge) overnight.
 
  `# vim "$root/etc/fstab"` 
@@ -304,14 +280,6 @@ If neither of these approaches are appropriate, the last sane option would be to
 ## Client boot
 
 ### NBD
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** When using COW on the server, the clients all effectively have read-only mounts of the original filesystem; it should theoretically be safe to do a read-write mount on the NBD server (Discuss in [Talk:Diskless system#](https://wiki.archlinux.org/index.php/Talk:Diskless_system))
 
 If you are using NBD, you will need to umount the `arch.img` before/while you boot your client.
 

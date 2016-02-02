@@ -97,14 +97,6 @@ Then, write the new boot sector (boot record):
 
 ## Create A New MBR for a USB stick
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Out of scope, see [fdisk](/index.php/Fdisk "Fdisk") which does "erase" just fine (Discuss in [Talk:Master Boot Record#](https://wiki.archlinux.org/index.php/Talk:Master_Boot_Record))
-
 You might need to create a new MBR for your USB stick (which is convenient to copy files between your Linux computer and your PC), maybe because of virus or something that make it unusable.
 
 1, Plug the USB stick in and check the name of device by using **fdisk** ([util-linux](https://www.archlinux.org/packages/?name=util-linux)):

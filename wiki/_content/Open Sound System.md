@@ -227,17 +227,20 @@ Other mixers that have support for OSS:
 
 *   **Gnome Volume Control** — for [GNOME](/index.php/GNOME "GNOME").
 
-NaN
+	[http://library.gnome.org/users/gnome-volume-control/stable/](http://library.gnome.org/users/gnome-volume-control/stable/) || [gnome](https://www.archlinux.org/groups/x86_64/gnome/)
 
 *   **Kmix** — for [KDE](/index.php/KDE "KDE").
 
-NaN
+	[http://www.kde.org/applications/multimedia/kmix/](http://www.kde.org/applications/multimedia/kmix/) || [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix)
 
 *   **VolWheel** — After the installation, set it to [autostart](/index.php/Autostarting#Graphical "Autostarting") as needed, then enable OSS support by right-clicking on the system tray icon, choosing _Preferences_ and then changing:
 
-NaN
+*   _Driver_: `OSS`.
+*   _Default Channel_: `vmix0-outvol` (find out what channel to use with `ossmix`).
+*   _Default Mixer_: `ossxmix`.
+*   In the _MiniMixer_ tab (optional), add `vmix0-outvol` and optionally others.
 
-NaN
+	[http://oliwer.net/b/volwheel.html](http://oliwer.net/b/volwheel.html) || [volwheel](https://www.archlinux.org/packages/?name=volwheel)
 
 ## Configuring Applications for OSS
 
@@ -482,7 +485,21 @@ By default the sample rate is 48000hz. There are several conditions in which you
 
 Some example sample rates:
 
-NaN
+	44100hz
+
+	Sample rate of standard [Red Book](https://en.wikipedia.org/wiki/Red_Book_(CD_standard) "wikipedia:Red Book (CD standard)") audio CDs.
+
+	88000hz
+
+	Sample rate of [SACD](https://en.wikipedia.org/wiki/Super_Audio_CD "wikipedia:Super Audio CD") high definition audio discs/downloads. It is rare that your motherboard will support this sample rate.
+
+	96000hz
+
+	Sample rate of most high definition audio downloads. If your motherboard is an [AC'97](https://en.wikipedia.org/wiki/AC%2797 "wikipedia:AC'97") motherboard, this is likely to be your highest bitrate.
+
+	192000hz
+
+	Sample rate of BluRay, and some (very few) high definition downloads. Support for external audio receiver equipment is limited to high end audio. Not all motherboards support this. An example of a motherboard chipset that would support this includes [HD Audio](https://en.wikipedia.org/wiki/Intel_High_Definition_Audio "wikipedia:Intel High Definition Audio").
 
 To check what your sample rate is currently set to, run:
 

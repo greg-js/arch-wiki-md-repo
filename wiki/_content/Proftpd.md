@@ -1,13 +1,5 @@
 # Proftpd
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Proftpd#](https://wiki.archlinux.org/index.php/Talk:Proftpd))
-
 [proFtpd](http://proftpd.org/) (Pro FTP daemon) is a highly feature rich FTP server, exposing large amount of configuration options to the user.
 
 ## Contents

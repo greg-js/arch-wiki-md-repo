@@ -1,13 +1,5 @@
 # Screenshot Information Tools
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Common Applications](/index.php/Common_Applications "Common Applications").**
-
-**Notes:** another possibility would be to format this page using [Template:App](/index.php/Template:App "Template:App") and link it from [Common Applications](/index.php/Common_Applications "Common Applications"). (Discuss in [Talk:Screenshot Information Tools#](https://wiki.archlinux.org/index.php/Talk:Screenshot_Information_Tools))
-
 Here is a compiled list of the community-made screenshot information tools. These tools are designed to run in a terminal to show information on your theme/system. Some of theme will even take the screenshot for you, provided you have the correct utilities installed.
 
 ## Contents

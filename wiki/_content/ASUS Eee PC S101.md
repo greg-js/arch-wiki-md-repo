@@ -1,13 +1,5 @@
 # ASUS Eee PC S101
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:ASUS Eee PC S101#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_S101))
-
 For now, this is just some notes on the Asus EeePC S101.
 
 ## Contents

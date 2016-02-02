@@ -7,7 +7,7 @@ Related articles
 
 From [Wikipedia](http://en.wikipedia.org):
 
-NaN
+	[Moodle](https://en.wikipedia.org/wiki/Moodle "wikipedia:Moodle") (abbreviation for Modular Object-Oriented Dynamic Learning Environment) is a free source e-learning software platform, also known as a Course Management System, Learning Management System, or Virtual Learning Environment (VLE).
 
 This article describes how to set up the Moodle server on an Arch Linux system. Usage is not covered. For more help visit [its home page](http://www.moodle.org).
 

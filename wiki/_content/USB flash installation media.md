@@ -142,14 +142,6 @@ Simply replace the various null spots (indicated by an "x") with the correct dat
 
 ```
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The following note may be invalid, the [upstream documentation](http://www.chrysocome.net/dd) does not mention anything related to _PhysicalDrive_. (Discuss in [Talk:USB flash installation media#](https://wiki.archlinux.org/index.php/Talk:USB_flash_installation_media))
-
 **Note:** Alternatively, replace the drive letter with `\\.\PhysicalDrive_X_`, where `_X_` is the physical drive number (starts from 0). Example: `# dd if=ISOs\archlinux-2015.01.01-dual.iso of=\\.\PhysicalDrive1 bs=4M` 
 
 You can find out the physical drive number by typing `wmic diskdrive list brief` at the command prompt or with `dd --list`
@@ -413,14 +405,6 @@ If under Vista or Win7, you should open the console as administrator, or else fl
 **Note:** Confirmed that you need to use drive letter as opposed to number. flashnul 1rc1, Windows 7 x64.
 
 #### Loading the installation media from RAM
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Multiboot USB drive#Using Syslinux and memdisk](/index.php/Multiboot_USB_drive#Using_Syslinux_and_memdisk "Multiboot USB drive").**
-
-**Notes:** This is the same method, only Syslinux is installed from Windows. Considering that [multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive") can be used to boot an installation media and it is already linked from the Related articles box at the top, maybe this section should be merged there? (Discuss in [Talk:USB flash installation media#](https://wiki.archlinux.org/index.php/Talk:USB_flash_installation_media))
 
 This method uses [Syslinux](/index.php/Syslinux "Syslinux") and a [Ramdisk](/index.php/Ramdisk "Ramdisk") ([MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK)) to load the entire Arch Linux ISO image into RAM. Since this will be running entirely from system memory, you will need to make sure the system you will be installing this on has an adequate amount. A minimum amount of RAM between 500 MB and 1 GB should suffice for a MEMDISK based, Arch Linux install.
 

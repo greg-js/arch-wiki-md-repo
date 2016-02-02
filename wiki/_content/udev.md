@@ -6,7 +6,7 @@ Related articles
 
 From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
-NaN
+	udev is a device manager for the Linux kernel. As the successor of devfsd and hotplug, udev primarily manages device nodes in the `/dev` directory. At the same time, udev also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.
 
 `udev` replaces the functionality of both `hotplug` and `hwdetect`.
 
@@ -55,14 +55,6 @@ A standalone fork is available in AUR: [eudev](/index.php/Eudev "Eudev").
 Udev rules written by the administrator go in `/etc/udev/rules.d/`, their file name has to end with _.rules_. The udev rules shipped with various packages are found in `/usr/lib/udev/rules.d/`. If there are two files by the same name under `/usr/lib` and `/etc`, the ones in `/etc` take precedence.
 
 ### Writing udev rules
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** You can workaround the FUSE errors (caused by udev killing the mount process) by using a systemd service [[1]](https://github.com/Ferk/udev-media-automount) [[2]](http://jasonwryan.com/blog/2014/01/20/udev/) (Discuss in [Talk:Udev#](https://wiki.archlinux.org/index.php/Talk:Udev))
 
 **Warning:** To mount removable drives, do not call `mount` from udev rules. In case of FUSE filesystems, you will get `Transport endpoint not connected` errors. Instead, you could use [udisks](/index.php/Udisks "Udisks") that handles automount correctly or to make mount work inside udev rules, copy `/usr/lib/systemd/system/systemd-udevd.service` to `/etc/systemd/system/systemd-udevd.service` and replace `MountFlags=slave` to `MountFlags=shared`.[[3]](http://unix.stackexchange.com/a/154318) Keep in mind though that udev is not intended to invoke long-running processes.
 
@@ -181,22 +173,6 @@ See [Udisks](/index.php/Udisks "Udisks").
 ## Tips and tricks
 
 ### Accessing firmware programmers and USB virtual comm devices
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Making a device world-writable is not secure. (Discuss in [Talk:Udev#](https://wiki.archlinux.org/index.php/Talk:Udev))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** One example is enough, others can surely be found with `lsusb`. (Discuss in [Talk:Udev#](https://wiki.archlinux.org/index.php/Talk:Udev))
 
 The following ruleset will allow normal users (within the "users" group) the ability to access the [USBtinyISP](http://www.ladyada.net/make/usbtinyisp/) USB programmer for AVR microcontrollers and a generic (SiLabs [CP2102](http://www.silabs.com/products/interface/usbtouart)) USB to UART adapter, the [Atmel AVR Dragon](http://www.atmel.com/tools/AVRDRAGON.aspx?tab=overview) programmer, and the [Atmel AVR ISP mkII](http://www.atmel.com/tools/AVRISPMKII.aspx). Adjust the permissions accordingly. Verified as of 31-10-2012.
 
@@ -393,14 +369,6 @@ ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="046d", ATTRS{idProduct}=="c52
 **Note:** Also make sure the USB controller is enabled in `/proc/acpi/wakeup`.
 
 ### Triggering events
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Testing rules before loading](#Testing_rules_before_loading).**
-
-**Notes:** similar trick (Discuss in [Talk:Udev#](https://wiki.archlinux.org/index.php/Talk:Udev))
 
 It can be useful to trigger various udev events. For example, you might want to simulate a USB device disconnect on a remote machine. In such cases, use `udevadm trigger`:
 

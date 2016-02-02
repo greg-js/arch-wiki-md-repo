@@ -153,7 +153,29 @@ A [swap](/index.php/Swap "Swap") partition provides memory that can be used as v
 
 The size of the partitions depends on personal preference, but the following information may be helpful:
 
-NaN
+	/boot - 200 MB 
+
+	It requires only about 100 MB, but if multiple kernels/boot images are likely to be in use, 200 or 300 MB is a better choice.
+
+	/ - 15-20 GB 
+
+	It traditionally contains the `/usr` directory, which can grow significantly depending upon how much software is installed. 15-20 GB should be sufficient for most users with modern hard disks. If you plan to store a swap file here, you might need a larger partition size.
+
+	/var - 8-12 GB 
+
+	It will contain, among other data, the [ABS](/index.php/ABS "ABS") tree and the [pacman](/index.php/Pacman "Pacman") cache. Retaining these packages is helpful in case a package upgrade causes instability, requiring a [downgrade](/index.php/Downgrade "Downgrade") to an older, archived package. The pacman cache in particular will grow as the system is expanded and updated, but it can be safely cleared if space becomes an issue. 8-12 GB on a desktop system should be sufficient for `/var`, depending on how much software will be installed.
+
+	/home - [varies] 
+
+	It is typically where user data, downloads, and multimedia reside. On a desktop system, `/home` is typically the largest filesystem on the drive by a large margin.
+
+	swap - [varies] 
+
+	Historically, the general rule for swap partition size was to allocate twice the amount of physical RAM. As computers have gained ever larger memory capacities, this rule is outdated. For example, on average desktop machines with up to 512MB RAM, the 2x rule is usually adequate; if a sufficient amount of RAM (more than 1024MB) is available, it may be possible to have a smaller swap partition.
+
+	/data - [varies] 
+
+	One can consider mounting a "data" partition to cover various files to be shared by all users. Using the `/home` partition for this purpose is fine as well.
 
 **Note:**
 
@@ -164,39 +186,39 @@ NaN
 
 *   **[fdisk](/index.php/Fdisk "Fdisk")** — Terminal partitioning tools included in Linux.
 
-NaN
+	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 *   **[cfdisk](/index.php/Cfdisk "Cfdisk")** — Terminal partitioning tool written with ncurses libraries.
 
-NaN
+	[https://www.kernel.org/](https://www.kernel.org/) || [util-linux](https://www.archlinux.org/packages/?name=util-linux)
 
 *   **[gdisk](/index.php/Gdisk "Gdisk")** — [GPT](/index.php/GPT "GPT") version of fdisk.
 
-NaN
+	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
 *   **[cgdisk](/index.php/Cgdisk "Cgdisk")** — GPT version of cfdisk.
 
-NaN
+	[http://www.rodsbooks.com/gdisk/](http://www.rodsbooks.com/gdisk/) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
 *   **[sgdisk](/index.php/Sgdisk "Sgdisk")** — Scriptable version of gdisk.
 
-NaN
+	[http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html](http://www.rodsbooks.com/gdisk/sgdisk-walkthrough.html) || [gptfdisk](https://www.archlinux.org/packages/?name=gptfdisk)
 
 *   **[GNU Parted](/index.php/GNU_Parted "GNU Parted")** — Terminal partitioning tool.
 
-NaN
+	[https://www.gnu.org/software/parted/parted.html](https://www.gnu.org/software/parted/parted.html) || [parted](https://www.archlinux.org/packages/?name=parted)
 
 *   **[GParted](/index.php/GParted "GParted")** — Graphical tool written in GTK.
 
-NaN
+	[http://gparted.sourceforge.net/](http://gparted.sourceforge.net/) || [gparted](https://www.archlinux.org/packages/?name=gparted)
 
 *   **Partitionmanager** — Graphical tool written in Qt.
 
-NaN
+	[http://sourceforge.net/projects/partitionman/](http://sourceforge.net/projects/partitionman/) || [partitionmanager](https://www.archlinux.org/packages/?name=partitionmanager)
 
 *   **QtParted** — Similar to Partitionmanager, available in [AUR](/index.php/AUR "AUR").
 
-NaN
+	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtparted)]</sup>
 
 ## Partition alignment
 
@@ -228,14 +250,6 @@ To verify a partition is aligned, query it using `/usr/bin/blockdev` as shown be
 0
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** _parted_ does not work on partitions; align-check needs arguments (Discuss in [Talk:Partitioning#](https://wiki.archlinux.org/index.php/Talk:Partitioning))
 
 Or alternatively:
 

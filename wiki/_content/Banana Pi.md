@@ -84,22 +84,6 @@ Change to desired resolution, e.g.:
 
 #### Automatically set resolution on boot
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Arch does not provide the _sunxi-tools_ package in [official repositories](/index.php/Official_repositories "Official repositories"), so the `pacman -S ...` command in this section is probably specific to Arch Linux ARM. (Discuss in [Talk:Banana Pi#](https://wiki.archlinux.org/index.php/Talk:Banana_Pi))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Does not comply with [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Banana Pi#](https://wiki.archlinux.org/index.php/Talk:Banana_Pi))
-
 You need to edit the kernel parameters in the `uEnv.txt` and provide the required parameters in `script.bin`. As the `script.bin` is a binary file, you need to use the Sunix tools, to convert it to a `script.fex` text file, make your changes and reconvert it to the `script.bin`. (see also [Sunxi fex guide](http://linux-sunxi.org/Fex_Guide#disp_init_configuration), [Sunix kernel arguments](http://linux-sunxi.org/Kernel_arguments) and [this thread](http://forum.lemaker.org/viewthread.php?action=printable&tid=1881)).
 
 ```

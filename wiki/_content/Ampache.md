@@ -1,13 +1,5 @@
 # Ampache
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Be careful. This article can be outdated **since 3.8 release**. (Discuss in [Talk:Ampache#](https://wiki.archlinux.org/index.php/Talk:Ampache))
-
 This document describes how to set up Ampache on an Arch Linux LAMP server. Ampache is a Web-based Audio file manager. It is implemented with MySQL, and PHP. It allows you to view, edit, and play your audio files via the web. It has support for playlists, artist and album views, album art, random play, playback via Http/On the Fly Transcoding and Downsampling, Ampache is excellent if you want to be able to listen to your music collection anywhere.
 
 ## Contents

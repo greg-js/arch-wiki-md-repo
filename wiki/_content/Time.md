@@ -141,14 +141,6 @@ If you are having issues with the offset of the time, try reinstalling [tzdata](
 
 ```
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The following statement needs a valid external reference, or be deleted. (Discuss in [Talk:Time#Windows time synch](https://wiki.archlinux.org/index.php/Talk:Time#Windows_time_synch))
-
 Old versions of Windows may still be resetting the RTC to localtime unless the time synchronization feature is [disabled](http://www.addictivetips.com/windows-tips/disable-time-synchronization-in-windows-7/).
 
 ### UTC in Ubuntu

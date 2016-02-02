@@ -72,14 +72,6 @@ Configure the following `makepkg.conf` variables if needed:
 
 ### Signature checking
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Expand a bit on `validpgpkeys()`, e.g: "_I then check the person who signed is expected from the software mailing list, check if they sign emails, look if the PGP fingerprint is published on their homepage, … That verifies the signature enough to add the validpgpkeys array for me._" (Discuss in [Talk:Makepkg#](https://wiki.archlinux.org/index.php/Talk:Makepkg))
-
 If a signature file in the form of `.sig` or `.asc` is part of the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") source array, _makepkg_ validates the authenticity of source files. For example, the signature `_pkgname_-_pkgver_.tar.gz.sig` is used to check the integrity of the file `_pkgname_-_pkgver_.tar.gz` with the _gpg_ program.
 
 If desired, signatures by other developers can be manually added to the GPG keyring. See [GnuPG](/index.php/GnuPG "GnuPG") article for details. To temporarily disable signature checking, call the _makepkg_ command with the `--skippgpcheck` option.
@@ -300,14 +292,6 @@ $ linux32 makepkg --config ~/.makepkg.i686.conf
 ## Troubleshooting
 
 ### Makepkg sometimes fails to sign a package without asking for signature passphrase
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Vague instructions (Discuss in [Talk:Makepkg#](https://wiki.archlinux.org/index.php/Talk:Makepkg))
 
 With [gnupg 2.1](https://www.gnupg.org/faq/whats-new-in-2.1.html), gpg-agent no longer has to be started manually and will be started automatically on the first invokation of gpg. Thus if you do not manually start gpg-agent, makepkg will start it.
 

@@ -19,14 +19,6 @@ Related articles
 
 ## Mapping keysyms to actions
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Keyboard Shortcuts#X11_2](/index.php/Keyboard_Shortcuts#X11_2 "Keyboard Shortcuts").**
-
-**Notes:** same topic (Discuss in [Talk:Extra keyboard keys in Xorg#](https://wiki.archlinux.org/index.php/Talk:Extra_keyboard_keys_in_Xorg))
-
 When we are in a graphical environment we may want to execute a command when certain key combination is pressed. There are multiple ways to do that:
 
 *   The most portable way using low level tools, such as [acpid](/index.php/Acpid "Acpid"). Not all keys are supported, but configuration in uniform way is possible for keyboard keys, power adapter connection and even headphone jack (un)plugging events. It is also difficult to run programs inside X session correctly.
@@ -49,7 +41,7 @@ See the main article: [keytouch](/index.php/Keytouch "Keytouch").
 
 From [actkbd home page](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
 
-NaN
+	[actkbd](https://aur.archlinux.org/packages/actkbd/)<sup><small>AUR</small></sup> (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
 
 A sample configuration and guide is available [here](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
 

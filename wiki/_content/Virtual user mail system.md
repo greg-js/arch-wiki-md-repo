@@ -72,14 +72,6 @@ FLUSH PRIVILEGES;
 
 ```
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Further manual database installation is missing. So far, the only way to follow this article is by installing PostfixAdmin with Apache, MySQL and PHP. (Discuss in [Talk:Virtual user mail system#](https://wiki.archlinux.org/index.php/Talk:Virtual_user_mail_system))
-
 Now you can go to the PostfixAdmin's setup page, let PostfixAdmin create the needed tables and create the users in there.
 
 #### PostfixAdmin

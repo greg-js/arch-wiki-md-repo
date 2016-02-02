@@ -1,13 +1,5 @@
 # Web application package guidelines
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Symlinking part of webapps causes major issues. Furthermore the file system layout is insufficient for more than one instance of a webapp. (Discuss in [Talk:Web application package guidelines#](https://wiki.archlinux.org/index.php/Talk:Web_application_package_guidelines))
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *

@@ -18,15 +18,15 @@ RetroArch is a modular, command-line driven, multi-system emulator that is desig
 
 **RetroArch** — Stable version.
 
-NaN
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch](https://aur.archlinux.org/packages/retroarch/)<sup><small>AUR</small></sup>
 
 **RetroArch (git)** — Development version.
 
-NaN
+	[http://www.libretro.com/](http://www.libretro.com/) || [retroarch-git](https://aur.archlinux.org/packages/retroarch-git/)<sup><small>AUR</small></sup>
 
 **RetroArch-Phoenix (git)** — GTK+ front-end, development version.
 
-NaN
+	[https://github.com/Themaister/RetroArch-Phoenix](https://github.com/Themaister/RetroArch-Phoenix) || [retroarch-phoenix-git](https://aur.archlinux.org/packages/retroarch-phoenix-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/retroarch-phoenix-git)]</sup>, or [retroarch-phoenix-qt-git](https://aur.archlinux.org/packages/retroarch-phoenix-qt-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/retroarch-phoenix-qt-git)]</sup> (qt build)
 
 ## Usage
 

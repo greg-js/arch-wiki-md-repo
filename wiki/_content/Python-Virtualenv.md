@@ -1,21 +1,5 @@
 # Python/Virtualenv
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Does not describe the difference between `virtualenv` and `python -m venv`. See also [this report](https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&diff=343331&oldid=343147). (Discuss in [Talk:Python/Virtualenv#](https://wiki.archlinux.org/index.php/Talk:Python/Virtualenv))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** stretched writing (Discuss in [Talk:Python/Virtualenv#](https://wiki.archlinux.org/index.php/Talk:Python/Virtualenv))
-
 _virtualenv_ is a Python tool written by Ian Bicking and used to create isolated environments for [Python](/index.php/Python "Python") in which you can install packages without interfering with the other virtualenvs nor with the system Python's packages. The present article covers the installation of the _virtualenv_ package and its companion command line utility _virtualenvwrapper_ designed by Doug Hellmann to (greatly) improve your work flow. A quick how-to to help you to begin working inside virtual environment is then provided.
 
 ## Contents

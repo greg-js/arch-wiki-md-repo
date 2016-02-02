@@ -1,13 +1,5 @@
 # Hwdetect
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Initscripts are obsolete. (Discuss in [Talk:Hwdetect#](https://wiki.archlinux.org/index.php/Talk:Hwdetect))
-
 [hwdetect](https://projects.archlinux.org/svntogit/packages.git/tree/hwdetect/trunk/hwdetect) is a hardware detection script primarily used to load or list modules for use in [rc.conf](/index.php/Rc.conf "Rc.conf") or [mkinitcpio.conf](/index.php/Mkinitcpio.conf "Mkinitcpio.conf"). The script makes use of information exported by the [sysfs](https://en.wikipedia.org/wiki/Sysfs "wikipedia:Sysfs") subsystem employed by the Linux kernel.
 
 ## Contents

@@ -141,14 +141,6 @@ $ cat test.mail | msmtp -a default <username>@domain.com
 
 ## Cronie default email client
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Arch uses [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") instead of cronie (Discuss in [Talk:Msmtp#](https://wiki.archlinux.org/index.php/Talk:Msmtp))
-
 To make [cronie](https://www.archlinux.org/packages/?name=cronie) use msmtp rather than sendmail, make sure [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) is installed, or edit the `cronie.service` systemd unit:
 
  `/etc/systemd/system/cronie.service.d/msmtp.conf` 

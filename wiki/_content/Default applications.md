@@ -5,22 +5,6 @@ Related articles
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Window manager](/index.php/Window_manager "Window manager")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** [File managers](#File_managers) and [Gnome Control Center](#Gnome_Control_Center) are only front-ends to the [Desktop entries method](#MIME_types_and_desktop_entries), similarly to [gnome-defaults-list](#gnome-defaults-list) and following. The layout should be more logical. (Discuss in [Talk:Default applications#](https://wiki.archlinux.org/index.php/Talk:Default_applications))
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** `org.freedesktop.FileManager1` [D-Bus](/index.php/D-Bus "D-Bus") service may mess with the default file manager, e.g. when using [Firefox](/index.php/Firefox "Firefox"). (Discuss in [Talk:Default applications#](https://wiki.archlinux.org/index.php/Talk:Default_applications))
-
 Default applications can be set for use with particular file types (e.g. the [Firefox](/index.php/Firefox "Firefox") web browser for `HTML` files). Where undertaken, files may be opened and/or edited with the desired application much faster and more conveniently. There are also numerous methods to configure default applications in Linux. This page will explain the most common methods: File Managers, MIME types, and environment variables.
 
 ## Contents
@@ -37,14 +21,6 @@ Default applications can be set for use with particular file types (e.g. the [Fi
     *   [3.1 Applications do not appear in the Open With... context menu (of a file manager)](#Applications_do_not_appear_in_the_Open_With..._context_menu_.28of_a_file_manager.29)
 
 ## MIME types and desktop entries
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Lacks clarity, content tacked on (Discuss in [Talk:Default applications#](https://wiki.archlinux.org/index.php/Talk:Default_applications))
 
 The modern method to start applications is using [Desktop entries](/index.php/Desktop_entries "Desktop entries"). This way, programs can advertise which kind of files (to be exact: what MIME-types) they can open. For instance, `gimp.desktop` states `MimeType=image/bmp;image/gif;...`.
 
@@ -180,14 +156,6 @@ $ update-mime-database    ~/.local/share/mime
 Programs that use mime types, such as file managers, should now open `*.foo` files with foobar. (You may need to restart your file manager to see the change.)
 
 ### Maintaining settings for multiple desktop environments
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This should be either expanded on (particularly referencing `NoDisplay`, or merged to [Desktop entries](/index.php/Desktop_entries "Desktop entries") (Discuss in [Talk:Default applications#](https://wiki.archlinux.org/index.php/Talk:Default_applications))
 
 The `OnlyShowIn` field of a .desktop file may be useful; see [this page](http://standards.freedesktop.org/menu-spec/latest/).
 

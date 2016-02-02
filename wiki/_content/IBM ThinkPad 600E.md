@@ -1,13 +1,5 @@
 # IBM ThinkPad 600E
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Contains references to rc.conf, which is deprecated (Discuss in [Talk:IBM ThinkPad 600E#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_600E))
-
 ## Contents
 
 *   [1 To install:](#To_install:)

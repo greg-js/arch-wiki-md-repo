@@ -83,14 +83,6 @@ You will want to create a list of packages you want installed on your live CD sy
 
 #### Custom local repository
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Pacman tips#Custom local repository](/index.php/Pacman_tips#Custom_local_repository "Pacman tips").**
-
-**Notes:** Move the general information (e.g. repo tree) into the main article. (Discuss in [Talk:Archiso#](https://wiki.archlinux.org/index.php/Talk:Archiso))
-
 You can also [create a custom local repository](/index.php/Custom_local_repository "Custom local repository") for the purpose of preparing custom packages or packages from [AUR](/index.php/AUR "AUR")/[ABS](/index.php/ABS "ABS"). When doing so with packages for both architectures, you should follow a certain directory order to not run into problems.
 
 For instance:
@@ -322,14 +314,6 @@ Rebuilding the iso after modifications is not officially supported. However, it 
 ```
 
 Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an id command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[2]](https://bugs.archlinux.org/task/41865).
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** typo? (Discuss in [Talk:Archiso#](https://wiki.archlinux.org/index.php/Talk:Archiso))
 
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch

@@ -2,7 +2,7 @@
 
 From [wikipedia:Random number generation](https://en.wikipedia.org/wiki/Random_number_generation "wikipedia:Random number generation"):
 
-NaN
+	A random number generator (RNG) is a computational or physical device designed to generate a sequence of numbers or symbols that lack any pattern, i.e. appear random.
 
 Generation of random data is crucial for several applications like making cryptographic keys (e.g. for [Disk encryption](/index.php/Disk_encryption "Disk encryption")), [securely wiping disks](/index.php/Securely_wipe_disk "Securely wipe disk"), running encrypted [Software access points](/index.php/Software_access_point "Software access point").
 

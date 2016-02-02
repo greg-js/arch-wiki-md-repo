@@ -43,7 +43,7 @@ The following section lists a number of common environment variables used by a L
 
 *   `DE` indicates the _D_esktop _E_nvironment being used. [xdg-open](/index.php/Xdg-open "Xdg-open") will use it to choose more user-friendly file-opener application that desktop environment provides. Some packages need to be installed to use this feature. For [GNOME](/index.php/GNOME "GNOME"), that would be [libgnome](https://www.archlinux.org/packages/?name=libgnome); for [Xfce](/index.php/Xfce "Xfce") this is [exo](https://www.archlinux.org/packages/?name=exo). Recognised values of `DE` variable are: `gnome`, `kde`, `xfce`, `lxde` and `mate`.
 
-NaN
+	The `DE` environment variable needs to be exported before starting the window manager. For example:
 
  `~/.xinitrc` 
 
@@ -52,7 +52,7 @@ export DE="xfce"
 exec openbox
 ```
 
-NaN
+	This will make _xdg-open_ use the more user-friendly _exo-open_, because it assumes it is running inside Xfce. Use _exo-preferred-applications_ for configuring.
 
 *   `DESKTOP_SESSION` is similar to `DE`, but used in [LXDE](/index.php/LXDE "LXDE") desktop enviroment: when `DESKTOP_SESSION` is set to `LXDE`, _xdg-open_ will use _pcmanfm_ file associations.
 

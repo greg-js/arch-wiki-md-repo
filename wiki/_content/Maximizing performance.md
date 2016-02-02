@@ -104,14 +104,6 @@ The effects of optimization are often difficult to judge. They can however be me
 
 ## Storage devices
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Subjective writing (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
-
 ### Swap files
 
 Creating your swap files on a separate disk can also help quite a bit, especially if your machine swaps frequently. It happens if you do not have enough RAM for your environment. Using KDE with all the features and applications that come along may require several GiB of memory, whereas a tiny window manager with console applications will perfectly fit in less than 512 MiB of memory.
@@ -172,14 +164,6 @@ There are several key tunables affecting the performance of block devices, see [
 
 ### Tuning IO schedulers
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Theoretical background should be described at the top or the bottom, not in the middle. Use subsections to make the structure more clear. (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
-
 The kernel officially supports the following schedulers for storage disk in-/output (IO):
 
 *   [CFQ](https://en.wikipedia.org/wiki/CFQ "wikipedia:CFQ") scheduler (Completely Fair Queuing)
@@ -211,14 +195,6 @@ While these schedulers try to improve total throughput they also might leave som
 CFQ (the default scheduler nowadays) aggregates all ideas from above and adds `cgroup` support that allows to reserve some amount of IO to a specific `cgroup`. It is useful on shared (and cloud) hosting - users who paid for 20 IO/s want to get their share if needed.
 
 The characteristics of a SSD are different. It does not have moving parts. Random access is as fast as sequential one. An SSD can handle multiple requests at the same time. Modern devices' throughput ~10K IO/s, which is higher than workload on most systems. Essentially a user cannot generate enough requests to saturate a SDD, the requests queue is effectively always empty. In this case IO scheduler does not provide any improvements. Thus, it is recommended to use the noop scheduler for an SSD.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Bits below were restored from [[1]](https://wiki.archlinux.org/index.php?title=Solid_State_Drives&diff=next&oldid=411764). The blk-mq scheduler discussed above may be activated differently. (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
 
 It is possible to change the scheduler at runtime and even to use different schedulers for separate storage devices at the same time. Available schedulers can be queried by viewing the contents of `/sys/block/sd**X**/queue/scheduler` (the active scheduler is denoted by brackets):
 
@@ -275,25 +251,9 @@ $ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in questio
 
 ### RAM disks
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [tmpfs](/index.php/Tmpfs "Tmpfs").**
-
-**Notes:** Post from 2009, check if still relevant (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
-
 See [[2]](https://bbs.archlinux.org/viewtopic.php?pid=493773#p493773).
 
 ### USB storage devices
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Commands still unclear (Discuss in [Talk:Maximizing performance#](https://wiki.archlinux.org/index.php/Talk:Maximizing_performance))
 
 If USB drives like pendrives are slow to copy files, append these three lines in a [systemd](/index.php/Systemd "Systemd") tmpfile:
 

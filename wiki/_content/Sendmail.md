@@ -1,13 +1,5 @@
 # Sendmail
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Do not use lists to separate normal paragraphs. (Discuss in [Talk:Sendmail#](https://wiki.archlinux.org/index.php/Talk:Sendmail))
-
 Sendmail is the classical SMTP server from the unix world. It was originally coded long time ago, when the internet was a safer place, and back then, security didn't matter as much as does today. Therefore it used to have several security bugs and it got some bad reputation for that. But those bugs are long fixed and a recent sendmail version is as safe as any other SMTP server. However, if your top priority is security, you should probably use netqmail.
 
 The goal of this article is to setup Sendmail for local users accounts, **without using mysql or other database**, and allowing also the creation of _mail-only accounts_.

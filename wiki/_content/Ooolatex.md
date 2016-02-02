@@ -2,7 +2,7 @@
 
 From [- OOoLatex](http://ooolatex.sourceforge.net/):
 
-NaN
+	_OOoLatex is a set of macros designed to bring the power of LaTeX into OpenOffice. It contains two main modules: the first one, Equation, allows to insert LaTeX equations into Writer and Impress documents as png or emf images while the second one, Expand, can be used for simpler equations to expand LaTeX code into appropriated symbol characters and insert them as regular text._
 
 The macros are especially useful for the preparation of presentations with a lot of mathematical formulæ. Instead of using beamer class in LaTeX, one can enjoy the flexibility of Impress in organizing texts and graphs while at the same time harnessing the power of LaTeX in typesetting and inserting equations.
 

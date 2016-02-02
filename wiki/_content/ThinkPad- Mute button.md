@@ -17,32 +17,32 @@ The mute button does not work properly on most ThinkPads and IdeaPads with a new
 
 ### Nothing works
 
-NaN
+	The Button does not react at all: no led flash (some ThinkPads have an LED, indicating the Mute-State) and no effect on Speakers Volume. It only mutes, if you first press the mute button and afterwards the Vol-Down-Key.
 
 ### External Audio still on
 
-NaN
+	Pressing the button causes the speakers to mute (LED also works), but external audio is still on.
 
 ## Solution:
 
 ### Older IBM ThinkPads
 
-NaN
+	First try this: "[http://www.thinkwiki.org/wiki/Mute_button](http://www.thinkwiki.org/wiki/Mute_button)"
 
 ### Nothing works:
 
-NaN
+	Edit your /etc/modprobe.d/modprobe.conf and add the following line:
 
 ```
 options thinkpad_acpi enabled=0 # enables Mute-Button on ThinkPads with IdeaPad-Firmware 
 
 ```
 
-NaN
+	reboot, and go on:
 
 ### External Audio still on:
 
-NaN
+	Install [tpb](https://aur.archlinux.org/packages/tpb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpb)]</sup> from the [AUR](/index.php/AUR "AUR") and create an file "/root/.tpbrc":
 
 ```
 #tpb-Settings: 
@@ -53,7 +53,7 @@ OSD off
 
 ```
 
-NaN
+	Now create the file "/root/tp-key-handler":
 
 ```
 #!/bin/bash
@@ -69,14 +69,14 @@ fi
 
 ```
 
-NaN
+	you'll have too add execute-rights to /root/tp-key-handler:
 
 ```
 chmod +x /root/tp-key-handler 
 
 ```
 
-NaN
+	Since tpb needs root-privileges as well as X, you may start it by adding "sudo tpb" in the .xinitrc and editing your sudo-Settings (use visudo) or addin "gksudo tpb" in any X-Startscript (the last will ask for an password on startup).
 
 That's it - if you have a better Idea, please do not hesitate to edit this page!
 

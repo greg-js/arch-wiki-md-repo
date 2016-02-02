@@ -1,16 +1,8 @@
 # Squid
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Squid#](https://wiki.archlinux.org/index.php/Talk:Squid))
-
 From the squid [website](http://www.squid-cache.org):
 
-NaN
+	_Squid is a caching proxy for the Web supporting HTTP, HTTPS, FTP, and more. It reduces bandwidth and improves response times by caching and reusing frequently-requested web pages. Squid has extensive access controls and makes a great server accelerator. It runs on Unix and Windows and is licensed under the GNU GPL._
 
 While squid works wonderfully in large corporations and schools, it can also benefit the home user too. However, if you're looking for a more lightweight single-user proxy, you should try [Polipo](/index.php/Polipo "Polipo").
 

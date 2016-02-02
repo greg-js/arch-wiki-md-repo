@@ -6,7 +6,13 @@ This overview page was updated for version **v14.8.6** of S-nail. Excerpt of lat
 
 S-nail is a direct descendant of the BSD Mail program that was introduced in 1978 (itself superseding the simpler UNIX mail program) and used to introduce itself (in the Mail reference manual) as follows:
 
-NaN
+	_Mail provides a simple and friendly environment for sending and receiving mail._
+
+	_It divides incoming mail into its constituent messages and allows the user to deal with them in any order._
+
+	_In addition, it provides a set of ed‐like commands for manipulating messages and sending mail._
+
+	_Mail offers the user simple editing capabilities to ease the composition of outgoing messages, as well as providing the ability to define and send to names which address groups of users._
 
 S-nail is thus the _user side_ of the Unix mail system, whereas the _system side_ was traditionally taken by [sendmail](/index.php/Sendmail "Sendmail"). In Arch Linux S-nail supports direct mail delivery via SMTP, so that messages can be send directly to external SMTP servers: In this very mode of operation no local mail-transfer-agent (MTA) is necessary on the _system side_. (Note however that S-nail does not (yet) include a mail-queue mechanism and thus simply tries to send the message over SMTP, directly and immediately.)
 

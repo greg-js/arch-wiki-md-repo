@@ -279,7 +279,11 @@ The easiest way to partition your hard drive, so that all these operating system
 
 So in linux terms your partitions will be something like:
 
-NaN
+*   sda (disk)
+*   sda1 (Mac boot partition - you cannot see this one in OS X)
+*   sda2 (OS X install in HFS+)
+*   sda3 (Arch install temporarly in HFS)
+*   sda4 (XP install in FAT32)
 
 *   Finally, click **apply**. This will create a new partition out of the empty space.
 
@@ -320,14 +324,6 @@ cd /efi/refit
 If you are going for an Arch Linux-only setup, installing the bootloader is no different than on any other machine: Install [gummiboot](/index.php/Gummiboot "Gummiboot"), [rEFInd](/index.php/REFInd "REFInd") or other bootloader of your choice.
 
 If, on the other hand, you are dual/triple booting, then read on.
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Section that describes bootloader setup for dual/triple boot should be revised and re-structured into more readable way (Discuss in [Talk:MacBook#](https://wiki.archlinux.org/index.php/Talk:MacBook))
 
 **Tip:** rEFIt is a popular bootloader for EFI-firmware computers (including Macs). It can be installed at any time during the installation. For instructions, please see [#rEFIt](#rEFIt).
 
@@ -449,14 +445,6 @@ Some models may need EFI_ARCH set to i386.
 *   If dual-booting OS X and Arch Linux, hold down the alt (option) key while the system boots to use the Mac bootloader to select which OS to boot.
 
 ## Post-installation
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Duplicated information, does not comply with [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:MacBook#](https://wiki.archlinux.org/index.php/Talk:MacBook))
 
 See [General recommendations](/index.php/General_recommendations "General recommendations") for system management directions and post-installation tutorials like setting up a graphical user interface, sound or a touchpad.
 

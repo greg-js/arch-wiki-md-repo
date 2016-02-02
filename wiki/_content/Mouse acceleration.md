@@ -15,14 +15,6 @@ There are several ways of setting mouse acceleration: by editing [Xorg](/index.p
 
 ### In Xorg configuration
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Don't use comments in code blocks, provide more description in the wiki text instead. (Discuss in [Talk:Mouse acceleration#](https://wiki.archlinux.org/index.php/Talk:Mouse_acceleration))
-
 See `man xorg.conf` for details.
 
 Examples:

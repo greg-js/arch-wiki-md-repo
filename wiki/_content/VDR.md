@@ -1,21 +1,5 @@
 # VDR
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** [ArchVDR](http://sourceforge.net/apps/trac/archvdr/) is dead, long live [VDR4Arch](https://github.com/VDR4Arch/vdr4arch)! (Discuss in [Talk:VDR#](https://wiki.archlinux.org/index.php/Talk:VDR))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** numerous violations of [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:VDR#](https://wiki.archlinux.org/index.php/Talk:VDR))
-
 [VDR](http://www.tvdr.de/) stands for **V**ideo **D**isk **R**ecorder, an open source software application to turn any PC into a digital video recorder. These initials do not fully explain what VDR is capable of. VDR does also implement all the functions of a modern set-top box to watch either live television or recordings. With the extensive amount of available [plugins](http://www.linuxtv.org/vdrwiki/index.php/Plugins) almost countless features can be added, e.g., play DVDs, play audio and video files, view your photo collection, check your email account...
 
 With its flexibility Arch Linux is perfectly suited for setting VDR up and customizing it. [AUR](https://aur.archlinux.org/), the Arch Linux User-Community Repository, and the [ArchVDR team](http://sourceforge.net/apps/trac/archvdr/) provide PKGBUILDs for VDR and its most commonly used plugins and addons.

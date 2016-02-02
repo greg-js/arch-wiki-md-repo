@@ -324,14 +324,6 @@ XMT:  | | X-- **IAPREFIX 1234:5:6700:890::/64**
 
 **Note:** The Arch kernel has IPv6 support built in directly, therefore a module cannot be blacklisted.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add reasons why users may want to disable IPv6, such as low-quality DNS servers or firewall rules (Discuss in [Talk:IPv6#](https://wiki.archlinux.org/index.php/Talk:IPv6))
-
 ### Disable functionality
 
 **Warning:** Disabling the IPv6 stack can break certain programs which expect it to be enabled. [FS#46297](https://bugs.archlinux.org/task/46297)
@@ -379,14 +371,6 @@ noipv6
 ```
 
 #### NetworkManager
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Specific approach to disable via GUI (Discuss in [Talk:IPv6#](https://wiki.archlinux.org/index.php/Talk:IPv6))
 
 To disable IPv6 in NetworkManager, right click the network status icon, and select _Edit Connections > Wired >_ Network name _> Edit > IPv6 Settings > Method > Ignore/Disabled_
 

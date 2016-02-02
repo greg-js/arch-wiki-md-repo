@@ -2,7 +2,7 @@
 
 From [Wikipedia:TeamSpeak](https://en.wikipedia.org/wiki/TeamSpeak "wikipedia:TeamSpeak"):
 
-NaN
+	TeamSpeak is proprietary Voice over IP software that allows computer users to speak on a chat channel with fellow computer users, much like a telephone conference call.
 
 ## Contents
 

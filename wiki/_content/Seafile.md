@@ -1,13 +1,5 @@
 # Seafile
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Work in progress (Discuss in [Talk:Seafile#](https://wiki.archlinux.org/index.php/Talk:Seafile))
-
 Seafile is an open source cloud storage system, with advanced support for file syncing, privacy protection and teamwork.
 
 Collections of files are called libraries, and each library can be synced separately. A library can be encrypted with a user chosen password. This password is not stored on the server, so even the server admin can't view your file contents.
@@ -208,37 +200,37 @@ $ sudo -u seafile -s
 
 Repeat the following for each seafile server instance:
 
-NaN
+	Change directory to the server instance's 'seafile-server' subdirectory:
 
 ```
 $ cd /srv/seafile/example.org/seafile-server
 
 ```
 
-NaN
+	Run the preupgrade script (Or do the steps by hand, see [the Seafile wiki](https://github.com/haiwen/seafile/wiki/Build-and-deploy-seafile-server-from-source)):
 
 ```
 $ seahub-preupgrade
 
 ```
 
-NaN
+	Run the appropriate seafile/seahub upgrade script from the upgrade subdirectory:
 
-NaN
+	For a minor upgrade (x.y.a to x.y.b with a < b):
 
 ```
 $ ./upgrade/minor-upgrade.sh
 
 ```
 
-NaN
+	For a major upgrade (x.y.a to z.w.b with x < z || y < w):
 
 ```
 $ ./upgrade/upgrade_x.y_z.w.sh
 
 ```
 
-NaN
+	Repeat the steps for language mentioned in the installation guide
 
 Lastly, start each of your seafile server instances again (repeat for example.org, foo.bar, etc.) as root:
 

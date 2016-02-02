@@ -1121,14 +1121,6 @@ Go ahead and go to the regular http page and it should redirect you to the https
 
 ### OpenChange final configuration
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Recent versions of Samba have left OCSManager/MAPIProxy in an unusable state. Fortunately, with SOGo-2.2, the new ActiveSync code should eliminate the need for OCSManager with Outlook 2013+. Autodiscover is working as expected now, but free/busy lookups are broken making EWS unusable. (Discuss in [Talk:OpenChange server#](https://wiki.archlinux.org/index.php/Talk:OpenChange_server))
-
 #### OCSManager
 
 OCSManager is a Python-Paste serverlet that listens specifically for autodiscover, EWS, and RPCProxy requests. Create a backup copy of the `/etc/ocsmanager/ocsmanager.ini` file:

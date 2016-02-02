@@ -2,14 +2,6 @@
 
 **Note:** [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") has been deprecated and replaced by [GRUB](/index.php/GRUB "GRUB") in Arch Linux. See the news [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). GRUB also offers enhanced graphical capabilities, such as background images and bitmap fonts. Users are recommended to switch to [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") instead.
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Grub-Legacy-gfx#](https://wiki.archlinux.org/index.php/Talk:Grub-Legacy-gfx))
-
 Related articles
 
 *   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")

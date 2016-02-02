@@ -188,14 +188,6 @@ Install CD Version
 
 ## Special Notes (*):
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Lots of vague or unproven bugs/workarounds, poor writing (Discuss in [Talk:Laptop/Lenovo#](https://wiki.archlinux.org/index.php/Talk:Laptop/Lenovo))
-
 ### Lenovo U31-70
 
 Wireless needs [linux](https://www.archlinux.org/packages/?name=linux) >= 4.3 and latest [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware), both packages are currently in testing. Copy one of the firmware blobs `eeprom_ar6320_2p1_NFA345i.bin` or `eeprom_ar6320_2p1_NFA345i_highTX.bin` from the windows driver to `/usr/lib/firmware/ath10k/QCA6174/hw2.1/board-pci-168c:0041:17aa:3545.bin`.

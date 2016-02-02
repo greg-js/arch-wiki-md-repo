@@ -1,13 +1,5 @@
 # Lenovo ThinkPad T61
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo ThinkPad T61#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T61))
-
 ## Contents
 
 *   [1 System Specifications](#System_Specifications)
@@ -120,14 +112,6 @@ chainloader +1
 ### Video Driver
 
 #### Intel
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Intel graphics](/index.php/Intel_graphics "Intel graphics").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad T61#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T61))
 
 The Intel® Graphics Media Accelerator GM965 uses the xf86-video-intel driver.
 

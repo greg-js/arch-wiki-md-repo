@@ -93,14 +93,6 @@ $ vdpauinfo
 
 ### Configuration
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Autodetection works at least if there is just one driver available. Note that the drivers are installed in `/usr/lib/vdpau/`. (Discuss in [Talk:VDPAU#](https://wiki.archlinux.org/index.php/Talk:VDPAU))
-
 The environment variable `VDPAU_DRIVER` determines the driver file used. See [Environment variables#Defining variables](/index.php/Environment_variables#Defining_variables "Environment variables") for configuration details.
 
 The correct driver name depends on your setup:
@@ -135,30 +127,30 @@ For more information, see the [PRIME](/index.php/PRIME "PRIME") wiki page.
 
 *   **Adobe Flash Player** — see [Browser plugins#Adobe Flash Player](/index.php/Browser_plugins#Adobe_Flash_Player "Browser plugins").
 
-NaN
+	|| [flashplugin](https://www.archlinux.org/packages/?name=flashplugin)
 
 *   **[MPlayer](/index.php/MPlayer "MPlayer") or [mplayer2](http://www.mplayer2.org/)** — see [MPlayer#Enabling VDPAU](/index.php/MPlayer#Enabling_VDPAU "MPlayer").
 
-NaN
+	|| [mplayer](https://www.archlinux.org/packages/?name=mplayer) [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup>
 
 *   **gnome-mplayer** — To enable hardware acceleration: _Edit > Preferences > Player_, then set Video Output to `vdpau`.
 
-NaN
+	|| [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
 *   **[SMplayer](/index.php/SMplayer "SMplayer")** — To enable hardware acceleration: _Options > Preferences > General > Video_, then set Output driver to `vdpau`.
 
-NaN
+	|| [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **bomi** — Hardware acceleration can be enabled: _Preferences > Video > Hardware acceleration_.
 
-NaN
+	[https://bomi-player.github.io](https://bomi-player.github.io) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup> [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
 
 *   **[Mpv](/index.php/Mpv "Mpv")** — see [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv").
 
-NaN
+	|| [mpv](https://www.archlinux.org/packages/?name=mpv)
 
 *   **[VLC media player](/index.php/VLC_media_player "VLC media player")** — see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player").
 
-NaN
+	|| [vlc](https://www.archlinux.org/packages/?name=vlc)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413761](https://wiki.archlinux.org/index.php?title=VDPAU&oldid=413761)"

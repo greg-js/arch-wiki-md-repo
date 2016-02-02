@@ -6,7 +6,7 @@ Related articles
 
 From the [Vifm](http://vifm.info/) home page:
 
-NaN
+	_Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from mutt._
 
 If you use vi, Vifm gives you complete keyboard control over your files without having to learn a new set of commands.
 

@@ -196,27 +196,27 @@ Several GUI applications are available to quickly and easily configure your Open
 
 *   **ObConf** — A GTK2 based configuration tool for the Openbox window manager.
 
-NaN
+	[http://openbox.org/wiki/ObConf:About](http://openbox.org/wiki/ObConf:About) || [obconf](https://www.archlinux.org/packages/?name=obconf)
 
 *   **LXAppearance ObConf** — Plugin for LXAppearance to configure Openbox. Note that not all options to configure Openbox are available in this plugin, so you might want to install obconf anyway.
 
-NaN
+	[http://lxde.org](http://lxde.org) || [lxappearance-obconf](https://www.archlinux.org/packages/?name=lxappearance-obconf)
 
 *   **LXInput** — LXDE keyboard and mouse configuration
 
-NaN
+	[http://lxde.org](http://lxde.org) || [lxinput](https://www.archlinux.org/packages/?name=lxinput)
 
 *   **LXRandR** — LXDE monitor configuration.
 
-NaN
+	[http://wiki.lxde.org/en/LXRandR](http://wiki.lxde.org/en/LXRandR) || [lxrandr](https://www.archlinux.org/packages/?name=lxrandr)
 
 *   **obkey** — Configure Openbox keyboard shortcuts
 
-NaN
+	[https://code.google.com/p/obkey/](https://code.google.com/p/obkey/) || [obkey](https://aur.archlinux.org/packages/obkey/)<sup><small>AUR</small></sup>
 
 *   **ob-autostart** — A simple autostart application for Openbox.
 
-NaN
+	[http://pastebin.com/012YgXTk](http://pastebin.com/012YgXTk) || [ob-autostart](https://aur.archlinux.org/packages/ob-autostart/)<sup><small>AUR</small></sup>
 
 Programs and applications relating to the configuration of Openbox's desktop menu are discussed in the [Menus](#Menus) section.
 
@@ -278,14 +278,6 @@ For example, the code below would use `super` and `t` to launch [lxterminal](htt
 ```
 
 #### Multimedia keys
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Openbox#](https://wiki.archlinux.org/index.php/Talk:Openbox))
 
 Where available, it is possible to set the appropriate `multimedia` keys to perform their intended functions, such as to control the volume and/or the screen brightness. These will usually be integrated into the `function` keys, and are identified by their appropriate symbols. See [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") for details.
 
@@ -746,14 +738,6 @@ See [Cursor themes](/index.php/Cursor_themes "Cursor themes") and [Icons](/index
 
 ## Desktop icons and wallpapers
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [[]].**
-
-**Notes:** This section is applicable to most [window managers](/index.php/Window_manager "Window manager") when used without [Desktop environment](/index.php/Desktop_environment "Desktop environment") (Discuss in [Talk:Openbox#](https://wiki.archlinux.org/index.php/Talk:Openbox))
-
 Openbox does not natively support the use of desktop icons or wallpapers. As a consequence, it will be necessary to install additional applications for this purpose, where desired.
 
 ### Desktop management using file managers
@@ -927,14 +911,6 @@ For example, using the following code in the `<mouse>` section of the `~/.config
 The [openbox](https://www.archlinux.org/packages/?name=openbox) package provides a `obxprop` binary that can parse relevant values for applications settings in `rc.xml`. Officially `obxprop | grep "^_OB_APP"` is recommended for this task. Start the process by running the command shown, then click a window to see its properties in the terminal.
 
 Doing so for multiple applications and its windows can be very inefficient however. The following script `obxprop2obrc` makes it much easier to configure even a large number of applications.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Full of [quoting errors](http://shellcheck.net), do **not** follow any of the instructions bellow! (Discuss in [Talk:Openbox#](https://wiki.archlinux.org/index.php/Talk:Openbox))
 
 ```
 #!/bin/bash

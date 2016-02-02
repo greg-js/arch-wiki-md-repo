@@ -1,21 +1,5 @@
 # Putty
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** No intro, no see also. (Discuss in [Talk:Putty#](https://wiki.archlinux.org/index.php/Talk:Putty))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Putty#](https://wiki.archlinux.org/index.php/Talk:Putty))
-
 ## Installation
 
 [Install](/index.php/Install "Install") [putty](https://www.archlinux.org/packages/?name=putty). For a menu item and icon, install [putty-freedesktop](https://aur.archlinux.org/packages/putty-freedesktop/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").

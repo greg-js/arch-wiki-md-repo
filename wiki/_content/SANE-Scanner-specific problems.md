@@ -82,22 +82,6 @@ is executed when the corresponding scan type is selected. Note that `$SCAN_COMMA
 
 ### xsane crashes
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Should be mentioned on AUR page (Discuss in [Talk:SANE/Scanner-specific problems#](https://wiki.archlinux.org/index.php/Talk:SANE/Scanner-specific_problems))
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This may only be relevant for the Brother DCP-150C scanner (Discuss in [Talk:SANE/Scanner-specific problems#](https://wiki.archlinux.org/index.php/Talk:SANE/Scanner-specific_problems))
-
 If xsane crashes with message "`=bugchk_free(ptr==(nil))@brother_modelinf.c(482)`", then you need to create the link `/usr/local/Brother -> /usr/share/brother`.
 
 ## Canon
@@ -121,14 +105,6 @@ Cannot read scanner make & model: bjnp://
 and the scanner refuses to connect, then it may be because you have a newer scanner using the mfnp, and not the bjnp protocol. Unfortunately, this scanner may not be supported (yet) by the current sane version. However, you can install [sane-git](https://aur.archlinux.org/packages/sane-git/)<sup><small>AUR</small></sup> to get a version supporting mfnp reasonably well. (And make sure that the scanner is in "remote" scanning mode - otherwise it will not communicate it's scanning capabilities over the network at all)
 
 ## Epson
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The `scanner` group is [deprecated](/index.php/Users_and_groups#Deprecated_or_unused_groups "Users and groups"). (Discuss in [Talk:SANE/Scanner-specific problems#](https://wiki.archlinux.org/index.php/Talk:SANE/Scanner-specific_problems))
 
 With Epson scanners, you can use "Image Scan! for Linux".
 
@@ -190,14 +166,6 @@ Finally. If you still get the `Error I/O` messages try to check the transportati
 For the operation of the scanner S300M a firmware file `/usr/share/sane/epjitsu/300M_0C00.nal` is required, which can be downloaded [here](http://sange.fi/~atehwa/cgi-bin/piki.cgi/fujitsu%20scansnap%20s300%20firmware), or extracted from the Windows driver.
 
 ## HP
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** hpoj is deprecated and ptal-init is not compatible with systemd. (Discuss in [Talk:SANE/Scanner-specific problems#](https://wiki.archlinux.org/index.php/Talk:SANE/Scanner-specific_problems))
 
 For HP hardware you may also need to [install](/index.php/Install "Install") the [hplip](https://www.archlinux.org/packages/?name=hplip) package (see [hplib supported devices](http://hplipopensource.com/hplip-web/supported_devices/index.html)) and/or [hpoj](https://aur.archlinux.org/packages/hpoj/)<sup><small>AUR</small></sup> (see [hpoj supported devices](http://hpoj.sourceforge.net/suplist.shtml)).
 

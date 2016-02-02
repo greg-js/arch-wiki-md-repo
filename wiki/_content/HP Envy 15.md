@@ -1,13 +1,5 @@
 # HP Envy 15
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Laptop/HP](/index.php/Laptop/HP "Laptop/HP").**
-
-**Notes:** Abysmal style, mostly trivial notes (Discuss in [Talk:HP Envy 15#](https://wiki.archlinux.org/index.php/Talk:HP_Envy_15))
-
 | **Device** | **Status** | **Modules** |
 | Intel | **Working** | xf86-video-intel |
 | nVdia | **Working** | nvidia |

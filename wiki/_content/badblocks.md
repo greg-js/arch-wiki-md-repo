@@ -71,23 +71,35 @@ Pass completed, 0 bad blocks found. (0/0/0 errors)
 
 Options:
 
-NaN
+	-w
+
+	do a destructive write test
+
+	-s
+
+	show progress-bar
+
+	-v
+
+	be "verbose" and output bad sectors detected to stdout
 
 Additional options you might consider:
 
-NaN
+	-p <number>
+
+	run through the extensive four pass test <number> of sequent iterations
+
+	-o </path/to/output-file>
+
+	print bad sectors to <output-file> instead of stdout
+
+	-t <test_pattern> 
+
+	Specify a pattern. See below.
 
 #### define specific test pattern
 
 **From the manpage:** "The <test_pattern> may either be a numeric value between 0 and ULONG_MAX-1 inclusive [...]."
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Badblocks#](https://wiki.archlinux.org/index.php/Talk:Badblocks))
 
 ##### random pattern
 
@@ -198,14 +210,6 @@ Then (re-)create the file system with the information:
 **Note:** The meaning of `0/0/527405` errors is <number of read errors>/<number of write errors>/<number of corruption errors>.
 
 #### Block size
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Securely wipe disk#Block size](/index.php/Securely_wipe_disk#Block_size "Securely wipe disk").**
-
-**Notes:** Block size alignment is not specific to this tiny section. Other Arch Wiki Articles already do cover this up. Search for it and cover everything up on a [Block size](/index.php?title=Block_size&action=edit&redlink=1 "Block size (page does not exist)") page. (Discuss in [Talk:Badblocks#](https://wiki.archlinux.org/index.php/Talk:Badblocks))
 
 first find the file systems **block size**. For example for ext# filesystems:
 

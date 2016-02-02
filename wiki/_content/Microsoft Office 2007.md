@@ -1,21 +1,5 @@
 # Microsoft Office 2007
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Microsoft Office 2007#](https://wiki.archlinux.org/index.php/Talk:Microsoft_Office_2007))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** pacman commands, "sudo nano", etc., see [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:Microsoft Office 2007#](https://wiki.archlinux.org/index.php/Talk:Microsoft_Office_2007))
-
 ## Contents
 
 *   [1 Install 2014 update](#Install_2014_update)

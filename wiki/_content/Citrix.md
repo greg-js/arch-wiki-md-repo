@@ -1,13 +1,5 @@
 # Citrix
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Help:Style](/index.php/Help:Style "Help:Style"); also add an introduction. (Discuss in [Talk:Citrix#](https://wiki.archlinux.org/index.php/Talk:Citrix))
-
 ## Contents
 
 *   [1 Install from AUR](#Install_from_AUR)
@@ -18,14 +10,6 @@
 *   [3 TLS/SSL Certificates](#TLS.2FSSL_Certificates)
 
 ## Install from AUR
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Citrix provides an automatic installer, see manual installation (Discuss in [Talk:Citrix#](https://wiki.archlinux.org/index.php/Talk:Citrix))
 
 #### Install Package
 
@@ -120,7 +104,13 @@ You may then receive the error `You have not chosen to trust the issuer of the s
 
 There may be several reasons for this:
 
-NaN
+	You do not have the root Certificate Authority (CA) certificates.
+
+	These are already installed on most systems, they are part of the core package [ca-certificates](https://www.archlinux.org/packages/?name=ca-certificates), but they are not where ICAClient looks for them. Copy the certificates from `/etc/ssl/certs/` to `/usr/lib/ICAClient/keystore/cacerts/`. For Citrix versions before 13.1, run the following command as root:
+
+	 `# ln -sf /etc/ssl/certs/* /opt/Citrix/ICAClient/keystore/cacerts/` 
+
+	Since versions 13.1, Citrix needs the certificates in separate files. You need to run the following commands as root:
 
 ```
 # cd /opt/Citrix/ICAClient/keystore/cacerts/
@@ -129,9 +119,15 @@ NaN
 
 ```
 
-NaN
+	You may also need to download your CA's intermediate certificates and store them in the same directory.
 
-NaN
+	Changes to your certificate directory will likely require rehashing links for openssl to find them properly. Skipping this step might result in Citrix still giving certificate errors. To do this, use this command (borrowed from [[2]](https://help.ubuntu.com/community/CitrixICAClientHowTo#A5._Add_more_SSL_certificates))
+
+	 `# c_rehash /opt/Citrix/ICAClient/keystore/cacerts/` 
+
+	Your server is using a certificate with a SHA-2 hash for the Signature Algorithm.
+
+	Microsoft has mandated that any certificates with an expiry date of 2017 or later must use a SHA-2 hash[[3]](http://www.p2vme.com/2014/02/sha2-certificates-and-citrix-receiver.html). You may either:
 
 1.  Upgrade your client to 13.1 or later. Citrix now supports SHA-2 hashes in the ICA client version 13.1.0.285639.
 2.  Contact your CA and have your certificate re-keyed with a SHA-1 hash.

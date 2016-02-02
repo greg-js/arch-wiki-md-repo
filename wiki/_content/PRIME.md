@@ -52,14 +52,6 @@ OpenGL renderer string: Mesa DRI Intel(R) Ivybridge Mobile
 
 ### Closed Source Drivers
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add article about support and setup of closed-source graphic drivers for PRIME (Discuss in [Talk:PRIME#](https://wiki.archlinux.org/index.php/Talk:PRIME))
-
 ## PRIME GPU offloading
 
 GPU-intensive applications should be rendered on the more powerful discrete card. The command `xrandr --setprovideroffloadsink provider sink` can be used to make a render offload provider send its output to the sink provider (the provider which has a display connected). The provider and sink identifiers can be numeric (0x7d, 0x56) or a case-sensitive name (Intel, radeon).
@@ -151,14 +143,6 @@ $ xrandr --setprovideroutputsource Intel nouveau
 The discrete card's outputs should be available now in xrandr.
 
 ## Troubleshooting
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** No sources to motivate the workarounds in this section (Discuss in [Talk:PRIME#](https://wiki.archlinux.org/index.php/Talk:PRIME))
 
 ### XRandR specifies only 1 output provider
 

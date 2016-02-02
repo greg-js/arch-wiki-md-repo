@@ -1,13 +1,5 @@
 # Realtime kernel
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This is a work in progress (Discuss in [Talk:Realtime kernel#](https://wiki.archlinux.org/index.php/Talk:Realtime_kernel))
-
 This article describes the Linux kernel realtime patch set, and how to configure, test, and troubleshoot realtime kernels.
 
 ## Contents

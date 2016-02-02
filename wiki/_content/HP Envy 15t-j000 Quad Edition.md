@@ -1,13 +1,5 @@
 # HP Envy 15t-j000 Quad Edition
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Power Management, Video Card, NVIDIA optimus, Mouse, mSATA SSD cache, more on installing, fingerprint reader, camera, sound, what works/dosen't work summary,wireless, dual boot, hard drive (Discuss in [Talk:HP Envy 15t-j000 Quad Edition#](https://wiki.archlinux.org/index.php/Talk:HP_Envy_15t-j000_Quad_Edition))
-
 The HP Envy 15t-j000 Quad Edition is a laptop released in 2013.
 
 | **Device** | **Status** | **Modules** |

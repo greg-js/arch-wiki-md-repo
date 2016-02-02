@@ -125,23 +125,23 @@ These packages are not in the above mentioned groups:
 
 *   **[Boxes](https://en.wikipedia.org/wiki/GNOME_Boxes "wikipedia:GNOME Boxes")** — A simple user interface to access [libvirt](/index.php/Libvirt "Libvirt") virtual machines.
 
-NaN
+	[https://wiki.gnome.org/Apps/Boxes](https://wiki.gnome.org/Apps/Boxes) || [gnome-boxes](https://www.archlinux.org/packages/?name=gnome-boxes)
 
 *   **GNOME Initial Setup** — A simple, easy, and safe way to prepare a new system.
 
-NaN
+	[https://github.com/GNOME/gnome-initial-setup](https://github.com/GNOME/gnome-initial-setup) || [gnome-initial-setup](https://www.archlinux.org/packages/?name=gnome-initial-setup)
 
 *   **GNOME PackageKit** — Collection of graphical tools for PackageKit to be used in the GNOME desktop.
 
-NaN
+	[https://github.com/GNOME/gnome-packagekit](https://github.com/GNOME/gnome-packagekit) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
 *   **[Nemiver](https://en.wikipedia.org/wiki/Nemiver "wikipedia:Nemiver")** — A C/C++ debugger.
 
-NaN
+	[https://wiki.gnome.org/Apps/Nemiver](https://wiki.gnome.org/Apps/Nemiver) || [nemiver](https://www.archlinux.org/packages/?name=nemiver)
 
 *   **[Software](https://en.wikipedia.org/wiki/GNOME_Software "wikipedia:GNOME Software")** — Lets you install and update applications and system extensions.
 
-NaN
+	[https://wiki.gnome.org/Apps/Software/](https://wiki.gnome.org/Apps/Software/) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
 ## GNOME Sessions
 
@@ -177,14 +177,6 @@ After editing the `~/.xinitrc` file, GNOME can be launched with the `startx` com
 **Note:** GNOME on Wayland requires the [xorg-server-xwayland](https://www.archlinux.org/packages/?name=xorg-server-xwayland) package, and **cannot** be started using _startx_ and `~/.xinitrc`. Instead, run `gnome-session --session=gnome-wayland`. For more information, see [Wayland](/index.php/Wayland "Wayland").
 
 ### GNOME applications in Wayland
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Note is too long (more content in the note than in the section itself). (Discuss in [Talk:GNOME#](https://wiki.archlinux.org/index.php/Talk:GNOME))
 
 Currently, by default, GNOME applications will be run as traditional X applications through Xwayland. To test GNOME applications with Wayland, use the command line to run the application and prefix the command with `env GDK_BACKEND='wayland,x11' <command>`.
 
@@ -598,11 +590,13 @@ GNOME provides a disk utility to manipulate storage drive settings. These are so
 
 *   **Enable write cache** is a feature that most hard drives provide. Data is cached and allocated at chosen times to improve system performance. Not recommended unless the computer has a backup battery pack or is a laptop as data would be lost on power failure.
 
-NaN
+	_Settings_ > _Drive Settings_ > _Write Cache_ > **On**
 
 *   **Automatic Mount Options** can mount drives and partitions that are GPT based - will use default, recommended options.
 
-NaN
+**Warning:** This setting erases related [fstab](/index.php/Fstab "Fstab") entries
+
+	_Partition Settings_ > _Edit Mount Options_ > _Automatic Mount Options_ > **On**
 
 ### Hiding applications from the menu
 
@@ -768,15 +762,15 @@ Alternatively, a number of tools are available to automate the process:
 
 *   **mkwlppr** — This script creates XML files that can act as dynamic wallpapers for GNOME by referring to multiple wallpapers.
 
-NaN
+	[http://pastebin.com/019G2rCy](http://pastebin.com/019G2rCy) || see [mkwlppr](http://pastebin.com/019G2rCy)
 
 *   **[Wallpapoz](/index.php/Wallpapoz "Wallpapoz")** — Wallpapoz is a tool that provides dynamic wallpapers for GNOME and Xfce desktops.
 
-NaN
+	[https://vajrasky.wordpress.com/](https://vajrasky.wordpress.com/) || [wallpapoz](https://aur.archlinux.org/packages/wallpapoz/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wallpapoz)]</sup>
 
 *   **CreBS** — A Python/GTK application used to create and set desktop wallpaper slideshows for GNOME.
 
-NaN
+	[http://www.obfuscatepenguin.net/](http://www.obfuscatepenguin.net/) || [crebs](https://aur.archlinux.org/packages/crebs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/crebs)]</sup>
 
 For setting the XML file as the default background, see [#Lock screen and background](#Lock_screen_and_background).
 
@@ -944,15 +938,15 @@ Maximizing windows may cause artifacts as of GNOME 3.12.0 - see the following [f
 
 ### Tear-free video with Intel HD Graphics
 
-NaN
+	DRI3
 
 According to [this bug report](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c2), DRI3 includes the `buffer_age` extension that allows GNOME Shell's Mutter compositor to sync windows to vblank in an efficient way. [Enable](/index.php/Intel_Graphics#Direct_Rendering_Infrastructure_3_.28DRI3.29 "Intel Graphics") it in the Xorg driver. You can change `AccelMethod` to your preference in the configuration file created, but the line must be included when the file is created; otherwise, `gnome-session` will crash upon login in a non-Wayland session.
 
-NaN
+	Intel TearFree
 
 Enabling the [Xorg Intel TearFree option](/index.php/Intel_Graphics#Tear-free_video "Intel Graphics") is a known workaround for tearing problems on Intel adapters. However, the way this option acts makes it redundant with the use of a compositor (it increases memory consumption and lowers performance, see [the original bug report's final comment](https://bugs.freedesktop.org/show_bug.cgi?id=37686#c123)).
 
-NaN
+	Mutter tweaks
 
 **Note:** This workaround has been [reported](https://bugzilla.gnome.org/show_bug.cgi?id=711028#c0) to have side effects and may not fix tearing in all cases.
 

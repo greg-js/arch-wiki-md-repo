@@ -80,7 +80,49 @@ See [Command-line shell#Changing your default shell](/index.php/Command-line_she
 
 When starting Zsh, it'll source the following files in this order by default:
 
-NaN
+	`/etc/zsh/zshenv`
+
+	This file should contain commands to set the global [command search path](#Configuring_.24PATH) and other system-wide [environment variables](/index.php/Environment_variables "Environment variables"); it should not contain commands that produce output or assume the shell is attached to a tty.
+
+	`~/.zshenv`
+
+	Similar to `/etc/zsh/zshenv` but for per-user configuration. Generally used for setting some useful environment variables.
+
+	`/etc/zsh/zprofile`
+
+	This is a global configuration file, it'll be sourced at login. Usually used for executing some general commands at login. Please note that on Arch Linux, by default it contains [one line](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/zprofile?h=packages/zsh) which source the `/etc/profile`, see [#Global configuration files](#Global_configuration_files) for details.
+
+	`/etc/profile`
+
+	This file should be sourced by all Bourne-compatible shells upon login: it sets up an environment upon login and application-specific (`/etc/profile.d/*.sh`) settings. Note that on Arch Linux, Zsh will also source this by default.
+
+	`~/.zprofile`
+
+	This file is generally used for automatic execution of user's scripts at login.
+
+	`/etc/zsh/zshrc`
+
+	Global configuration file, will be sourced when starting as a interactive shell.
+
+	`~/.zshrc`
+
+	Main user configuration file, will be sourced when starting as a interactive shell.
+
+	`/etc/zsh/zlogin`
+
+	A global configuration file, will be sourced at the ending of initial progress when starting as a login shell.
+
+	`~/.zlogin`
+
+	Same as `/etc/zsh/zlogin` but for per-user configuration.
+
+	`/etc/zsh/zlogout`
+
+	A global configuration file, will be sourced when a login shell exits.
+
+	`~/.zlogout`
+
+	Same as `/etc/zsh/zlogout` but for per-user configuration.
 
 **Note:**
 
@@ -151,7 +193,9 @@ And move `~/.ssh/known_hosts` somewhere else so that ssh creates a new one with 
 
 For autocompletion with an arrow-key driven interface, add the following to:
 
- `~/.zshrc`  `zstyle ':completion:*' menu select` NaN
+ `~/.zshrc`  `zstyle ':completion:*' menu select` 
+
+	_To activate the menu, press tab twice._
 
 For autocompletion of command line switches for aliases, add the following to:
 

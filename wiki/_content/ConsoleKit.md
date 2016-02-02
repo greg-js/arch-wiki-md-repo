@@ -80,14 +80,6 @@ The kdebase-workspace package needs to be recompiled for use with consolekit ([k
 
 ### Use D-Bus for power operations
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Content must be revised for `ConsoleKit2` and other developments (Discuss in [Talk:ConsoleKit#](https://wiki.archlinux.org/index.php/Talk:ConsoleKit))
-
 **Note:** Using ConsoleKit2's D-Bus methods for suspend, hibernate, and hybrid sleep requires [pm-utils](https://www.archlinux.org/packages/?name=pm-utils).
 
 Shut down:

@@ -6,17 +6,9 @@ Related articles
 *   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
 *   [Mathematica](/index.php/Mathematica "Mathematica")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** unnecessarily verbose (Discuss in [Talk:Matlab#](https://wiki.archlinux.org/index.php/Talk:Matlab))
-
 From the [official website](http://www.mathworks.com/products/matlab/):
 
-NaN
+	_MATLAB is a high-level language and interactive environment for numerical computation, visualization, and programming. Using MATLAB, you can analyze data, develop algorithms, and create models and applications. The language, tools, and built-in math functions enable you to explore multiple approaches and reach a solution faster than with spreadsheets or traditional programming languages, such as C/C++ or Java._
 
 ## Contents
 

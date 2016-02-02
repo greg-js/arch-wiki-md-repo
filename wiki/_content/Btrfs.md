@@ -9,11 +9,11 @@ Related articles
 
 From [Wikipedia:Btrfs](https://en.wikipedia.org/wiki/Btrfs "wikipedia:Btrfs")
 
-NaN
+	_Btrfs (B-tree file system, variously pronounced: "Butter F S", "Better F S", "B-tree F S", or simply "Bee Tee Arr Eff Ess") is a GPL-licensed experimental copy-on-write file system for Linux. Development began at Oracle Corporation in 2007._
 
 From [Btrfs Wiki](https://btrfs.wiki.kernel.org/index.php/Main_Page)
 
-NaN
+	_Btrfs is a new copy on write (CoW) filesystem for Linux aimed at implementing advanced features while focusing on fault tolerance, repair and easy administration. Jointly developed at Oracle, Red Hat, Fujitsu, Intel, SUSE, STRATO and many others, Btrfs is licensed under the GPL and open for contribution from anyone._
 
 **Warning:**
 
@@ -138,9 +138,13 @@ As this is a file system that is still in active development, changes and regres
 #### Examples
 
 *   **Linux 3.15**
-    *   Btrfs on a SSD for system installation and an emphasis on maximizing performance (also read [#SSD TRIM](#SSD_TRIM))NaN
+    *   Btrfs on a SSD for system installation and an emphasis on maximizing performance (also read [#SSD TRIM](#SSD_TRIM))
 
-    *   Btrfs on a HDD for archival purposes with an emphasis on maximizing space.NaN
+    	 `noatime,discard,ssd,compress=lzo,space_cache` 
+
+    *   Btrfs on a HDD for archival purposes with an emphasis on maximizing space.
+
+    	 `noatime,autodefrag,compress-force=lzo,space_cache` 
 
 ### Displaying used/free space
 
@@ -452,14 +456,6 @@ See [Btrfs Wiki Glossary](https://btrfs.wiki.kernel.org/index.php/Glossary).
 #### Services
 
 The [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) package brings the `btrfs-scrub@.timer` unit for monthly scrubbing the specified mountpoint. [Enable](/index.php/Enable "Enable") the timer with an encoded path, e.g. `btrfs-scrub@-.timer` for `/` and `btrfs-scrub@home.timer` for `/home`.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The `btrfs-scrub@.service` unit provided by [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) does not use `Type=forking`. (Discuss in [Talk:Btrfs#](https://wiki.archlinux.org/index.php/Talk:Btrfs))
 
 **Note:** If running the scrub as a systemd service, use `Type=forking`. Alternatively, you can pass the `-B` flag to `btrfs scrub start` to run it in the foreground and use the default `Type` value.
 

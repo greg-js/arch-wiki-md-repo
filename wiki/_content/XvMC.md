@@ -36,11 +36,11 @@ The open source drivers should work without any configuration. For the proprieta
 
 *   For NVIDIA GPUs:
 
-NaN
+	 `libXvMCNVIDIA_dynamic.so.1` 
 
 *   For AMD GPUs:
 
-NaN
+	 `libAMDXvBA.so.1` 
 
 ## Supported software
 

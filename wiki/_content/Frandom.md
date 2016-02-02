@@ -1,13 +1,5 @@
 # Frandom
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Needs updating to SystemD (Discuss in [Talk:Frandom#](https://wiki.archlinux.org/index.php/Talk:Frandom))
-
 **frandom** is a fast alternative to [/dev/urandom](/index.php/Random_number_generation "Random number generation").
 
 From the [frandom page](http://billauer.co.il/frandom.html): "The frandom suite comes as a Linux kernel module for several kernels, or a kernel patch for 2.4.22\. It implements a random number generator, which is 10-50 times faster than what you get from Linux' built-in `/dev/urandom`."

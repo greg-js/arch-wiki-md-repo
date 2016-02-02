@@ -1,13 +1,5 @@
 # Gitosis
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Gitosis#](https://wiki.archlinux.org/index.php/Talk:Gitosis))
-
 Gitosis is a tool which provides access control and remote management for hosted [Git](/index.php/Git "Git") repositories. It allows for fine-grained management of read and write access over SSH, without requiring that the users have local system accounts on the server. To do this, it sets up a single system account "`git`" which is then used for all Git access.
 
 Gitosis provides installation instructions in its [README](http://eagain.net/gitweb/?p=gitosis.git;a=blob;f=README.rst;hb=HEAD) file. This guide is based on those instructions.

@@ -1,13 +1,5 @@
 # Running program in separate X display
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Gaming#Starting_games_in_a_separate_X_server](/index.php/Gaming#Starting_games_in_a_separate_X_server "Gaming").**
-
-**Notes:** same topic (Discuss in [Talk:Running program in separate X display#](https://wiki.archlinux.org/index.php/Talk:Running_program_in_separate_X_display))
-
 It may often be handy to run some program in separate X display. I.e. 3D games for gaining performance, or making alt+tab-style switching possible with ctrl+alt+[F7-F12].
 
 The simplest way would be:

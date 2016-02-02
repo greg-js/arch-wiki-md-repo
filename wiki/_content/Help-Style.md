@@ -129,7 +129,9 @@ These style conventions encourage tidy, organized, and visually consistent artic
 *   Headings use sentence case; _not_ title case: _My new heading_; not _My New Heading_.
 *   Avoid using links in headings because they break style consistency and do not stand out well enough. Usually the anchor text is also found in the section content, otherwise you can use a simple sentence like:
 
-NaN
+	See [Some related article](https://wiki.archlinux.org/index.php/My_new_page) for more information.
+
+	For the same reason, also avoid using any kind of HTML or wiki markup code, including [#Code formatting](#Code_formatting) templates. See also [Help:Style/Formatting and punctuation](/index.php/Help:Style/Formatting_and_punctuation "Help:Style/Formatting and punctuation").
 
 *   See the [Help:Effective use of headers](/index.php/Help:Effective_use_of_headers "Help:Effective use of headers") articles for more information.
 
@@ -197,7 +199,14 @@ echo "Hello World"
 *   Do not assume a specific text editor (_nano_, _vim_, _emacs_, etc.) when requesting text file edits, except when necessary.
 *   Do not use implicit commands to request text file edits, unless strictly necessary. For example, `$ echo -e "clear\nreset" >> ~/.bash_logout` should be:
 
-NaN
+	Append the following lines to `~/.bash_logout`:
+
+```
+clear
+reset
+```
+
+	Where it might be helpful, a link to [Help:Reading#Append, add, create, edit](/index.php/Help:Reading#Append.2C_add.2C_create.2C_edit "Help:Reading") can be added.
 
 ### Keyboard keys
 
@@ -228,23 +237,43 @@ NaN
 
 *   Please avoid using examples of _pacman_ commands in order to give instructions for the installation of official packages: this has been established both for simplicity's sake (every Arch user should know [pacman](/index.php/Pacman "Pacman")'s article by memory) and to avoid errors such as `pacman -Sy package` or possibly never-ending discussions like the choice between `pacman -S package` and `pacman -Syu package`. All the more reason you should not suggest the use of _pacman_ frontends or wrappers.
 
-NaN
+	Instead, just use a simple statement like:
+
+	[Install](/index.php/Install "Install") the [foobar](https://www.archlinux.org/packages/?name=foobar) package.
+
+	Or, if for example the application name differs from the package name:
+
+	_MyApplication_ can be [installed](/index.php/Install "Install") with the [my-app-pkg](https://www.archlinux.org/packages/?name=my-app-pkg) package.
+
+	The instructions for the installation of a list of packages may appear as:
+
+	[Install](/index.php/Install "Install") the [foobar1](https://www.archlinux.org/packages/?name=foobar1), [foobar2](https://www.archlinux.org/packages/?name=foobar2) and [foobar3](https://www.archlinux.org/packages/?name=foobar3) packages.
+
+	If referring to a package group you may use:
+
+	[Install](/index.php/Install "Install") the [foobar](https://www.archlinux.org/groups/x86_64/foobar/) group.
+
+	You are granted the flexibility to adapt the wording to your specific article.
 
 *   Links to the referenced packages are mandatory and should be created using [Template:Pkg](/index.php/Template:Pkg "Template:Pkg"), for example `{{Pkg|foobar}}`.
 
-NaN
+	When referring to package groups, [Template:Grp](/index.php/Template:Grp "Template:Grp") should be used instead, for example `{{Grp|foobar}}`.
 
 *   The above examples also make use of a link to [install](/index.php/Install "Install") (e.g. `[[install]]`): this is recommended to be used at least on the first occurrence of an installation request, especially in articles that are more likely to be visited by Arch novices.
 *   Examples of _pacman_ commands are nonetheless accepted and even recommended in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 *   If the package is hosted in the _core_, _extra_, or _community_ repositories, do not make reference to the repository, thus facilitating maintenance because it is not uncommon for a package to be moved to a different repository. If however the package is hosted in an official repository which is not enabled by default (_multilib_, _testing_, etc.), mentioning it is required, using a wording like:
 
-NaN
+	[Install](/index.php/Install "Install") the [foobar](https://www.archlinux.org/packages/?name=foobar) package from the official [multilib](/index.php/Multilib "Multilib") repository.
 
 #### AUR packages
 
 *   Please avoid using examples of how to install AUR packages, neither with the official method nor mentioning AUR helpers: every user who installs unofficial packages should have read the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") article, and be aware of all the possible consequences on his system.
 
-NaN
+	Instead, just use a simple statement like:
+
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package.
+
+	You are granted the flexibility to adapt the wording to your specific article, see the section on [#Official packages](#Official_packages) for more examples.
 
 *   Links to the referenced packages are mandatory and should be created using [Template:AUR](/index.php/Template:AUR "Template:AUR"), for example `{{AUR|foobar}}`.
 
@@ -252,7 +281,17 @@ NaN
 
 *   When suggesting to use an unofficial repository for installing a pre-built package, do not provide instructions for enabling the repository, but make sure such repository is included in [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") and then simply link to it. Also, just like with [official packages](#Official_packages), do not add examples of _pacman_ commands. For example:
 
-NaN
+	Install the _foobar_ package from the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
+
+	If the package is also available in the [AUR](/index.php/AUR "AUR"):
+
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package, also available in the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
+
+	If the package is available in the [AUR](/index.php/AUR "AUR") with a different name:
+
+	Install the [aurpkg](https://aur.archlinux.org/packages/aurpkg/)<sup><small>AUR</small></sup> package, also available as _builtpackage_ from the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
+
+	You are granted the flexibility to adapt the wording to your specific article.
 
 *   The link to [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories") is mandatory and should point to the relevant repository section, for example `[[Unofficial user repositories#example|example]]`.
 
@@ -260,7 +299,13 @@ NaN
 
 *   Do not give examples of how to enable, start, or perform any other basic operations with _systemctl_ on [systemd](/index.php/Systemd "Systemd") units. Instead, use a simple sentence listing the units involved, possibly remarking dependencies or conflicts with other units, and a description of the actions to be performed. For example:
 
-NaN
+	To have GDM launched at boot time, [enable](/index.php/Enable "Enable") `gdm.service`.
+
+	Or, if for example the unit is a template that needs instantiation:
+
+	To enable automatic switching of _netctl_ profiles on a wireless interface, [enable](/index.php/Enable "Enable") an instance of `netctl-auto@.service` with the interface name, for example `netctl-auto@wlan0.service`.
+
+	You are granted the flexibility to adapt the wording to your specific article.
 
 *   Make sure to link to the [systemd#Using units](/index.php/Systemd#Using_units "Systemd") article section, either directly or through a dedicated [redirect](https://wiki.archlinux.org/index.php?title=Special:WhatLinksHere/Systemd&hidelinks=1&hidetrans=1) like `[[start]]`, `[[enable]]` or `[[stop]]`.
 *   Examples of _systemctl_ commands are nonetheless accepted and even recommended in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
@@ -269,16 +314,19 @@ NaN
 
 *   A [Note](/index.php/Template:Note "Template:Note") should be used for information that somehow diverges from what the user would naturally expect at some point in the article. This includes also information that gives more in-depth knowledge on something in particular that otherwise would be considered a bit extraneous to the article. Another example is when needing to point out a temporary announcement like a change in the name of a package.
 
-NaN
+	A Note can also be used to highlight information that is important but easily overlooked by someone new to the subject area.
 
 *   A [Warning](/index.php/Template:Warning "Template:Warning") should be used where the described procedure could carry severe consequences such as being reasonably difficult to undo or resulting in damage to the system. Warnings should generally indicate both the worst case scenarios as well as the conditions that could lead to or avoid such worst cases.
 
-NaN
+	In general, do not abuse Warnings: if you are undecided, chances are high that you should use a Note.
 
 *   A [Tip](/index.php/Template:Tip "Template:Tip") should indicate a method or procedure that could be useful and bring benefits to somebody, albeit not needed to complete the operation being dealt with, and therefore safely ignorable.
 *   When two or more notes, warnings or tips have to appear one after each other at the same point of an article, prefer grouping their texts in a list inside a single template, avoiding stacking the templates unless they are completely unrelated. For example:
 
-NaN
+**Tip:**
+
+*   Tip example #1.
+*   Tip example #2.
 
 ### Shells
 
@@ -373,7 +421,7 @@ NaN
 *   Redirect pages should contain only the redirect code and nothing else. In rare cases, they can also contain a flag such as [Template:Deletion](/index.php/Template:Deletion "Template:Deletion").
 *   Redirect only to internal articles; do not use interwiki redirections.
 
-NaN
+	Redirects using interlanguage links are exceptionally allowed in accordance with [Help:I18n](/index.php/Help:I18n "Help:I18n") and upon authorization from the [ArchWiki:Maintenance Team](/index.php/ArchWiki:Maintenance_Team "ArchWiki:Maintenance Team").
 
 ## User pages
 

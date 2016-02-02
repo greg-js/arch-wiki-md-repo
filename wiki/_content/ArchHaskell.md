@@ -136,23 +136,7 @@ For example, for haskell-foo, ensure:
 
 ### Creating another repository
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO (Discuss in [Talk:ArchHaskell#](https://wiki.archlinux.org/index.php/Talk:ArchHaskell))
-
 ### List of satellite repositories
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO (Discuss in [Talk:ArchHaskell#](https://wiki.archlinux.org/index.php/Talk:ArchHaskell))
 
 ## Troubleshooting
 

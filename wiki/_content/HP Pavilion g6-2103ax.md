@@ -17,7 +17,53 @@
 
 The g6-2103ax is a 2012 model 15.6” laptop, with the AMD A6 processor and a dedicated graphics card.
 
-NaN
+	CPU
+
+	AMD A6-4400M APU with Radeon graphics
+
+	2.7 GHz, 1 MiB second-level cache
+
+	GPU
+
+	Internal: AMD Radeon HD 7520G, 800Mhz, 512MB
+
+	Dedicated: AMD Radeon HD 7670M, 800Mhz, 512MB
+
+	Memory
+
+	4 GiB DDR3, 1600 MHz
+
+	Display
+
+	15.6” LED
+
+	Multimedia
+
+	HP CDDVDW SN-208BB CD/DVD writer
+
+	Sound: ???
+
+	Networking
+
+	Wireless: Atheros AR9485 wireless adaptor
+
+	Ethernet: Realtek RTL8101E/RTL8102E PCI Express fast ethernet controller
+
+	Storage
+
+	Seagate ST500LM012 HN0M5, 500GB (465GiB)
+
+	Factory partitions are SYSTEM, WINDOWS C, HP_RECOVERY, and HP_TOOLS
+
+	External ports
+
+	3× USB-3
+
+	SD card reader
+
+	1× HDMI
+
+	1× VGA-compatible
 
 ## Notes about factory settings
 

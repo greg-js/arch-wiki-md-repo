@@ -1,13 +1,5 @@
 # Odoo
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Odoo_8.0 package will no longer be under maintenance, its author suggest use odoo_nigtlhy package (Discuss in [Talk:Odoo#](https://wiki.archlinux.org/index.php/Talk:Odoo))
-
 [Odoo](https://www.odoo.com/) (formerly OpenERP) is Enterprise Resource Planning software. It provides a complete, integrated ERP solution for small and medium sized businesses and organizations. Odoo includes financial and analytic accounting, warehouse and inventory management, sales and purchase management, customer and supplier relations management, association management, tasks automation, human resource management, marketing campaign, document management, help desk, e-commerce integration, and point of sale functionality.
 
 Odoo features an application server which uses PostgreSQL as database back-end, with a web-based client. It is written in the Python programming language, with a highly modular design which allows for the rapid development of new modules through Open Object RAD. Odoo developers have a strong commitment to free software.

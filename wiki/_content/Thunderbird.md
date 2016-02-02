@@ -42,15 +42,15 @@ Other versions include:
 
 *   **Thunderbird Beta** — Cutting edge features with relatively-good stability.
 
-NaN
+	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)<sup><small>AUR</small></sup>
 
 *   **Thunderbird Earlybird** — Experience the newest innovations as they're developed (equivalent to an alpha and Firefox Aurora releases).
 
-NaN
+	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)<sup><small>AUR</small></sup>
 
 *   **Thunderbird Nightly** — Experience the newest innovations with nightly releases (for those that want to work with breakages).
 
-NaN
+	[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)<sup><small>AUR</small></sup>
 
 A version overview, both past and future, can be read on the [Mozilla wiki](https://wiki.mozilla.org/Releases).
 
@@ -182,7 +182,7 @@ Remember to run `fc-cache -fv` to update system font cache. See [Font configurat
 
 ### Webmail with Thunderbird
 
-NaN
+	_See upstream Wiki: [Using webmail with your email client](http://kb.mozillazine.org/Using_webmail_with_your_email_client)._
 
 ### Migrate profile to another system
 

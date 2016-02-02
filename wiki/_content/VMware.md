@@ -229,19 +229,6 @@ then adding the name to the `_Virtual_machine_name_.vmx` file:
 
 ### Using DKMS to manage the modules
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:**
-
-*   Is this needed for VMWare 12? Above it is mentioned that the kernel modules are now mainlined.
-*   Using [DKMS](/index.php/DKMS "DKMS") like described below might not work, or this is not the only valid/working solution. There are several packages in the AUR, like [vmware-modules-dkms](https://aur.archlinux.org/packages/vmware-modules-dkms/)<sup><small>AUR</small></sup>.
-
-(Discuss in [Talk:VMware#](https://wiki.archlinux.org/index.php/Talk:VMware))
-
 The [Dynamic Kernel Module Support (DKMS)](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") can be used to manage VMware modules and to void from re-running `vmware-modconfig` each time the kernel changes. The following example uses a custom `Makefile` to compile and install the modules through `vmware-modconfig`. Afterwards they are removed from the current kernel tree.
 
 #### Preparation
@@ -515,14 +502,6 @@ ptsc.noTSC = "TRUE" # the time stamp counter (TSC) is slow.
 This is likely due to the `vmnet` module not being loaded [[1]](http://www.linuxquestions.org/questions/slackware-14/could-not-connect-ethernet0-to-virtual-network-dev-vmnet8-796095/). See also the [#systemd services](#systemd_services) section for automatic loading.
 
 ### GUI doesn't show after upgrade
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Questionable reasoning, definitely needs a reference (Discuss in [Talk:VMware#](https://wiki.archlinux.org/index.php/Talk:VMware))
 
 The following affects VMware Workstation and Player versions before 12.1.0\. After upgrading to kernel 4.2 an existing installation of VMware does not start any of its GUI applications. This is because the LD library path no longer points to a compatible library. To fix this set your LD_LIBRARY_PATH in a terminal from which you run VMware.
 

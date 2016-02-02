@@ -1,13 +1,5 @@
 # Estonian ID-card
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [eID card](/index.php?title=EID_card&action=edit&redlink=1 "EID card (page does not exist)").**
-
-**Notes:** Shared instructions amongst different eID cards (card readers, pcsc), different mostly in middleware and browser plugins. Merge with [Belgian eID card reader](/index.php/Belgian_eID_card_reader "Belgian eID card reader"). (Discuss in [Talk:Estonian ID-card#](https://wiki.archlinux.org/index.php/Talk:Estonian_ID-card))
-
 Packages to enable Estonian ID-card support are available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). This article explains how to install the official software versions by AS Sertifitseerimiskeskus.
 
 ## Quick install

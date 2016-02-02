@@ -1,21 +1,5 @@
 # Fdisk
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Split from [Partitioning](/index.php/Partitioning "Partitioning"), needs adaptations as a standalone article. (Discuss in [Talk:Fdisk#](https://wiki.archlinux.org/index.php/Talk:Fdisk))
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** It should cover {f,cf,g,cg,sg}disk programs, as it will be relied upon from the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"). (Discuss in [Talk:Beginners'_guide#Replace_parted_with_cfdisk.2Fcgdisk](https://wiki.archlinux.org/index.php/Talk:Beginners%27_guide#Replace_parted_with_cfdisk.2Fcgdisk))
-
 Related articles
 
 *   [parted](/index.php/Parted "Parted")
@@ -41,7 +25,7 @@ A summary of the typical usage of _gdisk_:
 
 *   Start _gdisk_ against your drive as root (_disk-device_ may be e.g. `/dev/sda`):
 
-NaN
+	 `# gdisk _disk-device_` 
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty GUID partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
@@ -63,7 +47,7 @@ Note that in the olden days, _fdisk_ used cylinders as the default display unit,
 
 *   Start _fdisk_ against your drive as root (_disk-device_ may be e.g. `/dev/sda`):
 
-NaN
+	 `# fdisk _disk-device_` 
 
 *   If the drive is brand new or if you are wanting to start over, create a new empty DOS partition table with the `o` command.
 *   Create a new partition with the `n` command (primary type/1st partition).
@@ -73,14 +57,6 @@ NaN
 *   Write the table to disk and exit via the `w` command.
 
 ## Using cgdisk to create GPT partitions
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Moved here from [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), needs adaptation/merging to the rest of this article. (Discuss in [Talk:Fdisk#](https://wiki.archlinux.org/index.php/Talk:Fdisk))
 
 Launch _cgdisk_ with:
 
@@ -118,14 +94,6 @@ If you would like to start over, you can simply select _Quit_ (or press `Q`) to 
 If you are satisfied, choose _Write_ (or press `Shift+W`) to finalize and to write the partition table to the drive. Type `yes` and choose _Quit_ (or press `Q`) to exit without making any more changes.
 
 ## Using fdisk to create MBR partitions
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Moved here from [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), needs adaptation/merging to the rest of this article. (Discuss in [Talk:Fdisk#](https://wiki.archlinux.org/index.php/Talk:Fdisk))
 
 Launch _fdisk_ with:
 

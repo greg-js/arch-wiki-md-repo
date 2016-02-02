@@ -1,13 +1,5 @@
 # nftables
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** As of October, 2015: while nftables has been around for a while, few people seem to have practical experience using it. The documentation often leaves questions open. If you'd like to pioneer, help out and document how you got it to work. The best place to ask questions is the [Netfilter mailing list](http://netfilter.org/mailinglists.html#ml-user). (Discuss in [Talk:Nftables#](https://wiki.archlinux.org/index.php/Talk:Nftables))
-
 Related articles
 
 *   [Firewalls](/index.php/Firewalls "Firewalls")

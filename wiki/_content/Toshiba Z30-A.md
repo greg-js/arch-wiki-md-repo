@@ -69,14 +69,6 @@ EndSection
 
 ```
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Why is [gnome-settings-daemon-backlight-toshiba](https://aur.archlinux.org/packages/gnome-settings-daemon-backlight-toshiba/)<sup><small>AUR</small></sup> the "best" way? It is certainly not the only way, see [Intel_graphics#Backlight_is_not_adjustable](/index.php/Intel_graphics#Backlight_is_not_adjustable "Intel graphics") and [Backlight](/index.php/Backlight "Backlight"). (Discuss in [Talk:Toshiba Z30-A#](https://wiki.archlinux.org/index.php/Talk:Toshiba_Z30-A))
-
 In gnome-shell, after the 3.16 version, this solution is not working, because gnome does not check the X11.conf. For solving this problem, the best way is using the [gnome-settings-daemon-backlight-toshiba](https://aur.archlinux.org/packages/gnome-settings-daemon-backlight-toshiba/)<sup><small>AUR</small></sup> package.
 
 ### Keyboard Backlight control

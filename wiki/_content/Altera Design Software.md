@@ -62,14 +62,6 @@ You are now ready to install and launch Quartus II.
 
 ### Installing
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The installation should be handled with pacman through a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). (Discuss in [Talk:Altera Design Software#](https://wiki.archlinux.org/index.php/Talk:Altera_Design_Software))
-
 To install, first extract the downloaded tar archive:
 
 ```

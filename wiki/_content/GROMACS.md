@@ -8,9 +8,9 @@ Related articles
 
 According to the [official website](http://www.gromacs.org/), GROMACS is:
 
-NaN
+	_a versatile package to perform [molecular dynamics](https://en.wikipedia.org/wiki/Molecular_dynamics "wikipedia:Molecular dynamics"), i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles._
 
-NaN
+	_It is primarily designed for biochemical molecules like proteins, lipids and nucleic acids that have a lot of complicated bonded interactions, but since GROMACS is extremely fast at calculating the nonbonded interactions (that usually dominate simulations) many groups are also using it for research on non-biological systems, e.g. polymers._
 
 ## Contents
 
@@ -419,49 +419,49 @@ Now when you run _gmx pdb2gmx_ this solvent model should be available for the ap
 
 *   **libgmxcpp** — _a C++ toolkit used for reading in Gromacs files (.xtc and .ndx) for use in analyzing simulation results._
 
-NaN
+	[https://github.com/wesbarnett/libgmxcpp](https://github.com/wesbarnett/libgmxcpp) || [libgmxcpp](https://aur.archlinux.org/packages/libgmxcpp/)<sup><small>AUR</small></sup>
 
 *   **mdanalysis** — _an object-oriented python toolkit to analyze molecular dynamics trajectories in many popular formats._
 
-NaN
+	[http://www.mdanalysis.org](http://www.mdanalysis.org) || [python2-mdanalysis](https://aur.archlinux.org/packages/python2-mdanalysis/)<sup><small>AUR</small></sup>
 
 *   **MDTraj** — _a modern, open library for the analysis of molecular dynamics trajectories._
 
-NaN
+	[http://mdtraj.org/latest/](http://mdtraj.org/latest/) || [python-mdtraj](https://aur.archlinux.org/packages/python-mdtraj/)<sup><small>AUR</small></sup>
 
 *   **xdrfile** — _allows to read GROMACS trr and xtc files and also to convert from one format to another._
 
-NaN
+	[http://gromacs.org](http://gromacs.org) || [xdrfile](https://aur.archlinux.org/packages/xdrfile/)<sup><small>AUR</small></sup>
 
 #### Free energy calculations
 
 *   **alchemical_analysis** — _an open tool implementing some recommended practices for analyzing alchemical free energy calculations._
 
-NaN
+	[https://github.com/MobleyLab/alchemical-analysis](https://github.com/MobleyLab/alchemical-analysis) || [python2-alchemical-analysis](https://aur.archlinux.org/packages/python2-alchemical-analysis/)<sup><small>AUR</small></sup>
 
 #### Structure creation
 
 *   **[Avogadro](https://en.wikipedia.org/wiki/Avogadro_(software) "wikipedia:Avogadro (software)")** — _an advanced molecule editor and visualizer designed for cross-platform use in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas._
 
-NaN
+	[http://avogadro.cc](http://avogadro.cc) || [avogadro](https://www.archlinux.org/packages/?name=avogadro)
 
 #### Topology generation
 
 *   **acpype** — a tool based on Python to use Antechamber to generate topologies for chemical compounds and to interface with other python applications like CCPN tools or ARIA...Topologies files to be generated so far: CNS/XPLOR, GROMACS, CHARMM and AMBER.
 
-NaN
+	[https://code.google.com/p/acpype](https://code.google.com/p/acpype) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 #### Visualization
 
 *   **vmd** — _molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting._
 
-NaN
+	[http://www.ks.uiuc.edu/Research/vmd/](http://www.ks.uiuc.edu/Research/vmd/) || [vmd](https://aur.archlinux.org/packages/vmd/)<sup><small>AUR</small></sup>
 
 #### Wrappers
 
 *   **GromacsWrapper** — _a python package that wraps system calls to Gromacs tools into thin classes._
 
-NaN
+	[http://becksteinlab.github.io/GromacsWrapper](http://becksteinlab.github.io/GromacsWrapper) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/)</small>
 
 ### Tutorials
 

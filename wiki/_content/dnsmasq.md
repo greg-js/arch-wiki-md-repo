@@ -58,14 +58,6 @@ listen-address=127.0.0.1,192.168.1.1
 
 ### DNS Addresses File
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [resolv.conf](/index.php/Resolv.conf "Resolv.conf").**
-
-**Notes:** Same topic. Also note that most of this can also be done natively in `/etc/resolvconf.conf` using the `name_servers` and `name_servers_append` options. (Discuss in [Talk:Dnsmasq#](https://wiki.archlinux.org/index.php/Talk:Dnsmasq))
-
 After configuring dnsmasq, the DHCP client will need to prepend the localhost address to the known DNS addresses in `/etc/resolv.conf`. This causes all queries to be sent to dnsmasq before trying to resolve them with an external DNS. After the DHCP client is configured, the network will need to be restarted for changes to take effect.
 
 #### resolv.conf

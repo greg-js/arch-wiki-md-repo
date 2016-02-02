@@ -1,20 +1,12 @@
 # Puppet
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Puppet#](https://wiki.archlinux.org/index.php/Talk:Puppet))
-
 Related articles
 
 *   [Puppet Dashboard](/index.php/Puppet_Dashboard "Puppet Dashboard")
 
 From [Puppet web site](https://puppetlabs.com/puppet/what-is-puppet/):
 
-NaN
+	_Puppet is IT automation software that helps system administrators manage infrastructure throughout its lifecycle, from provisioning and configuration to patch management and compliance. Using Puppet, you can easily automate repetitive tasks, quickly deploy critical applications, and proactively manage change, scaling from 10s of servers to 1000s, on-premise or in the cloud._
 
 ## Contents
 

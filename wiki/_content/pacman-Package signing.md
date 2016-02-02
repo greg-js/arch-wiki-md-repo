@@ -143,14 +143,6 @@ For debugging purposes, you can access _pacman'_s keyring directly with _gpg_, e
 
 ## Troubleshooting
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Instructions could be clearer (Discuss in [Talk:Pacman/Package signing#](https://wiki.archlinux.org/index.php/Talk:Pacman/Package_signing))
-
 **Warning:** _pacman-key_ depends on [time](/index.php/Time "Time"). If your system clock is wrong, you'll get:
 
 ```
@@ -227,14 +219,6 @@ If the same packages keep failing and you are sure you did all the _pacman-key_ 
 This might actually be the solution if you get a message like `error: linux: signature from "Some Person <Some.Person@example.com>" is invalid` or similar when upgrading (i.e. you might not be the victim of a MITM attack after all, your downloaded file was simply corrupt).
 
 ### Updating keys via proxy
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This information should be reported upstream, not here (Discuss in [Talk:Pacman/Package signing#](https://wiki.archlinux.org/index.php/Talk:Pacman/Package_signing))
 
 There was a [bug](https://bugs.g10code.com/gnupg/issue1786) in [GnuPG](/index.php/GnuPG "GnuPG") which prevents updating keys via http proxies. As of v.2.1.9, while the bug appears handled, _gnupg_ may not honour the `http_proxy` environment variable. As a workaround, add:
 

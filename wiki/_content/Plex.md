@@ -103,21 +103,17 @@ If you share your libraries with some friends, but want the data to go through y
 #### How to
 
 1.  Go to your vpn provider settings and ask for a port. _(We're going to assume ours gave us the port 11652)_
-2.  Then add the following command to your boot sequence _(rc.local for example)_NaN
+2.  Then add the following command to your boot sequence _(rc.local for example)_
+
+    	`# iptables -t nat -A PREROUTING -i tun0 -p tcp --dport 11652 -j REDIRECT --to-ports 32400`
+
+    	_(We're going to assume you're using the tun0 interface for openvpn)_
 
 3.  Finally, go to your plex server settings, enable advanced settings and define the custom port at 11652
 
 **Warning:** Don't forget to replace the 11652 example port with yours!
 
 ### Troubleshooting
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Look if journalctl can be made equivalent with `SYSTEMD_LOG_LEVEL=debug`, currently appears unreliable, see [User talk:Alucryd#Plex](/index.php/User_talk:Alucryd#Plex "User talk:Alucryd") (Discuss in [Talk:Plex#](https://wiki.archlinux.org/index.php/Talk:Plex))
 
 Logs are located in:
 

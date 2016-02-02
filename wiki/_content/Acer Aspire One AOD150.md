@@ -85,14 +85,6 @@ In all other respects, the touchpad can be configured using the standard [Touchp
 
 ## Kernel Drivers for Aspire One D250
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Acer Aspire One AOD150#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_One_AOD150))
-
 The **atl1e** driver that ships with the kernel in 2009.02 does not work with the Atheros/Attansic ethernet chip in this model. The chip in the AAO D250 has device id 0x1062, and the default **atl1e** driver only supports the 0x1026 device. In order to get the wired ethernet working you have to compile another version of **atl1e**.
 
 Go to [http://partner.atheros.com/Drivers.aspx](http://partner.atheros.com/Drivers.aspx) and fetch **[459]AR813X-linux-v1.0.0.9.tar.gz** from there. This driver supports a wide range of Atheros/Attansic devices. Do *not* fetch **AR81Family-linux-v1.0.1.0.tar.gz**, because that is the one that supports device id 0x1026 only.

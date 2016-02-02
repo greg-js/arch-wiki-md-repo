@@ -1,13 +1,5 @@
 # Mobile Phone
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Mobile Phone#](https://wiki.archlinux.org/index.php/Talk:Mobile_Phone))
-
 ## iPhone
 
 You will need [libimobiledevice-git](https://aur.archlinux.org/packages/libimobiledevice-git/)<sup><small>AUR</small></sup> and [libgpod-git](https://aur.archlinux.org/packages/libgpod-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libgpod-git)]</sup> compiled with afc support. You can use the [ifuse-git](https://aur.archlinux.org/packages/ifuse-git/)<sup><small>AUR</small></sup> to mount your [iPod](/index.php/IPod "IPod") or if you use [GNOME](/index.php/GNOME "GNOME") you can compile [Gvfs](/index.php/Gvfs "Gvfs") with the option `--with-afc` [[1]](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/gvfs).

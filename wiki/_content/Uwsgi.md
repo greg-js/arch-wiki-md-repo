@@ -25,14 +25,6 @@ Before uwsgi service can be enabled/started a configuration file with the same n
 
 When reading following lines assume that `/etc/uwsgi/helloworld.ini` was created.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** does not comply with [Help:Style#systemd units operations](/index.php/Help:Style#systemd_units_operations "Help:Style") (Discuss in [Talk:Uwsgi#](https://wiki.archlinux.org/index.php/Talk:Uwsgi))
-
 To enable the uwsgi service by default at start-up, run:
 
 ```

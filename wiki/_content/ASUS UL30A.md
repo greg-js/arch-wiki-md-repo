@@ -113,14 +113,6 @@ This computer has an extra power button on the left, you can configure this with
 
 ## Freezes while/after booting
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Phrases like "current Arch" have absolutely no meaning, please make reference to the kernel version. If the issue is specific to Manjaro, it has no place on the ArchWiki. (Discuss in [Talk:ASUS UL30A#](https://wiki.archlinux.org/index.php/Talk:ASUS_UL30A))
-
 On my UL30A current Arch or Manjaro install won't boot (freeze somewhere along the process) unless I pass `processor.nocst` as kernel parameter. This deactivates a certain APIC feature to determine the C-state but shouldn't affect performance or stability since a legacy one is used instead. Don't forget to add that to your GRUB config afterwards as well.
 
 Other things I pass to the kernel to improve battery life are `nmi_watchdog=0` and `pcie_aspm=force`. You have to see how well those work for you.

@@ -253,14 +253,6 @@ That will make IBus work with LibreOffice, and you can start LibreOffice from an
 
 ### Non US keyboards
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Undone on package upgrades (Discuss in [Talk:IBus#](https://wiki.archlinux.org/index.php/Talk:IBus))
-
 If [Ibus does not let you write in a given language](https://code.google.com/p/ibus/issues/detail?id=155), let's say Chinese, with a different keyboard layout other than US, then you need to tell it which one to use.
 
 You need to change `/usr/share/ibus/component/<method_name>.xml` and change the `<layout>` tag to the expected keyboard layout.

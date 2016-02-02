@@ -1,13 +1,5 @@
 # Docbook
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** missing introduction (Discuss in [Talk:Docbook#](https://wiki.archlinux.org/index.php/Talk:Docbook))
-
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -105,7 +105,18 @@ Other prototypes are found in `/usr/share/pacman` from the pacman and abs packag
 
 *   Package files should follow these **general directory guidelines**:
 
-NaN
+| `/etc` | **System-essential** configuration files |
+| `/usr/bin` | Binaries |
+| `/usr/lib` | Libraries |
+| `/usr/include` | Header files |
+| `/usr/lib/{pkg}` | Modules, plugins, etc. |
+| `/usr/share/doc/{pkg}` | Application documentation |
+| `/usr/share/info` | GNU Info system files |
+| `/usr/share/man` | Manpages |
+| `/usr/share/{pkg}` | Application data |
+| `/var/lib/{pkg}` | Persistent application storage |
+| `/etc/{pkg}` | Configuration files for `{pkg}` |
+| `/opt/{pkg}` | Large self-contained packages such as Java, etc. |
 
 *   Packages should not contain any of the following directories:
     *   `/bin`

@@ -166,14 +166,6 @@ See [iio-sensor-proxy](https://github.com/hadess/iio-sensor-proxy). [iio-sensor-
 
 One useful application of Easystroke is to use it to launch CellWriter right below your mouse pointer.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Script dump, in-code comments (Discuss in [Talk:Tablet PC#](https://wiki.archlinux.org/index.php/Talk:Tablet_PC))
-
 **Note:** This script requires the [xdotool](https://www.archlinux.org/packages/?name=xdotool) package, which is not installed by default.
 
 ```

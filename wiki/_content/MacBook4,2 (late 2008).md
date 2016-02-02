@@ -1,13 +1,5 @@
 # MacBook4,2 (late 2008)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:MacBook4,2 (late 2008)#](https://wiki.archlinux.org/index.php/Talk:MacBook4,2_(late_2008)))
-
 This article is intended specifically for Macbook(4,2) (late September 2008) model. If you have other Macbook model, please see [here](/index.php/MacBook "MacBook").
 
 ## Contents

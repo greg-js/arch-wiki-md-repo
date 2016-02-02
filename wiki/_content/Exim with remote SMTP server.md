@@ -61,14 +61,6 @@ where `_machine_` is the hostname of your laptop or PC and `_mydomain_` is the d
 
 ## Update: 11-Feb-05
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Written in first person, see [Help:Style](/index.php/Help:Style "Help:Style"). Should be integrated normally with the rest of the article (a wiki is not a blog). (Discuss in [Talk:Exim with remote SMTP server#](https://wiki.archlinux.org/index.php/Talk:Exim_with_remote_SMTP_server))
-
 FYI - I just got done wrestling with Exim (4.44) to get it up and running in this configuration on my machine, and I had to do a number of things quite differently than the other person. Thought I would capture them here for posterity, since I had to go through a pretty painful process that cost me a lot of time and aggravation before I hit upon the right config. Hopefully this will save others from a similar fate.
 
 By the way, I should note: my Exim server does not receive any emails directly from the Net. I'm using fetchmail to grab the mail's from an external POP mail drop and dump them into my Exim server. So perhaps this is different than the other person's configuration.
@@ -153,14 +145,6 @@ Hope this all spares someone some hair-pulling and lost sleep down the road. I w
 
 ## Update: 10-Feb-08
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Should be integrated normally with the rest of the article (a wiki is not a blog). (Discuss in [Talk:Exim with remote SMTP server#](https://wiki.archlinux.org/index.php/Talk:Exim_with_remote_SMTP_server))
-
 ```
 pass_on_to_isp:
   driver = manualroute
@@ -180,14 +164,6 @@ send_to_gateway:
 ```
 
 ## Update 10-Oct-15
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Written in first person, see [Help:Style](/index.php/Help:Style "Help:Style"). Should be integrated normally with the rest of the article (a wiki is not a blog). (Discuss in [Talk:Exim with remote SMTP server#](https://wiki.archlinux.org/index.php/Talk:Exim_with_remote_SMTP_server))
 
 I found the information here a little confusing and may be out of date. The following sum total changes worked for me:
 

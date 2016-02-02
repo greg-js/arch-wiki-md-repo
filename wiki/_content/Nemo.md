@@ -34,27 +34,27 @@ Some programs can add extra functionality to Nemo. Here are a few packages that 
 
 *   **Nemo File Roller** — File archiver extension for Nemo.
 
-NaN
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-fileroller](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-fileroller) || [nemo-fileroller](https://www.archlinux.org/packages/?name=nemo-fileroller)
 
 *   **Nemo Compare** — An utility which compares two files using [meld](https://www.archlinux.org/packages/?name=meld).
 
-NaN
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-compare](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-compare) || [nemo-compare](https://aur.archlinux.org/packages/nemo-compare/)<sup><small>AUR</small></sup>
 
 *   **Nemo Preview** — GtkClutter and Javascript-based quick previewer for Nemo.
 
-NaN
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-preview](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-preview) || [nemo-preview](https://www.archlinux.org/packages/?name=nemo-preview)
 
 *   **Nemo Seahorse** — PGP encryption and signing extension for Nemo.
 
-NaN
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-seahorse](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-seahorse) || [nemo-seahorse](https://www.archlinux.org/packages/?name=nemo-seahorse)
 
 *   **Nemo Share** — Samba extension for Nemo.
 
-NaN
+	[https://github.com/linuxmint/nemo-extensions/tree/master/nemo-share](https://github.com/linuxmint/nemo-extensions/tree/master/nemo-share) || [nemo-share](https://www.archlinux.org/packages/?name=nemo-share)
 
 *   **RabbitVCS Nemo** — Integrate RabbitVCS into Nemo.
 
-NaN
+	[http://www.rabbitvcs.org/](http://www.rabbitvcs.org/) || [rabbitvcs-nemo](https://aur.archlinux.org/packages/rabbitvcs-nemo/)<sup><small>AUR</small></sup>
 
 See [nemo-extensions github repo](https://github.com/linuxmint/nemo-extensions) for all extensions.
 

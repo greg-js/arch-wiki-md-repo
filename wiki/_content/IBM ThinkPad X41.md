@@ -55,14 +55,6 @@ The IBM X41 comes with a "ipw2915" wireless Centrino (A, B and G) or ipw2200 wir
 
 ### Scrolling with trackpoint
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:IBM ThinkPad X41#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_X41))
-
 The following file can be added for trackpoint scrolling support in X.
 
  `/etc/X11/xorg.conf.d/10-trackpoint.conf` 

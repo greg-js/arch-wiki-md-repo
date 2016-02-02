@@ -6,14 +6,6 @@ Related articles
 *   [Environment variables](/index.php/Environment_variables "Environment variables")
 *   [Desktop entries](/index.php/Desktop_entries "Desktop entries")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Default applications](/index.php/Default_applications "Default applications").**
-
-**Notes:** [Talk:Xdg-open#About Merge](/index.php/Talk:Xdg-open#About_Merge "Talk:Xdg-open") (Discuss in [Talk:Xdg-open#](https://wiki.archlinux.org/index.php/Talk:Xdg-open))
-
 **xdg-open** is a desktop-independent tool for configuring the [default applications](/index.php/Default_applications "Default applications") of a user. Many applications invoke the `xdg-open` command internally.
 
 Inside a [desktop environment](/index.php/Desktop_environment "Desktop environment") (like [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), or [Xfce](/index.php/Xfce "Xfce")), _xdg-open_ simply passes the arguments to those desktop environment's file-opener application (eg. _gvfs-open_, _kde-open_, or _exo-open_). which means that the associations are left up to the desktop environment.
@@ -89,14 +81,6 @@ $ xdg-mime default emacs.desktop $(grep '^text/x-*' /usr/share/mime/types)
 
 ### Set the default browser
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** There are many more MIME types for browsers (Discuss in [Talk:Xdg-open#](https://wiki.archlinux.org/index.php/Talk:Xdg-open))
-
 To set the default application for `http(s)://` web URLs, write
 
 ```
@@ -153,14 +137,6 @@ Your answer becomes the default handler for that type of file. Mimeopen is insta
 
 ### xdg-open replacements
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** There may be some benefit to making this a table, but [Template:App](/index.php/Template:App "Template:App") including upstream URLs gives all needed information in a simple manner (Discuss in [Talk:Xdg-open#](https://wiki.archlinux.org/index.php/Talk:Xdg-open))
-
 | Name/Package | Method | Based on | Configuration file |
 | [busking-git](https://aur.archlinux.org/packages/busking-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/busking-git)]</sup> | Regular expressions | [perl-file-mimeinfo](https://www.archlinux.org/packages/?name=perl-file-mimeinfo) | custom |
 | [linopen](https://aur.archlinux.org/packages/linopen/)<sup><small>AUR</small></sup> | [file](https://www.archlinux.org/packages/?name=file) | custom |
@@ -174,14 +150,6 @@ Your answer becomes the default handler for that type of file. Mimeopen is insta
 **Note:** Some of the above packages replace `xdg-utils`. Those that do not can be symbolically linked to _xdg-open_ in the user's `$PATH` above `/usr/bin`, but some applications hard-code the absolute path `/usr/bin/xdg-open`. In this case, install [xdg-utils-no-open](https://aur.archlinux.org/packages/xdg-utils-no-open/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and copy the replacement to `/usr/bin/xdg-open`.
 
 ### mailcap
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** When using [run-mailcap](https://aur.archlinux.org/packages/run-mailcap/)<sup><small>AUR</small></sup>, _xdg-open_ may refer to it.[[1]](http://cgit.freedesktop.org/xdg/xdg-utils/tree/scripts/xdg-open.in#n266) It should then clearly not be combined with the below file to prevent endless loops. (Discuss in [Talk:Xdg-open#](https://wiki.archlinux.org/index.php/Talk:Xdg-open))
 
 The _.mailcap_ file format is used by mail programs such as [mutt](https://www.archlinux.org/packages/?name=mutt) and [sylpheed](https://www.archlinux.org/packages/?name=sylpheed). To have those programs use _xdg-open_, edit `~/.mailcap`:
 

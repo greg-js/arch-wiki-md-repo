@@ -1,13 +1,5 @@
 # Kxmame
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Kxmame#](https://wiki.archlinux.org/index.php/Talk:Kxmame))
-
 Kxmame is a KDE port of the GXmame frontend for xmame and sdlmame emulators.
 
 ## How to obtain

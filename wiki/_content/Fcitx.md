@@ -1,13 +1,5 @@
 # Fcitx
 
-[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
-
-[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
-
-**This article or section needs to be [translated](/index.php/ArchWiki:Contributing#Translating "ArchWiki:Contributing").**
-
-**Notes:** [Fcitx (简体中文)](/index.php/Fcitx_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Fcitx (简体中文)") has been rewritten, but its author's English is too poor for him to translate it here. So if you can read Chinese and you are good at English, please translate it here. (Discuss in [Talk:Fcitx#](https://wiki.archlinux.org/index.php/Talk:Fcitx))
-
 Related articles
 
 *   [IBus](/index.php/IBus "IBus")

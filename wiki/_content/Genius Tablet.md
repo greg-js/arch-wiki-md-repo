@@ -1,13 +1,5 @@
 # Genius Tablet
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Genius Tablet#](https://wiki.archlinux.org/index.php/Talk:Genius_Tablet))
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -29,7 +21,17 @@ First, you need to install the X11 drivers. The wizardpen package in aur provide
 
 First you have to know if your tablet is in the udev .rules file:
 
-NaN
+1.  lsusb
+
+	Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+
+	Bus 002 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+
+	Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+
+	Bus 001 Device 002: ID 0402:5602 ALi Corp. M5602 Video Camera Controller
+
+	Bus 002 Device 005: ID 172f:0038 Waltop International Corp. Genius G-Pen F509
 
 The last one is our tablet. 172f is the vendor id, 0038 the model id
 
@@ -58,7 +60,33 @@ Just do the following:
 
 Follow the instruction there, and what you receive is the configuration for your tablet.
 
-NaN
+	..........................................................................................................................................
+
+	Please, press the stilus at ANY
+
+	corner of your desired working area: ok, got 189,77
+
+	Please, press the stilus at OPPOSITE
+
+	corner of your desired working area: ok, got 17920,10734
+
+	According to your input you may put the following
+
+	lines into your XF86Config/X.Org configuration file:
+
+	Driver "wizardpen"
+
+	Option "Device" "/dev/input/by-id/usb-WALTOP_Tablet-event-mouse"
+
+	Option "TopX" "189"
+
+	Option "TopY" "77"
+
+	Option "BottomX" "17920"
+
+	Option "BottomY" "10734"
+
+	.........................................................................................................................................
 
 The package will create `/etc/X11/xorg.conf.d/70-wizardpen.conf` file which you can access for configuration.
 

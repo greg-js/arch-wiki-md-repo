@@ -22,14 +22,6 @@ A lot of the information is derived from the [Arch Forum](https://bbs.archlinux.
 
 ## Common issues
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Reformat list, first person (Discuss in [Talk:Samsung NC10#](https://wiki.archlinux.org/index.php/Talk:Samsung_NC10))
-
 *   using KMS (as of xorg-video-intel 2.8.1), No brightness control with xbacklight. ([workaround with setpci](https://bbs.archlinux.org/viewtopic.php?id=74914), the issue might be solved with the next intel driver 2.9)
 *   On kernel 3.6.2-1 and 3.6.3-1:
     *   system will not boot unless acpi=off is added as kernel parameter
@@ -180,7 +172,7 @@ As an example, here is how to bind the keys for volume control:
 
 ```
 
-NaN
+	For your NC10 Fn keysums may differ. If any Fn keys do not work with the above `.xbindkeysrc`, you should check the keysum values with `xbindkeys -k`.
 
 3\. Run `xbindkeys` and volume control should work within an X session!
 

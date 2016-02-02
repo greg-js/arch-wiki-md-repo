@@ -1,13 +1,5 @@
 # Sony Vaio VGN-CR120E
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Sony Vaio VGN-CR120E#](https://wiki.archlinux.org/index.php/Talk:Sony_Vaio_VGN-CR120E))
-
 ## Wireless
 
 ```

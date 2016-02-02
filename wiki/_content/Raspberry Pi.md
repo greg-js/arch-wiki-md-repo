@@ -2,7 +2,7 @@
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Raspberry_Pi "wikipedia:Raspberry Pi"):
 
-NaN
+	"_The Raspberry Pi is a series of credit card-sized single-board computers developed in the UK by the Raspberry Pi Foundation with the intention of promoting the teaching of basic computer science in schools._"
 
 The original models, released in 2012, are based on the Broadcom SoC BCM2835 ([ARM11 architecture](https://en.wikipedia.org/wiki/ARM11 "wikipedia:ARM11")). The Raspberry Pi 2, released in 2015, is shipped with a BCM2836 SoC (quad-core [ARM Cortex-A7 architecture](https://en.wikipedia.org/wiki/ARM_Cortex-A7 "wikipedia:ARM Cortex-A7")).
 

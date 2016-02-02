@@ -1,13 +1,5 @@
 # Webcam setup
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Several drivers in this article are available as built-in kernel modules, and shouldn't require special packages. (Discuss in [Talk:Webcam setup#](https://wiki.archlinux.org/index.php/Talk:Webcam_setup))
-
 This is a guide to setting up your webcam in Arch Linux.
 
 ## Contents
@@ -257,14 +249,6 @@ before starting it.
 
 [cheese](https://www.archlinux.org/packages/?name=cheese) is the GNOME photo/video taking client. It is similar to Photo Booth in Mac OS X. It is in the official repositories.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [cheese](https://www.archlinux.org/packages/?name=cheese) depends on [clutter-gst2](https://www.archlinux.org/packages/?name=clutter-gst2). The following is either outdated or indicates a packaging problem. [clutter-gst](https://www.archlinux.org/packages/?name=clutter-gst) may still be required by other software. (Discuss in [Talk:Webcam setup#](https://wiki.archlinux.org/index.php/Talk:Webcam_setup))
-
 In case of the following error:
 
 ```
@@ -403,7 +387,7 @@ You can either set an alias for skype, or rename the original skype binary in `/
 
 ### Motion
 
-NaN
+	_Motion is a program that monitors the video signal from cameras. It is able to detect if a significant part of the picture has changed; in other words, it can detect motion._
 
 [motion](https://www.archlinux.org/packages/?name=motion) can only handle v4l2 devices so if you need to use a camera that only has v4l1 drivers you need to preload v4l1compat.so as previously mentioned. Otherwise you will get loads of errors about motion not able to find a suitable palette.
 

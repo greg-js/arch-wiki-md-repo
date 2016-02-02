@@ -1,13 +1,5 @@
 # Lenovo ThinkPad X240
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Reference to "current time" in the tip; generally too short - provides only a basic overview. (Discuss in [Talk:Lenovo ThinkPad X240#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X240))
-
 The Lenovo X240 is the latest version of the Lenovo Ultrabook Series and also is a complete redesign of the X Series. This can be observed especially with devices like the touchpad, which has been changed to be a one-click touchpad instead of having the classic 5 button touchpad. The X240 is a very light device, weighing in at just 2.84 lbs (1.36 kg) and measuring 12.02" x 8.19" x 0.79".
 
 ## Contents

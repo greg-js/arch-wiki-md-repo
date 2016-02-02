@@ -178,14 +178,6 @@ Fish does not implement history substitution (e.g. `sudo !!`), and the fish dev
 
 ## Troubleshooting
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Changing the default shell should not interfere with the execution of shell scripts, so long as they begin with a proper [shebang line](https://en.wikipedia.org/wiki/Shebang_%28Unix%29). (Discuss in [Talk:Fish#](https://wiki.archlinux.org/index.php/Talk:Fish))
-
 In Arch, there are a lot of shell scripts written for Bash, and these have not been translated to fish. It is advisable not to set fish as your default shell because of this. The best option is to open your terminal emulator with a command line option that executes fish. For most terminals this is the `-e` switch, so for example, to open gnome-terminal using fish, change your shortcut to use:
 
 ```

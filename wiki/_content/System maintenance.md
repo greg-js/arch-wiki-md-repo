@@ -66,14 +66,6 @@ Backups may be automated with [systemd/Timers](/index.php/Systemd/Timers "System
 
 ### Configuration files
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Important data](#Important_data).**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:System maintenance#](https://wiki.archlinux.org/index.php/Talk:System_maintenance))
-
 Before editing any configuration files, create a backup. This way, you can revert to a working version in case of problems. Editors like [vim](/index.php/Vim "Vim") and [emacs](/index.php/Emacs "Emacs") can do this automatically, as well as tools like [etckeeper](/index.php/Etckeeper "Etckeeper") which keep `/etc` in a version control system (VCS).
 
 ### Important data
@@ -155,14 +147,6 @@ Use precaution when using packages from the [AUR](/index.php/AUR "AUR") or an [u
 To simplify maintenance, limit the amount of unofficial packages used. Make periodic checks on which are in actual use, and remove (or replace with their official counterparts) any others. See [pacman/Tips and tricks#Maintenance](/index.php/Pacman/Tips_and_tricks#Maintenance "Pacman/Tips and tricks") for useful commands.
 
 ### Update the mirrorlist
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Not part of the system cleanup as in other sections. [note: when this was written, this section was not well separated from tasks in [#Clean filesystem](#Clean_filesystem)] Already recommended at multiple other places, such as both installation guides and [General recommendations](/index.php/General_recommendations "General recommendations") (Discuss in [Talk:System maintenance#Mirrors](https://wiki.archlinux.org/index.php/Talk:System_maintenance#Mirrors))
 
 Update pacman's mirrorlist, as the quality of mirrors can vary over time, and some might go offline or their download rate might degrade.
 

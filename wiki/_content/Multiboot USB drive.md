@@ -6,14 +6,6 @@ Related articles
 *   [Syslinux](/index.php/Syslinux "Syslinux")
 *   [Archiso](/index.php/Archiso "Archiso")
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [Multiboot disk images](/index.php?title=Multiboot_disk_images&action=edit&redlink=1 "Multiboot disk images (page does not exist)").**
-
-**Notes:** See discussion (Discuss in [Talk:Multiboot USB drive#Scope and title](https://wiki.archlinux.org/index.php/Talk:Multiboot_USB_drive#Scope_and_title))
-
 A multiboot USB flash drive allows booting multiple ISO files from a single device. The ISO files can be copied to the device and booted directly without unpacking them first. There are multiple methods available, but they may not work for all ISO images.
 
 ## Contents
@@ -65,14 +57,6 @@ A multiboot USB flash drive allows booting multiple ISO files from a single devi
 
 ## Using GRUB and loopback devices
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** multiple [style](/index.php/Help:Style "Help:Style") issues (Discuss in [Talk:Multiboot USB drive#](https://wiki.archlinux.org/index.php/Talk:Multiboot_USB_drive))
-
 advantages:
 
 *   only a single partition required
@@ -86,14 +70,6 @@ disadvantages:
 *   it can be difficult to find a working boot entry
 
 ### Preparation
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** How much extra space is needed for the bootloader? (Discuss in [Talk:Multiboot USB drive#](https://wiki.archlinux.org/index.php/Talk:Multiboot_USB_drive))
 
 Create at least one partition and a filesystem supported by [GRUB](/index.php/GRUB "GRUB") on the USB drive. See [Partitioning](/index.php/Partitioning "Partitioning") and [File systems#Create a filesystem](/index.php/File_systems#Create_a_filesystem "File systems"). Choose the size based on the total size of the ISO files that you want to store on the drive, and plan for extra space for the bootloader.
 
@@ -166,14 +142,6 @@ The necessary UUID or label can be found using `lsblk -f`. Do not use the same l
 To complete the configuration, a boot entry for each ISO image has to be added below this header, see the next section for examples.
 
 ### Boot entries
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The only boxes used should be code blocks, otherwise the section will be unreadable. Anything else should be plain text. (Discuss in [Talk:Multiboot USB drive#](https://wiki.archlinux.org/index.php/Talk:Multiboot_USB_drive))
 
 It is assumed that the ISO images are stored in the `boot/iso/` directory on the same filesystem where GRUB is installed. Otherwise it would be necessary to prefix the path to ISO file with device identification when using the `loopback` command, for example `loopback loop **(hd1,2)**$isofile`. As this identification of devices is not [persistent](/index.php/Persistent_block_device_naming "Persistent block device naming"), it is not used in the examples in this section.
 

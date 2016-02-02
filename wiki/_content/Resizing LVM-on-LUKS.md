@@ -1,13 +1,5 @@
 # Resizing LVM-on-LUKS
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [LVM#Shrink logical volume](/index.php/LVM#Shrink_logical_volume "LVM").**
-
-**Notes:** This howto only aggregates information from other articles (thus duplicating it) for a too specific case: if some explanations are clearer here, they should be merged into [LVM#Shrink logical volume](/index.php/LVM#Shrink_logical_volume "LVM"), and then the little remaining wrapping part about dm-crypt should be merged into [Dm-crypt/Specialties](/index.php/Dm-crypt/Specialties "Dm-crypt/Specialties") with a link to [LVM#Shrink logical volume](/index.php/LVM#Shrink_logical_volume "LVM") for the LVM resizing. (Discuss in [Talk:Resizing LVM-on-LUKS#](https://wiki.archlinux.org/index.php/Talk:Resizing_LVM-on-LUKS))
-
 This article follows the process of resizing and shrinking an LVM-on-LUKS-on-GPT partition, such that an extra (plain) partition can be added in the unused space cleared up on the end of the hard drive.
 
 ## Contents
@@ -106,14 +98,6 @@ First, we need to calculate how many sectors we'll be shaving off by comparing t
 # cryptsetup status cryptdisk
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** What is the reason for the safety buffer? The cryptsetup resize itself does not require one. (Discuss in [Talk:Resizing LVM-on-LUKS#](https://wiki.archlinux.org/index.php/Talk:Resizing_LVM-on-LUKS))
 
 **Note:** To calculate how many sectors we want to shrink to, use a simple formula: `NEW_SECTORS = EXISTING_SECTORS * NEW_SIZE_IN_GB / EXISTING_SIZE_IN_GB`. Remember to take a safety buffer here as well.
 

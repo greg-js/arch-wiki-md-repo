@@ -63,14 +63,14 @@ $ exit
 
 *   At this point, you want to ensure that all the files have the correct permissions. (See the Foswiki guide on [Setting File Access Permissions](http://foswiki.org/Support.SettingFileAccessRightsLinuxUnix) for details.)
 
-NaN
+	If you would like to determine whether the files already have the correct permissions, you can make use of `find` to test permissions against the example commands listed in the above Foswiki guide. For instance, this will find any directories that do _not_ have their access mode set to 755:
 
 ```
 # find . -type d \! -perm 755
 
 ```
 
-NaN
+	As of version **1.1.5**, I found that only one file was incorrectly set to be owner-writable; all other files appeared to have the correct permissions fresh out of the archive. The following command can be used to set the correct permissions (either as `root` or `http`), and will also catch any similar files that may display the same issue in future:
 
 ```
 $ find pub data -name '*,v' -type f -exec chmod 444 \{\} \;

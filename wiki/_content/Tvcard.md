@@ -1,13 +1,5 @@
 # Tvcard
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Tvcard#](https://wiki.archlinux.org/index.php/Talk:Tvcard))
-
 ## Contents
 
 *   [1 Setting up Winfast 2000XP Tvcard](#Setting_up_Winfast_2000XP_Tvcard)

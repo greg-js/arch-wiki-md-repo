@@ -1,13 +1,5 @@
 # SCM Example Trac
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Not updated for over 3 years, [trac](https://www.archlinux.org/packages/?name=trac) is at 1.0.5 as of September 2015 (Discuss in [Talk:SCM Example Trac#](https://wiki.archlinux.org/index.php/Talk:SCM_Example_Trac))
-
 The HOWTO teaches you to setup multi-project Trac/Subversion for a private and trusted environment (ex: a development team).
 
 Updated for Trac 0.11
@@ -32,11 +24,25 @@ Updated for Trac 0.11
 
 ## Basic Environment
 
-NaN
+	Network
 
-NaN
+	URL: [http://scm.example.com](http://scm.example.com)
 
-NaN
+	Subversion URL: [http://scm.example.com/svn/MY_PROJECT](http://scm.example.com/svn/MY_PROJECT)
+
+	Trac URL: [http://scm.example.com/trac/MY_PROJECT](http://scm.example.com/trac/MY_PROJECT)
+
+	Database
+
+	PostgreSQL, with trust authentication method
+
+	Filesystem
+
+	Configuration files are in `/mnt/rpo/conf`
+
+	Subversion repositories is in `/mnt/rpo/svn`
+
+	Trac project files is in `/mnt/rpo/trac`
 
 ## Preparation
 
@@ -184,7 +190,9 @@ Just execute one line:
 
 ```
 
-NaN
+	Database connection string: `postgres://trac:password@localhost/trac?schema=MY_PROJECT`
+
+	(each project must be given an unique schema; no need to create the schemas first)
 
 *   Grant admin permission to all logon users:
 

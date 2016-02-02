@@ -1,21 +1,5 @@
 # Sync laptop desktop
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Sync laptop desktop#](https://wiki.archlinux.org/index.php/Talk:Sync_laptop_desktop))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** first person (Discuss in [Talk:Sync laptop desktop#](https://wiki.archlinux.org/index.php/Talk:Sync_laptop_desktop))
-
 It is not always possible to copy one computer's drive to the other. For example, some files must differ on both machines, or respective updates do not match.
 
 ## Contents

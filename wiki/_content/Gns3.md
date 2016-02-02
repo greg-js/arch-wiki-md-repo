@@ -1,16 +1,8 @@
 # Gns3
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Gns3#](https://wiki.archlinux.org/index.php/Talk:Gns3))
-
 [GNS3](http://www.gns3.net/) is a **G**raphical **N**etwork **S**imulator. It allows you to simulate a network on your computer. From the webpage:
 
-NaN
+	_GNS3 is an open source software that simulate complex networks while being as close as possible to the way real networks perform. All of this without having dedicated network hardware such as routers and switches._
 
 ## Contents
 

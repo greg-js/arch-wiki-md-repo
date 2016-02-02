@@ -9,7 +9,11 @@ Related articles
 
 From [the official website](http://tomb.dyne.org/):
 
-NaN
+	Tomb is 100% free and open source software to make strong encryption easy to use.
+
+	A tomb is like a locked folder that can be safely transported and hidden in a filesystem.
+
+	Keys can be kept separate: for instance the tomb on your computer and the key on a USB stick.
 
 Tomb aims to be a really simple to use software to manage "encrypted directories", called tombs. A tomb can only be opened if you both have a keyfile and you know the password. It also has advanced features, like steganography.
 

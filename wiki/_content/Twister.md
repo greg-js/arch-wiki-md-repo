@@ -1,13 +1,5 @@
 # Twister
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Several [Help:Style](/index.php/Help:Style "Help:Style") violations. (Discuss in [Talk:Twister#](https://wiki.archlinux.org/index.php/Talk:Twister))
-
 [Twister](http://twister.net.co/) is an experimental peer-to-peer microblogging software. It's in very alpha state!
 
 ## Contents

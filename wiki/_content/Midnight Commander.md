@@ -37,11 +37,11 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 
 *   **mc-solarized-git** — Solarized color scheme for Midnight Commander
 
-NaN
+	[https://github.com/nkulikov/mc-solarized-skin](https://github.com/nkulikov/mc-solarized-skin) || [mc-solarized-git](https://aur.archlinux.org/packages/mc-solarized-git/)<sup><small>AUR</small></sup>
 
 *   **mc-skin-candy** — Candy color scheme (256color)
 
-NaN
+	[candy256.ini](https://raw.githubusercontent.com/izmntuk/archiso/testing/configs/alter/airootfs/usr/share/mc/skins/candy256.ini) ||
 
 See also `**Skins**` in `man mc`.
 
@@ -138,14 +138,6 @@ See also [[2]](https://mail.gnome.org/archives/mc/2010-March/msg00041.html).
 ## Troubleshooting
 
 ### Exit to the current directory
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Check how to get mc-wrapper.sh working (Discuss in [Talk:mc#Wrapper](https://wiki.archlinux.org/index.php/Talk:Mc#Wrapper))
 
 On exit, the shell returns to the directory Midnight Commander was started from, instead of the last active directory. A simple workaround is to switch to the subshell (`Ctrl+o`). This may however interfere with other terminal applications.
 

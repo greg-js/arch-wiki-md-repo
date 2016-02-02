@@ -1,13 +1,5 @@
 # InfiniBand
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Numerous [Help:Style](/index.php/Help:Style "Help:Style") violations. (Discuss in [Talk:InfiniBand#](https://wiki.archlinux.org/index.php/Talk:InfiniBand))
-
 This page explains how to set up, diagnose, and benchmark an InfiniBand network.
 
 ## Contents
@@ -109,37 +101,55 @@ An InfiniBand cable can be used to directly link two computers without a switch;
 
 Adapters, switches, routers, and bridges/gateways must be specifically made for InfiniBand.
 
-NaN
+	HCA (Host Channel Adapter)
+
+	Like an Ethernet NIC (Network Interface Card). Connects the InfiniBand cable to the PCI Express bus, at the full speed of the bus if the proper generation of HCA is used. An end node on an InfiniBand network, executes transport-level functions, and supports the InfiniBand verbs interface.
+
+	Switch
+
+	Like an Ethernet NIC. Moves packets from one link to another on the same InfiniBand subnet.
+
+	Router
+
+	Like an Ethernet router. Moves packets between different InfiniBand subnets.
+
+	Bridge/Gateway
+
+	A standalone piece of hardware, or a computer performing this function. Bridges InfiniBand and Ethernet networks.
 
 ### GUID
 
 Like Ethernet MAC addresses, but a device has multiple GUID's. Assigned by the hardware manufacturer, and remains the same through reboots. 64-bit addresses (24-bit manufacturer prefix and 40-bit device identifier.) Given to adapters, switches, routers, and bridges/gateways.
 
-NaN
+	Node GUID
+
+	Identifies the HCA, Switch, or Router
+
+	Port GUID
+
+	Identifies a port on a HCA, Switch, or Router (even a HCA often has multiple ports)
+
+	System GUID
+
+	Allows treating multiple GUIDs as one entity
+
+	LID (Local IDentifier)
+
+	16-bit addresses, assigned by the Subnet Manager when picked up by the Subnet Manager. Used for routing packets. Not persistent through reboots.
 
 ### NEED ANOTHER NAME
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+	SM (Subnet Manager)
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
+	Actively manages an InfiniBand subnet. Can be implemented as a software program on a computer connected to the InfiniBand network, built in to an InfiniBand switch, or as a specialized InfiniBand device. Initializes and configures everything else on the subnet, including assigning LIDs (Local IDentifiers.) Establishes traffic paths through the subnet. Isolates faults. Prevents unauthorized Subnet Managers. You can have multiple switches all on one subnet, under one Subnet Manager. You can have redundant Subnet Managers on one subnet, but only one can be active at a time.
 
-**This article or section needs language, wiki syntax or style improvements.**
+	MAD (MAnagement Datagram)
 
-**Reason:** Give the section a proper heading. (Discuss in [Talk:InfiniBand#](https://wiki.archlinux.org/index.php/Talk:InfiniBand))
+	Standard message format for subnet manager to and from InfiniBand device communication, carried by a UD (Unreliable Datagram.)
 
-NaN
-
-NaN
+	UD (Unreliable Datagram)
 
 ### Software
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO. (Discuss in [Talk:InfiniBand#](https://wiki.archlinux.org/index.php/Talk:InfiniBand))
 
 ## Software installation
 
@@ -210,7 +220,7 @@ Recent kernels have InfiniBand modules compiled in, and they just need to be loa
 | (if lhca devices) | IBM pSeries Adapters (rare) | ib_ehca |
 | (if be2net module) | Emulex Adpaters (rare) | ocrdma |
 
-NaN
+	* ib_ipoib also loaded a dependency for `RDS_LOAD=yes`, or if `/etc/rdma.conf` doesn't exist
 
 *   [Start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `rdma.service`
 
@@ -263,7 +273,9 @@ Name=_interface_
 Address=192.168.2.1/24
 ```
 
-NaN
+	[restart](/index.php/Restart "Restart") (or [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable")) `systemd-networkd.service`
+
+*   [static IP address via systemd service](/index.php/Network_configuration#systemd_service "Network configuration"): (replacing the IP addresses as needed, to use a subnet that does not conflict with your existing private network IP addresses)
 
  `/etc/conf.d/net-conf-_interface_` 
 
@@ -273,7 +285,7 @@ netmask=24
 broadcast=192.168.2.255
 ```
 
-NaN
+	[start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") `network@_interface_.service`
 
 #### Connection mode
 

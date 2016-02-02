@@ -25,17 +25,31 @@ This article is intended to assist users with the specifics of installing Arch L
 
 Dell Mini 10v hardware may vary, however the following list of hardware has been assumed in this article:
 
-NaN
+	Audio
 
-NaN
+	Intel Corporation 82801G card
 
-NaN
+	Realtek ALC272 Chip (from alsamixer)
 
-NaN
+	Video
 
-NaN
+	Intel Corporation Mobile 945GME
 
-NaN
+	Wired NIC
+
+	Realtek RTL8101E/RTL8102E
+
+	Wireless NIC
+
+	Broadcom Corporation BCM4312 802.11b/g
+
+	Bluetooth
+
+	Dell 365 Bluetooth 2.1+EDR
+
+	Webcam
+
+	Syntek Integrated Webcam
 
 To list hardware, issue this command:
 

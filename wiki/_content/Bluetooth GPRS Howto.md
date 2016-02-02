@@ -1,21 +1,5 @@
 # Bluetooth GPRS Howto
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Bluetooth GPRS Howto#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_GPRS_Howto))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The article mentions rc.d scripts, initscripts are deprecated (Discuss in [Talk:Bluetooth GPRS Howto#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_GPRS_Howto))
-
 This Howto will describe, how to set up a GPRS Internet connection using bluetooth device and compatible mobile phone.
 
 ## Contents

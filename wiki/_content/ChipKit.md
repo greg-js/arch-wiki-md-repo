@@ -23,14 +23,6 @@ At the time of installation I was running Java 7 and Kernel 3.0.1
 
 ### Requirements (all architectures)
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The required packages rxtx and mpide are no longer maintained or found in the [AUR](/index.php/AUR "AUR"). [java-rxtx](https://www.archlinux.org/packages/?name=java-rxtx) may replace them. (Discuss in [Talk:ChipKit#](https://wiki.archlinux.org/index.php/Talk:ChipKit))
-
 Install rxtx from the [AUR](/index.php/AUR "AUR").
 
 At the time of writing, it is necessary to edit the PKGBUILD which refers to kernel26-headers so it refers to linux-headers.
@@ -44,14 +36,6 @@ This is required only because the ChipKit software needs the program avr-size. I
 libusb and libusb-compat are required, but may well be installed by default.
 
 #### Requirements (64 bit versions)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Editor's comment: this block is saved for posterity. Change made 08 December 2013. The software expects 32 bit libraries, so some extra installations are required. Install lib32-libusb and lib32-libusb-compat so the software can communicate with the USB ports. Install lib32-elfutils from the [AUR](/index.php/AUR "AUR"). If you just have the standard gcc package, this will require replacing it with gcc-multilib The required package rxtx is no longer maintained or found in the [AUR](/index.php/AUR "AUR"). [java-rxtx](https://www.archlinux.org/packages/?name=java-rxtx) replaces it. (Discuss in [Talk:ChipKit#](https://wiki.archlinux.org/index.php/Talk:ChipKit))
 
 For mpide to communicate with the microprocessor board via USB, install the required USB packages.
 

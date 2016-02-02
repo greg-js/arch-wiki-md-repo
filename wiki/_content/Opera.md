@@ -163,7 +163,17 @@ $ opera -pd /tmp/opera
 
 Although Opera is cross-platform, it can be made to integrate very well into various Linux desktop environments.
 
-NaN
+	Qt
+
+	To make the menus look integrated with Qt, install your preferred Qt theme and apply it by using `qtconfig`.
+
+	KDE
+
+	To make Opera use [KDE](/index.php/KDE "KDE") icons, you can install a theme such as [this one](http://my.opera.com/community/customize/skins/info/?id=8141)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-04-05]</sup>.
+
+	GTK+
+
+	A nice GTK+ skin that uses the Tango icon theme can be found [here](http://my.opera.com/community/customize/skins/info/?id=3465)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-04-05]</sup>.
 
 ### Title bar
 

@@ -81,14 +81,6 @@ Simply [burn](/index.php/Optical_disc_drive#Burning "Optical disc drive") `winpe
 
 ### From Network
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [PXE](/index.php/PXE "PXE").**
-
-**Notes:** The PXE article already describes most of this stuff, no need for duplication. Also rc.d? Just make sure that configuration file is not lost if it's necessary for windows. Besides that everything is dupe. (Discuss in [Talk:Windows PE#](https://wiki.archlinux.org/index.php/Talk:Windows_PE))
-
 Windows PE can be booted from the network using [PXELINUX](http://www.syslinux.org/wiki/index.php/PXELINUX) and its [MEMDISK](http://www.syslinux.org/wiki/index.php/MEMDISK) module.
 
 Install [syslinux](https://www.archlinux.org/packages/?name=syslinux) and [tftp-hpa](https://www.archlinux.org/packages/?name=tftp-hpa).

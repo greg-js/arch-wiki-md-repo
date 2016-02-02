@@ -1,13 +1,5 @@
 # mod_perl
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Mod perl#](https://wiki.archlinux.org/index.php/Talk:Mod_perl))
-
 ## Contents
 
 *   [1 Enabling Perl + Apache](#Enabling_Perl_.2B_Apache)

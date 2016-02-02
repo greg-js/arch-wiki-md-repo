@@ -70,7 +70,7 @@ These general rules always override [#Specific cases](#Specific_cases). For case
 *   The first relevant appearance of a term or name in an article (e.g. executable names) can be _highlighted_ (see below) if regarded as worthy of particular attention, considering the topic of the article or the specific section. The first "relevant" appearance may not be the absolute first appearance of the name: its choice is left to the editor.
 *   The preferable way of highlighting the name is using a link to a closely related article in the wiki or to an external page, like Wikipedia; if there are no possible pertinent links, **bold** can be used as a fallback solution.
 
-NaN
+	Package and group names should make use of [Template:Pkg](/index.php/Template:Pkg "Template:Pkg"), [Template:AUR](/index.php/Template:AUR "Template:AUR") or [Template:Grp](/index.php/Template:Grp "Template:Grp").
 
 *   If the name is already introduced by the title of the article or by a section heading, its first relevant appearance in the body can only be used as a link anchor, but not simply highlighted in bold, except in the case of [#Name/term lists](#Name.2Fterm_lists).
 *   First-instance highlighting can be applied only to the [#Specific cases](#Specific_cases) that explicitly allow it.
@@ -260,7 +260,7 @@ Use **bold**. Since these contents are code themselves, when referenced outside 
 
 *   `# ln -s /usr/src/linux-**$(uname -r)**/include/generated/uapi/linux/version.h /usr/src/linux-**$(uname -r)**/include/linux/` 
 
-NaN
+	You can replace **`$(uname -r)`** with any kernel not currently running.
 
 ### Keyboard keys
 
@@ -290,12 +290,14 @@ Ensure naming consistency with the rest of the article, which may already use a 
 
 *   `# loadkeys _keyboard_layout_` 
 
-NaN
+	[...] where `_keyboard_layout_` can be `fr`, `uk`, `dvorak`, `be-latin1`, etc.
 
 *   Bring the interface up with `ip link set _interface_ up`.
 *   You can connect to the network with:
 
-NaN
+	 `# wifi-menu _interface_name_` 
+
+	Where `_interface_name_` is the interface of your wireless chipset.
 
 ### Quotations
 
@@ -306,7 +308,7 @@ For inline quotations, use "typewriter quotes". For block quotations, use indent
 *   "All your data belongs to us" – Google
 *   From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-NaN
+	The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work.
 
 ### References to titles, headings...
 

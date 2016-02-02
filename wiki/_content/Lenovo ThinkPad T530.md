@@ -1,13 +1,5 @@
 # Lenovo ThinkPad T530
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
-
-**Notes:** Little of note here, merge support and bluetooth note to the table. (Discuss in [Talk:Lenovo ThinkPad T530#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T530))
-
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -1,13 +1,5 @@
 # Tinc
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Explain (or link to) network basics, tun/tap devices, ... for a better understanding. Add explanation how to expand the configuration to add another host. (Discuss in [Talk:Tinc#](https://wiki.archlinux.org/index.php/Talk:Tinc))
-
 This article describes a basic installation and configuration of tinc. For further details see the [tinc.conf man page](http://www.tinc-vpn.org/documentation/tinc.conf.5) and the [tinc documentation](http://tinc-vpn.org/docs/).
 
 _**tinc** is a Virtual Private Network (VPN) daemon that uses tunnelling and encryption to create a secure private network between hosts on the Internet._[[1]](http://tinc-vpn.org/)

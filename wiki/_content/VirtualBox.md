@@ -431,7 +431,8 @@ First, familiarize yourself with the [#Formats supported by VirtualBox](#Formats
 
 *   Importing or exporting from/to Parallels hypervisor is the hardest way: Parallels does only support its own HDD format (even the standard and portable OVF format is not supported!).
 
-NaN
+*   To export your virtual machine to Parallels, you will need to use the Parallels Transporter tool described above.
+*   To import your virtual machine to VirtualBox, you will need to use the VMware vCenter Converter described above to convert the VM to the VMware format first. Then, apply the solution to migrate from VMware.
 
 ### Create the VM configuration for your hypervisor
 
@@ -460,7 +461,7 @@ VirtualBox supports the following virtual disk formats:
 
 *   VHD: The Virtual Hard Disk is the format used by Microsoft in Windows Virtual PC and Hyper-V. If you intend to use any of these Microsoft products, you will have to choose this format.
 
-NaN
+**Tip:** Since Windows 7, this format can be mounted directly without any additional application.
 
 *   VHDX (read only): This is the eXtended version of the Virtual Hard Disk format developed by Microsoft, which has been released on 2012-09-04 with Hyper-V 3.0 coming with Windows Server 2012\. This new version of the disk format does offer enhanced performance (better block alignment), larger blocks size, and journal support which brings power failure resiliency. VirtualBox [should support this format in read only](https://www.virtualbox.org/manual/ch15.html#idp63002176).
 
@@ -602,11 +603,20 @@ Wiping free space with zeroes can be achieved with several tools:
 *   If you were previously using Bleachbit, check the checkbox _System > Free disk space_ in the GUI, or use `bleachbit -c system.free_disk_space` in CLI;
 *   On UNIX-based systems, by using `dd` or preferably [dcfldd](https://www.archlinux.org/packages/?name=dcfldd) (see [here](http://superuser.com/a/355322) to learn the differences) :
 
-NaN
+	 `# dcfldd if=/dev/zero of=_/fillfile_ bs=4M` 
+
+	When `fillfile` reaches the limit of the partition, you will get a message like `1280 blocks (5120Mb) written.dcfldd:: No space left on device`. This means that all of the user-space and non-reserved blocks of the partition will be filled with zeros. Using this command as root is important to make sure all free blocks have been overwritten. Indeed, by default, when using partitions with ext filesystem, a specified percentage of filesystem blocks is reserved for the super-user (see the `-m` argument in the `mkfs.ext4` man pages or use `tune2fs -l` to see how much space is reserved for root applications).
+
+	When the aforementioned process has completed, you can remove the file `_fillfile_` you created.
 
 *   On Windows, there are two tools available:
 
-NaN
+*   `sdelete` from the [Sysinternals Suite](http://technet.microsoft.com/en-us/sysinternals/bb842062.aspx), type `sdelete -s -z _c:_`, where you need to reexecute the command for each drive you have in your virtual machine;
+*   or, if you love scripts, there is a [PowerShell solution](http://blog.whatsupduck.net/2012/03/powershell-alternative-to-sdelete.html), but which still needs to be repeated for all drives.
+
+	 `PS> ./Write-ZeroesToFreeSpace.ps1 -Root _c:\_ -PercentFree 0` 
+
+**Note:** This script must be run in a PowerShell environment with administrator privileges. By default, scripts cannot be run, ensure the execution policy is at least on `RemoteSigned` and not on `Restricted`. This can be checked with `Get-ExecutionPolicy` and the required policy can be set with `Set-ExecutionPolicy RemoteSigned`.
 
 Once the free disk space have been wiped, shut down your virtual machine.
 
@@ -614,11 +624,12 @@ The next time you boot your virtual machine, it is recommended to do a filesyste
 
 *   On UNIX-based systems, you can use `fsck` manually;
 
-NaN
+*   On GNU/Linux systems, and thus on Arch Linux, you can force a disk check at boot [thanks to a kernel boot parameter](/index.php/Fsck#Forcing_the_check "Fsck");
 
 *   On Windows systems, you can use:
 
-NaN
+*   either `chkdsk _c:_ /F` where `_c:_` needs to be replaced by each disk you need to scan and fix errors;
+*   or `FsckDskAll` [from here](http://therightstuff.de/2009/02/14/ChkDskAll-ChkDsk-For-All-Drives.aspx) which is basically the same software as `chkdsk`, but without the need to repeat the command for all drives;
 
 Now, remove the zeros from the `vdi` file with [VBoxManage modifyhd](https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi):
 
@@ -941,7 +952,7 @@ To circumvent this problem, we will need to use an addressing scheme that is per
 
 `/etc/fstab` is not the only location where UUIDs are used. Bootloaders and boot managers make use of them too. Now, make sure these are really using UUIDs.
 
-NaN
+	[GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
 
 If you are still using the old [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy"), maybe is it [time to upgrade](/index.php/GRUB_Legacy#Upgrading_to_GRUB2 "GRUB Legacy"), since this package is now dropped from the official Arch Linux repositories. If you want to keep it, edit `/boot/grub/menu.lst` and replace the `root=/dev/sdXX` statement in your Arch Linux boot entry by the Linux UUID mapping in `/dev/disk/by-uuid/` corresponding to your root partition.
 
@@ -955,7 +966,7 @@ initrd /initramfs-linux-vbox.img
 
 Repeat the process here, for the fallback entry.
 
-NaN
+	[GRUB](/index.php/GRUB "GRUB")
 
 If you are running the most recent version of [GRUB](/index.php/GRUB "GRUB"); you have nothing to do. Yet another reason to upgrade to GRUB 2.
 
@@ -991,7 +1002,7 @@ Now, we need to create a new virtual machine which will use a [RAW disk](https:/
 
 Boot the host which will use the Arch Linux virtual machine. The command will need to be adapted according to the host you have.
 
-NaN
+	On a GNU/Linux host
 
 There is 3 ways to achieve this: login as root, changing the access right of the device with `chmod`, adding your user to the `disk` group. The latter way is the more elegant, let us proceed that way:
 
@@ -1016,7 +1027,7 @@ $ VBoxManage internalcommands createrawvmdk -filename _/path/to/file.vmdk_ -rawd
 
 Adapt the above command to your need, especially the path and filename of the VMDK location and the raw disk location to map which contain your Arch Linux installation.
 
-NaN
+	On a Windows host
 
 Open a command prompt must be run as administrator.
 
@@ -1048,7 +1059,7 @@ or use the absolute path name:
 
 ```
 
-NaN
+	On another OS host
 
 There are other limitations regarding the aforementioned command when used in other operating systems like OS X, please thus [read carefully the manual page](https://www.virtualbox.org/manual/ch09.html#rawdisk), if you are concerned.
 
@@ -1105,7 +1116,8 @@ Now, you should have a working VM configuration whose virtual VMDK disk is tied 
 *   For BIOS systems and MBR disks, do not install a bootloader inside your virtual machine, this will not work since the MBR is not linked to the MBR of your real machine and your virtual disk is only mapped to a real partition without the MBR.
 *   For UEFI systems without [CSM](https://en.wikipedia.org/wiki/Compatibility_Support_Module#CSM "wikipedia:Compatibility Support Module") and GPT disks, the installation will not work at all since:
 
-NaN
+*   the [ESP](https://en.wikipedia.org/wiki/EFI_System_partition "wikipedia:EFI System partition") partition is not mapped to your virtual disk and Arch Linux requires to have the Linux kernel on it to boot as an EFI application (see [EFISTUB](/index.php/EFISTUB "EFISTUB") for details);
+*   and the efivars, if you are installing Arch Linux using the EFI mode brought by VirtualBox, are not the one of your real system: the bootmanager entries will hence not be registered.
 
 *   This is why, it is recommended to create your partitions in a native installation first, otherwize the partitions will not be taken into consideration in your MBR/GPT partition table.
 
@@ -1141,17 +1153,23 @@ Boot into Windows, clean up the installation (with [CCleaner](http://www.pirifor
 
 *   Reduce the native Windows partition size to the size Windows actually needs with `ntfsresize` available from [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g). The size you will specify will be the same size of the VDI that will be created in the next step. If this size is too low, you may break your Windows install and the latter might not boot at all.
 
-NaN
+	Use the `--no-action` option first to run a test:
 
-NaN
+	 `# ntfsresize --no-action --size _52Gi_ _/dev/sda1_` 
+
+	If only the previous test succeeded, execute this command again, but this time without the aforementioned test flag.
 
 *   Install VirtualBox on your GNU/Linux host (see [#Installation steps for Arch Linux hosts](#Installation_steps_for_Arch_Linux_hosts) if your host is Arch Linux).
 
 *   Create the Windows disk image from the beginning of the drive to the end of the first partition where is located your Windows installation. Copying from the beginning of the disk is necessary because the MBR space at the beginning of the drive needs to be on the virtual drive along with the Windows partition. In this example two following partitions `sda2` and `sda3`will be later removed from the partition table and the MBR bootloader will be updated.
 
-NaN
+	 `# sectnum=$(( $(cat /sys/block/''sda/sda1''/start) + $(cat /sys/block/''sda/sda1''/size) ))` 
 
-NaN
+	Using `cat /sys/block/_sda/sda1_/size` will output the number of total sectors of the first partition of the disk `sda`. Adapt where necessary.
+
+	 `# dd if=''/dev/sda'' bs=512 count=$sectnum | VBoxManage convertfromraw stdin ''windows.vdi'' $(( $sectnum * 512 ))` 
+
+	We need to display the size in byte, `$(( $sectnum * 512 ))` will convert the sector numbers to bytes.
 
 *   Since you created your disk image as root, set the right ownership to the virtual disk image: `# chown _your_user_:_your_group_ windows.vdi` 
 
@@ -1173,13 +1191,17 @@ If your Windows virtual machine refuses to boot, you may need to apply the follo
 
 *   Remove other partitions entries from the virtual disk MBR. Indeed, since we copied the MBR and only the Windows partition, the entries of the other partitions are still present in the MBR, but the partitions are not available anymore. Use `fdisk` to achieve this for example.
 
-NaN
+```
+fdisk ''/dev/sda''
+Command (m for help): a
+Partition number (''1-3'', default ''3''): ''1''
+```
 
 *   Write the updated partition table to the disk (this will recreate the MBR) using the `m` command inside `fdisk`.
 
 *   Use [testdisk](https://www.archlinux.org/packages/?name=testdisk) (see [here](http://www.cgsecurity.org/index.html?testdisk.html) for details) to add a generic MBR:
 
-NaN
+	 `# testdisk > _Disk /dev/sda...'_ > [Proceed] >  [Intel] Intel/PC partition > [MBR Code] Write TestDisk MBR to first sector > Write a new copy of MBR code to first sector? (Y/n) > Y > Write a new copy of MBR code, confirm? (Y/N) > A new copy of MBR code has been written. You have to reboot for the change to take effect. > [OK]` 
 
 *   With the new MBR and updated partition table, your Windows virtual machine should be able to boot. If you are still encountering issues, boot your Windows recovery disk from on of the previous step, and inside your Windows RE environment, execute the commands [described here](http://support.microsoft.com/kb/927392).
 
@@ -1359,27 +1381,11 @@ There are several workarounds:
 3.  Control Panel -> Network and Internet -> Internet Options -> Security -> Trusted Sites -> Sites -> Add "VBOXSVR" as a website
 4.  Start -> type "gpedit.msc" and press Enter -> Computer Configuration -> Administrative Templates -> Windows Components -> Internet Explorer -> Internet Control Panel -> Security Page -> Size to Zone Assignment List -> Add "VBOXSVR" to "2" and reboot
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Haven't tested#3 and #4 workarounds myself. If someone can confirm that they are working as well, please delete this note/template. (Discuss in [Talk:VirtualBox#](https://wiki.archlinux.org/index.php/Talk:VirtualBox))
-
 ### No 64-bit OS client options
 
 When launching a VM client, and no 64-bit options are available, make sure your CPU virtualization capabilities (usually named `VT-x`) are enabled in the BIOS.
 
 ### Host OS freezes on Virtual Machine start
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Needs a link to a bug report; vague expressions like "currently" and "at the moment of writing" are of no help. (Discuss in [Talk:VirtualBox#](https://wiki.archlinux.org/index.php/Talk:VirtualBox))
 
 Possible causes/solutions :
 

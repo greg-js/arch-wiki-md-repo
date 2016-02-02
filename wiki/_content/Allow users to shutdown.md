@@ -1,13 +1,5 @@
 # Allow users to shutdown
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Power management](/index.php/Power_management "Power management").**
-
-**Notes:** No need to split this off from the main article (Discuss in [Talk:Allow users to shutdown#](https://wiki.archlinux.org/index.php/Talk:Allow_users_to_shutdown))
-
 ## Contents
 
 *   [1 Button and Lid events](#Button_and_Lid_events)

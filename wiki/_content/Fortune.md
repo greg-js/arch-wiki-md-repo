@@ -1,13 +1,5 @@
 # Fortune
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention other shells such as [Zsh](/index.php/Zsh "Zsh") (Discuss in [Talk:Fortune#](https://wiki.archlinux.org/index.php/Talk:Fortune))
-
 [Fortune](https://en.wikipedia.org/wiki/Fortune_(Unix) "wikipedia:Fortune (Unix)") is a simple program that displays a pseudorandom message from a database of quotations.
 
 ## Configuration

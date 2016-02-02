@@ -1,13 +1,5 @@
 # RuTorrent
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Rutorrent with lighttpd](/index.php/Rutorrent_with_lighttpd "Rutorrent with lighttpd").**
-
-**Notes:** Same topic. (Discuss in [Talk:Rutorrent with lighttpd#Merge](https://wiki.archlinux.org/index.php/Talk:Rutorrent_with_lighttpd#Merge))
-
 **[ruTorrent](https://github.com/Novik/ruTorrent)** is a web interface to [rTorrent](/index.php/RTorrent "RTorrent") (a console based BitTorrent client). It uses rTorrent's built-in XML-RPC server to communicate with it.
 
 It is lightweight, highly extensible, and is designed to look similar to uTorrent.

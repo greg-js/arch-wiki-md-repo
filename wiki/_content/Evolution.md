@@ -217,14 +217,6 @@ Click Forward: Now just fill in the name of the mailbox and you are done.
 
 ## Using Evolution Outside Of Gnome
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This setup script has changed. See [GNOME Keyring#Use without GNOME, but with a display manager](/index.php/GNOME_Keyring#Use_without_GNOME.2C_but_with_a_display_manager "GNOME Keyring") for the new version. (Discuss in [Talk:Evolution#](https://wiki.archlinux.org/index.php/Talk:Evolution))
-
 In order to use Evolution outside of Gnome desktop you must export [gnome-keyring](/index.php/Gnome-keyring "Gnome-keyring"):
 
 ```

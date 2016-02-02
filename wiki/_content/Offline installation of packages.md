@@ -1,13 +1,5 @@
 # Offline installation of packages
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** ftp.archlinux.org has been shut down [[1]](https://lists.archlinux.org/pipermail/aur-general/2015-February/030268.html) (Discuss in [Talk:Offline installation of packages#](https://wiki.archlinux.org/index.php/Talk:Offline_installation_of_packages))
-
 ## Contents
 
 *   [1 Normal Method: Pacman](#Normal_Method:_Pacman)

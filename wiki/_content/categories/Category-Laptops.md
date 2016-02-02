@@ -13,7 +13,7 @@ This category contains articles about installing and configuring Arch Linux on l
     *   An example of a laptop article with a minimum of content duplication and a focus on the particular hardware is [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV").
     *   Another example is [Acer C720 Chromebook](/index.php/Acer_C720_Chromebook "Acer C720 Chromebook"), which details hardware specific instructions and relates to [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices") as a seperate meta-page, because the device category itself requires very specific installation steps.
 
-NaN
+	Please consider to use similar content structures to keep focus.
 
 ## Subcategories
 

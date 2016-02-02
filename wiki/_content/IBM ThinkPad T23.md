@@ -1,15 +1,5 @@
 # IBM ThinkPad T23
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This page may be missing instructions for certain hardware
-
-NaN
-
 ## Contents
 
 *   [1 Configuration](#Configuration)
@@ -60,7 +50,7 @@ Then, edit your [xorg.conf](/index.php/Xorg.conf "Xorg.conf") to reflect the fol
   ...
 ```
 
-NaN
+	→ See also: [Xorg](/index.php/Xorg "Xorg")
 
 #### Advanced Installation
 
@@ -135,14 +125,6 @@ If you've set up everything correctly, you should see this in /var/log/Xorg.0.lo
 Are you using the versions of the packages specified? Are you using XAA acceleration? Did you compile with the configure flags specified?
 
 ### Power Management
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This section was written a long time ago, and may not reflect the current state of Arch Linux (Discuss in [Talk:IBM ThinkPad T23#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_T23))
 
 #### Suspend and Hibernate
 

@@ -1,13 +1,5 @@
 # Sonerezh
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Don't show simple commands like cp or even how to reload systemctl. Instead write out the instructions in those cases and link to the relevant pages. (Discuss in [Talk:Sonerezh#](https://wiki.archlinux.org/index.php/Talk:Sonerezh))
-
 [Sonerezh](https://www.sonerezh.bzh) is a self-hosted, web-based application for stream your music, everywhere.
 
 ## Installation

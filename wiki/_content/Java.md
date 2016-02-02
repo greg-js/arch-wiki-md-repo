@@ -7,7 +7,7 @@ Related articles
 
 From the [Wikipedia article](https://en.wikipedia.org/wiki/Java_(programming_language) "wikipedia:Java (programming language)"):
 
-NaN
+	Java is a programming language originally developed by Sun Microsystems and released in 1995 as a core component of Sun Microsystems' Java platform. The language derives much of its syntax from C and C++ but has a simpler object model and fewer low-level facilities. Java applications are typically compiled to bytecode that can run on any Java virtual machine (JVM) regardless of computer architecture.
 
 Arch Linux officially supports the open source [OpenJDK](http://openjdk.java.net/) versions 7 and 8\. All these JVM can be installed without conflict and switched between using helper script `archlinux-java`. Several other Java environments are available in [AUR](/index.php/AUR "AUR") but are not officially supported.
 
@@ -196,14 +196,6 @@ Also please note that:
 *   OpenJDK packages now declare `provides="java-runtime-openjdk=${pkgver}"` etc. This enables a third-party package to declare dependency on an OpenJDK without specifying a version
 
 ## Unsupported JVM from AUR
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Some applications require a 32bit Java environment (e.g. [webex](https://aur.archlinux.org/packages/webex/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/webex)]</sup>) and matching multilib packages are available in the AUR. An example of instructions which might be helpful to generalize is detailed in [[1]](https://wiki.archlinux.org/index.php?title=Webex&oldid=372663). (Discuss in [Talk:Java#](https://wiki.archlinux.org/index.php/Talk:Java))
 
 **Warning:** Packages in [AUR](/index.php/AUR "AUR") may or may not support `archlinux-java`
 

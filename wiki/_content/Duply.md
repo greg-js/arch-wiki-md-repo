@@ -2,7 +2,7 @@
 
 From [duply.net](http://www.duply.net/):
 
-NaN
+	_Duply is a frontend for the mighty duplicity magic. [Duplicity](/index.php/Duplicity "Duplicity") is a python based shell application that makes encrypted incremental backups to remote storages._
 
 ## Contents
 

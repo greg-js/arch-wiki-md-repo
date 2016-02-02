@@ -7,7 +7,7 @@ Related articles
 
 From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
 
-NaN
+	_sxhkd is a simple X hotkey daemon with a powerful and compact configuration syntax._
 
 ## Contents
 

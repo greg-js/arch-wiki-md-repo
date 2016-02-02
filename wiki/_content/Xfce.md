@@ -95,15 +95,15 @@ A number of graphical tools are available for this task:
 
 *   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments.
 
-NaN
+	[http://www.redsquirrel87.com/XAME.html](http://www.redsquirrel87.com/XAME.html) || [xame](https://aur.archlinux.org/packages/xame/)<sup><small>AUR</small></sup>
 
 *   **MenuLibre** — An advanced menu editor that provides modern features in a clean, easy-to-use interface.
 
-NaN
+	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/)<sup><small>AUR</small></sup>.
 
 *   **Alacarte** — Menu editor for GNOME
 
-NaN
+	[http://www.gnome.org/](http://www.gnome.org/) || [alacarte](https://www.archlinux.org/packages/?name=alacarte)
 
 Alternatively, create the file `~/.config/menus/xfce-applications.menu` manually. See the example configuration below:
 
@@ -355,15 +355,15 @@ A third party polkit authentication agent for Xfce is also available, see [xfce-
 
 Some programs that are commonly used with Xfce will control monitor blanking and [DPMS](/index.php/DPMS "DPMS") (monitor powersaving) settings. They are discussed below.
 
-NaN
+	Xfce Power Manager
 
 Xfce Power Manager will control blanking and DPMS settings. These settings can be configured by running _xfce4-power-manager-settings_ and clicking the _Display_ tab. Note that unticking the _Handle display power management_ option means that the Power Manager will disable DPMS - it does not mean that the Power Manager will relinquish control of DPMS. Also note that it will not disable screen blanking. To disable both blanking and DPMS, right click on the power manager system tray icon or left click on the panel applet and make sure that the option labelled _Presentation mode_ is ticked.
 
-NaN
+	XScreenSaver
 
 See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver"). Note that if XScreenSaver is running alongside Xfce Power Manager, it may not be entirely clear which application is in control of blanking and DPMS as both applications are competing for control of the same settings. Therefore, in a situation where it is important that the monitor not be blanked (when watching a film for instance), it is advisable to disable blanking and DPMS through both applications.
 
-NaN
+	xset
 
 If neither of the above applications are running, then blanking and DPMS settings can be controlled using the _xset_ command, see [DPMS#Modifying DPMS and screensaver settings using xset](/index.php/DPMS#Modifying_DPMS_and_screensaver_settings_using_xset "DPMS").
 

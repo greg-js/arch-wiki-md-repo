@@ -83,6 +83,13 @@ extension=mbstring.so
 
 ```
 
+You also need to make sure that PHP can access `/etc/webapps` and `/usr/share/webapps`. Add them to `open_basedir` in `/etc/php/php.ini` if open_basedir is not yet configured:
+
+```
+open_basedir = /srv/http/:/home/:/tmp/:/usr/share/pear/:/usr/share/webapps/:/etc/webapps/
+
+```
+
 ### Webserver (Apache)
 
 Copy the configuration file for Apache to its configuration directory:
@@ -118,31 +125,35 @@ location /webmail {
         alias /usr/share/webapps/roundcubemail;
         access_log /var/log/nginx/roundcube_access.log;
         error_log /var/log/nginx/roundcube_error.log;
-        #Favicon
-        location ~ ^/favicon.ico$ {
+        # Favicon
+        location ~ ^/webmail/favicon.ico$ {
                 root /usr/share/webapps/roundcubemail/skins/classic/images;
                 log_not_found off;
                 access_log off;
                 expires max;
         }
-        #Robots file
-        location ~ ^/robots.txt {
+        # Robots file
+        location ~ ^/webmail/robots.txt {
                 allow all;
                 log_not_found off;
                 access_log off;
         }
-        #Deny Protected directories 
-        location ~ ^/(config|temp|logs)/ {
+        # Deny Protected directories 
+        location ~ ^/webmail/(config|temp|logs)/ {
                  deny all;
         }
-        location ~ ^/(README|INSTALL|LICENSE|CHANGELOG|UPGRADING)$ {
+        location ~ ^/webmail/(README|INSTALL|LICENSE|CHANGELOG|UPGRADING)$ {
                 deny all;
         }
-        location ~ ^/(bin|SQL)/ {
+        location ~ ^/webmail/(bin|SQL)/ {
                 deny all;
         }
-        #Hide all dot files
-        location ~ /\. {
+        # Hide .md files
+        location ~ ^/webmail/(.+\.md)$ {
+                deny all;
+        }
+        # Hide all dot files
+        location ~ ^/webmail/\. {
                 deny all;
                 access_log off;
                 log_not_found off;
@@ -248,4 +259,4 @@ Further usage instructions can be found [here](https://github.com/blind-coder/rc
 *   [Offical web page](http://roundcube.net)
 *   [Official installation manual](http://trac.roundcube.net/wiki/Howto_Install)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Roundcube&oldid=413100](https://wiki.archlinux.org/index.php?title=Roundcube&oldid=413100)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Roundcube&oldid=418779](https://wiki.archlinux.org/index.php?title=Roundcube&oldid=418779)"

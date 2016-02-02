@@ -1,13 +1,5 @@
 # PHC
 
-[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
-
-[![Tango-preferences-desktop-locale.png](/images/d/dc/Tango-preferences-desktop-locale.png)](/index.php/File:Tango-preferences-desktop-locale.png)
-
-**This article or section needs to be [translated](/index.php/ArchWiki:Contributing#Translating "ArchWiki:Contributing").**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:PHC#](https://wiki.archlinux.org/index.php/Talk:PHC))
-
 Related articles
 
 *   [Laptop](/index.php/Laptop "Laptop")

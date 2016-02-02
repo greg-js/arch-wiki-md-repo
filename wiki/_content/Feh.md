@@ -101,14 +101,6 @@ This one does not seem to accept options.
 
 ### As a desktop wallpaper manager
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** GNOME Files doesn't manage the desktop anymore (that's handled by GNOME Shell) and Files doesn't use GConf anymore either. The GNOME info here wants revision or removal. (Discuss in [Talk:Feh#](https://wiki.archlinux.org/index.php/Talk:Feh))
-
 feh can be used to manage the desktop wallpaper for window managers that lack desktop features, such as [Openbox](/index.php/Openbox "Openbox"), [Fluxbox](/index.php/Fluxbox "Fluxbox"), and [xmonad](/index.php/Xmonad "Xmonad").
 
 When using [GNOME](/index.php/GNOME "GNOME"), you must prevent GNOME Files from controlling the desktop. The easiest way is to run this command:

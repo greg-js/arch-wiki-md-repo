@@ -1,16 +1,8 @@
 # LightScribe
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:LightScribe#](https://wiki.archlinux.org/index.php/Talk:LightScribe))
-
 From [lightscribe.com](http://www.lightscribe.com/):
 
-NaN
+	_LightScribe is an innovative technology that uses a special disc drive, special media, and label-making software to burn labels directly onto CDs and DVDs._
 
 Labels burnt using LightScribe are monochromatic, as it works by making a chemical in the media react with the laser beam and change color.
 

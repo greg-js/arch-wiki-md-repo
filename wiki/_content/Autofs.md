@@ -243,14 +243,6 @@ After a restart your new FTP server should be accessible through `/media/ftp/ser
 
 #### Remote SSH
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** All the _ssh*_ commands should be executed as the same user, as before [this edit](https://wiki.archlinux.org/index.php?title=Autofs&diff=prev&oldid=318335). It should not matter if it is root or unprivileged. (Discuss in [Talk:Autofs#](https://wiki.archlinux.org/index.php/Talk:Autofs))
-
 These are basic instructions to access a remote filesystem over [SSH](/index.php/SSH "SSH") with AutoFS.
 
 **Note:** Password-less authentication may be convenient but also has security implications. See [SSH keypair](/index.php/Using_SSH_Keys "Using SSH Keys") for more details

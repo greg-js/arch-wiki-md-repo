@@ -36,7 +36,7 @@ It only runs in RAM, without any special filesystems like squashfs, thus it is l
 *   It runs a modified Arch Linux system in initramfs.
 *   It is restricted to RAM usage, everything which is not necessary like
 
-NaN
+	man or info pages etc. is not provided.
 
 *   It doesn't mount anything during boot process.
 *   It supports remote installation through ssh.
@@ -45,12 +45,18 @@ NaN
 
 *   Hybrid image files and torrents are provided, which include i686/x86_64 and [core] repository,
 
-NaN
+	network labeled images don't include [core] repository.
 
 *   Please check md5sum before using it.
 *   [Download 2015.09 „2k15-R3“](https://downloads.archlinux.de/iso/archboot/2015.09) / [Changelog](ftp://ftp.archlinux.org/iso/archboot/Changelog-2015.09-1.txt) / [Forum thread](https://bbs.archlinux.org/viewtopic.php?id=182439)
 
-NaN
+	kernel: 4.2.0-3
+
+	pacman: 4.2.1-3
+
+	systemd: 226-1
+
+	RAM recommendations: 600 MB
 
 ### Burning Release
 
@@ -79,7 +85,11 @@ Hybrid image file is a standard CD-burnable image and also a raw disk image.
 *   It supports Secure Boot with prebootloader.
 *   It supports grub(2)'s iso loopback support.
 
-NaN
+	variables used (below for example):
+
+	iso_loop_dev=PARTUUID=XXXX
+
+	iso_loop_path=/blah/archboot.iso
 
 ```
 menuentry "Archboot" --class iso {
@@ -130,19 +140,31 @@ menuentry "Archboot Memdisk" {
 *   Check also the forum threads for posted fixes and workarounds.
 *   Why screen stays blank or other weird screen issues happen?
 
-NaN
+	Some hardware doesn't like the KMS activation, use radeon.modeset=0, i915.modeset=0 or nouveau.modeset=0 on boot prompt.
 
 *   dmraid/fakeraid might be broken on some boards, support is not perfect here.
 
-NaN
+	The reason is there are so many different hardware components out there. At the moment 1.0.0rc16 is included, with latest fedora patchset, development has been stopped.
+
+	mdadm supports some isw and ddf fakeraid chipsets, but assembling during boot is deactivated in /etc/mdadm.conf!
 
 *   grub2 cannot detect correct bios boot order:
 
-NaN
+	It may happen that hd(x,x) entries are not correct, thus first reboot may not work.
+
+	Reason: grub cannot detect bios boot order.
+
+	Fix: Either change bios boot order or change menu.lst to correct entries after successful boot. This cannot be fixed it is a restriction in grub2!
 
 *   Why is parted used in setup routine, instead of cfdisk in msdos partitiontable mode?
 
-NaN
+	parted is the only linux partition program that can handle all type of things the setup routine offers.
+
+	cfdisk cannot handle GPT/GUID nor it can allign partitions correct with 1MB spaces for 4k sector disks.
+
+	cfdisk is a nice tool but is too limited to be the standard partitioner anymore.
+
+	cfdisk is still included but has to be run in an other terminal.
 
 ### History
 

@@ -1,13 +1,5 @@
 # Gambas
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** There's no [gambas2](https://www.archlinux.org/packages/?name=gambas2)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> nor [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) in the official repositories anymore, however there's [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) group. Is it necessary to install all packages from this group? (Discuss in [Talk:Gambas#](https://wiki.archlinux.org/index.php/Talk:Gambas))
-
 **Gambas** is an object-oriented dialect of the BASIC programming language as well as the integrated development environment that accompanies it.
 
 ## Contents

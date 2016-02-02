@@ -1,13 +1,5 @@
 # Toshiba Tecra M4
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section should provide only information specific to the hardware. Content from the general wiki articles should not be [duplicated](/index.php/Category:Laptops "Category:Laptops"); crosslink it instead.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Toshiba Tecra M4#](https://wiki.archlinux.org/index.php/Talk:Toshiba_Tecra_M4))
-
 The Tecra M4 is a convertible-PC produced by Toshiba.
 
 Mine includes 512MByte of RAM, 60Gbyte SATA-HDD, NVidia 6200 graphics card and a serial Wacom tablet.

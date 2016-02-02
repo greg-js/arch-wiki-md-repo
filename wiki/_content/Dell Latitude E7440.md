@@ -1,21 +1,5 @@
 # Dell Latitude E7440
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Need more users of this model to extend this page to make it fit more configurations. (Discuss in [Talk:Dell Latitude E7440#](https://wiki.archlinux.org/index.php/Talk:Dell_Latitude_E7440))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** (Discuss in [Talk:Dell Latitude E7440#](https://wiki.archlinux.org/index.php/Talk:Dell_Latitude_E7440))
-
 The Dell Latitude E7440 is a business Ultrabook™. Generally speaking, it has nice support of (Arch) Linux.
 
 ## Contents

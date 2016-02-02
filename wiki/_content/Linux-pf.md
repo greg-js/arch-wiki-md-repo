@@ -94,14 +94,6 @@ initrd (hd0,0)/initramfs-linux-pf.img
 
 ```
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TuxOnIce](/index.php/TuxOnIce "TuxOnIce").**
-
-**Notes:** There should be only a link to the main page. (Discuss in [Talk:Linux-pf#](https://wiki.archlinux.org/index.php/Talk:Linux-pf))
-
 If you intend to use TuxOnIce for hibernation, make sure you have added the necessary modules to the MODULES array of `/etc/mkinitcpio.conf` and at least the _resume_ hook to the HOOKS array:
 
 ```

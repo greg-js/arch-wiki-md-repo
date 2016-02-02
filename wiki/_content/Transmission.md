@@ -60,7 +60,19 @@ With GTK+ 3.18, transmission-gtk shows black borders in random places; these can
 
 The commands for _transmission-cli_ are:
 
-NaN
+	_transmission-daemon_: starts the daemon.
+
+	_transmission-remote_: invokes the [CLI](https://en.wikipedia.org/wiki/Command-line_interface "wikipedia:Command-line interface") for the daemon, whether local or remote, followed by the command you want the daemon to execute.
+
+	_transmission-remote-cli_: (requires [transmission-remote-cli](https://www.archlinux.org/packages/?name=transmission-remote-cli)) starts the [curses](https://en.wikipedia.org/wiki/curses_(programming_library) "wikipedia:curses (programming library)") interface for the daemon, whether local or remote.
+
+	_transmission-cli_: starts a non-daemonized local instance of _transmission_, for manually downloading a torrent.
+
+	_transmission-show_: returns information on a given torrent file.
+
+	_transmission-create_: creates a new torrent.
+
+	_transmission-edit_: add, delete, or replace a tracker's announce URL.
 
 ### Starting and stopping the daemon
 
@@ -147,14 +159,6 @@ systemctl stop transmission
 ```
 
 ##### NetworkManager
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Todo (Discuss in [Talk:Transmission#](https://wiki.archlinux.org/index.php/Talk:Transmission))
 
 ### Choosing a user
 

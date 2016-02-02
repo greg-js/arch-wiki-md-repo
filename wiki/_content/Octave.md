@@ -8,7 +8,7 @@ Related articles
 
 From the [official website](http://www.gnu.org/software/octave/):
 
-NaN
+	_GNU Octave is a high-level interpreted language, primarily intended for numerical computations. It provides capabilities for the numerical solution of linear and nonlinear problems, and for performing other numerical experiments. It also provides extensive graphics capabilities for data visualization and manipulation. Octave is normally used through its interactive command line interface, but it can also be used to write non-interactive programs. The Octave language is quite similar to Matlab so that most programs are easily portable._
 
 ## Contents
 
@@ -94,11 +94,11 @@ Octave has two official plotting backends:
 
 *   **[Gnuplot](https://en.wikipedia.org/wiki/Gnuplot "wikipedia:Gnuplot")** — A classic Linux plotting utility.
 
-NaN
+	[http://www.gnuplot.info/](http://www.gnuplot.info/) || [gnuplot](https://www.archlinux.org/packages/?name=gnuplot)
 
 *   **FLTK Backend** — A new experimental OpenGL backend based on the [FLTK](https://en.wikipedia.org/wiki/FLTK "wikipedia:FLTK") GUI toolkit.
 
-NaN
+	[http://www.gnu.org/software/octave/](http://www.gnu.org/software/octave/) || [octave](https://www.archlinux.org/packages/?name=octave)
 
 **Note:** To enable the FLTK backend, you need to install the [fltk](https://www.archlinux.org/packages/?name=fltk) package. This package now comes as a dependency of octave.
 
@@ -119,11 +119,11 @@ The following GUIs are unofficial.
 
 *   **Cantor** — A graphical user interface that delegates its mathematical operations to one of several back ends (Scilab, Maxima, Octave and others).
 
-NaN
+	[http://edu.kde.org/cantor/](http://edu.kde.org/cantor/) || [cantor](https://www.archlinux.org/packages/?name=cantor)
 
 *   **QtOctave** — A Qt frontend for Octave.
 
-NaN
+	[https://forja.rediris.es/projects/csl-qtoctave/](https://forja.rediris.es/projects/csl-qtoctave/) || [qtoctave](https://aur.archlinux.org/packages/qtoctave/)<sup><small>AUR</small></sup>
 
 ### Bug in Documentation tab
 
@@ -175,17 +175,9 @@ Since [octave-io](https://aur.archlinux.org/packages/octave-io/)<sup><small>AUR<
 
 ##### Steps necessary to make Java Interface available
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The package octave-java is now included in octave, and no longer available from AUR. (Discuss in [Talk:Octave#](https://wiki.archlinux.org/index.php/Talk:Octave))
-
 The steps necessary to make it work are:
 
-NaN
+	1\. [Install](/index.php/Install "Install") [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk), available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 **Note:** A common problem is that Octave cannot find the JDK path. To fix this execute the following commands in your shell:
 
@@ -196,7 +188,7 @@ $ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
 You may also want to add this to your `~/.bashrc` and append it to your `PATH`.
 
-NaN
+	2\. Install a Java XLS library for `xlsread`. There are more such libraries available, a comparison can be found at [here](http://octave.org/wiki/index.php?title=IO_package#Comparison_of_interfaces_.26_usage). The recommended library is [apache-poi](https://aur.archlinux.org/packages/apache-poi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/apache-poi)]</sup>, available in the [AUR](/index.php/AUR "AUR").
 
 To check if Java is working correctly in Octave, see the output of:
 

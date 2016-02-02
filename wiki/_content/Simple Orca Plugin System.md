@@ -1,13 +1,5 @@
 # Simple Orca Plugin System
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This wiki page is a work in progress by chrys. (Discuss in [Talk:Simple Orca Plugin System#](https://wiki.archlinux.org/index.php/Talk:Simple_Orca_Plugin_System))
-
 With the Simple Orca Plugin System (SOPS) you can extend the functionality of the Orca screen reader. It offers the possibility to add plug-ins in nearly any programming language in an easy way. The settings for the plug-ins are controlled via the filename.
 
 ## Contents
@@ -49,15 +41,15 @@ To setup the plug-in system for the current user, run:
 
 *   The Installation path. This contains the default plug-ins, the documentation,the plugin loader and the administration tools:
 
-NaN
+	`/usr/share/SOPS/`
 
 *   The path for user plug-ins is:
 
-NaN
+	`~/.config/SOPS/plugins-available/`
 
 *   The following path is used for all enabled (active) plug-ins. All plug-ins in that folder will be loaded, if they are valid:
 
-NaN
+	`~/.config/SOPS/plugins-enabled/`
 
 ### Administration tools
 

@@ -1,21 +1,5 @@
 # OpenNebula
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:OpenNebula#](https://wiki.archlinux.org/index.php/Talk:OpenNebula))
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:OpenNebula#](https://wiki.archlinux.org/index.php/Talk:OpenNebula))
-
 "_OpenNebula is the industry standard for on-premise IaaS cloud computing, offering the most feature-rich, flexible solution for the comprehensive management of virtualized data centers to enable private, public and hybrid (cloudbursting) clouds. OpenNebula interoperability makes cloud an evolution by leveraging existing IT infrastructure, protecting your investments, and avoiding vendor lock-in._"
 
 ## Contents

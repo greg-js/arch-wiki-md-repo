@@ -1,13 +1,5 @@
 # Unclutter
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** [unclutter-xfixes-git](https://aur.archlinux.org/packages/unclutter-xfixes-git/)<sup><small>AUR</small></sup> can't be described in both [#Installation](#Installation) and [#Alternatives](#Alternatives). (Discuss in [Talk:Unclutter#](https://wiki.archlinux.org/index.php/Talk:Unclutter))
-
 Unclutter hides your X mouse cursor when you do not need it, to prevent it from getting in the way. You have only to move the mouse to restore the mouse cursor. Unclutter is very useful in tiling window managers where you do not need the mouse often.
 
 ## Contents

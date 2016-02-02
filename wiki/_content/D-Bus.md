@@ -1,13 +1,5 @@
 # D-Bus
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention disabling of dbus services through use of `systemctl mask` and overrides in `/etc/dbus-1/services` (Discuss in [Talk:D-Bus#](https://wiki.archlinux.org/index.php/Talk:D-Bus))
-
 Related articles
 
 *   [kdbus](/index.php/Kdbus "Kdbus")

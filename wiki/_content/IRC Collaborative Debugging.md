@@ -1,13 +1,5 @@
 # IRC Collaborative Debugging
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [IRC Channel](/index.php/IRC_Channel "IRC Channel").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:IRC Collaborative Debugging#](https://wiki.archlinux.org/index.php/Talk:IRC_Collaborative_Debugging))
-
 For requesting help from an IRC help channel (like [#archlinux](/index.php/Irc "Irc")), you can use collaborative debugging services (like [pastebin](http://pastie.org/)) to give IRC users details about problems you are seeing or configuration files you need referenced.
 
 ## Contents

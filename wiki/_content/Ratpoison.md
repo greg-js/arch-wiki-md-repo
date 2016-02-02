@@ -1,13 +1,5 @@
 # Ratpoison
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Poor style, duplicate content (Discuss in [Talk:Ratpoison#](https://wiki.archlinux.org/index.php/Talk:Ratpoison))
-
 [Ratpoison](http://www.nongnu.org/ratpoison/) is a tiling [window manager](/index.php/Window_manager "Window manager") written in C, that allows the user to manage applications without a mouse. The user interface is inspired by [Screen](/index.php/Screen "Screen").
 
 ## Contents

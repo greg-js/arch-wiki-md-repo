@@ -53,14 +53,6 @@ A number of presets are included and can be used by setting the USE_STYLE variab
 
 ### Infinality-bundle
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Not clear from this section what bohoomil's bundle **does**. How are the patches different from stock infinality, apart from working with newer freetype versions? "presets" etc. (Discuss in [Talk:Infinality#](https://wiki.archlinux.org/index.php/Talk:Infinality))
-
 **Infinality-bundle** is a collection of software aiming to improve text rendering in Arch Linux.
 
 Currently, the bundle comprises:
@@ -240,14 +232,6 @@ To solve rendering issues in Google Chrome browser described [in this post](http
 ```
 
 ### Emacs issues
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Emacs](/index.php/Emacs "Emacs").**
-
-**Notes:** This issue does not seem related to infinality, but rather a general font issue with Emacs (Discuss in [Talk:Infinality#](https://wiki.archlinux.org/index.php/Talk:Infinality))
 
 Emacs users have reported issues with Noto Sans as the default sans-serif font. This will affect any font face that specifies "Sans Serif" as the font family including the variable-pitch face that is used in Emacs Info mode.
 

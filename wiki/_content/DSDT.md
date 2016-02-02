@@ -102,14 +102,6 @@ If it says no errors and no warnings you should be good to go.
 
 ## Using modified code
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Detail each method (Discuss in [Talk:DSDT#](https://wiki.archlinux.org/index.php/Talk:DSDT))
-
 There are two ways to use a custom DSDT:
 
 *   compiling it into the kernel

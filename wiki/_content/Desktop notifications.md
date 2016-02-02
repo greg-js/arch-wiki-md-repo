@@ -41,43 +41,47 @@ You can choose one of the following implementations:
 
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — A notification-daemon applet is available for AWN.
 
-NaN
+	[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)<sup><small>AUR</small></sup>
 
 *   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment").
 
-NaN
+	[https://github.com/linuxdeepin/deepin-notifications](https://github.com/linuxdeepin/deepin-notifications) || [deepin-notifications](https://www.archlinux.org/packages/?name=deepin-notifications)
 
 *   **Dunst** — Minimalistic notification daemon for Linux designed to fit nicely into minimalistic windowmanagers like [dwm](/index.php/Dwm "Dwm").
 
-NaN
+	[http://www.knopwob.org/dunst/](http://www.knopwob.org/dunst/) || [dunst](https://www.archlinux.org/packages/?name=dunst)
 
 *   **LXQt Notification Daemon** — Notification server for [LXQt](/index.php/LXQt "LXQt").
 
-NaN
+	[https://github.com/lxde/lxqt-notificationd](https://github.com/lxde/lxqt-notificationd) || [lxqt-notificationd](https://www.archlinux.org/packages/?name=lxqt-notificationd)
 
 *   **Notification Daemon** — The notification server used by [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback").
 
-NaN
+	[https://github.com/GNOME/notification-daemon](https://github.com/GNOME/notification-daemon) || [notification-daemon](https://www.archlinux.org/packages/?name=notification-daemon)
+
+	You can run it manually using `/usr/lib/notification-daemon-1.0/notification-daemon`.
 
 *   **MATE Notification Daemon** — Notification server for [MATE](/index.php/MATE "MATE").
 
-NaN
+	[https://github.com/mate-desktop/mate-notification-daemon/](https://github.com/mate-desktop/mate-notification-daemon/) || GTK+ 2: [mate-notification-daemon](https://www.archlinux.org/packages/?name=mate-notification-daemon), GTK+ 3 (experimental): [mate-notification-daemon-gtk3](https://www.archlinux.org/packages/?name=mate-notification-daemon-gtk3)
 
 *   **Notify OSD** — Notification server for [Unity](/index.php/Unity "Unity").
 
-NaN
+	[https://launchpad.net/notify-osd](https://launchpad.net/notify-osd) || [notify-osd](https://www.archlinux.org/packages/?name=notify-osd)
 
 *   **statnot** — Small, lightweight notification daemon that can output notifications to the root window's title, stdout or FIFO pipes, making it integrate very well with tiling window managers.
 
-NaN
+	[https://github.com/halhen/statnot](https://github.com/halhen/statnot) || [statnot](https://aur.archlinux.org/packages/statnot/)<sup><small>AUR</small></sup>
 
 *   **twmn** — Notification system for tiling window managers.
 
-NaN
+	[https://github.com/sboli/twmn](https://github.com/sboli/twmn) || [twmn-git](https://aur.archlinux.org/packages/twmn-git/)<sup><small>AUR</small></sup>
 
 *   **Xfce Notification Daemon** — Notification server for [Xfce](/index.php/Xfce "Xfce").
 
-NaN
+	[http://goodies.xfce.org/projects/applications/xfce4-notifyd](http://goodies.xfce.org/projects/applications/xfce4-notifyd) || [xfce4-notifyd](https://www.archlinux.org/packages/?name=xfce4-notifyd)
+
+**Tip:** To configure xfce4-notifyd, run the following command: `xfce4-notifyd-config`.
 
 ## Usage in programming
 

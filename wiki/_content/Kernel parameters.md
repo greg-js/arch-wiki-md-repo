@@ -37,13 +37,13 @@ The following examples add the `quiet` and `splash` parameters to [Syslinux](/in
 
 *   Press `Tab` when the menu shows up and add them at the end of the string:
 
-NaN
+	 `linux /boot/vmlinuz-linux root=/dev/sda3 initrd=/boot/initramfs-linux.img _quiet splash_` 
 
-NaN
+	Press `Enter` to boot with these parameters.
 
 *   To make the change persistent after reboot, edit `/boot/syslinux/syslinux.cfg` and add them to the `APPEND` line:
 
-NaN
+	 `APPEND root=/dev/sda3 _quiet splash_` 
 
 For more information on configuring Syslinux, see the [Syslinux](/index.php/Syslinux "Syslinux") article.
 
@@ -51,15 +51,15 @@ For more information on configuring Syslinux, see the [Syslinux](/index.php/Sysl
 
 *   Press `e` when the menu appears and add the parameters to the end of the string:
 
-NaN
+	 `initrd=\initramfs-linux.img root=/dev/sda2 _quiet splash_` 
 
-NaN
+	Press `Enter` to boot with these parameters.
 
 **Note:** If you have not set a value for menu timeout, you will need to hold `Space` while booting for the systemd-boot menu to appear.
 
 *   To make the change persistent after reboot, edit `/boot/loader/entries/arch.conf` (assuming you set up your [EFI System Partition](/index.php/Unified_Extensible_Firmware_Interface#EFI_System_Partition "Unified Extensible Firmware Interface") and configuration files according to the instructions in the [Beginners' Guide](/index.php/Beginners%27_guide#UEFI_motherboards "Beginners' guide")) and add them to the `options` line:
 
-NaN
+	 `options root=/dev/sda2 _quiet splash_` 
 
 For more information on configuring systemd-boot, see the [systemd-boot](/index.php/Systemd-boot "Systemd-boot") article.
 
@@ -67,19 +67,19 @@ For more information on configuring systemd-boot, see the [systemd-boot](/index.
 
 *   Press `e` when the menu shows up and add them on the `linux` line:
 
-NaN
+	 `linux /boot/vmlinuz-linux root=UUID=978e3e81-8048-4ae1-8a06-aa727458e8ff _quiet splash_` 
 
-NaN
+	Press `b` to boot with these parameters.
 
 *   To make the change persistent after reboot, while you _could_ manually edit `/boot/grub/grub.cfg` with the exact line from above, the best practice is to:
 
-NaN
+	Edit `/etc/default/grub` and append your kernel options to the `GRUB_CMDLINE_LINUX_DEFAULT` line:
 
-NaN
+	 `GRUB_CMDLINE_LINUX_DEFAULT="_quiet splash_"` 
 
-NaN
+	And then automatically re-generate the `grub.cfg` file with:
 
-NaN
+	 `# grub-mkconfig -o /boot/grub/grub.cfg` 
 
 For more information on configuring GRUB, see the [GRUB](/index.php/GRUB "GRUB") article.
 
@@ -87,9 +87,9 @@ For more information on configuring GRUB, see the [GRUB](/index.php/GRUB "GRUB")
 
 *   Press `e` when the menu shows up and add them on the `kernel` line:
 
-NaN
+	 `kernel /boot/vmlinuz-linux root=/dev/sda3 _quiet splash_` 
 
-NaN
+	Press `b` to boot with these parameters.
 
 *   To make the change persistent after reboot, edit `/boot/grub/menu.lst` and add them to the `kernel` line, exactly like above.
 
@@ -99,7 +99,11 @@ For more information on configuring GRUB Legacy, see the [GRUB Legacy](/index.ph
 
 *   Add them to `/etc/lilo.conf`:
 
-NaN
+```
+image=/boot/vmlinuz-linux
+        ...
+        _quiet splash_
+```
 
 For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO") article.
 
@@ -107,11 +111,16 @@ For more information on configuring LILO, see the [LILO](/index.php/LILO "LILO")
 
 *   To make the change persistent after reboot, edit `/boot/EFI/arch/refind_linux.conf` (ie. refind_linux.conf in the folder your kernel is located in) and append them to all/required lines, for example
 
-NaN
+	 `"Boot to X"   "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff _quiet splash_` 
 
 *   If you have disabled auto-detection of OS's in rEFInd and are defining OS stanzas instead in `/boot/EFI/refind/refind.conf` to load your OS's, you can edit it like:
 
-NaN
+```
+menuentry "Arch" {
+	loader /EFI/arch/vmlinuz-arch.efi
+	options "root=PARTUUID=978e3e81-8048-4ae1-8a06-aa727458e8ff quiet splash"
+
+```
 
 For more information on configuring kernel parameters in rEFInd, see [Configuring the rEFInd Bootmanager](http://www.rodsbooks.com/refind/linux.html)
 

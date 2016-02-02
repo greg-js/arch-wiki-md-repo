@@ -1,21 +1,5 @@
 # Migrate installation to new hardware
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Migrate installation to new hardware#](https://wiki.archlinux.org/index.php/Talk:Migrate_installation_to_new_hardware))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Mentions rc.conf and uses links to wiki articles that don't exist anymore. (Discuss in [Talk:Migrate installation to new hardware#](https://wiki.archlinux.org/index.php/Talk:Migrate_installation_to_new_hardware))
-
 This article discusses the steps required for moving an Arch Linux system to new hardware. The goal is to achieve the same ArchLinux installation, as far as installed software and configuration is concerned.
 
 There are two different approaches to migrating an installation:
@@ -99,14 +83,6 @@ As root, grab a cup of coffee and execute:
 ```
 
 ## Top to Bottom
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Migrating Between Architectures Without Reinstalling](/index.php/Migrating_Between_Architectures_Without_Reinstalling "Migrating Between Architectures Without Reinstalling").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Migrate installation to new hardware#](https://wiki.archlinux.org/index.php/Talk:Migrate_installation_to_new_hardware))
 
 *   See these forum threads:
     *   [https://bbs.archlinux.org/viewtopic.php?id=71038](https://bbs.archlinux.org/viewtopic.php?id=71038)

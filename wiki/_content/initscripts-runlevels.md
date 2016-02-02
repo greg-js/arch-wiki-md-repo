@@ -4,19 +4,11 @@ Related articles
 
 *   [SysVinit](/index.php/SysVinit "SysVinit")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [sysvinit](/index.php/Sysvinit "Sysvinit").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Initscripts/runlevels#](https://wiki.archlinux.org/index.php/Talk:Initscripts/runlevels))
-
 **Note:** [systemd](/index.php/Systemd "Systemd") is used by default, which uses targets (see `man systemd.target`) rather than runlevels.
 
 From the [init](http://unixhelp.ed.ac.uk/CGI/man-cgi?init+8) man page:
 
-NaN
+	_A runlevel is a software configuration of the system which allows only a selected group of processes to exist. The processes spawned by init for each of these runlevels are defined in the /etc/inittab file._
 
 If something goes wrong with your Arch setup in such way that you are completely helpless when the system boots up, you may need this.
 

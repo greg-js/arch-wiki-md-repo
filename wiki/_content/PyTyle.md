@@ -1,21 +1,5 @@
 # PyTyle
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:PyTyle#](https://wiki.archlinux.org/index.php/Talk:PyTyle))
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:PyTyle#](https://wiki.archlinux.org/index.php/Talk:PyTyle))
-
 **[PyTyle](http://code.google.com/p/pytyle/)** is a tiling manager that works with EWMH-compliant window managers (like [Openbox](/index.php/Openbox "Openbox") and KWin) to provide functions for tiling windows. Both Xmonad and Musca have influenced the feature set.
 
 ## Contents
@@ -31,15 +15,15 @@ PyTyle is currently not available from the Arch official repositories.
 
 *   **PyTyle** — An automatic tiler that is compatible with Openbox Multihead.
 
-NaN
+	[https://sourceforge.net/projects/pytyle/](https://sourceforge.net/projects/pytyle/) || [pytyle](https://aur.archlinux.org/packages/pytyle/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytyle)]</sup>
 
 *   **PyTyle2** — Auto/manual on-demand tiling manager that fits in any EWMH compatible window manager.
 
-NaN
+	[https://code.google.com/p/pytyle/](https://code.google.com/p/pytyle/) || [pytyle2-hg](https://aur.archlinux.org/packages/pytyle2-hg/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytyle2-hg)]</sup>
 
 *   **PyTyle3** — An automatic tiler that is compatible with Openbox Multihead with faster action and lower memory footprint.
 
-NaN
+	[https://github.com/BurntSushi/pytyle3](https://github.com/BurntSushi/pytyle3) || [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytyle3-git)]</sup>
 
 **Note:** Any can be installed on the same system, although only one can be run at the same time.
 

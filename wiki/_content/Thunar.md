@@ -10,7 +10,7 @@ Related articles
 
 From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
-NaN
+	_Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time._
 
 ## Contents
 
@@ -50,31 +50,31 @@ Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File mana
 
 *   **Thunar Archive Plugin** — Plugin which allows you to create and extract archive files using contextual menu items. It does not create or extract archives directly, but instead acts as a frontend for other programs such as File Roller ([file-roller](https://www.archlinux.org/packages/?name=file-roller)), Ark ([ark](https://www.archlinux.org/packages/?name=ark)) or Xarchiver ([xarchiver](https://www.archlinux.org/packages/?name=xarchiver)). Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-NaN
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-archive-plugin) || [thunar-archive-plugin](https://www.archlinux.org/packages/?name=thunar-archive-plugin)
 
 *   **Thunar Media Tags Plugin** — Plugin which allows you to view detailed information about media files. It also has a bulk renamed and allows editing of media tags. It supports ID3 (the MP3 file format's system) and Ogg/Vorbis tags. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-NaN
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin) || [thunar-media-tags-plugin](https://www.archlinux.org/packages/?name=thunar-media-tags-plugin)
 
 *   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
-NaN
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)<sup><small>AUR</small></sup>
 
 *   **[Thunar Volume Manager](#Thunar_Volume_Manager)** — Automatic management of removeable devices in Thunar. Part of [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
-NaN
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-volman](http://goodies.xfce.org/projects/thunar-plugins/thunar-volman) || [thunar-volman](https://www.archlinux.org/packages/?name=thunar-volman)
 
 *   **Tumbler** — External program to generate thumbnails. Also install [ffmpegthumbnailer](https://www.archlinux.org/packages/?name=ffmpegthumbnailer) to enable video thumbnailing.
 
-NaN
+	[http://git.xfce.org/xfce/tumbler/tree/README](http://git.xfce.org/xfce/tumbler/tree/README) || [tumbler](https://www.archlinux.org/packages/?name=tumbler)
 
 *   **RAW Thumbnailer** — A lightweight and fast raw image thumbnailer that is needed to display raw thumbnails.
 
-NaN
+	[https://code.google.com/p/raw-thumbnailer/](https://code.google.com/p/raw-thumbnailer/) || [raw-thumbnailer](https://www.archlinux.org/packages/?name=raw-thumbnailer)
 
 *   **libgsf** — The GNOME Structured File Library is a utility library for reading and writing structured file formats. Install if you need support for odf thumbnails
 
-NaN
+	[http://directory.fsf.org/wiki/Libgsf](http://directory.fsf.org/wiki/Libgsf) || [libgsf](https://www.archlinux.org/packages/?name=libgsf)
 
 ## Thunar Volume Manager
 

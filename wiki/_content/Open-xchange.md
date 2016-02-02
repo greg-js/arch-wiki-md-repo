@@ -52,14 +52,6 @@ Open-Xchange is available in the [AUR](/index.php/AUR "AUR"). Right now, no meta
 
 ### From the custom repository
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Unofficial repositories](/index.php/Unofficial_repositories "Unofficial repositories").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Open-xchange#](https://wiki.archlinux.org/index.php/Talk:Open-xchange))
-
 Add the following lines to your pacman.conf:
 
  `/etc/pacman.conf` 

@@ -1,13 +1,5 @@
 # Dual boot with Windows/SafeBoot
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** grub legacy, kernel26, etc. (Discuss in [Talk:Dual boot with Windows/SafeBoot#](https://wiki.archlinux.org/index.php/Talk:Dual_boot_with_Windows/SafeBoot))
-
 Related articles
 
 *   [Dual boot with Windows](/index.php/Dual_boot_with_Windows "Dual boot with Windows")

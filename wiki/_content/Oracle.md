@@ -1,13 +1,5 @@
 # Oracle
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Installation: Packages and AUR reference too old, Dutch version is up-to-date. Berlios is no more. (Discuss in [Talk:Oracle#](https://wiki.archlinux.org/index.php/Talk:Oracle))
-
 Related articles
 
 *   [Oracle client](/index.php/Oracle_client "Oracle client")

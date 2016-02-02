@@ -670,14 +670,6 @@ softdep tg3 pre: broadcom
 
 The adapter should be recognized by the `r8169` module. However, with some chip revisions the connection may go off and on all the time. The alternative [r8168](https://www.archlinux.org/packages/?name=r8168) can be found in the [official repositories](/index.php/Official_repositories "Official repositories") and should be used for a reliable connection in this case. [Blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `r8169`, if [r8168](https://www.archlinux.org/packages/?name=r8168) is not automatically loaded by [udev](/index.php/Udev "Udev") add it to your list of user specified [modules](/index.php/Kernel_modules#Loading "Kernel modules").
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** "some revisions", no proof the driver is the cause, and not e.g poorly configured DNS servers (Discuss in [Talk:Network configuration#](https://wiki.archlinux.org/index.php/Talk:Network_configuration))
-
 Another fault in the drivers for some revisions of this adapter is poor IPv6 support. [IPv6#Disable functionality](/index.php/IPv6#Disable_functionality "IPv6") can be helpful if you encounter issues such as hanging webpages and slow speeds.
 
 ### Gigabyte Motherboard with Realtek 8111/8168/8411

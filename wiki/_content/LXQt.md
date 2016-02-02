@@ -33,31 +33,31 @@ For additional functionality, you may wish to install the following:
 
 *   **[Connman](/index.php/Connman "Connman")** — Network manager like [NetworkManager](/index.php/NetworkManager "NetworkManager").
 
-NaN
+	[http://git.kernel.org/cgit/network/connman](http://git.kernel.org/cgit/network/connman) || [connman](https://www.archlinux.org/packages/?name=connman)
 
 *   **LXQt Connman applet** — LXQt system-tray applet for [Connman](/index.php/Connman "Connman").
 
-NaN
+	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
 
 *   **LXImage-Qt** — Image viewer and screenshot tool for LXQt.
 
-NaN
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)<sup><small>AUR</small></sup>
 
 *   **ObConf-Qt** — The Qt port of ObConf, the [Openbox](/index.php/Openbox "Openbox") configuration tool.
 
-NaN
+	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)<sup><small>AUR</small></sup>
 
 *   **QTerminal** — Lightweight Qt-based terminal emulator.
 
-NaN
+	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)<sup><small>AUR</small></sup>
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — The recommended display manager for LXQt.
 
-NaN
+	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
 *   **[XScreenSaver](/index.php/XScreenSaver "XScreenSaver")** — A screen saver required for screen locking in LXQt.
 
-NaN
+	[https://www.jwz.org/xscreensaver/](https://www.jwz.org/xscreensaver/) || [xscreensaver](https://www.archlinux.org/packages/?name=xscreensaver)
 
 Some LXQt panel plugins require extra packages to function, check the [optional dependencies](/index.php/PKGBUILD#optdepends "PKGBUILD") for [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel).
 

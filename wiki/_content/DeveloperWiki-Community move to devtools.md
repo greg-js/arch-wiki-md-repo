@@ -57,7 +57,7 @@ Reference: [https://archlinux.org/pipermail/aur-general/2009-January/003460.html
 *   Admins would now need to maintain user accounts for new TUs or when TUs leave.
 *   Quotas will probably need to be implemented for disk/cpu/ram usage, as we open gerolde up to way more user accounts in one fell swoop
 
-NaN
+	[phrakture](/index.php/User:Phrakture "User:Phrakture") 12:50, 9 January 2009 (EST)
 
 The most important objective of this proposal is to make [community] use the same infrastructure (devtools, etc.) as the Arch official repositories [core] and [extra]. Technical details about how the transition is to be made (whether [community] and AUR should be totally decoupled, for example) need to be discussed.
 

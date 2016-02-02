@@ -1,13 +1,5 @@
 # WebDAV authentication
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [WebDAV](/index.php/WebDAV "WebDAV").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:WebDAV authentication#](https://wiki.archlinux.org/index.php/Talk:WebDAV_authentication))
-
 ## Contents
 
 *   [1 Goals](#Goals)

@@ -30,14 +30,6 @@ proot internally utilizes the qemu user-mode emulator to allow programs to be ru
 
 ## Security
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Compare security of chroot and proot: Are /proc, /sys, and /dev accessible inside a proot? Is privilege escalation possible? (Discuss in [Talk:Proot#](https://wiki.archlinux.org/index.php/Talk:Proot))
-
 Like chroot, proot provides only filesystem level isolation. Programs inside the proot "jail" share the same kernel, hardware, process space, and networking subsystem. chroot and proot are not designed to be substitutes for real [virtualization](/index.php?title=Virtualization&action=edit&redlink=1 "Virtualization (page does not exist)") applications, such as hypervisors and paravirtualizers.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Proot&oldid=412743](https://wiki.archlinux.org/index.php?title=Proot&oldid=412743)"

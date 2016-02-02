@@ -512,11 +512,17 @@ $ offlineimap [ -o ] [ -d <debug_type> ] [ -u <ui> ]
 
 ```
 
-NaN
+	-o
 
-NaN
+	Disable autorefresh, keepalive, etc.
 
-NaN
+	-d <debug_type>
+
+	Where _<debug_type>_ is one of `imap`, `maildir` or `thread`. Debugging imap and maildir are, by far, the most useful.
+
+	-u <ui>
+
+	Where _<ui>_ is one of `CURSES.BLINKENLIGHTS`, `TTY.TTYUI`, `NONINTERACTIVE.BASIC`, `NONINTERACTIVE.QUIET` or `MACHINE.MACHINEUI`. TTY.TTYUI is sufficient for debugging purposes.
 
 **Note:** More recent versions use the following for <ui>: `blinkenlights`, `ttyui`, `basic`, `quiet` or `machineui`.
 

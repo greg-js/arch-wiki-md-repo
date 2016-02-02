@@ -353,14 +353,6 @@ If you are using _systemd-nspawn_, you may need to modify the `systemd-nspawn@.s
 
 Note that if you want to take advantage of automatic DNS configuration from DHCP, you need to enable `systemd-resolved` and symlink `/run/systemd/resolve/resolv.conf` to `/etc/resolv.conf`. See `systemd-resolved.service(8)` for more details.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Too many points for a tip, some of them are very similar so they could be merged. (Discuss in [Talk:Systemd-networkd#](https://wiki.archlinux.org/index.php/Talk:Systemd-networkd))
-
 **Tip:** Before you start to configure your container network, it is useful to:
 
 *   disable all your [netctl](/index.php/Netctl "Netctl") services. This will avoid any potential conflicts with **systemd-networkd** and make all your configurations easier to test. Furthermore, odds are high you will end with few or even no [netctl](/index.php/Netctl "Netctl") activated profiles. The `netctl list` command will output a list of all your profiles, with the activated one being starred.
@@ -592,14 +584,6 @@ Then, [enable and start](/index.php/Systemd#Basic_systemctl_usage "Systemd") `sy
 The needed configuration files:
 
 *   on host
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** In the listing of configuration files, /etc/systemd/network/MyBridge.netdev has the .netdev extension. But, the MyBridge.network example file has the .network extension. (Discuss in [Talk:Systemd-networkd#](https://wiki.archlinux.org/index.php/Talk:Systemd-networkd))
 
 ```
 /etc/systemd/network/_MyBridge_.netdev

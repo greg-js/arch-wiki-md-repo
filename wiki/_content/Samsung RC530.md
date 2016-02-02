@@ -1,13 +1,5 @@
 # Samsung RC530
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Style need to be fixed. See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Samsung RC530#](https://wiki.archlinux.org/index.php/Talk:Samsung_RC530))
-
 This is valid for many newer Samsung laptops. The system tested here is a Samsung RC 530\. Since the models do not differ greatly in their overall design chances are good that the whole RC series is covered by the following steps.
 
 ```

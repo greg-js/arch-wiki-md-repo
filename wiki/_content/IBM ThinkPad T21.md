@@ -13,14 +13,6 @@ Works with no known issues. Tested on 2008.03 and 2008.06\.
 
 ## Configuration
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:IBM ThinkPad T21#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_T21))
-
 ### CPU Frequency Scaling
 
 Install [cpudyn](https://aur.archlinux.org/packages.php?ID=43483) from the AUR.

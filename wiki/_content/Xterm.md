@@ -101,15 +101,19 @@ The scrollbar operates differently from what you may be accustomed to using.
 
 *   To scroll down:
 
-NaN
+	– Click on the scrollbar with the left mouse button.
+
+	– Click on the scrollbar below the _thumb_ with the middle mouse button.
 
 *   To scroll up:
 
-NaN
+	– Click on the scrollbar with the right mouse button.
+
+	– Click on the scrollbar above the _thumb_ with the middle mouse button.
 
 *   To position text, moving in either direction:
 
-NaN
+	– Grab the _thumb_ and use "click-and-drag" with the middle mouse button.
 
 ### Menus
 
@@ -166,14 +170,6 @@ The first section's options allow you to change the Tek window font size. The se
 First, highlighting text using the mouse in an xterm (or alternatively another application) will select the text to copy, then clicking the mouse middle-button will paste that highlighted text. Also the key combination `Shift+Insert` will paste highlighted text, but only within an xterm.
 
 #### PRIMARY or CLIPBOARD
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Separate shortcuts for CLIPBOARD can be defined instead of using _Select to clipboard_, similar to VTE-like terminals. See e.g [[1]](https://github.com/AladW/arch-i3/blob/master/.Xresources#L17) (Discuss in [Talk:Xterm#](https://wiki.archlinux.org/index.php/Talk:Xterm))
 
 By default, xterm, and many other applications running under X, copy highlighted text into a buffer called the PRIMARY selection. The PRIMARY selection is short-lived; the text is immediately replaced by a new PRIMARY selection as soon as another piece of text is highlighted. Some applications will allow you to paste PRIMARY selections by using the middle-mouse, but not `Shift+Insert`, and some other applications may not allow pasting from PRIMARY entirely.
 

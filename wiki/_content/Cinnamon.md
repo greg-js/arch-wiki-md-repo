@@ -80,7 +80,17 @@ $ pacman -Ql cinnamon | awk -F'[_.]' '/cs_.+\.py/ {print $2}'
 
 ```
 
-NaN
+	Printers
+
+	For configure printers, install the [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer) package.
+
+	Networking
+
+	To add support for the networking module, enable [Network Manager](/index.php/NetworkManager#Configuration "NetworkManager"). In order for NetworkManager to store Wi-Fi passwords, you will need to also install [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring").
+
+	Bluetooth
+
+	For Bluetooth device support, install the [blueberry](https://www.archlinux.org/packages/?name=blueberry) package.
 
 ### Applets and extensions
 

@@ -158,14 +158,6 @@ Please refer to the [SELinux](/index.php/SELinux "SELinux") wiki page for instru
 
 ## Home cloud server
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Merged from a separate article, needs some deduplication and integration with the rest of the page. (Discuss in [Talk:Server#](https://wiki.archlinux.org/index.php/Talk:Server))
-
 With Arch Linux, you can easily make a home cloud server, to replace web-based data storage. This lets you store your data on your own computer, and have it be accessible across platforms.
 
 ### Basic home cloud server components

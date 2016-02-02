@@ -1,21 +1,5 @@
 # File Sharing with Webdav and DNSSD
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** There is no rc.conf nor dbus-core anymore. (Discuss in [Talk:File Sharing with Webdav and DNSSD#](https://wiki.archlinux.org/index.php/Talk:File_Sharing_with_Webdav_and_DNSSD))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [WebDAV](/index.php/WebDAV "WebDAV").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:File Sharing with Webdav and DNSSD#](https://wiki.archlinux.org/index.php/Talk:File_Sharing_with_Webdav_and_DNSSD))
-
 Say you need a location that you can use to store things: eg music, photos, books etc. Say you want Nautilus and other file managers to find this automatically. You could use [Samba](/index.php/Samba "Samba") or you could do the following which uses webdav and dnssd on a server.
 
 ## Install the required packages

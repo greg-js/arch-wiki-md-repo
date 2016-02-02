@@ -21,10 +21,12 @@ The simplest solution is simply to remove the embedded profile from your image. 
 
 ### GIMP
 
-NaN
+	To remove the embedded profile, go to `Image > Mode > Assign Color Profile` and set it to `RGB workspace(sRGB built-in)`
+
+	To change the embedded profile, go to `Image > Mode > Convert to Color Profile` where you can choose a profile you already have loaded or load a new one from disk.
 
 ### ImageMagick
 
-NaN
+	To remove the embedded profile, just run `% convert -strip <input filename> <output filename>`
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Libpng_errors&oldid=394164](https://wiki.archlinux.org/index.php?title=Libpng_errors&oldid=394164)"

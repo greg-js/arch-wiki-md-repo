@@ -168,14 +168,6 @@ When you close the _stalonetray_ window, it closes `nm-applet` too, so no extra 
 
 ### Command line
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Why is this a subsection of [#Graphical front-ends](#Graphical_front-ends)? (Discuss in [Talk:NetworkManager#](https://wiki.archlinux.org/index.php/Talk:NetworkManager))
-
 The following applications can be useful for configuring and managing networks without X.
 
 #### nmcli
@@ -241,7 +233,7 @@ polkit.addRule(function(action, subject) {
 
 ```
 
-NaN
+	All users in the `network` group will be able to add and remove networks without a password. This will not work under [systemd](/index.php/Systemd "Systemd") if you do not have an active session with _systemd-logind_.
 
 ### Network services with NetworkManager dispatcher
 
@@ -314,7 +306,7 @@ fi
 
 In this example we want to connect automatically to a previously defined VPN connection after connecting to a specific Wi-Fi network. First thing to do is to create the dispatcher script that defines what to do after we are connected to the network.
 
-NaN
+	1\. Create the dispatcher script:
 
  `/etc/NetworkManager/dispatcher.d/vpn-up` 
 
@@ -345,7 +337,7 @@ If you would like to attempt to automatically connect to VPN for all Wi-Fi netwo
 
 If you require and tick the `nm-applet` option to _Make the VPN connection available to all users_, trying to connect may still fail and NetworkManager will complain about 'no valid VPN secrets', because of [the way VPN secrets are stored](http://developer.gnome.org/NetworkManager/0.9/secrets-flags.html), which brings us to step 2:
 
-NaN
+	2\. Either edit the VPN connection configuration file to make NetworkManager store the secrets by itself rather than inside a keyring [that will be inaccessible for root](https://bugzilla.redhat.com/show_bug.cgi?id=710552): open up `/etc/NetworkManager/system-connections/_name of your VPN connection_` and change the `password-flags` and `secret-flags` from `1` to `0`.
 
 Alternatively put the password directly in the configuration file adding the section `vpn-secrets`:
 
@@ -735,7 +727,7 @@ Log out and log back in to complete.
 
 ```
 
-NaN
+	Next time you log in, you should be asked if you want the password to be unlocked automatically on login.
 
 #### SLiM login manager
 

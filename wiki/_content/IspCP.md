@@ -1,21 +1,5 @@
 # IspCP
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Many sectons are empty. (Discuss in [Talk:IspCP#](https://wiki.archlinux.org/index.php/Talk:IspCP))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Mentions rc.d scripts. (Discuss in [Talk:IspCP#](https://wiki.archlinux.org/index.php/Talk:IspCP))
-
 ispCP is an open source project founded to build a Multi Server Control and Administration Panel aimed to be usefull to Internel Service Provider.The project is a fork of dying Virtual Hosting Control Panel (VHCS) project,but it's future goal is a complete rewritten of the original VHCS.
 
 For more detail information,please visit [ispCP Project Info](http://isp-control.net/project-info-2/).

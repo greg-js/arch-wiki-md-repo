@@ -1,13 +1,5 @@
 # WMFS
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [WMFS2](/index.php/WMFS2 "WMFS2").**
-
-**Notes:** The information about WMFS2 should be merged to its dedicated article. (Discuss in [Talk:WMFS#wmfs vs wmfs2](https://wiki.archlinux.org/index.php/Talk:WMFS#wmfs_vs_wmfs2))
-
 Related articles
 
 *   [WMFS2](/index.php/WMFS2 "WMFS2")

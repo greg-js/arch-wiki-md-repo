@@ -2,7 +2,7 @@
 
 From the [awesome website](https://awesome.naquadah.org/):
 
-NaN
+	_[awesome](https://en.wikipedia.org/wiki/awesome_(window_manager) "wikipedia:awesome (window manager)") is a highly configurable, next generation framework window manager for X. It is very fast, extensible and licensed under the GNU GPLv2 license. It is primarily targeted at power users, developers and any people dealing with every day computing tasks and who want to have fine-grained control on its graphical environment._
 
 ## Contents
 
@@ -235,14 +235,6 @@ client.connect_signal("unfocus", function(c)
 
 #### Conky
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Conky](/index.php/Conky "Conky").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
-
 If using conky, you must set it to create its own window instead of using the desktop. To do so, edit `~/.conkyrc` to contain
 
 ```
@@ -284,14 +276,6 @@ globalkeys = awful.util.table.join(
 ```
 
 #### ImageMagick
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Composite manager](/index.php/Composite_manager "Composite manager").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
 
 You may have problems if you set your wallpaper with imagemagick's _display_ command. It does not work well with xcompmgr. Please note that awsetbg may be using _display_ if it does not have any other options. Installing habak, feh, hsetroot or whatever should fix the problem (_grep -A 1 wpsetters /usr/bin/awsetbg_ to see your options).
 
@@ -349,14 +333,6 @@ app_folders = { "/usr/share/applications/", "~/.local/share/applications/" }
 Note that the `.desktop` files are re-read each time awesome starts, thereby slowing down the startup. If you prefer other means of launching programs, the menubar can be disabled in `rc.lua` by removing `local menubar = require("menubar")` and other references to the `menubar` variable.
 
 ### Pop-up menus
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Duplicate section? (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
 
 There is a simple menu by default in awesome 3, simplifying custom menus. [[5]](http://awesome.naquadah.org/wiki/Awful.menu) If you want a freedesktop.org menu, you could take a look at _[awesome-freedesktop](https://github.com/terceiro/awesome-freedesktop)_. See [[6]](https://gist.github.com/anonymous/5a5ea49638662cefdb3b) for an example for awesome3.
 
@@ -436,14 +412,6 @@ If you are using [LightDM](/index.php/LightDM "LightDM"), awesome will log error
 
 ### Mod4 key
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Configuring_keyboard_layouts_in_X](/index.php/Configuring_keyboard_layouts_in_X "Configuring keyboard layouts in X").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
-
 Awesome recommends to remap Mod4\. The Mod4 is by default the **Win key**. If it is not mapped by default, for some reason, you can check the keycode of your Mod4 key with
 
 ```
@@ -479,14 +447,6 @@ in your startup file.
 
 #### Mod4 key vs. IBM ThinkPad users
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Duplicate section (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
-
 IBM ThinkPads, IBM Model M's and Chromebooks do not come equipped with a Window key (although Lenovo have changed this tradition on their ThinkPads). As of writing, the Alt key is not used in command combinations by the default rc.lua (refer to the Awesome wiki for a table of commands), which allows it be used as a replacement for the Super/Mod4/Win key. To do this, edit your rc.lua and replace:
 
 ```
@@ -521,14 +481,6 @@ keysym Caps_Lock = Super_L Caps_Lock
 ```
 
 ### Fix Java (GUI appears gray only)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Java](/index.php/Java "Java").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
 
 See [awesome wiki](http://awesome.naquadah.org/wiki/Problems_with_Java) and [[8]](https://bbs.archlinux.org/viewtopic.php?pid=450870).
 
@@ -584,14 +536,6 @@ root.buttons(awful.util.table.join(
 ```
 
 ### Starting console clients on specific tags
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Useless without reasoning, probably related to instance names (Discuss in [Talk:Awesome#](https://wiki.archlinux.org/index.php/Talk:Awesome))
 
 It does not work when the console application is invoked from a GTK terminal (e.g. LXTerminal). [URxvt](/index.php/URxvt "URxvt") is known to work.
 

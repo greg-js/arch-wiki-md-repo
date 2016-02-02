@@ -1,13 +1,5 @@
 # WTorrent
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The project homepage and the SF page too time out on 6.4.14\. Similar was noted in [wtorrent-svn](https://aur.archlinux.org/packages/wtorrent-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wtorrent-svn)]</sup> comments two weeks ago. Is the project still existant? (Discuss in [Talk:WTorrent#](https://wiki.archlinux.org/index.php/Talk:WTorrent))
-
 **[wTorrent](http://www.wtorrent-project.org/)** is a web interface to rTorrent, a high performance console based BitTorrent client. It uses rTorrent's built-in XMLRPC server to communicate with it.
 
 wTorrent is programmed in PHP using Smarty templates and XMLRPC for PHP library. wTorrent also uses javascript for rendering the page with AJAX, Scriptaculous and ShadedBorders.

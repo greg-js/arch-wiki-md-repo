@@ -59,7 +59,7 @@ _Do not sign when contributing to an article._
 
  | 
 
-[Username](/index.php/Special:MyPage "Special:MyPage"), 16:17, 30 January 2016 (UTC)
+[Username](/index.php/Special:MyPage "Special:MyPage"), 21:59, 1 February 2016 (UTC)
 
  |
 | **Works anywhere in the text (HTML)** |
@@ -199,7 +199,15 @@ _See also [Help:Effective use of headers](/index.php/Help:Effective_use_of_heade
 `; Term one: Definition one`
 `; Term two: Definition two`
 
- | NaN
+ | 
+
+	Term one
+
+	Definition one
+
+	Term two
+
+	Definition two
 
  |
 | Indenting text
@@ -217,7 +225,11 @@ _This is generally used when replying on a_ Talk _page, as it keeps conversation
 
 no indent (normal)
 
-NaN
+	first indent
+
+	second indent
+
+	third indent
 
  |
 

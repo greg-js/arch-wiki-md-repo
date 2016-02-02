@@ -100,14 +100,6 @@ Bash command line is managed by the separate library called [Readline](/index.ph
 
 #### Single-tab ability
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Readline](/index.php/Readline "Readline").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Bash#](https://wiki.archlinux.org/index.php/Talk:Bash))
-
 For single press `Tab` results for when a partial or no completion is possible:
 
  `~/.inputrc` 
@@ -166,14 +158,6 @@ or:
 
 ### Fast word movement with Ctrl
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Readline](/index.php/Readline "Readline").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Bash#](https://wiki.archlinux.org/index.php/Talk:Bash))
-
 [Xterm](/index.php/Xterm "Xterm") supports moving between words with `Ctrl+Left` and `Ctrl+Right` [by default](http://stackoverflow.com/a/7783928). To achieve this effect with other terminal emulators, find the correct [terminal codes](http://wiki.bash-hackers.org/scripting/terminalcodes), and bind them to `backward-word` and `forward-word` in `~/.inputrc`. The codes can be made visible by first issuing the _cat_ command.
 
 For example, for [urxvt](/index.php/Urxvt "Urxvt"):
@@ -186,14 +170,6 @@ For example, for [urxvt](/index.php/Urxvt "Urxvt"):
 ```
 
 ### Mimic Zsh run-help ability
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Readline](/index.php/Readline "Readline").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Bash#](https://wiki.archlinux.org/index.php/Talk:Bash))
 
 Zsh can invoke the manual for the written command pushing `Alt+h`. A similar behaviour is obtained in Bash by appending this line in your `inputrc` file:
 
@@ -215,22 +191,6 @@ For functions, see [Bash/Functions](/index.php/Bash/Functions "Bash/Functions").
 ## Tips and tricks
 
 ### Prompt customization
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention `PS2` to `PS4`[[5]](http://www.cyberciti.biz/tips/howto-linux-unix-bash-shell-setup-prompt.html) (Discuss in [Talk:Bash#](https://wiki.archlinux.org/index.php/Talk:Bash))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Bash#](https://wiki.archlinux.org/index.php/Talk:Bash))
 
 The Bash prompt is governed by the variable `$PS1`. To colorize the Bash prompt, use:
 

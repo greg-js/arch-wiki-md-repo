@@ -2,14 +2,6 @@
 
 # Category:Virtual Private Network
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Category talk:Virtual Private Network#](https://wiki.archlinux.org/index.php/Category_talk:Virtual_Private_Network))
-
 1.  The term VPN stands for [Virtual Private Network](https://en.wikipedia.org/wiki/Virtual_Private_Network "wikipedia:Virtual Private Network").
 2.  Like a DMZ a VPN is a _security concept_.
 3.  There are multiple software packages available to set up a VPN between two or more hosts

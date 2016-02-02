@@ -1,21 +1,5 @@
 # DNSSEC
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** More a draft than an article (Discuss in [Talk:DNSSEC#](https://wiki.archlinux.org/index.php/Talk:DNSSEC))
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:DNSSEC#](https://wiki.archlinux.org/index.php/Talk:DNSSEC))
-
 ## Contents
 
 *   [1 DNSSEC Packages](#DNSSEC_Packages)
@@ -38,14 +22,6 @@
 *   [4 See Also](#See_Also)
 
 ## DNSSEC Packages
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [DNSSEC#Howto enable DNSSEC in specific software](/index.php/DNSSEC#Howto_enable_DNSSEC_in_specific_software "DNSSEC").**
-
-**Notes:** Duplicated information (Discuss in [Talk:DNSSEC#](https://wiki.archlinux.org/index.php/Talk:DNSSEC))
 
 *   [dnssec-anchors](https://www.archlinux.org/packages/?name=dnssec-anchors)
     *   essential package contains keys to internet from [IANA](https://www.iana.org/dnssec/) stored in /usr/share/dnssec-trust-anchors/
@@ -77,14 +53,6 @@
     *   Automates refreshing signatures, key rollovers
 
 ## Howto enable DNSSEC in specific software
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [DNSSEC#DNSSEC Packages](/index.php/DNSSEC#DNSSEC_Packages "DNSSEC").**
-
-**Notes:** Duplicated information (Discuss in [Talk:DNSSEC#](https://wiki.archlinux.org/index.php/Talk:DNSSEC))
 
 If you want full support of DNSSEC, you need each single application to use DNSSEC validation. It can be done using several ways:
 

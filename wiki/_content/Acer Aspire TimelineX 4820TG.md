@@ -1,13 +1,5 @@
 # Acer Aspire TimelineX 4820TG
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Does not comply with [Help:Style](/index.php/Help:Style "Help:Style") and [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") guidelines. (Discuss in [Talk:Acer Aspire TimelineX 4820TG#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_TimelineX_4820TG))
-
 [Acer Aspire TimelineX 4820TG](http://www.acer.com/timelinex/eng/) is a 14-inch laptop that packs in an Intel Core i5-430M processor and dedicated ATI Radeon HD 5650 graphics, making it a powerful 14-inch laptop. ArchLinux works mostly works out of box, but there are few tweaks required to make the hardware fully compatible with ArchLinux.
 
 ## Contents

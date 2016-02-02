@@ -560,14 +560,6 @@ A restore can then be performed using the same values as when backing up:
 
 ### Re-encrypting devices
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Introduce _cryptsetup-reencrypt_. (Discuss in [Talk:Dm-crypt/Specialties#Recommend TRIM on non-FDE SSDs.3F](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Specialties#Recommend_TRIM_on_non-FDE_SSDs.3F))
-
 The [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) package features the _cryptsetup-reencrypt_ tool. It can be used to convert an existing unencrypted filesystem to a LUKS encrypted one (option `--new`) and permanently remove LUKS encryption (`--decrypt`) from a device. As its name suggests it can also be used to re-encrypt an existing LUKS encrypted device. For re-encryption it is possible to change the [#Encryption options for LUKS mode](#Encryption_options_for_LUKS_mode). _cryptsetup-reencrypt_ actions can be performed to unmounted devices only. See `man cryptsetup-reencrypt` for more information.
 
 One application of re-encryption may be to secure the data again after a passphrase or [keyfile](#Keyfiles) has been compromised _and_ one cannot be certain that no copy of the LUKS header has been obtained. For example, if only a passphrase has been shoulder-surfed but no physical/logical access to the device happened, it would be enough to change the respective passphrase/key only ([#Key management](#Key_management)).

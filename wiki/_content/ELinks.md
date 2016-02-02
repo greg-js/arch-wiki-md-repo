@@ -42,22 +42,6 @@ $ elinks foo.bar.org
 
 Navigating the web with a text browser is more or less the same as a graphical browser, just without the 'distractions'. Once you've started _elinks_, you can press **g** and type in the web page you would like to request. Then you can navigate the page using arrow keys to navigate by line, the space bar to navigate by page, or the **j**, **k** keys to navigate by link.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Basic scripting and CSS. (Discuss in [Talk:ELinks#](https://wiki.archlinux.org/index.php/Talk:ELinks))
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** automation and boting. (Discuss in [Talk:ELinks#](https://wiki.archlinux.org/index.php/Talk:ELinks))
-
 ## Configuration
 
 Almost everything in ELinks can be configured to suit your fancy.

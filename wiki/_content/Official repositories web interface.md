@@ -1,13 +1,5 @@
 # Official repositories web interface
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This API does not have any other documentation: if you have knowledge of Django, please help adding any missing functionalities by looking at the [source code](https://projects.archlinux.org/archweb.git/tree/packages/views/search.py). (Discuss in [Talk:Official repositories web interface#](https://wiki.archlinux.org/index.php/Talk:Official_repositories_web_interface))
-
 Related articles
 
 *   [AurJson](/index.php/AurJson "AurJson")

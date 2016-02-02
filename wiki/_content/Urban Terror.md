@@ -1,13 +1,5 @@
 # Urban Terror
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Urban Terror#](https://wiki.archlinux.org/index.php/Talk:Urban_Terror))
-
 "_[Urban Terror](http://www.urbanterror.net)™ is a free multiplayer first person shooter, it can be described as a Hollywood tactical shooter; somewhat realism based, but the motto is "fun over realism". This results in a very unique, enjoyable and addictive game._" <small>[[1]](http://www.urbanterror.net)</small>
 
 ## Contents

@@ -85,14 +85,6 @@ Length-Smoothing = 20
 
 ### Systemd integration
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Please document systemd services upstream for inclusion, or at least in the Bug tracker. (Discuss in [Talk:Trickle#](https://wiki.archlinux.org/index.php/Talk:Trickle))
-
 Create the following two files and customize them to your needs.
 
  `/etc/systemd/system/trickled.service` 

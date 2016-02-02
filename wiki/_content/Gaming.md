@@ -70,11 +70,15 @@ A good number are available in the [official repositories](/index.php/Official_r
 
 *   **[Desura](https://en.wikipedia.org/wiki/Desura "wikipedia:Desura")** — Digital distribution platform featuring indie games. It can be considered good source of games (if you do not care about security and bugs too much).
 
-NaN
+	[http://www.desura.com/](http://www.desura.com/) || [desura](https://aur.archlinux.org/packages/desura/)<sup><small>AUR</small></sup>
 
 *   **[Steam](/index.php/Steam "Steam")** — Famous digital distribution and communications platform developed by Valve. It has a large library with over 1000 Linux games. These include popular titles like Dota 2, Counter Strike: Global Offensive, Team Fortress 2, several AAA games, and lots of indie titles.
 
-NaN
+	[http://store.steampowered.com](http://store.steampowered.com) || [steam](https://www.archlinux.org/packages/?name=steam)
+
+*   [Steam under Linux.](http://developer.valvesoftware.com/wiki/Steam_under_Linux)
+*   [See linux-games catalog.](http://store.steampowered.com/browse/linux/)
+*   Not all Steam titles are native, some are packaged to run using Wine.
 
 *   The [Humble Store](https://www.humblebundle.com/store)
 
@@ -82,7 +86,9 @@ NaN
 
 *   [GOG.com](http://www.gog.com/games/linux)
 
-NaN
+*   The [lgogdownloader](https://aur.archlinux.org/packages/lgogdownloader/)<sup><small>AUR</small></sup> package can be used to download GOG titles from the command line.
+*   GOG.com only officially supports Ubuntu and Linux Mint. Bear this in mind if requesting support from them; you will not get a refund if you are having trouble running games on Arch.
+*   Many GOG.com titles come pre-packaged with DOSBox, ScummVM or Wine.
 
 ### Flash
 
@@ -126,14 +132,6 @@ You can also download [sdl-nokeyboardgrab](https://aur.archlinux.org/packages/sd
 **Note:** SDL is known to sometimes not be able to grab the input system. In such a case, it may succeed in grabbing it after a few seconds of waiting.
 
 ### Starting games in a separate X server
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Running program in separate X display](/index.php/Running_program_in_separate_X_display "Running program in separate X display").**
-
-**Notes:** same topic (Discuss in [Talk:Gaming#](https://wiki.archlinux.org/index.php/Talk:Gaming))
 
 In some cases like those mentioned above, it may be necessary or desired to run a second X server. Running a second X server has multiple advantages such as better performance, the ability to "tab" out of your game by using `Ctrl+Alt+F7`/`Ctrl+Alt+F8`, no crashing your primary X session (which may have open work on) in case a game conflicts with the graphics driver. The new X server will be akin a remote access login for the ALSA, so your user need to be part of the `audio` group to be able to hear any sound.
 
@@ -184,14 +182,6 @@ $ ~/game.sh xonotic-glx
 For games that require exceptional amount of mouse skill, adjusting the [mouse polling rate](/index.php/Mouse_polling_rate "Mouse polling rate") can help improve accuracy.
 
 ### Mouse focus in GNOME
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [GNOME](/index.php/GNOME "GNOME").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Gaming#](https://wiki.archlinux.org/index.php/Talk:Gaming))
 
 The 'sloppy' and 'mouse' window-focusing modes in [GNOME](/index.php/GNOME "GNOME") are known to cause issues with a variety of games, causing a 'click-through' effect. Users can remedy this problem by switching the focus mode to 'click' (with a tool such as [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool)), playing in a different desktop environment, or spawing their game in a separate X-session.
 

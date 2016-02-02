@@ -56,14 +56,6 @@ The keyboard and touchpad work more or less without problems using the [xf86-inp
 
 The function keys only work for some extent, e.g. the keys for turning off the LCD backlight works but not those for turning on and off Wi-Fi, touchpad, etc. To make the volume keys work, map "XF86AudioRaiseVolume" to "amixer set Master 5%+" and "XF86AudioLowerVolume" to "amixer set Master 5%-"
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Backlight](/index.php/Backlight "Backlight").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo Ideapad S10-3#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Ideapad_S10-3))
-
 The brightness keys do not work and do not appear to be recognized by the system. To adjust brightness, see [[1]](http://www.winmoor.nl/Samsung-R519-Display-Brightness.html) and map `Super`+`Up` and `Super`+`Down` to the up and down scripts, respectively.
 
 Create a file called something like "brighness_up" in a directory of your choice, e.g. `/home/your_user_name/scripts/brightness_up`

@@ -59,7 +59,9 @@ JFS is a modern file system supporting many features, a few of which are listed 
 *   dynamic space allocation for i-nodes, i.e. no running out of i-nodes on file systems with large number of small files.
 *   Directory structures designed for speed and efficiency:
 
-NaN
+	- directories with eight or fewer entries have their contents storied inline within that directory's i-node.
+
+	- directories with more than eight entries have their contents stored in a [B+ tree](https://en.wikipedia.org/wiki/B%2B_tree "wikipedia:B+ tree") keyed on name.
 
 *   JFS utilizes extents for allocating blocks for large files.
 *   Support for extended attributes in addition to standard Unix-style permissions.

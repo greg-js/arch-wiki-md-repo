@@ -1,21 +1,5 @@
 # Bluetooth PPP
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Bluetooth PPP#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_PPP))
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Bluetooth PPP#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_PPP))
-
 I forget how to pair devices, so this article is woefully lacking!!!
 
 I'm no expert, but this page is to help people who want to setup a TCP connection from a Palm Pilot or other bluetooth device to their Arch Linux box. This is useful for browsing the Internet and/or performing a Hotsync operation.

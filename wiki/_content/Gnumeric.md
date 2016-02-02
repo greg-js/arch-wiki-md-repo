@@ -1,13 +1,5 @@
 # Gnumeric
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Gnumeric#](https://wiki.archlinux.org/index.php/Talk:Gnumeric))
-
 [Gnumeric](https://en.wikipedia.org/wiki/Gnumeric "wikipedia:Gnumeric") is a powerful spreadsheet application which can import and export in various formats including csv, HTML, LaTeX, Lotus 1-2-3, OpenDocument Spreadsheet and Microsoft Excel.
 
 ## Installing

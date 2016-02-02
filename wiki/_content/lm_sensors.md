@@ -466,9 +466,9 @@ If users wishing to deploy lm_sensors on multiple machines can use either of the
 
 Some K10 processors have issues with their temperature sensor. From the kernel documentation (`linux-<version>/Documentation/hwmon/k10temp`):
 
-NaN
+	_All these processors have a sensor, but on those for Socket F or AM2+, the sensor may return inconsistent values (erratum 319). The driver will refuse to load on these revisions unless users specify the `force=1` module parameter._
 
-NaN
+	_Due to technical reasons, the driver can detect only the mainboard's socket type, not the processor's actual capabilities. Therefore, users of an AM3 processor on an AM2+ mainboard, can safely use the `force=1` parameter._
 
 On affected machines the module will report "unreliable CPU thermal sensor; monitoring disabled". Users which to force it can:
 
@@ -488,14 +488,6 @@ options k10temp force=1
 This will allow the module to load at boot.
 
 ### Sensors not working since Linux 2.6.31
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** kernel 2.6 references (Discuss in [Talk:Lm sensors#kernel 2.6 workaround](https://wiki.archlinux.org/index.php/Talk:Lm_sensors#kernel_2.6_workaround))
 
 A change in version 2.6.31 has made some sensors stop working. See [this FAQ entry](http://www.lm-sensors.org/wiki/FAQ/Chapter3#Mysensorshavestoppedworkinginkernel2.6.31) for a detailed explanation and for some example errors. To fix sensors, add the following [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"):
 

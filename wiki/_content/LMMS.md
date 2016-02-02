@@ -1,13 +1,5 @@
 # LMMS
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** More a scratchpad than an article (Discuss in [Talk:LMMS#](https://wiki.archlinux.org/index.php/Talk:LMMS))
-
 LMMS is a free cross-platform software which allows you to produce music with your computer. This covers creating melodies and beats, synthesizing and mixing sounds and arranging samples. You can have fun with your MIDI keyboard and much more – all in a user-friendly and modern interface. Furthermore LMMS comes with many ready-to-use instrument and effect plugins, presets and samples.
 
 ## Installation
@@ -15,14 +7,6 @@ LMMS is a free cross-platform software which allows you to produce music with yo
 [lmms](https://www.archlinux.org/packages/?name=lmms) is in the offical Archlinux repository, but you may also need the git "master branch" version for the newest improvements.
 
 You will need a [soundfont](/index.php/Timidity#SoundFonts "Timidity") and [Timidity](/index.php/Timidity "Timidity").
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** sound server "needed": no bug report or further explanation: unlikely to be the real cause of the issue (Discuss in [Talk:LMMS#](https://wiki.archlinux.org/index.php/Talk:LMMS))
 
 If you will use other audio apps like VLC during a single login, you will need a [usermode sound server](/index.php/Sound#Sound_servers "Sound")
 

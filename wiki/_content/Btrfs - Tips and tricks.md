@@ -1,13 +1,5 @@
 # Btrfs - Tips and tricks
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Btrfs](/index.php/Btrfs "Btrfs").**
-
-**Notes:** This article should have been a "Tips and tricks" sub-section instead of a new page. See discussion: (Discuss in [Talk:Btrfs - Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Btrfs_-_Tips_and_tricks))
-
 ## Contents
 
 *   [1 Snapshots](#Snapshots)

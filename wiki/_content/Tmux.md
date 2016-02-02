@@ -322,14 +322,6 @@ Though the above will only scroll one line at a time, add this solution to scrol
 
 ### Fix reverse-video/italic mode in urxvt
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** You can now use the tmux or tmux-256color terminfo by putting the following line in your tmux.conf `set -g default-terminal "tmux-256color"` (Discuss in [Talk:Tmux#](https://wiki.archlinux.org/index.php/Talk:Tmux))
-
 If your reverse-video and italic modes are reversed, you may follow these instructions. This happens for example in vim when italics are replaced by highlighting, or in less when the search highlighting is replaced by italics. This is because the screen terminfo doesn't define italics, and the italics escape of urxvt happens to be the standout escape defined in the terminfo. In this solution, you may replace `screen_terminfo="screen"` by `screen_terminfo="screen-256color"`.
 
 ```
@@ -650,7 +642,9 @@ bind-key -n C-j detach
 
 In [Practical Tmux](http://mutelight.org/articles/practical-tmux), Brandur Leach writes:
 
-NaN
+	Screen and tmux's behaviour for when multiple clients are attached to one session differs slightly. In Screen, each client can be connected to the session but view different windows within it, but in tmux, all clients connected to one session must view the same window.
+
+	This problem can be solved in tmux by spawning two separate sessions and synchronizing the second one to the windows of the first, then pointing a second new session to the first.
 
 The script “`tmx`” below implements this — the version here is slightly modified to execute “`tmux new-window`” if “1” is its second parameter. Invoked as `tmx <base session name> [1]` it launches the base session if necessary. Otherwise a new “client” session linked to the base, optionally add a new window and attach, setting it to kill itself once it turns “zombie”.
 
@@ -735,7 +729,9 @@ function mksc() {
 
 Citing the author:
 
-NaN
+	"mksc foo" creates a always detached permanent client named "foo". It also calls "rsc foo" to create a client to newly created session. "rsc foo" creates a new client grouped by "foo" name. It has destroy-unattached turned on so when I leave it, it kills client.
+
+	Therefore, when my computer looses network connectivity, all "foo.something" clients are killed while "foo" remains. I can then call "rsc foo" to continue work from where I stopped.
 
 ### Correct the TERM variable according to terminal type
 

@@ -1,13 +1,5 @@
 # Rip Audio CDs
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Optical Disc Drive](/index.php/Optical_Disc_Drive "Optical Disc Drive").**
-
-**Notes:** There's already [Optical disc drive#DVD ripping](/index.php/Optical_disc_drive#DVD_ripping "Optical disc drive"). (Discuss in [Talk:Rip Audio CDs#](https://wiki.archlinux.org/index.php/Talk:Rip_Audio_CDs))
-
 CD rippers are designed to extract ("rip") the raw digital audio (in a format commonly called CDDA) from a compact disc to a file or other output. Most CD rippers also support burning audio to a CD and transcoding it on-the-fly.
 
 ## Contents
@@ -25,7 +17,13 @@ CD rippers are designed to extract ("rip") the raw digital audio (in a format co
 
 Music is usually stored on audio CDs in an uncompressed format (requires a lot of space, e.g. 700MB for only 80 minutes of audio). Extracting the audio from the CD usually involves compressing it so that it requires less space using:
 
-NaN
+	Lossless compression
+
+	same quality, less space.
+
+	Lossy compression
+
+	lower quality, much less space.
 
 Most common formats to convert to are: APE and FLAC for lossless and MP3 and OGG for lossy.
 
@@ -36,14 +34,6 @@ Most common formats to convert to are: APE and FLAC for lossless and MP3 and OGG
 For some examples of CD rippers see: [Optical disc drive#Ripping](/index.php/Optical_disc_drive#Ripping "Optical disc drive").
 
 ### Using a shell script
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Doesn't pass [shellcheck](http://www.shellcheck.net/) (Discuss in [Talk:Rip Audio CDs#](https://wiki.archlinux.org/index.php/Talk:Rip_Audio_CDs))
 
 If you want to rip an audio CD gapless and using CD-Text you can use the shell script at [[1]](https://gist.github.com/anonymous/df51d12829bb1dac40e0). You need to [install](/index.php/Install "Install") the [mp3splt](https://www.archlinux.org/packages/?name=mp3splt), [cdrtools](https://www.archlinux.org/packages/?name=cdrtools) and [vorbis-tools](https://www.archlinux.org/packages/?name=vorbis-tools) packages, all available in the [official repositories](/index.php/Official_repositories "Official repositories").
 

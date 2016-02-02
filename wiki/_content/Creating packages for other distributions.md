@@ -40,43 +40,43 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 **cowdancer** — Copy-on-write wrapper for pbuilder
 
-NaN
+	[https://packages.debian.org/sid/cowdancer](https://packages.debian.org/sid/cowdancer) || [cowdancer](https://aur.archlinux.org/packages/cowdancer/)<sup><small>AUR</small></sup>
 
 **debootstrap** — A tool used to create a Debian base system from scratch, without requiring the availability of dpkg or apt.
 
-NaN
+	[https://packages.debian.org/sid/debootstrap](https://packages.debian.org/sid/debootstrap) || [debootstrap](https://aur.archlinux.org/packages/debootstrap/)<sup><small>AUR</small></sup>
 
 **devscripts** — Scripts to make the life of a Debian Package maintainer easier
 
-NaN
+	[https://packages.debian.org/sid/devscripts](https://packages.debian.org/sid/devscripts) || [devscripts](https://aur.archlinux.org/packages/devscripts/)<sup><small>AUR</small></sup>
 
 **dh-autoreconf** — Debhelper add-on to call autoreconf and clean up after the build
 
-NaN
+	[https://packages.debian.org/sid/dh-autoreconf](https://packages.debian.org/sid/dh-autoreconf) || [dh-autoreconf](https://aur.archlinux.org/packages/dh-autoreconf/)<sup><small>AUR</small></sup>
 
 **dh-make** — Tool that converts source archives into Debian package source
 
-NaN
+	[https://packages.debian.org/sid/dh-make](https://packages.debian.org/sid/dh-make) || [dh-make](https://aur.archlinux.org/packages/dh-make/)<sup><small>AUR</small></sup>
 
 **[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
 
-NaN
+	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)<sup><small>AUR</small></sup>
 
 **dput** — Debian package upload tool
 
-NaN
+	[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)<sup><small>AUR</small></sup>
 
 **git-buildpackage** — Tools from Debian to integrate the package build system with Git
 
-NaN
+	[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)<sup><small>AUR</small></sup>
 
 **pbuilder-ubuntu** — Chroot environment for building Debian packages
 
-NaN
+	[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)<sup><small>AUR</small></sup>
 
 **[quilt](https://en.wikipedia.org/wiki/Quilt "wikipedia:Quilt")** — Manage a series of patches by keeping track of the changes each patch makes
 
-NaN
+	[http://savannah.nongnu.org/projects/quilt](http://savannah.nongnu.org/projects/quilt) || [quilt](https://www.archlinux.org/packages/?name=quilt)
 
 **Note:** Missing tools: _lintian_, _reprepo_, _equivs_, _cdbs_, _svn-buildpackage_, _javahelper_
 
@@ -140,23 +140,15 @@ $ dpkg-buildpackage -d -us -uc -S
 
 ## Fedora
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** (Discuss in [Talk:Creating packages for other distributions#](https://wiki.archlinux.org/index.php/Talk:Creating_packages_for_other_distributions))
-
 [How to create an RPM package](https://fedoraproject.org/wiki/How_to_create_an_RPM_package)
 
 **rpm-org** — RPM.org fork, used in major RPM distros
 
-NaN
+	[http://www.rpm.org/](http://www.rpm.org/) || [rpm-org](https://aur.archlinux.org/packages/rpm-org/)<sup><small>AUR</small></sup>
 
 **mock** — Takes Source RPMs and builds RPMs from them in a chroot
 
-NaN
+	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock-git](https://aur.archlinux.org/packages/mock-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mock-git)]</sup>
 
 ### See also
 

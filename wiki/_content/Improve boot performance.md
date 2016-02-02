@@ -80,14 +80,6 @@ See the [manpage](http://www.freedesktop.org/software/systemd/man/systemd-bootch
 
 ### Using bootchart2
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Bootchart#Running Bootchart2](/index.php/Bootchart#Running_Bootchart2 "Bootchart").**
-
-**Notes:** different instructions from the main page (Discuss in [Talk:Improve boot performance#](https://wiki.archlinux.org/index.php/Talk:Improve_boot_performance))
-
 You could also use a version of bootchart to visualize the boot sequence. Since you are not able to put a second init into the kernel command line you won't be able to use any of the standard bootchart setups. However the [bootchart2-git](https://aur.archlinux.org/packages/bootchart2-git/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") comes with an undocumented **systemd** service. After you've installed bootchart2 do:
 
 ```

@@ -37,23 +37,23 @@ _mpv_ provides an elegant User Interface called OSC which appears when moving th
 
 *   **Baka MPlayer** — Free and open source, cross-platform, _libmpv_ based multimedia player (Qt 5).
 
-NaN
+	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)<sup><small>AUR</small></sup>
 
 *   **bomi** — Powerful and easy to use multimedia player (Qt 5).
 
-NaN
+	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup>, [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
 
 *   **GNOME MPV** — A simple frontend for _mpv_ (GTK+ 3).
 
-NaN
+	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)<sup><small>AUR</small></sup>, [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)<sup><small>AUR</small></sup>
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 
-NaN
+	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **xt7-player-mpv** — Qt/Gambas gui to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, youtube, online radios, podcasts, dvb-t and more.
 
-NaN
+	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)<sup><small>AUR</small></sup>
 
 **Note:** CMPlayer/_bomi_ packages provide _mpv_ internally.
 

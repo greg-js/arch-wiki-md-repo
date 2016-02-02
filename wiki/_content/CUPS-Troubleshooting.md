@@ -124,14 +124,6 @@ And restart CUPS (as pointed out in gutenprint's post-install message)
 
 ### CUPS identifies printer but cannot connect to it
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** No workaround or origin provided (Discuss in [Talk:CUPS/Troubleshooting#](https://wiki.archlinux.org/index.php/Talk:CUPS/Troubleshooting))
-
 Enable debug logging. If you see `Executing backend "/usr/lib/cups/backend/dnssd"...` over and over switch from dnssd to socket in the printer configuration.
 
 Example: `socket://192.168.11.6:9100`. The port number can be confirmed via [nmap](/index.php/Nmap "Nmap") or `telnet _your-printer-ip_ 9100`.
@@ -305,14 +297,6 @@ The issue might have to do with the file permission change that had been made to
 ### Printer does not print with an "Filter failed" message on CUPS web interface (HP printer)
 
 #### Bad permissions
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `chmod 666` on a system device sounds dubious to say the least (Discuss in [Talk:CUPS/Troubleshooting#](https://wiki.archlinux.org/index.php/Talk:CUPS/Troubleshooting))
 
 Change the permissions of the printer USB port. Get the bus and device number from `lsusb`, then set the permission using:
 

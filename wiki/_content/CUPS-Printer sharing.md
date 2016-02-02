@@ -32,14 +32,6 @@ This article contains instruction on sharing printers between systems, be it bet
 
 ## Between GNU/Linux systems
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Is avahi needed with `BrowseAdress` set in `cupsd.conf`? - [#Manual setup](#Manual_setup) (Discuss in [Talk:CUPS/Printer sharing#](https://wiki.archlinux.org/index.php/Talk:CUPS/Printer_sharing))
-
 Once CUPS has been setup on the GNU/Linux print server, the recommended method of sharing the printer with another GNU/Linux system is through the relatively easy to use web interface, yet manual configuration is also a way.
 
 You will need avahi-daemon running, before you restart cupsd.
@@ -73,14 +65,6 @@ Also make sure the server is listening on the IP address the client will be addr
 Listen 192.168.0.101:631
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Are these two instructions for enabling browsing duplicates?? (Discuss in [Talk:CUPS/Printer sharing#](https://wiki.archlinux.org/index.php/Talk:CUPS/Printer_sharing))
 
 To "Show shared printers on the local network" make sure you have the Browsing directive enabled:
 
@@ -325,14 +309,6 @@ To set the preferred printer use the following command
 See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting") for general troubleshooting tips.
 
 ### Cannot print with GTK applications
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting").**
-
-**Notes:** Is this really only a problem with printer sharing? (Discuss in [Talk:CUPS/Printer sharing#](https://wiki.archlinux.org/index.php/Talk:CUPS/Printer_sharing))
 
 If you get "getting printer information failed" when you try to print from gtk-applications, add this line to your `/etc/hosts`:
 

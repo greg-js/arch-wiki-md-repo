@@ -6,14 +6,6 @@ Related articles
 *   [Experimenting with ZFS](/index.php/Experimenting_with_ZFS "Experimenting with ZFS")
 *   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Be aware that this package is still using systemv init scripts. (Discuss in [Talk:ZFS on FUSE#](https://wiki.archlinux.org/index.php/Talk:ZFS_on_FUSE))
-
 ZFS on FUSE/Linux is a project bringing the ZFS file system to Linux. Due to incompatible license with GPL it is argued that it cannot exist as a direct kernel module, however, this does not apply for implementation as a FUSE file system.
 
 Some of the capabilities of version 0.7.0 (as of Feb 2012) are limited compared to original implementation (incomplete list):

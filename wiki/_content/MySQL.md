@@ -47,11 +47,11 @@ Alternative implementations are:
 
 *   **Oracle MySQL** — An implementation by Oracle Corporation.
 
-NaN
+	[https://www.mysql.com/](https://www.mysql.com/) || [mysql](https://aur.archlinux.org/packages/mysql/)<sup><small>AUR</small></sup>
 
 *   **Percona Server** — An implementation by Percona LLC.
 
-NaN
+	[http://www.percona.com/software/percona-server/](http://www.percona.com/software/percona-server/) || [percona-server](https://www.archlinux.org/packages/?name=percona-server)
 
 **Tip:**
 

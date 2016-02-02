@@ -35,14 +35,6 @@ For an introduction to LaTeX, I recommend "The not so Short Introduction to LaTe
 
 ### Q: How can I access Tex Live documentation?
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Offline documentation is no longer included in official packages, see [TeX Live#Important information](/index.php/TeX_Live#Important_information "TeX Live"). (Discuss in [Talk:TeX Live FAQ#](https://wiki.archlinux.org/index.php/Talk:TeX_Live_FAQ))
-
 **A:** You can try searching for the package with `texdoc`:
 
 ```

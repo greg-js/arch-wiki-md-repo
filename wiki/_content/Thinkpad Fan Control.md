@@ -2,13 +2,13 @@
 
 From the Thinkpad Fan Control website:
 
-NaN
+	_tp-fan monitors temperatures and controls fan speed of IBM/Lenovo ThinkPad notebooks. tp-fan is an open-source project released under the GPL v3._
 
-NaN
+	_The tpfand daemon controls the system fan in software. It can be used to make the notebook more quiet. However this will also result in higher system temperatures that may damage and/or shorten the lifespan of the computer. Since version 0.90 fan trigger temperatures can be configured separately for each temperature sensor._
 
-NaN
+	_This project also provides the tpfan-admin GTK+ frontend to monitor system temperature and adjust fan trigger temperatures._
 
-NaN
+	_Warning: This program may damage your notebook. The author does not take any responsibility for damages caused by the use of this program._
 
 ## Contents
 

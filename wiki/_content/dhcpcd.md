@@ -160,14 +160,6 @@ _dhcpcd_ executes all scripts found in `/usr/lib/dhcpcd/dhcpcd-hooks/` in a lexi
 *   Each script can be disabled using the `nohook` option in `dhcpcd.conf`.
 *   The `env` option can be used to set an environment variable for **all** hooks. For example, you can force the hostname hook to always set the hostname with `env force_hostname=YES`.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** describe (at least some) provided hooks. (Discuss in [Talk:Dhcpcd#](https://wiki.archlinux.org/index.php/Talk:Dhcpcd))
-
 ### 10-wpa_supplicant
 
 Enable this hook by creating a symbolic link (to ensure that always the current version is used, even after package updates):

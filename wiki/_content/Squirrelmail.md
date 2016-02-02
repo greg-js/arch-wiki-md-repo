@@ -1,24 +1,8 @@
 # Squirrelmail
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** (Discuss in [Talk:Squirrelmail#](https://wiki.archlinux.org/index.php/Talk:Squirrelmail))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Still uses rc.d (Discuss in [Talk:Squirrelmail#](https://wiki.archlinux.org/index.php/Talk:Squirrelmail))
-
 SquirrelMail is a lightweight webmail provider with IMAP/IMAPS support. The SquirrelMail site can generally answer all your questions. SquirrelMail promotes itself by saying:
 
-NaN
+	SquirrelMail is a standards-based webmail package written in PHP. It includes built-in pure PHP support for the IMAP and SMTP protocols, and all pages render in pure HTML 4.0 (with no JavaScript required) for maximum compatibility across browsers. See: [http://squirrelmail.org/index.php](http://squirrelmail.org/index.php)
 
 ## Contents
 
@@ -56,7 +40,7 @@ Regardless of which version you download or checkout, the installation is the sa
     *   post_max_size = 16M  ; controls the maximum attachment size
     *   open_basedir = /srv/http/:/srv/www:/home/:/tmp/:/usr/share/pear/:/usr/local/share/sqmail/
 
-NaN
+	You simply need to add the path to your SquirrelMail data and attachment directories, shown above as ":/usr/local/share/sqmail/"
 
 *   Reload the webserver configuration: "/etc/rc.d/apache reload"
 *   When you are done with the setting and choosing plugins in conf.pl and done with modifying php.ini, just point your browser to [http://your.server.com/squirrelmail/configcheck.php](http://your.server.com/squirrelmail/configcheck.php) to test your configuration. Fix any problems you encounter. When done, disable "Allow remote config test" in conf.pl.

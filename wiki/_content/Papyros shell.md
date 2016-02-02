@@ -5,14 +5,6 @@ Related articles
 *   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
 *   [Window manager](/index.php/Window_manager "Window manager")
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Other distributions don't get a separate page on the Arch wiki. This page should be dedicated strictly to the desktop shell component. (Discuss in [Talk:Papyros shell#](https://wiki.archlinux.org/index.php/Talk:Papyros_shell))
-
 **Papyros** is a desktop environment based on Google's Material Design guidelines, created in 2014\. The operating system, desktop shell, and material design framework is still in active development and is in a pre-alpha state.
 
 ## Installation
@@ -52,19 +44,19 @@ For additional functionality, you may wish to install the following:
 
 *   **liri-browser** — A Web Browser using the QML Material framework from the Papyros Project.
 
-NaN
+	[https://github.com/liri-browser/liri-browser](https://github.com/liri-browser/liri-browser) || [liri-browser](https://aur.archlinux.org/packages/liri-browser/)<sup><small>AUR</small></sup>
 
 *   **liri-player** — A Web player using the QML Material framework from the Papyros Project.
 
-NaN
+	[https://github.com/pierremtb/liri-player](https://github.com/pierremtb/liri-player) || [liri-player-git](https://aur.archlinux.org/packages/liri-player-git/)<sup><small>AUR</small></sup>
 
 *   **papyros-files** — The file manager for Papyros.
 
-NaN
+	[https://github.com/papyros/files-app](https://github.com/papyros/files-app) || [papyros-files](https://www.archlinux.org/packages/?name=papyros-files)
 
 *   **papyros-settings** — The file settings for Papyros.
 
-NaN
+	[https://github.com/papyros/settings-app](https://github.com/papyros/settings-app) || [papyros-settings-git](https://aur.archlinux.org/packages/papyros-settings-git/)<sup><small>AUR</small></sup>
 
 ## See also
 

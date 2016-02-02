@@ -17,14 +17,6 @@
 
 ## Use DASH as default shell
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dash#](https://wiki.archlinux.org/index.php/Talk:Dash))
-
 You can re-symlink `/bin/sh` to `/bin/dash`, which can improve system performance, but first you must verify that none of the scripts that aren't explicitly `#!/bin/bash` scripts are safely POSIX compliant and do not require any of Bash's features.
 
 ### Identifying bashisms

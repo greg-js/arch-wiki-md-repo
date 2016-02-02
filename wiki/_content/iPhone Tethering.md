@@ -112,14 +112,6 @@ Blueman will have created a new network interface, typically bnep0\. To connect 
 
 #### netcfg
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** _netcfg_ has been superseded by [netctl](/index.php/Netctl "Netctl") (Discuss in [Talk:IPhone Tethering#](https://wiki.archlinux.org/index.php/Talk:IPhone_Tethering))
-
 Alternatively, you can create a [netcfg](/index.php/Netcfg "Netcfg") network profile to allow easy tethering from the command line, without requiring [Blueman](/index.php/Blueman "Blueman") or Gnome. Assuming an already paired iPhone with address '00:00:DE:AD:BE:EF', simply create a profile in /etc/network.d called - for example - 'tether':
 
 ```

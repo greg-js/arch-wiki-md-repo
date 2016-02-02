@@ -1,13 +1,5 @@
 # Acer Aspire 8920G
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Acer Aspire 8920G#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_8920G))
-
 This is my 1st ever wiki and I hope that by writing this it can benefit another user out there to setup archlinux on their laptop like me. I should also like to explain that I am a novice in the World of Linux and so I shall try and pass on as much knowledge as I possibly can. These are the settings that apply to my machine and my network setup so you must remember that what works for me will not necessarily work ok for you. This machine is running 2.6.31-ARCH and all the hardware is ok other than having to load the wireless driver iwl4965 and nvidia everything else just worked from the core install.
 
 ## Contents

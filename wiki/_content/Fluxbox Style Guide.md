@@ -1,10 +1,10 @@
 # Fluxbox Style Guide
 
-NaN
+	_This is a list of all the theme items that can be customized in a fluxbox theme.cfg_
 
-NaN
+	_This file is in two parts: the first explains what each of the items does the second part is a complete list that can be copied and pasted into a theme.cfg to get you started._
 
-NaN
+	_This has been specially structured to group the relevant items_
 
 ## Contents
 

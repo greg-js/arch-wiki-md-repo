@@ -1,13 +1,5 @@
 # iRiver iFP Audio Players
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The kernel modules section might be irrelevant. The udev rules section is out-of-date. Other sections may be out-of-date as well. (Discuss in [Talk:IRiver iFP Audio Players#](https://wiki.archlinux.org/index.php/Talk:IRiver_iFP_Audio_Players))
-
 ## Contents
 
 *   [1 Description](#Description)

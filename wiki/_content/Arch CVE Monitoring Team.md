@@ -1,13 +1,5 @@
 # Arch CVE Monitoring Team
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** For now, this page is a draft to construct something according to [https://mailman.archlinux.org/pipermail/arch-dev-public/2014-March/025952.html](https://mailman.archlinux.org/pipermail/arch-dev-public/2014-March/025952.html) (Discuss in [Talk:Arch CVE Monitoring Team#](https://wiki.archlinux.org/index.php/Talk:Arch_CVE_Monitoring_Team))
-
 Related articles
 
 *   [CVE](/index.php/CVE "CVE")
@@ -106,15 +98,39 @@ Once this process is complete, please add the CVE and later the [ASA](/index.php
 
 ### RSS
 
-NaN
+	National Vulnerability Database (NVD)
+
+	All CVE vulnerabilites: [http://nvd.nist.gov/download/nvd-rss.xml](http://nvd.nist.gov/download/nvd-rss.xml)
+
+	All fully analyzed CVE vulnerabilities: [http://nvd.nist.gov/download/nvd-rss-analyzed.xml](http://nvd.nist.gov/download/nvd-rss-analyzed.xml)
 
 ### Mailing Lists
 
-NaN
+	oss-sec
 
-NaN
+	main list dealing with security of free software, a lot of CVE attributions happen here, required if you wish to follow security news.
 
-NaN
+	info: [http://oss-security.openwall.org/wiki/mailing-lists/oss-security](http://oss-security.openwall.org/wiki/mailing-lists/oss-security)
+
+	subscribe: oss-security-subscribe(at)lists.openwall.com
+
+	archive: [http://www.openwall.com/lists/oss-security/](http://www.openwall.com/lists/oss-security/)
+
+	bugtraq
+
+	a full disclosure moderated mailing list (noisy)
+
+	info: [http://www.securityfocus.com/archive/1/description](http://www.securityfocus.com/archive/1/description)
+
+	subscribe: bugtraq-subscribe(at)securityfocus.com
+
+	full-disclosure
+
+	another full-disclosure mailing-list (noisy)
+
+	info: [http://lists.grok.org.uk/full-disclosure-charter.html](http://lists.grok.org.uk/full-disclosure-charter.html)
+
+	subscribe: full-disclosure-request(at)lists.grok.org.uk
 
 Also consider following the mailing lists for specific packages, such as LibreOffice, X.org, Puppetlabs, ISC, etc.
 
@@ -122,21 +138,49 @@ Also consider following the mailing lists for specific packages, such as LibreOf
 
 Resources of other distributions (to look for CVE, patch, comments etc.):
 
-NaN
+	RedHat and Fedora
 
-NaN
+	rss advisories: [https://admin.fedoraproject.org/updates/rss/rss2.0?type=security](https://admin.fedoraproject.org/updates/rss/rss2.0?type=security)
 
-NaN
+	CVE tracker: [https://access.redhat.com/security/cve/](https://access.redhat.com/security/cve/)<CVE-id>
 
-NaN
+	bug tracker: [https://bugzilla.redhat.com/show_bug.cgi?id=](https://bugzilla.redhat.com/show_bug.cgi?id=)<CVE-id>
+
+	Ubuntu
+
+	advisories: [http://www.ubuntu.com/usn/atom.xml](http://www.ubuntu.com/usn/atom.xml)
+
+	CVE tracker: [http://people.canonical.com/~ubuntu-security/cve/?cve=](http://people.canonical.com/~ubuntu-security/cve/?cve=)<CVE-id>
+
+	database: [https://code.launchpad.net/~ubuntu-security/ubuntu-cve-tracker/master](https://code.launchpad.net/~ubuntu-security/ubuntu-cve-tracker/master)
+
+	Debian
+
+	CVE tracker: [http://security-tracker.debian.org/tracker/](http://security-tracker.debian.org/tracker/)<CVE-id>
+
+	patch-tracker: [http://patch-tracker.debian.org/](http://patch-tracker.debian.org/)
+
+	database: [http://anonscm.debian.org/viewvc/secure-testing/data/](http://anonscm.debian.org/viewvc/secure-testing/data/)
+
+	OpenSUSE
+
+	CVE tracker: [http://support.novell.com/security/cve/](http://support.novell.com/security/cve/)<CVE-id>.html
 
 ### Other
 
-NaN
+	Mitre and NVD links for CVE's
+
+	[http://cve.mitre.org/cgi-bin/cvename.cgi?name=](http://cve.mitre.org/cgi-bin/cvename.cgi?name=)<CVE-id>
+
+	[http://web.nvd.nist.gov/view/vuln/detail?vulnId=](http://web.nvd.nist.gov/view/vuln/detail?vulnId=)<CVE-id>
 
 NVD and Mitre do not necessarily fill their CVE entry immediately after attribution, so it is not always relevant for Arch. The CVE-id and the "Date Entry Created" fields do not have particular meaning. CVE are attributed by CVE Numbering Authorities (CNA), and each CNA obtain CVE blocks from Mitre when needed/asked, so the CVE ID is not linked to the attribution date. The "Date Entry Created" field often only indicates when the CVE block was given to the CNA, nothing more.
 
-NaN
+	Linux Weekly News
+
+	LWN provides a daily notice of security updates for various distributions
+
+	[http://lwn.net/headlines/newrss](http://lwn.net/headlines/newrss)
 
 ### More
 
@@ -148,54 +192,72 @@ Below is a list of general package categories. Should you like, you are welcome 
 
 *   Global
 
-NaN
+	[Billy Wayne McCann](/index.php/User:Bwayne "User:Bwayne")
+
+	[HegemoOn](/index.php/User:Netmonk "User:Netmonk")
+
+	[Timothée Ravier](/index.php/User:Siosm "User:Siosm")
+
+	[Remi Gacogne](/index.php/User:Rgacogne "User:Rgacogne")
+
+	[Levente Polyak](/index.php/User:Anthraxx "User:Anthraxx")
+
+	[Christian Rebischke](/index.php/User:Shibumi "User:Shibumi")
+
+	[Your Name Here]
 
 *   Kernel
 
-NaN
+	[Daniel Micay](/index.php/User:Thestinger "User:Thestinger")
+
+	Mark Lee
 
 *   Filesystems
 
-NaN
+	[Your Name Here]
 
 *   GNU userland
 
-NaN
+	[Your Name Here]
 
 *   Xorg
 
-NaN
+	[Your Name Here]
 
 *   Systemd
 
-NaN
+	[Your Name Here]
 
 *   Perl and associated software
 
-NaN
+	[Your Name Here]
 
 *   Python and associated software
 
-NaN
+	[Scott Lawrence](/index.php/User:Srl "User:Srl")
+
+	[Your Name Here]
 
 *   Java and associated software
 
-NaN
+	[Your Name Here]
 
 *   Ruby and associated software
 
-NaN
+	[Your Name Here]
 
 *   Gtk/Gnome and associated software
 
-NaN
+	[Your Name Here]
 
 *   QT/KDE and associated software
 
-NaN
+	[Billy Wayne McCann](/index.php/User:Bwayne "User:Bwayne") (KDE)
+
+	[Your Name Here]
 
 *   Various Windows Managers (please include which WM along with your name)
 
-NaN
+	[Your Name Here]
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_CVE_Monitoring_Team&oldid=380979](https://wiki.archlinux.org/index.php?title=Arch_CVE_Monitoring_Team&oldid=380979)"

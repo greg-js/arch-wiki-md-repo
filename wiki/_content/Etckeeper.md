@@ -129,14 +129,6 @@ Pacman -R foo
 
 ### Incron
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Please expand this section with instructions on how to set up incron or link to a write-up. (Discuss in [Talk:Etckeeper#](https://wiki.archlinux.org/index.php/Talk:Etckeeper))
-
 As an alternative to the above, you could set up incron to automatically commit changes using etckeeper whenever a file in /etc is modified.
 
 ### Automatic push to remote repo

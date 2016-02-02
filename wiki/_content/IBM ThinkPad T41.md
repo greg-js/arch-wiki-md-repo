@@ -1,13 +1,5 @@
 # IBM ThinkPad T41
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:IBM ThinkPad T41#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_T41))
-
 This article covers the installation and configuration of Arch Linux on an IBM/Lenovo T41 laptop. These laptops were very popular with corporate customers, and are now available reconditioned fairly cheaply. Typical spec is a 1.6GHz Pentium M, 512MB RAM, 32MB ATI Radeon graphics adapter and a 40GB hard drive. It is possible to get most if not all of the hardware to work in Arch.
 
 ## Contents

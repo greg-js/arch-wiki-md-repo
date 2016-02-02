@@ -33,14 +33,6 @@ SABnzbd is controlled by the _sabnzbd_ [daemon](/index.php/Daemon "Daemon").
 
 ### Local configuration
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:SABnzbd#](https://wiki.archlinux.org/index.php/Talk:SABnzbd))
-
 SABnzbd does not need to be run globally as a daemon and can rather work per user. The usual method to configure SABnzbd globally is because the listed files and folders in the default configuration file point to directories owned by sabnzbd (the `/opt/sabnzbd` directory).
 
 A less used (but perhaps more sensible) method is to make SABnzbd work with files and directories owned by a normal user. Running SABnzbd as a normal user has the benefits of:

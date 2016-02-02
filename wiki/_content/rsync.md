@@ -120,7 +120,13 @@ First, create a script containing the appropriate command options:
 rsync -a --delete /folder/to/backup /location/of/backup &> /dev/null
 ```
 
-NaN
+	`-a` 
+
+	indicates that files should be archived, meaning that most of their characteristics are preserved (but **not** ACLs, hard links or extended attributes such as capabilities)
+
+	`--delete` 
+
+	means files deleted on the source are to be deleted on the backup as well
 
 Here, `/folder/to/backup` should be changed to what needs to be backed-up (`/home`, for example) and `/location/to/backup` is where the backup should be saved (`/media/disk`, for instance).
 
@@ -142,7 +148,17 @@ If backing-up to a remote host using [SSH](/index.php/SSH "SSH"), use this scrip
 rsync -a --delete -e ssh /folder/to/backup remoteuser@remotehost:/location/to/backup &> /dev/null
 ```
 
-NaN
+	`-e ssh` 
+
+	tells rsync to use SSH
+
+	`remoteuser` 
+
+	is the user on the host `remotehost`
+
+	`-a` 
+
+	groups all these options `-rlptgoD` (recursive, links, perms, times, group, owner, devices)
 
 #### Automated backup with NetworkManager
 
@@ -160,7 +176,17 @@ if [ x"$2" = "xup" ] ; then
 fi
 ```
 
-NaN
+	`-a` 
+
+	group all this options `-rlptgoD` recursive, links, perms, times, group, owner, devices
+
+	`--files-from` 
+
+	read the relative path of _/folder/to/backup_ from this file
+
+	`--bwlimit` 
+
+	limit I/O bandwidth; KBytes per second
 
 Also, the script must have write permission for owner (root, of course) only (see [NetworkManager dispatcher](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager") for details).
 
@@ -225,7 +251,9 @@ fi
 rsync -a --delete --inplace --backup --backup-dir=/location/to/backup/incr/$DAY /folder/to/backup/ /location/to/backup/full/ &> /dev/null
 ```
 
-NaN
+	`--inplace` 
+
+	implies `--partial` update destination files in-place
 
 #### Snapshot backup
 

@@ -8,7 +8,9 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
-NaN
+	_Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C. The language provides constructs intended to enable clear programs on both a small and large scale._
+
+	_Python supports multiple programming paradigms, including object-oriented, imperative and functional programming or procedural styles. It features a dynamic type system and automatic memory management, and has a large and comprehensive standard library._
 
 ## Contents
 
@@ -31,14 +33,6 @@ Python 3 is the latest version of the language, and is incompatible with Python 
 To install the latest version of Python 3, [install](/index.php/Install "Install") the [python](https://www.archlinux.org/packages/?name=python) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 If you would like to build the latest RC/betas from source, visit [Python Downloads](http://www.python.org/download/). The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") also contains good [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD"). If you do decide to build the RC, note that the binary (by default) installs to `/usr/local/bin/python3.x`.
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Python#](https://wiki.archlinux.org/index.php/Talk:Python))
 
 Starting a new project inside a VirtualEnv is as simple as running:
 
@@ -111,14 +105,6 @@ $ which python
 
 ```
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** All this does is mangle the PATH variable, see [[1]](https://gist.github.com/IngCr3at1on/3f5260581901e3035d9e)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-08]</sup> (Discuss in [Talk:Python#](https://wiki.archlinux.org/index.php/Talk:Python))
-
 A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv"). When a VirtualEnv is activated, the Python executable pointed to by `PATH` will be the one the VirtualEnv was installed with. Therefore, if the VirtualEnv is installed with Python 2, `python` will refer to Python 2.
 
 To start, [install](/index.php/Install "Install") the [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) package. Then create a directory, containing the VirtualEnv, with the following command:
@@ -188,27 +174,27 @@ The following [widget toolkit](https://en.wikipedia.org/wiki/Widget_toolkit "wik
 
 *   **TkInter** — Tk bindings
 
-NaN
+	[http://wiki.python.org/moin/TkInter](http://wiki.python.org/moin/TkInter) || standard module
 
 *   **pyQt** — [Qt](/index.php/Qt "Qt") bindings
 
-NaN
+	[http://www.riverbankcomputing.co.uk/software/pyqt/intro](http://www.riverbankcomputing.co.uk/software/pyqt/intro) || [python2-pyqt4](https://www.archlinux.org/packages/?name=python2-pyqt4) [python2-pyqt5](https://www.archlinux.org/packages/?name=python2-pyqt5) [python-pyqt4](https://www.archlinux.org/packages/?name=python-pyqt4) [python-pyqt5](https://www.archlinux.org/packages/?name=python-pyqt5)
 
 *   **pySide** — [Qt](/index.php/Qt "Qt") bindings
 
-NaN
+	[http://www.pyside.org/](http://www.pyside.org/) || [python2-pyside](https://www.archlinux.org/packages/?name=python2-pyside) [python-pyside](https://www.archlinux.org/packages/?name=python-pyside)
 
 *   **pyGTK** — [GTK+ 2](/index.php/GTK%2B "GTK+") bindings
 
-NaN
+	[http://www.pygtk.org/](http://www.pygtk.org/) || [pygtk](https://www.archlinux.org/packages/?name=pygtk)
 
 *   **PyGObject** — [GTK+ 2/3](/index.php/GTK%2B "GTK+") bindings via GObject Introspection
 
-NaN
+	[https://wiki.gnome.org/PyGObject/](https://wiki.gnome.org/PyGObject/) || [python2-gobject2](https://www.archlinux.org/packages/?name=python2-gobject2) [python2-gobject](https://www.archlinux.org/packages/?name=python2-gobject) [python-gobject2](https://www.archlinux.org/packages/?name=python-gobject2) [python-gobject](https://www.archlinux.org/packages/?name=python-gobject)
 
 *   **wxPython** — wxWidgets bindings
 
-NaN
+	[http://wxpython.org/](http://wxpython.org/) || [wxpython](https://www.archlinux.org/packages/?name=wxpython)
 
 To use these with Python, you may need to install the associated widget kits.
 

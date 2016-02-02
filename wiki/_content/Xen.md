@@ -7,7 +7,7 @@ Related articles
 
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
-NaN
+	_Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances._
 
 **Warning:** Do not run other virtualization software such as [VirtualBox](/index.php/VirtualBox "VirtualBox") when running Xen hypervisor, it might hang your system. See this [bug report (wontfix)](https://www.virtualbox.org/ticket/12146).
 
@@ -78,14 +78,6 @@ It's possible to boot the Xen hypervisor though the bare UEFI system on a modern
 
 **Note:**
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This Note is not very meaningful without a link to a bug report. (Discuss in [Talk:Xen#](https://wiki.archlinux.org/index.php/Talk:Xen))
-
 This will not work on the newest version of binutils you will need to downgrade to an older version from the svn:
 
 ```
@@ -107,14 +99,6 @@ Now when you compile Xen with your x86_64-pep aware binutils a UEFI kernel will 
 ```
 
 ### Modification of the bootloader
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Lots of other boot loaders could/should be covered, at least the most common like Gummiboot. (Discuss in [Talk:Xen#](https://wiki.archlinux.org/index.php/Talk:Xen))
 
 **Warning:** Never assume your system will boot after changes to the boot system. This might be the most common error new as well as old users do. Make sure you have a alternative way to boot your system like a USB stick or other livemedia **BEFORE** you make changes to your boot system.
 
@@ -202,14 +186,6 @@ Xen requires that network communications between _domU_ and the _dom0_ (and beyo
 See [Network bridge#Creating a bridge](/index.php/Network_bridge#Creating_a_bridge "Network bridge") for details.
 
 ### Creating bridge with Network Manager
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Network_bridge#With_NetworkManager](/index.php/Network_bridge#With_NetworkManager "Network bridge").**
-
-**Notes:** Duplicates the main page. (Discuss in [Talk:Xen#](https://wiki.archlinux.org/index.php/Talk:Xen))
 
 Gnome's Network Manager can sometime be troublesome. If following the bridge creation section outlined in the [bridges](https://wiki.archlinux.org/index.php/Network_bridge) section of the wiki are unclear or do not work, then the following steps may work.
 

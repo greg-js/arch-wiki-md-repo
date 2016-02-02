@@ -1,13 +1,5 @@
 # Php-codesniffer-drupal
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [PHP](/index.php/PHP "PHP").**
-
-**Notes:** The main article already lists tools and extensions, the [#Example](#Example) could be just kept upstream. (Discuss in [Talk:Php-codesniffer-drupal#](https://wiki.archlinux.org/index.php/Talk:Php-codesniffer-drupal))
-
 Related articles
 
 *   [Drupal](/index.php/Drupal "Drupal")

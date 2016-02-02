@@ -96,15 +96,15 @@ Many frontends exist for SANE, a non-exhaustive list of which can be found on th
 
 *   **[gscan2pdf](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#gscan2pdf "wikipedia:Scanner Access Now Easy")** — A GTK2-based GUI to produce PDFs, TIFFs or DjVus from scanned documents. It is also able to apply OCR in the process using different engines. Depends on a few Perl packages to build of which some are in the [AUR](/index.php/AUR "AUR") as well.
 
-NaN
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)<sup><small>AUR</small></sup>
 
 *   **[Simple Scan](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#Simple_Scan "wikipedia:Scanner Access Now Easy")** — A simplified GUI that is intended to be easier to use and better integrated into the [GNOME](/index.php/GNOME "GNOME") desktop than XSane. It was initially written for Ubuntu and is maintained by Robert Ancell of Canonical Ltd. for GNU/Linux.
 
-NaN
+	[http://launchpad.net/simple-scan](http://launchpad.net/simple-scan) || [simple-scan](https://www.archlinux.org/packages/?name=simple-scan)
 
 *   **[XSane](https://en.wikipedia.org/wiki/Scanner_Access_Now_Easy#XSane "wikipedia:Scanner Access Now Easy")** — A full-featured GTK-based frontend looking a bit old but providing extended functionalities.
 
-NaN
+	[http://www.xsane.org/](http://www.xsane.org/) || [xsane](https://www.archlinux.org/packages/?name=xsane)
 
 **Note:** Scanning directly to PDF using XSane in 16bit color depth mode is known to produces [corrupted files](https://bugs.launchpad.net/ubuntu/+source/xsane/+bug/539162) and a note in `pacman` output warns so. 8bit mode is known to work.
 
@@ -155,7 +155,7 @@ The network scanner should now also show up in any [front-end](#Install_a_fronte
 
 ## Troubleshooting
 
-NaN
+	See also: [SANE/Scanner-specific problems](/index.php/SANE/Scanner-specific_problems "SANE/Scanner-specific problems")
 
 ### Invalid argument
 
@@ -203,14 +203,6 @@ You can also try to comment out "net" driver, if there are no network scanners.
 
 ### Permission problem
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The `scanner` and `lp` groups are deprecated. (Discuss in [Talk:SANE#](https://wiki.archlinux.org/index.php/Talk:SANE))
-
 If you see your scanner only when running `lsusb` (as root), you might get it working by adding your user to `scanner` and/or `lp` group.
 
 ```
@@ -249,14 +241,6 @@ ATTRS{idVendor}=="**vendorID**", ATTRS{idProduct}=="**productID**", MODE="0664",
 ```
 
 Save the file, plug out and back in your scanner and the file permissions should be now correct.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The scanner needs to be added to the right backend file, `hp4200.conf` won't work for any scanner. (Discuss in [Talk:SANE#](https://wiki.archlinux.org/index.php/Talk:SANE))
 
 Another tip, is that you can add your device (scanner) in backend file:
 

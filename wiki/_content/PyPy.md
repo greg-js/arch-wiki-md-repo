@@ -52,14 +52,6 @@ where example.py is the file name of the program.
 
 ## EasyInstall
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:PyPy#](https://wiki.archlinux.org/index.php/Talk:PyPy))
-
 Python libraries and programs can be installed in PyPy through EasyInstall. PyPy libraries are stored in a different folder then Cpython libraries.
 
 ### EasyInstall Installation

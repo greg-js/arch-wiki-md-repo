@@ -1,13 +1,5 @@
 # Qingy
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Display manager](/index.php/Display_manager "Display manager").**
-
-**Notes:** No longer available in repositories, and unmaintained by upstream (last commit was on 2011-09-14). (Discuss in [Talk:Qingy#](https://wiki.archlinux.org/index.php/Talk:Qingy))
-
 [Qingy](http://qingy.sourceforge.net/) is a replacement for [Getty](/index.php/Getty "Getty") and login-managers like slim, kdm gdm and so on, using [DirectFB](http://www.directfb.org) to provide a fast, nice GUI without the overhead of the X Window System. It allows users to log in and start the session of their choice (text console, gnome, kde, wmaker, etc.). Running several X sessions is also possible.
 
 ## Contents

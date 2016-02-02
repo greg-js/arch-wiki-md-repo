@@ -591,14 +591,6 @@ menuentry "System restart" {
 
 ##### Windows installed in BIOS-MBR mode
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section does not fit into the others, should be slimmed down a bit. (Discuss in [Talk:GRUB#](https://wiki.archlinux.org/index.php/Talk:GRUB))
-
 **Note:** GRUB supports booting `bootmgr` directly and chainload of partition boot sector is no longer required to boot Windows in a BIOS-MBR setup.
 
 **Warning:** It is the **system partition** that has `/bootmgr`, not your "real" Windows partition (usually C:). In `blkid` output, the system partition is the one with `LABEL="SYSTEM RESERVED"` or `LABEL="SYSTEM"` and is only about 100 to 200 MB in size (much like the boot partition for Arch). See [Wikipedia:System partition and boot partition](https://en.wikipedia.org/wiki/System_partition_and_boot_partition "wikipedia:System partition and boot partition") for more info.
@@ -672,14 +664,6 @@ Do **not** use `bootrec.exe /Fixmbr` because it will wipe GRUB out.
 **Note:** `nn` should be greater than 06 to ensure necessary scripts are executed first.
 
 #### With Windows via EasyBCD and NeoGRUB
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [NeoGRUB](/index.php/NeoGRUB "NeoGRUB").**
-
-**Notes:** New page has been created, so this section should be merged there. (Discuss in [Talk:GRUB#](https://wiki.archlinux.org/index.php/Talk:GRUB))
 
 Since EasyBCD's NeoGRUB currently does not understand the GRUB menu format, chainload to it by replacing the contents of your `C:\NST\menu.lst` file with lines similar to the following:
 

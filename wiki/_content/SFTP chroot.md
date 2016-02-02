@@ -1,13 +1,5 @@
 # SFTP chroot
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Several [Help:Style](/index.php/Help:Style "Help:Style") issues. (Discuss in [Talk:SFTP chroot#](https://wiki.archlinux.org/index.php/Talk:SFTP_chroot))
-
 OpenSSH 4.9+ includes a built-in chroot for sftp, but requires a few tweaks to the normal install.
 
 ## Contents
@@ -126,14 +118,6 @@ Also, set their shell to _/usr/bin/false_ to prevent a normal ssh login:
 ```
 
 Their chroot will be the same as their home directory. The permissions are not the same as a normal home, though. Their home directory must be owned as root and not writable by another user or group. This includes the path leading to the directory.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** See e.g [https://bugs.archlinux.org/task/21981](https://bugs.archlinux.org/task/21981) (Discuss in [Talk:SFTP chroot#](https://wiki.archlinux.org/index.php/Talk:SFTP_chroot))
 
 **Warning:** Make sure that _/bin/false_ exists in _/etc/shells_ as well. Otherwise the login will fail with an _invalid password error_.
 

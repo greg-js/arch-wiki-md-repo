@@ -8,14 +8,6 @@ Related articles
 
 To install Arch Linux on this model of Chromebook, you have to run these commands to install a Seabios boot stub:
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Dubious installation command, untrusted source. (Discuss in [Talk:Toshiba Chromebook 2#](https://wiki.archlinux.org/index.php/Talk:Toshiba_Chromebook_2))
-
 ```
 $ cd; rm -f flash_chromebook_rom.sh; curl -k -L -O [https://johnlewis.ie/flash_chromebook_rom.sh](https://johnlewis.ie/flash_chromebook_rom.sh); sudo -E bash flash_chromebook_rom.sh
 

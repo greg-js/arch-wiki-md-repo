@@ -2,7 +2,7 @@
 
 From [Wikipedia](https://en.wikipedia.org/wiki/RuneScape "wikipedia:RuneScape"):
 
-NaN
+	_RuneScape is a fantasy massively multiplayer online role-playing game (MMORPG) released in January 2001 by Andrew and Paul Gower, and developed and published by Jagex Games Studio. It is a graphical browser game implemented on the client-side in Java or HTML5, and incorporates 3D rendering. The game has had over 200 million accounts created and is recognised by the Guinness World Records as the world's largest free MMORPG and the most-updated game._
 
 ## Contents
 

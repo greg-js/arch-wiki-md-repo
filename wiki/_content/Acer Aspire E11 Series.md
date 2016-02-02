@@ -69,14 +69,6 @@ Follow the [installation guide](/index.php/Installation_guide "Installation guid
 
 #### Using UEFI
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Use HashTool instead of a roundabout through supervisor settings? (Discuss in [Talk:Acer Aspire E11 Series#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_E11_Series))
-
 To use Arch Linux with UEFI, activate the F12 boot menu option in the EFI setup and disable 'Secure' Boot. To do the latter, you must set a supervisor password beforehand. After disabling 'Secure' Boot, save the settings and reboot, then press F12 and select the USB drive with the Arch Linux setup files.
 
 The first partition should be an EFI system partition. Make sure that the initramfs and vmlinuz-linux files are on the EFI partition, and that it is mounted at /boot. There is no way to specify kernel boot parameters in this computer's EFI setup so you have to go with a boot loader. Simple way is to install **gummiboot** and create a boot entry:

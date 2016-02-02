@@ -6,14 +6,6 @@
 
 [CLR](/index.php/CLR_package_guidelines "CLR package guidelines") – [Cross](/index.php/Cross-compiling_tools_package_guidelines "Cross-compiling tools package guidelines") – [Eclipse](/index.php/Eclipse_plugin_package_guidelines "Eclipse plugin package guidelines") – [Free Pascal](/index.php/Free_Pascal_package_guidelines "Free Pascal package guidelines") – [GNOME](/index.php/GNOME_package_guidelines "GNOME package guidelines") – [Go](/index.php/Go_package_guidelines "Go package guidelines") – [Haskell](/index.php/Haskell_package_guidelines "Haskell package guidelines") – [Java](/index.php/Java_package_guidelines "Java package guidelines") – [KDE](/index.php/KDE_package_guidelines "KDE package guidelines") – [Kernel](/index.php/Kernel_module_package_guidelines "Kernel module package guidelines") – [Lisp](/index.php/Lisp_package_guidelines "Lisp package guidelines") – [MinGW](/index.php/MinGW_package_guidelines "MinGW package guidelines") – **Nonfree** – [OCaml](/index.php/OCaml_package_guidelines "OCaml package guidelines") – [Perl](/index.php/Perl_package_guidelines "Perl package guidelines") – [PHP](/index.php/PHP_package_guidelines "PHP package guidelines") – [Python](/index.php/Python_package_guidelines "Python package guidelines") – [Ruby](/index.php/Ruby_Gem_package_guidelines "Ruby Gem package guidelines") – [VCS](/index.php/VCS_package_guidelines "VCS package guidelines") – [Web](/index.php/Web_application_package_guidelines "Web application package guidelines") – [Wine](/index.php/Wine_package_guidelines "Wine package guidelines")
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** cover about encrypting archives, symlinking etc. (Discuss in [Talk:Nonfree applications package guidelines#](https://wiki.archlinux.org/index.php/Talk:Nonfree_applications_package_guidelines))
-
 For many applications (most of which are Windows ones) there are neither sources nor tarballs available. Many of such applications can not be freely distributed because of license restrictions and/or lack of legal ways to obtain installer for no fee. Such software obviously can not be included into the [official repositories](/index.php/Official_repositories "Official repositories") but due to nature of [AUR](/index.php/AUR "AUR") it is still possible to privately [build packages](/index.php/Makepkg "Makepkg") for it, manageable with [pacman](/index.php/Pacman "Pacman").
 
 **Note:** All information here is package-agnostic, for information specific to the most typical nonfree software see [Wine PKGBUILD guidelines](/index.php/Wine_PKGBUILD_guidelines "Wine PKGBUILD guidelines").
@@ -39,15 +31,25 @@ There are multiple reasons for packaging even non-packageable software:
 
 *   Simplification of installation/removal process
 
-NaN
+	This is applicable even to the simplest of apps, which consist of a single script to be installed into `/usr/bin`. Instead of issuing:
+
+	 `$ chmod +x _filename_` 
+
+	 `# cp _filename_ /usr/bin/` 
+
+	you can type just
+
+	 `# makepkg -i` 
+
+	Most non-free applications are obviously much more complicated, but the burden of downloading an archive/installer from a homepage (often full of advertising), unpacking/decrypting it, hand-writing stereotypical launcher scripts and doing other similar tasks can be effectively lightened by a well-written packaging script.
 
 *   Utilizing pacman capabilities
 
-NaN
+	The ability to track state, perform automatic updates of any installed piece of software, determine ownership of every single file, and store compressed packages in a well-organized cache is what makes GNU/Linux distributions so powerful.
 
 *   Sharing code and knowledge
 
-NaN
+	It is simpler to apply tweaks, fix bugs and seek/provide help in a single public place like AUR versus submitting patches to proprietary developers who may have ceased support or asking vague questions on general purpose forums.
 
 ## Common rules
 
@@ -82,9 +84,23 @@ For most commercial games there is no way to (legally) download game files, whic
 
 *   **There is only one way to obtain files**
 
-NaN
+*   Software is distributed in archive/installer
 
-NaN
+	Add the required file to `sources` array:
+
+	 `sources=(... "_originalname_::**file://**_originalname_")` 
+
+	This way the link to file in AUR web interface will look different from names of files included in source tarball.
+
+	Add following comment on package page:
+
+	 `Need archive/installer to work.` 
+
+	and explain the details in PKGBUILD source.
+
+*   Software is distributed on compact-disk
+
+	Add installer script and `.install` file to package contents, like in package [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tsukihime-en)]</sup>.
 
 *   **There are several ways to obtain files**
 

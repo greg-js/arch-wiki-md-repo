@@ -12,7 +12,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
-NaN
+	_A file system (or filesystem) is a means to organize data expected to be retained after a program terminates by providing procedures to store, retrieve and update data, as well as manage the available space on the device(s) which contain it. A file system organizes data in an efficient manner and is tuned to the specific characteristics of the device._
 
 Individual drive partitions can be setup using one of the many different available filesystems. Each has its own advantages, disadvantages, and unique idiosyncrasies. A brief overview of supported filesystems follows; the links are to Wikipedia pages that provide much more information.
 
@@ -57,55 +57,55 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 *   **btrfs-progs** — [Btrfs](/index.php/Btrfs "Btrfs") support.
 
-NaN
+	[http://btrfs.wiki.kernel.org/](http://btrfs.wiki.kernel.org/) || [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
 
 *   **dosfstools** — VFAT support.
 
-NaN
+	[https://github.com/dosfstools/dosfstools](https://github.com/dosfstools/dosfstools) || [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
 
 *   **exfat-utils** — exFAT support.
 
-NaN
+	[https://github.com/relan/exfat](https://github.com/relan/exfat) || [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat), [exfat-utils](https://www.archlinux.org/packages/?name=exfat-utils)
 
 *   **f2fs-tools** — [F2FS](/index.php/F2FS "F2FS") support.
 
-NaN
+	[https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git](https://git.kernel.org/cgit/linux/kernel/git/jaegeuk/f2fs-tools.git) || [f2fs-tools](https://www.archlinux.org/packages/?name=f2fs-tools)
 
 *   **e2fsprogs** — ext2, [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4") support.
 
-NaN
+	[http://e2fsprogs.sourceforge.net](http://e2fsprogs.sourceforge.net) || [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
 
 *   **hfsprogs** — HFS support.
 
-NaN
+	[http://www.opensource.apple.com](http://www.opensource.apple.com) || [hfsprogs](https://www.archlinux.org/packages/?name=hfsprogs)
 
 *   **jfsutils** — [JFS](/index.php/JFS "JFS") support.
 
-NaN
+	[http://jfs.sourceforge.net](http://jfs.sourceforge.net) || [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
 
 *   **nilfs-utils** — NILFS support.
 
-NaN
+	[http://nilfs.sourceforge.net/](http://nilfs.sourceforge.net/) || [nilfs-utils](https://www.archlinux.org/packages/?name=nilfs-utils)
 
 *   **ntfs-3g** — [NTFS](/index.php/NTFS "NTFS") support.
 
-NaN
+	[http://www.tuxera.com/community/ntfs-3g-download/](http://www.tuxera.com/community/ntfs-3g-download/) || [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
 
 *   **reiser4progs** — [ReiserFSv4](/index.php/Reiser4 "Reiser4") support.
 
-NaN
+	[http://sourceforge.net/projects/reiser4/](http://sourceforge.net/projects/reiser4/) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)<sup><small>AUR</small></sup>
 
 *   **reiserfsprogs** — ReiserFSv3 support.
 
-NaN
+	[https://www.kernel.org/](https://www.kernel.org/) || [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
 
 *   **xfsprogs** — [XFS](/index.php/XFS "XFS") support.
 
-NaN
+	[http://oss.sgi.com/projects/xfs/](http://oss.sgi.com/projects/xfs/) || [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
 
 *   **zfs** — [ZFS](/index.php/ZFS "ZFS") support.
 
-NaN
+	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-git](https://aur.archlinux.org/packages/zfs-git/)<sup><small>AUR</small></sup>
 
 ### FUSE-based file systems
 
@@ -115,43 +115,43 @@ Some FUSE-based file systems:
 
 *   **acd-fuse** — FUSE filesystem driver for Amazon's Cloud Drive.
 
-NaN
+	[https://github.com/handyman5/acd_fuse](https://github.com/handyman5/acd_fuse) || [acdfuse-git](https://aur.archlinux.org/packages/acdfuse-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acdfuse-git)]</sup>
 
 *   **adbfs-git** — Mount an Android device filesystem.
 
-NaN
+	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)<sup><small>AUR</small></sup>
 
 *   **cddfs** — Mount audio CDs.
 
-NaN
+	[http://castet.matthieu.free.fr/](http://castet.matthieu.free.fr/) || [cddfs](https://aur.archlinux.org/packages/cddfs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cddfs)]</sup>
 
 *   **fuse-exfat** — exFAT mount support.
 
-NaN
+	[http://code.google.com/p/exfat/](http://code.google.com/p/exfat/) || [fuse-exfat](https://www.archlinux.org/packages/?name=fuse-exfat)
 
 *   **fuseiso** — Mount an ISO as a regular user.
 
-NaN
+	[http://sourceforge.net/projects/fuseiso/](http://sourceforge.net/projects/fuseiso/) || [fuseiso](https://www.archlinux.org/packages/?name=fuseiso)
 
 *   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
 
-NaN
+	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)<sup><small>AUR</small></sup>
 
 *   **wiifuse** — Mount a Gamecube or Wii DVD disc image read-only.
 
-NaN
+	[http://wiibrew.org/wiki/Wiifuse](http://wiibrew.org/wiki/Wiifuse) || [wiifuse](https://aur.archlinux.org/packages/wiifuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wiifuse)]</sup>
 
 *   **xbfuse-git** — Mount an Xbox (360) ISO.
 
-NaN
+	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xbfuse-git)]</sup>
 
 *   **xmlfs** — Represent an XML file as a directory structure for easy access.
 
-NaN
+	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)<sup><small>AUR</small></sup>
 
 *   **zfs-fuse** — [ZFS support via FUSE](/index.php/ZFS_on_FUSE "ZFS on FUSE").
 
-NaN
+	[http://zfs-fuse.net/](http://zfs-fuse.net/) || [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfs-fuse)]</sup>
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 

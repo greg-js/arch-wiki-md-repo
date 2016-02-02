@@ -110,14 +110,6 @@ As you can see, the modem has Linux system inside. You can even install some ARM
 
 ## Switch Mode in OSX
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Unless you give every Arch user a free Apple device, the reference to OSX is useless (Discuss in [Talk:ZTE MF 823 (Megafon M100-3) 4G Modem#](https://wiki.archlinux.org/index.php/Talk:ZTE_MF_823_(Megafon_M100-3)_4G_Modem))
-
 For some reason this device can get stuck in mode 0016 and fails to switch to any other mode. I was unsuccessful in trying to switch modes using usb_modeswitch and sending AT commands to /dev/ttyUSB0 on various Linux systems. I successfully managed to change modes from 0016 to 1403 using Mac OSX. I was then able to use the dongle on Linux.
 
 In mode 0016 on OSX you will see the follow interfaces:

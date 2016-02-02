@@ -381,14 +381,6 @@ See [[2]](http://tomoyo.sourceforge.jp/2.5/index.html.en) for a detailed guide t
 
 ### Use Skype with special user
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section needs revising both in content and style (Discuss in [Talk:Skype#](https://wiki.archlinux.org/index.php/Talk:Skype))
-
 **Warning:** As of version 1.16, Xorg runs as a regular user. This means a [special user](#Use_Skype_with_special_user) has no access to X. The following approach only works when enabling root for Xorg; see [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg").
 
 Instead of using AppArmor or TOMOYO, one may prefer to add a special user. This user is only used for running Skype within one's normal environment. This approach restricts Skype to reading only the data of this particular user instead of one's main user. (The new user should not be used for any other thing. Skype only.)
@@ -599,14 +591,6 @@ $ ln -s /home/skype/downloads ~/skype_files
 ```
 
 ### systemd-nspawn
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Script seems to be broken. (Discuss in [Talk:Skype#systemd-nspawn](https://wiki.archlinux.org/index.php/Talk:Skype#systemd-nspawn))
 
 You can also run Skype in systemd container with this script:
 

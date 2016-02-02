@@ -1,13 +1,5 @@
 # init Rosetta
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add comparisons with the other available [init](/index.php/Init "Init") systems. (Discuss in [Talk:Init Rosetta#](https://wiki.archlinux.org/index.php/Talk:Init_Rosetta))
-
 Related articles
 
 *   [init](/index.php/Init "Init")

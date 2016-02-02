@@ -56,7 +56,29 @@ _file_system_    _dir_    _type_    _options_    _dump_    _pass_
 
 ```
 
-NaN
+	_file system_
+
+	The partition or storage device to be mounted.
+
+	_dir_
+
+	The mountpoint where <file system> is mounted to.
+
+	_type_
+
+	The file system type of the partition or storage device to be mounted. Many different file systems are supported: `ext2`, `ext3`, `ext4`, `btrfs`, `reiserfs`, `xfs`, `jfs`, `smbfs`, `iso9660`, `vfat`, `ntfs`, `swap` and `auto`. The `auto` type lets the mount command guess what type of file system is used. This is useful for optical media (CD/DVD).
+
+	_options_
+
+	Mount options of the filesystem to be used. See the [mount man page](http://man7.org/linux/man-pages/man8/mount.8.html#FILESYSTEM-INDEPENDENT_MOUNT%20OPTIONS). Please note that some options are specific to filesystems; to discover them see below in the aforementioned mount man page.
+
+	_dump_
+
+	Used by the dump utility to decide when to make a backup. Dump checks the entry and uses the number to decide if a file system should be backed up. Possible entries are 0 and 1\. If 0, dump will ignore the file system; if 1, dump will make a backup. Most users will not have dump installed, so they should put 0 for the _dump_ entry.
+
+	_pass_
+
+	Used by [fsck](/index.php/Fsck "Fsck") to decide which order filesystems are to be checked. Possible entries are 0, 1 and 2\. The root file system should have the highest priority 1 (unless its type is [btrfs](/index.php/Btrfs "Btrfs"), in which case this field should be 0) - all other file systems you want to have checked should have a 2\. File systems with a value 0 will not be checked by the fsck utility.
 
 ## Identifying filesystems
 
@@ -206,21 +228,15 @@ The use of `noatime`, `nodiratime` or `relatime` can impact drive performance.
 
 *   The `strictatime` option updates the _atime_ of the files every time they are accessed. This is more purposeful when Linux is used for servers; it does not have much value for desktop use. The drawback about the `strictatime` option is that even reading a file from the page cache (reading from memory instead of the drive) will still result in a write!
 
-NaN
+	Using the `noatime` option fully disables writing file access times to the drive every time you read a file. This works well for almost all applications, except for a rare few like [Mutt](/index.php/Mutt "Mutt") that needs such information. For mutt, you should only use the `relatime` option.
 
-NaN
+	The `nodiratime` option disables the writing of file access times only for directories while other files still get access times written.
+
+**Note:** `noatime` already includes `nodiratime`. [You do not need to specify both](http://lwn.net/Articles/244941/).
 
 *   `relatime` enables the writing of file access times only when the file is being modified (unlike `noatime` where the file access time will never be changed and will be older than the modification time). The best compromise might be the use this option since programs like [Mutt](/index.php/Mutt "Mutt") will continue to work, but you will still have a performance boost as the files will not get access times updated unless they are modified. This option is used when the `defaults` keyword option, `atime` option (which means to use the kernel default, which is relatime; see `man 8 mount` and [[1]](http://en.wikipedia.org/wiki/Stat_%28system_call%29#Solutions)) or no options at all are specified in _fstab_ for a given mount point.
 
 ### Writing to FAT32 as Normal User
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [USB Storage Devices#Mounting USB memory](/index.php/USB_Storage_Devices#Mounting_USB_memory "USB Storage Devices").**
-
-**Notes:** The linked section assumes that the partition on USB storage uses FAT32 or NTFS filesystem, so we have two sections covering the same topic. Either merge everything here or in the linked section. (Discuss in [Talk:Fstab#](https://wiki.archlinux.org/index.php/Talk:Fstab))
 
 To write on a FAT32 partition, you must make a few changes to your `/etc/fstab` file.
 
@@ -244,14 +260,6 @@ If for some reason the root partition has been improperly mounted read only, rem
 ```
 
 ### bind mounts
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** unfinished section (Discuss in [Talk:Fstab#](https://wiki.archlinux.org/index.php/Talk:Fstab))
 
 **Note:** Binding a directory to a different location is not recognised by almost any program, so for instance careless commands like `rm -r *` will also erase any content from the original location. So softlinks should be the preferable way in most cases. If you need permission to a directory on a Btrfs and softlinks are not sufficient its [subvolumes](/index.php/Btrfs#Sub-volumes "Btrfs") faciliate extended capabilities like mount options compared to bind mounting
 

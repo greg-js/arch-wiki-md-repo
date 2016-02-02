@@ -40,7 +40,7 @@ Related articles
 
 mkinitcpio is a Bash script used to create an initial ramdisk environment. From the [mkinitcpio man page](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt):
 
-NaN
+	_The initial ramdisk is in essence a very small environment (early userspace) which loads various kernel modules and sets up necessary things before handing over control to init. This makes it possible to have, for example, encrypted root file systems and root file systems on a software RAID array. mkinitcpio allows for easy extension with custom hooks, has autodetection at runtime, and many other features._
 
 Traditionally, the kernel was responsible for all hardware detection and initialization tasks early in the [boot process](/index.php/Boot_process "Boot process") before mounting the root file system and passing control to `init`. However, as technology advances, these tasks have become increasingly complex.
 
@@ -112,7 +112,29 @@ The primary configuration file for **mkinitcpio** is `/etc/mkinitcpio.conf`. Add
 
 Users can modify six variables within the configuration file:
 
-NaN
+	`MODULES`
+
+	Kernel modules to be loaded before any boot hooks are run.
+
+	`BINARIES`
+
+	Additional binaries to be included in the initramfs image.
+
+	`FILES`
+
+	Additional files to be included in the initramfs image.
+
+	`HOOKS`
+
+	Hooks are scripts that execute in the initial ramdisk.
+
+	`COMPRESSION`
+
+	Used to compress the initramfs image.
+
+	`COMPRESSION_OPTIONS`
+
+	Extra arguments to pass to the `COMPRESSION` program. Usage of this setting is strongly discouraged. mkinitcpio will handle special requirements for compressors (e.g. passing `--check=crc32` to xz), and misusage can easily lead to an unbootable system.
 
 ### MODULES
 
@@ -246,19 +268,13 @@ In general these should never be needed as mkinitcpio will make sure that any su
 
 ## Runtime customization
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Which options work with the `systemd` hook and which are `base`-only? (Discuss in [Talk:Mkinitcpio#](https://wiki.archlinux.org/index.php/Talk:Mkinitcpio))
-
 Runtime configuration options can be passed to `init` and certain hooks via the kernel command line. Kernel command-line parameters are often supplied by the bootloader. The options discussed below can be appended to the kernel command line to alter default behavior. See [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters") and [Arch boot process](/index.php/Arch_boot_process "Arch boot process") for more information.
 
 ### init from base hook
 
-NaN
+	`root`
+
+	This is the most important parameter specified on the kernel command line, as it determines what device will be mounted as your proper root device. mkinitcpio is flexible enough to allow a wide variety of formats, for example:
 
 ```
 root=/dev/sda1                                                # /dev node
@@ -270,11 +286,17 @@ root=PARTUUID=14420948-2cea-4de7-b042-40f67c618660            # GPT partition UU
 
 **Note:** The following boot parameters alter the default behavior of `init` in the initramfs environment. See `/usr/lib/initcpio/init` for details. They will not work when `systemd` hook is being used since the `init` from `base` hook is replaced.
 
-NaN
+	`break`
 
-NaN
+	If `break` or `break=premount` is specified, `init` pauses the boot process (after loading hooks, but before mounting the root file system) and launches an interactive shell which can be used for troubleshooting purposes. This shell can be launched after the root has been mounted by specifying `break=postmount`. Normal boot continues after exiting from the shell.
 
-NaN
+	`disablehooks`
+
+	Disable hooks at runtime by adding `disablehooks=hook1[,hook2,...]`. For example: `disablehooks=resume` 
+
+	`earlymodules`
+
+	Alter the order in which modules are loaded by specifying modules to load early via `earlymodules=mod1[,mod2,...]`. (This may be used, for example, to ensure the correct ordering of multiple network interfaces.)
 
 See [Boot debugging](/index.php/Boot_debugging "Boot debugging") and [man mkinitcpio](https://projects.archlinux.org/mkinitcpio.git/tree/man/mkinitcpio.8.txt#n212) for other parameters.
 
@@ -308,7 +330,7 @@ The `<autoconf>` parameter can appear alone as the value to the 'ip' parameter (
 
 For parameters explanation, see the [kernel doc](https://www.kernel.org/doc/Documentation/filesystems/nfs/nfsroot.txt).
 
-NaN
+	Examples
 
 ```
  ip=127.0.0.1:::::lo:none  --> Enable the loopback interface.

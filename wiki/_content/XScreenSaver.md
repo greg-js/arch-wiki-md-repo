@@ -42,14 +42,6 @@ Since at least XScreenSaver 5.22, there is another way to edit XScreenSaver's us
 
 ### DPMS and blanking settings
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** "overrides DPMS" is vague - xscreensaver does the equivalent of `xset s 0 0`, uses its own timer for the various animations, but sets the DPMS timeout to the values in _Display Power Management_ (Discuss in [Talk:XScreenSaver#](https://wiki.archlinux.org/index.php/Talk:XScreenSaver))
-
 XScreenSaver manages screen blanking and display energy saving ([DPMS](/index.php/DPMS "DPMS")) independently of X itself and overrides it. To configure the timings for blanking, standby, display poweroff and such, use _xscreensaver-demo_ or edit the configuration file manually, e.g. `~/.xscreensaver`:
 
 ```

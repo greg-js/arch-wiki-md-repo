@@ -1,13 +1,5 @@
 # Steam/Game-specific troubleshooting
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Lots of content duplication, highly dubious "solutions" (Discuss in [Talk:Steam/Game-specific troubleshooting#](https://wiki.archlinux.org/index.php/Talk:Steam/Game-specific_troubleshooting))
-
 **Note:** [Steam](/index.php/Steam "Steam") installs library dependencies of a game to a library directory, but some are missing at the moment. Report bugs involving missing libraries on Valve's bug tracker on their [GitHub page](https://github.com/ValveSoftware/steam-for-linux) before adding workarounds here, and then provide a link to the bug so it can be removed as the problems are fixed.
 
 **Tip:** If a game fails to start, a possible reason is that it is missing required libraries. You can find out what libraries it requests by running `ldd _game_executable_`. `_game_executable_` is likely located somewhere in `~/.steam/root/SteamApps/common/`. Please note that most of these "missing" libraries are actually already included with Steam, and do not need to be installed globally.
@@ -598,7 +590,7 @@ If you run the game from the terminal and, although no error is shown, try **dis
 
 #### Game runs on the wrong screen
 
-NaN
+	[GitHub Dota 2 issue #11](https://github.com/ValveSoftware/Dota-2/issues/11)
 
 #### Game does not start with libxcb-dri3 error message
 
@@ -616,7 +608,7 @@ $ find ~/.local/share/Steam -name 'libxcb*' -type f | grep -v installed | xargs 
 
 ```
 
-NaN
+	[GitHub Steam issue #3204](https://github.com/ValveSoftware/steam-for-linux/issues/3204)
 
 #### Steam overlay
 
@@ -629,7 +621,9 @@ Steam distributes a copy of libxcb which is incompatible with the latest xorg li
 
 See more information here:
 
-NaN
+	[[4]](https://github.com/ValveSoftware/steam-for-linux/issues/3199)
+
+	[[5]](https://github.com/ValveSoftware/steam-for-linux/issues/3093)
 
 #### Chinese Tips and player's name display problem
 
@@ -637,7 +631,7 @@ The Chinese characters in the Tips and player's name display block character.
 
 The problem caused by some fonts package. It is known that the 'ttf-dejave', 'ttf-liberation' and 'ttf-ms-fonts' will cause the prolem, and the 'wqy-*', 'ttf-ubuntu-font-family', 'ttf-arphic-uming', 'ttf-linux-libertine' are safe. The other fonts family are not checked.
 
-NaN
+	[GitHub Steam issue #1688](https://github.com/ValveSoftware/Dota-2/issues/1688)
 
 #### Chinese input method problem
 
@@ -647,7 +641,13 @@ The possible solution
 
 Compile the `libSDL` with fcitx or ibus support, then replace `Game Folder/dota 2 beta/bin/libSDL2-2.0.so.0` with your version.
 
-NaN
+	[LibSDL+Ibus](http://forum.ubuntu.org.cn/viewtopic.php?f=34&t=460195)
+
+	[LibSDL+Fcitx](http://forum.ubuntu.org.cn/viewtopic.php?f=34&t=466879&sid=1664abac47d8f639ed9b7f3abf94c675)
+
+	[LibSDL+Fcitx Source](https://github.com/timxx/SDL-fcitx)
+
+	[The solutions issues](https://github.com/ValveSoftware/Dota-2/issues/1650)
 
 ## Dwarfs F2P
 

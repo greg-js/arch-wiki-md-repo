@@ -2,7 +2,7 @@
 
 From [Wikipedia:Clipboard (computing)](https://en.wikipedia.org/wiki/Clipboard_(computing) "wikipedia:Clipboard (computing)"):
 
-NaN
+	The clipboard is a facility used for short-term data storage and/or data transfer between documents or applications, via [copy and paste](https://en.wikipedia.org/wiki/copy_and_paste "wikipedia:copy and paste") operations.
 
 ## Contents
 
@@ -27,75 +27,75 @@ Clipboard managers are applications that enable users to manipulate the clipboar
 
 *   **Anamnesis** — Clipboard manager that stores all the clipboard history and offers an interface to do a full-text search. It has both a command line and GUI mode available.
 
-NaN
+	[http://anamnesis.sourceforge.net/](http://anamnesis.sourceforge.net/) || [anamnesis](https://aur.archlinux.org/packages/anamnesis/)<sup><small>AUR</small></sup>
 
 *   **Autocutsel** — Command line and daemon interfaces to synchronize PRIMARY, `CLIPBOARD` and cut buffer selections.
 
-NaN
+	[http://www.nongnu.org/autocutsel/](http://www.nongnu.org/autocutsel/) || [autocutsel](https://www.archlinux.org/packages/?name=autocutsel)
 
 *   **Clipboard Indicator** — Clipboard manager extension for GNOME Shell. Adds a clipboard indicator to the top panel, and caches clipboard history.
 
-NaN
+	[https://extensions.gnome.org/extension/779/clipboard-indicator/](https://extensions.gnome.org/extension/779/clipboard-indicator/) || [https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator](https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator)
 
 *   **ClipIt** — Fork of Parcellite.
 
-NaN
+	[http://sourceforge.net/projects/gtkclipit/](http://sourceforge.net/projects/gtkclipit/) || [clipit](https://www.archlinux.org/packages/?name=clipit)
 
 *   **Clipman** — A clipboard manager for Xfce. It keeps the clipboard contents around while it is usually lost when you close an application. It is able to handle text and images, and has a feature to execute actions on specific text selections by matching them against regular expressions.
 
-NaN
+	[http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin](http://goodies.xfce.org/projects/panel-plugins/xfce4-clipman-plugin) || [xfce4-clipman-plugin](https://www.archlinux.org/packages/?name=xfce4-clipman-plugin)
 
 *   **Clipmenu** — Dmenu based clipboard manager
 
-NaN
+	[https://github.com/cdown/clipmenu/](https://github.com/cdown/clipmenu/) || [clipmenu](https://aur.archlinux.org/packages/clipmenu/)<sup><small>AUR</small></sup>
 
 *   **Clipster** — A lightweight, command-line-driven clipboard manager, written in Python.
 
-NaN
+	[https://github.com/mrichar1/clipster](https://github.com/mrichar1/clipster) ||
 
 *   **CopyQ** — Clever clipboard manager with searchable and editable history, custom actions on items and command line support.
 
-NaN
+	[https://github.com/hluk/CopyQ](https://github.com/hluk/CopyQ) || [copyq](https://aur.archlinux.org/packages/copyq/)<sup><small>AUR</small></sup>
 
 *   **[Glipper](https://en.wikipedia.org/wiki/Glipper "wikipedia:Glipper")** — Clipboard manager for the GNOME desktop with many features and plugin support.
 
-NaN
+	[https://launchpad.net/glipper](https://launchpad.net/glipper) || [glipper](https://aur.archlinux.org/packages/glipper/)<sup><small>AUR</small></sup>
 
 *   **GPaste** — Clipboard management system that aims at being a new generation Parcellite, with a modular structure split in a couple of libraries and a daemon for adaptability. Offers a GNOME Shell extension and a CLI interface.
 
-NaN
+	[https://github.com/Keruspe/GPaste](https://github.com/Keruspe/GPaste) || [gpaste](https://www.archlinux.org/packages/?name=gpaste)
 
 *   **Keepboard** — Cross-platform clipboard manager. Saves text, image and file clipboard items.
 
-NaN
+	[http://sourceforge.net/projects/keepboard/](http://sourceforge.net/projects/keepboard/) ||
 
 *   **[Klipper](https://en.wikipedia.org/wiki/Klipper "wikipedia:Klipper")** — Full featured clipboard manager for the KDE desktop.
 
-NaN
+	[http://userbase.kde.org/Klipper](http://userbase.kde.org/Klipper) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **Parcellite** — Lightweight yet feature-rich clipboard manager.
 
-NaN
+	[http://parcellite.sourceforge.net/](http://parcellite.sourceforge.net/) || [parcellite](https://www.archlinux.org/packages/?name=parcellite)
 
 *   **Pasteall** — Clipboard monitor simple and functional.
 
-NaN
+	[https://github.com/LaraCraft93/Pasteall](https://github.com/LaraCraft93/Pasteall) || [pasteall](https://aur.archlinux.org/packages/pasteall/)<sup><small>AUR</small></sup>
 
 *   **Qlipper** — Lightweight and cross-platform clipboard history applet based on Qt.
 
-NaN
+	[https://code.google.com/p/qlipper/](https://code.google.com/p/qlipper/) || [qlipper](https://aur.archlinux.org/packages/qlipper/)<sup><small>AUR</small></sup>
 
 *   **Xclip** — A lightweight, command-line based interface to the clipboard.
 
-NaN
+	[http://sourceforge.net/projects/xclip/](http://sourceforge.net/projects/xclip/) || [xclip](https://www.archlinux.org/packages/?name=xclip) or [xclip-svn](https://aur.archlinux.org/packages/xclip-svn/)<sup><small>AUR</small></sup>
 
 *   **xcmenu** — Clipboard synchronizer developed for window manager users.
 
-NaN
+	[https://github.com/Cloudef/xcmenu](https://github.com/Cloudef/xcmenu) || [xcmenu-git](https://aur.archlinux.org/packages/xcmenu-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcmenu-git)]</sup>
 
 *   **xsel** — Command-line program for getting and setting the contents of the X selection.
 
-NaN
+	[http://www.vergenet.net/~conrad/software/xsel/](http://www.vergenet.net/~conrad/software/xsel/) || [xsel](https://www.archlinux.org/packages/?name=xsel)
 
 ## See also
 

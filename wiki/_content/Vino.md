@@ -1,13 +1,5 @@
 # Vino
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Vino#](https://wiki.archlinux.org/index.php/Talk:Vino))
-
 **Vino** is a VNC (Virtual Network Computing) server allowing remote connection to your actual desktop. It is a default component of the [GNOME](/index.php/GNOME "GNOME") [Desktop environment](/index.php/Desktop_environment "Desktop environment").
 
 ## Contents

@@ -395,14 +395,6 @@ See [the below notes on using x11-ssh-askpass with ssh-add](#Calling_x11-ssh-ask
 
 ### GnuPG Agent
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [GnuPG#gpg-agent](/index.php/GnuPG#gpg-agent "GnuPG").**
-
-**Notes:** This section should just refer to the main article. (Discuss in [Talk:SSH keys#](https://wiki.archlinux.org/index.php/Talk:SSH_keys))
-
 The [GnuPG](/index.php/GnuPG "GnuPG") agent, distributed with the [gnupg](https://www.archlinux.org/packages/?name=gnupg) package, available in the [official repositories](/index.php/Official_repositories "Official repositories"), has OpenSSH agent emulation. If you already use the GnuPG suite, you might consider using its agent to also cache your SSH keys. Additionally, some users may prefer the PIN entry dialog GnuPG agent provides as part of its passphrase management.
 
 **Note:** If you are using KDE and have [kde-agent](https://www.archlinux.org/packages/?name=kde-agent)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> installed you only need to set `enable-ssh-support` into `~/.gnupg/gpg-agent.conf`! Otherwise, continue reading.

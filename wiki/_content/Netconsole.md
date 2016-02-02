@@ -86,14 +86,6 @@ Netconsole should now be configured. To verify, run `dmesg | tail` and you shoul
 
 ## Receiver configuration
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Netconsole#](https://wiki.archlinux.org/index.php/Talk:Netconsole))
-
 Install [gnu-netcat](https://www.archlinux.org/packages/?name=gnu-netcat) or [socat](https://www.archlinux.org/packages/?name=socat) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ```
@@ -129,14 +121,6 @@ socat - udp4-datagram:192.168.1.28:6666,bind=6666
 One may need to switch off PC and router firewall, and setup proper router port forwarding to monitor and input data in _Netconsole_. A more flexible configuration can be achieved if netconsole is setup on a [different subnet](http://archlinuxarm.org/forum/viewtopic.php?f=18&t=3355) so that if the device is moved to a different network IP's won't clash, however [it may require a more complex setup](http://archlinuxarm.org/platforms/armv5/seagate-goflex-home#qt-platform_tabs-ui-tabs3) on the receiver with aliased ethernet interface.
 
 ## Usage
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Moved from [Boot debugging](/index.php/Boot_debugging "Boot debugging") (Discuss in [Talk:Netconsole#](https://wiki.archlinux.org/index.php/Talk:Netconsole))
 
 **netconsole** is a kernel module which sends kernel logs over the network, which is useful for debugging slower computers. The setup process is:
 

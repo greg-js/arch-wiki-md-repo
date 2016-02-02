@@ -47,14 +47,6 @@ First thing one need to access storage device is its identifier assigned by kern
 
 ### Mounting USB memory
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [fstab#Writing to FAT32 as Normal User](/index.php/Fstab#Writing_to_FAT32_as_Normal_User "Fstab").**
-
-**Notes:** This section assumes that the partition on USB storage uses FAT32 or NTFS filesystem, so we have two sections covering the same topic. Either merge everything here or in the linked section. (Discuss in [Talk:USB storage devices#](https://wiki.archlinux.org/index.php/Talk:USB_storage_devices))
-
 You need to create the directory in which you are going to mount the device:
 
 ```

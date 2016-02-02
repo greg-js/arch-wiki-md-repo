@@ -60,14 +60,6 @@ This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMw
 *   `vmxnet3` - For VMware's vmxnet3 virtual ethernet NIC.
 *   a fuse-based hgfs implementation has been added to `open-vm-tools` 10.0+ and is supported from kernel version 4.0+.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** The `vsock` and `vmw_vsock_vmci_transport` drivers need a better description: When are they needed?]. (Discuss in [Talk:VMware/Installing Arch as a guest#](https://wiki.archlinux.org/index.php/Talk:VMware/Installing_Arch_as_a_guest))
-
 These drivers are only needed if you are running Arch Linux on a hypervisor like [VMware vSphere Hypervisor](http://www.vmware.com/products/vsphere-hypervisor)
 
 *   `vsock` - The Virtual Socket Protocol. It is similar to the TCP/IP socket protocol, allowing communication between Virtual Machines and hypervisor or host.
@@ -478,14 +470,6 @@ See [NTP](/index.php/NTP "NTP").
 
 ### Performance Tips
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [VMware](/index.php/VMware "VMware").**
-
-**Notes:** Applies to all sort of VMs, particularly the last section (Discuss in [Talk:VMware/Installing Arch as a guest#](https://wiki.archlinux.org/index.php/Talk:VMware/Installing_Arch_as_a_guest))
-
 You can try the followings tips to improve the performance of your virtual machine.
 
 #### Paravirtual SCSI adapter
@@ -661,14 +645,6 @@ Do not forget to run:
 Workstation 11 has a bug where vmware-hostd crashes if an Arch guest is running as a shared VM and vmtoolsd is running in the guest. A patch to open-vm-tools to work around the bug is [here](https://github.com/vmware/open-vm-tools/issues/31).
 
 ### Shared folder not mounted after system upgrade
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Broken english (Discuss in [Talk:VMware/Installing Arch as a guest#](https://wiki.archlinux.org/index.php/Talk:VMware/Installing_Arch_as_a_guest))
 
 This is probably only happens to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the vmhgfs module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> which belongs to AUR repositiory, therefore would not get's updated automatically by the `pacman -Syu` command. Always update the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> manually before the system upgrade.
 

@@ -1,13 +1,5 @@
 # InspIRCd
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** AUR package no longer available. Still references pre-systemd procedures. (Discuss in [Talk:InspIRCd#](https://wiki.archlinux.org/index.php/Talk:InspIRCd))
-
 **InspIRCd** (Inspire IRC daemon) is a modular and lightweight IRC daemon written in C++. As it is one of the few IRCd projects written from scratch, it avoids a number of design flaws and speed issues that plague other more established IRCd projects with the same or less features, such as UnrealIRCd 3\. It's the IRCd used by the [Chatspike IRC network](http://www.chatspike.net/).
 
 ## Contents

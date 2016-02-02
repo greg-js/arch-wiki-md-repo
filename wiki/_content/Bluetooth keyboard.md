@@ -227,14 +227,6 @@ ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 
 ## Troubleshooting
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TBD (Discuss in [Talk:Bluetooth keyboard#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_keyboard))
-
 *   What if the BT controller does not show up in `lsusb` ?
 *   What if the BT controller is not visible in `bluetoothctl` ?
 *   My BT keyboard still does not work. What to do?

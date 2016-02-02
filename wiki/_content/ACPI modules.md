@@ -7,7 +7,7 @@ Related articles
 
 From [ACPI site](http://www.acpi.info/):
 
-NaN
+	_ACPI (Advanced Configuration and Power Interface) is an open industry specification co-developed by Hewlett-Packard, Intel, Microsoft, Phoenix, and Toshiba._
 
 ACPI modules are kernel modules for different ACPI parts. They enable special ACPI functions or add information to `/proc` or `/sys`. These information can be parsed by [acpid](/index.php/Acpid "Acpid") for events or other monitoring applications.
 

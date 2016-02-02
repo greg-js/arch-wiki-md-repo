@@ -4,14 +4,6 @@ Related articles
 
 *   [Audiobook](/index.php/Audiobook "Audiobook")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Numerous style issues, see [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:IPod#](https://wiki.archlinux.org/index.php/Talk:IPod))
-
 The purpose of this article is to demonstrate the use of iDevices under Arch Linux.
 
 ## Contents

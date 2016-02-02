@@ -380,7 +380,7 @@ This will tell dwm to start spotify as a floating window associated with the tag
 
 ### Broken search, browsing or radio
 
-NaN
+	Spotify [bug report](http://community.spotify.com/t5/Help-Desktop-Linux-Mac-and/Bug-Desktop-Linux-0-9-0-133-gd18ed589-Having-mixed-locale-breaks/td-p/418270) concerning non-english locales
 
 If various tabs like browsing only show a blank screen, the search field doesn't seem to do anything or the radio page is broken (stuck when starting and unsresponsive to input) you might be using a custom locale.
 

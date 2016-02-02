@@ -56,7 +56,11 @@ If `/query` happens to not work in your client you can try using either `/quote 
 
 *   **Follow the guidelines**
 
-NaN
+	[Freenode network policy](http://freenode.net/policy.shtml)
+
+	[Freenode channel guidelines](http://freenode.net/channel_guidelines.shtml)
+
+	[#archlinux channel guidelines](#.23archlinux_guidelines)
 
 *   **Client settings and bots**
     *   If you want to bring a bot into the channel, then ask an operator _before_ you do so.
@@ -110,7 +114,11 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 
 *   **Follow the guidelines**
 
-NaN
+	[Freenode network policy](http://freenode.net/policy.shtml)
+
+	[Freenode channel guidelines](http://freenode.net/channel_guidelines.shtml)
+
+	[#archlinux channel guidelines](#.23archlinux_guidelines)
 
 *   Ops can kick people entirely at their own discretion, do not be a moron. If you think an op acted unfairly, bring it up.
 
@@ -122,6 +130,76 @@ Arch operators are ops in both channels, see [#archlinux operators](#.23archlinu
 
 ### Abbreviations and jargon
 
-NaN
+	RTFM 
+
+	Read The Fine Manual
+
+	RTFW 
+
+	Read The Fine Wiki
+
+	RTFB 
+
+	Read The Fine BBS
+
+	RTFN 
+
+	Read The Fine News
+
+	[{core,extra,testing, ...}] 
+
+	Usually denotes a [repository](/index.php/Repository "Repository"). Example: "nvidia drivers are in [extra]"
+
+	AUR 
+
+	Arch User Community Repository
+
+	ABS 
+
+	Arch Build System
+
+	ltt 
+
+	less than three -> '<3' -> 'love'
+
+	TU 
+
+	Trusted User
+
+	BBS 
+
+	Bulletin Board System -> 'forum'
+
+	AFAIK 
+
+	As Far As I Know
+
+	IIRC 
+
+	If I Recall Correctly
+
+	IMO 
+
+	In My Opinion
+
+	FTW 
+
+	For The Win
+
+	FTL 
+
+	For The Loss
+
+	nvm 
+
+	never mind / forget it
+
+	ymmv 
+
+	your mileage may vary
+
+	+b / B& 
+
+	Ban / Banned
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=415935](https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=415935)"

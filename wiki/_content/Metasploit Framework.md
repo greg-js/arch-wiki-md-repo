@@ -1,16 +1,8 @@
 # Metasploit Framework
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Meterpreter; More/better SQL search examples; More commands; Module development; (Discuss in [Talk:Metasploit Framework#](https://wiki.archlinux.org/index.php/Talk:Metasploit_Framework))
-
 From [the official site](http://www.offensive-security.com/metasploit-unleashed/Introduction):
 
-NaN
+	_Consider the MSF to be one of the single most useful auditing tools freely available to security professionals today. From a wide array of commercial grade exploits and an extensive exploit development environment, all the way to network information gathering tools and web vulnerability plugins. The Metasploit Framework provides a truly impressive work environment. The MSF is far more than just a collection of exploits, it's an infrastructure that you can build upon and utilize for your custom needs. This allows you to concentrate on your unique environment, and not have to reinvent the wheel._
 
 Currently, Metasploit requires to setup and configure Postgresql on target system to work. This wiki will show how to get metasploit working with a Postgresql database.
 

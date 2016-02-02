@@ -1,13 +1,5 @@
 # Linuxsampler
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Linuxsampler#](https://wiki.archlinux.org/index.php/Talk:Linuxsampler))
-
 ## Contents
 
 *   [1 Overview](#Overview)
@@ -98,21 +90,37 @@ Here, I will use [jack-keyboard](https://aur.archlinux.org/packages/jack-keyboar
 
 *   Let's define some audio outputs in qsampler :
 
-NaN
+	Go to menu -> View -> Devices (or `F11` shortcut or the green pci card icon in the toolbar).
+
+	On the left panel, click on "Audio Devices".Now we can see the audio drivers available in the right panel.
+
+	Choose "Jack" in the Driver menu.The default config should give you a pair of audio outputs at a sample rate of 44100.
+
+	Click on the Create button down the window.
 
 **Note :** In some systems, qsampler crashes if this window is closed or even backgrounded while the Bottom-Right panel is still in view.Easy workaround : click on "Audio devices" or "Midi Devices" on the left panel before leaving or unfocusing the window.
 
 *   If you want LS to auto-connect to jack system outputs when you launch your template :
 
-NaN
+	On the left panel, click on "Audio Jack Device 0" , then on right panel select "Audio Jack 0" from the "Channel" drop-down list.
+
+	Choose an output for the JACK_BINDINGS parameter, like "system:playback 1".
+
+	Select "Audio Jack 1" from the "Channel" drop-down list and assign JACK_BINDINGS parameter value, like system:playback 2"
 
 *   Now let's create a midi input also :
 
-NaN
+	On the left panel, click on "Midi Devices".
+
+	On the right panel, choose "jack" (jack-midi) in the Driver menu.
+
+	Hit the create button.
 
 *   If you want LS to auto-connect to jack-keyboard midi output when you launch your template :
 
-NaN
+	Select the "Midi jack device" port 0" on the left panel.
+
+	On the right panel, for the "JACK_BINDINGS" parameter value, choose "jack-keyboard:midi out".
 
 Note that if jack-midi is not enabled in Qjackctl, you won't find the midi client in the drop-down list.You can check in Qjackctl setup : "Midi driver" should be set to "seq".A restart of jack and qsampler is needed.
 

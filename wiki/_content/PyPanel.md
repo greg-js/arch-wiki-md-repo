@@ -2,11 +2,19 @@
 
 From [PyPanel sourceforge page](http://pypanel.sourceforge.net/):
 
-NaN
+	PyPanel is a lightweight panel/taskbar written in Python and C for X11 window managers. It can be easily customized to match any desktop theme or taste. PyPanel works with EWMH compliant WMs (Openbox, PekWM, FVWM, etc.) and is distributed under the GNU General Public License v2\.
 
-NaN
+	Some of the customizable features include:
 
-NaN
+*   Transparency with shading/tinting
+*   Panel dimensions, location and layout
+*   Font type and colors with Xft and shadow support
+*   Button events/actions
+*   Clock and workspace name display
+*   System Tray (Notification Area)
+*   Autohiding
+*   Application Launcher
+*   Custom Application Icons
 
 ## Contents
 

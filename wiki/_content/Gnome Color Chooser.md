@@ -1,13 +1,5 @@
 # Gnome Color Chooser
 
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-**This article is being considered for redirection to [Gtk](/index.php/Gtk "Gtk").**
-
-**Notes:** Most text are general gtk configure. Redirect to [Gtk](/index.php/Gtk "Gtk")? (Discuss in [Talk:Gnome Color Chooser#](https://wiki.archlinux.org/index.php/Talk:Gnome_Color_Chooser))
-
 GNOME's color schemes are editable easily via the ~/.gtkrc-2.0 file, but the GNOME color chooser makes this process easier and graphical.
 
 ## Contents

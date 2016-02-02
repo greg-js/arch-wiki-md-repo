@@ -167,14 +167,6 @@ If you boot your laptop right after Windows to Linux, sound might only work thro
 
 ##### Bug
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The bug might not be a bug for everyone (means just me). Can anyone let me know in the talk page whether they have it as well or not? (Discuss in [Talk:ASUS N550JV#](https://wiki.archlinux.org/index.php/Talk:ASUS_N550JV))
-
 The internal speakers seems not to play any sound until volume is being increased significantly. This also occurs on Windows operation system as well as on Linux.
 
 #### Sound pops twice during shutdown and sleep

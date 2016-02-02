@@ -73,14 +73,6 @@ You could also use localhost instead of 127.0.0.1, but this causes PowerDNS to u
 
 ### SQLite backend
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO (Discuss in [Talk:PowerDNS#](https://wiki.archlinux.org/index.php/Talk:PowerDNS))
-
 ## Startup
 
 [Start/enable](/index.php/Start/enable "Start/enable") the `powerdns` service.

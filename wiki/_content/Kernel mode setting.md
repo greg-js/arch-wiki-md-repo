@@ -6,14 +6,6 @@ Related articles
 *   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
 *   [Nouveau](/index.php/Nouveau "Nouveau")
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** KMS and rootless X (1.16), see [Talk:Kernel mode setting](/index.php/Talk:Kernel_mode_setting "Talk:Kernel mode setting") and [Xorg#Rootless Xorg (v1.16)](/index.php/Xorg#Rootless_Xorg_.28v1.16.29 "Xorg"). (Discuss in [Talk:Kernel mode setting#](https://wiki.archlinux.org/index.php/Talk:Kernel_mode_setting))
-
 Kernel [Mode Setting](https://en.wikipedia.org/wiki/Mode-setting "wikipedia:Mode-setting") (KMS) is a method for setting display resolution and depth in the kernel space rather than user space.
 
 The Linux kernel's implementation of KMS enables native resolution in the framebuffer and allows for instant console (tty) switching. KMS also enables newer technologies (such as DRI2) which will help reduce artifacts and increase 3D performance, even kernel space power-saving.
@@ -49,14 +41,6 @@ At first, note that for _any_ method you use, you should _always_ disable:
 ### Late KMS start
 
 [Intel](/index.php/Intel "Intel"), [Nouveau](/index.php/Nouveau "Nouveau") and [ATI](/index.php/ATI "ATI") drivers already enable KMS automatically for all chipsets, so you need not install it manually.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Contradicts the note at the top. (Discuss in [Talk:Kernel mode setting#](https://wiki.archlinux.org/index.php/Talk:Kernel_mode_setting))
 
 The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") and [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") drivers do not support KMS. In order to use KMS you should replace them with open source drivers.
 
@@ -94,14 +78,6 @@ If you see an error code of `0x00000010 (2)` while booting up, (you will get abo
  `/etc/modprobe.d/modprobe.conf`  `options drm_kms_helper poll=0` 
 
 ## Forcing modes and EDID
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This section is a WIP. Improvements and corrections are more than welcome (Discuss in [Talk:Kernel mode setting#](https://wiki.archlinux.org/index.php/Talk:Kernel_mode_setting))
 
 In case that your monitor/TV is not sending the appropriate [EDID](https://en.wikipedia.org/wiki/EDID "wikipedia:EDID") or similar problems, you will notice that the native resolution is not automatically configured or no display at all. The kernel has a provision to load the binary EDID data, and provides as well data to set four of the most typical resolutions.
 

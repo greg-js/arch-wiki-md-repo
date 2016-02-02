@@ -75,7 +75,13 @@ If a bug/feature is not under Arch's responsibility, report it upstream. See als
 
 ### Bug or feature?
 
-NaN
+	bug
+
+	something that should work but does not work, contrary to the developer's intentions.
+
+	feature
+
+	something which software does or would do if somebody coded it.
 
 #### Reasons for not being a bug
 

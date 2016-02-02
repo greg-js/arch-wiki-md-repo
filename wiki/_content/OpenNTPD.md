@@ -1,13 +1,5 @@
 # OpenNTPD
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.d references, bad style/format. (Discuss in [Talk:OpenNTPD#](https://wiki.archlinux.org/index.php/Talk:OpenNTPD))
-
 Related articles
 
 *   [Time](/index.php/Time "Time")
@@ -171,14 +163,6 @@ This is also how you would manually sync your system.
 ### Increasing time shift
 
 Starting _openntpd_ in the background could lead to synchronization errors between the actual time and the time stored on your computer. If you recognize an increasing time difference between your desktop clock and the actual time, try to start the _openntpd_ daemon normal and not in the background.
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.d references. Needs update to [Systemd](/index.php/Systemd "Systemd"). (Discuss in [Talk:OpenNTPD#](https://wiki.archlinux.org/index.php/Talk:OpenNTPD))
 
 ### Initialization Failure
 

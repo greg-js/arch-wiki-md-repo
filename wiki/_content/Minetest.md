@@ -1,13 +1,5 @@
 # Minetest
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Does not have sufficient information on the topic. (Discuss in [Talk:Minetest#](https://wiki.archlinux.org/index.php/Talk:Minetest))
-
 **Minetest** is a free and open source voxel-based game engine, which uses the [Irrlicht](https://en.wikipedia.org/wiki/Irrlicht_Engine "wikipedia:Irrlicht Engine") rendering engine. The game engine comes with a default game, named "minetest-game", but also allows for the use of other games referred to as sub-games. Minetest was designed around some of the concepts used in [Minecraft](/index.php/Minecraft "Minecraft") and InfiniMiner. It borrows many concepts from Minecraft, such as "crafting recipies" and the overall mechanics of the game. However, it differs from both games in that it is an engine rather than a standalone game.
 
 ## Installation

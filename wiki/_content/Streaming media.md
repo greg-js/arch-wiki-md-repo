@@ -1,13 +1,5 @@
 # Streaming media
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of Applications](/index.php/List_of_Applications "List of Applications").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Streaming media#](https://wiki.archlinux.org/index.php/Talk:Streaming_media))
-
 Businesses are storing their data on the network for ages now, but the past few years, there has been a trend in home networking to put all content on a central server and distributing it to the home computers and dedicated appliances on the network. This page offers an overview of the possible packages to stream digital media (video, audio and images, and in several cases also online content) from your server to your clients.
 
 ## Contents

@@ -1,21 +1,5 @@
 # Postgrey
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Postfix](/index.php/Postfix "Postfix").**
-
-**Notes:** Short enough, and [Postfix](/index.php/Postfix "Postfix") is already listing other addons. (Discuss in [Talk:Postgrey#](https://wiki.archlinux.org/index.php/Talk:Postgrey))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Postgrey#](https://wiki.archlinux.org/index.php/Talk:Postgrey))
-
 Related articles
 
 *   [Postfix](/index.php/Postfix "Postfix")

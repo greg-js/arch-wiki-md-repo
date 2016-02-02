@@ -68,14 +68,6 @@ cron registers the output from _stdout_ and _stderr_ and attempts to send it as 
 
 #### Example with msmtp
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** How exactly do I _make sure it detects the new `sendmail` command_? (Discuss in [Talk:Cron#](https://wiki.archlinux.org/index.php/Talk:Cron))
-
 Install [msmtp-mta](https://www.archlinux.org/packages/?name=msmtp-mta) which creates a symbolic link from `/usr/bin/sendmail` to `/usr/bin/msmtp`. Restart `cronie` to make sure it detects the new `sendmail` command. You must then provide a way for `msmtp` to convert your username into an email address.
 
 Then either add `MAILTO` line to your crontab, like so:
@@ -217,7 +209,13 @@ smtpmsg='421 … Error: timeout exceeded' errormsg='the server did not accept th
 
 To solve this problem you can use the command chronic or sponge from [moreutils](https://www.archlinux.org/packages/?name=moreutils). From their respective man page:
 
-NaN
+	chronic
+
+	chronic runs a command, and arranges for its standard out and standard error to only be displayed if the command fails (exits nonzero or crashes). If the command succeeds, any extraneous output will be hidden.
+
+	sponge
+
+	sponge reads standard input and writes it out to the specified file. Unlike a shell redirect, sponge soaks up all its input before opening the output file… If no output file is specified, sponge outputs to stdout.
 
 Even if it's not said chronic buffer the command output before opening its standard output (like sponge does).
 

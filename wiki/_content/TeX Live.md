@@ -100,35 +100,27 @@ You should get a DVI or a PDF file accordingly.
 
 You will probably want a [TeX editor](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents").
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Wikibooks:LaTeX/Installation#Online_solutions](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions "wikibooks:LaTeX/Installation").**
-
-**Notes:** Inappropriate here (Discuss in [Talk:TeX Live#LaTeX merge](https://wiki.archlinux.org/index.php/Talk:TeX_Live#LaTeX_merge))
-
 There are also a few online solutions that let you create TeX-based documents without TeX Live:
 
 *   **Authorea** — Online collaborative editor for scientific, academic, and technical documents.
 
-NaN
+	[https://www.authorea.com/](https://www.authorea.com/) ||
 
 *   **ShareLaTeX** — An open source online LaTeX editor. You can either run your own local version where you can host, edit, collaborate in real-time, and compile your LaTeX documents, or simply use the version hosted on the official website.
 
-NaN
+	[https://www.sharelatex.com/](https://www.sharelatex.com/) ||
 
 *   **Overleaf** — (Previously writeLaTeX) Online collaborative LaTeX editor with integrated real-time preview.
 
-NaN
+	[https://www.overleaf.com/](https://www.overleaf.com/) ||
 
 *   **cloudTeX** — Social TeX in the cloud.
 
-NaN
+	[https://cloud-tex.com/](https://cloud-tex.com/) ||
 
 *   **Papeeria** — Online LaTeX editor.
 
-NaN
+	[http://papeeria.com/](http://papeeria.com/) ||
 
 Find more on the [LaTeX wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Online_solutions).
 

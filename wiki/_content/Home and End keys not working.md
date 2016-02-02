@@ -46,14 +46,6 @@ set -g default-terminal screen-256color
 
 ```
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** More terminal configurations. (Discuss in [Talk:Home and End keys not working#](https://wiki.archlinux.org/index.php/Talk:Home_and_End_keys_not_working))
-
 ## Readline
 
 Many command line applications use the [Readline](/index.php/Readline "Readline") library to read input. So properly configuring Readline can fix Home and End in many cases. Readline maintains mappings for more obscure keys in `/etc/inputrc` and `~/.inputrc` for global and per-user mappings, respectively.

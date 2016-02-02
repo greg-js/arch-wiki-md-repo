@@ -1,13 +1,5 @@
 # Logitech MX Revolution
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This is written as a personal howto referring to what "I" did and so on. (Discuss in [Talk:Logitech MX Revolution#](https://wiki.archlinux.org/index.php/Talk:Logitech_MX_Revolution))
-
 Xorg is able to auto-detect this mouse just fine. However, it has a 17 key mapping:
 
 ```

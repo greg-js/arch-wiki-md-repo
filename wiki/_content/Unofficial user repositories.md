@@ -1,13 +1,5 @@
 # Unofficial user repositories
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Please fill in the missing information about repository maintainers. (Discuss in [Talk:Unofficial user repositories#](https://wiki.archlinux.org/index.php/Talk:Unofficial_user_repositories))
-
 Related articles
 
 *   [pacman-key](/index.php/Pacman-key "Pacman-key")
@@ -1103,14 +1095,6 @@ Server = https://repo.holocm.org/archlinux/x86_64
 ```
 
 #### Linux-pf
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Signed repositories should not use `SigLevel = Optional` (by definition). (Discuss in [Talk:Unofficial user repositories#](https://wiki.archlinux.org/index.php/Talk:Unofficial_user_repositories))
 
 *   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (page does not exist)")
 *   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf, just like [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") but additionally optimized for intel CPUs Sandy Bridge, Ivy Bridge, Haswell and generic of course, and some extra packages

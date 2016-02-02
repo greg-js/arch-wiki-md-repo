@@ -1,13 +1,5 @@
 # Extreme Multihead
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Multihead](/index.php/Multihead "Multihead").**
-
-**Notes:** only a specific case of Multihead. (Discuss in [Talk:Extreme_Multihead#Multihead_Consolidation](https://wiki.archlinux.org/index.php/Talk:Extreme_Multihead#Multihead_Consolidation))
-
 ## Contents
 
 *   [1 Background](#Background)

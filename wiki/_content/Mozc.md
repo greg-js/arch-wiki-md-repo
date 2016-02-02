@@ -2,7 +2,7 @@
 
 From the project [home page](http://code.google.com/p/mozc/):
 
-NaN
+	_Mozc is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux. This open-source project originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/). Detailed differences between Mozc and Google Japanese Input are described in [About Mozc](http://code.google.com/p/mozc/wiki/AboutMozc)_ (In short, Mozc does not have equivalent conversion quality to Google Japanese Input).
 
 ## Contents
 

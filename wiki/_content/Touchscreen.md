@@ -1,13 +1,5 @@
 # Touchscreen
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Touchscreen#](https://wiki.archlinux.org/index.php/Talk:Touchscreen))
-
 Related articles
 
 *   [Calibrating Touchscreen](/index.php/Calibrating_Touchscreen "Calibrating Touchscreen")

@@ -53,14 +53,6 @@ As of version **1.3.6-2**, SLiM can automatically detect installed desktop envir
 
 ### Environments
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Contradicts [#Configuration](#Configuration), are these instructions for earlier versions? (Discuss in [Talk:SLiM#](https://wiki.archlinux.org/index.php/Talk:SLiM))
-
 **Note:** Available sessions for selection can be cycled through by pressing the **F1** key.
 
 **Tip:** Users that have installed a previous version of SLiM can replace `session` with a hashed `sessiondir /usr/share/xsessions/`

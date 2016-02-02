@@ -8,9 +8,9 @@ Related articles
 
 From the [libinput](http://wayland.freedesktop.org/libinput/doc/latest/index.html) project:
 
-NaN
+	libinput is a library that handles input devices for display servers and other applications that need to directly deal with input devices.
 
-NaN
+	libinput originates from weston, the [Wayland](/index.php/Wayland "Wayland") reference compositor.
 
 The driver supports most regular [Xorg#Input devices](/index.php/Xorg#Input_devices "Xorg"). Particularly notable is the project's goal to provide advanced support for touch (multitouch and gesture) features of touchpads and touchscreens. See the [product documentation](http://wayland.freedesktop.org/libinput/doc/latest/pages.html) for more information.
 

@@ -4,14 +4,6 @@ Related articles
 
 *   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.conf, kernel 2.6 (Discuss in [Talk:Lenovo ThinkPad X120e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X120e))
-
 Installation instructions for the Lenovo ThinkPad X120e. Should work for X121e too.
 
 ## Contents
@@ -77,14 +69,6 @@ See [TrackPoint](/index.php/TrackPoint "TrackPoint").
 If you try to use your x120e lying down you will notice its very easy to hit the TrackPad buttons and invert the functionality of the other inputs(fun). See [Touchpad Synaptics#Synclient](/index.php/Touchpad_Synaptics#Synclient "Touchpad Synaptics") to disable the TrackPad.
 
 ### TrackPoint speed and sensitivity
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [TrackPoint](/index.php/TrackPoint "TrackPoint").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad X120e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X120e))
 
 You can up your trackpoint speed with next command:
 

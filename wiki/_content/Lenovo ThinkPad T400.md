@@ -1,13 +1,5 @@
 # Lenovo ThinkPad T400
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Numerous spelling, grammar, and style issues. (Discuss in [Talk:Lenovo ThinkPad T400#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T400))
-
 Related articles
 
 *   [Lenovo ThinkPad T400s](/index.php/Lenovo_ThinkPad_T400s "Lenovo ThinkPad T400s")
@@ -224,14 +216,6 @@ Here's the modules I have loaded that are relevant to sound :
 Additionally, there is a patch for the audio driver for conexant's chipsets provided by [http://www.linuxant.com](http://www.linuxant.com) which can be downloaded at [http://www.linuxant.com/alsa-driver/](http://www.linuxant.com/alsa-driver/).
 
 ## Multimedia Keys
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Xmodmap](/index.php/Xmodmap "Xmodmap").**
-
-**Notes:** everything is covered in the main article, no need to duplicate (Discuss in [Talk:Lenovo ThinkPad T400#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T400))
 
 The screen brightness controls and the flashlight work without any tweaking. The other keys can be mapped using [xev](/index.php/Extra_keyboard_keys#In_Xorg "Extra keyboard keys") and xbindkeys. By following [this guide](http://wiki.linuxquestions.org/wiki/Configuring_keyboards#Enabling_Keyboard_Multimedia_Keys) you should be able to get everything working, but here's summary :
 

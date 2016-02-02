@@ -1,13 +1,5 @@
 # Dell Vostro 1320
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dell Vostro 1320#](https://wiki.archlinux.org/index.php/Talk:Dell_Vostro_1320))
-
 This page is about setting up Arch Linux on the Dell Vostro 1320 laptop, which has replaced the former [Dell Vostro 1310](/index.php/Dell_Vostro_1310 "Dell Vostro 1310"). Basically it runs just fine, although there are some things you should know. Furthermore is is advisable to read the article about [laptops](/index.php/Laptop "Laptop") to get a idea about the topic in general.
 
 ## Contents

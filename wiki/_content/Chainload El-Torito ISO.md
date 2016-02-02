@@ -1,13 +1,5 @@
 # Chainload El-Torito ISO
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Chainload El-Torito ISO#](https://wiki.archlinux.org/index.php/Talk:Chainload_El-Torito_ISO))
-
 Work in progress. This is what I've researched so far, I'll add more when I find more.
 
 Aims:

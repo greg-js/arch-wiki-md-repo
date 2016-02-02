@@ -49,19 +49,19 @@ Some other tools of interest:
 
 *   **tpmmanager** — A Qt front-end to tpm-tools
 
-NaN
+	[http://sourceforge.net/projects/tpmmanager](http://sourceforge.net/projects/tpmmanager) || [tpmmanager](https://aur.archlinux.org/packages/tpmmanager/)<sup><small>AUR</small></sup>
 
 *   **openssl_tpm_engine** — OpenSSL engine which interfaces with the TSS API
 
-NaN
+	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [openssl_tpm_engine](https://aur.archlinux.org/packages/openssl_tpm_engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openssl_tpm_engine)]</sup>
 
 *   **tpm_keyring2** — A key manager for TPM based eCryptfs keys
 
-NaN
+	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [tpm_keyring2](https://aur.archlinux.org/packages/tpm_keyring2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpm_keyring2)]</sup>
 
 *   **opencryptoki** — A PKCS#11 implementation for Linux. It includes drivers and libraries to enable IBM cryptographic hardware as well as a software token for testing.
 
-NaN
+	[http://sourceforge.net/projects/opencryptoki](http://sourceforge.net/projects/opencryptoki) || [opencryptoki](https://aur.archlinux.org/packages/opencryptoki/)<sup><small>AUR</small></sup>
 
 ### Basics
 

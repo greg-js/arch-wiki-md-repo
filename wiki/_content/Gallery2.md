@@ -1,13 +1,5 @@
 # Gallery2
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Gallery2#](https://wiki.archlinux.org/index.php/Talk:Gallery2))
-
 **Tip:** There is currently a [newer version](http://gallery.menalto.com/) of Gallery available.
 
 Gallery2 gives you an intuitive way to blend photo management seamlessly into your own website or simply use your site as a standalone photo gallery.

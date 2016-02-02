@@ -150,14 +150,6 @@ The [hidepid](https://www.archlinux.org/packages/?name=hidepid) package can be i
 
 ## RBAC
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section needs an overhaul, including fixing some inaccuracies. (Discuss in [Talk:Grsecurity#](https://wiki.archlinux.org/index.php/Talk:Grsecurity))
-
 Role Based Access Control
 
 There are two basic types of access control mechanisms used to prevent unauthorized access to files (or information in general): DAC (Discretionary Access Control) and MAC (Mandatory Access Control). By default, Linux uses a DAC mechanism: the creator of the file can define who has access to the file. A MAC system however forces everyone to follow rules set by the administrator.

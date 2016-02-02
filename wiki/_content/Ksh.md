@@ -15,33 +15,33 @@ First, [install](/index.php/Install "Install") an implementation from the [offic
 
 *   **MirBSD™ Korn Shell** — Enhanced version of the public domain ksh.
 
-NaN
+	[https://www.mirbsd.org/mksh.htm](https://www.mirbsd.org/mksh.htm) || [mksh](https://www.archlinux.org/packages/?name=mksh)
 
 More implementations are provided in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"):
 
 *   **loksh** — A Linux port of OpenBSD's ksh
 
-NaN
+	[https://github.com/dimkr/loksh](https://github.com/dimkr/loksh) || [loksh](https://aur.archlinux.org/packages/loksh/)<sup><small>AUR</small></sup>
 
 *   **Public Domain Korn Shell** — Clone of the AT&T Korn shell. At the moment, it has most of the ksh88 features, not much of the ksh93 features, and a number of its own features.
 
-NaN
+	[http://www.cs.mun.ca/~michael/pdksh/](http://www.cs.mun.ca/~michael/pdksh/) || [pdksh](https://aur.archlinux.org/packages/pdksh/)<sup><small>AUR</small></sup>
 
 *   **[AT&T Korn shell](https://en.wikipedia.org/wiki/Korn_shell "wikipedia:Korn shell")** — Official AT&T version.
 
-NaN
+	[http://www.kornshell.com/](http://www.kornshell.com/) || [ksh](https://aur.archlinux.org/packages/ksh/)<sup><small>AUR</small></sup>
 
 *   **OpenBSDs Korn Shell** — Porting of the OpenBSD version of ksh to GNU/Linux.
 
-NaN
+	[http://www.connochaetos.org/oksh/](http://www.connochaetos.org/oksh/) || [oksh](https://aur.archlinux.org/packages/oksh/)<sup><small>AUR</small></sup>
 
 *   **obase** — OpenBSD userland ported to Linux, statically linked.
 
-NaN
+	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-git](https://aur.archlinux.org/packages/obase-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/obase-git)]</sup>
 
 *   **obase musl** — OpenBSD userland ported to Linux, statically linked to musl libc.
 
-NaN
+	[https://github.com/chneukirchen/obase](https://github.com/chneukirchen/obase) || [obase-musl-git](https://aur.archlinux.org/packages/obase-musl-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/obase-musl-git)]</sup>
 
 ## Making m/ksh your default login shell
 

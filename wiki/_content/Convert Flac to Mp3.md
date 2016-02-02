@@ -132,15 +132,15 @@ For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the 
 
 *   **SoundConverter** — A dedicated audio transcoding utility built for the [GNOME](/index.php/GNOME "GNOME") desktop and relying on GStreamer. It can make use of [GNOME Audio Profiles](http://library.gnome.org/users/gnome-audio-profiles/stable/gnome-audio-profiles-usage.html.en) and features multithreaded conversions. It can also extract the audio from videos.
 
-NaN
+	[http://soundconverter.org/](http://soundconverter.org/) || [soundconverter](https://www.archlinux.org/packages/?name=soundconverter)
 
 *   **soundKonverter** — A Qt graphical frontend to various audio manipulation programs. Features conversion, ripping and other audio manipulation functionalities.
 
-NaN
+	[https://github.com/HessiJames/soundkonverter/wiki](https://github.com/HessiJames/soundkonverter/wiki) || [soundkonverter](https://www.archlinux.org/packages/?name=soundkonverter)
 
 *   **[WinFF](https://en.wikipedia.org/wiki/FFmpeg#Projects_using_FFmpeg "wikipedia:FFmpeg")** — A GUI for the powerful multimedia converter FFmpeg. Features dedicated profiles for audio transcoding.
 
-NaN
+	[http://code.google.com/p/winff/](http://code.google.com/p/winff/) || [winff](https://www.archlinux.org/packages/?name=winff)
 
 ## See also
 

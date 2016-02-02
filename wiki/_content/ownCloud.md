@@ -9,7 +9,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
-NaN
+	_ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)._
 
 The ownCloud installation and configuration mainly depends on what web server and database you decide to run. Currently the wiki discusses [#Apache configuration](#Apache_configuration) and [Nginx configuration](#Nginx).
 
@@ -115,7 +115,7 @@ Additionally enable exif support by installing the [exiv2](https://www.archlinux
 
 From the [official installation manual](https://doc.owncloud.org/server/8.2/admin_manual/installation/installation_wizard.html#setting-strong-directory-permissions):
 
-NaN
+	_For hardened security we recommend setting the permissions on your ownCloud directories as strictly as possible, and for proper server operations. This should be done immediately after the initial installation and before running the setup. Your HTTP user must own the `config/`, `data/` and `apps/` directories so that you can configure ownCloud, create, modify and delete your data files, and install apps via the ownCloud Web interface._
 
  `oc-perms` 
 
@@ -524,7 +524,7 @@ To enable contacts and calendar sync:
     2.  Enable mod_rewrite.so in httpd.conf
     3.  create a new DAVdroid account in the _Account_ settings, and specify your "short" server address and login/password couple, e.g. `https://cloud.example.com` (there is no need for the `/remote.php/{carddav,webdav}` part if you configured your web server with the proper redirections, as illustrated previously in the article; _DAVdroid_ will find itself the right URLs)
 
-NaN
+	For an older version of the app but with still useful info, see [this article](http://www.slsmk.com/sync-android-contacts-calendar-and-files-to-owncloud/).
 
 *   if using an Android version below 4.0 and favouring Free/Libre software solutions, give a try to [aCal](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=com.morphoss.acal) for calendar and contacts sync or CalDAV Sync Adapter ([F-Droid](https://f-droid.org/repository/browse/?fdfilter=caldav&fdid=org.gege.caldavsyncadapter)) for just calendar sync; if you are willing to use non-libre software, then the [recommended solution](http://doc.owncloud.org/server/7.0/user_manual/pim/contacts.html#synchronizing-with-android) is to use [CardDAV-Sync and CalDAV-Sync](http://dmfs.org/).
 
@@ -717,14 +717,6 @@ If everything is working, you should see 'Transactional File Locking Enabled' un
 As mentioned in the [official admin manual](http://doc.owncloud.org/server/6.0/admin_manual/configuration/configuration_apps.html), either you need an apps directory that is writable by the http user, or you need to set `appstoreenabled` to `false`.
 
 _Also_, not mentioned there, the directory needs to be in the `open_basedir` line in `/etc/php/php.ini`.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Does not seem to work with 8.0.2 (Discuss in [Talk:OwnCloud#](https://wiki.archlinux.org/index.php/Talk:OwnCloud))
 
 One clean method is to have the package-installed directory at `/usr/share/webapps/owncloud/apps` stay owned by root, and have the user-installed apps go into e.g. `/var/www/owncloud/apps`, which is owned by http. Then you can set `appstoreenabled` to `true` and package upgrades of apps should work fine as well. Relevant lines from `/etc/webapps/owncloud/config/config.php`:
 

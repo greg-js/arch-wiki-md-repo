@@ -24,7 +24,9 @@ Another work in Progress - by PhrakTure I am currently running Arch on this lapt
 
 *   Video mode detected wrong
 
-NaN
+	Add the following to the device (nvidia driver) section in xorg.conf
+
+	 `Option "IgnoreEDID" "True"` 
 
 *   And the following line to the "Monitor" section
      `Modeline "1440x900"  106.47  1440 1520 1672 1904  900 901 904 932  -hsync +vsync` 

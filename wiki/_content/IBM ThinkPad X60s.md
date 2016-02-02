@@ -23,11 +23,11 @@ First note that this laptop is available with two different processors.
 
 *   Core Duo
 
-NaN
+	This processor requires the i686 (32-bit) version of Arch Linux. The two RAM slots physically support 2x2GB=4GB RAM. However with a 32-bit kernel only up to ~3GB will be accessible. Unfortunately due to a chipset limitation, even compiling a kernel with the Physical Address Extension (PAE) option (CONFIG_HIGHMEM64G) [[1]](https://aur.archlinux.org/packages.php?ID=24469)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-30]</sup> will not allow access to more than 3GB.
 
 *   Core **2** Duo
 
-NaN
+	This processor can run the x86_64 (64-bit) version of Arch Linux, and this is recommended in this case. The full 4GB RAM will be available with the standard Arch x86_64 kernel.
 
 A basic Arch Linux installation will do just fine for almost everything. Select the i686 or x86_64 version as indicated above. Install from a USB CD drive or a USB flash drive following the instructions in the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 

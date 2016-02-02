@@ -7,7 +7,7 @@ Related articles
 
 From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
-NaN
+	_The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices._
 
 The idea is to use the built-in fingerprint reader in some notebooks for login using PAM. This article will also explain how to use regular password for backup login method (solely fingerprint scanner is not recommended due to numerous reasons).
 

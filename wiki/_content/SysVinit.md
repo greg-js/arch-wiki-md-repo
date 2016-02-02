@@ -4,22 +4,6 @@ Related articles
 
 *   [init](/index.php/Init "Init")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Blog-like writing, duplicate information (Discuss in [Talk:SysVinit#](https://wiki.archlinux.org/index.php/Talk:SysVinit))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Needs to be checked against [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)<sup><small>AUR</small></sup> (Discuss in [Talk:SysVinit#](https://wiki.archlinux.org/index.php/Talk:SysVinit))
-
 **Warning:** SysVinit is not officially supported in Arch Linux [[1]](https://www.archlinux.org/news/end-of-initscripts-support/).
 
 On systems based on SysVinit, **init** is the first process that is executed once the Linux kernel loads. The default init program used by the kernel is `/sbin/init` provided by [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (by default on new installs, see [systemd](/index.php/Systemd "Systemd")) or [sysvinit](https://aur.archlinux.org/packages/sysvinit/)<sup><small>AUR</small></sup>. The word **init** will always refer to sysvinit in this article.
@@ -293,14 +277,6 @@ esac
 ```
 
 ## Migration to systemd
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Init](/index.php/Init "Init").**
-
-**Notes:** 2012 installation media are of no relevance, merge remainders to [Init](/index.php/Init "Init") (Discuss in [Talk:SysVinit#](https://wiki.archlinux.org/index.php/Talk:SysVinit))
 
 **Note:**
 

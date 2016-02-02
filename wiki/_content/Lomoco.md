@@ -1,13 +1,5 @@
 # Lomoco
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Largely duplicates `man lomoco` (Discuss in [Talk:Lomoco#](https://wiki.archlinux.org/index.php/Talk:Lomoco))
-
 Lomoco is a small program for some Logitech mice, for configuring resolution and other settings.
 
 **Note:** Not all Logitech mice need lomoco, some of them already have the right settings out-of-the-box and other are still not supported!

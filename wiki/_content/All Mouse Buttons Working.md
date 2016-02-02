@@ -1,21 +1,5 @@
 # All Mouse Buttons Working
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.conf references (Discuss in [Talk:All Mouse Buttons Working#](https://wiki.archlinux.org/index.php/Talk:All_Mouse_Buttons_Working))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** style still to fix, unclear sections (Discuss in [Talk:All Mouse Buttons Working#](https://wiki.archlinux.org/index.php/Talk:All_Mouse_Buttons_Working))
-
 This article is for users that have a mouse with more than 7 mouse buttons and want to be able to use all of them. Logitech makes several of these (if you have a [Logitech Marble® Mouse](http://www.logitech.com/index.cfm/mice_pointers/trackballs/devices/156&cl=us,en) you can also look at [this page](/index.php/Logitech_Marble_Mouse "Logitech Marble Mouse")), and Microsoft makes a few as well.
 
 ## Contents
@@ -174,14 +158,6 @@ ls /dev/input/by-id/
 ```
 
 *   Edit by: Diamir
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The udev rule will not work, the `SYSFS=` and `BUS=` keys have been removed [[1]](https://mailman.archlinux.org/pipermail/arch-dev-public/2011-October/021795.html). (Discuss in [Talk:All Mouse Buttons Working#](https://wiki.archlinux.org/index.php/Talk:All_Mouse_Buttons_Working))
 
 With a Desktop type keyboard-mouse, this does not work because there is only one USB attachment and `/dev/input/by-id` contains only the keyboard. In this case, we can create a udev rule to get a consistent link. The following rules create the link `/dev/input/usbmouse` which points on the correct event entry:
 
@@ -760,14 +736,6 @@ EndSection
 These mouse is designed for Windows 8, and has a non conventional behavior: the mouse appears as a pair of mouse and keyboard and some buttons don't emit the standard mouse button event, but instead a combination of keyboard and mouse button. This prevent a "confortable" use of this mouse under Linux.
 
 This driver allow to use this mouse like an ordinary mouse. It's recommend use it with xbindkeys to mapping buttons.
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** should be packaged in [AUR](/index.php/AUR "AUR") (Discuss in [Talk:All Mouse Buttons Working#](https://wiki.archlinux.org/index.php/Talk:All_Mouse_Buttons_Working))
 
 [kernel module for M560](https://github.com/kreijack/logitech-m560)(already merged into kernel v4.2)
 

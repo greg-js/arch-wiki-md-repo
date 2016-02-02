@@ -1,13 +1,5 @@
 # MythTV Walkthrough
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.d references. Needs update, see [Systemd](/index.php/Systemd "Systemd"). (Discuss in [Talk:MythTV Walkthrough#](https://wiki.archlinux.org/index.php/Talk:MythTV_Walkthrough))
-
 ## Contents
 
 *   [1 About this document](#About_this_document)

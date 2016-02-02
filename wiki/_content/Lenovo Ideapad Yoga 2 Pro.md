@@ -1,13 +1,5 @@
 # Lenovo Ideapad Yoga 2 Pro
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Missing templates, poorly organized (Discuss in [Talk:Lenovo Ideapad Yoga 2 Pro#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Ideapad_Yoga_2_Pro))
-
 | **Device** | **Status** | **Modules** |
 | Graphics | **Working** | xf86-video-intel |
 | Wireless | **Working*** | iwlwifi |
@@ -174,7 +166,7 @@ esac
 
 The touchpad sends random input from time to time, especially when lid is closed. If you like your computer to keep running when the lid is closed, you may want to disable the touchpad with ACPI events:
 
-NaN
+	/etc/acpi/actions/lid.sh
 
 ```
 #!/bin/bash

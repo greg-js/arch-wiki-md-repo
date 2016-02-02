@@ -1,13 +1,5 @@
 # Dell Inspiron 1520
 
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-**This article is being considered for redirection to [Laptop](/index.php/Laptop "Laptop").**
-
-**Notes:** Out of date. No special action needed. (Discuss in [Talk:Dell Inspiron 1520#](https://wiki.archlinux.org/index.php/Talk:Dell_Inspiron_1520))
-
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -33,7 +33,7 @@ There are different kinds of portable audio players around:
 *   Creative
     *   Creative MuVo
 
-NaN
+**Note:** For some older MuVo models, deleting `settings.dat` from the device renders it useless. Newer models do not have the file.
 
 *   iRiver
     *   All iRiver players with "UMS Mode" firmware are recognized as USB storage

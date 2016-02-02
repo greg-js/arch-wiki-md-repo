@@ -14,7 +14,7 @@ Related articles
 
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
-NaN
+	_systemd_ is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.
 
 **Note:** For a detailed explanation as to why Arch has moved to _systemd_, see [this forum post](https://bbs.archlinux.org/viewtopic.php?pid=1149530#p1149530).
 
@@ -369,14 +369,6 @@ RestartSec=30
 
 ## Targets
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Unclear description, copy-pasted content (explicitly mentions "Fedora"). (Discuss in [Talk:Systemd#Make section "Targets" more clearly](https://wiki.archlinux.org/index.php/Talk:Systemd#Make_section_.22Targets.22_more_clearly))
-
 _systemd_ uses _targets_ which serve a similar purpose as runlevels but act a little different. Each _target_ is named instead of numbered and is intended to serve a specific purpose with the possibility of having multiple ones active at the same time. Some _target_s are implemented by inheriting all of the services of another _target_ and adding additional services to it. There are _systemd_ _target_s that mimic the common SystemVinit runlevels so you can still switch _target_s using the familiar `telinit RUNLEVEL` command.
 
 ### Get current targets
@@ -642,14 +634,6 @@ Often you can solve these kind of problems like shown above. For further investi
 _systemd_ has several options for diagnosing problems with the boot process. See [boot debugging](/index.php/Boot_debugging "Boot debugging") and the [systemd debugging documentation](http://freedesktop.org/wiki/Software/systemd/Debugging/).
 
 ### Diagnosing problems with a specific service
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This may not catch all errors such as missing libraries. (Discuss in [User talk:Alucryd#Plex](https://wiki.archlinux.org/index.php/User_talk:Alucryd#Plex))
 
 If some _systemd_ service misbehaves and you want to get more information about what is going on, set the `SYSTEMD_LOG_LEVEL` [environment variable](/index.php/Environment_variable "Environment variable") to `debug`. For example, to run the _systemd-networkd_ daemon in debug mode:
 

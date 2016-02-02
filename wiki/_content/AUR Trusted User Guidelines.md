@@ -98,14 +98,6 @@ ssh nymeria.archlinux.org /community/db-repo-remove community arch pkgname
 
 Here and in the following text, _arch_ can be one of _i686_ or _x86_64_ which are the two architectures supported by Arch Linux.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** What about the "any" architecture? (Discuss in [Talk:AUR Trusted User Guidelines#](https://wiki.archlinux.org/index.php/Talk:AUR_Trusted_User_Guidelines))
-
 When you are done with editing the PKGBUILD, etc., you should **commit** the changes (`svn commit`).
 
 Build the package with `mkarchroot` or the helper scripts `extra-i686-build` and `extra-x86_64-build`.

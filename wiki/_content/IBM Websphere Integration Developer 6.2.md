@@ -1,13 +1,5 @@
 # IBM Websphere Integration Developer 6.2
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Article needs some more details. (Discuss in [Talk:IBM Websphere Integration Developer 6.2#](https://wiki.archlinux.org/index.php/Talk:IBM_Websphere_Integration_Developer_6.2))
-
 Launching IBM WID in modern Arch environment is not a trivial task, here is a detailed guide on how to do it.
 
 ## Installation

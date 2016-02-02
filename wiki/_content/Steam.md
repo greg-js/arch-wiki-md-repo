@@ -7,7 +7,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
-NaN
+	_Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses._
 
 [Steam](http://store.steampowered.com/about/) is best known as the platform needed to play Source Engine games (e.g. Half-Life 2, Counter-Strike). Today it offers many games from many other developers.
 
@@ -200,7 +200,7 @@ and then run steam.
 
 ### Native runtime: steam.sh line 756 Segmentation fault
 
-NaN
+	Valve GitHub [issue 3863](https://github.com/ValveSoftware/steam-for-linux/issues/3863)
 
 As per the bug report above, Steam crashes with `/home/<username>/.local/share/Steam/steam.sh: line 756: <variable numeric code> Segmentation fault (core dumped)` when running with STEAM_RUNTIME=0.
 
@@ -215,7 +215,7 @@ Notice that the workaround is necessary because the bug affects systems with lib
 
 ### The close button only minimizes the window
 
-NaN
+	Valve GitHub [issue 1025](https://github.com/ValveSoftware/steam-for-linux/issues/1025)
 
 To close the Steam window (and remove it from the taskbar) when you press **x**, but keep Steam running in the tray, export the environment variable `STEAM_FRAME_FORCE_CLOSE=1`. See [Environment variables#Graphical applications](/index.php/Environment_variables#Graphical_applications "Environment variables").
 
@@ -314,14 +314,6 @@ MESA_GL_VERSION_OVERRIDE=3.1 MESA_GLSL_VERSION_OVERRIDE=140 %command%
 ```
 
 ### 2k games do not run on xfs partitions
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Seems to be a general issue, e.g. [[2]](https://github.com/ValveSoftware/Source-1-Games/issues/1685) (Discuss in [Talk:Steam#](https://wiki.archlinux.org/index.php/Talk:Steam))
 
 If you are running 2k games such as Civilization 5 on xfs partitions, then the game may not start or run properly due to how the game loads files as it starts. [[3]](https://bbs.archlinux.org/viewtopic.php?id=185222)
 

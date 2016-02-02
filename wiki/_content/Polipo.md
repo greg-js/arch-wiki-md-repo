@@ -6,7 +6,7 @@ Related articles
 
 From [Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
-NaN
+	"_Polipo is a small and fast caching web proxy (a web cache, an HTTP proxy, a proxy server). While Polipo was designed to be used by one person or a small group of people, there is nothing that prevents it from being used by a larger group._"
 
 Unlike [Squid](/index.php/Squid "Squid"), Polipo is very light on resources and simple to configure. This makes it ideal for single user systems and other uncomplicated setups. Do keep in mind, however, that this versatility comes at a cost: Polipo will increase its space usage without restriction as it is not aware of how big its disk cache grows. This perceived fault is by design, since omitting these sanity checks drastically reduces Polipo's memory usage and overall toll on the system. A practical way of restricting disk usage is by making Polipo run as its own user and employing [disk quota](/index.php/Disk_quota "Disk quota").
 

@@ -45,7 +45,7 @@ Further advanced additional steps:
 
 *   Check and fix any broken links to sections in both the origin and destination pages, and in pages linking to the origin page.
 
-NaN
+**Tip:** This step can be done automatically with [Wiki Monkey](/index.php/Wiki_Monkey#Special_functions "Wiki Monkey")'s plugin.
 
 ## Deal with talk pages after redirecting a page to another
 

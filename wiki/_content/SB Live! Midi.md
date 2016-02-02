@@ -25,14 +25,6 @@ The bank names (at least for SB Live! Value) correspond to their respective size
 
 ### Automating
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Need to update for systemd. (Discuss in [Talk:SB Live! Midi#](https://wiki.archlinux.org/index.php/Talk:SB_Live!_Midi))
-
 Put `asfxload _fullbankfilepathname_` into `/etc/rc.local`.
 
 It should be sfxload, not asfxload. You might also need to modprobe snd-seq-oss. The line to put in /etc/rc.local that I have is:

@@ -4,14 +4,6 @@ Related articles
 
 *   [feh](/index.php/Feh "Feh")
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** (Discuss in [Talk:Nitrogen#](https://wiki.archlinux.org/index.php/Talk:Nitrogen))
-
 [Nitrogen](http://projects.l3ib.org/nitrogen/) is a fast and lightweight desktop background browser and setter for X windows.
 
 ## Contents

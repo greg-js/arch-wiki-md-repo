@@ -1,13 +1,5 @@
 # WMFS2
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** A new WM, in need of more varied and in-depth information (Discuss in [Talk:WMFS2#](https://wiki.archlinux.org/index.php/Talk:WMFS2))
-
 Related articles
 
 *   [WMFS](/index.php/WMFS "WMFS")
@@ -15,7 +7,7 @@ Related articles
 
 From the [project home page](http://wmfs.info/):
 
-NaN
+	_WMFS<sup>2</sup> is a lightweight and highly configurable tiling window manager for X written in C. WMFS<sup>2</sup> is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable._
 
 ## Contents
 

@@ -2,7 +2,7 @@
 
 PIA is a subscription based service provided from the [PIA](https://www.privateinternetaccess.com/). From the PIA's [How It Works](https://www.privateinternetaccess.com/pages/how-it-works/) page:
 
-NaN
+	PRIVATE INTERNET ACCESS provides state of the art, multi-layered security with advanced privacy protection using VPN tunneling.
 
 ## Contents
 

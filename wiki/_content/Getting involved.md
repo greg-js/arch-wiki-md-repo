@@ -81,59 +81,99 @@ Arch's community maintains many projects. Feel free to include yours!
 
 Arch-specific groups that you can engage in.
 
-NaN
+	[ArchMap](/index.php/ArchMap "ArchMap")
 
-NaN
+	The ArchMap project creates a map of Arch Linux users all over the world.
 
-NaN
+	[ArchAudio](http://archaudio.org)
 
-NaN
+	A third-party package repository and online discussion board for Arch Linux pro-audio users.
 
-NaN
+	[Arch Linux Subreddit](http://www.reddit.com/r/archlinux/)
 
-NaN
+	Place for reddit users to discuss Arch related issues.
 
-NaN
+	[Arch Linux Google Plus Community](https://plus.google.com/communities/113935870359973712582)
+
+	A Google Plus community for Arch Linux users to interact, post questions, or general Arch Linux news conversations.
+
+	[Arch Linux User Group](/index.php/Arch_Linux_User_Group "Arch Linux User Group")
+
+	Local meet-up for users.
+
+	[Arch Women](http://archwomen.org/)
+
+	Group with the intention of resolving possible hurdles for female Arch users ([forum thread](https://bbs.archlinux.org/viewtopic.php?id=136184)).
+
+	[LinkedIn Group](http://www.linkedin.com/groups?gid=1399787)
+
+	Arch Linux group for users and professionals.
 
 ### Software
 
 Community-developed software that focuses on Arch Linux.
 
-NaN
+	[Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
-NaN
+	A large community-driven repository for Arch users.
 
-NaN
+	[Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
 
-NaN
+	Unofficial binary repositories maintained by community members.
 
-NaN
+	[AUR helpers](/index.php/AUR_helpers "AUR helpers")
+
+	Utilities to aid end users in using the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+
+	[Pacman GUI Frontends](/index.php/Pacman_GUI_Frontends "Pacman GUI Frontends")
+
+	Graphical front-ends for [pacman](/index.php/Pacman "Pacman").
+
+	[NetGUI](http://www.github.com/codywd/NetGUI)
+
+	Graphical front end for [Netctl](/index.php/Netctl "Netctl").
 
 ### ArchWiki browsing
 
 They offer you some different methods to visit ArchWiki.
 
-NaN
+	[arch-wiki-docs](https://github.com/lahwaacz/arch-wiki-docs)
 
-NaN
+	Pages from Arch Wiki optimized for offline browsing. Package: [arch-wiki-docs](https://www.archlinux.org/packages/?name=arch-wiki-docs).
 
-NaN
+	[arch-wiki-lite](http://kmkeen.com/arch-wiki-lite/)
 
-NaN
+	Arch-wiki-lite is designed to offer the smoothest possible experience for the poor person stuck without internet access or any way of starting a graphical web browser. Package: [arch-wiki-lite](https://www.archlinux.org/packages/?name=arch-wiki-lite).
+
+	[ArchWiki Viewer for Android](https://bbs.archlinux.org/viewtopic.php?id=150538)
+
+	A simple viewer for the ArchLinux Wiki online. Page content is formatted for optimal mobile viewing.
+
+	[Wikicurses](https://bbs.archlinux.org/viewtopic.php?id=187864)
+
+	A simple curses interface for MediaWiki sites such as ArchWiki or Wikipedia. Packages: [wikicurses](https://aur.archlinux.org/packages/wikicurses/)<sup><small>AUR</small></sup>, [wikicurses-git](https://aur.archlinux.org/packages/wikicurses-git/)<sup><small>AUR</small></sup>.
 
 ### Services
 
 Services specifically made for Arch users.
 
-NaN
+	[ArchLinux.me](http://archlinux.me)
 
-NaN
+	Arch Linux Blogs, to register read [this forum post](https://bbs.archlinux.org/viewtopic.php?id=73622).
 
-NaN
+	[ArchLinux.info](https://bbs.archlinux.org/viewtopic.php?id=150417&)
+
+	VPS-based @archlinux.info emails.
+
+	[ProjectArch.tk](https://bbs.archlinux.org/viewtopic.php?id=206735&)
+
+	Free ZNC accounts for Arch Linux users.
 
 ### Other
 
-NaN
+	[Xyne's Arch Linux Projects](http://xyne.archlinux.ca/projects/)
+
+	A trusted user's arch-related projects.
 
 ## FAQ
 

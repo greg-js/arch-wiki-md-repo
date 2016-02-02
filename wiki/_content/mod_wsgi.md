@@ -12,7 +12,7 @@
 
 According to the [project's site](http://code.google.com/p/modwsgi/) :
 
-NaN
+	The aim of mod_wsgi is to implement a simple to use Apache module which can host any Python application which supports the Python WSGI interface. The module would be suitable for use in hosting high performance production web sites, as well as your average self managed personal sites running on web hosting services.
 
 mod_wsgi is an [Apache](/index.php/Apache "Apache") module that embeds a [Python](http://www.python.org) application within the server and allow them to communicate through the Python WSGI interface as defined in the [Python PEP 333](http://www.python.org/dev/peps/pep-0333/). WSGI is one of the Python ways to produce high quality and high performance web applications.
 

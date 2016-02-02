@@ -1,13 +1,5 @@
 # XMLTV HOWTO
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:XMLTV HOWTO#](https://wiki.archlinux.org/index.php/Talk:XMLTV_HOWTO))
-
 ## Contents
 
 *   [1 What does XMLTV actually *do* ?](#What_does_XMLTV_actually_.2Ado.2A_.3F)

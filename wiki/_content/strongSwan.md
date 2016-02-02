@@ -242,25 +242,9 @@ conn CiscoIPSec
 
 #### IPSec in transport mode
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Need to better explain the differences, advantages and inconvenients, then write a tutorial. (Discuss in [Talk:StrongSwan#](https://wiki.archlinux.org/index.php/Talk:StrongSwan))
-
 #### IPSec/L2TP
 
 The [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup") page describes how to setup a client to connect to an IPSec/L2TP server. This variant of an IPSec VPN has the advantage of allowing to tunnel non-IP packets, contrary to pure IPSec, but at the expense of having to run an additional L2TP daemon.
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Need to better explain the differences, advantages and inconvenients, then write a tutorial. (Discuss in [Talk:StrongSwan#](https://wiki.archlinux.org/index.php/Talk:StrongSwan))
 
 ### Secrets
 
@@ -325,23 +309,7 @@ Finally, you can [start](/index.php/Start "Start") and [enable](/index.php/Enabl
 
 ### Troubleshooting
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Need to explain at least ip xfrm and common issues (Discuss in [Talk:StrongSwan#](https://wiki.archlinux.org/index.php/Talk:StrongSwan))
-
 ## Client configuration
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Not yet written (Discuss in [Talk:StrongSwan#](https://wiki.archlinux.org/index.php/Talk:StrongSwan))
 
 ## See also
 

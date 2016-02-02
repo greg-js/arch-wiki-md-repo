@@ -37,85 +37,85 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 *   **Deepin Screenshot** — Provide a quite easy-to-use screenshot tool. Features: global hotkey to trigger screenshot tool, take screenshot of a selected area, easy to add text and line drawings onto the screenshot. Python/Qt5 based.
 
-NaN
+	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-screenshot](https://www.archlinux.org/packages/?name=deepin-screenshot)
 
 *   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 
-NaN
+	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)<sup><small>AUR</small></sup>
 
 *   **gnome-screenshot** — Take pictures of your screen. Even if its used Gnome in their name, its dependencies only dconf, gtk3, and libcanberra.
 
-NaN
+	[http://gnome.org](http://gnome.org) || [gnome-screenshot](https://www.archlinux.org/packages/?name=gnome-screenshot)
 
 *   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
 
-NaN
+	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)<sup><small>AUR</small></sup>
 
 *   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
 
-NaN
+	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)<sup><small>AUR</small></sup>
 
 *   **maim** — A simple command line utility that takes screenshots using imlib2\. It's meant to replace scrot and performs better than scrot in many ways.
 
-NaN
+	[https://github.com/naelstrof/maim](https://github.com/naelstrof/maim) || [maim](https://www.archlinux.org/packages/?name=maim)
 
 *   **maimclip** — Simple bash wrapper for maim screenshot taking tool with OSD notification support
 
-NaN
+	[https://github.com/orschiro/scriptlets/tree/master/Maimclip](https://github.com/orschiro/scriptlets/tree/master/Maimclip) || [maimclip-git](https://aur.archlinux.org/packages/maimclip-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/maimclip-git)]</sup>
 
 *   **qscreenshot** — Simple creation and editing of screenshots (Qt).
 
-NaN
+	[https://code.google.com/p/qscreenshot/](https://code.google.com/p/qscreenshot/) || [qscreenshot-git](https://aur.archlinux.org/packages/qscreenshot-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qscreenshot-git)]</sup>
 
 *   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
 
-NaN
+	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)<sup><small>AUR</small></sup>
 
 *   **screengrab** — Cross-platform application designed to quickly get screenshots (Qt).
 
-NaN
+	[http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)<sup><small>AUR</small></sup>
 
 *   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
 
-NaN
+	[http://freecode.com/projects/scrot](http://freecode.com/projects/scrot) || [scrot](https://www.archlinux.org/packages/?name=scrot)
 
 *   **Shutter** — Rich screenshot and editing program.
 
-NaN
+	[http://shutter-project.org/](http://shutter-project.org/) || [shutter](https://www.archlinux.org/packages/?name=shutter)
 
 *   **Spectacle** — [KDE](/index.php/KDE "KDE") application for taking screenshots. It is capable of capturing images of the whole desktop, a single window, a section of a window, a selected rectangular region or a freehand region. Part of [kdegraphics](https://www.archlinux.org/groups/x86_64/kdegraphics/).
 
-NaN
+	[https://github.com/KDE/spectacle/](https://github.com/KDE/spectacle/) || [spectacle](https://www.archlinux.org/packages/?name=spectacle)
 
 *   **Xfce4 Screenshooter** — This application allows you to capture the entire screen, the active window or a selected region. You can set the delay that elapses before the screenshot is taken and the action that will be done with the screenshot: save it to a PNG file, copy it to the clipboard, open it using another application, or host it on ZimageZ, a free online image hosting service. Part of [xfce4-goodies](https://www.archlinux.org/groups/x86_64/xfce4-goodies/).
 
-NaN
+	[http://goodies.xfce.org/projects/applications/xfce4-screenshooter](http://goodies.xfce.org/projects/applications/xfce4-screenshooter) || [xfce4-screenshooter](https://www.archlinux.org/packages/?name=xfce4-screenshooter)
 
 *   **xwd** — X Window System image dumping utility
 
-NaN
+	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xwd](https://www.archlinux.org/packages/?name=xorg-xwd)
 
 *   **zscreen** — Lightweight GUI which allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot automatically to [imgur](http://imgur.com). For taking the screenshot it uses scrot and zenity for the GUI.
 
-NaN
+	[https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI) || [zscreen](https://aur.archlinux.org/packages/zscreen/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zscreen)]</sup>
 
 ## Packages including a screenshot utility
 
 *   **[GIMP](https://en.wikipedia.org/wiki/GIMP "wikipedia:GIMP")** — Image editing suite in the vein of proprietary editors such as [Adobe Photoshop](https://en.wikipedia.org/wiki/Adobe_Photoshop "wikipedia:Adobe Photoshop"). GIMP ([GNU](/index.php/GNU "GNU") Image Manipulation Program) has been started in the mid 1990s and has acquired a large number of [plugins](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP") and additional tools.
 
-NaN
+	[http://www.gimp.org/](http://www.gimp.org/) || [gimp](https://www.archlinux.org/packages/?name=gimp)
 
 *   **[GraphicsMagick](https://en.wikipedia.org/wiki/GraphicsMagick "wikipedia:GraphicsMagick")** — Fork of ImageMagick designed to have API and command-line stability. It also supports multi-CPU for enhanced performance and thus is used by some large commercial sites (Flickr, etsy) for its performance.
 
-NaN
+	[http://www.graphicsmagick.org/](http://www.graphicsmagick.org/) || [graphicsmagick](https://www.archlinux.org/packages/?name=graphicsmagick)
 
 *   **[ImageMagick](https://en.wikipedia.org/wiki/ImageMagick "wikipedia:ImageMagick")** — Command-line image manipulation program. It is known for its accurate format conversions with support for over 100 formats. Its API enables it to be scripted and it is usually used as a backend processor.
 
-NaN
+	[http://www.imagemagick.org/script/index.php](http://www.imagemagick.org/script/index.php) || [imagemagick](https://www.archlinux.org/packages/?name=imagemagick)
 
 *   **Imlib2** — Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support.
 
-NaN
+	[http://sourceforge.net/projects/enlightenment/](http://sourceforge.net/projects/enlightenment/) || [imlib2](https://www.archlinux.org/packages/?name=imlib2)
 
 ## Details: general methods
 

@@ -79,14 +79,6 @@ opacity-rule = [
 
 ### Colored ls output
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** This bug should have been [fixed](http://git.savannah.gnu.org/gitweb/?p=coreutils.git;a=commitdiff;h=a960c31) on 2015-10-02, and be available with the next [coreutils](https://www.archlinux.org/packages/?name=coreutils) release. (Discuss in [Talk:Termite#Colored ls output](https://wiki.archlinux.org/index.php/Talk:Termite#Colored_ls_output))
-
 For colored `ls` output it is necessary to use a custom LS_COLORS [environment variable](/index.php/Environment_variable "Environment variable"), which can be set with a `dircolors` file. Generate one with:
 
 ```

@@ -5,17 +5,9 @@ Related articles
 *   [Gitolite](/index.php/Gitolite "Gitolite")
 *   [Ruby on Rails](/index.php/Ruby_on_Rails "Ruby on Rails")
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Commands are incomplete/incorrect, reported upgrade issues (Discuss in [Talk:Gitlab#](https://wiki.archlinux.org/index.php/Talk:Gitlab))
-
 From [GitLab's homepage:](https://about.gitlab.com/)
 
-NaN
+	_GitLab offers git repository management, code reviews, issue tracking, activity feeds and wikis. Enterprises install GitLab on-premise and connect it with LDAP and Active Directory servers for secure authentication and authorization. A single GitLab server can handle more than 25,000 users but it is also possible to create a high availability setup with multiple active servers._
 
 An example live version can be found at [GitLab.com](https://gitlab.com/).
 

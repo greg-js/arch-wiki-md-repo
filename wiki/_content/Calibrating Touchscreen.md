@@ -1,13 +1,5 @@
 # Calibrating Touchscreen
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Touchscreen](/index.php/Touchscreen "Touchscreen").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Calibrating Touchscreen#](https://wiki.archlinux.org/index.php/Talk:Calibrating_Touchscreen))
-
 To use multiple displays (some of which are touchscreens), you need to tell Xorg the mapping between the touch surface and the screen. This can be done using `xinput` to set the touchscreen's coordinate transformation matrix, as described [in the X.Org Wiki](http://www.x.org/wiki/XInputCoordinateTransformationMatrixUsage).
 
 This shall be a guide to do that.

@@ -1,21 +1,5 @@
 # IPv6 - 6in4 Tunnel
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.d (Discuss in [Talk:IPv6 - 6in4 Tunnel#](https://wiki.archlinux.org/index.php/Talk:IPv6_-_6in4_Tunnel))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:IPv6 - 6in4 Tunnel#](https://wiki.archlinux.org/index.php/Talk:IPv6_-_6in4_Tunnel))
-
 ## Contents
 
 *   [1 Introduction](#Introduction)
@@ -32,7 +16,7 @@
 
 Arch Linux uses a BSD-style network interface configuration located in _/etc/rc.conf_, which can make exotic network configurations interesting, to say the least. The following rc.d script is meant to help remedy the situation by providing a configurable wrapper to sanely manage a 6in4 link interface.
 
-NaN
+*   This script uses the _route2_ method; make sure that the **iproute2** package is installed.
 
 As _root_, write the following rc.d init script to _/etc/rc.d/6in4-tunnel_:
 
@@ -157,7 +141,7 @@ To delete the 6in4 tunnel link and remove the interface:
 
 The following method allows _/etc/rc.d/6in4-tunnel_ to start automatically at system startup.
 
-NaN
+*   Verify that the 6in4 tunnel link is configured and working properly before doing this!
 
 As _root_, insert _6in4-tunnel_ right after _network_ in the **DAEMONS** line of _/etc/rc.conf_.
 

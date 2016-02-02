@@ -24,14 +24,6 @@ Bus 003 Device 002: ID 046d:c626 Logitech, Inc. 3Dconnexion Space Navigator 3D M
 
 2\. Install [openmotif](https://www.archlinux.org/packages/?name=openmotif) or if you need [lesstif](https://www.archlinux.org/packages/?name=lesstif) (e.g. for [xpdf](https://aur.archlinux.org/packages/xpdf/)<sup><small>AUR</small></sup>) you can just get the `libXm.so.4` library from it:
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [openmotif](https://www.archlinux.org/packages/?name=openmotif) and [lesstif](https://www.archlinux.org/packages/?name=lesstif) conflict for a reason (Discuss in [Talk:3D Mouse#](https://wiki.archlinux.org/index.php/Talk:3D_Mouse))
-
 ```
 $> sudo pacman -Sw openmotif # download openmotif to cache, do not install
 $> tar xJOf /var/cache/pacman/pkg/openmotif-* usr/lib/libXm.so.4.0.3 > libXm.so.4

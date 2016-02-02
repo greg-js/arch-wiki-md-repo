@@ -52,14 +52,6 @@ The frontend and backend may be on separate computers on a network, and there ma
 
 ## Requirements
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The hardware discussed here is very old. (Discuss in [Talk:MythTV#](https://wiki.archlinux.org/index.php/Talk:MythTV))
-
 MythTV is a very scalable system. With standard definition television and pure MPEG2 encoding and decoding with hardware acceleration, even a very modest system can act as both frontend and backend. How modest? Some people report being able to use fanless Via systems with Hauppauge PVR cards for both backend and frontend simultaneously. While the author does not condone the use of such a lightweight system, it has been done successfully.
 
 On the other end of the spectrum, high definition TV with MPEG4 transcoding and commercial flagging can require serious horsepower. Most people in the HD realm use high-end Athlon XPs, midrange to high-end Athlon 64s, and high-end Pentium 4s for their backends. The frontend can get away with a somewhat more midrange processor if XvMC playback acceleration is used.
@@ -250,14 +242,6 @@ If you get a libXvMCW.so.1 shared library error, [install](/index.php/Install "I
 If you cannot open /dev/video0 of your PVR150, install the firmware, located in the [ivtv-utils](https://www.archlinux.org/packages/?name=ivtv-utils) package.
 
 #### TurboSight TBS 6281
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [[]].**
-
-**Notes:** Should be reported as a bug (Discuss in [Talk:MythTV#](https://wiki.archlinux.org/index.php/Talk:MythTV))
 
 The kernel takes time to register TurboSight TBS 62x1's adapters and they may not be available when systemd starts `mythbackend.service`. This leads to the following error recorded in the system logs:
 

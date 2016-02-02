@@ -1,13 +1,5 @@
 # Lenovo ThinkPad T430s
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
-
-**Notes:** Too little unique content to warrant a separate page (Discuss in [Talk:Lenovo ThinkPad T430s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_T430s))
-
 ## Contents
 
 *   [1 Known issues](#Known_issues)

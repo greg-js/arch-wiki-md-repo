@@ -6,19 +6,19 @@ Several methods exist to protect and limit child activity on a computer.
 
 *   **timekpr** — A program controlling use of user accounts. It can limit by access duration with the daemon _timed_, and configure at what time users can log in. A client in the traybar warns the users about their time running out, while administration is done in a graphical GTK GUI.
 
-NaN
+	[https://launchpad.net/timekpr](https://launchpad.net/timekpr) || [timekpr](https://aur.archlinux.org/packages/timekpr/)<sup><small>AUR</small></sup>
 
 *   **timeoutd** — A lightweight alternative to timekpr, it scans `/var/run/utmp` every minute and checks `/etc/timeouts` for an entry matching a restricted user. Restrictions are based on idle time, login time, maximum time, and time of day.
 
-NaN
+	|| [timeoutd](https://aur.archlinux.org/packages/timeoutd/)<sup><small>AUR</small></sup>
 
 *   **logkeys** — A daemon that logs keypresses into a logfile for later inspection. The log file resides by default in `/var/log`, but it is recommended to move it to an encrypted partition; it will for example contain every password entered in the system. For supervision purposes, the `--no-func-keys` option is recommended.
 
-NaN
+	[http://code.google.com/p/logkeys/](http://code.google.com/p/logkeys/) || [logkeys-git](https://aur.archlinux.org/packages/logkeys-git/)<sup><small>AUR</small></sup>
 
 *   **logkeys-keymaps** — Necessary to log keys with logkeys (`--keymap` option) using a localized, non-US keyboard.
 
-NaN
+	|| [logkeys-keymaps-git](https://aur.archlinux.org/packages/logkeys-keymaps-git/)<sup><small>AUR</small></sup>
 
 ## Whitelist with Tinyproxy and Firehol
 

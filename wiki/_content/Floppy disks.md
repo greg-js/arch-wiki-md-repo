@@ -1,16 +1,8 @@
 # Floppy disks
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Floppy disks#](https://wiki.archlinux.org/index.php/Talk:Floppy_disks))
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Floppy_disk "wikipedia:Floppy disk"):
 
-NaN
+	A floppy disk, also called a diskette, is a disk storage medium composed of a disk of thin and flexible magnetic storage medium, sealed in a rectangular plastic carrier lined with fabric that removes dust particles. Floppy disks are read and written by a floppy disk drive (FDD).
 
 Common tasks with floppy disks are described bellow, with available tools to accomplish them.
 

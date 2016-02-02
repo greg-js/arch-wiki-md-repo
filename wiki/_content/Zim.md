@@ -2,9 +2,15 @@
 
 From the project [home page](http://zim-wiki.org/):
 
-NaN
+	_Zim is a graphical text editor used to maintain a collection of wiki pages. Each page can contain links to other pages, simple formatting and images. Pages are stored in a folder structure, like in an outliner, and can have attachments. Creating a new page is as easy as linking to a nonexistent page. All data is stored in plain text files with wiki formatting. Various plugins provide additional functionality, like a task list manager, an equation editor, a tray icon, and support for version control._
 
-NaN
+	_Zim can be used to:_
+
+*   _Keep an archive of notes_
+*   _Take notes during meetings or lectures_
+*   _Organize task lists_
+*   _Draft blog entries and emails_
+*   _Do brainstorming_
 
 ## Contents
 

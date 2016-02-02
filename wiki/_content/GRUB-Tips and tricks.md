@@ -33,19 +33,19 @@ Following package may be installed:
 
 *   **grub-customizer** — GTK+ customizer for GRUB or BURG
 
-NaN
+	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)<sup><small>AUR</small></sup>
 
 *   **grub2-editor** — KDE4 control module for configuring the GRUB bootloader
 
-NaN
+	[http://kde-apps.org/content/show.php?content=139643](http://kde-apps.org/content/show.php?content=139643) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub2-editor)]</sup>
 
 *   **grub2-editor-frameworks** — Unofficial KF5 port of grub2-editor
 
-NaN
+	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)<sup><small>AUR</small></sup>
 
 *   **startupmanager** — GUI app for changing the settings of GRUB Legacy, GRUB, Usplash and Splashy ([abandonned](https://launchpad.net/startup-manager/+announcement/8300))
 
-NaN
+	[http://sourceforge.net/projects/startup-manager/](http://sourceforge.net/projects/startup-manager/) || [startupmanager](https://aur.archlinux.org/packages/startupmanager/)<sup><small>AUR</small></sup>
 
 ## Visual configuration
 

@@ -1,13 +1,5 @@
 # Input Japanese using uim
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Explain how to set up other languages too. (Discuss in [Talk:Input Japanese using uim#UIM -- how to set up with x language](https://wiki.archlinux.org/index.php/Talk:Input_Japanese_using_uim#UIM_--_how_to_set_up_with_x_language))
-
 This page explains how to get the Japanese input to work using [uim](http://code.google.com/p/uim/).
 
 Related articles
@@ -82,13 +74,13 @@ Recommended Japanese fonts are as follows.
 
 *   [adobe-source-han-sans](https://github.com/adobe-fonts/source-han-sans) || [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) or [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts)
 
-NaN
+	Open-source OTF fonts developed by Adobe.
 
 #### Serif and Sans-serif
 
 *   [IPA fonts](http://ossipedia.ipa.go.jp/ipafont/) || [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont)
 
-NaN
+	An open source OTF font set including sans-serif (Gothic) and serif (Mincho) glyphs provided by Information-technology Promotion Agency, Japan (IPA).
 
 If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art) properly, use one of the following fonts:
 
@@ -574,8 +566,16 @@ You can choose icons for darker background (uim 1.6.0 or later).
 
 ## See also
 
-NaN
+	uim
 
-NaN
+	[uim official document](http://code.google.com/p/uim/wiki/OfficialUserDocument)
+
+	[uim on wikibooks](http://en.wikibooks.org/wiki/Uim)
+
+	Fonts
+
+	[Japanese fonts showcase](http://www.geocities.jp/ep3797/japanese_fonts.html)
+
+	[modified Japanese fonts](http://www.geocities.jp/ep3797/modified_fonts_01.html)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=412103](https://wiki.archlinux.org/index.php?title=Input_Japanese_using_uim&oldid=412103)"

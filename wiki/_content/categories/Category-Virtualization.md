@@ -4,7 +4,9 @@
 
 From [Emulation or virtualization?](http://www.computerworld.com/s/article/338993/Emulation_or_Virtualization_):
 
-NaN
+	_**Emulation** is what we do when we try to make one system behave like or imitate a different system. We want to take System A (something we already have) and give it the inputs we would normally use for System B (which we may not have) and have System A produce the same results as System B._
+
+	_**Virtualization** is a technique for using computing resources and devices in a completely functional manner regardless of their physical layout or location. This includes splitting a single physical computer into multiple "virtual" servers, making it appear as though each virtual machine is running on its own dedicated hardware and allowing each to be rebooted independently._
 
 This category contains pages about virtualization technologies such as hypervisors, hypervisor control tools, cloud managment systems, etc. If you are looking for articles about emulation, see [Category:Emulators](/index.php/Category:Emulators "Category:Emulators").
 

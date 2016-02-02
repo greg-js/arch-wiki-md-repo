@@ -6,7 +6,7 @@ Related articles
 
 From [Home - LibreOffice](http://www.libreoffice.org/):
 
-NaN
+	_LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)_
 
 ## Contents
 
@@ -57,14 +57,6 @@ Check the optional dependencies pacman displays. If you want to use LibreOffice 
 
 ## Theme
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** With version 5.0, GTK3 is the default, it isn't completely working however. (Discuss in [Talk:LibreOffice#](https://wiki.archlinux.org/index.php/Talk:LibreOffice))
-
 LibreOffice includes support for [GTK+](/index.php/GTK%2B "GTK+") and [Qt](/index.php/Qt "Qt") theme integration. See also [Uniform look for Qt and GTK applications](/index.php/Uniform_look_for_Qt_and_GTK_applications "Uniform look for Qt and GTK applications").
 
 As of LibreOffice v3.5.x toolkit libraries are checked in the following order:
@@ -109,7 +101,7 @@ For more extensions, check the [AUR](/index.php/AUR "AUR"), the built-in LibreOf
 
 For spell checking, please make sure [hunspell](https://www.archlinux.org/packages/?name=hunspell) is properly installed; this should be the case for both still and fresh LibreOffice versions. Then install a language dictionary for hunspell like [hunspell-en](https://www.archlinux.org/packages/?name=hunspell-en) for English, [hunspell-de](https://www.archlinux.org/packages/?name=hunspell-de) for German, etc. Then enable the Writing aids by selecting the check-box in _Tools -> Options -> Language Settings -> Writing Aids -> Hunspell SpellChecker_.
 
-NaN
+	Finnish
 
 Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/)<sup><small>AUR</small></sup>, [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/suomi-malaga-voikko)]</sup>, [hfstospell](https://aur.archlinux.org/packages/hfstospell/)<sup><small>AUR</small></sup>, [libvoikko](https://www.archlinux.org/packages/?name=libvoikko) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/)<sup><small>AUR</small></sup>.
 
@@ -129,7 +121,7 @@ After this package has been installed, please make sure you have a [Java](/index
 
 Other grammar tools can also be found on the [LibrePlanet extension page](http://libreplanet.org/wiki/Group:OpenOfficeExtensions/List), on the [official LibreOffice Extensions website](http://extensions.libreoffice.org/) or [OpenOffice's Website](http://lingucomponent.openoffice.org/grammar.html). Please note all OpenOffice extensions are guaranteed to work with LibreOffice.
 
-NaN
+	French
 
 French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](http://www.dicollecte.org/grammalecte/telecharger.php) or via this [AUR](/index.php/AUR "AUR") package: [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/)<sup><small>AUR</small></sup>. In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
 
@@ -168,14 +160,6 @@ Some settings may improve LibreOffice's loading time and responsiveness. However
 These settings can be changed in the LibreOffice options. From the drop-down menu, select _Tools > Options > LibreOffice > Fonts_. Check the box that says _Apply Replacement Table_. Type `Andale Sans UI` in the font box and choose your desired font for the _Replace with_ option. When done, click the _checkmark_. Then choose the _Always_ and _Screen only_ options in the box below. Click OK. You will then need to go to _Tools > Options > LibreOffice > View_, and uncheck "Use system font for user interface". If you use a non-antialised font, such as Arial, you will also need to uncheck "Screen font antialiasing" before menu fonts render correctly.
 
 ### Anti-aliasing
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Duplicates [Font configuration](/index.php/Font_configuration "Font configuration") (Discuss in [Talk:LibreOffice#](https://wiki.archlinux.org/index.php/Talk:LibreOffice))
 
 Execute:
 

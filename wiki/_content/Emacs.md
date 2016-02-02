@@ -143,14 +143,6 @@ This will cause all text to appear in white color only.
 
 ### As a daemon
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** For most purposes this could be described in two sentences (Discuss in [Talk:Emacs#](https://wiki.archlinux.org/index.php/Talk:Emacs))
-
 Emacs can take some time to start since it has to load the `.emacs` file each time. Besides, you may want to access the same files from different instances. Since version 23, Emacs is able to run as a daemon to which users can connect. To run Emacs as a daemon:
 
 ```
@@ -818,23 +810,23 @@ Semantic will work for a few seconds parsing the libraries included from your fi
 
 Once done, you can start using the great Semantic features:
 
-NaN
+	Smart completion
 
 Press **C-c , SPC** to complete a symbol at point. If it is an argument, it will check for type correctness.
 
-NaN
+	Jump to symbol
 
 Press **C-c , j** to prompt for a symbol and jump to its definition. You can use auto-completion with **TAB**. Use a capital **J** to search for symbol accross files.
 
-NaN
+	List symbol calls
 
 Press **C-c , g** to prompt for a symbol and list the places where it is being referred to. You can use **n** and **p** to navigate through the resulting entries. Press **RET** to toggle details, and **RET** again on a reference to jump to it. Use a capital **G** in the first command to work across files.
 
-NaN
+	Refactoring
 
 First list use of the symbol you want to refactor with the aforementioned command. Now press **(** to start defining a macro on the symbol. This is actually much more powerful than refactoring since you can apply any function to the symbol and even act on its surrounding symbols. Press **C-x )** to finish the macro and **E** to call it.
 
-NaN
+	Describe symbol
 
 Call the following function to display details on a symbol.
 
@@ -1444,7 +1436,7 @@ A way to solve it is just put the line above on your startup file, `~/.emacs`:
 
 And no, it isn't a bug, but a feature of new Emacs versions. Reading the subsequent messages about it on the mail list, we found it ([http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html](http://lists.gnu.org/archive/html/help-gnu-emacs/2009-05/msg00179.html)):
 
-NaN
+	_It seems that nothing is loaded automatically because there is a choice betwee iso-transl and iso-acc. Both seem to provide an input method with C-x 8 or Alt-<accent> prefix, but what you and I are doing is just pressing a dead key (^, ´, `, ~, ¨) for the accent and then another key to "compose" the accented character. And there is no Alt key used in this! And according to documentation it seems be appropriate for 8-bit encodings, so it should be pretty useless in UTF-8\. I reported this bug when it was introduced, but the bug seems to be classified as a feature ... Maybe it's just because the file is auto-loaded though pretty useless._
 
 ### C-M-% and some other bindings do not work in emacs nox
 
@@ -1583,14 +1575,6 @@ But, this will break other key combinations. To fix them, put the following in y
 ```
 
 ### Improper window resizing in KDE
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [KDE](/index.php/KDE "KDE").**
-
-**Notes:** Applicable to other applications (Discuss in [Talk:Emacs#](https://wiki.archlinux.org/index.php/Talk:Emacs))
 
 KDE users may observe that the Emacs window does not resize properly, but rather, the resized portion is transparent and mouse clicks are sent to the underlying window. To correct this behavior, change KDE's GTK3 theme to something other than oxygen-gtk. For instance, use the Emacs theme which is included with [gtk3](https://www.archlinux.org/packages/?name=gtk3).
 

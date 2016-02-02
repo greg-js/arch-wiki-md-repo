@@ -134,14 +134,6 @@ Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). See [
 
 ### SD Card Reader
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Pending discussion at [User_talk:Thiagowfx#Arch Linux and Realtek RTS5129 SD card reader](/index.php/User_talk:Thiagowfx#Arch_Linux_and_Realtek_RTS5129_SD_card_reader "User talk:Thiagowfx") (Discuss in [Talk:Lenovo S20-30#](https://wiki.archlinux.org/index.php/Talk:Lenovo_S20-30))
-
 This requires the `rtsx_usb` module [[1]](http://cateee.net/lkddb/web-lkddb/MFD_RTSX_USB.html). [Load the module](/index.php/Kernel_modules#Loading "Kernel modules") and [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `sdhci`, `sdhci_acpi` and `sdhci_pci`, or install [lenovo-s20-30](https://aur.archlinux.org/packages/lenovo-s20-30/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Then [rebuild the kernel image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") with `mkinitcpio -P linux` as root.
 
 ### Webcam

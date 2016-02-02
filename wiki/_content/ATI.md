@@ -5,14 +5,6 @@ Related articles
 *   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
 *   [Xorg](/index.php/Xorg "Xorg")
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Owners of newer cards need [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) instead of [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati). (Discuss in [Talk:ATI#Adding xf86-video-amdgpu](https://wiki.archlinux.org/index.php/Talk:ATI#Adding_xf86-video-amdgpu))
-
 Owners of **AMD** (previously **ATI**) video cards have a choice between AMD's [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) and the open source driver ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the open source driver.
 
 The open source driver is _on par_ performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.
@@ -374,15 +366,15 @@ KERNEL=="dri/card0", SUBSYSTEM=="drm", DRIVERS=="radeon", ATTR{device/power_meth
 
 *   **Radeon-tray** — A small program to control the power profiles of your Radeon card via systray icon. It is written in PyQt4 and is suitable for non-Gnome users.
 
-NaN
+	[https://github.com/StuntsPT/Radeon-tray](https://github.com/StuntsPT/Radeon-tray) || [radeon-tray](https://aur.archlinux.org/packages/radeon-tray/)<sup><small>AUR</small></sup>
 
 *   **power-play-switcher** — A gui for changing powerplay setting of the open source driver for ati radeon video cards.
 
-NaN
+	[https://code.google.com/p/power-play-switcher/](https://code.google.com/p/power-play-switcher/) || [power-play-switcher](https://aur.archlinux.org/packages/power-play-switcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/power-play-switcher)]</sup>
 
 *   **Gnome-shell-extension-Radeon-Power-Profile-Manager** — A small extension for Gnome-shell that will allow you to change the power profile of your radeon card when using the open source drivers.
 
-NaN
+	[https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager](https://github.com/StuntsPT/shell-extension-radeon-power-profile-manager) || [gnome-shell-extension-radeon-ppm](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-ppm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-shell-extension-radeon-ppm)]</sup> [gnome-shell-extension-radeon-power-profile-manager-git](https://aur.archlinux.org/packages/gnome-shell-extension-radeon-power-profile-manager-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome-shell-extension-radeon-power-profile-manager-git)]</sup>
 
 ### Other notes
 
@@ -588,14 +580,6 @@ The radeon driver will enable vsync by default, which is perfectly fine except f
 ```
 
 Make sure the driver is **dri2**, not your video card code (like r600).
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** If the above does not work, please file a bug report. Also, why is the `SwapbuffersWait` option relevant here? (Discuss in [Talk:ATI#](https://wiki.archlinux.org/index.php/Talk:ATI))
 
 If vsync is still enabled, you can try to disable it by editing the xf86-video-ati configuration :
 

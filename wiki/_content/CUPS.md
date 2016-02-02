@@ -41,22 +41,6 @@ If you intend to "print" into a PDF document, also install the [cups-pdf](https:
 
 ## Printers
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Difficult to comprehend; needs a complete rewrite. Same for [#Configuration](#Configuration). Also, make clear that "printer detection" does not necessarily equal "working in CUPS" (Discuss in [Talk:CUPS#](https://wiki.archlinux.org/index.php/Talk:CUPS))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Installation](#Installation).**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:CUPS#Lost content](https://wiki.archlinux.org/index.php/Talk:CUPS#Lost_content))
-
 ### Detecting the printer
 
 To see if your USB printer is detected:
@@ -94,15 +78,15 @@ If there is no driver for your printer included with CUPS, there might be a PPD 
 
 The website will also suggest a driver. For instance, for the HP LaserJet 5P, the site recommends the `ljet4` driver. It is possible that this driver is already included with CUPS, otherwise you will need to install it. If so, you can try out Foomatic or Gutenprint, or else find the driver in [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems").
 
-NaN
+	Foomatic
 
 [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db), [foomatic-db-engine](https://www.archlinux.org/packages/?name=foomatic-db-engine) and [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) are database-driven systems for integrating free software printer drivers with common spoolers under Unix.
 
-NaN
+	Gutenprint
 
 The [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) drivers are high-quality, open source printer drivers for various Canon, Epson, HP, Lexmark, Sony, Olympus and PCL printers supporting CUPS. They also support ghostscript, The GIMP, and other applications.
 
-NaN
+	Manufacturer-specific drivers
 
 A lot of printer manufacturers supply their own Linux drivers. Many are available in the official repositories or in the AUR. See [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for a list of drivers.
 
@@ -113,14 +97,6 @@ The CUPS server configuration located in `/etc/cups/cupsd.conf`. After editing, 
 [Groups](/index.php/Groups "Groups") with printer administration privileges are defined in `SystemGroup` in the `/etc/cups/cups-files.conf`. The `sys` group is used by default.
 
 ### Local printers
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:CUPS#](https://wiki.archlinux.org/index.php/Talk:CUPS))
 
 To have the printer installed on the system, fire up a browser and point it to [http://localhost:631](http://localhost:631). The CUPS web interface should be displayed from which all administrative tasks can be performed.
 
@@ -177,14 +153,6 @@ Remote print servers can be accessed by adding an IPP "printer" to the local CUP
 #### Without a local CUPS server
 
 **Warning:** Accessing remote printers without a local CUPS server is not recommended by the developers [[2]](http://www.cups.org/pipermail/cups/2015-October/027229.html)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Is Avahi really required? (Discuss in [Talk:CUPS#](https://wiki.archlinux.org/index.php/Talk:CUPS))
 
 Install [libcups](https://www.archlinux.org/packages/?name=libcups), and set up Avahi's .local hostname resolution, otherwise the client will fail to print with an "Unable to locate printer" error. See [Avahi#Hostname resolution](/index.php/Avahi#Hostname_resolution "Avahi") for details.
 
@@ -290,25 +258,17 @@ This should avoid the error: 426 - Upgrade Required when using the CUPS web inte
 
 ## Printing related applications
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Installation](#Installation).**
-
-**Notes:** Or [#Usage](#Usage) maybe? (Discuss in [Talk:CUPS#](https://wiki.archlinux.org/index.php/Talk:CUPS))
-
 *   **print-manager** — A tool for managing print jobs and printers ([KDE](/index.php/KDE "KDE")).
 
-NaN
+	[https://projects.kde.org/projects/kde/kdeutils/print-manager](https://projects.kde.org/projects/kde/kdeutils/print-manager) || [print-manager](https://www.archlinux.org/packages/?name=print-manager)
 
 *   **system-config-printer** — A CUPS printer configuration tool and status applet ([GNOME](/index.php/GNOME "GNOME") and others)
 
-NaN
+	[http://cyberelk.net/tim/software/system-config-printer/](http://cyberelk.net/tim/software/system-config-printer/) || [system-config-printer](https://www.archlinux.org/packages/?name=system-config-printer)
 
 *   **gtklp** — GTK+ interface to CUPS.
 
-NaN
+	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)<sup><small>AUR</small></sup>
 
 If your user does not have sufficient privileges to administer the cups scheduler, system-config-printer will request the root password when it starts. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
 
@@ -318,21 +278,21 @@ CUPS can be fully controlled from command-line with nice tools, _i.e._ the lp* a
 
 On Arch Linux, most commands support auto-completion with common shells. Also note that command-line switches cannot be grouped.
 
-NaN
+	List the devices
 
 ```
 # lpinfo -v
 
 ```
 
-NaN
+	List the drivers
 
 ```
 # lpinfo -m
 
 ```
 
-NaN
+	Add a new printer
 
 ```
 # lpadmin -p _printer_ -E -v _device_ -P _ppd_
@@ -348,21 +308,21 @@ The _printer_ is up to you. The device can be retrieved from the 'lpinfo -v' com
 
 In the following, the _printer_ references the name you have used here to set up the printer.
 
-NaN
+	Make the printer use the raw driver
 
 ```
 # lpadmin -p _printer_ -m raw
 
 ```
 
-NaN
+	Set the default printer
 
 ```
 $ lpoptions -d _printer_
 
 ```
 
-NaN
+	Check the status
 
 ```
 $ lpstat -s
@@ -370,21 +330,21 @@ $ lpstat -p _printer_
 
 ```
 
-NaN
+	Deactivate a printer
 
 ```
 # cupsdisable _printer_
 
 ```
 
-NaN
+	Activate a printer
 
 ```
 # cupsenable _printer_
 
 ```
 
-NaN
+	Remove a printer
 
 First set it to reject all incoming entries:
 
@@ -407,7 +367,7 @@ Finally remove it.
 
 ```
 
-NaN
+	Print a file
 
 ```
 $ lpr _file_
@@ -416,7 +376,7 @@ $ echo "Hello, world!" | lpr -p # print the result of a command. The -p switch a
 
 ```
 
-NaN
+	Check the printing queue
 
 ```
 $ lpq
@@ -424,7 +384,7 @@ $ lpq -a # on all printers
 
 ```
 
-NaN
+	Clear the printing queue
 
 ```
 # lprm   # remove last entry only

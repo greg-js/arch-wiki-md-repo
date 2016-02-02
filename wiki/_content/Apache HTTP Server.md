@@ -60,39 +60,39 @@ User http
 
 ```
 
-NaN
+	For security reasons, as soon as Apache is started by the root user (directly or via startup scripts) it switches to this UID. The default user is _http_, which is created automatically during installation.
 
 ```
 Listen 80
 
 ```
 
-NaN
+	This is the port Apache will listen to. For Internet-access with router, you have to forward the port.
 
-NaN
+	If you want to setup Apache for local development you may want it to be only accessible from your computer. Then change this line to `Listen 127.0.0.1:80`.
 
 ```
 ServerAdmin you@example.com
 
 ```
 
-NaN
+	This is the admin's email address which can be found on e.g. error pages.
 
 ```
 DocumentRoot "/srv/http"
 
 ```
 
-NaN
+	This is the directory where you should put your web pages.
 
-NaN
+	Change it, if you want to, but do not forget to also change `<Directory "/srv/http">` to whatever you changed your `DocumentRoot` to, or you will likely get a **403 Error** (lack of privileges) when you try to access the new document root. Do not forget to change the `Require all denied` line to `Require all granted`, otherwise you will get a **403 Error**. Remember that the DocumentRoot directory and its parent folders must allow execution permission to others (can be set with `chmod o+x /path/to/DocumentRoot`), otherwise you will get a **403 Error**.
 
 ```
 AllowOverride None
 
 ```
 
-NaN
+	This directive in `<Directory>` sections causes Apache to completely ignore `.htaccess` files. Note that this is now the default for Apache 2.4, so you need to explicitly allow overrides if you plan to use `.htaccess` files. If you intend to use `mod_rewrite` or other settings in `.htaccess` files, you can allow which directives declared in that file can override server configuration. For more info refer to the [Apache documentation](http://httpd.apache.org/docs/current/mod/core.html#allowoverride).
 
 **Tip:** If you have issues with your configuration you can have Apache check the configuration with: `apachectl configtest`
 
@@ -122,14 +122,6 @@ If you do not want user directories to be available on the web, comment out the 
 Include conf/extra/httpd-userdir.conf
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** It is not necessary to set `+x` for every users, setting it only for the webserver via ACLs suffices (see [Access Control Lists#Granting execution permissions for private files to a Web Server](/index.php/Access_Control_Lists#Granting_execution_permissions_for_private_files_to_a_Web_Server "Access Control Lists")). (Discuss in [Talk:Apache HTTP Server#](https://wiki.archlinux.org/index.php/Talk:Apache_HTTP_Server))
 
 You must make sure that your home directory permissions are set properly so that Apache can get there. Your home directory and `~/public_html` must be executable for others ("rest of the world"):
 

@@ -1,16 +1,8 @@
 # Tar
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Coreutils](/index.php/Coreutils "Coreutils").**
-
-**Notes:** Offers very little over `man tar` (Discuss in [Talk:Tar#](https://wiki.archlinux.org/index.php/Talk:Tar))
-
 From [GNU's Tar Page](http://www.gnu.org/software/tar/):
 
-NaN
+	_"The `Tar` program provides the ability to create tar archives, as well as various other kinds of manipulation. For example, you can use Tar on previously created archives to extract files, to store additional files, or to update or list files which were already stored."_
 
 As an early Unix compression format, `tar` files (known as **tarballs**) are widely used for packaging in Unix-like operating systems. Both [pacman](/index.php/Pacman "Pacman") and [AUR](/index.php/AUR "AUR") packages are tarballs, and Arch uses [GNU's](/index.php/GNU_Project "GNU Project") `Tar` program by default.
 

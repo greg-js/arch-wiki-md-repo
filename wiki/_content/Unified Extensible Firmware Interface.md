@@ -254,7 +254,7 @@ If EFI Variables support does not work even after the above conditions are satis
 
 #### Mount efivarfs
 
-**Warning:** _efivars_ is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting _efivars_ read-only (`-o ro`) as described below, when not making changes with tools such as _efibootmgr_.
+**Warning:** _efivars_ is mounted writeable by default [[1]](https://github.com/systemd/systemd/issues/2402), which may cause permanent damage to the system. [[2]](https://bbs.archlinux.org/viewtopic.php?id=207549) As such, consider mounting _efivars_ read-only (`-o ro`) as described below. Note that when it is mounted read-only, tools such as _efibootmgr_ and bootloaders will not be able to change boot settings, nor will commands like `systemctl reboot --firmware` work.
 
 If `efivarfs` is not automatically mounted at `/sys/firmware/efi/efivars` by [systemd](/index.php/Systemd "Systemd") during boot, then you need to manually mount it to expose UEFI variables to [#Userspace tools](#Userspace_tools) like `efibootmgr`:
 
@@ -685,4 +685,4 @@ After reboot, any entries added to NVRAM should show up in the boot menu.
 *   [UEFI Shell - bcfg command info](http://www.hpuxtips.es/?q=node/293)
 *   [UEFI Shell v2 binary with bcfg modified to work with UEFI pre-2.3 firmware - from Clover efiboot](http://dl.dropbox.com/u/17629062/Shell2.zip)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418188](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418188)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418665](https://wiki.archlinux.org/index.php?title=Unified_Extensible_Firmware_Interface&oldid=418665)"

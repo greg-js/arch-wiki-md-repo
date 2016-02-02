@@ -1,21 +1,5 @@
 # Ttytter
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Needs heavy wikification, use of formal language, compliance with [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Ttytter#](https://wiki.archlinux.org/index.php/Talk:Ttytter))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of Applications](/index.php/List_of_Applications "List of Applications").**
-
-**Notes:** There is already a ttytter entry in the list with a link to the official website, this article doesn't seem to add any useful content. See also [Help:Style#Hypertext metaphor](/index.php/Help:Style#Hypertext_metaphor "Help:Style"). (Discuss in [Talk:Ttytter#](https://wiki.archlinux.org/index.php/Talk:Ttytter))
-
 **ttytter** Not another Twitter client! Yes, another Twitter client. The difference here is that you're dealing with a multi-functional, fully 100% text, Perl command line client.
 
 tytter is a twitter client for the command line

@@ -96,14 +96,6 @@ or use a different key in `inputrc`. For example, to use `Alt+S` which is not bo
 
 ### History search
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Bash](/index.php/Bash "Bash").**
-
-**Notes:** not about readline (Discuss in [Talk:Readline#](https://wiki.archlinux.org/index.php/Talk:Readline))
-
 #### Avoid duplicates
 
 If you repeat the same command several times, they will all be appended in your history. To prevent this, add to your `~/.bashrc`:

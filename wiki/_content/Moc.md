@@ -92,19 +92,19 @@ alias mocp='/usr/bin/mocp-scrobbler.py -d; mocp'
 
 *   **dmenu_mocp** — Dmenu frontend to MOC
 
-NaN
+	[https://github.com/mutantturkey/mocicon](https://github.com/mutantturkey/mocicon) || [dmenu_mocp](https://aur.archlinux.org/packages/dmenu_mocp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu_mocp)]</sup>
 
 *   **mocicon** — GTK panel applet to control MOC
 
-NaN
+	[http://mocicon.sourceforge.net/](http://mocicon.sourceforge.net/) || [mocicon](https://aur.archlinux.org/packages/mocicon/)<sup><small>AUR</small></sup>
 
 *   **moc-tray** — Quick and easy access to mocp basic functions
 
-NaN
+	[https://code.google.com/p/moc-tray/](https://code.google.com/p/moc-tray/) || [moc-tray](https://www.archlinux.org/packages/?name=moc-tray)
 
 *   **eXo** — Qt frontend to MOC, supports scrobbling
 
-NaN
+	[https://bitbucket.org/blaze/exo/](https://bitbucket.org/blaze/exo/) || <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=exo)</small>
 
 ## systemd service file
 

@@ -1,13 +1,5 @@
 # Lenovo ThinkPad Edge E420s
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad Edge E420s#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_Edge_E420s))
-
 This article covers the Arch Linux support for the Lenovo ThinkPad Edge E420s laptop.
 
 ## Contents

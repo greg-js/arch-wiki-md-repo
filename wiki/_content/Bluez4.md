@@ -149,14 +149,6 @@ Disconnecting...done
 
 ### Motorola V900
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** No longer relevant to Bluez4\. As of version 1.99.alpha1, Blueman uses Bluez5 (Discuss in [Talk:Bluez4#](https://wiki.archlinux.org/index.php/Talk:Bluez4))
-
 After installing [Blueman](/index.php/Blueman "Blueman") and running _blueman-applet_, click "find me" under _connections > bluetooth_ in Motorola device. In _blueman-applet_, scan devices, find the Motorola, click "add". Click "bond" in _blueman-applet_, enter some PIN, enter the same PIN in Motorola when it asks. In terminal:
 
 ```
@@ -169,14 +161,6 @@ $ cd ~/bluetooth-temp
 and browse... Only audio, video, and pictures are available when you do this.
 
 ### Motorola RAZ
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Bluetooth](/index.php/Bluetooth "Bluetooth").**
-
-**Notes:** I see that the example recommends [bluez](https://www.archlinux.org/packages/?name=bluez) version 5\. Is this example relevant to Bluez4 or Bluez5? If the example works with Bluez5 then it should be removed from this article and moved to the examples section of the [Bluetooth](/index.php/Bluetooth "Bluetooth") article. This article should only contain content that is relevant only to Bluez4\. (Discuss in [Talk:Bluez4#](https://wiki.archlinux.org/index.php/Talk:Bluez4))
 
 Install [obextool](https://www.archlinux.org/packages/?name=obextool) [obexfs](https://www.archlinux.org/packages/?name=obexfs) [obexftp](https://www.archlinux.org/packages/?name=obexftp) [openobex](https://www.archlinux.org/packages/?name=openobex) [bluez](https://www.archlinux.org/packages/?name=bluez).
 

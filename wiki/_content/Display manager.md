@@ -30,57 +30,57 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[CDM](/index.php/CDM "CDM")** — Ultra-minimalistic, yet full-featured login manager written in Bash.
 
-NaN
+	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)<sup><small>AUR</small></sup>
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for _xinit_ written in pure Bash.
 
-NaN
+	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)<sup><small>AUR</small></sup>
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Minimalistic display manager for automatic logins.
 
-NaN
+	[http://enricozini.org/sw/nodm/](http://enricozini.org/sw/nodm/) || [nodm](https://www.archlinux.org/packages/?name=nodm)
 
 ### Graphical
 
 *   **[Entrance](/index.php/Enlightenment "Enlightenment")** — An EFL based display manager, highly experimental.
 
-NaN
+	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)<sup><small>AUR</small></sup>
 
 *   **[GDM](/index.php/GDM "GDM")** — [GNOME](/index.php/GNOME "GNOME") display manager.
 
-NaN
+	[https://wiki.gnome.org/Projects/GDM](https://wiki.gnome.org/Projects/GDM) || [gdm](https://www.archlinux.org/packages/?name=gdm)
 
 *   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE")4 display manager (discontinued).
 
-NaN
+	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Cross-desktop display manager, can use various front-ends written in any toolkit.
 
-NaN
+	[http://www.freedesktop.org/wiki/Software/LightDM](http://www.freedesktop.org/wiki/Software/LightDM) || [lightdm](https://www.archlinux.org/packages/?name=lightdm)
 
 *   **[LXDM](/index.php/LXDM "LXDM")** — [LXDE](/index.php/LXDE "LXDE") display manager. Can be used independent of the LXDE desktop environment.
 
-NaN
+	[http://sourceforge.net/projects/lxdm/](http://sourceforge.net/projects/lxdm/) || [lxdm](https://www.archlinux.org/packages/?name=lxdm)
 
 *   **MDM** — MDM display manager, used in Linux Mint, a fork of GDM 2.
 
-NaN
+	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)<sup><small>AUR</small></sup>
 
 *   **[Qingy](/index.php/Qingy "Qingy")** — Ultralight and very configurable graphical login independent on X Windows (uses DirectFB). (discontinued)
 
-NaN
+	[http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy)]</sup>
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
 
-NaN
+	[https://github.com/sddm/sddm](https://github.com/sddm/sddm) || [sddm](https://www.archlinux.org/packages/?name=sddm)
 
 *   **[SLiM](/index.php/SLiM "SLiM")** — Lightweight and elegant graphical login solution. (discontinued)
 
-NaN
+	[http://sourceforge.net/projects/slim.berlios/](http://sourceforge.net/projects/slim.berlios/) || [slim](https://www.archlinux.org/packages/?name=slim)
 
 *   **[XDM](/index.php/XDM "XDM")** — X display manager with support for XDMCP, host chooser.
 
-NaN
+	[http://www.x.org/archive/X11R7.5/doc/man/man1/xdm.1.html](http://www.x.org/archive/X11R7.5/doc/man/man1/xdm.1.html) || [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm)
 
 ## Loading the display manager
 
@@ -151,14 +151,6 @@ See also [xinitrc#Starting applications without a window manager](/index.php/Xin
 Most of display managers sources `/etc/xprofile`, `~/.xprofile` and `/etc/X11/xinit/xinitrc.d/`. For more details, see [xprofile](/index.php/Xprofile "Xprofile").
 
 ### Set the language
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This seems to change the locale of the user session but not of the DM itself. Probably better to link to [Locale#Setting the locale](/index.php/Locale#Setting_the_locale "Locale"). (Discuss in [Talk:Display manager#](https://wiki.archlinux.org/index.php/Talk:Display_manager))
 
 For display managers that use [AccountsService](http://freedesktop.org/wiki/Software/AccountsService/) the display manager [locale](/index.php/Locale "Locale") can be set by editing `/var/lib/AccountsService/users/$USER`:
 

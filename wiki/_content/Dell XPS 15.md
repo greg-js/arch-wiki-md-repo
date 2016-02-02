@@ -2,14 +2,6 @@
 
 This page is a work in progress! More info coming soon.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Headers messed up, useless shell dumps (Discuss in [Talk:Dell XPS 15#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_15))
-
 | Device | Status |
 | Network | Works |
 | Wireless | Works |

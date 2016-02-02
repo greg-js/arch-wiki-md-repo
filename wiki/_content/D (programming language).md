@@ -2,7 +2,7 @@
 
 From [Wikipedia:D (programming language)](https://en.wikipedia.org/wiki/D_(programming_language) "wikipedia:D (programming language)"):
 
-NaN
+	"The D programming language, also known simply as D, is an object-oriented, imperative, multi-paradigm system programming language by Walter Bright of Digital Mars. It originated as a re-engineering of C++, but even though it is predominantly influenced by that language, it is not a variant of it. D has redesigned some C++ features and has been influenced by concepts used in other programming languages, such as Java, C#, and Eiffel".
 
 ## Contents
 

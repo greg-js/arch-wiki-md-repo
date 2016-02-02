@@ -1,13 +1,5 @@
 # Modoboa
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** Only a title (Discuss in [Talk:Modoboa#](https://wiki.archlinux.org/index.php/Talk:Modoboa))
-
 Related articles
 
 *   [Python](/index.php/Python "Python")

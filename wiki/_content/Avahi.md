@@ -2,7 +2,7 @@
 
 From [Wikipedia:Avahi (software)](https://en.wikipedia.org/wiki/Avahi_(software) "wikipedia:Avahi (software)"):
 
-NaN
+	_"[Avahi](http://avahi.org/) is a free [Zero-configuration networking](https://en.wikipedia.org/wiki/Zero-configuration_networking "wikipedia:Zero-configuration networking") (zeroconf) implementation, including a system for multicast DNS/DNS-SD service discovery. It allows programs to publish and discover services and hosts running on a local network with no specific configuration. For example you can plug into a network and instantly find printers to print to, files to look at and people to talk to. It is licensed under the GNU Lesser General Public License (LGPL)."_
 
 ## Contents
 
@@ -202,14 +202,6 @@ If you're following the more-than-useful [Simple stateful firewall](/index.php/S
 ```
 
 ### Obtaining IPv4LL IP address
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [dhcpcd](/index.php/Dhcpcd "Dhcpcd").**
-
-**Notes:** should be merged into the main page (Discuss in [Talk:Avahi#](https://wiki.archlinux.org/index.php/Talk:Avahi))
 
 By default, if you are getting IP using DHCP, you are using the [dhcpcd](https://www.archlinux.org/packages/?name=dhcpcd) package. It can attempt to obtain an IPv4LL address if it failed to get one via DHCP. By default this option is disabled. To enable it, comment noipv4ll string:
 

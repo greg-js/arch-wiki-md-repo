@@ -37,7 +37,13 @@ Distcc is a program to distribute builds of C, C++, Objective C or Objective C++
 
 ## Terms
 
-NaN
+	master
+
+	The master is the computer which initiates and distributes the compilation to the configured slaves.
+
+	slaves
+
+	The slaves are running the distcc daemon which accepts incoming compilation requests send by the master.
 
 ## Getting started
 

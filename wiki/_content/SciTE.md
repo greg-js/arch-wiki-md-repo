@@ -82,14 +82,6 @@ fold.quotes.python=1
 
 ### Tips
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Incomplete explanations of the tips, should be broken into subsections (one per tip). (Discuss in [Talk:SciTE#](https://wiki.archlinux.org/index.php/Talk:SciTE))
-
 go on to html.properties file; to get the advantages you need the php.api and the phpfunctions.properties from [HERE](http://scintilla.sourceforge.net/SciTEExtras.html). You also find api files for ASP.
 
 ```

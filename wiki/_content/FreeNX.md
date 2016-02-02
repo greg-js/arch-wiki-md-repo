@@ -1,16 +1,8 @@
 # FreeNX
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** [nx-all](https://aur.archlinux.org/packages/nx-all/)<sup><small>AUR</small></sup> is not an officially supported package anymore.use [X2Go](/index.php/X2Go "X2Go") instead (Discuss in [Talk:FreeNX#](https://wiki.archlinux.org/index.php/Talk:FreeNX))
-
 From [FreeNX - the free NX](http://freenx.berlios.de/):
 
-NaN
+	NX is an exciting new technology for remote display. It provides _near local speed_ application responsiveness over high latency, low bandwidth links. The core libraries for NX are provided by [NoMachine](http://www.nomachine.com/) under the GPL. FreeNX is a GPL implementation of the NX Server and NX Client Components.
 
 ## Contents
 
@@ -282,7 +274,7 @@ Display:
 
 You are able to connect to your current X session via NX client now.
 
-NaN
+	— [FreeNX to existing display (opensuse.org)](http://en.opensuse.org/SDB:FreeNX_to_existing_display)
 
 ## Setting up non-KDE or GNOME desktop managers
 

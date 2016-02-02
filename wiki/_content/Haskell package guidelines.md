@@ -1,13 +1,5 @@
 # Haskell package guidelines
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Please help improve this article by creating reasonable [package creation guidelines](/index.php/Creating_packages "Creating packages") for [Haskell](/index.php/Haskell "Haskell") packages. The previous content on this page, which was unrelated to packaging guidelines, has been moved to [ArchHaskell](/index.php/ArchHaskell "ArchHaskell"). (Discuss in [Talk:Haskell package guidelines#](https://wiki.archlinux.org/index.php/Talk:Haskell_package_guidelines))
-
 **[Package creation guidelines](/index.php/Creating_packages "Creating packages")**
 
 * * *

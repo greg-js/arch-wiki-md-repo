@@ -1,6 +1,6 @@
 # Arch Linux
 
-Arch Linux is an independently developed, [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")/[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") general purpose GNU/Linux distribution versatile enough to suit any role. Development focuses on simplicity, minimalism, and code elegance. Arch is installed as a minimal base system, configured by the user upon which their own ideal environment is assembled by installing only what is required or desired for their unique purposes. GUI configuration utilities are not officially provided, and most system configuration is performed from the shell and a text editor. Based on a rolling-release model, Arch strives to stay bleeding edge, and typically offers the latest stable versions of most software.
+Arch Linux is an independently developed, [i686](https://en.wikipedia.org/wiki/P6_(microarchitecture) "wikipedia:P6 (microarchitecture)")/[x86-64](https://en.wikipedia.org/wiki/x86-64 "wikipedia:x86-64") general purpose GNU/Linux distribution versatile enough to suit any role. Development focuses on simplicity, minimalism, and code elegance. Arch is installed as a minimal base system, configured by the user upon which their own ideal environment is assembled by installing only what is required or desired for their unique purposes. GUI configuration utilities are not officially provided, and most system configuration is performed from the shell and a text editor. Based on a rolling-release model, Arch strives to stay up to date by providing the latest stable versions of most software.
 
 ## Contents
 
@@ -87,4 +87,4 @@ Over the years, the Arch community continued to grow and mature, and has recentl
 
 Arch developers remain unpaid, part-time volunteers, and there are no prospects for monetizing Arch Linux, so it will remain free in all senses of the word. Those curious to peruse more detail about Arch's development history can browse the [Arch entry in the Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org) and the [Arch Linux News Archives](https://www.archlinux.org/news/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux&oldid=390802](https://wiki.archlinux.org/index.php?title=Arch_Linux&oldid=390802)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux&oldid=418759](https://wiki.archlinux.org/index.php?title=Arch_Linux&oldid=418759)"

@@ -24,14 +24,6 @@ This article aims to help in creating a debugging Arch package and using it to p
 
 ## Package names
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** "call the function", "stack trace", gdb is only mentioned later in the article -> unclear introduction (Discuss in [Talk:Debug - Getting Traces#](https://wiki.archlinux.org/index.php/Talk:Debug_-_Getting_Traces))
-
 When looking at debug messages, such as:
 
 ```
@@ -139,14 +131,6 @@ Then install the built package:
 ```
 
 ## Getting the trace
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention core dumps (Discuss in [Talk:Debug - Getting Traces#](https://wiki.archlinux.org/index.php/Talk:Debug_-_Getting_Traces))
 
 The actual backtrace (or stack trace) can now be obtained via e.g. [gdb](https://www.archlinux.org/packages/?name=gdb), the GNU Debugger. Run it either via:
 

@@ -96,14 +96,6 @@ For further help, see:
 
 Extensive testing comparing the effect of GCC compile options show varying results, from no change to rather significant speed ups. [[1]](http://www.phoronix.com/scan.php?page=home) [[2]](https://bbs.archlinux.org/viewtopic.php?id=154333)
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add results to this section where appropriate. (Discuss in [Talk:Repo-ck#](https://wiki.archlinux.org/index.php/Talk:Repo-ck))
-
 ## Installation examples
 
 **Note:** As with _any_ additional kernel, manually edit the boot loader configuration to make it aware of new kernel images. For example, see [GRUB#Generate the main configuration file](/index.php/GRUB#Generate_the_main_configuration_file "GRUB") for GRUB.

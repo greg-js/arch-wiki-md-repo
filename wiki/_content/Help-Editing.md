@@ -259,7 +259,9 @@ This is not indented at all.
 
 This is not indented at all.
 
-NaN
+	This is indented slightly.
+
+	This is indented more.
 
  |
 
@@ -362,11 +364,23 @@ or
 
 Definition lists:
 
-NaN
+	Keyboard
+
+	Input device with buttons or keys
+
+	Mouse
+
+	Pointing device for two-dimensional input
 
 or
 
-NaN
+	Keyboard
+
+	Input device with buttons or keys
+
+	Mouse
+
+	Pointing device for two-dimensional input
 
  |
 | 
@@ -383,7 +397,11 @@ Use additional colons if a definition has multiple definitions:
 
 Use additional colons if a definition has multiple definitions:
 
-NaN
+	Term
+
+	First definition
+
+	Second definition
 
  |
 
@@ -480,7 +498,7 @@ The [[ArchWiki:About|ArchWiki]] is the primary documentation source for Arch Lin
 
 ...is rendered as:
 
-NaN
+	The [ArchWiki](/index.php/ArchWiki:About "ArchWiki:About") is the primary documentation source for Arch Linux.
 
 When you want to use the plural of an article title (or add any other suffix) for your link, you can add the extra letters directly outside the double square brackets.
 
@@ -493,7 +511,7 @@ makepkg is used in conjunction with [[PKGBUILD]]s.
 
 ...is rendered as:
 
-NaN
+	makepkg is used in conjunction with [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD").
 
 #### Links to sections of a document
 
@@ -508,7 +526,7 @@ For example:
 
 ...is rendered as:
 
-NaN
+	[Help:Editing#Links to sections of a document](/index.php/Help:Editing#Links_to_sections_of_a_document "Help:Editing")
 
 **Tip:** If linking to a section within the same page, the page name can be omitted (e.g. `[[#Links to sections of a document]]`). Do not needlessly reformat same-page section links to hide the anchor symbol (e.g. `[[#Links to sections of a document|Links to sections of a document]]`).
 
@@ -579,14 +597,6 @@ It is often more useful to make the link display something other than the URL, s
 **Note:** If linking to another ArchWiki or Wikipedia page, **use [#Internal links](#Internal_links) or [#Interwiki links](#Interwiki_links) rather than external links!** That is, if your link starts with [https://wiki.archlinux.org/](https://wiki.archlinux.org/) **use an internal link;** if your link starts with [http://en.wikipedia.org/](http://en.wikipedia.org/) **use an interwiki link!**
 
 ## Redirects
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Should be split into subsections to clearly describe 1) what is a redirect, 2) when to redirect a page, 3) how to redirect a page. (Discuss in [Help talk:Editing#](https://wiki.archlinux.org/index.php/Help_talk:Editing))
 
 To redirect automatically from one page to another, add `#REDIRECT` and an internal link to the page to be redirected to at the beginning of a page.
 

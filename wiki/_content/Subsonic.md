@@ -61,14 +61,6 @@ Start Subsonic and go to `settings > transcoding`. Ensure that the default FFmpe
 
 ### UTF-8 file names not added to the database
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The default init system under Arch is now Systemd, not SysV. (Discuss in [Talk:Subsonic#](https://wiki.archlinux.org/index.php/Talk:Subsonic))
-
 You must have at least one UTF-8 [locale](/index.php/Locale "Locale") installed.
 
 If you start subsonic using `/etc/rc.d/subsonic`, and your /etc/[rc.conf](/index.php/Rc.conf "Rc.conf") has `DAEMON_LOCALE="no"`, then the subsonic daemon will be started with the C locale, and Java will skip any folders with "international characters" (e.g. ßðþøæå etc.). Either set `DAEMON_LOCALE` to `"yes"` (but this will affect **all** rc.daemons), or add a line to the beginning of `/var/subsonic/subsonic.sh` which sets `LANG` to an installed UTF-8 locale, e.g. `LANG=nn_NO.utf8`.

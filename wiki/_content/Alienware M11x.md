@@ -156,7 +156,7 @@ Use 'nvidia-settings' to configure the video card, and multiple screens if using
 4.  make sure to add the username allowed to change the backlight settings to the **video** group in `/etc/group`
 5.  create an alias in your shell startup, and turn the brightness up or down via command, in turn you could tie this to a button combination in your xwindow manager settings.
 
-NaN
+	.bashrc
 
 ```
 alias brup='/sbin/backlight up'
@@ -165,7 +165,7 @@ alias brget='/sbin/backlight get'
 
 ```
 
-NaN
+	.tcshrc
 
 ```
 alias brup '/sbin/backlight up'

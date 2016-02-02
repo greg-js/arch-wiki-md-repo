@@ -4,14 +4,6 @@ Related articles
 
 *   [Official repositories web interface](/index.php/Official_repositories_web_interface "Official repositories web interface")
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This article only describes v1 of the API, we're at v4 now (notable feature is dependency information) (Discuss in [Talk:AurJson#](https://wiki.archlinux.org/index.php/Talk:AurJson))
-
 The **AurJson** interface is a lightweight remote interface for the [AUR](/index.php/AUR "AUR"). It utilizes http GET queries as the request format, and [json](http://www.json.org/) as the response data exchange format.
 
 ## Contents

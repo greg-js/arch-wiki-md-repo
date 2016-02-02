@@ -524,14 +524,6 @@ This will create a zip image under **out/target/product/hammerhead** (hammerhead
 
 ## Restoring Android
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Android#](https://wiki.archlinux.org/index.php/Talk:Android))
-
 In some cases, you want to return to the stock Android after flashing custom ROMs to your Android mobile device. For flashing instructions of your device, please use [XDA forums](http://forum.xda-developers.com/).
 
 ### Fastboot

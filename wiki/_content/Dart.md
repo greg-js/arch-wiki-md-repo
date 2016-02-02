@@ -2,7 +2,7 @@
 
 From the language's [home page](http://dartlang.org):
 
-NaN
+	_Dart is a cohesive, scalable platform for building apps that run on the web (where you can use Polymer) or on servers (such as with Google Cloud Platform). Use the Dart language, libraries, and tools to write anything from simple scripts to full-featured apps._
 
 ## Contents
 

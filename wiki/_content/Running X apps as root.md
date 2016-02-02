@@ -49,7 +49,7 @@ These methods will allow root to connect to a non-root user's X server, but pres
 
 *   **Temporarily allow root access**
 
-NaN
+*   xhost
 
 ```
 $ xhost +
@@ -76,13 +76,13 @@ $ xhost + localhost
 
 *   **Permanently allow root access**
 
-NaN
+	**Method 1**: Add the line
 
 `session optional pam_xauth.so`
 
 to `/etc/pam.d/su` and `/etc/pam.d/su-l`. Then switch to your root user using 'su' or 'su -'.
 
-NaN
+	**Method 2**: Globally in `/etc/profile`
 
 Add the following to `/etc/profile`
 

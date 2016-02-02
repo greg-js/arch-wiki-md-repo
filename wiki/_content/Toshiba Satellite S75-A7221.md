@@ -1,13 +1,5 @@
 # Toshiba Satellite S75-A7221
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** WIP (Discuss in [Talk:Toshiba Satellite S75-A7221#](https://wiki.archlinux.org/index.php/Talk:Toshiba_Satellite_S75-A7221))
-
 I recently installed Arch Linux on my new laptop. I'll be adding my experience installing on both BIOS and UEFI modes as well as hardware and the packages to go with it during installation.
 
 ## Contents

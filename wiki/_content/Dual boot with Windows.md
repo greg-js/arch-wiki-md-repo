@@ -123,14 +123,6 @@ With this setup the Windows bootloader loads GRUB which then boots Arch.
 
 The following section contains excerpts from [http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/](http://www.iceflatline.com/2009/09/how-to-dual-boot-windows-7-and-linux-using-bcdedit/).
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Using ex3 formatted /boot partition, windows bootloader works just fine (Discuss in [Talk:Dual boot with Windows#](https://wiki.archlinux.org/index.php/Talk:Dual_boot_with_Windows))
-
 In order to have the Windows boot loader see the Linux partition, one of the Linux partitions created needs to be FAT32 (in this case, `/dev/sda3`). The remainder of the setup is similar to a typical installation. Some documents state that the partition being loaded by the Windows boot loader must be a primary partition but I have used this without problem on an extended partition.
 
 *   When installing the GRUB boot loader, install it on your `/boot` partition rather than the MBR.

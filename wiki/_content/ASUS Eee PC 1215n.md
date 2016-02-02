@@ -1,18 +1,10 @@
 # ASUS Eee PC 1215n
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This article mentions acpi_call and legacy Bumblebee (Discuss in [Talk:ASUS Eee PC 1215n#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_1215n))
-
 **Notice: Kernel Panic Issue**
 
-NaN
+	Kernels 3.10.6 - 3.10.10 cause kernel panics with the brcmsmac WiFi driver.
 
-NaN
+	If you need one of these kernels, see [section](https://wiki.archlinux.org/index.php/ASUS_Eee_PC_1215n#brcmsmac_WiFi_driver_kernel_panic) below for work-around. Otherwise, update kernel to 3.11.1+
 
 | **Device** | **Status** | **Module** |
 | Ethernet | **Working** | atl1c [[1]](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx) |

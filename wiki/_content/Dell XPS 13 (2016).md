@@ -1,13 +1,5 @@
 # Dell XPS 13 (2016)
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** This page is a work in progress; you're warmly invited to contribute! (Discuss in [Talk:Dell XPS 13 (2016)#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_13_(2016)))
-
 | **Device** | **Status** | **Modules** |
 | Video | Works after configuration | i915 |
 | Wireless | Works after configuration | brcmfmac |

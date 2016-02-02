@@ -7,7 +7,7 @@ Related articles
 
 From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
-NaN
+	TLP brings you the benefits of advanced power management for Linux without the need to understand every technical detail. TLP comes with a default configuration already optimized for battery life, so you may just install and forget it. Nevertheless TLP is highly customizable to fulfill your specific requirements.
 
 ## Contents
 

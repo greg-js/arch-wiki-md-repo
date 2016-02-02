@@ -9,22 +9,6 @@ Related articles
 *   [GRUB](/index.php/GRUB "GRUB")
 *   [Syslinux](/index.php/Syslinux "Syslinux")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Style on this page is not coherent with [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Mkinitcpio-btrfs#Things to do (accuracy & style)](https://wiki.archlinux.org/index.php/Talk:Mkinitcpio-btrfs#Things_to_do_.28accuracy_.26_style.29))
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This page needs extensive editing or an outright re-write. Caution may be warranted until this is completed. See [Btrfs](/index.php/Btrfs "Btrfs") and the discussion for further information. (Discuss in [Talk:Mkinitcpio-btrfs#Things to do (accuracy & style)](https://wiki.archlinux.org/index.php/Talk:Mkinitcpio-btrfs#Things_to_do_.28accuracy_.26_style.29))
-
 Some of Btrfs's neat features like non-volatile rollback or automatic mounting of degraded Btrfs multi-device ([RAID](/index.php/RAID "RAID")) volumes need a special package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") called [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup>. The package integrates some helpers in the boot process, to handle these features correctly.
 
 **Note:**

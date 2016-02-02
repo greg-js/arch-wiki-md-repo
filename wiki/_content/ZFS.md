@@ -88,14 +88,6 @@ It may be useful to prepare a [customized archiso](#Embed_the_archzfs_packages_i
 
 ### DKMS
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This method was reported to not work correctly in January 2016, with pacman not triggering DKMS after a kernel upgrade or reinstalling. (Discuss in [Talk:ZFS#](https://wiki.archlinux.org/index.php/Talk:ZFS))
-
 Users can make use of DKMS [Dynamic Kernel Module Support](/index.php/Dynamic_Kernel_Module_Support "Dynamic Kernel Module Support") to rebuild the ZFS modules automatically with every kernel upgrade.
 
 Read the [Mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") wiki entry for a general understanding of the initial ramdisk environment, and adding the dkms hook [Mkinitcpio#HOOKS](/index.php/Mkinitcpio#HOOKS "Mkinitcpio").
@@ -161,14 +153,6 @@ lrwxrwxrwx 1 root root  9 Aug 12 16:26 ata-ST3000DM001-9YN166_S1F0KBP8 -> ../../
 lrwxrwxrwx 1 root root  9 Aug 12 16:26 ata-ST3000DM001-9YN166_S1F0KDGY -> ../../sdb
 
 ```
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Missing references to [Persistent block device naming](/index.php/Persistent_block_device_naming "Persistent block device naming"), it is useless to explain the differences (or even what they are) here. (Discuss in [Talk:ZFS#](https://wiki.archlinux.org/index.php/Talk:ZFS))
 
 Disk labels and UUID can also be used for ZFS mounts by using [GPT](/index.php/GUID_Partition_Table "GUID Partition Table") partitions. ZFS drives have labels but Linux is unable to read them at boot. Unlike [MBR](/index.php/Master_Boot_Record "Master Boot Record") partitions, GPT partitions directly support both UUID and labels independent of the format inside the partition. Partitioning rather than using the whole disk for ZFS offers two additional advantages. The OS does not generate bogus partition numbers from whatever unpredictable data ZFS has written to the partition sector, and if desired, you can easily over provision SSD drives, and slightly over provision spindle drives to ensure that different models with slightly different sector counts can zpool replace into your mirrors. This is a lot of organization and control over ZFS using readily available tools and techniques at almost zero cost.
 
@@ -548,14 +532,6 @@ Add a line to `/etc/fstab`:
 /dev/zvol/<pool>/swap none swap discard 0 0
 
 ```
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The hibernate hook is deprecated. Does the limitation still apply? (Discuss in [Talk:ZFS#](https://wiki.archlinux.org/index.php/Talk:ZFS))
 
 Keep in mind the Hibernate hook must be loaded before filesystems, so using ZVOL as swap will not allow to use hibernate function. If you need hibernate, keep a partition for it.
 
@@ -951,7 +927,7 @@ WantedBy=local-fs.target
 *   [Solaris Internals -- ZFS Troubleshooting Guide](http://www.solarisinternals.com/wiki/index.php/ZFS_Troubleshooting_Guide)
 *   [Pingdom details how it backs up 5TB of MySQL data every day with ZFS](http://royal.pingdom.com/2013/06/04/zfs-backup/)
 
-NaN
+	Aaron Toponce has authored a 17-part blog on ZFS which is an excellent read.
 
 1.  [VDEVs](https://pthree.org/2012/12/04/zfs-administration-part-i-vdevs/)
 2.  [RAIDZ Levels](https://pthree.org/2012/12/05/zfs-administration-part-ii-raidz/)

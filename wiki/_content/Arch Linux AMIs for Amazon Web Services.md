@@ -1,21 +1,5 @@
 # Arch Linux AMIs for Amazon Web Services
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Links still work, but information from 2012 (Discuss in [Talk:Arch Linux AMIs for Amazon Web Services#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_AMIs_for_Amazon_Web_Services))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [VPS](/index.php/VPS "VPS").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Arch Linux AMIs for Amazon Web Services#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_AMIs_for_Amazon_Web_Services))
-
 ## Contents
 
 *   [1 Running public Arch AMIs](#Running_public_Arch_AMIs)

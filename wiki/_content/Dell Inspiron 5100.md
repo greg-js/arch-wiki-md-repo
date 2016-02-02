@@ -1,21 +1,5 @@
 # Dell Inspiron 5100
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dell Inspiron 5100#](https://wiki.archlinux.org/index.php/Talk:Dell_Inspiron_5100))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section should provide only information specific to the hardware. Content from the general wiki articles should not be [duplicated](/index.php/Category:Laptops "Category:Laptops"); crosslink it instead.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dell Inspiron 5100#](https://wiki.archlinux.org/index.php/Talk:Dell_Inspiron_5100))
-
 This is based on my experience with arch on my Dell Inspiron 5100 laptop. Most of this information should apply to other 5xxx series Inspiron laptops and similar generation laptops in general.
 
 ## Contents

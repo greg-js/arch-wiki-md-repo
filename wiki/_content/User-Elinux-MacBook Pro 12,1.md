@@ -227,14 +227,6 @@ Generate `grub.cfg` and `boot.efi` from Arch Linux:
 
 ##### Method 2: Using the default EFI System Partition with Grub
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Coming this weekend... (Discuss in [User talk:Elinux/MacBook Pro 12,1#](https://wiki.archlinux.org/index.php/User_talk:Elinux/MacBook_Pro_12,1))
-
 #### Direct EFI booting (rEFInd)
 
 See: [UEFI_Bootloaders](/index.php/UEFI_Bootloaders "UEFI Bootloaders")

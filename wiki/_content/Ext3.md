@@ -118,6 +118,6 @@ I get filesystem errors even with this tips. Do not disable lengthy boot time ch
 
 If you have some big partitions, do not enable full journaling on them. I experienced reproducible freezes (about 30 seconds) when enabling this on my 250GB home partition.
 
-NaN
+	Did you try tweaking bdflush as described [by Daniel Robbins](http://www.ibm.com/developerworks/linux/library/l-fs8.html)?
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ext3&oldid=405543](https://wiki.archlinux.org/index.php?title=Ext3&oldid=405543)"

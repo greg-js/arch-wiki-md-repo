@@ -1,13 +1,5 @@
 # Sony Vaio Pro SVP-1x21
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See the [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") guidelines. (Discuss in [Talk:Sony Vaio Pro SVP-1x21#](https://wiki.archlinux.org/index.php/Talk:Sony_Vaio_Pro_SVP-1x21))
-
 This document will guide you through the process of installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") on the 2013 Sony Vaio Pro [Haswell](https://en.wikipedia.org/wiki/Haswell_(microarchitecture) "wikipedia:Haswell (microarchitecture)") based [Ultrabook](https://en.wikipedia.org/wiki/Ultrabook "wikipedia:Ultrabook"). 1.1kg for the 13" model
 
 ## Contents

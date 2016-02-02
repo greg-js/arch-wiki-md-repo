@@ -83,14 +83,6 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
 
 ### Pre-purchase considerations
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Would be nice to get some sources here, particularly on the "75% occupancy" (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
-
 There are several key features to look for prior to purchasing a contemporary SSD.
 
 *   Native [TRIM](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") support is a vital feature that both prolongs SSD lifetime and reduces loss of performance for write operations over time.
@@ -129,14 +121,6 @@ There are other filesystems specifically [designed for SSD](https://en.wikipedia
 See [Partitioning#Partition alignment](/index.php/Partitioning#Partition_alignment "Partitioning").
 
 ### TRIM
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention which options apply to which filesystems. (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
 
 Most SSDs support the [ATA_TRIM command](https://en.wikipedia.org/wiki/TRIM "wikipedia:TRIM") for sustained long-term performance and wear-leveling. For more including some before and after benchmark, see [this](https://sites.google.com/site/lightrush/random-1/howtoconfigureext4toenabletrimforssdsonubuntu) tutorial.
 
@@ -202,14 +186,6 @@ Using the `discard` option for a mount in `/etc/fstab` enables continuous TRIM i
 ```
 
 The main benefit of continuous TRIM is speed; an SSD can perform more efficient [garbage collection](http://arstechnica.com/gadgets/2015/04/ask-ars-my-ssd-does-garbage-collection-so-i-dont-need-trim-right/). However, results vary and particularly earlier SSD generations may also show just the opposite effect. Also for this reason, some distributions decided against using it (e.g. Ubuntu: see [this article](http://www.phoronix.com/scan.php?page=news_item&px=MTUxOTY) and the [related blueprint](https://blueprints.launchpad.net/ubuntu/+spec/core-1311-ssd-trimming)).
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** 1) `mount(8)` indicates that ext3 does not support the `discard` option, which would explain any errors trying to use it. 2) Synchronous TRIM commands before SATA 3.1 are hardware property, so how can software adjustments make a difference? (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
 
 **Note:**
 
@@ -306,14 +282,6 @@ Use [iotop](https://www.archlinux.org/packages/?name=iotop) and sort by disk wri
 *   For systems with both an SSD and an HDD, consider relocating the `/var` partition to a magnetic disc on the system rather than on the SSD itself to avoid read/write wear.
 
 ### noatime mount option
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [fstab#atime options](/index.php/Fstab#atime_options "Fstab").**
-
-**Notes:** This should be described only in one place, just link to [fstab](/index.php/Fstab "Fstab") afterwards. (Discuss in [Talk:Solid State Drives#](https://wiki.archlinux.org/index.php/Talk:Solid_State_Drives))
 
 Using this flag in one's `/etc/fstab` halts the logging of read accesses to the file system via an update to the atime information associated with the file. The importance of the `noatime` setting is that it eliminates the need by the system to make writes to the file system for files which are simply being read. Since writes can be somewhat expensive as mentioned in previous section, this can result in measurable performance gains.
 

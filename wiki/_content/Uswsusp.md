@@ -10,7 +10,7 @@ Related articles
 
 *   **s2ram** - a wrapper around the kernel's suspend-to-RAM mechanism allowing the user to perform some graphics adapter manipulations from the user land before suspending and after resuming that may help to bring the graphics (and the entire system) back to life after the resume. Incorporates the functionality of vbetool and radeontool as well as some tricks of its own. Includes a list of working hardware configurations along with the appropriate sets of operations to be performed to resume them successfully. This is accomplished by a hardware whitelist maintained by HAL - **s2ram** translates the HAL database options into **s2ram** parameters.
 
-NaN
+**Note:** Since HAL is deprecated and KMS drivers can save the state of the grahic card directly without userspace quirks, **s2ram** development is discontinued and no further whitelist entries are accepted. If a KMS driver is in use, **s2ram** will directly suspend the machine.
 
 *   **s2disk** - the reference implementation of the userspace software suspend (µswsusp); it coordinates the steps necessary to suspend the system (such as freezing the processes, preparing the swap space, etc.) and handles image writing and reading. s2disk already supports compression and encryption of the image and other features (e.g. a nice progress bar, saving the image on a remote disk, playing tetris while resuming, etc.) can be easily added.
 
@@ -177,14 +177,6 @@ Now you could try to suspend directly calling s2disk from the command line:
 It is probably necessary to resort to a userspace tool which calls internally s2disk, like [Pm-utils](/index.php/Pm-utils "Pm-utils") or hibernate-script. See [Suspending to Disk with hibernate-script](/index.php/Suspending_to_Disk_with_hibernate-script "Suspending to Disk with hibernate-script") about details for defining the ususpend-disk method as default.
 
 ### With pm-utils
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Since February 2013, the suspend and hibernate functions in UPower have been [deprecated](http://cgit.freedesktop.org/upower/commit/?id=372c2f8d2922add987683a24b5d69902e05e2f97). (Discuss in [Talk:Uswsusp#](https://wiki.archlinux.org/index.php/Talk:Uswsusp))
 
 [Pm-utils](/index.php/Pm-utils "Pm-utils") can utilise several [sleep back-ends](/index.php/Pm-utils#Using_another_sleep_backend_.28like_uswsusp.29 "Pm-utils"), including uswsusp. Create or edit `/etc/pm/config.d/module`:
 

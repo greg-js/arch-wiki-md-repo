@@ -12,6 +12,8 @@
     *   [2.4 Nginx](#Nginx)
         *   [2.4.1 Option 1: subdomain](#Option_1:_subdomain)
         *   [2.4.2 Option 2: subdirectory](#Option_2:_subdirectory)
+    *   [2.5 Symlink Method](#Symlink_Method)
+    *   [2.6 Alias Method](#Alias_Method)
 *   [3 phpMyAdmin configuration](#phpMyAdmin_configuration)
     *   [3.1 Add blowfish_secret passphrase](#Add_blowfish_secret_passphrase)
     *   [3.2 Enabling Configuration Storage (optional)](#Enabling_Configuration_Storage_.28optional.29)
@@ -39,14 +41,6 @@ extension=mcrypt.so
 ```
 
 Optionally you can enable `bz2.so` and `zip.so` for compression support.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `open_basedir` is no longer set by default, in fact it may cause a server error if set. (Discuss in [Talk:PhpMyAdmin#](https://wiki.archlinux.org/index.php/Talk:PhpMyAdmin))
 
 You need to make sure that PHP can access `/etc/webapps`. Add it to `open_basedir` in `/etc/php/php.ini` if necessary:
 
@@ -169,10 +163,47 @@ When using SSL, you might run into the problem that the links on the pages gener
 
 Using this method, you'll access PhpMyAdmin as `localhost/phpmyadmin`, similarly to Apache.
 
+### Symlink Method
+
 To get PhpMyAdmin working with your [nginx](/index.php/Nginx "Nginx") setup, first take note of the root of the server you want to use. Supposing it is `/srv/http`, now create a symlink:
 
 ```
  # ln -s /usr/share/webapps/phpMyAdmin/ /srv/http/phpmyadmin
+
+```
+
+### Alias Method
+
+If for some reason you are unable to create a symlink in the root of the server or would just rather use an alias, you can use this example configuration.
+
+```
+ location /phpmyadmin {
+         alias /usr/share/webapps/phpMyAdmin;
+         # Optionally set separate access and error logs for phpMyAdmin
+         access_log /var/log/nginx/phpmyadmin_access.log;
+         error_log /var/log/nginx/phpmyadmin_error.log;
+         index   index.php;  
+         try_files $uri $uri/=404;
+         # Deny some static files
+         location ~ ^/phpmyadmin/(README|LICENSE|ChangeLog|DCO)$ {
+                 deny all;
+         }
+         # Deny .md files
+         location ~ ^/phpmyadmin/(.+\.md)$ {
+                 deny all;
+         }
+         # Deny some directories
+         location ~ ^/phpmyadmin/(doc|sql|setup)/ {
+                 deny all;
+         }
+         #FastCGI config for PhpMyAdmin
+         location ~ /phpmyadmin/(.+\.php)$ {
+                 fastcgi_param  SCRIPT_FILENAME /usr/share/webapps/phpMyAdmin/$1;
+                 fastcgi_pass   unix:/run/php-fpm/php-fpm.sock;
+                 fastcgi_index  index.php;
+                 include        fastcgi.conf;
+         }
+ }
 
 ```
 
@@ -334,4 +365,4 @@ a fix seems to be to make sure you do not have SSL connection between PhpMyAdmin
 
 **Note:** There surely must be a better fix since 'ssl = true' worked before. Also do not disable SSL if your PhpMyAdmin install is somehow not on the same server as MySQL!
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=416235](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=416235)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=418776](https://wiki.archlinux.org/index.php?title=PhpMyAdmin&oldid=418776)"

@@ -100,7 +100,57 @@ EndSection
 
 ```
 
-NaN
+	**TapButton1**
+
+	(integer) configures which mouse-button is reported on a non-corner, one finger tap.
+
+	**TapButton2**
+
+	(integer) configures which mouse-button is reported on a non-corner, two finger tap
+
+	**TapButton3**
+
+	(integer) configures which mouse-button is reported on a non-corner, three finger tap
+
+	**RBCornerButton**
+
+	(integer) configures which mouse-button is reported on a right bottom corner, one finger tap (use `Option "RBCornerButton" "3"` to achieve Ubuntu style tap behaviour for right mouse button in lower right corner)
+
+	**RTCornerButton**
+
+	(integer) as above, but for top right corner, one finger tap.
+
+	**VertEdgeScroll**
+
+	(boolean) enables vertical scrolling while dragging across the right edge of the touch pad.
+
+	**HorizEdgeScroll**
+
+	(boolean) enables horizontal scrolling while dragging across the bottom edge of the touch pad.
+
+	**VertTwoFingerScroll**
+
+	(boolean) enables vertical scrolling using two fingers.
+
+	**HorizTwoFingerScroll**
+
+	(boolean) enables horizontal scrolling using two fingers.
+
+	**EmulateTwoFingerMinZ/W**
+
+	(integer) play with this value to set the precision of two finger scroll.
+
+	**FingerLow**
+
+	(integer) when finger pressure drops below this value, the driver counts it as a release.
+
+	**FingerHigh**
+
+	(integer) when finger pressure goes above this value, the driver counts it as a touch.
+
+	**VertScrollDelta** and **HorizScrollDelta**
+
+	(integer) configures the speed of scrolling, it is a bit counter-intuitive because higher values produce greater precision and thus slower scrolling. Negative values cause natural scrolling like in OS X.
 
 **Note:**
 
@@ -118,21 +168,21 @@ Next to the traditional method of configuration, the Synaptics driver also suppo
 
 *   **[Synclient](#Synclient) (Recommended)** — command line utility to configure and query Synaptics driver settings on a live system, the tool is developed by the synaptics driver maintainers and is provided with the synaptics driver
 
-NaN
+	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics)
 
 *   **[xinput](#Using_xinput_to_determine_touchpad_capabilities)** — small general-purpose CLI tool to configure devices
 
-NaN
+	[http://xorg.freedesktop.org/](http://xorg.freedesktop.org/) || [xorg-xinput](https://www.archlinux.org/packages/?name=xorg-xinput)
 
 #### Graphical tools
 
 *   **GPointing Device Settings** — provides graphical on the fly configuration for several pointing devices connected to the system, including your synaptics touch pad. This application replaces GSynaptics as the preferred tool for graphical touchpad configuration through the synaptics driver
 
-NaN
+	[https://wiki.gnome.org/Attic/GPointingDeviceSettings](https://wiki.gnome.org/Attic/GPointingDeviceSettings) || [gpointing-device-settings](https://www.archlinux.org/packages/?name=gpointing-device-settings)
 
 *   **kcm-touchpad** — A new touchpad configuration tool for [KDE](/index.php/KDE "KDE"), provides a module under input devices in system settings. Released in February 2014, works under KDE SC 4.12+. It is to be considered a replacement for [synaptiks](https://aur.archlinux.org/packages/synaptiks/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/synaptiks)]</sup> and [kcm_touchpad](https://aur.archlinux.org/packages/kcm_touchpad/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_touchpad)]</sup>.
 
-NaN
+	[https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository](https://projects.kde.org/projects/kde/workspace/kcm-touchpad/repository) || [kcm-touchpad](https://www.archlinux.org/packages/?name=kcm-touchpad)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-touchpad)]</sup>
 
 ### GNOME/Cinnamon
 
@@ -409,14 +459,6 @@ SUBSYSTEM=="input", KERNEL=="mouse[0-9]*", ACTION=="remove", ENV{DISPLAY}=":0", 
 
 #### GDM
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** saying that GDM _usually_ does something does not make sense (Discuss in [Talk:Touchpad Synaptics#](https://wiki.archlinux.org/index.php/Talk:Touchpad_Synaptics))
-
 GDM usually stores the Xauthority files in `/var/run/gdm` in a randomly-named directory. You should find your actual path to the Xauthority file which can be done using `ps ax`. For some reason multiple authority files may appear for a user, so a rule like will be necessary:
 
  `/etc/udev/rules.d/01-touchpad.rules` 
@@ -450,14 +492,6 @@ If using KDE, the package [kcm-touchpad](https://www.archlinux.org/packages/?nam
 If using Plasma, the package [kcm-touchpad-frameworks](https://www.archlinux.org/packages/?name=kcm-touchpad-frameworks)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [plasma-desktop](https://www.archlinux.org/packages/?name=plasma-desktop)]</sup> can be used to manage the touchpad.
 
 #### System with multiple X sessions
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Hard-coded `DISPLAY` variable does not work with multiple X sessions. (Discuss in [Talk:Touchpad Synaptics#](https://wiki.archlinux.org/index.php/Talk:Touchpad_Synaptics))
 
 For an environment where multiple users are present, a slightly different approach is needed to detect the current users X environment. This script will help achieving this:
 
@@ -744,14 +778,6 @@ Search for an input device which has the name "SynPS/2 Synaptics TouchPad". The 
 
 In this case, the `Handlers` are `mouse0` and `event1`, so `/dev/input/mouse0` would be used.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO: explain how to apply this in `/etc/X11/xorg.conf.d/50-synaptics.conf` (Discuss in [Talk:Touchpad Synaptics#](https://wiki.archlinux.org/index.php/Talk:Touchpad_Synaptics))
-
 ### Firefox and special touchpad events
 
 You can enable/disable some special events that Firefox handles upon tapping or scrolling certain parts of your touchpad by editing the settings of those actions. Type **about:config** in your Firefox address bar. To alter options, double-click on the line in question.
@@ -777,14 +803,6 @@ The optimum value will depend on your touchpad and how you use it, try starting 
 ### Opera: horizontal scrolling issues
 
 Same as above. To fix it, go to _Tools > Preferences > Advanced > Shortcuts_. Select "Opera Standard" mouse setup and click "Edit". In "Application" section:
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Description here is not so clear and i don't use Opera,Please make it clear :) (Discuss in [Talk:Touchpad Synaptics#](https://wiki.archlinux.org/index.php/Talk:Touchpad_Synaptics))
 
 *   assign key "Button 6" to command "Scroll left"
 *   assign key "Button 7" to command "Scroll right"
@@ -832,14 +850,6 @@ finally add this to your external device's section:
 If all of the above does not work for you, please check relevant bug trackers for possible bugs, or go through the forums to see if anyone has found a better solution.
 
 ### Touchpad synchronization issues
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Touchpad Synaptics#Outdated "Touchpad synchronization issues" section](https://wiki.archlinux.org/index.php/Talk:Touchpad_Synaptics#Outdated_.22Touchpad_synchronization_issues.22_section))
 
 Sometimes the cursor may freeze for several seconds or start acting on its own for no apparent reason. This behavior is accompanied by records in `/var/log/messages.log`
 
@@ -890,14 +900,6 @@ Certain touchpads (elantech in particular) will fail to be recognized as a devic
 Newer Thinkpads do not have physical buttons for their Trackpoint anymore and instead use the upper area of the Clickpad for buttons (Left, Middle, Right). Apart from the ergonomic viewpoint this works quite well with current Xorg. Unfortunately mouse wheel emulation using the middle button is not supported yet. Install [xf86-input-evdev-trackpoint](https://aur.archlinux.org/packages/xf86-input-evdev-trackpoint/)<sup><small>AUR</small></sup> from the AUR for a patched and properly configured version if you intend to use the Trackpoint.
 
 ### Clickpad/Forcepad: double-click, click-and-drag
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** patch from 30 Sep 2014, should be already fixed (Discuss in [Talk:Touchpad Synaptics#](https://wiki.archlinux.org/index.php/Talk:Touchpad_Synaptics))
 
 On newer laptops such as the HP Envy 15 x360 a `ButtonRelease` event is not sent when releasing the physical button, but only when moving all fingers off the Clickpad. [[3]](http://permalink.gmane.org/gmane.linux.kernel.input/38497) This is due to a kernel bug in `drivers/media/input/synaptics.c` [[4]](https://lkml.org/lkml/2014/9/30/719); see [[5]](http://www.linuxquestions.org/questions/showthread.php?p=5276920&posted=1#post5276920) for a temporary workaround.
 

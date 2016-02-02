@@ -1,13 +1,5 @@
 # Base2heirloom
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Heirloom](/index.php/Heirloom "Heirloom").**
-
-**Notes:** Unmaintained since 2011, what's still relevant should be merged to [Heirloom](/index.php/Heirloom "Heirloom") (Discuss in [Talk:Base2heirloom#](https://wiki.archlinux.org/index.php/Talk:Base2heirloom))
-
 The [base](https://wiki.archlinux.org/index.php/DeveloperWiki:Core-Repository)2[Heirloom](https://wiki.archlinux.org/index.php/Heirloom) project aims to offer drop-in replacements for various central parts of the Arch linux base system.
 
 **Warning:** Do not expect 100% drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options. One purpose of this Wiki is to document missing features and the problems they cause (in order to device work-arounds). Make sure that the replacement(s) that you install fill your needs before proceeding.

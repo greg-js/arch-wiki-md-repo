@@ -1,13 +1,5 @@
 # World of Warcraft
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:World of Warcraft#](https://wiki.archlinux.org/index.php/Talk:World_of_Warcraft))
-
 World of Warcraft (WoW) is a Massively Multiplayer Online Role-Playing Game (MMORPG) by Blizzard Entertainment taking place in the fictional world of Azeroth, the world that previous Blizzard titles in the Realtime Stategy (RTS) Warcraft series. For more information about the game itself, visit [the Official World of Warcraft website](http://www.worldofwarcraft.com/).
 
 This article will describe how install and run in on Arch Linux using [Wine](http://winehq.org/).

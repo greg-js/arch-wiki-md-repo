@@ -105,7 +105,7 @@ When an article invites to install some packages in the conventional way, it wil
 
 For packages from the [official repositories](/index.php/Official_repositories "Official repositories") you will read something like:
 
-NaN
+	Install the [foobar](https://www.archlinux.org/packages/?name=foobar) package.
 
 This means that you have to run:
 
@@ -120,7 +120,7 @@ The [pacman](/index.php/Pacman "Pacman") article contains detailed explanations 
 
 For packages from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you will read something like:
 
-NaN
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package.
 
 This means that in general you have to follow the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> link, download the PKGBUILD archive, extract it, **verify the content** and finally run, in the same folder:
 
@@ -135,7 +135,7 @@ The [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository
 
 When an article invites to _start_, _enable_, _stop_ or _restart_ some systemd units (e.g. a service), it will not indicate the detailed instructions to do so, but instead you will read something like:
 
-NaN
+	[Start](/index.php/Start "Start") `example.service`.
 
 This means that you have to run:
 
@@ -171,14 +171,6 @@ In this case `_interface_name_` is used as a _pseudo-variable_ placeholder in a 
 *   The command `dd if=_data_source_ of=/dev/sd"X" bs=_sector_size_ count=_sector_number_ seek=_partitions_start_sector_` can be run as root to wipe a partition with the specific parameters.
 
 In this case the _pseudo-variables_ are used to describe the parameters that must be substituted for them. Details on how to gather them are elaborated on in the section [Securely wipe disk#Calculate blocks to wipe manually](/index.php/Securely_wipe_disk#Calculate_blocks_to_wipe_manually "Securely wipe disk"), which features the command.
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention other examples, ideally from other device categories (e.g. storage), with links to background articles. The examples are meant to avoid duplicating existing explanations in other articles. (Discuss in [Help talk:Reading#](https://wiki.archlinux.org/index.php/Help_talk:Reading))
 
 In case of file examples, pasting pseudo-variables in real configuration files might break the programs that use them.
 

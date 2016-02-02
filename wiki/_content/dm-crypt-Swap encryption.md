@@ -28,7 +28,21 @@ Default `/etc/crypttab` already contains a line for swap encryption so you can b
 
 Where:
 
-NaN
+	<name>
+
+	Represents the name to state in the first column of `/etc/fstab` (as "`/dev/mapper/<name>`").
+
+	<device>
+
+	Should be the persistent device name for the swap device.
+
+	<password>
+
+	`/dev/urandom` sets the dm-crypt master key to be randomized on every volume recreation.
+
+	<options>
+
+	The `swap` option runs mkswap after cryptographic's are setup.
 
 **Warning:** Make sure to use either `by-id`, `by-path` or [LVM](/index.php/LVM "LVM") logical volumes' [persistent device naming](/index.php/Persistent_block_device_naming "Persistent block device naming") for the `<device>` array (especially if there are multiple storage drives in the system), as it might happen that their usual kernel naming order (sda, sdb,...) changes upon boots and thus the swap would be created over a valuable file system, destroying all its content. Because of the recreation and re-encryption of the swap device on every boot with `mkswap`, labels and UUIDs cannot be used (see [naming by UUID](/index.php/Persistent_block_device_naming#by-uuid "Persistent block device naming") and [cryptsetup FAQ 2.3](https://gitlab.com/cryptsetup/cryptsetup/wikis/FrequentlyAskedQuestions#2-setup)).
 

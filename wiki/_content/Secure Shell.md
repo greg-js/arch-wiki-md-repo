@@ -234,14 +234,6 @@ Brute forcing is a simple concept: One continuously tries to log in to a webpage
 
 ###### Using iptables
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Simple_stateful_firewall#Bruteforce_attacks](/index.php/Simple_stateful_firewall#Bruteforce_attacks "Simple stateful firewall").**
-
-**Notes:** Out of scope, same technique as already described in the SSF. (Discuss in [Talk:Secure Shell#](https://wiki.archlinux.org/index.php/Talk:Secure_Shell))
-
 If you are already using iptables you can easily protect SSH against brute force attacks by using the following rules.
 
 **Note:** In this example the SSH port was changed to port 42660 TCP.
@@ -374,7 +366,7 @@ The command-line ssh client is named dbclient.
 
 From the Mosh [website](http://mosh.mit.edu/):
 
-NaN
+	Remote terminal application that allows roaming, supports intermittent connectivity, and provides intelligent local echo and line editing of user keystrokes. Mosh is a replacement for SSH. It is more robust and responsive, especially over slow connections such as Wi-Fi, cellular, and long-distance.
 
 [Install](/index.php/Install "Install") the [mosh](https://www.archlinux.org/packages/?name=mosh) package, or [mosh-git](https://aur.archlinux.org/packages/mosh-git/)<sup><small>AUR</small></sup> for the latest revision.
 
@@ -383,14 +375,6 @@ Mosh has an undocumented command line option `--predict=experimental` which prod
 **Tip:** Since Mosh, by design, does not let you access session history, consider installing a terminal multiplexer such as [tmux](/index.php/Tmux "Tmux") or [screen](/index.php/Screen "Screen").
 
 ## Tips and tricks
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** According to the current layout, this section seems rather generic, but in fact most of the offered tips work only in _openssh_. For example _dropbear_ (listed in [#Other SSH clients and servers](#Other_SSH_clients_and_servers)) does not support SOCKS proxy.[[6]](https://en.wikipedia.org/wiki/Comparison_of_SSH_clients#Technical) (Discuss in [Talk:Secure Shell#](https://wiki.archlinux.org/index.php/Talk:Secure_Shell))
 
 ### Encrypted SOCKS tunnel
 
@@ -477,14 +461,6 @@ On the client's side, enable the `ForwardX11` option by either specifying the `-
 **Tip:** You can enable the `ForwardX11Trusted` option (`-Y` switch on the command line) if GUI is drawing badly or you receive errors; this will prevent X11 forwardings from being subjected to the [X11 SECURITY extension](http://www.x.org/wiki/Development/Documentation/Security/) controls. Be sure you have read [the warning](#X11_forwarding) at the beginning of this section if you do so.
 
 #### Usage
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `xhost` is [generally not needed](http://unix.stackexchange.com/questions/12755/how-to-forward-x-over-ssh-from-ubuntu-machine#comment-17148) (Discuss in [Talk:Secure Shell#](https://wiki.archlinux.org/index.php/Talk:Secure_Shell))
 
 [Log on to the remote machine](#Connecting_to_the_server) normally, specifying the `-X` switch if _ForwardX11_ was not enabled in the client's configuration file:
 

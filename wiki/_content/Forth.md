@@ -1,13 +1,5 @@
 # Forth
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Forth#](https://wiki.archlinux.org/index.php/Talk:Forth))
-
 The Forth computer language was invented by Charles Moore: [http://colorforth.com/](http://colorforth.com/)
 
 Forth is extensible, can be its own OS, and in general makes tiny powerful programs.

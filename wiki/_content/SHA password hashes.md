@@ -16,27 +16,11 @@ The Secure Hash Algorithms (SHA) are a set of [hash functions](https://en.wikipe
 
 ## Benefits of SHA-2 over MD5
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section should perhaps be pruned and merged with article summary. (Discuss in [Talk:SHA password hashes#](https://wiki.archlinux.org/index.php/Talk:SHA_password_hashes))
-
 In Linux distributions login passwords are commonly hashed and stored in the `/etc/shadow` file using the [MD5 algorithm](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5"). The security of the MD5 hash function has been severely compromised by [collision vulnerabilities](https://en.wikipedia.org/wiki/MD5#Collision_vulnerabilities "wikipedia:MD5"). This does not mean MD5 is insecure for password hashing but in the interest of decreasing vulnerabilities a more secure and robust algorithm that has no known weaknesses (e.g. SHA-512) is recommended.
 
 The following tutorial uses the SHA-512 hash function, which has been recommended by the United States' National Security Agency (NSA) for Red Hat Enterprise Linux 5\. Alternatively, [SHA-2](https://en.wikipedia.org/wiki/SHA-2 "wikipedia:SHA-2") consists of four additional hash functions with digests that are 224, 256, 384, and 512 bits.
 
 ## Increasing security
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The notes and structure of this section lack focus and clarity. (Discuss in [Talk:SHA password hashes#](https://wiki.archlinux.org/index.php/Talk:SHA_password_hashes))
 
 **Note:** With [shadow](https://www.archlinux.org/packages/?name=shadow) 4.1.4.3-3 _sha512_ is the default for new passwords (see [bug 13591](https://bugs.archlinux.org/task/13591#comment85993)).
 

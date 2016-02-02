@@ -5,14 +5,6 @@ Related articles
 *   [Bash](/index.php/Bash "Bash")
 *   [Environment variables](/index.php/Environment_variables "Environment variables")
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Raw escapes vs. `tput`, see [Bash#Prompt customization](/index.php/Bash#Prompt_customization "Bash") (Discuss in [Talk:Color Bash Prompt#](https://wiki.archlinux.org/index.php/Talk:Color_Bash_Prompt))
-
 You can add colors and additional information to the [Bash](/index.php/Bash "Bash")'s prompt (PS1) to increase productivity and make the prompt stand out.
 
 This article shows how to _customize the personal prompt of a regular user_.

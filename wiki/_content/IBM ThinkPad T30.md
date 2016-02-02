@@ -1,13 +1,5 @@
 # IBM ThinkPad T30
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:IBM ThinkPad T30#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_T30))
-
 Extensive information about Linux on the T30 can be found at [[1]](http://www.thinkwiki.org/wiki/Category:T30). What follows here are details specific to Arch Linux.
 
 ## Contents

@@ -15,14 +15,6 @@
 
 ## Installation
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This should be handled with pacman through a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"). As of July 2015 there is also a [xampp](https://aur.archlinux.org/packages/xampp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xampp)]</sup> package which is however out of date and unmaintained (and orphan in AUR4). (Discuss in [Talk:Xampp#](https://wiki.archlinux.org/index.php/Talk:Xampp))
-
 Download the installer from [the website](https://www.apachefriends.org/index.html).
 
 The downloaded file is an installer script. Make it executable and run it by typing:

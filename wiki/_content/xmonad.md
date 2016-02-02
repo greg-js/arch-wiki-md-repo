@@ -201,11 +201,11 @@ There are number of complementary utilities that work well with xmonad. The most
 
 *   **[xmobar](/index.php/Xmobar "Xmobar")** — A lightweight, text-based, status bar written in Haskell.
 
-NaN
+	[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup>
 
 *   **xmonad-log-applet** — [https://github.com/alexkay/xmonad-log-applet](https://github.com/alexkay/xmonad-log-applet)
 
-NaN
+	An applet for the GNOME, MATE or xfce panel. || [xmonad-log-applet-xfce4-git](https://aur.archlinux.org/packages/xmonad-log-applet-xfce4-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-log-applet-xfce4-git)]</sup>, [xmonad-log-applet-gnome-git](https://aur.archlinux.org/packages/xmonad-log-applet-gnome-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-log-applet-gnome-git)]</sup>
 
 ### Increase the number of workspaces
 
@@ -244,14 +244,6 @@ If you ever want to toggle the gaps, this action can be added to your key bindin
 ```
 
 ### Using xmobar with xmonad
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [xmobar](/index.php/Xmobar "Xmobar").**
-
-**Notes:** Make use of the separate article available (Discuss in [Talk:Xmonad#](https://wiki.archlinux.org/index.php/Talk:Xmonad))
 
 **[xmobar](/index.php/Xmobar "Xmobar")** is a light and minimalistic text-based bar, designed to work with xmonad. To use xmobar with xmonad, you will need two packages in addition to the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package. These packages are [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) and [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"), or you can use [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") instead of the official [xmobar](https://www.archlinux.org/packages/?name=xmobar) package.
 
@@ -424,14 +416,6 @@ Below are some example configurations from fellow xmonad users. Feel free to add
 ## Troubleshooting
 
 ### GNOME 3 and xmonad
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This no longer works with GNOME. It might still work with [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback"). (Discuss in [Talk:Xmonad#](https://wiki.archlinux.org/index.php/Talk:Xmonad))
 
 With the release of GNOME 3 [custom GNOME sessions](/index.php/GNOME#Custom_GNOME_sessions "GNOME") require additional steps to make GNOME play nicely with xmonad.
 

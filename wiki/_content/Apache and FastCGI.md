@@ -1,13 +1,5 @@
 # Apache and FastCGI
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Apache and FastCGI#](https://wiki.archlinux.org/index.php/Talk:Apache_and_FastCGI))
-
 ## Contents
 
 *   [1 Installation](#Installation)

@@ -173,14 +173,6 @@ For configuration, see [Multitouch Displays](/index.php/Multitouch_Displays "Mul
 
 A docking station is sold optionally with this computer.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dell Inspiron 1090 (Duo)#](https://wiki.archlinux.org/index.php/Talk:Dell_Inspiron_1090_(Duo)))
-
 The docking station is an apparant PCI bus, connected from the bottom of the computer, that adds two USB, one audio, and one 10/100 hardwire 10/100 ethernet port.
 
 ## Tablet Mode

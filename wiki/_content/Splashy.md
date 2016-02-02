@@ -21,14 +21,6 @@ You may also check out [this topic](https://bbs.archlinux.org/viewtopic.php?id=4
 
 ## Configuration
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Update for systemd. (Discuss in [Talk:Splashy#](https://wiki.archlinux.org/index.php/Talk:Splashy))
-
 ### /etc/rc.conf
 
 Add this in `/etc/[rc.conf](/index.php/Rc.conf "Rc.conf")`:

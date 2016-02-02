@@ -93,7 +93,45 @@ EXT:pdf = epdfview %s
 
 ```
 
-NaN
+	ShowDotFiles (1 or 0)
+
+	whether to show dotfiles (e.g. `.gmrunrc`) in the auto-complete menu.
+
+	TabTimeout (1 or 0)
+
+	Whether to show the tab complete menu automatically when something is inputted.
+
+	Terminal
+
+	The command to run when `Ctrl+Enter` is pressed without other input.
+
+	TermExec
+
+	The command to run when running a specific command in the terminal (e.g. `ls ~`).
+
+	URL_http
+
+	The command to run when a web address is entered.
+
+	URL_mailto
+
+	The command to run when an email address is entered.
+
+	EXT
+
+	extension: The application to open files with a certain extension.
+
+	Top and Left
+
+	The placement of the Gmrun window (in pixels from the respective edge).
+
+	Width
+
+	The width in pixels of the window.
+
+	History
+
+	Length of command history that is stored.
 
 ### Adding Custom Shortcuts
 

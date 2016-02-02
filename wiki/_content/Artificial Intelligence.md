@@ -1,13 +1,5 @@
 # Artificial Intelligence
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** There's not much content here. It should probably be merged elsewhere if it's not going to be expanded. (Discuss in [Talk:Artificial Intelligence#](https://wiki.archlinux.org/index.php/Talk:Artificial_Intelligence))
-
 There are a few 'Artificial Intelligence' demos and libraries in the AUR.
 
 ## Demos

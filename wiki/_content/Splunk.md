@@ -2,7 +2,9 @@
 
 Splunk is a proprietary data mining product. [From Wikipedia](https://en.wikipedia.org/wiki/Splunk "wikipedia:Splunk"):
 
-NaN
+	Splunk is software to search, monitor and analyze machine-generated data by applications, systems and IT infrastructure at scale via a web-style interface. Splunk captures, indexes and correlates real-time data in a searchable repository from which it can generate graphs, reports, alerts, dashboards and visualizations.
+
+	Splunk aims to make machine data accessible across an organization and identifies data patterns, provides metrics, diagnoses problems and provides intelligence for business operation. Splunk is a horizontal technology used for application management, security and compliance, as well as business and web analytics.
 
 Splunk is licensed based on MB of data indexed per day. The free license allows up to 500 MB of data per day, but it is missing a few features such as access control, alerts / monitoring and PDF generation
 

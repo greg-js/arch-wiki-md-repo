@@ -83,19 +83,11 @@ To workaround this issue edit the file `/boot/grub/menu.lst` and add the followi
 
 ### Backlight does not come back after Resume
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** radeontool no longer exists (Discuss in [Talk:Dell Vostro 1000#](https://wiki.archlinux.org/index.php/Talk:Dell_Vostro_1000))
-
 You may need a workaround because the backlight does not come back after Resuming.
 
 Install [Pm-utils](/index.php/Pm-utils "Pm-utils"), and create this file:
 
-NaN
+	**/etc/pm/sleep.d/radeonlight**
 
 ```
 #!/bin/bash

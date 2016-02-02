@@ -1,13 +1,5 @@
 # NEC Versa S950
 
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-**This article is being considered for redirection to [Laptop](/index.php/Laptop "Laptop").**
-
-**Notes:** Information in this page is out of date, covered by general pages or not related to Arch linux. (Discuss in [Talk:NEC Versa S950#](https://wiki.archlinux.org/index.php/Talk:NEC_Versa_S950))
-
 ## Contents
 
 *   [1 Overview](#Overview)

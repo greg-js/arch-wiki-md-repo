@@ -1,13 +1,5 @@
 # Wacom Tablet
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Many [Help:Style](/index.php/Help:Style "Help:Style") issues (Discuss in [Talk:Wacom Tablet#](https://wiki.archlinux.org/index.php/Talk:Wacom_Tablet))
-
 This guide was started for _USB_ based Wacom tablets, so much of the info in here focuses on that. Usually it is recommended to rely on [Xorg](/index.php/Xorg "Xorg")'s auto-detection or to use a **dynamic** setup. However for an _internal_ tablet device one might consider a **static** Xorg setup in case autodetection does not work. A static [Xorg](/index.php/Xorg "Xorg") setup is usually not able to recognize your Wacom tablet when it is connected to a different _USB_ port or even after unplugging and replugging it into the same port, and as such it should be considered as deprecated.
 
 ## Contents

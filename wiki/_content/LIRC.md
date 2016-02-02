@@ -112,14 +112,6 @@ If `irw` gives no output, double check the config files in `/etc/lirc/lircd.conf
 
 ## Program Specific Configuration
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [LIRC#Optional](/index.php/LIRC#Optional "LIRC").**
-
-**Notes:** or the other way around (Discuss in [Talk:LIRC#](https://wiki.archlinux.org/index.php/Talk:LIRC))
-
 LIRC has the ability to allow for different programs to use the same keypress and result in unique commands. In other words, one can setup different programs to respond differently to a given key press.
 
 *   Decide which programs are to use LIRC commands.

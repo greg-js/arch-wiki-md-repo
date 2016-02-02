@@ -6,14 +6,6 @@ Related articles
 *   [ZFS](/index.php/ZFS "ZFS")
 *   [Fluxbox](/index.php/Fluxbox "Fluxbox")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Desktop environment](/index.php/Desktop_environment "Desktop environment").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lumina#](https://wiki.archlinux.org/index.php/Talk:Lumina))
-
 The Lumina Desktop Environment (Lumina for short) is a lightweight, XDG-compliant, BSD-licensed desktop environment that focuses specifically on streamlining the ability to get work done while minimizing system overhead. As of version 0.8.0+, it requres Qt 5, the Fluxbox window manager, and uses a small number of X utilities for various tasks, such as numlockx and xscreensaver.
 
 Lumina's features include:

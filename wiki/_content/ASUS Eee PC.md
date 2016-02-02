@@ -1,13 +1,5 @@
 # ASUS Eee PC
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Use an actual category instead of a cheap clone .... or use a table (Discuss in [Talk:ASUS Eee PC#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC))
-
 This should be the page to gather all information on installing and running arch on the Asus Eee. Why? Because the 'old' page is a bit confusing/outdated, wrongly named (makes finding it in a search hard) and the title limits it to just the install precedure.
 
 The 'old' page should be cleaned up and merged into this page, and any future information should also go on this page. If no one that actualy owns an Eee want to do it, then I (Mr.Elendig) can do it, but it will take some time.

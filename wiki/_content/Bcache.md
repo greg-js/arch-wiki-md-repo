@@ -1,24 +1,8 @@
 # Bcache
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Some first-person comments, see [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Bcache#](https://wiki.archlinux.org/index.php/Talk:Bcache))
-
 Bcache allows one to use an SSD as a read/write cache (in writeback mode) or read cache (writethrough or writearound) for another blockdevice (generally a rotating HDD or array). This article will show how to install arch using Bcache as the root partition. For an intro to bcache itself, see [the bcache homepage](http://bcache.evilpiepirate.org/). Be sure to read and reference [the bcache manual](http://atlas.evilpiepirate.org/git/linux-bcache.git/tree/Documentation/bcache.txt). Bcache is in the mainline kernel since 3.10\. The kernel on the arch install disk includes the bcache module since 2013.08.01.
 
 An alternative to Bcache is Facebook's [Flashcache](/index.php/Flashcache "Flashcache") and its offspring [EnhanceIO](/index.php/EnhanceIO "EnhanceIO"). Another alternative - [btier-dkms](https://aur.archlinux.org/packages/btier-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/btier-dkms)]</sup>.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Backwards incompatible changes to on-disk format for linux 3.18 appears to be false. bcache on-disk format changes have not yet landed upstream yet as of 3.19 (Discuss in [Talk:Bcache#](https://wiki.archlinux.org/index.php/Talk:Bcache))
 
 Bcache needs the backing device to be formatted as a bcache block device. In most cases, [blocks to-bcache](https://github.com/g2p/blocks) can do an in-place conversion.
 
@@ -156,14 +140,6 @@ In the above example, the _writethrough_ mode is enabled.
 ```
 
 ### Bcache on top of another block layer
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** it is strongly advises to make Bcache first, underneath any other block layer (Discuss in [Talk:Bcache#](https://wiki.archlinux.org/index.php/Talk:Bcache))
 
 **Warning:**
 

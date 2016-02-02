@@ -379,14 +379,6 @@ For information on how to set up your graphic adapter refer to:
 
 ### WINE
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The _wine-hacks_ package does not exist anymore. (Discuss in [Talk:Install bundled 32-bit system in 64-bit system#](https://wiki.archlinux.org/index.php/Talk:Install_bundled_32-bit_system_in_64-bit_system))
-
 In order to compile wine, you need a 32-bit system installed. Compiling wine is needed for applying patches in order to get [PulseAudio](http://art.ified.ca/?page_id=40) working. See also [wine-hacks](https://aur.archlinux.org/packages.php?ID=19675) from AUR.
 
 Add the following alias to `~/.bashrc`:
@@ -399,14 +391,6 @@ alias wine='schroot -pqd "$(pwd)" -- wine'
 The `-q` switch makes schroot operate in quiet mode, so it works like "regular" wine does. Also note that If you still use dchroot instead of schroot, you should use switch `-d` instead of `-s`.
 
 ### Printing
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The note below contains a link to this very page, making it very unclear. (Discuss in [Talk:Install bundled 32-bit system in 64-bit system#](https://wiki.archlinux.org/index.php/Talk:Install_bundled_32-bit_system_in_64-bit_system))
 
 **Note:** If you have a 64-bit base installation with a [32-bit chroot environment](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64"), explicit installation of CUPS is not necessary in the 32-bit environment.
 

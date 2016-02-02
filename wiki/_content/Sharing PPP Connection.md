@@ -1,13 +1,5 @@
 # Sharing PPP Connection
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Internet Sharing](/index.php/Internet_Sharing "Internet Sharing").**
-
-**Notes:** Just a specific case of the topic described there. (Discuss in [Talk:Sharing PPP Connection#](https://wiki.archlinux.org/index.php/Talk:Sharing_PPP_Connection))
-
 ## Contents
 
 *   [1 Requirements](#Requirements)
@@ -42,7 +34,7 @@ Depending on whether you want to share a wireless or wired connection, you also 
 
 *   Set the PPP connection up.
 
-NaN
+	You can assign an IP address to the interface as usual, by running (as root):
 
 ```
 # ip addr add 192.168.0.254 dev eth0
@@ -76,7 +68,7 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 
 ```
 
-NaN
+	In the above the **ppp0** interface is the used PPP interface, you can substitute it for yours if needed.
 
 *   You are done! Happy surfing!
 
@@ -128,7 +120,7 @@ Now you should be able to connect to the internet using **eth1** or **eth2**.
 *   Set up the PPP connection.
 *   Set up the WLAN connection: choose an SSID and select Ad-hoc as network type. In the following it is assumed that you are using the **wlan0** interface.
 
-NaN
+	Set the **wlan0** interface up address for example 192.168.0.254\. Setting up the interface is usually done by running:
 
 ```
 # iw wlan0 set type ibss
@@ -136,14 +128,14 @@ NaN
 
 ```
 
-NaN
+	After that you can assign an IP address to the interface as usual, by running:
 
 ```
 # ip addr add 192.168.0.254 dev wlan0
 
 ```
 
-NaN
+	Please note that different wlan cards may be configured differently and one should adapt this documentation accordingly.
 
 *   Set the kernel to router mode. This is done by running:
 
@@ -172,7 +164,7 @@ dhcp-range=192.168.0.1,192.168.0.100,12h
 
 ```
 
-NaN
+	In the above the **ppp0** interface is assumed to be the used PPP interface, you can substitute it for yours if needed.
 
 *   You are done! Happy surfing!
 

@@ -13,14 +13,6 @@ STATA is a general-purpose statistical software package for *nix, Windows and Ma
 
 You need to install a series of libraries to run Stata. Stata uses the GTK+ framework.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [libgtksourceviewmm](https://aur.archlinux.org/packages/libgtksourceviewmm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libgtksourceviewmm)]</sup> has no package() function and outdated depends. (Discuss in [Talk:Stata#](https://wiki.archlinux.org/index.php/Talk:Stata))
-
 If you use GNOME, [install](/index.php/AUR "AUR") [libgtksourceviewmm](https://aur.archlinux.org/packages/libgtksourceviewmm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libgtksourceviewmm)]</sup> and [libgnomeprint](https://aur.archlinux.org/packages/libgnomeprint/)<sup><small>AUR</small></sup>.
 
 ## Installing Stata

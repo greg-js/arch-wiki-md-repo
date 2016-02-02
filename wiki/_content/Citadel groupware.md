@@ -5,14 +5,6 @@ Related articles
 *   [Simple Virtual User Mail System](/index.php/Simple_Virtual_User_Mail_System "Simple Virtual User Mail System")
 *   [Postfix](/index.php/Postfix "Postfix")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** [citadel](https://aur.archlinux.org/packages/citadel/)<sup><small>AUR</small></sup> is available (Discuss in [Talk:Citadel groupware#](https://wiki.archlinux.org/index.php/Talk:Citadel_groupware))
-
 [Citadel](http://www.citadel.org/) is a groupware and collaboration suit that offers some of the following features (among many more)
 
 *   full email server

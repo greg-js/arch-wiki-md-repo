@@ -1,13 +1,5 @@
 # Dell Vostro 1310
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dell Vostro 1310#](https://wiki.archlinux.org/index.php/Talk:Dell_Vostro_1310))
-
 This page deals with setting up Arch Linux on the Dell Vostro 1310 laptop. Nvidia graphics work excellently with the Nvidia 8400GS with no real hacks. There have been some problems with the ethernet NIC, but it is possible for it to work correctly.
 
 ## Contents

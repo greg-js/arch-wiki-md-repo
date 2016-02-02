@@ -1,13 +1,5 @@
 # Oidentd
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Oidentd#](https://wiki.archlinux.org/index.php/Talk:Oidentd))
-
 oidentd is an ident (rfc1413 compliant) daemon that runs on Linux, Darwin, FreeBSD, OpenBSD, NetBSD and Solaris. oidentd can handle IP masqueraded/NAT connections on Linux, Darwin, FreeBSD (ipf only), OpenBSD and NetBSD. oidentd has a flexible mechanism for specifying ident responses. Users can be granted permission to specify their own ident responses. Responses can be specified according to host and port pairs.
 
 ## Contents

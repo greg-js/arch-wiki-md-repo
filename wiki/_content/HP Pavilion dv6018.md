@@ -1,13 +1,5 @@
 # HP Pavilion dv6018
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** rc.conf references, as well as umerous style and content issues. (Discuss in [Talk:HP Pavilion dv6018#](https://wiki.archlinux.org/index.php/Talk:HP_Pavilion_dv6018))
-
 ## Contents
 
 *   [1 Things you should know](#Things_you_should_know)

@@ -2,7 +2,7 @@
 
 From the project [home page](http://www.videolan.org/vlc/):
 
-NaN
+	_VLC is a free and open source cross-platform multimedia player and framework that plays most multimedia files as well as DVD, Audio CD, VCD, and various streaming protocols._
 
 ## Contents
 
@@ -146,14 +146,6 @@ To enable hardware acceleration in previous versions: _Tools > Preferences > Inp
 ### systemd service
 
 **Note:** _cvlc_ is the _Console VLC Player_, or VLC without graphical interface.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `nobody` is a valid user for daemons, should it still be changed? (Discuss in [Talk:VLC media player#](https://wiki.archlinux.org/index.php/Talk:VLC_media_player))
 
 Change the `User=` parameter.
 

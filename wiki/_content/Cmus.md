@@ -76,7 +76,11 @@ To add music to your cmus library, use the arrow keys to highlight a file or fol
 
 Press `1` to go to the simple library view. Use the `up` and `down` arrow keys (or `k`, `j`) to select an artist and album you would like to hear. Pressing `space` on the artist name will collapse or expand the albums it contains. Switch between list of tracks and artist/album view by pressing `Tab` and press `Enter` to play the selected track. Here is some keys to control the playback:
 
-NaN
+	Press `c` to pause/unpause
+
+	Press `right`/`left` (or `h`, `l`) arrow keys to seek by 10 seconds
+
+	Press `<`/`>` seek by one minute
 
 ### Keybindings
 

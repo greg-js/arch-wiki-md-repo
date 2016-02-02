@@ -52,15 +52,27 @@ ABS is made up of a directory tree (the ABS tree) residing under `/var/abs`. Thi
 
 'ABS' may be used as an umbrella term since it includes and relies on several other components; therefore, though not technically accurate, 'ABS' can refer to the following tools as a complete toolkit:
 
-NaN
+	ABS tree
 
-NaN
+	The ABS directory structure containing files needed to build all official packages (but not the packages themselves nor the source files of the software). It is available in [svn](https://www.archlinux.org/svn/) and [git](https://projects.archlinux.org/svntogit/packages.git/) repositories and the `abs` script (from the [abs](https://www.archlinux.org/packages/?name=abs) package) downloads them using [rsync](/index.php/Rsync "Rsync") into `/var/abs/` on your (local) machine. On the local system, the tree contains subdirectories for each repository specified in `/etc/abs.conf`, which in turn contain a subdirectory for each package.
 
-NaN
+**Note:** ABS tree syncs once a day so it may lag behind what is already available in the repositories.
 
-NaN
+	[PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
 
-NaN
+	A [Bash](/index.php/Bash "Bash") script that contains the URL of the source code along with the compilation and packaging instructions.
+
+	[makepkg](/index.php/Makepkg "Makepkg")
+
+	shell command tool which reads the PKGBUILDs, automatically downloads and compiles the sources and creates a `.pkg.tar*` according to the `PKGEXT` array in `makepkg.conf`. You may also use makepkg to make your own custom packages from the [AUR](/index.php/AUR "AUR") or third-party sources. See [Creating packages](/index.php/Creating_packages "Creating packages") for more information.
+
+	[pacman](/index.php/Pacman "Pacman")
+
+	pacman is completely separate, but is necessarily invoked either by makepkg or manually, to install and remove the built packages and for fetching dependencies.
+
+	[AUR](/index.php/AUR "AUR")
+
+	The Arch User Repository is separate from ABS but AUR (unsupported) PKGBUILDs are built using makepkg to compile and package up software. In contrast to the ABS tree on your local machine, the AUR exists as a website interface. It contains many thousands of user-contributed PKGBUILDs for software which is unavailable as an official Arch package. If you need to build a package outside the official Arch tree, chances are it is in the AUR.
 
 **Warning:** Official PKGBUILDs assume that packages are [built in a clean chroot](/index.php/DeveloperWiki:Building_in_a_Clean_Chroot "DeveloperWiki:Building in a Clean Chroot"). Building software on a _dirty_ build system may fail or cause unexpected behaviour at runtime, because if the build system detects dependencies dynamically, the result depends on what packages are available on the build system.
 
@@ -163,14 +175,6 @@ The abs command should be run periodically to keep in sync with the official rep
 This way you do not have to check out the entire abs tree just to build one package.
 
 ### /etc/makepkg.conf
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [makepkg](/index.php/Makepkg "Makepkg").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Arch Build System#](https://wiki.archlinux.org/index.php/Talk:Arch_Build_System))
 
 [makepkg](/index.php/Makepkg "Makepkg")'s `/etc/makepkg.conf` specifies global environment variables and compiler flags which you may wish to edit if you are using an [SMP](https://en.wikipedia.org/wiki/Symmetric_multiprocessing "wikipedia:Symmetric multiprocessing") system, or to specify other desired optimizations. The default settings are for i686 and x86_64 optimizations which will work fine for those architectures on single-CPU systems. (The defaults will work on SMP machines, but will only use one core/CPU when compiling — see [makepkg](/index.php/Makepkg "Makepkg") for details.)
 

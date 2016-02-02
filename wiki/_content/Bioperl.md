@@ -1,13 +1,5 @@
 # Bioperl
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Bioperl#](https://wiki.archlinux.org/index.php/Talk:Bioperl))
-
 **Bioperl** is a set of scripts in Perl language to aid researchers in [Computational Biology](http://en.wikipedia.org/wiki/Computational_biology) and [Bioinformatics](http://en.wikipedia.org/wiki/Bioinformatics).
 
 ## Contents

@@ -1,21 +1,5 @@
 # Acer Aspire One
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Numerous [Help:Style](/index.php/Help:Style "Help:Style") issues and duplication (Discuss in [Talk:Acer Aspire One#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_One))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Some information from 2009 (Discuss in [Talk:Acer Aspire One#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_One))
-
 This page documents configuration and troubleshooting specific to the Acer Aspire One.
 
 Some of this information is from the [Arch Forum](https://bbs.archlinux.org/viewtopic.php?id=51796). You can also find a lot of helpful information from the [AspireOneUser Forum](http://www.aspireoneuser.com/forum/viewforum.php?f=5&sid=29c7eef18d2d6477d7f9db91195fb31a) and [Install Ubuntu Hardy Heron (8.04.1) on the Acer Aspire One](https://help.ubuntu.com/community/AspireOne).
@@ -310,14 +294,6 @@ Now you have to select the modules you need to get the hardware working. Please 
 *   **uvcvideo** - The webcam device
 
 #### Tweaks
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Needs updating for systemd (Discuss in [Talk:Acer Aspire One#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_One))
 
 Put `zramswap` in the DAEMONS array in /etc/rc.conf to use the zram module that may improve performance. This requires [zramswap](https://aur.archlinux.org/packages/zramswap/)<sup><small>AUR</small></sup> and a recent kernel.
 

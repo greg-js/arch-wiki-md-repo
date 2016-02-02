@@ -1,13 +1,5 @@
 # Streaming With Icecast
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Streaming With Icecast#](https://wiki.archlinux.org/index.php/Talk:Streaming_With_Icecast))
-
 **Icecast** is a program for streaming media such as audio and video across a network. Different types of clients connect to the IceCast server, either to provide a "mount point", control the server, or listen to the audio being cast.
 
 Icecast has support for streaming many audio streams simultaneously - each stream has a "mount point" which a client can access, usually through a network uri, such as:

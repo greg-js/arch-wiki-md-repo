@@ -1,13 +1,5 @@
 # Dzen
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The current official package works with Xft but not X Logical Font Description (Discuss in [Talk:Dzen#](https://wiki.archlinux.org/index.php/Talk:Dzen))
-
 [Dzen](http://robm.github.com/dzen/) is "a general purpose messaging, notification and menuing program for X11\. It was designed to be scriptable in any language and integrate well with window managers like [dwm](/index.php/Dwm "Dwm"), [wmii](/index.php/Wmii "Wmii") and [xmonad](/index.php/Xmonad "Xmonad") though it will work with any window manager."
 
 ## Contents

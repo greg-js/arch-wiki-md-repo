@@ -296,14 +296,6 @@ Ctrl-b d
 
 ### systemd service file with dtach
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Creating multiple rtorrent sessions this way is far from perfect, why don't we just assume for simplicity that there is only one session? This is assumed in [#systemd service file with tmux or screen](#systemd_service_file_with_tmux_or_screen) anyway. (Discuss in [Talk:RTorrent#](https://wiki.archlinux.org/index.php/Talk:RTorrent))
-
 When running dtach from systemd unit, the `TERM` environment variable [has to be set explicitly](/index.php/Systemd/User#Environment_variables "Systemd/User") for rtorrent to work.
 
 This service file has no restart because the author occasionally takes the drive in question offline, and rtorrent fails, shall we say, "suboptimally" when started in this scenario and loses many torrent specific settings such as the specific directories each torrent is stored in. In fact the symlinks that kick off rtorrent live on the relevant drive; if it is unmounted rtorrent cannot start. This use case of blocking rtorrent from starting is relevant to users who put the downloaded files on removable media such as NAS, USB or eSATA drives.

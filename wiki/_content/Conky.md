@@ -1,13 +1,5 @@
 # Conky
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Lots of useless config dumps and unneeded complexity (Discuss in [Talk:Conky#](https://wiki.archlinux.org/index.php/Talk:Conky))
-
 _Conky_ is a system monitor software for the X Window System. It is available for GNU/Linux and FreeBSD. It is free software released under the terms of the GPL license. Conky is able to monitor many system variables including CPU, memory, swap, disk space, temperature, top, upload, download, system messages, and much more. It is extremely configurable, however, the configuration can be a little hard to understand. _Conky_ is a fork of torsmo.
 
 ## Contents
@@ -62,7 +54,7 @@ $ conky -C > ~/.config/conky/conky.conf
 
 Now you can edit `~/.config/conky/conky.conf` to customize conky as you wish. For a few example configuration files, see [this page](https://github.com/brndnmtthws/conky/wiki/User-Configs).
 
-When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your _conky_ window, and correct if your change is unappropriated.
+When editing your config file, you will see immediately the effect of any change as soon as you save it. There is no need to log out/log in your X session. So best is to test all kind of options, one by one, save the configuration file and see the change on your _conky_ window, and correct if your change is inappropriate.
 
 One of the nice features of _conky_ is to pipe to your desktop some `/var/log/` files to read all kinds of log messages. Most of these files can only be read by `root`, but running _conky_ as `root` is not recommended, so you will need to add `_username_` to the `log` group:
 
@@ -77,19 +69,19 @@ In addition to the basic _conky_ package, there are various [AUR](/index.php/AUR
 
 *   **conky-cli** — _Conky_ without X11 dependencies
 
-NaN
+	|| [conky-cli](https://aur.archlinux.org/packages/conky-cli/)<sup><small>AUR</small></sup>
 
 *   **conky-lua** — _Conky_ with Lua support
 
-NaN
+	|| [conky-lua](https://aur.archlinux.org/packages/conky-lua/)<sup><small>AUR</small></sup>
 
 *   **conky-lua-nv** — _Conky_ with both Lua and Nvidia support
 
-NaN
+	|| [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)<sup><small>AUR</small></sup>
 
 *   **conky-nvidia** — _Conky_ with Nvidia support
 
-NaN
+	|| [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)<sup><small>AUR</small></sup>
 
 ## Tips and tricks
 
@@ -650,4 +642,4 @@ conky -d; sleep 1 && transset-df .5 -n Conky
 *   [#conky](irc://chat.freenode.org/conky) IRC chat channel on [freenode](https://en.wikipedia.org/wiki/Freenode "wikipedia:Freenode")
 *   [FAQ](http://novel.evilcoder.org/wiki/index.php?title=ConkyFAQ&oldid=12463)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=418112](https://wiki.archlinux.org/index.php?title=Conky&oldid=418112)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Conky&oldid=418666](https://wiki.archlinux.org/index.php?title=Conky&oldid=418666)"

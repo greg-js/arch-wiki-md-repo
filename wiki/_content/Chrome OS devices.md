@@ -287,25 +287,9 @@ After finishing installing Arch Linux continue by following the [Post Installati
 
 #### Alternative installation, Install Arch Linux in addition to Chrome OS
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** needs more details and convert the use of the script to manually re-partitioning steps with cgpt (Discuss in [Talk:Chrome OS devices#](https://wiki.archlinux.org/index.php/Talk:Chrome_OS_devices))
-
 It is possible to have both Arch Linux and Chrome OS installed on the internal drive.
 
 ##### Re-partition the drive
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Dubious script from untrusted and obfuscated source. (Discuss in [Talk:Chrome OS devices#](https://wiki.archlinux.org/index.php/Talk:Chrome_OS_devices))
 
 In order to partition the drive, we will run the first stage of the ChruBuntu script in Chrome OS. After logging in, open a shell with `Ctrl + Alt + T`, run `shell`, then `cd ~/` to enter the home directory. Once there, run the following:
 

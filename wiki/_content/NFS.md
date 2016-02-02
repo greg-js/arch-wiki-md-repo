@@ -6,7 +6,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"):
 
-NaN
+	_Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed._
 
 ## Contents
 
@@ -252,11 +252,17 @@ servername:/music   /mountpoint/on/client   nfs4   rsize=8192,wsize=8192,timeo=1
 
 Some additional mount options to consider are include:
 
-NaN
+	rsize and wsize
 
-NaN
+	The `rsize` value is the number of bytes used when reading from the server. The `wsize` value is the number of bytes used when writing to the server. The default for both is 1024, but using higher values such as 8192 can improve throughput. This is not universal. It is recommended to test after making this change, see [#Performance tuning](#Performance_tuning).
 
-NaN
+	timeo
+
+	The `timeo` value is the amount of time, in tenths of a second, to wait before resending a transmission after an RPC timeout. After the first timeout, the timeout value is doubled for each retry for a maximum of 60 seconds or until a major timeout occurs. If connecting to a slow server or over a busy network, better performance can be achieved by increasing this timeout value.
+
+	_netdev
+
+	The `_netdev` option tells the system to wait until the network is up before trying to mount the share. systemd assumes this for NFS, but anyway it is good practice to use it for all types of networked file systems
 
 **Note:** Setting the sixth field (fs_passno) to a nonzero value may lead to unexpected behaviour, e.g. hangs when the systemd automount waits for a check which will never happen.
 

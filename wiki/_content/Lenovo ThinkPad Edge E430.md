@@ -1,13 +1,5 @@
 # Lenovo ThinkPad Edge E430
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** blog post (Discuss in [Talk:Lenovo ThinkPad Edge E430#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_Edge_E430))
-
 The following is regarding the Lenovo Thinkpad Edge E430 with 3rd Generation Ivy Bridge Intel processor, released in mid 2012\. The E430 is intended to be an affordable, yet still entirely capable business machine. Unlike some of its siblings, it is not to military specs, but is still a well built and quite durable machine. If you are reading this with the intention of ordering yourself this machine, do yourself a favor and opt for the Intel WiFi card for the extra ~$20\. The default Realtek works, albiet with a bit of coaxing. Ergo, this article is meant to suppliment the current [Installation guide](/index.php/Installation_guide "Installation guide") or [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide").
 
 ## Contents

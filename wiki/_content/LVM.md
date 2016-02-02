@@ -9,7 +9,7 @@ Related articles
 
 From [Wikipedia:Logical Volume Manager (Linux)](https://en.wikipedia.org/wiki/Logical_Volume_Manager_(Linux) "wikipedia:Logical Volume Manager (Linux)"):
 
-NaN
+	LVM is a [logical volume manager](https://en.wikipedia.org/wiki/logical_volume_management "wikipedia:logical volume management") for the [Linux kernel](https://en.wikipedia.org/wiki/Linux_kernel "wikipedia:Linux kernel"); it manages disk drives and similar mass-storage devices.
 
 ## Contents
 
@@ -335,14 +335,6 @@ Second, with a large number of snapshots, `thin_check` runs for a long enough ti
 ### Kernel options
 
 If the root file system resides in a logical volume, the `root=` [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") must be pointed to the mapped device, e.g `/dev/mapper/_vg-name_-_lv-name_`.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** As of May 2015 `dolvm` cannot be found in [https://www.kernel.org/doc/Documentation/kernel-parameters.txt](https://www.kernel.org/doc/Documentation/kernel-parameters.txt) (Discuss in [Talk:LVM#](https://wiki.archlinux.org/index.php/Talk:LVM))
 
 You may also need `dolvm`.
 
@@ -696,7 +688,7 @@ If you have LVM volumes not activated via the [initramfs](/index.php/Initramfs "
 
 From [man](http://man7.org/linux/man-pages/man7/lvmcache.7.html):
 
-NaN
+	_The cache logical volume type uses a small and fast LV to improve the performance of a large and slow LV. It does this by storing the frequently used blocks on the faster LV. LVM refers to the small fast LV as a cache pool LV. The large slow LV is called the origin LV. Due to requirements from dm-cache (the kernel driver), LVM further splits the cache pool LV into two devices - the cache data LV and cache metadata LV. The cache data LV is where copies of data blocks are kept from the origin LV to increase speed. The cache metadata LV holds the accounting information that specifies where data blocks are stored (e.g. on the origin LV or on the cache data LV). Users should be familiar with these LVs if they wish to create the best and most robust cached logical volumes. All of these associated LVs must be in the same VG._
 
 #### Create
 
@@ -737,14 +729,6 @@ If you fail to do so, you'll end up in a rescue shell early in the boot process.
 
 There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/)<sup><small>AUR</small></sup> covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Vague, unsupported claims (Discuss in [Talk:LVM#](https://wiki.archlinux.org/index.php/Talk:LVM))
-
 system-config-lvm requires root access, so the .desktop launcher will not work, and you must launch it with sudo. It does not support thin provisioning pools, and will crash on start-up if you have any.
 
 ## Troubleshooting
@@ -763,14 +747,6 @@ The `use_lvmetad = 1` must be set in `/etc/lvm/lvm.conf`. This is the default no
 ```
 
 The `dm_mod` module should be automatically loaded. In case it does not, you can try:
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Should module loading at boot be done using "/etc/modules-load.d" instead? (Discuss in [Talk:LVM#](https://wiki.archlinux.org/index.php/Talk:LVM))
 
  `/etc/mkinitcpio.conf:`  `MODULES="dm_mod ..."` 
 
@@ -811,7 +787,7 @@ Symptoms:
 
 Cause:
 
-NaN
+	Removing an external LVM drive without deactivating the volume group(s) first. Before you disconnect, make sure to:
 
 ```
 # vgchange -an _volume group name_

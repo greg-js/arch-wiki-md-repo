@@ -129,23 +129,31 @@ Fixing this issue only works for the NPAPI plugin and this issue can be fixed vi
 
 *   Using [flash-fullscreen-patcher](https://aur.archlinux.org/packages/flash-fullscreen-patcher/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/flash-fullscreen-patcher)]</sup> which providess wine as a required dependency since the patch has been initially made for Windows.
 
-NaN
+	After the package has been installed, backup `libflashplayer.so`:
 
-NaN
+	 `# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup` 
+
+	Then, patch libflashplayer.so:
+
+	 `# flash-fullscreen-patcher.sh -i /usr/lib/mozilla/plugins/libflashplayer.so` 
 
 *   Using the [flashplugin-focusfix](https://aur.archlinux.org/packages/flashplugin-focusfix/)<sup><small>AUR</small></sup>.
 
 *   [Patching manually](http://www.webupd8.org/2012/10/ubuntu-multi-monitor-tweaks-full-screen.html):
 
-NaN
+	After the package has been installed, backup `libflashplayer.so`:
 
-NaN
+	 `# cp /usr/lib/mozilla/plugins/libflashplayer.so /usr/lib/mozilla/plugins/libflashplayer.so.backup` 
 
-NaN
+	Then, you will need to alter that file using a hex editor like [ghex](https://www.archlinux.org/packages/?name=ghex). You must open it with root privileges obviously.
 
-NaN
+	 `# ghex /usr/lib/mozilla/plugins/libflashplayer.so` 
 
-NaN
+	Using the hex editor find the string `_NET_ACTIVE_WINDOW`. In ghex the readable string is on the right hand side of the window, and the hex is on the left, you are trying to locate the readable string. It should be easy to find using a search function.
+
+	Upon finding `_NET_ACTIVE_WINDOW` rewrite the line, but **do not** change the length of the line, for example `_NET_ACTIVE_WINDOW` becomes `_XET_ACTIVE_WINDOW`.
+
+	Save the binary, and restart any processes using the plugin (as this will crash any instance of the plugin in use.)
 
 #### Playing DRM-protected content
 
@@ -174,14 +182,6 @@ There are multiple packages available: [gnash](https://aur.archlinux.org/package
 Lightspark can be [installed](/index.php/Install "Install") with the [lightspark](https://aur.archlinux.org/packages/lightspark/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lightspark)]</sup> or [lightspark-git](https://aur.archlinux.org/packages/lightspark-git/)<sup><small>AUR</small></sup> package.
 
 ### Video players workarounds
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** What does this do? Why is it related to Flash Player? (Discuss in [Talk:Browser plugins#](https://wiki.archlinux.org/index.php/Talk:Browser_plugins))
 
 #### Open-with Firefox extension
 
@@ -279,19 +279,19 @@ Many browsers support the [GStreamer](/index.php/GStreamer "GStreamer") framewor
 
 *   **Gecko Media Player** — Mozilla browser plugin to handle media on websites, using MPlayer.
 
-NaN
+	[https://sites.google.com/site/kdekorte2/gecko-mediaplayer](https://sites.google.com/site/kdekorte2/gecko-mediaplayer) || [gecko-mediaplayer](https://www.archlinux.org/packages/?name=gecko-mediaplayer)
 
 *   **GNOME Videos Plugin** — Browser plugin based on the [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos") media player which uses [GStreamer](/index.php/GStreamer "GStreamer").
 
-NaN
+	[https://wiki.gnome.org/Apps/Videos](https://wiki.gnome.org/Apps/Videos) || [totem](https://www.archlinux.org/packages/?name=totem)
 
 *   **Rosa Media Player Plugin** — Qt-based browser plugin also based on MPlayer.
 
-NaN
+	[https://abf.rosalinux.ru/uxteam/ROSA_Media_Player](https://abf.rosalinux.ru/uxteam/ROSA_Media_Player) || [rosa-media-player-plugin](https://aur.archlinux.org/packages/rosa-media-player-plugin/)<sup><small>AUR</small></sup>
 
 *   **VLC Plugin** — NPAPI-based plugin that uses VLC technologies.
 
-NaN
+	[http://git.videolan.org/?p=npapi-vlc.git;a=summary](http://git.videolan.org/?p=npapi-vlc.git;a=summary) || [npapi-vlc-git](https://aur.archlinux.org/packages/npapi-vlc-git/)<sup><small>AUR</small></sup>
 
 ## Other
 
@@ -480,14 +480,6 @@ If you have Adobe Flash installed on an older system and you start playing a vid
 $ grep sse2 /proc/cpuinfo
 
 ```
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** sandfox is unmaintained and only uses rudimentary sandboxing; use a modern alternative like [playpen](https://github.com/thestinger/playpen) instead. Or even better, circument the issue with external players like [mpv](/index.php/Mpv "Mpv") (Discuss in [Talk:Browser plugins#](https://wiki.archlinux.org/index.php/Talk:Browser_plugins))
 
 If no results are returned, then you need to install an older version of Flash (for example 10.3, or 11.1). Older versions possibly will have vulnerabilities. You should then consider sandboxing Firefox using the [sandfox](https://aur.archlinux.org/packages/sandfox/)<sup><small>AUR</small></sup> package See the [sandfox homepage](https://igurublog.wordpress.com/downloads/script-sandfox/) for usage information.
 

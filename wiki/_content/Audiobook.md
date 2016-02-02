@@ -36,7 +36,7 @@ Multiple tools are available to help create audiobook files.
 
 *   [m4baker](https://aur.archlinux.org/packages/m4baker/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/m4baker)]</sup> — GUI program to combine numerous AAC-encoded audio files into a single m4b file with a chapter index
 
-NaN
+	m4baker usage is straightforward and detailed on the [project wiki](http://code.google.com/p/m4baker/w/list) — its usage will not be covered here.
 
 *   [faac](https://www.archlinux.org/packages/?name=faac) — open source AAC encoder
 *   [neroaacenc](https://aur.archlinux.org/packages/neroaacenc/)<sup><small>AUR</small></sup> — proprietary AAC encoder

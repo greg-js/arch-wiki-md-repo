@@ -1,13 +1,5 @@
 # Kernel Panics
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Last **major** update to this page was November 2009\. (Discuss in [Talk:Kernel Panics#](https://wiki.archlinux.org/index.php/Talk:Kernel_Panics))
-
 This page describes how to repair a computer whose kernel panics at boot. This has to do with the very basic OS kernel and the first part of the boot routine. (For issues regarding graphical interface problems or program freeze-ups, etc., save yourself some wasted effort and time, and please look elsewhere.)
 
 ## Contents

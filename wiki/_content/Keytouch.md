@@ -26,14 +26,6 @@ If your model is not included in the keytouch package you will need to create on
 
 ### Creating a Keyboard File
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Keytouch#](https://wiki.archlinux.org/index.php/Talk:Keytouch))
-
 Install the [keytouch-editor](https://aur.archlinux.org/packages/keytouch-editor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/keytouch-editor)]</sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Make sure you have evdev loaded (you should not need to do this if you using the stock kernel)
 
 ```
@@ -152,14 +144,6 @@ $ keytouch
 3.  Now you get to the keytouch configuration theme. I think this is pretty self explanatory.
 
 ## Starting the keytouch daemon
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** sysvinit has been replaced by systemd and the file rc.conf is no longer available.see [the news](https://www.archlinux.org/news/final-sysvinit-deprecation-warning/) (Discuss in [Talk:Keytouch#](https://wiki.archlinux.org/index.php/Talk:Keytouch))
 
 *   You should start the keytouch daemon at boot time (add `keytouch` to the daemons array in `/etc/rc.conf`)
 *   You have to load keytouchd on your session startup. There is a script /etc/X11/Xsession which runs all daemons located in /etc/X11/Xsession.d/ including the keytouchd.

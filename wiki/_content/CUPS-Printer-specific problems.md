@@ -95,14 +95,6 @@ Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should autom
 
 ## Canon
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** It would good if the driver table could be removed or somehow merged into the main table (Discuss in [Talk:CUPS/Printer-specific problems#](https://wiki.archlinux.org/index.php/Talk:CUPS/Printer-specific_problems))
-
 | Driver | Description |
 | [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/)<sup><small>AUR</small></sup> | Canon UFR II /LIPSLX Printer Driver build from source for LBP, iR & MF printers |
 | [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/)<sup><small>AUR</small></sup> | Canon UFR II/UFR II LT Printer Driver (including Canon imageCLASS MF4720w) |
@@ -352,14 +344,6 @@ Keep in mind you can use the automated installer but doing so will leave the res
 | Printer | Driver/filter | Notes |
 
 ## Samsung
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** All the cnijfilter drivers appear to be for Canon printers - maybe the cnijfilter comment would be better off in the Canon section? (Discuss in [Talk:CUPS/Printer-specific problems#](https://wiki.archlinux.org/index.php/Talk:CUPS/Printer-specific_problems))
 
 For printers requiring the _cnijfilter_ drivers, search for the correct driver [in the AUR](https://aur.archlinux.org/packages.php?K=cnijfilter)
 

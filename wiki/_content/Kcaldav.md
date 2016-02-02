@@ -1,13 +1,5 @@
 # Kcaldav
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [KDE](/index.php/KDE "KDE").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Kcaldav#](https://wiki.archlinux.org/index.php/Talk:Kcaldav))
-
 Related articles
 
 *   [DAViCal](/index.php/DAViCal "DAViCal")

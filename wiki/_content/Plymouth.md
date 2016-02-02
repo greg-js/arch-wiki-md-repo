@@ -69,14 +69,6 @@ Rebuild your initrd image (see [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") 
 
 ### Smooth transition
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** "Known issues" have a bug report which should be linked from the warning. (Discuss in [Talk:Plymouth#](https://wiki.archlinux.org/index.php/Talk:Plymouth))
-
 **Warning:** Plymouth version 0.9.2-5 has been reported to cause issues when starting [LightDM](/index.php/LightDM "LightDM"). The issue is known on upstream and you should use light display managers like [SLiM](/index.php/SLiM "SLiM") or [SDDM](/index.php/SDDM "SDDM") for now.
 
 For _smooth transition_ to [display manager](/index.php/Display_manager "Display manager") you have to:

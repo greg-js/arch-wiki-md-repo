@@ -1,13 +1,5 @@
 # Modalias
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Article needs to be more formal and not use first-person point-of-view. See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Modalias#](https://wiki.archlinux.org/index.php/Talk:Modalias))
-
 This document is an intro to how the Linux kernel and modules see and understand hardware, and how this translates into a sysfs 'modalias'
 
 ## Contents

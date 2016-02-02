@@ -1,13 +1,5 @@
 # Simple IP Failover with Heartbeat
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The page needs to be updated according to [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:Simple IP Failover with Heartbeat#](https://wiki.archlinux.org/index.php/Talk:Simple_IP_Failover_with_Heartbeat))
-
 _This article illustrates a method of implementing VERY simple active/passive IP failover using heartbeat. You are reccomended to familiarize yourself with the concepts of High Availability Clustering in Linux before proceeding to implement these instructions in a live/production environment.(SEE: [Linux-HA](http://www.linux-ha.org/wiki/Main_Page))_
 
 ## Methods

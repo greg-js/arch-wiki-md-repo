@@ -41,15 +41,27 @@ Input method (IM) frameworks act as frontends to various input methods and libra
 
 #### Current Issues
 
-NaN
+	ibus
 
-NaN
+	[IBus](/index.php/IBus "IBus") is the default input framework of [GNOME](/index.php/GNOME "GNOME") and Ubuntu. It is the most widely supported input method framework. As such, you can use ibus for inputting Korean without issue in most applications. However, there are some issues:
 
-NaN
+*   As of November 2014, ibus sometimes doesn't recognize user-set hotkeys for IM switching. This means that you may need to click on the ibus systray icon every time to want to switch input methods.
 
-NaN
+	uim
 
-NaN
+	[uim](/index.php/UIM "UIM") is a multilingual, cross-platform input method framework. The [uim](https://www.archlinux.org/packages/?name=uim) package in the official repositories includes uim-byeoru, the korean module for uim. uim-byeoru works well on most applications (including Google Chrome and Chromium) without issue. [opera](https://www.archlinux.org/packages/?name=opera) users, however, may want to avoid uim, as trying to use uim-byeoru in Opera may cause it to crash.
+
+	scim
+
+	scim, or the [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform"), is a input method framework for posix-compliant systems. scim-hangul, as of November 2014, has issues with Google Chrome and Chromium web browsers. With the default environment variables, you cannot input Korean in Google Chrome or Chromium. scim also causes problems in Gedit as of November 2014\. When scim-hangul is active, pressing `backspace` does not work properly. A workaround for both these issues will be explained in the scim configuration section. However, even with this workaround applied, Chrome/Chromium users may find that the preedit string disappears when the spacebar or any other modifier key is pressed. _There is currently no known workaround for this issue._
+
+	fcitx
+
+	[Fcitx](/index.php/Fcitx "Fcitx") is another input method framework for posix-compliant systems. Fcitx-hangul has issues with Google Chrome and Chromium. Some users have reported that fcitx only recognizes Google Chrome/Chromium's URL bar as an input window only after their themes have been changed.
+
+	nabi
+
+	[nabi](https://aur.archlinux.org/packages/nabi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nabi)]</sup> is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
 
 If you have chosen which framework to use, continue with the configuration section.
 

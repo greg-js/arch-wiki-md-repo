@@ -1,13 +1,5 @@
 # Help:Searching
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Describe the internal search engine, including searching for exact phrases. (Discuss in [Help talk:Searching#](https://wiki.archlinux.org/index.php/Help_talk:Searching))
-
 MediaWiki supports [full text search](https://en.wikipedia.org/wiki/full_text_search "wikipedia:full text search"). The limitations of this feature is that it indexes only words longer than 3 characters. If you want to search for shorter words (1 to 3 characters) then a known workaround is to use [Google](http://www.google.com/custom?domains=wiki.archlinux.org&sitesearch=wiki.archlinux.org)'s _sitesearch_ feature. Enter your search items in the form and it will automatically search within ArchWiki.
 
 Of course, you can do the same manually by appending `site:wiki.archlinux.org` to Google searches:

@@ -90,14 +90,6 @@ Restart lighttpd and browse to [http://localhost/phppgadmin/index.php](http://lo
 
 #### Nginx
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Grammar, punctuation, style issues, see also [Help:Style](/index.php/Help:Style "Help:Style") and related. (Discuss in [Talk:PhpPgAdmin#](https://wiki.archlinux.org/index.php/Talk:PhpPgAdmin))
-
 Create a symbolic link to the /usr/share/webapps/phppgadmin directory from whichever directory your vhost is serving files from, e.g. /srv/http/<domain>/public_html/
 
 ```

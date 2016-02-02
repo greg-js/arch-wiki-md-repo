@@ -2,7 +2,9 @@
 
 From [mod_gnutls wiki](https://mod.gnutls.org/wiki):
 
-NaN
+	mod_gnutls is an extension for ​Apache's httpd uses the ​GnuTLS library to provide HTTPS.
+
+	It is similar to ​mod_ssl in purpose, but it supports some features and protocols that mod_ssl does not, and it does not use ​OpenSSL.
 
 ## Installation
 

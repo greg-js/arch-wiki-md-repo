@@ -1,13 +1,5 @@
 # Alpine
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Articles should not contain first-person remarks. General cleanup needed. See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Alpine#](https://wiki.archlinux.org/index.php/Talk:Alpine))
-
 **Alpine** is based on pine, a text-based E-mail and newsclient that was originally released by the University of Washington in 1991\. It is an easier to use alternative to [mutt](/index.php/Mutt "Mutt"), a more lightweight approach to the mail reader concept.
 
 Right now, this article is just a quick and dirty guide for configuring Alpine to use a remote mailserver with IMAP.

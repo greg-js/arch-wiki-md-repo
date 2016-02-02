@@ -2,7 +2,7 @@
 
 From [Gate One ✈ Web Terminal Emulator and SSH Client](http://liftoffsoftware.com/Products/GateOne):
 
-NaN
+	_Gate One™ is a web-based Terminal Emulator and SSH client that brings the power of the command line to the web. It requires no browser plugins and is built on top of a powerful plugin system that allows every aspect of its appearance and functionality to be customized._
 
 Gate One enables users to access SSH servers over the web. alternatives exist, such as [Guacamole](http://guac-dev.org/). One of Gate One's distinguishing features is the ability to resume sessions from other browsers or to replay sessions.
 
@@ -32,7 +32,9 @@ Gate One is available in the [AUR](/index.php/AUR "AUR") via [gateone-git](https
 
 If you want to be able to upgrade (restart) Gate One without losing user's connected sessions you have to have dtach installed. This option is enabled by default in the configuration.
 
-NaN
+	[dtach](https://www.archlinux.org/packages/?name=dtach)
+
+	emulates the detach feature of screen
 
 ## Configuration
 

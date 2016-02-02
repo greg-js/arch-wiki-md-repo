@@ -74,7 +74,7 @@ Install:
 
 *   [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) - The main package providing the daemon and client programs.
 
-NaN
+**Note:** [bumblebee](https://www.archlinux.org/packages/?name=bumblebee) depends on [mesa-libgl](https://www.archlinux.org/packages/?name=mesa-libgl) and provides all [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl), [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl) and [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl) to avoid dependency conflict between the respective libgl versions.
 
 *   [mesa](https://www.archlinux.org/packages/?name=mesa) - An open-source implementation of the **OpenGL** specification.
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) - Intel driver.
@@ -96,14 +96,6 @@ In order to use Bumblebee, it is necessary to add your regular _user_ to the `bu
 Also [enable](/index.php/Enable "Enable") `bumblebeed.service`. Reboot your system and follow [#Usage](#Usage).
 
 ### Installing Bumblebee with Intel/Nouveau
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Bumblebee#](https://wiki.archlinux.org/index.php/Talk:Bumblebee))
 
 **Note:** This method is deprecated and will most likely not work anymore. Use the nvidia module instead. If you want nouveau, use [PRIME](/index.php/PRIME "PRIME").
 
@@ -209,11 +201,14 @@ The method of compress will affect performance in the GPU/CPU usage. Compressed 
 
 Compressed methods
 
-NaN
+*   `jpeg`
+*   `rgb`
+*   `yuv`
 
 Uncompressed methods
 
-NaN
+*   `proxy`
+*   `xv`
 
 Here is a performance table tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>:
 
@@ -448,7 +443,9 @@ Driver=nvidia
 *   In order for your DP Monitor to show up with the correct resolution in your VIRTUAL Display you might have to edit the Monitor section in your `/etc/X11/xorg.nvidia.conf`. Since this is extra work, you could try to continue with your auto-generated file. Come back to this step in the instructions if you find that the resolution of the VIRTUAL Display as shown by xrandr is not correct.
     *   First you have to generate a Modeline. You can use the tool [amlc](http://zi.fi/amlc/), which will genearte a Modeline if you input a few basic parameters.
 
-NaN
+	Example: 24" 1920x1080 Monitor
+
+	start the tool with `amlc -c`
 
 ```
 Monitor Identifier: Samsung 2494
@@ -542,7 +539,7 @@ EndSection  # Samsung 2494
 *   Take note of the position of the VIRTUAL display in the list of Outputs as shown by xrandr. The counting starts from zero, i.e. if it is the third display shown, you would specify `-x 2` as parameter to `screenclone` (Note: This might not always be correct. If you see your internal laptop display cloned on the monitor, try `-x 2` anyway.)
 *   Clone the contents of the VIRTUAL display onto the X server created by bumblebee, which is connected to the DisplayPort monitor via the NVIDIA chip:
 
-NaN
+	`screenclone -d :8 -x 2`
 
 Thats it, all three displays should be up and running now.
 

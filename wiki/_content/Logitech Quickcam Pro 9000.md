@@ -1,13 +1,5 @@
 # Logitech Quickcam Pro 9000
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Webcam](/index.php/Webcam "Webcam").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Logitech Quickcam Pro 9000#](https://wiki.archlinux.org/index.php/Talk:Logitech_Quickcam_Pro_9000))
-
 The **Logitech QuickCam Pro 9000** is an expensive and fairly high-quality webcam that is available in several versions. It is of course and UVC device and as such works out-of-the-box in most cases, but if you want to maximize the usefulness of this device on Arch Linux you'll need to do some magic.
 
 ## Building the Software

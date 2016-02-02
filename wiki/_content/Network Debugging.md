@@ -4,14 +4,6 @@ Related articles
 
 *   [VLAN](/index.php/VLAN "VLAN")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Network Configuration](/index.php/Network_Configuration "Network Configuration").**
-
-**Notes:** already duplicates part of its content (Discuss in [Talk:Network Debugging#](https://wiki.archlinux.org/index.php/Talk:Network_Debugging))
-
 This article handles the steps needed for basic network troubleshooting.
 
 ## Contents

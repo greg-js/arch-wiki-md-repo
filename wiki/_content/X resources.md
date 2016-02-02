@@ -131,15 +131,29 @@ xscreensaver.Dialog.headingFont: -*-fixed-bold-r-*-*-*-100-*-*-*-*-iso8859-1
 
 ```
 
-NaN
+	name
 
-NaN
+	The name of the application, such as xterm, xpdf, etc
 
-NaN
+	class
 
-NaN
+	The classification used to group resources together. Class names are typically uppercase.
 
-NaN
+	resource
+
+	The name of the resource whose value is to be changed. Resources are typically lowercase with uppercase concatenation.
+
+	value
+
+	The actual value of the resource. This can be 1 of 3 types:
+
+*   Integer (whole numbers)
+*   Boolean (true/false, yes/no, on/off)
+*   String (a string of characters) (for example a word (`white`), a color (`#ffffff`), or a path (`/usr/bin/firefox`))
+
+	delimiters
+
+	A dot (`**.**`) is used to signify each step down into the hierarchy — in the above example we start at name, then descend into Class, and finally into the resource itself. A colon (`**:**`) is used to separate the resource declaration from the actual value.
 
 #### Wildcard matching
 
@@ -817,14 +831,6 @@ EOF
 ```
 
 ## Contributed examples
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Dotfiles](/index.php/Dotfiles "Dotfiles").**
-
-**Notes:** Undocumented and setup-specific files are of little relevance in a general article (Discuss in [Talk:X resources#](https://wiki.archlinux.org/index.php/Talk:X_resources))
 
 Check out these links for some real world examples of X resource files, contributed by fellow community members.
 

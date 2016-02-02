@@ -1,13 +1,5 @@
 # Using LPROF to profile monitors
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [ICC_Profiles](/index.php/ICC_Profiles "ICC Profiles").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Using LPROF to profile monitors#](https://wiki.archlinux.org/index.php/Talk:Using_LPROF_to_profile_monitors))
-
 Related articles
 
 *   [CMYK support in The GIMP](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP")

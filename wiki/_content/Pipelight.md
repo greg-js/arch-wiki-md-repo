@@ -104,14 +104,6 @@ There is a test page available [here](http://bubblemark.com/sl3/TestPage.html). 
 
 ## GPU Acceleration in Silverlight
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `/usr/share/pipelight/hw-accel-default` returns no such file or directory (Discuss in [Talk:Pipelight#](https://wiki.archlinux.org/index.php/Talk:Pipelight))
-
 ### Default behavior
 
 Silverlight applets may include an option called `enableGPUAcceleration` which controls whether or not [hardware acceleration](http://en.wikipedia.org/wiki/Hardware_acceleration) should be used (i.e. use the graphics card for video playback). This option is under the control of specific website's administrator, but this option can also be forced from the client's side (see below). By default, GPU acceleration is only enabled on verified systems cards **and** pages that require it. Herein, system verification is executed through the bash script `/usr/share/pipelight/hw-accel-default` that checks the graphics card vendor. Note that this script depends on the `glxinfo` utility, which is part of [mesa-demos](https://www.archlinux.org/packages/?q=mesa-demos). Make sure this package is installed if you want to Pipelight's graphics verification method.
@@ -140,14 +132,6 @@ overwriteArg      = enableGPUAcceleration=true
 ```
 
 ### Disable graphics card verification
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `/usr/share/pipelight/hw-accel-default` returns no such file or directory (Discuss in [Talk:Pipelight#](https://wiki.archlinux.org/index.php/Talk:Pipelight))
 
 Pipelight has been tested on graphics cards from several vendors. The known-to-work card are whitelisted and are the only cards that Pipelight enables hardware acceleration on by default. This behavior can be circumvented by disabling the hardware verification procedure. However, it is recommended to check the output of the verfication procedure first. Make sure you have [mesa-demos](https://www.archlinux.org/packages/?q=mesa-demos) installed and run:
 

@@ -1,13 +1,5 @@
 # DeveloperWiki:Package Signing Proposal for Pacman
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:DeveloperWiki:Package Signing Proposal for Pacman#](https://wiki.archlinux.org/index.php/Talk:DeveloperWiki:Package_Signing_Proposal_for_Pacman))
-
 This is a proposal for the package signing feature for Pacman. Here we'll gather ideas and commitments, so the implementation will be guided by this document.
 
 See also: [Pacman package signing](/index.php/Pacman_package_signing "Pacman package signing")
@@ -45,7 +37,25 @@ A web of trust is the concept used by OpenPGP (and GnuPG) for the management of 
 
 In GnuPG, there are four levels of trust in a public key:
 
-NaN
+	unknown
+
+	I did not say anything about this key yet
+
+	none
+
+	I do not trust this public key to sign other keys (this just affects the signature keys, not the signatures of files)
+
+	marginal
+
+	I have a little trust in this public key to sign other keys
+
+	fully
+
+	I trust completely in this public key, as if it was my own
+
+	ultimately
+
+	the same level of trust as your own key
 
 So, GnuPG can be configured to accept a key as valid if it has 3 marginally trusted key signatures or 1 fully trusted key signature (this is the default). Or it can be any other combination, if properly configured.
 

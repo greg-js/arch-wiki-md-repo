@@ -1,13 +1,5 @@
 # Advanced traffic control
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Still unfinished! Need to add more qdiscs, more examples, fix orthography, etc. (Discuss in [Talk:Advanced traffic control#](https://wiki.archlinux.org/index.php/Talk:Advanced_traffic_control))
-
 One of the advanced and least known network features from the linux kernel, is the ability to control and shape the traffic. While most users know the basic use of iproute2 by using the `ip` command, they often ignore other powerful features like the ones offered by the `tc` command.
 
 The goal of this article is to show how to shape the traffic by using queueing disciplines. For instance, if you ever had to forbid downloads or torrents on a network that you admin, and not because you were against those services, but because users were "abusing" the bandwidth, then you could use queueing disciplines to allow that kind of traffic and, at the same time, be sure that one user cannot slowdown the entire network.
@@ -188,14 +180,6 @@ iptables -A PREROUTING -t mangle -i eth0 -j MARK --set-mark 6
 You can then use the regular way of iptables to match packages and then use fwmark to mark them.
 
 ## Example of ingress traffic shaping with SNAT
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** non-standard AUR format (Discuss in [Talk:Advanced traffic control#](https://wiki.archlinux.org/index.php/Talk:Advanced_traffic_control))
 
 Qdiscs on ingress traffic provide only policing with no shaping. In order to shape ingress, the IFB device has to be used. However, another problem arises if SNAT or MASQUERADE is in use, as all incoming traffic has the same destination address. The Qdisc intercepts the incoming traffic on the external interface before reverse NAT translation so it can only see the router's IP as destination of the packets.
 

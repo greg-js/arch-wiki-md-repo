@@ -2,14 +2,6 @@
 
 **翻译状态：** 本文是英文页面 [English_Page_Name](/index.php?title=English_Page_Name&action=edit&redlink=1 "English Page Name (page does not exist)") 的[翻译](/index.php/ArchWiki_Translation_Team_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki Translation Team (简体中文)")，最后翻译时间：2016-01-28，点击[这里](https://wiki.archlinux.org/index.php?title=English_Page_Name&diff=0&oldid=417570)可以查看翻译后英文页面的改动。
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** [Help:Style#Language register](/index.php/Help:Style#Language_register "Help:Style") (Discuss in [Talk:Microsoft Surface Pro 3 (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Microsoft_Surface_Pro_3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
-
 **警告:** 设备的保修仅在OEM版Windows仍然存在时有效。官方解释，双启动不会使保修失效。[这里](http://answers.microsoft.com/en-us/surface/forum/surfpro-surfusingpro/would-dual-booting-the-surface-pro-void-its/da549e24-f986-4984-b081-25c029882163).
 
 本文记录了所有使Arch Linux在Surface Pro 3上工作的所有有效信息。
@@ -61,14 +53,6 @@ Surface Pro 3有三种启动模式 [explained 这里](http://www.microsoft.com/s
 看这里[Unified Extensible Firmware Interface#Secure Boot](/index.php/Unified_Extensible_Firmware_Interface#Secure_Boot "Unified Extensible Firmware Interface").
 
 ## 安装
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [UEFI#Secure Boot](/index.php/UEFI#Secure_Boot "UEFI").**
-
-**Notes:** This steps are on how to support Secure Boot for Arch Linux, need to try it in a regular computer. (Discuss in [Talk:Microsoft Surface Pro 3 (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Microsoft_Surface_Pro_3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 I have done the installation with systemd's bootctl [Systemd-boot](/index.php/Systemd-boot "Systemd-boot") (old [Gummiboot](/index.php/Gummiboot "Gummiboot")). After doing all the steps of installation within the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide"), you should do two more things. Booting in Secure Boot won't work for the new installation, as the vmlinuz hasn't been registered within it's loader.
 
@@ -129,14 +113,6 @@ EndSection
 ```
 
 ### Booting with Secure Boot Enabled
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [UEFI#Secure boot](/index.php/UEFI#Secure_boot "UEFI").**
-
-**Notes:** Generic instructions (Discuss in [Talk:Microsoft Surface Pro 3 (简体中文)#](https://wiki.archlinux.org/index.php/Talk:Microsoft_Surface_Pro_3_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)))
 
 The recommended bootloader for UEFI with Secure Boot enabled is [systemd-boot](/index.php/Systemd-boot "Systemd-boot")
 

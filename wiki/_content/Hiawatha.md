@@ -127,25 +127,9 @@ Then [Reload](/index.php/Reload "Reload") the `hiawatha.service`.
 
 #### Ruby on Rails
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** If you use it please fill this section! (Discuss in [Talk:Hiawatha#](https://wiki.archlinux.org/index.php/Talk:Hiawatha))
-
 For some details see the FastCGI section of the [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 
 #### Python FastCGI
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** If you use it please fill this section! (Discuss in [Talk:Hiawatha#](https://wiki.archlinux.org/index.php/Talk:Hiawatha))
 
 For some details see the FastCGI section of the [HowTo](https://www.hiawatha-webserver.org/howto/cgi_and_fastcgi).
 

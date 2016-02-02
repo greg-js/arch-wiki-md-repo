@@ -38,57 +38,49 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 *   **cmst** — Qt GUI for ConnMan.
 
-NaN
+	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)<sup><small>AUR</small></sup>
 
 *   **connman-ncurses** — Simple ncurses UI for ConnMan
 
-NaN
+	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)<sup><small>AUR</small></sup>
 
 *   **connman-notify** — Connman event notification client
 
-NaN
+	[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/connman-notify)]</sup>
 
 *   **ConnMan-UI** — GTK3 client applet.
 
-NaN
+	[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)<sup><small>AUR</small></sup>
 
 *   **connman_dmenu** — Client/frontend for dmenu.
 
-NaN
+	[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)<sup><small>AUR</small></sup>
 
 *   **EConnman** — Enlightenment desktop panel applet.
 
-NaN
+	[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)<sup><small>AUR</small></sup>
 
 *   **LXQt-Connman-Applet** — LXQt desktop panel applet.
 
-NaN
+	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
 
 *   **qconnman-ui** — Qt management interface used on O.S. Systems products
 
-NaN
+	[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qconnman-ui-git)]</sup>
 
 *   **connman-gtk** — GTK client.
 
-NaN
+	[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)<sup><small>AUR</small></sup>
 
 *   **gnome-extension-connman** — Gnome3 extension for connman.
 
-NaN
+	[https://github.com/jgke/gnome-extension-connman](https://github.com/jgke/gnome-extension-connman) || [https://extensions.gnome.org/extension/981/connman-extension/](https://extensions.gnome.org/extension/981/connman-extension/)
 
 gnome-extension-connman: contains only some of the functionality without installing connman-gtk.
 
 connman-ncurses: not all of connman functionality is implemented; but usable (with X or from terminal without X). See [wiki](https://github.com/eurogiciel-oss/connman-json-client/wiki).
 
 ## Usage
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Only Wired and Wi-Fi plugins are described. (Discuss in [Talk:Connman#](https://wiki.archlinux.org/index.php/Talk:Connman))
 
 ConnMan has a standard command line client `connmanctl`. It can run in 2 modes:
 

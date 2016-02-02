@@ -89,14 +89,6 @@ First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") 
 
 **Note:** If you use KDE4 and run into problems due to ksshaskpass connecting to a [second instance of kwallet](https://bbs.archlinux.org/viewtopic.php?pid=1525004), try installing [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/)<sup><small>AUR</small></sup> instead.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This conflicts with what is written further below. (Discuss in [Talk:KDE Wallet#](https://wiki.archlinux.org/index.php/Talk:KDE_Wallet))
-
 Create an autostart file (KDE4: `~/.kde4/Autostart/ssh-add.sh`, KDE Plasma: `~/.config/autostart/ssh-add.sh`) with this content:
 
 ```
@@ -104,14 +96,6 @@ Create an autostart file (KDE4: `~/.kde4/Autostart/ssh-add.sh`, KDE Plasma: `~/.
 ssh-add </dev/null
 
 ```
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [KDE#Autostarting applications](/index.php/KDE#Autostarting_applications "KDE").**
-
-**Notes:** General autostarting instructions belong there (Discuss in [Talk:KDE Wallet#](https://wiki.archlinux.org/index.php/Talk:KDE_Wallet))
 
 KDE Plasma no longer processes *.sh startup scripts in the autostart directory. There are two methods to fix this.
 

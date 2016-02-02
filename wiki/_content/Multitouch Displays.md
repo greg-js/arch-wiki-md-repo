@@ -1,13 +1,5 @@
 # Multitouch Displays
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Multitouch Displays#](https://wiki.archlinux.org/index.php/Talk:Multitouch_Displays))
-
 Since Linux Kernel 3.2, multitouch devices are handled by the `hid-multitouch` module, see [Kernel modules](/index.php/Kernel_modules "Kernel modules").
 
 ## Contents
@@ -64,14 +56,6 @@ If the touchscreen is not working properly, you may need to install a specific d
 Store and mark [[2]](https://gist.githubusercontent.com/anonymous/b5728d68bb8808454cb6/raw/1882d23b273fc1b341a8b7afa1f2649fceff4574/gistfile1.sh) executable (call the script to see its input options).
 
 ## Drivers
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Multitouch Displays#](https://wiki.archlinux.org/index.php/Talk:Multitouch_Displays))
 
 ### eGalax
 

@@ -131,14 +131,6 @@ has xdg-open, flag f = xdg-open "$1"
 
 ## Tips and tricks
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** (Discuss in [Talk:Ranger#](https://wiki.archlinux.org/index.php/Talk:Ranger))
-
 ### Archives
 
 These commands use [atool](https://www.archlinux.org/packages/?name=atool) to perform archive operations.

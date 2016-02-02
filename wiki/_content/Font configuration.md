@@ -156,14 +156,6 @@ $ ln -s /etc/fonts/conf.avail/10-sub-pixel-rgb.conf $XDG_CONFIG_HOME/fontconfig/
 
 ### Hinting
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Document FT2_SUBPIXEL_HINTING variable, see [FS#35274](https://bugs.archlinux.org/task/35274) (Discuss in [Talk:Font configuration#](https://wiki.archlinux.org/index.php/Talk:Font_configuration))
-
 [Font hinting](https://en.wikipedia.org/wiki/Font_hinting "wikipedia:Font hinting") (also known as instructing) is the use of mathematical instructions to adjust the display of an outline font so that it lines up with a rasterized grid, (i.e. the pixel grid of the display). Its intended effect is to make fonts appear more crisp so that they are more readable. Fonts will line up correctly without hinting when displays have around 300 [DPI](https://en.wikipedia.org/wiki/Dots_per_inch "wikipedia:Dots per inch"). Two types of hinting are available.
 
 #### Byte-Code Interpreter (BCI)
@@ -371,64 +363,7 @@ Typically when both elements are combined, `<rejectfont>` is first used on a mor
 
 ### Disable bitmap fonts
 
-To disable bitmap fonts (which are sometimes used as fallbacks for missing fonts, causing text to be rendered pixelated), use `70-no-bitmaps.conf` (which is not placed by fontconfig by default):
-
-```
-# cd /etc/fonts/conf.d
-# rm 70-yes-bitmaps.conf
-# ln -s ../conf.avail/70-no-bitmaps.conf
-
-```
-
-This one-liner should also work:
-
-```
-# ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-```
-
-You may not need to remove `70-yes-bitmaps.conf` if it does not exist. You can choose which fonts to replace bitmaps fonts with (Helvetica, Courier and Times bitmap mapts to TTF fonts) by:
-
- `~/.config/fontconfig/conf.d/29-replace-bitmap-fonts.conf` 
-
-```
-<?xml version="1.0"?>
-<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-<fontconfig>
-    <!-- Replace generic bitmap font names by generic font families -->
-    <match target="pattern">
-        <test name="family" qual="any">
-            <string>Helvetica</string>
-        </test>
-        <edit mode="assign" name="family">
-            <string>Arial</string>
-            <string>Liberation Sans</string>
-            <string>sans-serif</string>
-        </edit>
-    </match>
-    <match target="pattern">
-        <test name="family" qual="any">
-            <string>Courier</string>
-        </test>
-        <edit mode="assign" name="family">
-            <string>Courier New</string>
-            <string>Liberation Mono</string>
-            <string>monospace</string>
-        </edit>
-    </match>
-    <match target="pattern">
-        <test name="family" qual="any">
-            <string>Times</string>
-        </test>
-        <edit mode="assign" name="family">
-            <string>Times New Roman</string>
-            <string>Liberation Serif</string>
-            <string>serif</string>
-        </edit>
-    </match>
-</fontconfig>
-
-```
+Bitmap fonts are sometimes used as fallbacks for missing fonts, which may cause text to be rendered pixelated or too large. Use the `70-no-bitmaps.conf` [preset](#Presets) to disable this behavior.
 
 To disable embedded bitmap for all fonts:
 
@@ -519,14 +454,6 @@ Now add necessary modifications to `$XDG_CONFIG_HOME/fontconfig/fonts.conf`:
 **Tip:** Use the value 'embolden' for existing bold fonts in order to make them even bolder.
 
 ### Change rule overriding
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `/etc/fonts/conf.d/50-user.conf` will be created again when [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) is updated (Discuss in [Talk:Font configuration#](https://wiki.archlinux.org/index.php/Talk:Font_configuration))
 
 Fontconfig processes files in `/etc/fonts/conf.d` in numerical order. This enables rules or files to override one another, but often confuses users about what file gets parsed last.
 
@@ -641,14 +568,6 @@ In this example, hinting is set to "grayscale".
 
 ### Incorrect hinting in GTK applications on non-Gnome systems
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Mentions GTK relies on fontconfig, then claims that "some" fonts get the hinting "wrong", and ends up refering to Xft (but see e.g [[1]](http://doc.opensuse.org/documentation/html/openSUSE_113/opensuse-reference/cha.fontconfig.html#sec.fontconfig.xft)). IOW, unsupported claims and unclear relations (Discuss in [Talk:Font configuration#](https://wiki.archlinux.org/index.php/Talk:Font_configuration))
-
 [GNOME](/index.php/GNOME "GNOME") uses the XSETTINGS system to configure font rendering. Without gnome-settings-daemon, GTK applications rely on fontconfig, but some fonts get the hinting wrong causing them to look too bold or too light.
 
 A simple solution is using [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/)<sup><small>AUR</small></sup> as a replacement for gnome-settings-daemon to provide the configuration, for example:
@@ -692,4 +611,4 @@ You may also experience similar problem when you open a PDF which requires Helve
 *   [FreeType 2 overview](http://freetype.sourceforge.net/freetype2/)
 *   [Gentoo font-rendering thread](https://forums.gentoo.org/viewtopic-t-723341.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=415504](https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=415504)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=418774](https://wiki.archlinux.org/index.php?title=Font_configuration&oldid=418774)"

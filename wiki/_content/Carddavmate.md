@@ -1,13 +1,5 @@
 # Carddavmate
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Carddavmate#](https://wiki.archlinux.org/index.php/Talk:Carddavmate))
-
 [Carddavmate](http://www.inf-it.com/) is a carddav client that runs in a web browser using javascript. It is useful when you have a carddav server and want to access the contacts on this server with only a web browser.
 
 This guide shows you how to install carddavmate to use with davical

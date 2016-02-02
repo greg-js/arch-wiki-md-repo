@@ -47,14 +47,6 @@ In order for the server to be able to access files on the client computer you sh
 
 ### Setup SQLite database
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** What is it used for? Why do we need it? (Discuss in [Talk:X2Go#](https://wiki.archlinux.org/index.php/Talk:X2Go))
-
 Run the following command to initialize SQLite database
 
 ```

@@ -167,7 +167,7 @@ It is possible to find out if the `intel-ucode.img` contains a microcode image f
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
 
-NaN
+	(extract microcode image and search it for your cpuid)
 
 *   If an update is available, it should show up below _selected microcodes_
 *   The microcode might already be in your vendor bios and not show up loading in dmesg. Compare to the current microcode running `grep microcode /proc/cpuinfo`

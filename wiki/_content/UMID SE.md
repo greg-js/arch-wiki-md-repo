@@ -1,13 +1,5 @@
 # UMID SE
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:UMID SE#](https://wiki.archlinux.org/index.php/Talk:UMID_SE))
-
 This guide assumes that you are experienced in installing Archlinux. If you are not experienced, please read this guide in parallel with the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or the [Installation guide](/index.php/Installation_guide "Installation guide"). No assumptions are made on your desired environment (DE/WM). Note that the SSD will completely be wiped if you follow this guide without alterations.
 
 ## Contents

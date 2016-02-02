@@ -82,14 +82,6 @@ NetworkManager is also a cool option.
 
 ### Webcam
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The linked package does not exist in the AUR. (Discuss in [Talk:ASUS F5R#](https://wiki.archlinux.org/index.php/Talk:ASUS_F5R))
-
 Since there is no official support for the Asus Webcam, you need to install separate drivers from [the AUR](https://aur.archlinux.org/packages.php?ID=12669).
 
 ### Bluetooth

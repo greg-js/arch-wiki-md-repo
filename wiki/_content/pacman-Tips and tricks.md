@@ -65,14 +65,6 @@ For general methods to improve the flexibility of the provided tips or pacman it
 
 ### Operations and Bash syntax
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [pacman#Installing specific packages](/index.php/Pacman#Installing_specific_packages "Pacman").**
-
-**Notes:** Although this is definitely a tip/trick, it fits to the main [pacman](/index.php/Pacman "Pacman") page much better than here. It shows generic examples of how to do things, not specific commands needed to achieve something non-trivial/unrelated. (Discuss in [Talk:Pacman/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Pacman/Tips_and_tricks))
-
 In addition to pacman's standard set of features, there are ways to extend its usability through rudimentary [Bash](/index.php/Bash "Bash") commands/syntax.
 
 To install a number of packages sharing similar patterns in their names -- not the entire group nor all matching packages; eg. [plasma](https://www.archlinux.org/groups/x86_64/plasma/):
@@ -107,45 +99,45 @@ pacman has the `-q` operand to hide the version column, so it is possible to que
 
 *   **Discover** — A collection of package management tools for KDE, using PackageKit.
 
-NaN
+	[https://projects.kde.org/projects/kde/workspace/discover](https://projects.kde.org/projects/kde/workspace/discover) || [discover](https://www.archlinux.org/packages/?name=discover)
 
 *   **GNOME packagekit** — GTK based package management tool
 
-NaN
+	[http://www.freedesktop.org/software/PackageKit/](http://www.freedesktop.org/software/PackageKit/) || [gnome-packagekit](https://www.archlinux.org/packages/?name=gnome-packagekit)
 
 *   **GNOME Software** — Gnome Software App. (Curated selection for GNOME)
 
-NaN
+	[https://wiki.gnome.org/Apps/Software](https://wiki.gnome.org/Apps/Software) || [gnome-software](https://www.archlinux.org/packages/?name=gnome-software)
 
 *   **pcurses** — Package management in a curses frontend
 
-NaN
+	[https://github.com/schuay/pcurses](https://github.com/schuay/pcurses) || [pcurses](https://www.archlinux.org/packages/?name=pcurses)
 
 *   **tkPacman** — GUI front-end for pacman. Depends on Tcl/Tk and X11 but neither on GTK+, nor on QT. It only interacts with the package database via the CLI of 'pacman'. So, installing and removing packages with tkPacman or with pacman leads to exactly the same result.
 
-NaN
+	[http://sourceforge.net/projects/tkpacman](http://sourceforge.net/projects/tkpacman) || [tkpacman](https://aur.archlinux.org/packages/tkpacman/)<sup><small>AUR</small></sup>
 
 ### Utilities
 
 *   **Lostfiles** — Script for detecting orphaned files.
 
-NaN
+	[https://github.com/graysky2/lostfiles](https://github.com/graysky2/lostfiles) || [lostfiles](https://aur.archlinux.org/packages/lostfiles/)<sup><small>AUR</small></sup>
 
 *   **[Pacmatic](/index.php/Pacmatic "Pacmatic")** — Pacman wrapper to check Arch News before upgrading, avoid partial upgrades, and warn about configuration file changes.
 
-NaN
+	[http://kmkeen.com/pacmatic](http://kmkeen.com/pacmatic) || [pacmatic](https://www.archlinux.org/packages/?name=pacmatic)
 
 *   **[pkgfile](/index.php/Pkgfile "Pkgfile")** — Tool that finds what package owns a file.
 
-NaN
+	[http://github.com/falconindy/pkgfile](http://github.com/falconindy/pkgfile) || [pkgfile](https://www.archlinux.org/packages/?name=pkgfile)
 
 *   **[pkgtools](/index.php/Pkgtools "Pkgtools")** — Collection of scripts for Arch Linux packages.
 
-NaN
+	[https://github.com/Daenyth/pkgtools](https://github.com/Daenyth/pkgtools) || [pkgtools](https://aur.archlinux.org/packages/pkgtools/)<sup><small>AUR</small></sup>
 
 *   **srcpac** — Simple tool that automates rebuilding packages from source.
 
-NaN
+	[https://projects.archlinux.org/srcpac.git](https://projects.archlinux.org/srcpac.git) || [srcpac](https://www.archlinux.org/packages/?name=srcpac)
 
 ## Maintenance
 
@@ -658,14 +650,6 @@ An alternative tool would be [fakepkg](https://aur.archlinux.org/packages/fakepk
 
 ### Backing up and retrieving a list of installed packages
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Optional dependencies that are not required by any other package (`comm -13 <(pacman -Qdtq) <(pacman -Qdttq)`) are ignored by this procedure. (Discuss in [Talk:Pacman/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Pacman/Tips_and_tricks))
-
 **Tip:** You may want to use [pacbackup](https://aur.archlinux.org/packages/pacbackup/)<sup><small>AUR</small></sup> or [bacpac](https://bbs.archlinux.org/viewtopic.php?id=200067) to automatise the below tasks.
 
 It is good practice to keep periodic backups of all pacman-installed packages. In the event of a system crash which is unrecoverable by other means, pacman can then easily reinstall the very same packages onto a new installation.
@@ -758,14 +742,6 @@ Foreign (AUR) packages must be reinstalled separately; you can list them with `p
 Pacman preserves the installation reason by default.
 
 ### Restore pacman's local database
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** _testdb_ has been removed in pacman 5.0 [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Pacman/Tips and tricks#](https://wiki.archlinux.org/index.php/Talk:Pacman/Tips_and_tricks))
 
 Signs that pacman needs a local database restoration:
 
@@ -998,19 +974,19 @@ See [OPTIONS](http://aria2.sourceforge.net/manual/en/html/aria2c.html#options) i
 
 `-d, --dir`
 
-NaN
+	The directory to store the downloaded file(s) as specified by [pacman](/index.php/Pacman "Pacman").
 
 `-o, --out`
 
-NaN
+	The output file name(s) of the downloaded file(s).
 
 `%o`
 
-NaN
+	Variable which represents the local filename(s) as specified by pacman.
 
 `%u`
 
-NaN
+	Variable which represents the download URL as specified by pacman.
 
 #### Other applications
 

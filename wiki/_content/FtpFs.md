@@ -2,7 +2,7 @@
 
 From [Wikipedia](http://en.wikipedia.org/wiki/FTPFS):
 
-NaN
+	"[FTPFS](http://ftpfs.sourceforge.net/) (File Transfer Protocol FileSystem) is an obsoleted Linux kernel module that allows the user to _mount a FTP server onto the local filesystem_".
 
 The old implementation (ftpfs) was replaced by [LUFS](http://lufs.sourceforge.net/) (UserLand FileSystem), which in turn was made obsolete by [FUSE](http://fuse.sourceforge.net/) (Filesystem in Userspace).
 

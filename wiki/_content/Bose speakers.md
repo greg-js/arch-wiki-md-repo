@@ -1,13 +1,5 @@
 # Bose speakers
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Advanced Linux Sound Architecture/Troubleshooting#Hardware and Cards](/index.php/Advanced_Linux_Sound_Architecture/Troubleshooting#Hardware_and_Cards "Advanced Linux Sound Architecture/Troubleshooting").**
-
-**Notes:** If the following is still valid (content from 2008, now it is May 2015), it might be more accessible in above general section. (Discuss in [Talk:Bose speakers#](https://wiki.archlinux.org/index.php/Talk:Bose_speakers))
-
 In order to get [ALSA](/index.php/ALSA "ALSA") to work with your Bose speakers (after you have properly configured ALSA):
 
 The trick is to set a new default device for ALSA.

@@ -342,14 +342,6 @@ Note that [some time in 2013](https://trac.torproject.org/projects/tor/ticket/81
 
 ## Irssi
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** `cap_sasl.pl` is broken with _perl_ 5.20; SSL does also not work with `torsocks` (Discuss in [Talk:Tor#](https://wiki.archlinux.org/index.php/Talk:Tor))
-
 Freenode recommends connecting to `.onion` directly. It also requires charybdis and ircd-seven's SASL mechanism for identifying to nickserv during connection; see [Irssi#Authenticating with SASL](/index.php/Irssi#Authenticating_with_SASL "Irssi"). Start irssi:
 
 ```

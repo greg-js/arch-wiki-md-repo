@@ -73,15 +73,32 @@ A very strong disk encryption setup (e.g. full system encryption with authentici
 
 ## Data encryption vs system encryption
 
-NaN
+	Data encryption
 
-NaN
+	Defined as encrypting only the user's data itself (often located within the `/home` directory, or on removable media like a data DVD), data encryption is the simplest and least intrusive use of disk encryption, but has some significant drawbacks.
 
-NaN
+	In modern computing systems, there are many background processes that may cache/store information about user data or parts of the data itself in non-encrypted areas of the hard drive, like:
 
-NaN
+*   swap partitions
+    *   (potential remedies: disable swapping, or use [encrypted swap](/index.php/Dm-crypt/Swap_encryption "Dm-crypt/Swap encryption") as well)
+*   `/tmp` (temporary files created by user applications)
+    *   (potential remedies: avoid such applications; mount `/tmp` inside a [ramdisk](/index.php/Ramdisk "Ramdisk"))
+*   `/var` (log files and databases and such; for example, mlocate stores an index of all file names in `/var/lib/mlocate/mlocate.db`)
 
-NaN
+	In addition, mere data encryption will leave you vulnerable to offline system tampering attacks (e.g. someone installing a hidden program that [records](https://en.wikipedia.org/wiki/Keystroke_logging "wikipedia:Keystroke logging") the passphrase you use to unlock the encrypted data, or waits for you to unlock it and then secretly copies/sends some of the data to a location where the attacker can retrieve it).
+
+	System encryption
+
+	Defined as the encryption of the operating system _and_ user data, system encryption helps to address some of the inadequacies of data encryption.
+
+	Benefits:
+
+*   prevents unauthorized physical access to (and tampering with) operating system files _(but see warning above)_
+*   prevents unauthorized physical access to private data that may be cached by the system
+
+	Disadvantages:
+
+*   unlocking of the encrypted parts of the disk can no longer happen during or after user login; it must now happen at boot time
 
 In practice, there is not always a clear line between data encryption and system encryption, and many different compromises and customized setups are possible.
 
@@ -113,11 +130,20 @@ Block device encryption methods, on the other hand, operate _below_ the filesyst
 
 The following "block device encryption" solutions are available in Arch Linux:
 
-NaN
+	loop-AES
 
-NaN
+	loop-AES is a descendant of cryptoloop and is a secure and fast solution to system encryption. However, loop-AES is considered less user-friendly than other options as it requires non-standard kernel support.
 
-NaN
+	dm-crypt
+
+	[dm-crypt](/index.php/Dm-crypt "Dm-crypt") is the standard device-mapper encryption functionality provided by the Linux kernel. It can be used directly by those who like to have full control over all aspects of partition and key management. The management of dm-crypt is done with the [cryptsetup](https://www.archlinux.org/packages/?name=cryptsetup) userspace utility. It can be used for the following types of block-device encryption: _LUKS_ (default), _plain_, and has limited features for _loopAES_ and _Truecrypt_ devices.
+
+*   LUKS, used by default, is an additional convenience layer which stores all of the needed setup information for dm-crypt on the disk itself and abstracts partition and key management in an attempt to improve ease of use and cryptographic security.
+*   plain dm-crypt mode, being the original kernel functionality, does not employ the convenience layer. It is more difficult to apply the same cryptographic strength with it. When doing so, longer keys (passphrases or keyfiles) are the result. It has, however, other advantages, described in the following.
+
+	TrueCrypt
+
+	Note that the developers of [TrueCrypt](/index.php/TrueCrypt "TrueCrypt") ended support for it in May 2014\.
 
 For practical implications of the chosen layer of operation, see the [comparison table](#practical_implications) below, as well as the general write up for [eCryptfs](http://ksouedu.com/doc/ecryptfs-utils/ecryptfs-faq.html#compare). See [Category:Encryption](/index.php/Category:Encryption "Category:Encryption") for the available content of the methods compared below, as well as other tools not included in the table.
 
@@ -234,38 +260,38 @@ Which disk encryption setup is appropriate for you will depend on your goals (pl
 
 Among other things, you will need to answer the following questions:
 
-NaN
+	What kind of "attacker" do you want to protect against?
 
 *   Casual computer user snooping around your disk when your system is turned off / stolen / etc.
 *   Professional cryptanalyst who can get repeated read/write access to your system before and after you use it
 *   Anything in between
 
-NaN
+	What encryption strategy shall be employed?
 
 *   Data encryption
 *   System encryption
 *   Something in between
 
-NaN
+	How should swap, `/tmp`, etc. be taken care of?
 
 *   Ignore, and hope no data is leaked
 *   Disable or mount as ramdisk
 *   Encrypt _(as part of full disk encryption, or separately)_
 
-NaN
+	How should encrypted parts of the disk be unlocked?
 
 *   Passphrase _(same as login password, or separate)_
 *   Keyfile _(e.g. on a USB stick, that you keep in a safe place or carry around with yourself)_
 *   Both
 
-NaN
+	_When_ should encrypted parts of the disk be unlocked?
 
 *   Before boot
 *   During boot
 *   At login
 *   Manually on demand _(after login)_
 
-NaN
+	How should multiple users be accomodated?
 
 *   Not at all
 *   Using a shared passphrase/key
@@ -284,15 +310,37 @@ Then you can go on to make the required technical choices (see [#Available metho
 
 In practice, it could turn out something like:
 
-NaN
+	Example 1
 
-NaN
+	Simple data encryption (internal hard drive) using a virtual folder called `~/Private` in the user's home directory encrypted with [EncFS](/index.php/EncFS "EncFS")
+└──> encrypted versions of the files stored on-disk in `~/.Private`
+└──> unlocked on demand with dedicated passphrase
 
-NaN
+	Example 2
 
-NaN
+	Simple data encryption (removable media), an USB drive encrypted with [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
+└──> unlocked when attached to the computer (using dedicated passphrase plus using a covert keyfile such as `~/photos/2006-09-04a.jpg`)
 
-NaN
+	Example 3
+
+	Partial system encryption with each user's home directory encrypted with [ECryptfs](/index.php/ECryptfs "ECryptfs")
+└──> unlocked on respective user login, using login passphrase
+└──> `swap` and `/tmp` partitions encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), using an automatically generated per-session throwaway key
+└──> indexing/caching of contents of `/home` by _slocate_ (and similar apps) disabled.
+
+	Example 4
+
+	System encryption - whole hard drive except `/boot` partition (however, `/boot` can be encrypted with [GRUB](/index.php/GRUB "GRUB")) encrypted with [Dm-crypt with LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS")
+└──> unlocked during boot, using passphrases or USB stick with keyfiles
+└──> Maybe different passphrases/keys per user - independently revocable
+└──> Maybe encryption spanning multiple drives or partition layout flexibility with [LUKS on LVM](/index.php/Dm-crypt/Encrypting_an_entire_system#LUKS_on_LVM "Dm-crypt/Encrypting an entire system")
+
+	Example 5
+
+	Hidden/plain system encryption - whole hard drive encrypted with [plain dm-crypt](/index.php/Dm-crypt "Dm-crypt")
+└──> USB-boot, using dedicated passphrase plus USB stick with keyfile
+└──> data integrity checked before mounting
+└──> `/boot` partition located on aforementioned USB stick
 
 Many other combinations are of course possible. You should carefully plan what kind of setup will be appropriate for your system.
 
@@ -304,11 +352,11 @@ See [Security#Passwords](/index.php/Security#Passwords "Security").
 
 Before setting up disk encryption on a (part of a) disk, consider securely wiping it first. This consists of overwriting the entire drive or partition with a stream of zero bytes or random bytes, and is done for one or both of the following reasons:
 
-NaN
+	Prevent recovery of previously stored data
 
 Disk encryption does not change the fact that individual sectors are only overwritten on demand, when the file system creates or modifies the data those particular sectors hold (see [#How the encryption works](#How_the_encryption_works) below). Sectors which the filesystem considers "not currently used" are not touched, and may still contain remnants of data from previous filesystems. The only way to make sure that all data which you previously stored on the drive can not be [recovered](https://en.wikipedia.org/wiki/Data_recovery "wikipedia:Data recovery"), is to manually erase it. For this purpose it does not matter whether zero bytes or random bytes are used (although wiping with zero bytes will be much faster).
 
-NaN
+	Prevent disclosure of usage patterns on the encrypted drive
 
 Ideally, the whole encrypted part of the disk should be indistinguishable from uniformly random data. This way, no unauthorized person can know which and how many sectors actually contain encrypted data - which may be a desirable goal in itself (as part of true confidentiality), and also serves as an additional barrier against attackers trying to break the encryption. In order to satisfy this goal, wiping the disk using high-quality random bytes is crucial.
 
@@ -363,15 +411,15 @@ See also [Wikipedia:Authenticated encryption](https://en.wikipedia.org/wiki/Auth
 
 The following are examples how to store and cryptographically secure a master key with a keyfile:
 
-NaN
+	Stored in a plaintext keyfile
 
 Simply storing the master key in a file (in readable form) is the simplest option. The file - called a "keyfile" - can be placed on a USB stick that you keep in a secure location and only connect to the computer when you want to mount the encrypted parts of the disk (e.g. during boot or login).
 
-NaN
+	Stored in passphrase-protected form in a keyfile or on the disk itself
 
 The master key (and thus the encrypted data) can be protected with a secret passphrase, which you will have to remember and enter each time you want to mount the encrypted block device or folder. See [#Cryptographic metadata](#Cryptographic_metadata) below for details.
 
-NaN
+	Randomly generated on-the-fly for each session
 
 In some cases, e.g. when encrypting swap space or a `/tmp` partition, it is not necessary to keep a persistent master key at all. A new throwaway key can be randomly generated for each session, without requiring any user interaction. This means that once unmounted, all files written to the partition in question can never be decrypted again by _anyone_ - which in those particular use-cases is perfectly fine.
 

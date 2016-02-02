@@ -1,21 +1,5 @@
 # Smart Common Input Method platform
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Smart Common Input Method platform#](https://wiki.archlinux.org/index.php/Talk:Smart_Common_Input_Method_platform))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Smart Common Input Method platform#](https://wiki.archlinux.org/index.php/Talk:Smart_Common_Input_Method_platform))
-
 Related articles
 
 *   [IBus](/index.php/IBus "IBus")
@@ -127,14 +111,6 @@ export GTK_IM_MODULE_FILE=~/.immodules
 ```
 
 #### Note for GNOME, Xfce, LXDE
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The package `scim-bridge` does not exist anymore. (Discuss in [Talk:Smart Common Input Method platform#](https://wiki.archlinux.org/index.php/Talk:Smart_Common_Input_Method_platform))
 
 If you are using GNOME, Xfce or LXDE and Qt applications do not pick up the `export QT_IM_MODULE="scim"` variable, you can use scim-bridge. To use _scim-bridge_ instead, export the following:
 

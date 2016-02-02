@@ -4,14 +4,6 @@ Related articles
 
 *   [syslog-ng](/index.php/Syslog-ng "Syslog-ng")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** citing a 6 year old document. "It was unmaintained for several years and contained false information". Also numerous [Help:Style](/index.php/Help:Style "Help:Style") issues. (Discuss in [Talk:Rsyslog#](https://wiki.archlinux.org/index.php/Talk:Rsyslog))
-
 [rsyslog](http://www.rsyslog.com/) is an alternate logger to [syslog-ng](/index.php/Syslog-ng "Syslog-ng") and offers many benefits over [syslog-ng](/index.php/Syslog-ng "Syslog-ng").
 
 ## Contents
@@ -34,14 +26,6 @@ Related articles
 [Install](/index.php/Install "Install") the [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) package.
 
 ### Starting service
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This belongs in an `.install` file and should be reported accordingly (Discuss in [Talk:Rsyslog#](https://wiki.archlinux.org/index.php/Talk:Rsyslog))
 
 You can [start/enable](/index.php/Start/enable "Start/enable") the [rsyslog](https://www.archlinux.org/packages/?name=rsyslog) service after installation.
 
@@ -156,14 +140,6 @@ As defined in [RFC 5424](http://tools.ietf.org/html/rfc5424), there are eight se
 
 ### journald with rsyslog for kernel messages
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Redundant instructions, systemd commands... (Discuss in [Talk:Rsyslog#](https://wiki.archlinux.org/index.php/Talk:Rsyslog))
-
 Since the syslog component of systemd, journald, does not flush its logs to disk during normal operation, these logs will be gone when the machine is shut down abnormally (power loss, kernel lock-ups, ...). In the case of kernel lock-ups, it is pretty important to have some kernel logs for debugging. Until journald gains a configuration option for flushing kernel logs, rsyslog can be used in conjunction with journald.
 
 Summary of requirements:
@@ -178,9 +154,15 @@ Installation and configuration steps:
 1.  Install [rsyslog](https://www.archlinux.org/packages/?name=rsyslog).
 2.  Edit `/etc/logrotate.d/rsyslog` and add `/var/log/kernel.log` to the list of logs. Without this modification, the kernel log would grow indefinitely.
 3.  Edit `/etc/rsyslog.conf` and comment everything except for `$ModLoad imklog`. I also kept `$ModLoad immark` to have a heart-beat logged.
-4.  Add the next line to the same configuration file:NaN
+4.  Add the next line to the same configuration file:
 
-5.  Since rsyslog should operate completely separated from systemd, remove the option that shares a socket with systemd:NaN
+    	 `kern.*     /var/log/kernel.log;RSYSLOG_TraditionalFileFormat` 
+
+    	The `kern.*` part catches all messages originating from the kernel. `;RSYSLOG_TraditionalFileFormat` is used here to use a less verbose date format. By default, a date format like `2013-03-09T19:29:33.103897+01:00` is used. Since the kernel log contains a precision already (printk time) and the actual log time is irrelevant, I prefer something like `Mar 9 19:29:13`.
+
+5.  Since rsyslog should operate completely separated from systemd, remove the option that shares a socket with systemd:
+
+    	 `sed 's/^Sockets=/#&/' /usr/lib/systemd/system/rsyslog.service | sudo tee /etc/systemd/system/rsyslog.service` 
 
 6.  Next, make rsyslog start on boot and start it for this session by [starting](/index.php/Start "Start") and enabling `rsyslog.service`.
 

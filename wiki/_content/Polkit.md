@@ -8,7 +8,7 @@ Related articles
 
 From [polkit homepage](http://www.freedesktop.org/wiki/Software/polkit/):
 
-NaN
+	_polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications._
 
 Polkit is used for controlling system-wide privileges. It provides an organized way for non-privileged processes to communicate with privileged ones. In contrast to systems such as sudo, it does not grant root permission to an entire process, but rather allows a finer level of control of centralized system policy.
 
@@ -232,14 +232,6 @@ Replace `wheel` by any group of your preference.
 This will result in automatic authentication for **any** action requiring admin rights via Polkit. As such, be careful with the group you choose to give such rights to.
 
 ### Ask for root password
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Administrator identities](#Administrator_identities).**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Polkit#](https://wiki.archlinux.org/index.php/Talk:Polkit))
 
 A rule like this will have polkit ask for the root password instead of the users password for Admin authentication.
 

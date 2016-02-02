@@ -1,13 +1,5 @@
 # Owx
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Amateur radio](/index.php/Amateur_radio "Amateur radio").**
-
-**Notes:** Too little content to warrant a separate page (Discuss in [Talk:Owx#](https://wiki.archlinux.org/index.php/Talk:Owx))
-
 [owx](http://owx.chmurka.net) (open wouxun) is a CLI utility used to program KG669V radios by means of a CSV spreadsheet.
 
 ## Installation

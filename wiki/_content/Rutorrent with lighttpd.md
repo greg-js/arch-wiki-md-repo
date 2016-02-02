@@ -1,13 +1,5 @@
 # Rutorrent with lighttpd
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [RuTorrent](/index.php/RuTorrent "RuTorrent").**
-
-**Notes:** Same topic. (Discuss in [Talk:Rutorrent with lighttpd#Merge](https://wiki.archlinux.org/index.php/Talk:Rutorrent_with_lighttpd#Merge))
-
 [Rutorrent](http://code.google.com/p/rutorrent/) is a php frontend to the [rtorrent](http://libtorrent.rakshasa.no/) bitorrent client.
 
 It communicates with rtorrent using XML-RPC. It requires a web server such as lighttpd or apache to serve it's pages.

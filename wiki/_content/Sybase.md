@@ -1,13 +1,5 @@
 # Sybase
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Sybase#](https://wiki.archlinux.org/index.php/Talk:Sybase))
-
 Sybase is a multi-threaded, multi-user SQL database. For more information about features, see the [official homepage](http://www.mysql.com).
 
 ## Contents

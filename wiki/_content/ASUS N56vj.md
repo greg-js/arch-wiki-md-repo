@@ -1,13 +1,5 @@
 # ASUS N56vj
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Article is not fully ready yet. (Discuss in [Talk:ASUS N56vj#](https://wiki.archlinux.org/index.php/Talk:ASUS_N56vj))
-
 Related articles
 
 *   [ASUS N56jr](/index.php/ASUS_N56jr "ASUS N56jr")

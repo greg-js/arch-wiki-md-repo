@@ -1,13 +1,5 @@
 # Palm
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Mentions rc.conf. (Discuss in [Talk:Palm#](https://wiki.archlinux.org/index.php/Talk:Palm))
-
 This guide is to help Arch users with Palm(R) devices. While installation in Arch is easy, it can be confusing for those who are new. Also see [Palm Evolution](/index.php/Palm_Evolution "Palm Evolution").
 
 ## Contents

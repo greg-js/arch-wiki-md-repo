@@ -6,9 +6,13 @@ The successor to the cult classic [Ratpoison](/index.php/Ratpoison "Ratpoison"),
 
 From [StumpWM's homepage](https://stumpwm.github.io/):
 
-NaN
+	"StumpWM attempts to be customizable yet visually minimal. There are no window decorations, no icons, and no buttons. It does have various hooks to attach your personal customizations, and variables to tweak.
 
-NaN
+*   Hack the good hack
+*   Debug your good hack
+*   Customize your window manager
+
+	While it's running That's right. With a 100% Common Lisp window manager there's no stopping the hacks. Just re-eval and GO!"
 
 Want to see it in action? A StumpWM user created a [video](http://www.archive.org/details/TheStumpWMExperience).
 

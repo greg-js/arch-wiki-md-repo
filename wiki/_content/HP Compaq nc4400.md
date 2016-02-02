@@ -1,13 +1,5 @@
 # HP Compaq nc4400
 
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-**This article is being considered for redirection to [Laptop/HP](/index.php/Laptop/HP "Laptop/HP").**
-
-**Notes:** Just a collection of links (Discuss in [Talk:HP Compaq nc4400#](https://wiki.archlinux.org/index.php/Talk:HP_Compaq_nc4400))
-
 ## Contents
 
 *   [1 System specifications](#System_specifications)

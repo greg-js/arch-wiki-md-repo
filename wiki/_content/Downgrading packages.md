@@ -7,14 +7,6 @@ Related articles
 *   [pacman](/index.php/Pacman "Pacman")
 *   [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** soname bumps, cf. [Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F](/index.php/Frequently_asked_questions#What_if_I_run_a_full_system_upgrade_and_there_will_be_an_update_for_a_shared_library.2C_but_not_for_the_apps_that_depend_on_it.3F "Frequently asked questions") (Discuss in [Talk:Downgrading packages#](https://wiki.archlinux.org/index.php/Talk:Downgrading_packages))
-
 Before downgrading a single or multiple packages, consider why you wish to do so. If it is due to a bug, search the [Bugtracker](https://bugs.archlinux.org/) for existing tasks. If there is none, add a new task; it is better to correct bugs, or at least warn other users of possible issues.
 
 **Warning:**

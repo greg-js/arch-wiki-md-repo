@@ -23,11 +23,11 @@ Install one of the following:
 
 *   **[Dolphin emu](/index.php/Dolphin_emu "Dolphin emu")** — A Gamecube / Wii / Triforce emulator
 
-NaN
+	[https://dolphin-emu.org/](https://dolphin-emu.org/) || [dolphin-emu](https://www.archlinux.org/packages/?name=dolphin-emu)
 
 *   **Dolphin emu (git)** — A Gamecube / Wii / Triforce emulator (development version)
 
-NaN
+	[https://github.com/dolphin-emu/dolphin](https://github.com/dolphin-emu/dolphin) || [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)<sup><small>AUR</small></sup>
 
 **Tip:**
 
@@ -57,14 +57,6 @@ The next two tabs are not very important; the Gamecube tab has settings about co
 On the final tab, "Paths", ISO directories can be set. The directory of game ISOs can also be set by clicking browse from the home screen, but here more options are available, such as _Search Subfolders_.
 
 ### Graphics section
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** New 3D options available. (Discuss in [Talk:Dolphin emulator#](https://wiki.archlinux.org/index.php/Talk:Dolphin_emulator))
 
 On the "General" tab, choose OpenGL from the backend drop-down list. Set the "Display" and "Other" settings to the desired configuration. V-sync is useful, but it can lead to slowdowns. The "render to main window" option improves the experience aesthetically.
 

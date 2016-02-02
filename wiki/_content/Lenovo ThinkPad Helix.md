@@ -172,6 +172,19 @@ Follow the [Solid_State_Drives#TRIM](/index.php/Solid_State_Drives#TRIM "Solid S
 
 ```
 
+If using `fstrim.timer`, you can check the history of when the timer was run with:
+
+```
+$ journalctl -u fstrim.service
+-- Logs begin at Thu 2016-01-07 15:55:34 EST, end at Mon 2016-02-01 15:28:22 EST. --
+Jan 25 00:48:58 kodiak systemd[1]: Starting Discard unused blocks...
+Jan 25 00:49:00 kodiak systemd[1]: Started Discard unused blocks.
+-- Reboot --
+Feb 01 00:07:13 kodiak systemd[1]: Starting Discard unused blocks...
+Feb 01 00:07:19 kodiak systemd[1]: Started Discard unused blocks.
+
+```
+
 ## BIOS/Firmware Updates
 
 Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/en_US/downloads/detail.page?DocID=DS034628) for the purpose of installing BIOS updates. While it is not stated on their site, these bootable images also include updated firmware for the keyboard dock MPU. It is uncertain as to whether the USB hub firmware is also updated via this utility.
@@ -180,4 +193,4 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418585](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418585)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418758](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418758)"

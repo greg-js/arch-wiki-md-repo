@@ -15,7 +15,7 @@ Related articles
 
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
-NaN
+	_The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work._
 
 **Xorg** is the most popular display server among Linux users. Its ubiquity has led to making it an ever-present requisite for GUI applications, resulting in massive adoption from most distributions. See the [Xorg](https://en.wikipedia.org/wiki/X.Org_Server "wikipedia:X.Org Server") Wikipedia article or visit the [Xorg website](http://www.x.org/wiki/) for more details.
 
@@ -75,14 +75,6 @@ Additionally, some packages from the [xorg-server-utils](https://www.archlinux.o
 **Tip:** You will typically seek to install a [window manager](/index.php/Window_manager "Window manager") or a [desktop environment](/index.php/Desktop_environment "Desktop environment") to supplement X.
 
 ### Driver installation
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Too cryptic for an introduction (Discuss in [Talk:Xorg#](https://wiki.archlinux.org/index.php/Talk:Xorg))
 
 The Linux kernel includes open-source video drivers and support for hardware accelerated framebuffers. However, userland support is required for OpenGL and 2D acceleration in X11.
 
@@ -265,14 +257,6 @@ The bus ID here is 1:0:0.
 
 ### Display size and DPI
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Xorg always sets dpi to 96\. See [this](https://bugs.freedesktop.org/show_bug.cgi?id=23705), [this](https://bugs.freedesktop.org/show_bug.cgi?id=41115) and finally [this](http://pastebin.com/vtzyBK6e). (Discuss in [Talk:Xorg#](https://wiki.archlinux.org/index.php/Talk:Xorg))
-
 The DPI of the X server is determined in the following manner:
 
 1.  The -dpi command line option has highest priority.
@@ -375,35 +359,27 @@ The Composite extension for X causes an entire sub-tree of the window hierarchy 
 
 *   **[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr")** — Cairo based composite manager
 
-NaN
+	[http://cairo-compmgr.tuxfamily.org/](http://cairo-compmgr.tuxfamily.org/) || [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)<sup><small>AUR</small></sup>
 
 *   **[Compiz](/index.php/Compiz "Compiz")** — Composite manager for Aiglx and Xgl, with plugins and CCSM
 
-NaN
+	[http://www.compiz.org/](http://www.compiz.org/) || [compiz](https://aur.archlinux.org/packages/compiz/)<sup><small>AUR</small></sup>
 
 *   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
 
-NaN
+	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://aur.archlinux.org/packages/compton/)<sup><small>AUR</small></sup>
 
 *   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
 
-NaN
+	[http://cgit.freedesktop.org/xorg/app/xcompmgr/](http://cgit.freedesktop.org/xorg/app/xcompmgr/) || [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr)
 
 *   **Unagi** — Modular compositing manager which aims written in C and based on XCB
 
-NaN
+	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)<sup><small>AUR</small></sup>
 
 ## Tips and tricks
 
 ### X startup tweaking (startx)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** `/usr/bin/startx` should not be modified, _startx_ recognises the options as command line arguments (Discuss in [Talk:Xorg#](https://wiki.archlinux.org/index.php/Talk:Xorg))
 
 For X's option reference see:
 
@@ -424,14 +400,6 @@ The following options have to be appended to the variable `"defaultserverargs"` 
 **Note:** If you start X with kdm, the startx script does not seem to be executed. X options must be appended to the variable `ServerArgsLocal` in the `/usr/share/config/kdm/kdmrc` file.
 
 ### Nested X session
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** mention [xephyr](/index.php/Awesome#Using_Xephyr "Awesome") (Discuss in [Talk:Xorg#](https://wiki.archlinux.org/index.php/Talk:Xorg))
 
 To run a nested session of another desktop environment:
 
@@ -528,7 +496,13 @@ The logfiles are of the form `Xorg.n.log` with `n` being the display number. For
 *   If there is an _empty_ `.xinitrc` file in your `$HOME`, either delete or edit it in order for X to start properly. If you do not do this X will show a blank screen with what appears to be no errors in your `Xorg.0.log`. Simply deleting it will get it running with a default X environment.
 *   If the screen goes black, you may still attempt to switch to a different virtual console (e.g. `Ctrl+Alt+F2`), and blindly log in as root. You can do this by typing `root` (press `Enter` after typing it) and entering the root password (again, press `Enter` after typing it).
 
-NaN
+	You may also attempt to kill the X server with:
+
+	 `# pkill X` 
+
+	If this does not work, reboot blindly with:
+
+	 `# reboot` 
 
 *   Check specific pages in [Category:Input devices](/index.php/Category:Input_devices "Category:Input devices") if you have issues with keyboard, mouse, touchpad etc.
 *   Search for common problems in [ATI](/index.php/ATI "ATI"), [Intel](/index.php/Intel "Intel") and [NVIDIA](/index.php/NVIDIA "NVIDIA") articles.
@@ -538,14 +512,6 @@ NaN
 X creates configuration and temporary files in current user's home directory. Make sure there is free disk space available on the partition your home directory resides in. Unfortunately, X server does not provide any more obvious information about lack of disk space in this case.
 
 ### CTRL right key does not work with oss keymap
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The file will be overwritten on [xkeyboard-config](https://www.archlinux.org/packages/?name=xkeyboard-config) update; for such simple task should be used [Xmodmap](/index.php/Xmodmap "Xmodmap"). (Discuss in [Talk:Xorg#](https://wiki.archlinux.org/index.php/Talk:Xorg))
 
 Edit as root `/usr/share/X11/xkb/symbols/fr`, and change the line:
 

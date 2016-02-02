@@ -4,7 +4,7 @@
 
 From [Getting Started with TeX, LaTeX, and Friends](http://www.tug.org/begin.html):
 
-NaN
+	_[TeX](http://www.tug.org/) is a typesetting language. Instead of visually formatting your text, you enter your manuscript text intertwined with TeX commands in a plain text file. You then run TeX to produce formatted output, such as a PDF file. Thus, in contrast to standard word processors, your document is a separate file that does not pretend to be a representation of the final typeset output, and so can be easily edited and manipulated._
 
 TeX itself is only one component of what many consider to be a complete _TeX distribution_. For example, there exist a number of macro packages (also known as TeX formats) such as _[LaTeX](/index.php/LaTeX "LaTeX")_ and _Plain TeX_ that simplify TeX applications at the cost of flexibility. Internally, TeX makes use of Metafont to define the shapes of glyphs and the relations between them.
 

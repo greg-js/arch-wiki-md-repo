@@ -5,14 +5,6 @@ Related articles
 *   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
 *   [IBM ThinkPad X120e](/index.php/IBM_ThinkPad_X120e "IBM ThinkPad X120e")
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Laptop/Lenovo](/index.php/Laptop/Lenovo "Laptop/Lenovo").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Lenovo ThinkPad X140e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X140e))
-
 Installation instructions for the Lenovo ThinkPad X140e. Should work for E145 as well.
 
 ## Contents

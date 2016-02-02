@@ -1,13 +1,5 @@
 # Lenovo Ideapad Y560
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Lenovo Ideapad Y560#](https://wiki.archlinux.org/index.php/Talk:Lenovo_Ideapad_Y560))
-
 The Lenovo Ideapad Y560 is a multimedia laptop available with several different option packages. This wiki will focus on support for as many variations as possible. At the time of writing, the Ideapad Y560 is available with the following options:
 
 **CPU:** Intel® Core™ i3-370M Processor ( 2.40GHz 1066MHz 3MB )

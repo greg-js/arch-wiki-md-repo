@@ -475,14 +475,6 @@ gpg --gen-key
 
 If you do not understand this process have a look at [Wikipedia:Asymmetric cryptography](https://en.wikipedia.org/wiki/Asymmetric_cryptography "wikipedia:Asymmetric cryptography").
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** What does "secure environment" mean? (Discuss in [Talk:Mutt#](https://wiki.archlinux.org/index.php/Talk:Mutt))
-
 Create a file **in a secure environment** since it will contain your passwords for a couple of seconds:
 
  `~/.my-pwds` 

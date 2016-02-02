@@ -1,13 +1,5 @@
 # Sony Vaio VGN NR320FH
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Sony Vaio VGN NR320FH#](https://wiki.archlinux.org/index.php/Talk:Sony_Vaio_VGN_NR320FH))
-
 **Note:** When I plugged my headphones to the jack the speakers were still turned on. This was due to some alsa options. **Solution:** Add the following line to **/etc/modprobe.d/modprobe.conf**:
 
 ```
@@ -17,7 +9,7 @@ options snd-hda-intel model=sony-assamd
 
 Also here's my alsa-info.sh output: [link[[1]](http://www.alsa-project.org/db/?f=87a0375da784b69f99081b708f4b1cc1c02479d7)]
 
-NaN
+	Needs some work
 
 *   FN Keys (Volume)
     *   **Solution:** Use xev to map the keyodes. Then load them:

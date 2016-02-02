@@ -169,14 +169,6 @@ When the bridge is fully set up, it can be assigned an IP address:
 
 ```
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This section needs to be connected to the link-level part described in [QEMU#Tap networking with QEMU](/index.php/QEMU#Tap_networking_with_QEMU "QEMU"). For now, see the instructions given there. (Discuss in [Talk:Network bridge#](https://wiki.archlinux.org/index.php/Talk:Network_bridge))
-
 ## Tips and tricks
 
 ### Wireless interface on a bridge

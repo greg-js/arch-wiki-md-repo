@@ -1,21 +1,5 @@
 # High Performance Firewall
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:High Performance Firewall#](https://wiki.archlinux.org/index.php/Talk:High_Performance_Firewall))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Router](/index.php/Router "Router").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:High Performance Firewall#](https://wiki.archlinux.org/index.php/Talk:High_Performance_Firewall))
-
 Imagine this, you have more than two networks separated by Virtual Lans protocols (IEEE 802.1q) or VLANs, carried to you by an intelligent/manageable switch on one troncal line 10/100/1000 MB HD/FD (naturally the best is 1000 MB FD).
 
 This page introduce how to create High Performance Firewall / Nat with iptables and VLANs and iproute2\. Then you can share internet to a really BIG numbers of hosts, and maintain a good performance.

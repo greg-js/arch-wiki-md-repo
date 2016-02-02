@@ -34,14 +34,6 @@ User confirmations of the fix may be found after post #540 [[1]](http://forum.ta
 
 ## Hardware modules
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The following information may be outdated on kernels proceeding version 3.14.4-1-ARCH. (Discuss in [Talk:Fujitsu Lifebook T904#](https://wiki.archlinux.org/index.php/Talk:Fujitsu_Lifebook_T904))
-
 ### Wacom Digitizer
 
 The wacom kernel module (wacom.ko) loaded by default in the 3.14.4-1-ARCH kernel does not support the T904's integrated digitizer 056A:5002 (VendorID:DeviceID). However, the [Linuxwacom project](http://sourceforge.net/apps/mediawiki/linuxwacom/index.php?title=Linuxwacom) has included support in their upstream kernel module and xf86-input-wacom-git package which are not yet available in the official arch repositories.

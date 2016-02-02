@@ -515,23 +515,7 @@ Please report any such cards to [PulseAudio Broken Sound Driver page](http://www
 
 ### Setting the default fragment number and buffer size in PulseAudio
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Copied from Linux mint topic with few additions (Discuss in [Talk:PulseAudio/Troubleshooting#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Troubleshooting))
-
 #### Finding out your audio device parameters (1/4)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Is there really no other way to get the hardware parameters? Some file in `/dev` or `/sys` or using ALSA? (Discuss in [Talk:PulseAudio/Troubleshooting#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Troubleshooting))
 
 To find out what your sound card buffering settings are:
 

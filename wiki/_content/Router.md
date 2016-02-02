@@ -1,13 +1,5 @@
 # Router
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The introduction states that this page "focuses on _security_", but 99% is plain system configuration. It also needs massive deduplication, security is already covered [elsewhere](/index.php/Simple_stateful_firewall "Simple stateful firewall"). (Discuss in [Talk:Router#](https://wiki.archlinux.org/index.php/Talk:Router))
-
 This article is a tutorial for turning a computer into an internet gateway/router. It focuses on _security_, since the gateway is connected directly to the Internet. It should not run **any** services available to the outside world. Towards the LAN, it should only run gateway specific services. It should not run httpd, ftpd, samba, nfsd, etc. as those belong on a server in the LAN as they introduce security flaws.
 
 This article does not attempt to show how to set up a shared connection between 2 PCs using cross-over cables. For a simple internet sharing solution, see [Internet sharing](/index.php/Internet_sharing "Internet sharing").
@@ -141,14 +133,6 @@ Time to tie the two network interfaces to each other.
 This can be done with Shorewall. See [Shorewall](/index.php/Shorewall "Shorewall") for detailed configuration.
 
 ## IPv6 tips
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [IPv6](/index.php/IPv6 "IPv6").**
-
-**Notes:** Merge into the main article, the topic is not specific to _router configuration_. The wording should be probably changed along the way. (Discuss in [Talk:Router#](https://wiki.archlinux.org/index.php/Talk:Router))
 
 Useful reading: [IPv6](/index.php/IPv6 "IPv6") and the [wikipedia:IPv6](https://en.wikipedia.org/wiki/IPv6 "wikipedia:IPv6").
 

@@ -24,23 +24,7 @@ The main use-case is to enable server-side hardware-accelerated 3D rendering for
 
 ## Installation and setup
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:VirtualGL#Move to Main namespace and expand](https://wiki.archlinux.org/index.php/Talk:VirtualGL#Move_to_Main_namespace_and_expand))
-
 ## Using VirtualGL with X11 forwarding
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:VirtualGL#](https://wiki.archlinux.org/index.php/Talk:VirtualGL))
 
 ```
  **server:                                              client:**
@@ -94,14 +78,6 @@ Once connected, you can run remote applications with VirtualGL rendering enabled
 You do not need to restrict yourself to the shell that `vglconnect` opened for you; any `ssh -X` or `ssh -Y` shell you open from the same X session on the client to the same _user_@_server_ should work. `vglrun` will detect that you are in an SSH shell, and make sure that the VGL image stream is sent over the network to the IP/hostname belonging to the SSH client (where the running `vglclient` instance will intercept and process it).
 
 ## Using VirtualGL with VNC
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:VirtualGL#](https://wiki.archlinux.org/index.php/Talk:VirtualGL))
 
 ```
  **server:                                                           client:**
@@ -165,15 +141,17 @@ Many more environment variables and command-line parameters are available to fin
 
 *   _"**VGL Transport**" - default when [using X11 forwarding](#Using_VirtualGL_with_X11_forwarding)_
 
-NaN
+	In this mode, a compressed image stream of the rendered OpenGL scenes is sent through a custom network protocol to a `vglclient` instance. By default it uses JPEG compression at 90% quality, but this can be fully customized, e.g.:
 
-NaN
+	 `$ vglrun -q 30 -samp 4x glxgears              _# use aggressive compression (to reduce bandwidth demand)_` 
 
-NaN
+	 `$ VGL_QUAL=30 VGL_SUBSAMP=4x vglrun glxgears  _# same as above, using environment variables_` 
+
+	There is also a GUI dialog that lets you change the most common VirtualGL rendering/compression options for an application on the fly, after you have already started it with `vglrun` - simply press `Ctrl+Shift+F9` while the application has keyboard focus, to open this dialog.
 
 *   _"**X11 Transport**" - default when [using VNC](#Using_VirtualGL_with_VNC)_
 
-NaN
+	In this mode, VirtualGL feeds raw (uncompressed) images through the normal X11 protocol directly to the X server that handles the application - e.g. a VNC server running on the same machine. Many of `vglrun`'s command-line options (e.g. those relating to image stream compression or stereo rendering) are not applicable here, because there is no `vglclient` running on the other end. It is now the VNC server that handles all the image stream optimization/compression, so it is there that you should turn to for fine-tuning.
 
 **Tip:** `vglrun` is actually just a shell script that (temporarily) sets some environment variables before running the requested application - most importantly it adds the libraries that provide all the VirtualGL functionality to `LD_PRELOAD`. If it better suits your workflow, you could just set those variables yourself instead. The following command lists all environment variables that vglrun would set for your particular set-up: `comm -1 -3 <(env | sort) <(vglrun env | grep -v '^\[' | sort)` 
 
@@ -220,15 +198,15 @@ This may happen when something blocks VirtualGL from getting preloaded into the 
 
 *   **The application is started through a script that explicitly unsets/overrides LD_PRELOAD**
 
-NaN
+	_Solution:_ Edit the script to comment out or fix the offending line. (You can put the modified script in `/usr/local/bin/` to prevent it from being reverted on the next package upgrade.)
 
 *   **The application is started through multiple layers of scripts, and environment variables get lost along the way**
 
-NaN
+	_Solution:_ Modify the final script that actually runs the application, to make it run the application with `vglrun`.
 
 *   **The application is started through a loader binary _(possibly itself!)_, in a way that fails to propagate LD_PRELOAD**
 
-NaN
+	_Solution:_ If possible, bypass the loader binary and start the actual OpenGL application directly with `vglrun` - an example is VirtualBox where you need to start your virtual machine session directly with `vglrun VirtualBox -startvm "Name of the VM"` rather then through the VirtualBox main program GUI. If it is a matter of LD_PRELOAD being explicitly unset within the binary, running `vglrun` with the `-ge` command-line switch can prevent that in some cases.
 
 See the "Application Recipes" section in the user manual for a list of some applications that are known to require such work-arounds.
 
@@ -246,11 +224,11 @@ ERROR: ld.so: object 'librrfaker.so' from LD_PRELOAD cannot be preloaded: ignore
 
 *   **The VirtualGL libraries for the correct architecture are not installed**
 
-NaN
+	If you are using a 64-bit Arch Linux system and want to run a 32-bit application (like [Wine](/index.php/Wine "Wine")) with VirtualGL, you need to install [lib32-virtualgl](https://www.archlinux.org/packages/?name=lib32-virtualgl) from the [[multilib]](/index.php/Multilib "Multilib") repository.
 
 *   **The application executable has the setuid/setgid flag set**
 
-NaN
+	You can confirm whether this is the case by inspecting the executable's file permissions using `ls -l`: It will show the letter `s` in place of the _user executable_ bit if setuid is set (for example `-rw**s**r-xr-x`), and in place of the _group executable_ bit if setgid is set. For such an application any preloading attempts will fail, unless the libraries to be preloaded have the setuid flag set as well. You can set this flag for the VirtualGL libraries in question by executing the following as root:
 
 ```
 $ chmod u+s /usr/lib/lib{rr,dl}faker.so    # for the native-architecture versions provided by [virtualgl](https://www.archlinux.org/packages/?name=virtualgl)
@@ -258,7 +236,7 @@ $ chmod u+s /usr/lib32/lib{rr,dl}faker.so  # for the multilib versions provided 
 
 ```
 
-NaN
+	However, make sure you fully understand the security implications of [setuid](https://en.wikipedia.org/wiki/Setuid "wikipedia:Setuid") before deciding to do this in a server environment where security is critical.
 
 ### Problem: rendering glitches, unusually poor performance, or application errors
 

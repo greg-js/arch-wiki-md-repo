@@ -418,14 +418,6 @@ Using the above rules, now ensure that:
 
 is in an appropriate position in the iptables.rules file.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** The following snippet shows at which point in the INPUT chain it should jump to IN_SSH, but the description is not clear. (Discuss in [Talk:Simple stateful firewall#](https://wiki.archlinux.org/index.php/Talk:Simple_stateful_firewall))
-
 This arrangement works for the IN_SSH rule if you followed this entire wiki so far:
 
 ```

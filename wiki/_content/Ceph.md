@@ -4,11 +4,11 @@ Ceph is a storage platform with a focus on being distributed, resilient, and hav
 
 From [Wikipedia: Ceph (software)](https://en.wikipedia.org/wiki/Ceph_(software) "wikipedia:Ceph (software)"):
 
-NaN
+	Ceph is a free software storage platform designed to present object, block, and file storage from a single distributed computer cluster. Ceph's main goals are to be completely distributed without a single point of failure, scalable to the exabyte level, and freely-available. The data is replicated, making it fault tolerant.
 
 From [Ceph.com](https://ceph.com/):
 
-NaN
+	Ceph is a distributed object store and file system designed to provide excellent performance, reliability and scalability.
 
 **Warning:** The recommended installation method for Ceph is via an [upstream tool](https://github.com/ceph/ceph-deploy) which uses [SSH](/index.php/SSH "SSH") to connect to machines with the purpose of automatically installing, configuring, and managing Ceph. The upstream tool (ceph-deploy) does not currently support [Arch Linux](/index.php/Arch_Linux "Arch Linux"). Until ceph-deploy includes support for Arch Linux, it is not possible to use the [quick installation method](http://ceph.com/docs/master/start/) due to the extensive use of the tool. The only other officially documented installation method is the [manual deployment guide](http://ceph.com/docs/master/install/manual-deployment/). This article therefore documents the manual procedure until Arch Linux is supported by the quick method.
 

@@ -10,7 +10,7 @@ Related articles
 
 From [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
-NaN
+	_The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins._
 
 [Display managers](/index.php/Display_manager "Display manager") provide [X Window System](/index.php/X_Window_System "X Window System") users with a graphical login prompt.
 
@@ -57,7 +57,7 @@ You might also wish to install the following:
 
 *   **gdm3setup** — An interface to configure GDM3, autologin options and change Shell theme
 
-NaN
+	[https://github.com/Nano77/gdm3setup](https://github.com/Nano77/gdm3setup) || [gdm3setup](https://aur.archlinux.org/packages/gdm3setup/)<sup><small>AUR</small></sup>
 
 ## Configuration
 
@@ -263,14 +263,6 @@ $ gsettings set org.gnome.desktop.sound event-sounds 'false'
 
 #### Make the power button interactive
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Some button-* configuration options are no longer available from GDM 3.18\. (Discuss in [Talk:GDM#"Make the power button interactive" no longer possible with GDM 3.18](https://wiki.archlinux.org/index.php/Talk:GDM#.22Make_the_power_button_interactive.22_no_longer_possible_with_GDM_3.18))
-
 The behaviour of the power buttons can be configured in GDM. The example below will configure the power and hibernate buttons to _Show dialog_:
 
 Create the following keyfile:
@@ -314,14 +306,6 @@ Layout=de   nodeadkeys # change to your keyboard layout
 ### Change the language
 
 To change the GDM language, ensure that [gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center) is installed. Then, start _gnome-control-center_ and choose _Region & Language_. In the header bar, check the _Login Screen_ toggle button. Finally, click on _Language_ and choose your language from the list. You will be prompted for your root password.
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** I could not get the method below to work with GDM 3.18.0 - tested on 2015-10-13\. (Discuss in [Talk:GDM#](https://wiki.archlinux.org/index.php/Talk:GDM))
 
 Alternatively, edit the file `/var/lib/AccountsService/users/gdm` and change the language line using the correct UTF-8 value for your language. You should see something similar to the text below:
 

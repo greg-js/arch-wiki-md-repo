@@ -205,7 +205,7 @@ ProcSetting extra_pages_allowance 20000
 
 ### Dropping disk caches
 
-NaN
+	<small>_From: [drop_caches introduction](http://www.linuxinsight.com/proc_sys_vm_drop_caches.html)_</small>
 
 As a way to speed up suspending, you can free the memory used for disk caches so there will be less to write to the disk. Just add something like this to the `common.conf`:
 
@@ -331,14 +331,6 @@ fi
 The script turns the monitor off or on. But if the screen is left shut for 10 minutes, it will suspend to the disk automatically. `man sleep` for more info on the sleep command.
 
 ## Different methods of suspending to RAM
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** use "uswsusp" instead of "s2ram" to refer to [Uswsusp](/index.php/Uswsusp "Uswsusp"). (Discuss in [Talk:Hibernate-script#](https://wiki.archlinux.org/index.php/Talk:Hibernate-script))
 
 There is an application, called `s2ram`, which contains a "whitelist" of known laptop models and, according to what has been reported by other owners of these laptops, tries to do the right things for that specific laptop. The whitelisted laptops can therefore use `s2ram` to suspend to RAM "out of the box". Non-whitelisted laptops need to try different command line options of `s2ram` in order to determine - by trial and error - the appropriate "tricks" needed to make suspend and resume work. Your experience, if reported to the `s2ram` developers, will contribute to whitelist your machine in the next release of `s2ram`.
 

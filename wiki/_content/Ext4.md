@@ -42,7 +42,7 @@ To format a partition do:
 
 From `man mkfs.ext4`:
 
-NaN
+	_**mke2fs** creates an inode for every_ bytes-per-inode _bytes of space on the disk. The larger the_ bytes-per-inode _ratio, the fewer inodes will be created._
 
 Creating a new file, directory, symlink etc. requires at least one free inode. If the inode count is too low, no file can be created on the filesystem even though there is still space left on it.
 
@@ -186,14 +186,6 @@ Encryption keys are stored in the keyring. To get started, make sure you have en
 First of all, you need to update [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs) to at least version 1.43, which is a work in progress as of July 2015\. Package [e2fsprogs-git](https://aur.archlinux.org/packages/e2fsprogs-git/)<sup><small>AUR</small></sup> is available to install the latest git version.
 
 e4crypt source has disabled a relevant section in its source code, enable it:
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Patches don't belong to the wiki: a patched PKGBUILD should be created, uploaded to the AUR and linked from here. (Discuss in [Talk:Ext4#](https://wiki.archlinux.org/index.php/Talk:Ext4))
 
 ```
 diff --git a/misc/e4crypt.c b/misc/e4crypt.c

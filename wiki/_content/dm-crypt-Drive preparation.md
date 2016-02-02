@@ -139,12 +139,4 @@ If more flexibility is needed, though, dm-crypt can coexist with other stacked b
 
 ### Boot partition (GRUB)
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** The GRUB bootloader's feature "early cryptodisks", allows for (a) an unlocking of a LUKS encrypted root partition to access the `/boot` mount point in it, or (b) an unlocking of a separate LUKS encrypted partition for `/boot`. Instructions to setup both should be added. Further, (c) the conversion of an existing unencrypted `/boot` partition to LUKS. (Discuss in [User_talk:Grazzolini](https://wiki.archlinux.org/index.php/User_talk:Grazzolini))
-
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=415900](https://wiki.archlinux.org/index.php?title=Dm-crypt/Drive_preparation&oldid=415900)"

@@ -70,14 +70,6 @@ Now post the output to a [Pastebin client](/index.php/List_of_applications#Paste
 
 ### Improved gdb output
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces").**
-
-**Notes:** Same subject (Discuss in [Talk:Step-by-step debugging guide#](https://wiki.archlinux.org/index.php/Talk:Step-by-step_debugging_guide))
-
 First [recompile](/index.php/Arch_Build_System "Arch Build System") the application in question with the **-g**, **-O0** and **-fbuiltin** flags. Make sure "!strip" is in the options array in the PKGBUILD, then install the package and run it again with gdb, as above.
 
 This is what the options line can look like:

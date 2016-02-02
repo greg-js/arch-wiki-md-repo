@@ -528,14 +528,6 @@ If your setup doesn't or can't make use of hardware acceleration, disable it and
 
 ### Raspberry Pi
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** udev rule has anything but a statisfactory explanation for chmod 0666 (Discuss in [Talk:Kodi#](https://wiki.archlinux.org/index.php/Talk:Kodi))
-
 Kodi runs smoothly on both the Raspberry Pi (RPi) and the RPi 2\. Some helpful tips to consider:
 
 *   [Install](/index.php/Install "Install") the _kodi-rbp_ package instead of _kodi_ from the [Arch Linux ARM repository](http://archlinuxarm.org/packages).

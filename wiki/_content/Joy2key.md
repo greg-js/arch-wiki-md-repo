@@ -1,21 +1,5 @@
 # Joy2key
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** initscripts are mentioned (`/etc/inittab`), also deprecated. (Discuss in [Talk:Joy2key#](https://wiki.archlinux.org/index.php/Talk:Joy2key))
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Joy2key#](https://wiki.archlinux.org/index.php/Talk:Joy2key))
-
 ### Use a joystick/gamepad to control applications which accept keyboard commands
 
 **Note:** This solution may not work with XBMC 11.0 and joy2key 1.6.3-1\. An alternative and more direct approach is described in the [Joystick wiki page](/index.php/Joystick#Using_Joystick_to_send_keystrokes "Joystick").

@@ -107,11 +107,11 @@ The T450s has firmware support for IRST. This will only be available if the T450
 
 [Per Matthew Garrett](https://mjg59.dreamwidth.org/26022.html),
 
-NaN
+	"[t]he concept of IRST is pretty simple. There's a firmware mechanism for setting a sleep timeout. If you suspend your computer and this timeout expires, it'll resume. However, instead of handing control back to the OS, the firmware just copies the entire contents of RAM to a special partition and turns the computer off. Next time you hit the power button, the firmware dumps the partition contents back into RAM and resumes as if nothing had changed. This takes a few seconds longer than resume from S3 but is far faster than resume from hibernation since it starts the moment the system gets power."
 
 More specifically:
 
-NaN
+	"[t]he first thing to know about this feature is that it's entirely invisible unless your hard drive is set up correctly. There needs to be a partition that's at least the size of your system's physical RAM. For GPT systems, this needs to have a type GUID of D3BFE2DE-3DAF-11DF-BA-40-E3A556D89593\. For MBR systems, you need a partition type of 0x84\. If the firmware doesn't find an appropriate partition then the OS will get no indication that the firmware supports it."
 
 If you are not wiping and repartitioning your disk entirely as you prepare your drive for Arch installation, merely retain the existing IRST partition. It should show up as an unformatted partition whose size is equal to that of the T450s's RAM.
 

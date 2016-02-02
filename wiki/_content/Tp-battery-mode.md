@@ -1,13 +1,5 @@
 # Tp-battery-mode
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [[]].**
-
-**Notes:** Duplicates [tp_smapi](/index.php/Tp_smapi "Tp smapi"), and the script itself arguably offers little over following the instructions in that article. Perhaps it is best to redirect this to [tp_smapi](/index.php/Tp_smapi "Tp smapi"). (Discuss in [Talk:Tp-battery-mode#](https://wiki.archlinux.org/index.php/Talk:Tp-battery-mode))
-
 tp-battery-mode is a module to easily switch your Thinkpad's battery charging mode to prolong battery lifetime using [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/) from the [AUR](/index.php/AUR "AUR").
 
 ## Contents

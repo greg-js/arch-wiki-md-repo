@@ -1,13 +1,5 @@
 # Allow a program to continue after logoff
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Needs better introduction, the section [#Conclusion](#Conclusion) is useless. (Discuss in [Talk:Allow a program to continue after logoff#](https://wiki.archlinux.org/index.php/Talk:Allow_a_program_to_continue_after_logoff))
-
 Have you ever had the need to leave a program running after you have logged off?
 
 This article will show you how to easily achieve this goal. The things you need to do differ depending on if you are trying to keep a console application running (e.g. mutt, centerICQ) or a X application running (e.g. gaim, graveman). I have created a section for each scenario.
@@ -21,14 +13,6 @@ This article will show you how to easily achieve this goal. The things you need 
 *   [3 Conclusion](#Conclusion)
 
 ## Console applications
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Needs expansion with regard to [systemd](/index.php/Systemd "Systemd") and its `KillUserProcesses` option. (Discuss in [Talk:Allow a program to continue after logoff#](https://wiki.archlinux.org/index.php/Talk:Allow_a_program_to_continue_after_logoff))
 
 You can use a terminal multiplexer to create a session and launch some program inside it. Then you can detach from the session and leave it running in background. When you reattach later (even after logout), you will find the session in the state you left it.
 

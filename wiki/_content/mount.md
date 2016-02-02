@@ -90,14 +90,6 @@ Each line in the file represents a file system that is currently mounted and dis
 
 ## Alternatives that can be used to change the default options for mounting
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Unclear instructions, particularly the warning at the bottom (Discuss in [Talk:Mount#](https://wiki.archlinux.org/index.php/Talk:Mount))
-
 Here are a few examples about how to extend mount functionality and modify default options. To change the default settings in the [kernel](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional") you will need to compile the kernel yourself. If the script does not exist then the default options will be used.
 
 *   [By compiling the kernel yourself](/index.php/Kernels/Compilation/Traditional "Kernels/Compilation/Traditional")

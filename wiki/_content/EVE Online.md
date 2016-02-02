@@ -1,13 +1,5 @@
 # EVE Online
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Written in first person. (Discuss in [Talk:EVE Online#](https://wiki.archlinux.org/index.php/Talk:EVE_Online))
-
 Successful install of EVE Online: Rhea.
 
 ## Contents

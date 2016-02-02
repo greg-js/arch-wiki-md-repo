@@ -1,13 +1,5 @@
 # Samsung Galaxy
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Samsung Galaxy#](https://wiki.archlinux.org/index.php/Talk:Samsung_Galaxy))
-
 Here are the steps to mount a Samsung Galaxy SII from command line:
 
 From the smart phone: Go to settings > Wireless and network > USB utilities.

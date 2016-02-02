@@ -1,13 +1,5 @@
 # ThinkFinger
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Article contains many HTML tags and requires some cleanup. Use `''italic''` for italic text, `{{ic|text}}` for inline code including files/directories, etc. See [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:ThinkFinger#](https://wiki.archlinux.org/index.php/Talk:ThinkFinger))
-
 Related articles
 
 *   [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui")

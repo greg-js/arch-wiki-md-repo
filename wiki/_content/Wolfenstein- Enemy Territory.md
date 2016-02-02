@@ -1,13 +1,5 @@
 # Wolfenstein: Enemy Territory
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Some work is needed to comply archwiki [Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Wolfenstein: Enemy Territory#](https://wiki.archlinux.org/index.php/Talk:Wolfenstein:_Enemy_Territory))
-
 [_**Wolfenstein: Enemy Territory**_](http://www.splashdamage.com/wolfet) (also known as _**Enemy Territory**_ or just _**ET**_ or _**W:ET**_) is a free and open source multiplayer first-person shooter video game set during World War II which runs on Linux, Mac OS X and Windows. On the 12th August 2010, the entire source code was released under the GNU General Public License v3\. The open source project [_**Enemy Territory: Legacy**_](http://www.etlegacy.com/) is a collaborative effort focusing on fixing issues by backporting improvements from ioquake3 while staying binary compatible with the original game client, server and most of its mods.
 
 ## Contents

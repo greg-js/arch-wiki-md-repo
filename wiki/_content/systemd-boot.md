@@ -213,14 +213,6 @@ title  UEFI Shell x86_64 v2
 efi    /EFI/shellx64_v2.efi
 ```
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add example on how to boot into EFI firmware setup. (Discuss in [Talk:Systemd-boot#](https://wiki.archlinux.org/index.php/Talk:Systemd-boot))
-
 ### Support hibernation
 
 See [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate").

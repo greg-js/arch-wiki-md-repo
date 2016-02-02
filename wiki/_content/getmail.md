@@ -1,13 +1,5 @@
 # getmail
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** cron ([cronie](https://www.archlinux.org/packages/?name=cronie)) is not included in [base](https://www.archlinux.org/groups/x86_64/base/) anymore and has to be installed manually, or use [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers") instead (Discuss in [Talk:Getmail#](https://wiki.archlinux.org/index.php/Talk:Getmail))
-
 [getmail](https://en.wikipedia.org/wiki/getmail "wikipedia:getmail") is a mail retriever designed to allow you to get your mail from one or more mail accounts on various mail servers to your local machine for reading with a minimum of fuss. _getmail_ is designed to be secure, flexible, reliable, and easy-to-use. _getmail_ is designed to replace other mail retrievers such as [fetchmail](https://en.wikipedia.org/wiki/Fetchmail "wikipedia:Fetchmail").
 
 ## Contents

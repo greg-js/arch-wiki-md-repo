@@ -243,14 +243,6 @@ This message is a very common one and can be ignored.
 
 ## Legacy method: ALSA-BTSCO
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Instructions rely on [bluez4](/index.php/Bluez4 "Bluez4"). (Discuss in [Talk:Bluetooth headset#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_headset))
-
 It is much easier to set up your bluetooth headset today, with bluez >= 3.16\. You may want to try the out-of-box python script in [this blog](http://fosswire.com/2008/01/11/a2dp-stereo-linux/) (you need edit the script to work with gconftool-2). There is also a piece of equivalent bash script [here](http://lymanrb.blogspot.com/2008/05/linux.html).
 
 You need your headset's bdaddr. It is of the form _12:34:56:78:9A:BC_. Either find it in the documentation of your headset, on the headset itself or with the **hcitool scan** command.
@@ -291,14 +283,6 @@ The first time you connect the headset, you have to pair it with the computer. T
 There are two ways to pair your headset with the computer:
 
 ##### Using _bluez-gnome_
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Package does no longer exist in the repositories. (Discuss in [Talk:Bluetooth headset#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_headset))
 
 Install the _bluez-gnome_ package from the community repository. Then start the **bt-applet** program. Once you try to connect to the headset, a window will open and ask for the PIN.
 
@@ -399,14 +383,6 @@ In order to get your bluetooth headset's multimedia buttons (play, pause, next, 
 
 ## Legacy method: PulseAudio
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Instructions rely on [bluez4](/index.php/Bluez4 "Bluez4") (references to `/etc/bluetooth/audio.conf` and _bluez-simple-agent_). (Discuss in [Talk:Bluetooth headset#](https://wiki.archlinux.org/index.php/Talk:Bluetooth_headset))
-
 This one is much easier and more elegant. PulseAudio will seamlessly switch between output devices when the headset is turned on. If you have ALSA as the sound server, you need the following packages installed: [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa).
 
 Now, to configure the audio output to use bluetooth, just install [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) and run it to configure the audio output:
@@ -431,14 +407,6 @@ Just do a `# systemctl restart bluetooth` to apply it.
 If you receive this error whilst trying to pair your headset with your system using bluez-simple-agent, then you can try to restart your system and use the graphical bluez applet of your desktop environment.
 
 ## Legacy documentation: ALSA, bluez5 and PulseAudio method
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Describes two different methods, see the [talk page](/index.php/Talk:Bluetooth_headset#bluez5_method:_overcomplicated_instructions "Talk:Bluetooth headset") for details. (Discuss in [Talk:Bluetooth_Headset#bluez5_method:_overcomplicated_instructions](https://wiki.archlinux.org/index.php/Talk:Bluetooth_Headset#bluez5_method:_overcomplicated_instructions))
 
 [ALSA](/index.php/ALSA "ALSA"), [bluez5](/index.php/Bluez "Bluez"), and [PulseAudio](/index.php/PulseAudio "PulseAudio") work together to allow a wireless [Bluetooth](/index.php/Bluetooth "Bluetooth") headset to play audio. The following method works with a Lenovo T61p laptop and SoundBot SB220 wireless bluetooth headset. The required software stack is extensive and failure to include all components can produce errors which are difficult to understand. The following list of software packages might not be the minimum required set and needs to be examined more closely.
 

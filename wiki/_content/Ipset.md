@@ -5,14 +5,6 @@ Related articles
 *   [Firewalls](/index.php/Firewalls "Firewalls")
 *   [Iptables](/index.php/Iptables "Iptables")
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** (Discuss in [Talk:Ipset#](https://wiki.archlinux.org/index.php/Talk:Ipset))
-
 [ipset](http://ipset.netfilter.org/) is a companion application for the [iptables](/index.php/Iptables "Iptables") Linux [firewall](/index.php/Firewall "Firewall"). It allows you to setup rules to quickly and easily block a set of IP addresses, among other things.
 
 ## Contents

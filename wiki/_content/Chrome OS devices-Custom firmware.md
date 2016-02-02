@@ -7,14 +7,6 @@ Related articles
 
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This topic on this page were moved out from the Chromebook page as it was too bloated, hard to navigate and follow, the page here is still needs a little more work to stand by it own and we can probably move out a little more details from the Chromebook page to avoid duplicates, anyone who create hot links in other pages to specific topics in this page should be aware that some topics' headers might be change. (Discuss in [Talk:Chrome OS devices/Custom firmware#](https://wiki.archlinux.org/index.php/Talk:Chrome_OS_devices/Custom_firmware))
-
 ## Contents
 
 *   [1 Introduction](#Introduction)

@@ -131,7 +131,7 @@ $ ls -l /usr/bin/wvdial
 
 ### Using sudo
 
-NaN
+	_See main article: [sudo](/index.php/Sudo "Sudo")_
 
 [sudo](/index.php/Sudo "Sudo") arguably offers the most secure option to allow regular users to establish dial-up connections using `wvdial`. It can be used to give permission both on a per-user and group basis. Another benefit of using `sudo` is that it is only needed to do the setup once; both previous solutions will be "undone" when a new package of `wvdial` is installed.
 

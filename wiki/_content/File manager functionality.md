@@ -47,14 +47,6 @@ When a file manager has been installed as part of a full desktop environment, mo
 
 ## Additional features
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention KDE file managers which use KIO instead of GVFS for mounting and other functionality (Discuss in [Talk:File manager functionality#](https://wiki.archlinux.org/index.php/Talk:File_manager_functionality))
-
 Particularly where using - or intending to use - a lightweight environment, it should be noted that more file manager features and functions will usually mean the use of more memory. See also [udisks](/index.php/Udisks "Udisks").
 
 ### Mounting

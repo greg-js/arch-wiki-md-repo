@@ -1,13 +1,5 @@
 # RetroShare
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Numerous [Help:Style](/index.php/Help:Style "Help:Style") violations. (Discuss in [Talk:RetroShare#](https://wiki.archlinux.org/index.php/Talk:RetroShare))
-
 **RetroShare** – open source, cross-platform [Friend-to-Friend](https://en.wikipedia.org/wiki/Friend-to-friend) application that offers secure chat and file sharing features.
 
 ## Contents

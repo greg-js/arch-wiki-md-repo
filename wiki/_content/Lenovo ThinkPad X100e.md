@@ -1,13 +1,5 @@
 # Lenovo ThinkPad X100e
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Refers to "my notes"... (this is not a blog). (Discuss in [Talk:Lenovo ThinkPad X100e#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_X100e))
-
 ## Contents
 
 *   [1 Configuration Notes](#Configuration_Notes)

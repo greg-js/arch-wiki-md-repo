@@ -235,14 +235,6 @@ In case of multiple computers behind the router, it is recommended to assign a d
 
 ### Across the internet
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Emphasize the difference from [#With port forwarding](#With_port_forwarding) (if any). (Discuss in [Talk:Wake-on-LAN#](https://wiki.archlinux.org/index.php/Talk:Wake-on-LAN))
-
 The syntax needed in this case:
 
 ```
@@ -262,14 +254,6 @@ $ ip neighbor add 192.168.1.254 lladdr FF:FF:FF:FF:FF:FF dev net0
 (The above command assumes your network is 192.168.1.0/24 and use net0 as network interface). Now, forward UDP port 9 to 192.168.1.254\. This has worked for me on a Linksys WRT54G running Tomato, and on the Verizon FIOS ActionTec router.
 
 For notes on how to do it on DD-WRT routers, see [this tutorial](http://www.dd-wrt.com/wiki/index.php/WOL#Remote_Wake_On_LAN_via_Port_Forwarding).
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Request for OpenWRT instructions. (Discuss in [Talk:Wake-on-LAN#](https://wiki.archlinux.org/index.php/Talk:Wake-on-LAN))
 
 ## Miscellaneous
 

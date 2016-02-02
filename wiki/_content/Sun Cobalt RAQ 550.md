@@ -1,13 +1,5 @@
 # Sun Cobalt RAQ 550
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Sun Cobalt RAQ 550#](https://wiki.archlinux.org/index.php/Talk:Sun_Cobalt_RAQ_550))
-
 This document explains how you can install Arch Linux on a Sun Cobalt RAQ 550 machine.
 
 ## Contents

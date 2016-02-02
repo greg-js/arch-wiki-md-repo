@@ -1,14 +1,6 @@
 # Wifi Radar
 
-NaN
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Wifi Radar#](https://wiki.archlinux.org/index.php/Talk:Wifi_Radar))
+	[WiFi Radar](http://wifi-radar.tuxfamily.org/) is a nifty little GUI program that lets you switch wireless networks with ease.
 
 ## Contents
 

@@ -2,14 +2,6 @@
 
 **Warning:** Do not expect full drop-in replacement and compatibility. Certain utilities may not exist and for those that do, there may be missing options. One purpose of this Wiki is to document missing features and the problems they cause (in order to device work-arounds). Make sure that the replacement(s) that you install fill your needs before proceeding.
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Last proper update was from 2011, so especially the "missing" sections should be checked (Discuss in [Talk:BusyBox#](https://wiki.archlinux.org/index.php/Talk:BusyBox))
-
 ## Contents
 
 *   [1 Installation](#Installation)

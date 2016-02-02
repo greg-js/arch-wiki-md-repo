@@ -220,7 +220,7 @@ $ fusermount -u ~/mnt
 
 ### Android File Transfer
 
-NaN
+	FUSE interface
 
 ```
 $ mkdir ~/my-device
@@ -230,7 +230,7 @@ $ ./aft-mtp-mount ~/my-device
 
 If you want album art to be displayed, it must be named `albumart.xxx` and placed first in the destination folder. Then copy other files. Also, note that fuse could be 7-8 times slower than ui/cli file transfer.
 
-NaN
+	Qt user interface
 
 Start the application, choose a destination folder and click any button on the toolbar. Available options are: _Upload Album_, _Upload Directory_ and _Upload Files_. The latter two are self-explanatory. _Upload album_ searches the source directory for album covers, and sets the best available cover.
 
@@ -287,14 +287,6 @@ You should check whether your device is listed in the [supported devices list](h
 
 #### Unable to enumerate USB device
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [[]].**
-
-**Notes:** Unrelated to MTP, perhaps suited for [USB storage devices](/index.php/USB_storage_devices "USB storage devices") (Discuss in [Talk:MTP#](https://wiki.archlinux.org/index.php/Talk:MTP))
-
 If you see a message like this in system log (`journalctl`)
 
 ```
@@ -335,14 +327,6 @@ Symptoms: jmtpfs successfully mounts, but as soon as one attempts to access file
 This appears to be a security feature: MTP does not work when the phone is locked by the lockscreen. Unlock the phone and it should work again as long as the cord remains connected.
 
 ### gvfs-mtp
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [udev](/index.php/Udev "Udev").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:MTP#](https://wiki.archlinux.org/index.php/Talk:MTP))
 
 If you have installed the [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) package, and your device doesn't show up in the file manager, you might need to reboot or write a udev rule in order to auto-mount the device.
 

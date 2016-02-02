@@ -1,13 +1,5 @@
 # Dell Latitude 3550
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Dell Latitude 3550#](https://wiki.archlinux.org/index.php/Talk:Dell_Latitude_3550))
-
 Intel Core i7-5500U Processor, NVIDIA GeForce 830M 2GB Graphics 15.6" FHD (1920x1080) Wide View Anti-Glare LED-backlit 8GB1 DDR3L at 1600MHz
 
 ## Contents

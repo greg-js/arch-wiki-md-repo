@@ -5,14 +5,6 @@ Related articles
 *   [Chromebook](/index.php/Chromebook "Chromebook")
 *   [Acer C720 Chromebook](/index.php/Acer_C720_Chromebook "Acer C720 Chromebook")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** WIP guide, need to improve "Disabling The Hardware Write Protection" (Discuss in [Talk:Acer C710 Chromebook#](https://wiki.archlinux.org/index.php/Talk:Acer_C710_Chromebook))
-
 This page is a work in progress guide to running [Arch Linux](/index.php/Arch_Linux "Arch Linux") on the Acer C7 [Chromebook](/index.php/Chromebook "Chromebook").
 
 Over seven [models](http://us.acer.com/ac/en/US/content/models/chromebooks/chromebook-c) exist.

@@ -1,13 +1,5 @@
 # ASUS Zenbook UX305
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:ASUS Zenbook UX305#](https://wiki.archlinux.org/index.php/Talk:ASUS_Zenbook_UX305))
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the [ASUS Zenbook UX305](http://www.asus.com/Notebooks_Ultrabooks/ASUS_ZENBOOK_UX305/Features/).
 
 Hardware reference from UX305-FB041H. Model available since **12 feb 2015**.

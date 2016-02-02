@@ -50,14 +50,6 @@ Most of the new Hybrid-graphics technologies involves two graphic cards as the b
 
 #### Software Solutions So Far
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** missing links (Discuss in [Talk:Hybrid graphics#](https://wiki.archlinux.org/index.php/Talk:Hybrid_graphics))
-
 *   asus_switcheroo -- a solution for Intel/Nvidia switching on ASUS and other laptops with a similar hardware mux -- by Alex Williamson
 *   byo_switcheroo -- a solution to build your own handler (like acpi_call) to switch between cards with vga_switcheroo -- by Alex Williamson
 *   [vga_switcheroo](https://wiki.gentoo.org/wiki/Hprofile#VGA) -- the original GPU switching solution primarily for Intel/ATI notebooks -- by David Airlie

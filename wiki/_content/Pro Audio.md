@@ -1,13 +1,5 @@
 # Pro Audio
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** describe irqbalance (Discuss in [Talk:Pro Audio#](https://wiki.archlinux.org/index.php/Talk:Pro_Audio))
-
 Related articles
 
 *   [Sound system](/index.php/Sound_system "Sound system")
@@ -326,7 +318,7 @@ From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
 
 The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
 
-NaN
+	_See: [Real-Time Linux Wiki](https://rt.wiki.kernel.org/)_
 
 ## MIDI
 
@@ -339,7 +331,7 @@ snd_seq_midi
 
 To work with MIDI you can it is highly recommended that you install a2j ([a2jmidid](https://www.archlinux.org/packages/?name=a2jmidid)), a bridge between alsa midi and jack midi. It allows you to connect applications that only communicate with alsa midi to applications that only use jack midi. Laditray can also start/stop a2j.
 
-NaN
+	_See: [JACK#MIDI](/index.php/JACK#MIDI "JACK")_
 
 ## Environment Variables
 

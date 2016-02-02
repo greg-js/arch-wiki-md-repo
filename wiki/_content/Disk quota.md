@@ -2,7 +2,7 @@
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Disk_quota "wikipedia:Disk quota"):
 
-NaN
+	"_A **disk quota** is a limit set by a system administrator that restricts certain aspects of file system usage on modern operating systems. The function of setting quotas to disks is to allocate limited disk-space in a reasonable way._"
 
 This article covers the installation and setup of disk quota.
 
@@ -41,14 +41,14 @@ _For journaled quota, see the notes in [#Journaled quota](#Journaled_quota)._
 
 ```
 
-NaN
+	edit it as follows;
 
 ```
  /dev/sda1 /home ext4 defaults**,usrquota** 1 1
 
 ```
 
-NaN
+	or aditionally enable the group quota mount option;
 
 ```
  /dev/sda1 /home ext4 defaults**,usrquota,grpquota** 1 1
@@ -69,7 +69,7 @@ NaN
 
 ```
 
-NaN
+	or for all partitions with the quota mount options in `/etc/mtab`;
 
 ```
  # quotacheck -vguma
@@ -89,14 +89,6 @@ quotacheck: Cannot find filesystem to check or filesystem not mounted with quota
  # quotaon -av
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Update required for systemd and the related units `quotaon.service` and `systemd-quotacheck.service` (see also [FS#31391](https://bugs.archlinux.org/task/31391)). (Discuss in [Talk:Disk quota#Should journald not be the default method ?](https://wiki.archlinux.org/index.php/Talk:Disk_quota#Should_journald_not_be_the_default_method_.3F))
 
 Consider adding this command to your start-up, see [Autostarting](/index.php/Autostarting "Autostarting").
 
@@ -135,11 +127,23 @@ Disk quotas for user **$USER** (uid 1000):
 
 **Note:** to edit group quotas, use `edquota -g $GROUP`.
 
-NaN
+	blocks
+
+	Number of 1k blocks currently used by `$USER`.
 
 **Note:** Block size is statically set to 1k regardless of filesystem block size. [Explanation](http://stackoverflow.com/questions/2506288/detect-block-size-for-quota-in-linux/2506311#2506311)
 
-NaN
+	inodes
+
+	Number of entries by `$USER` in directory file.
+
+	soft
+
+	Max number of blocks/inodes `$USER` may have on partition before warning is issued and grace period countdown begins. If set to "0" (zero) then no limit is enforced.
+
+	hard
+
+	Max number of blocks/inodes `$USER` may have on partition. If set to "0" (zero) then no limit is enforced.
 
 Configure the `soft` limit grace period:
 

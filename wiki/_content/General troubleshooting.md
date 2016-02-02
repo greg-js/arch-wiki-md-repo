@@ -41,13 +41,27 @@ In order to resolve an issue that you are having, it is _absolutely crucial_ to 
 
 The following gives a number of questions for you whenever dealing with a malfunctioning system. Under each question there are notes explaining how you should be answering each question, followed by some light examples on how to easily gather data output and what tools can be used to review logs and the journal.
 
-1.  What is the issue(s)?NaN
+1.  What is the issue(s)?
 
-2.  Are there error messages? (if any)NaN
+    	Be _as precise as possible_. This will help you not get confused and/or side-tracked when looking up specific information.
 
-3.  Can you reproduce the issue?NaN
+2.  Are there error messages? (if any)
 
-4.  When did you first encounter these issues and what was changed between then and when the system was operating without error?NaN
+    	Copy and paste _full outputs_ that contain **error messages** related to your issue into a separate file, such as `$HOME/issue.log`. For example, to forward the output of the following [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") command to `$HOME/issue.log`:
+
+    	 `$ mkinitcpio -p linux >> $HOME/issue.log` 
+
+3.  Can you reproduce the issue?
+
+    	If so, give _exact_ **step-by-step** instructions/commands needed to do so.
+
+4.  When did you first encounter these issues and what was changed between then and when the system was operating without error?
+
+    	If it occurred right after an update then, list **all packages that were updated**. Include _version numbers_, also, paste the entire update from [pacman](/index.php/Pacman "Pacman").log (`/var/log/pacman.log`). Also take note of the statuses of _any_ service(s) needed to support the malfunctioning application(s) using [systemd](/index.php/Systemd "Systemd")'s systemctl tools. For example, to forward the output of the following [systemd](/index.php/Systemd#Basic_systemctl_usage "Systemd") command to `$HOME/issue.log`:
+
+    	 `$ systemctl status dhcpcd@eth0.service >> $HOME/issue.log` 
+
+    **Note:** Using `**>>**` will ensure any previous text in `$HOME/issue.log` will not be overwritten.
 
 ### Be more specific
 
@@ -95,14 +109,6 @@ See [Pacman#Troubleshooting](/index.php/Pacman#Troubleshooting "Pacman") for gen
 
 ## fuser
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Write an example how to use it. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
-
 _fuser_ is a command-line utility for identifying processes using resources such as files, filesystems and TCP/UDP ports.
 
 _fuser_ is provided by the [psmisc](https://www.archlinux.org/packages/?name=psmisc) package, which should be already installed as part of the [base](https://www.archlinux.org/groups/x86_64/base/) group.
@@ -125,14 +131,6 @@ A D-Bus session should also be started along with X. See [D-Bus#Starting the use
 Basic [polkit](/index.php/Polkit "Polkit") actions do not require further set-up. Some polkit actions require further authentication, even with a local session. A polkit authentication agent needs to be running for this to work. See [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit") for more information on this.
 
 ## file: could not find any magic files!
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Help:Style](/index.php/Help:Style "Help:Style") and related articles. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
 
 _Example:_ After an every-day routine update or following the installation of a package you are given the following error:
 
@@ -182,25 +180,9 @@ Typically a previously installed application had placed a configuration file wit
 
 ## Why I can't write on NTFS partitions?
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Alternatively I propose to add one question for each of the things that it's impossible to do without installing additional packages. (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
-
 In clear system you can only read from NTFS file system. If you want to write, install [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g) package.
 
 ## Spellcheck is marking all of my text as incorrect!
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [aspell](/index.php?title=Aspell&action=edit&redlink=1 "Aspell (page does not exist)").**
-
-**Notes:** This can't be considered "general", what about creating a new article, since _aspell_ is mentioned from [many](https://wiki.archlinux.org/index.php?title=Special%3ASearch&search=aspell) articles? (Discuss in [Talk:General troubleshooting#](https://wiki.archlinux.org/index.php/Talk:General_troubleshooting))
 
 Have you installed an [aspell](https://www.archlinux.org/packages/?name=aspell) dictionary? Use `pacman -Ss aspell` to see available dictionaries for downloading.
 

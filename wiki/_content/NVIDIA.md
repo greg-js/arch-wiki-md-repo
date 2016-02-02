@@ -93,17 +93,22 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 
 1\. If you do not know what graphics card you have, find out by issuing:
 
-NaN
+	 `$ lspci -k | grep -A 2 -E "(VGA|3D)"` 
 
 2\. Determine the necessary driver version for your card by:
 
-NaN
+*   finding the code name (e.g. NV50, NVC0, etc.) on [nouveau wiki's code names page](http://nouveau.freedesktop.org/wiki/CodeNames)
+*   looking up the name in NVIDIA's [legacy card list](http://www.nvidia.com/object/IO_32667.html): if your card is not there you can use the latest driver
+*   visiting NVIDIA's [driver download site](http://www.nvidia.com/Download/index.aspx)
 
 3\. Install the appropriate driver for your card:
 
-NaN
+*   For GeForce 400 series cards and newer [NVCx and newer], [install](/index.php/Install "Install") the [nvidia](https://www.archlinux.org/packages/?name=nvidia) or [nvidia-lts](https://www.archlinux.org/packages/?name=nvidia-lts) package along with [nvidia-libgl](https://www.archlinux.org/packages/?name=nvidia-libgl).
+*   For GeForce 8000/9000, ION and 100-300 series cards [NV5x, NV8x, NV9x and NVAx] from around 2006-2010, [install](/index.php/Install "Install") the [nvidia-340xx](https://www.archlinux.org/packages/?name=nvidia-340xx) or [nvidia-340xx-lts](https://www.archlinux.org/packages/?name=nvidia-340xx-lts) package along with [nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=nvidia-340xx-libgl).
+*   For GeForce 6000/7000 series cards [NV4x and NV6x] from around 2004-2006, [install](/index.php/Install "Install") the [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) package along with [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
 
-NaN
+*   For even older cards, have a look at [#Unsupported drivers](#Unsupported_drivers).
+*   For the very latest GPU models, it may be required to [install](/index.php/Install "Install") the [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)<sup><small>AUR</small></sup> package, since the stable drivers may not support the newly introduced features.
 
 4\. If you are on 64-bit and also need 32-bit OpenGL support, you must also install the equivalent _lib32_ package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) or [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
@@ -243,7 +248,7 @@ Double check your `/etc/X11/xorg.conf` to make sure your default depth, horizont
 
 ### Multiple monitors
 
-NaN
+	_See [Multihead](/index.php/Multihead "Multihead") for more general information_
 
 #### Using NVIDIA Settings
 
@@ -421,14 +426,6 @@ EndSection
 ```
 
 ##### Manual CLI configuration with xrandr
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Do these commands set up the monitors in _TwinView_ mode? (Discuss in [Talk:NVIDIA#](https://wiki.archlinux.org/index.php/Talk:NVIDIA))
 
 If the latest solutions do not work for you, you can use your window manager's _autostart_ implementation with [xorg-xrandr](https://www.archlinux.org/packages/?name=xorg-xrandr).
 
@@ -858,14 +855,6 @@ There can be significant differences between the temperatures reported by nvcloc
 
 ### Set fan speed at login
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Refer to [#Enabling overclocking](#Enabling_overclocking) for description of _Coolbits_. (Discuss in [Talk:NVIDIA#](https://wiki.archlinux.org/index.php/Talk:NVIDIA))
-
 You can adjust the fan speed on your graphics card with _nvidia-settings'_ console interface. First ensure that your Xorg configuration sets the Coolbits option to `4`, `5` or `12` for fermi and above in your `Device` section to enable fan control.
 
 ```
@@ -904,14 +893,6 @@ Name=nvidia-fan-speed
 **Note:** Since the drivers version 349.16, `GPUCurrentFanSpeed` has to be replaced with `GPUTargetFanSpeed`.[[3]](https://devtalk.nvidia.com/default/topic/821563/linux/can-t-control-fan-speed-with-beta-driver-349-12/post/4526208/#4526208)
 
 ### Order of install/deinstall for changing drivers
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Not clear what this does (Discuss in [Talk:NVIDIA#](https://wiki.archlinux.org/index.php/Talk:NVIDIA))
 
 Where the old driver is nvidiaO and the new driver is nvidiaN.
 
@@ -1018,14 +999,6 @@ EndSection
 ```
 
 ### '/dev/nvidia0' input/output error
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Verify that the BIOS related suggestions work and are not coincidentally set while troubleshooting. (Discuss in [Talk:NVIDIA#'/dev/nvidia0' Input/Output error... suggested fixes](https://wiki.archlinux.org/index.php/Talk:NVIDIA#.27.2Fdev.2Fnvidia0.27_Input.2FOutput_error..._suggested_fixes))
 
 This error can occur for several different reasons, and the most common solution given for this error is to check for group/file permissions, which in almost every case is _not_ the problem. The NVIDIA documentation does not talk in detail on what you should do to correct this problem but there are a few things that have worked for some people. The problem can be a IRQ conflict with another device or bad routing by either the kernel or your BIOS.
 

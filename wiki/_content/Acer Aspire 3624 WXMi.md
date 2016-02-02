@@ -1,13 +1,5 @@
 # Acer Aspire 3624 WXMi
 
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-[![Tango-emblem-symbolic-link.png](/images/f/f9/Tango-emblem-symbolic-link.png)](/index.php/File:Tango-emblem-symbolic-link.png)
-
-**This article is being considered for redirection to [Laptop](/index.php/Laptop "Laptop").**
-
-**Notes:** Info in this page is out of data and should redirect to [Laptop](/index.php/Laptop "Laptop"). (Discuss in [Talk:Acer Aspire 3624 WXMi#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_3624_WXMi))
-
 Article based on [Acer Aspire 1652 ZWLMi](/index.php?title=Acer_Aspire_1652_ZWLMi&action=edit&redlink=1 "Acer Aspire 1652 ZWLMi (page does not exist)"), which in turn was based on [Acer Aspire 1691 WLMi](/index.php/Acer_Aspire_1691_WLMi "Acer Aspire 1691 WLMi").
 
 ## lspci

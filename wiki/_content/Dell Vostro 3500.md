@@ -1,13 +1,5 @@
 # Dell Vostro 3500
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Dell Vostro 3500#](https://wiki.archlinux.org/index.php/Talk:Dell_Vostro_3500))
-
 This page deals with setting up Arch Linux on the Dell Vostro 3500 laptop.
 
 ## Contents
@@ -112,14 +104,6 @@ set config(3)	{{- 2}  70 128  70 128}
 Works out of the box. Just set up `dhcpd` daemon, plug and go.
 
 ### Wireless
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Dell Vostro 3500#](https://wiki.archlinux.org/index.php/Talk:Dell_Vostro_3500))
 
 ```
 $ lspci -d 14e4:4727

@@ -1,13 +1,5 @@
 # Disable PC speaker beep
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [beep](/index.php/Beep "Beep").**
-
-**Notes:** ...and rename to [PC speaker](/index.php?title=PC_speaker&action=edit&redlink=1 "PC speaker (page does not exist)")? (Discuss in [Talk:Disable PC speaker beep#](https://wiki.archlinux.org/index.php/Talk:Disable_PC_speaker_beep))
-
 ## Contents
 
 *   [1 Introduction](#Introduction)

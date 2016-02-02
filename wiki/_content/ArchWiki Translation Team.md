@@ -4,14 +4,6 @@ Related articles
 
 *   [ArchWiki Translation Day](/index.php/ArchWiki_Translation_Day "ArchWiki Translation Day")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Instructions lack clarity (Discuss in [Talk:ArchWiki Translation Team#](https://wiki.archlinux.org/index.php/Talk:ArchWiki_Translation_Team))
-
 ## Create a new page and its translation
 
 1.  If you do not know how to edit wiki pages, read [Help:Editing](/index.php/Help:Editing "Help:Editing").

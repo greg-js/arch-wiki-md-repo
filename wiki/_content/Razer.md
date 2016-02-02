@@ -1,13 +1,5 @@
 # Razer
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Various style issues, structure lacking (Discuss in [Talk:Razer#](https://wiki.archlinux.org/index.php/Talk:Razer))
-
 There are currently no official drivers for any Razer peripherals in Linux. However, Michael Buesch has created a tool called [razercfg](http://bues.ch/cms/hacking/razercfg.html) to configure Razer mice under Linux. There also exist scripts to enable macro keys of Razer keyboards.
 
 ## Contents
@@ -68,14 +60,6 @@ You also need to edit your `/etc/X11/xorg.conf` file to disable the current mous
 
 It is important to only have `Mouse` and not `Mouse#` listed in `xorg.conf`.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Why reboot? (Discuss in [Talk:Razer#](https://wiki.archlinux.org/index.php/Talk:Razer))
-
 Restart the computer, then enter:
 
 ```
@@ -86,14 +70,6 @@ Restart the computer, then enter:
 Then [start](/index.php/Start "Start") the `razerd` daemon and possibly enable it.
 
 ### Using the Razer Configuration Tool
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Button configuration reported to not work (Discuss in [Talk:Razer#Button configuration in razercfg or qrazercfg](https://wiki.archlinux.org/index.php/Talk:Razer#Button_configuration_in_razercfg_or_qrazercfg))
 
 There are two commands you can use, one for the command line tool _razercfg_ or the Qt-based GUI tool _qrazercfg_.
 
@@ -158,14 +134,6 @@ sudo pacman -S synaptics
 Feature still not working: pinch to zoom, 3rd mouse button
 
 ```
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** The SBUI works as a trackpad, but no linux drivers currently exist. Does it even work for basic trackpad functionality? (Discuss in [Talk:Razer#](https://wiki.archlinux.org/index.php/Talk:Razer))
 
 ## Razer Keyboards
 

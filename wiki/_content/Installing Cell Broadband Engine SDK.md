@@ -41,14 +41,6 @@ To make sure all of these are installed:
 
 ### Get ISOs and build the SDK
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Building as root is not supported. (Discuss in [Talk:Installing Cell Broadband Engine SDK#](https://wiki.archlinux.org/index.php/Talk:Installing_Cell_Broadband_Engine_SDK))
-
 You will have to download the two 3.1 SDK ISOs (Developer, Extra) for Fedora 9 manually from [IBMs website](https://www14.software.ibm.com/webapp/iwm/web/reg/download.do?source=cellsdk&S_PKG=fedora&S_TACT=105AGX16&S_CMP=LP&lang=en_US&cp=UTF-8), which requires free registration. Place them in a build folder for the [cellsdk](https://aur.archlinux.org/packages/cellsdk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cellsdk)]</sup> AUR package. Now the SDK is ready to be build, but you will have to do it as root because the PKGBUILD uses mount of loop-devices to extract packages from the ISOs. Build the SDK by running:
 
 ```

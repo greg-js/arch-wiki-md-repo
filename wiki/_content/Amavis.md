@@ -8,7 +8,7 @@ Related articles
 
 From [Amavis's site](http://www.ijs.si/software/amavisd/):
 
-NaN
+	_amavisd-new is a high-performance interface between mailer (MTA) and content checkers: virus scanners, and/or SpamAssassin. It is written in Perl for maintainability, without paying a significant price for speed. It talks to MTA via (E)SMTP or LMTP, or by using helper programs. Best with Postfix, fine with dual-sendmail setup and Exim v4, works with sendmail/milter, or with any MTA as a SMTP relay._
 
 ## Contents
 
@@ -167,14 +167,6 @@ To check that Postfix is listening on port `10025` do the same operations as the
 
 ## SpamAssassin support
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** todo (Discuss in [Talk:Amavis#](https://wiki.archlinux.org/index.php/Talk:Amavis))
-
 Spamassassin is integrated in Amavis so you do not have to start `spamassassin.service`. To enable support for Spamassassin comment the following line in `/etc/amavis/amavis.conf` like this:
 
 ```
@@ -197,14 +189,6 @@ $bounce_killer_score = 100;  # spam score points to add for joe-jobbed bounces
 Now you just need to [restart](/index.php/Restart "Restart") `amavisd` service.
 
 ## Final test
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** todo (Discuss in [Talk:Amavis#](https://wiki.archlinux.org/index.php/Talk:Amavis))
 
 To check that everything is working all right:
 

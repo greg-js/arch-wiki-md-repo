@@ -74,7 +74,45 @@ lrwxrwxrwx 1 root root 10 May 27 23:31 SYSTEM -> ../../sda2
 
 The labels of your filesystems can be changed. Following are some methods for changing labels on common filesystems:
 
-NaN
+	swap 
+
+	`swaplabel -L <label> /dev/XXX` using [util-linux](https://www.archlinux.org/packages/?name=util-linux)
+
+	ext2/3/4 
+
+	`e2label /dev/XXX <label>` using [e2fsprogs](https://www.archlinux.org/packages/?name=e2fsprogs)
+
+	btrfs 
+
+	`btrfs filesystem label /dev/XXX <label>` using [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs)
+
+	reiserfs 
+
+	`reiserfstune -l <label> /dev/XXX` using [reiserfsprogs](https://www.archlinux.org/packages/?name=reiserfsprogs)
+
+	jfs 
+
+	`jfs_tune -L <label> /dev/XXX` using [jfsutils](https://www.archlinux.org/packages/?name=jfsutils)
+
+	xfs 
+
+	`xfs_admin -L <label> /dev/XXX` using [xfsprogs](https://www.archlinux.org/packages/?name=xfsprogs)
+
+	fat/vfat 
+
+	`dosfslabel /dev/XXX <label>` using [dosfstools](https://www.archlinux.org/packages/?name=dosfstools)
+
+	fat/vfat 
+
+	`mlabel -i /dev/XXX ::<label>` using [mtools](https://www.archlinux.org/packages/?name=mtools)
+
+	ntfs 
+
+	`ntfslabel /dev/XXX <label>` using [ntfs-3g](https://www.archlinux.org/packages/?name=ntfs-3g)
+
+	zfs 
+
+	this filesystem does not support `/dev/disk/by-label`, but [#by-partlabel](#by-partlabel) may be used
 
 **Note:**
 

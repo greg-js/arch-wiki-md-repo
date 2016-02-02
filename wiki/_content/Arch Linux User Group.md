@@ -1,13 +1,5 @@
 # Arch Linux User Group
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Arch Linux User Group#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_User_Group))
-
 Arch Linux User Groups (ALUG) are local meet-ups of people using Arch Linux. They are similar to generic Linux User Groups, but specialize on Arch Linux.
 
 The (probably) first ALUG is located in [Düsseldorf](http://wiki.chaosdorf.de/Arch_User_Group).

@@ -42,7 +42,9 @@ Using an Android phone as a Wi-Fi access point (using 3G) has been accessible by
 *   Enable the tethering option from your phone. This is usually done from `Settings --> Wireless & Networks --> Internet tethering` (or `Tethering & portable hotspot`, for more recent versions)
 *   Make sure that the USB interface is recognized by the system by using the following command:
 
-NaN
+	 `$ ip link` 
+
+	You should be able to see a `usb0` or `enp?s??u?` device listed like this (notice the enp0s20u3 device).
 
  `# ip link` 
 
@@ -64,7 +66,7 @@ NaN
 
 *   The final step is to [configure a network connection](/index.php/Network_configuration#Configure_the_IP_address "Network configuration") on this interface. For example:
 
-NaN
+	 `# dhcpcd enp0s20u3` 
 
 #### Using systemd-networkd with udev
 
@@ -139,7 +141,9 @@ Run the AziLink application in the phone and select "About" at the bottom to rec
 3.  Run AziLink and make sure that the **Service active** option at the top is checked.
 4.  Run the following commands in your Linux PC:
 
-NaN
+	 `$ adb forward tcp:41927 tcp:41927` 
+
+	 `# openvpn AziLink.ovpn` 
 
  `AziLink.ovpn` 
 

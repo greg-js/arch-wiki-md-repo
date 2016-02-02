@@ -92,14 +92,6 @@ Code is compiled using [llvm](https://www.archlinux.org/packages/?name=llvm) (de
 
 #### Mesa (Gallium)
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** How accurate is this part? (Discuss in [Talk:GPGPU#](https://wiki.archlinux.org/index.php/Talk:GPGPU))
-
 OpenCL support from Mesa is in development (see [http://www.x.org/wiki/GalliumStatus/](http://www.x.org/wiki/GalliumStatus/)). AMD Radeon cards are supported by the r600g driver.
 
 Arch Linux ships OpenCL support as a separate package [opencl-mesa](https://www.archlinux.org/packages/extra/x86_64/opencl-mesa/). See [http://dri.freedesktop.org/wiki/GalliumCompute/](http://dri.freedesktop.org/wiki/GalliumCompute/) for usage instructions.
@@ -182,14 +174,6 @@ To find whether the installation was successful and if cuda is up and running, y
 It might be necessary to use the legacy driver [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) to resolve permissions issues when running CUDA programs on systems with multiple GPUs.
 
 ## List of OpenCL and CUDA accelerated software
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:GPGPU#](https://wiki.archlinux.org/index.php/Talk:GPGPU))
 
 *   [Bitcoin](/index.php/Bitcoin "Bitcoin")
 *   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[3]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))

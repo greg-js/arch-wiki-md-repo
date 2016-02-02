@@ -1,13 +1,5 @@
 # Tryton
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Tryton#](https://wiki.archlinux.org/index.php/Talk:Tryton))
-
 Tryton is a three-tiers high-level general purpose application platform under the license GPL-3 written in Python and using PostgreSQL (or sqlite) as database engine.
 
 ## Installation

@@ -80,15 +80,18 @@ LC_TIME=en_DK.UTF-8
 
 *   A **system-wide** locale can be set by creating or editing `/etc/locale.conf`. The same result can be obtained with the _localectl_ command:
 
-NaN
+	 `# localectl set-locale LANG=en_US.UTF-8` 
 
-NaN
+	See `man 1 localectl` for details.
 
-NaN
+**Tip:** During system installation, if the output of _locale_ is to your liking, you can save a little time by doing: `locale > /etc/locale.conf` while chrooted.
 
 *   The system-wide locale can be overridden in each **user session** by creating or editing `~/.config/locale.conf` (or, in general, `$XDG_CONFIG_HOME/locale.conf` or `$HOME/.config/locale.conf`).
 
-NaN
+**Tip:**
+
+*   This can also allow keeping the logs in `/var/log` in English while using the local language in the user environment.
+*   You can create a `/etc/skel/.config/locale.conf` file so that any new users added using _useradd_ and the `-m` option will have `~/.config/locale.conf` automatically generated.
 
 The precedence of these `locale.conf` files is defined in `/etc/profile.d/locale.sh`.
 
@@ -180,14 +183,6 @@ The locale set for this variable will always override `LANG` and all the other `
 `LC_ALL` is the only `LC_*` variable, which **cannot** be set in `locale.conf` files: it is meant to be used only for testing or troubleshooting purposes, for example in `/etc/profile`.
 
 ## Customizing locales
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Modified locales will not survive the upgrade of [glibc](https://www.archlinux.org/packages/?name=glibc) because the relevant file is not in the [backup field](https://projects.archlinux.org/svntogit/packages.git/tree/trunk/PKGBUILD?h=packages/glibc#n19) in the PKGBUILD. Custom locales should be _created_ instead. (Discuss in [Talk:Locale#](https://wiki.archlinux.org/index.php/Talk:Locale))
 
 Locales are defined in text files located in `/usr/share/i18n/locales/` and can be edited to adapt to particular needs.
 

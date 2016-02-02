@@ -2,7 +2,7 @@
 
 From [GnomeKeyring](https://live.gnome.org/GnomeKeyring/):
 
-NaN
+	_GNOME Keyring is a collection of components in GNOME that store secrets, passwords, keys, certificates and make them available to applications._
 
 **Note:** As of July 10, 2015, GNOME Keyring does not handle ECDSA[[1]](https://bugzilla.gnome.org/show_bug.cgi?id=641082) and Ed25519[[2]](https://bugzilla.gnome.org/show_bug.cgi?id=723274) keys. You can turn to other [SSH agents](/index.php/SSH_keys#SSH_agents "SSH keys") if you need support for those.
 
@@ -34,15 +34,15 @@ Extra utilities:
 
 *   **secret-tool** — Access the GNOME keyring (and any other service implementing the [DBus Secret Service API](http://standards.freedesktop.org/secret-service/)) from the command line.
 
-NaN
+	[https://wiki.gnome.org/Projects/Libsecret](https://wiki.gnome.org/Projects/Libsecret) || [libsecret](https://www.archlinux.org/packages/?name=libsecret)
 
 *   **gnome-keyring-query** — Provides a simple command-line tool for querying passwords from the password store of the GNOME Keyring.
 
-NaN
+	[http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases](http://www.gentoo-wiki.info/HOWTO_Use_gnome-keyring_to_store_SSH_passphrases) || [gnome-keyring-query](https://aur.archlinux.org/packages/gnome-keyring-query/)<sup><small>AUR</small></sup>
 
 *   **gkeyring** — Query passwords from the command line, the [Git](/index.php/Git "Git") version can list all passwords without needing to know name or id of the item
 
-NaN
+	[https://github.com/kparal/gkeyring](https://github.com/kparal/gkeyring) || [gkeyring](https://aur.archlinux.org/packages/gkeyring/)<sup><small>AUR</small></sup>, [gkeyring-git](https://aur.archlinux.org/packages/gkeyring-git/)<sup><small>AUR</small></sup>
 
 ## Manage using GUI
 

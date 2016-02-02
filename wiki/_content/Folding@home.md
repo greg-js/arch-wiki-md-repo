@@ -2,7 +2,7 @@
 
 From the project [home page](http://folding.stanford.edu/):
 
-NaN
+	_Help Stanford University scientists studying Alzheimer's, Huntington's, Parkinson's, and many cancers by simply running a piece of software on your computer. The problems we are trying to solve require so many calculations, we ask people to donate their unused computer power to crunch some of the numbers. In just 5 minutes... Add your computer to over 333,684 others around the world to form the world's largest distributed supercomputer._
 
 ## Contents
 
@@ -65,14 +65,6 @@ The behaviour of foldingathome can be customized by editing `/opt/fah/config.xml
 As of version 7.x, multi-core CPUs no longer require any special configuration. If you are using version 6.x, read on.
 
 ### A quick note on hyperthreading
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** "Hyperthreading is usually enabled in the BIOS by default, and we recommend that it stays enabled, as the SMP cores can use it to process Work Units faster." [[2]](http://folding.stanford.edu/English/FAQ-SMP#ntoc6) (Discuss in [Talk:Folding@home#](https://wiki.archlinux.org/index.php/Talk:Folding@home))
 
 If you have a single-core hyperthreading CPU, you may be tempted to follow the multi-core instructions. It is highly recommenced that you do **not** do this as the Folding@home team prefers fewer results quickly, than more results slowly. There is also a time-limit on work-units, so if it runs slower, your work-units may not be returned in time, and so distributed to another user. If you have one core, run one folding process.
 

@@ -266,19 +266,19 @@ To allow users to mount it as long as the mount point resides in a directory con
 
 _SERVER_
 
-NaN
+	The server name.
 
 _sharename_
 
-NaN
+	The shared directory.
 
 _mountpoint_
 
-NaN
+	The local directory where the share will be mounted.
 
 `-o [options]`
 
-NaN
+	See `man mount.cifs` for more information.
 
 **Note:**
 

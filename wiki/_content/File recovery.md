@@ -168,14 +168,6 @@ Both `e2fsck` and `dumpe2fs` are included in the base Arch install as part of [e
 
 ## Working with raw disk images
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [QEMU](/index.php/QEMU "QEMU").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:File recovery#](https://wiki.archlinux.org/index.php/Talk:File_recovery))
-
 If you have backed up a drive using ddrescue or dd and you need to mount this image as a physical drive, see this section.
 
 ### Mount the entire disk

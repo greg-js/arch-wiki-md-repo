@@ -1,13 +1,5 @@
 # Budgie Desktop
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Desktop environments](/index.php/Desktop_environments "Desktop environments").**
-
-**Notes:** Next to no content almost one year after article creation (Discuss in [Talk:Budgie Desktop#](https://wiki.archlinux.org/index.php/Talk:Budgie_Desktop))
-
 Related articles
 
 *   [Wayland](/index.php/Wayland "Wayland")

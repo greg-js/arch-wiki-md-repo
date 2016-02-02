@@ -1,13 +1,5 @@
 # Concurrent Versions System
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Concurrent Versions System#](https://wiki.archlinux.org/index.php/Talk:Concurrent_Versions_System))
-
 _"[Concurrent Versions System](http://www.nongnu.org/cvs/) is a version control system, an important component of Source Configuration Management (SCM). Using it, you can record the history of sources files, and documents. It fills a similar role to the free software RCS, PRCS, and Aegis packages."_
 
 This is a quick guide on how to set up the latest CVS server.

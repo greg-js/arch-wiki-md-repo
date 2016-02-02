@@ -1,13 +1,5 @@
 # Dell Inspiron 3531
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Various [style](/index.php/Help:Style "Help:Style") issues, duplicated content (Discuss in [Talk:Dell Inspiron 3531#](https://wiki.archlinux.org/index.php/Talk:Dell_Inspiron_3531))
-
 This page describes Arch's issues with Dell Inspiron 15 3531 (Dell's budget model of autumn 2014).
 
 ## Contents

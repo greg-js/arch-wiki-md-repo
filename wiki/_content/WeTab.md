@@ -1,13 +1,5 @@
 # WeTab
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:WeTab#](https://wiki.archlinux.org/index.php/Talk:WeTab))
-
 [The WeTab is a tablet-PC by 4tiitoo and Neofonie.](http://en.wikipedia.org/wiki/WeTab)
 
 ## BIOS Update

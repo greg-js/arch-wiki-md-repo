@@ -1,13 +1,5 @@
 # Godot Engine
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of games](/index.php/List_of_games "List of games").**
-
-**Notes:** Other engines are already listed there with the same level of detail. (Discuss in [Talk:Godot Engine#](https://wiki.archlinux.org/index.php/Talk:Godot_Engine))
-
 [Godot Engine](http://godotengine.org) is an open-source game engine .
 
 ## Contents

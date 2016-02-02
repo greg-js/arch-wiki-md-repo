@@ -1,13 +1,5 @@
 # ASUS Zenbook Prime UX31A
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This should **only** have information specific to the hardware. Other content should not be duplicated here. Also avoid maintaining scripts and programs here. (Discuss in [Talk:ASUS Zenbook Prime UX31A#](https://wiki.archlinux.org/index.php/Talk:ASUS_Zenbook_Prime_UX31A))
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS Zenbook UX31A and UX21A Ultrabooks. Most of it should also hold for UX32VD.
 
 See previous generation [ASUS Zenbook UX31E](/index.php/ASUS_Zenbook_UX31E "ASUS Zenbook UX31E") page that has mostly orthogonal information to those here (may be only partially applicable to UX31A)

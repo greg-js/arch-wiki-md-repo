@@ -37,14 +37,6 @@ OpenRC and accompanying packages are available in the [AUR](/index.php/AUR "AUR"
 
 Install either the [openrc](https://aur.archlinux.org/packages/openrc/)<sup><small>AUR</small></sup> or [openrc-git](https://aur.archlinux.org/packages/openrc-git/)<sup><small>AUR</small></sup> package. [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/)<sup><small>AUR</small></sup> or [busybox](https://www.archlinux.org/packages/?name=busybox) are used as the init process. Service files are available from the [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/)<sup><small>AUR</small></sup> package.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/)<sup><small>AUR</small></sup> removes [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (Discuss in [Talk:OpenRC#](https://wiki.archlinux.org/index.php/Talk:OpenRC))
-
 To maintain compability with [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)<sup><small>AUR</small></sup>, configuration files are installed to `**/etc/openrc/**`. The sysvinit init binary is installed to `/usr/bin/init-openrc` for compability with [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) or similar packages.
 
 ### Booting

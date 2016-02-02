@@ -52,23 +52,7 @@ Next, create the RAID array in a degraded state, using only the new disk. Note h
 
 ```
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Why would mdadm not see /dev/sdbX? And is rebooting the only way to fix it? (Discuss in [Talk:Convert a single drive system to RAID#](https://wiki.archlinux.org/index.php/Talk:Convert_a_single_drive_system_to_RAID))
-
 Note: If the above command causes mdadm to say "no such device /dev/sdb2", then reboot, and run the command again.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Check if Syslinux doesn't support version 1.2 yet. (Discuss in [Talk:Convert a single drive system to RAID#](https://wiki.archlinux.org/index.php/Talk:Convert_a_single_drive_system_to_RAID))
 
 If you want to use Syslinux, you need to specify --metadata=1.0 (for the boot partition) [as of Sept. 2011](http://www.zytor.com/pipermail/syslinux/2011-September/016911.html)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-09-27]</sup>
 
@@ -109,14 +93,6 @@ Now copy the data from `/dev/sda1` to `/mnt/new-raid`, for example using [rsync]
 Create a new entry in the boot loader to load the system from the RAID array in the new disk.
 
 #### GRUB legacy
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The following configuration has not been verified after the article has been reorganized on September 2015\. (Discuss in [Talk:Convert a single drive system to RAID#](https://wiki.archlinux.org/index.php/Talk:Convert_a_single_drive_system_to_RAID))
 
 Use your preferred text editor to open `/mnt/new-raid/boot/grub/menu.lst`.
 
@@ -205,14 +181,6 @@ Follow [RAID#Add mdadm hook to mkinitcpio.conf](/index.php/RAID#Add_mdadm_hook_t
 
 ### Install the boot loader on the RAID array
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Support more boot loaders, simplify. (Discuss in [Talk:Convert a single drive system to RAID#](https://wiki.archlinux.org/index.php/Talk:Convert_a_single_drive_system_to_RAID))
-
 #### GRUB Legacy
 
 Start GRUB:
@@ -268,14 +236,6 @@ Verify you have booted from the RAID array by looking at the output of mount. Al
  /dev/md0 on / type ext4 (rw)
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The output of the following command has not been verified after the article has been reorganized on September 2015\. (Discuss in [Talk:Convert a single drive system to RAID#](https://wiki.archlinux.org/index.php/Talk:Convert_a_single_drive_system_to_RAID))
 
  `# cat /proc/mdstat` 
 

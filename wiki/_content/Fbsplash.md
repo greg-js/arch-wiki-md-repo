@@ -1,13 +1,5 @@
 # Fbsplash
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** using initscripts (Discuss in [Talk:Fbsplash#](https://wiki.archlinux.org/index.php/Talk:Fbsplash))
-
 [Fbsplash](http://sourceforge.net/projects/fbsplash.berlios/) (formerly gensplash) is a userspace implementation of a splash screen for Linux systems. It provides a graphical environment during system boot using the Linux framebuffer layer. Fbsplash has not been actively updated in the recent years and may not be working correctly on a recent Arch setup using [systemd](/index.php/Systemd "Systemd"). If you want a fancy splash screen during boot, you might want to try [Plymouth](/index.php/Plymouth "Plymouth") instead.
 
 ## Contents

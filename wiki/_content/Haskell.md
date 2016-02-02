@@ -45,7 +45,7 @@ Hello, World
 
 To start developing in Haskell easily, one option is the [haskell-platform](http://www.haskell.org/platform/) bundle which is described as:
 
-NaN
+	_The easiest way to get started with programming Haskell. It comes with all you need to get up and running. Think of it as "Haskell: batteries included"._
 
 Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https://aur.archlinux.org/packages/haskell-platform/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-platform)]</sup>), the Haskell Platform can be advantageously replaced by [installing](/index.php/Installing "Installing") the [following packages](https://bbs.archlinux.org/viewtopic.php?pid=1151382#p1151382) from the [official repositories](/index.php/Official_repositories "Official repositories"):
 
@@ -56,14 +56,6 @@ Although an [AUR](/index.php/AUR "AUR") package exists ([haskell-platform](https
 *   alex ([alex](https://www.archlinux.org/packages/?name=alex)) — Lexical analyzer generator
 
 ## Managing Haskell packages
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** There's also [stackage](https://www.stackage.org/) (Discuss in [Talk:Haskell#](https://wiki.archlinux.org/index.php/Talk:Haskell))
 
 Many Haskell libraries and executables are grouped in packages. They are all available on [Hackage](http://hackage.haskell.org). To install and manage these packages, several methods are available and unusual ones are explained in the rest of this section.
 

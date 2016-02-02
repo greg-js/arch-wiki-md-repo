@@ -1,13 +1,5 @@
 # Envy24control
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Some sections are blank and need to be filled in with relevant content. (Discuss in [Talk:Envy24control#](https://wiki.archlinux.org/index.php/Talk:Envy24control))
-
 envy24control is an application included in the alsa-tools package. It enables controlling the digital mixer, channel gains, and other hardware settings for sound cards based on the VIA Ice1712 chipset (A.K.A. Envy24).
 
 envy24control's user interface is loosely based on the Delta Control Panel software included with the purchase of M-Audio Delta series audio cards -- most of the tabs, controls, and capabilities are similar in the two applications. However, because they are two separate applications, the user manual for Delta Control Panel software is only marginally useful for envy24control users. This article aims to provide usage guidance for those using ice1712-based cards and envy24control with Arch Linux.

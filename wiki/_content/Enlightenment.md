@@ -175,7 +175,13 @@ To alter the GTK+ theme, go to _Settings > All > Look > Application Theme_.
 
 ### Modules and Gadgets
 
-NaN
+	Module
+
+	Name used in enlightenment to refer to the "backing" code for a gadget.
+
+	Gadget
+
+	Front-end or user interface that should help the end users of Enlightenment do something.
 
 Many Modules provide Gadgets that can be added to your desktop or on a shelf. Some Modules (such as CPUFreq) only provide a single Gadget while others (such as Composite) provide additional features without any gadgets. Note that certain gadgets such as Systray can only be added to a shelf while others such as Moon can only be loaded on the desktop.
 

@@ -191,11 +191,15 @@ Just like other network interfaces, the wireless ones are controlled with _ip_ f
 
 You will need to install a basic set of tools for managing the wireless connection. Either:
 
-NaN
+*   [iw](https://www.archlinux.org/packages/?name=iw) - only supports the nl80211 (netlink) standard. It does not support the older WEXT (Wireless EXTentions) standard. If _iw_ does not see your card, this may be the reason.
+
+	or
+
+*   [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) - currently deprecated, but still widely supported. Use this for modules using the WEXT standard.
 
 For WPA/WPA2 encryption, you will also need:
 
-NaN
+*   [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant) - works with both WEXT and nl80211.
 
 The table below gives an overview of comparable commands for _iw_ and _wireless_tools_ (see [iw replaces iwconfig](http://wireless.kernel.org/en/users/Documentation/iw/replace-iwconfig) for more examples). These user-space tools work extremely well and allow complete manual control of wireless connection.
 
@@ -652,14 +656,6 @@ Valid settings are from `0` to `20`, `auto` and `off`.
 
 Default iwconfig options have rts and fragmentation thresholds off. These options are particularly useful when there are many adjacent APs or in a noisy environment.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The maximum values effectively mean the same as setting both options to "off".[[1]](http://serverfault.com/questions/369850/rts-threshold-fragmentation-and-other-advanced-wifi-settings) (Discuss in [Talk:Wireless network configuration#Setting rts and fragmentation thresholds](https://wiki.archlinux.org/index.php/Talk:Wireless_network_configuration#Setting_rts_and_fragmentation_thresholds))
-
 The minimum value for fragmentation value is 256 and maximum is 2346\. In many windows drivers the maximum is the default value:
 
 ```
@@ -722,7 +718,7 @@ Unified driver for Ralink chipsets (it replaces `rt2500`, `rt61`, `rt73`, etc). 
 
 A list of devices supported by the modules is available at the project's [homepage](http://rt2x00.serialmonkey.com/wiki/index.php/Hardware).
 
-NaN
+	Additional notes
 
 *   Since kernel 3.0, rt2x00 includes also these drivers: `rt2800pci`, `rt2800usb`.
 *   Since kernel 3.0, the staging drivers `rt2860sta` and `rt2870sta` are replaced by the mainline drivers `rt2800pci` and `rt2800usb`<sup>[[3]](https://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=fefecc6989b4b24276797270c0e229c07be02ad3)</sup>.
@@ -863,14 +859,6 @@ The solution is to set the `ps_enable=1` option for the `ath9k` module:
  `/etc/modprobe.d/ath9k.conf`  `options ath9k ps_enable=1` 
 
 ##### ASUS
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [[]].**
-
-**Notes:** How is this related to `ath9k` driver? There must be some better place for this stuff. (Discuss in [Talk:Wireless network configuration#](https://wiki.archlinux.org/index.php/Talk:Wireless_network_configuration))
 
 With some ASUS laptops (tested with ASUS U32U series), it could help to add `options asus_nb_wmi wapf=1` to `/etc/modprobe.d/asus_nb_wmi.conf` to fix rfkill-related issues.
 
@@ -1040,14 +1028,6 @@ The important part is making sure that ndiswrapper exists on this line, so just 
 and _wlan0_ should now exist. If you have problems, some help is available at: [ndiswrapper howto](http://sourceforge.net/p/ndiswrapper/ndiswrapper/HowTos/) and [ndiswrapper FAQ](http://sourceforge.net/p/ndiswrapper/ndiswrapper/FAQ/).
 
 ### compat-drivers-patched
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/compat-drivers-patched)]</sup> has reached end-of-life, [backports-patched](https://aur.archlinux.org/packages/backports-patched/)<sup><small>AUR</small></sup> should be used instead (Discuss in [Talk:Wireless network configuration#](https://wiki.archlinux.org/index.php/Talk:Wireless_network_configuration))
 
 Patched compat wireless drivers correct the "fixed-channel -1" issue, whilst providing better injection. Install the [compat-drivers-patched](https://aur.archlinux.org/packages/compat-drivers-patched/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/compat-drivers-patched)]</sup> package.
 

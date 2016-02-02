@@ -2,7 +2,7 @@
 
 From the project [home page](http://aria2.sourceforge.net/):
 
-NaN
+	_aria2 is a lightweight multi-protocol & multi-source command-line download utility. It supports [HTTP](https://en.wikipedia.org/wiki/HTTP "wikipedia:HTTP")/[HTTPS](https://en.wikipedia.org/wiki/HTTPS "wikipedia:HTTPS"), [FTP](https://en.wikipedia.org/wiki/FTP "wikipedia:FTP"), [BitTorrent](https://en.wikipedia.org/wiki/BitTorrent_(protocol) "wikipedia:BitTorrent (protocol)") and [Metalink](https://en.wikipedia.org/wiki/Metalink "wikipedia:Metalink"). aria2 can be manipulated via built-in [JSON-RPC](https://en.wikipedia.org/wiki/JSON-RPC "wikipedia:JSON-RPC") and [XML-RPC](https://en.wikipedia.org/wiki/XML-RPC "wikipedia:XML-RPC") interfaces._
 
 ## Contents
 
@@ -106,7 +106,37 @@ $ aria2c dir=${HOME}/Desktop file-allocation=none input-file=${HOME}/.aria2/inpu
 
 #### Option details
 
-NaN
+	`continue`
+
+	Continue downloading a partially downloaded file if a corresponding control file exists.
+
+	`dir=${HOME}/Desktop`
+
+	Store the downloaded file(s) in `~/Desktop`.
+
+	`file-allocation=none`
+
+	Do not pre-allocate disk space before downloading begins. (Default: prealloc) **<sup>1</sup>**
+
+	`input-file=${HOME}/.aria2/input.conf`
+
+	Download a list of line, or TAB separated URIs found in `~/.aria2/input.conf`
+
+	`log-level=warn`
+
+	Set log level to output warnings and errors only. (Default: debug)
+
+	`max-connection-per-server=4`
+
+	Set a maximum of four (4) connections to each server per file. (Default: 1)
+
+	`min-split-size=5M`
+
+	Only split the file if the size is larger than 2*5MB = 10MB. (Default: 20M)
+
+	`on-download-complete=exit`
+
+	Run the `exit` command and exit the shell once the download session is complete.
 
 ##### Example input file #1
 
@@ -133,7 +163,9 @@ http://aria2.net/files/stable/aria2-1.10.0/aria2-1.10.0.tar.bz2
 
 #### Additional notes
 
-NaN
+	<sup>1</sup> `--file-allocation=falloc`
+
+	Recommended for newer file systems such as ext4 (with extents support), btrfs or xfs as it allocates large files (GB) almost instantly. Do not use falloc with legacy file systems such as ext3 as prealloc consumes approximately the same amount of time as standard allocation would while locking the aria2 process from proceeding to download.
 
 **Tip:** See `aria2c --help=#all` and the aria2 man page for a complete list of configuration options.
 
@@ -155,7 +187,45 @@ summary-interval=120
 
 #### Option details
 
-NaN
+	`http-user=USER_NAME`
+
+	Set HTTP [username](https://en.wikipedia.org/wiki/User_(computing) "wikipedia:User (computing)") as USER_NAME for password-protected logins. This affects all [URIs](https://en.wikipedia.org/wiki/Uniform_Resource_Identifier "wikipedia:Uniform Resource Identifier").
+
+	`http-passwd=PASSWORD`
+
+	Set HTTP [password](https://en.wikipedia.org/wiki/Password "wikipedia:Password") as PASSWORD for password-protected logins. This affects all URIs.
+
+	`allow-overwrite=true`
+
+	Restart download if a corresponding control file does not exist. (Default: false)
+
+	`dir=/file/Downloads`
+
+	Store the downloaded file(s) in `/file/Downloads`.
+
+	`file-allocation=falloc`
+
+	Call [posix_fallocate()](http://www.kernel.org/doc/man-pages/online/pages/man2/fallocate.2.html) to allocate disk space before downloading begins. (Default: prealloc)
+
+	`enable-http-pipelining=true`
+
+	Enable [HTTP/1.1 pipelining](https://en.wikipedia.org/wiki/HTTP_Pipelining "wikipedia:HTTP Pipelining") to overcome network latency and to reduce network load. (Default: false)
+
+	`input-file=/file/input.rapidshare`
+
+	Download a list of single line of TAB separated URIs found in `/file/input.rapidshare`
+
+	`log-level=error`
+
+	Set log level to output errors only. (Default: debug)
+
+	`max-connection-per-server=2`
+
+	Set a maximum of two (2) connections to each server per file. (Default: 1)
+
+	`summary-interval=120`
+
+	Output download progress summary every 120 seconds. (Default: 60) **<sup>3</sup>**
 
 #### Additional notes
 
@@ -170,7 +240,9 @@ total 128M
 
 ```
 
-NaN
+	**<sup>3</sup>** `summary-interval=0`
+
+	Supresses download progress summary output and may improve overall performance. Logs will continue to be output according to the value specified in the `log-level` option.
 
 **Tip:** The example configuration file can also be applied to [Hotfile](http://www.hotfile.com/), [DepositFiles](http://depositfiles.com/), et.al.
 
@@ -189,7 +261,25 @@ seed-time=240
 
 #### Option details
 
-NaN
+	`bt-seed-unverified=false`
+
+	Do not check the hash of the file(s) before seeding. (Default: true)
+
+	`max-overall-upload-limit=1M`
+
+	Set maximum overall upload speed to 1MB/sec. (Default: 0)
+
+	`max-upload-limit=128K`
+
+	Set maximum upload speed per torrent to 128K/sec. (Default: 0)
+
+	`seed-ratio=5.0`
+
+	Seed completed torrents until share ratio reaches 5.0\. (Default: 1.0)
+
+	`seed-time=240`
+
+	Seed completed torrents for 240 minutes.
 
 **Note:** If both `seed-ratio` and `seed-time` are specified, seeding ends when at least one of the conditions is satisfied.
 
@@ -226,15 +316,15 @@ rpc-passwd=rpcpass
 
 *   **YaaW** — Yet Another Aria2 Web Frontend in pure HTML/CSS/Javascirpt.
 
-NaN
+	[https://github.com/binux/yaaw](https://github.com/binux/yaaw) || [yaaw-git](https://aur.archlinux.org/packages/yaaw-git/)<sup><small>AUR</small></sup>
 
 *   **Webui** — Html frontend for aria2.
 
-NaN
+	[https://github.com/ziahamza/webui-aria2](https://github.com/ziahamza/webui-aria2) || [webui-aria2](https://aur.archlinux.org/packages/webui-aria2/)<sup><small>AUR</small></sup>
 
 *   **aria2rpc** — Command line tool for connecting to a remote instance of `aria2c`. If `aria2c` is installed it can be found under `/usr/share/doc/aria2/xmlrpc/aria2rpc`.
 
-NaN
+	[https://github.com/tatsuhiro-t/aria2/blob/master/doc/xmlrpc/aria2rpc](https://github.com/tatsuhiro-t/aria2/blob/master/doc/xmlrpc/aria2rpc) || [aria2](https://www.archlinux.org/packages/?name=aria2)
 
 ### Other UIs
 
@@ -242,31 +332,31 @@ NaN
 
 *   **aria2fe** — A GUI for the CLI-based aria2 download utility.
 
-NaN
+	[http://sourceforge.net/projects/aria2fe/](http://sourceforge.net/projects/aria2fe/) || [aria2fe](https://aur.archlinux.org/packages/aria2fe/)<sup><small>AUR</small></sup>
 
 *   **Diana** — Command line tool for aria2
 
-NaN
+	[https://github.com/baskerville/diana](https://github.com/baskerville/diana) || [diana-git](https://aur.archlinux.org/packages/diana-git/)<sup><small>AUR</small></sup>
 
 *   **downloadm** — A download accelerator/manager which uses aria2c as a backend.
 
-NaN
+	[http://sourceforge.net/projects/downloadm/](http://sourceforge.net/projects/downloadm/) || [downloadm](https://aur.archlinux.org/packages/downloadm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/downloadm)]</sup>
 
 *   **eatmonkey** — Download manager for Xfce that works with aria2.
 
-NaN
+	[http://goodies.xfce.org/projects/applications/eatmonkey](http://goodies.xfce.org/projects/applications/eatmonkey) || [eatmonkey](https://aur.archlinux.org/packages/eatmonkey/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eatmonkey)]</sup>
 
 *   **karia2** — QT4 interface for aria2 download mananger.
 
-NaN
+	[http://sourceforge.net/projects/karia2/](http://sourceforge.net/projects/karia2/) || [karia2-svn](https://aur.archlinux.org/packages/karia2-svn/)<sup><small>AUR</small></sup>
 
 *   **uGet** — Feature-rich GTK+/CLI download manager which can use aria2 as a back-end by enabling a built-in plugin.
 
-NaN
+	[http://ugetdm.com](http://ugetdm.com) || [uget](https://www.archlinux.org/packages/?name=uget)
 
 *   **yaner** — GTK+ interface for aria2 download mananger.
 
-NaN
+	[http://iven.github.com/Yaner](http://iven.github.com/Yaner) || [yaner-git](https://aur.archlinux.org/packages/yaner-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/yaner-git)]</sup>
 
 It is convenient to append a monitor function based on diana in your shell configuration file:
 
@@ -300,14 +390,6 @@ aria2 can be used as the default download manager for the [pacman](/index.php/Pa
 Gains in application response can be gleaned by removing unused features and protocols. Further gains can be accomplished by removing support for external libraries with a custom build. Available options are visible through `./configure --help`. See the [Arch Build System](/index.php/Arch_Build_System "Arch Build System") page for further details.
 
 ### Start aria2c on system boot
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Possible "failed to bind errors" indicate towards a race condition, requires/after and similar should be updated accordingly (Discuss in [Talk:Aria2#](https://wiki.archlinux.org/index.php/Talk:Aria2))
 
 Save the following [systemd](/index.php/Systemd "Systemd") service file, adjust username and config path according to your setup. Ensure your config is set to deamonize (use `daemon=true`).
 

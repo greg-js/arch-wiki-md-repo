@@ -1,21 +1,5 @@
 # Fujitsu Siemens Lifebook P7010
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Fujitsu Siemens Lifebook P7010#](https://wiki.archlinux.org/index.php/Talk:Fujitsu_Siemens_Lifebook_P7010))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Fujitsu Siemens Lifebook P7010#](https://wiki.archlinux.org/index.php/Talk:Fujitsu_Siemens_Lifebook_P7010))
-
 ## Contents
 
 *   [1 Overview](#Overview)

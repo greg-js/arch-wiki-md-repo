@@ -1,13 +1,5 @@
 # League of Legends
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Style problems, little overview - see [Help:Style](/index.php/Help:Style "Help:Style") (Discuss in [Talk:League of Legends#](https://wiki.archlinux.org/index.php/Talk:League_of_Legends))
-
 There is currently only a Mac OS and a Windows version of LoL. This page outlines working methods to get the Windows League of Legends version working on your arch system through Wine.
 
 **This guide was last tested with:**

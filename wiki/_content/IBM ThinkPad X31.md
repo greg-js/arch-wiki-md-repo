@@ -34,14 +34,6 @@ The following useful packages are in the [AUR](/index.php/AUR "AUR").
 
 ## Hibernation
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** tested with very old kernel (Discuss in [Talk:IBM ThinkPad X31#](https://wiki.archlinux.org/index.php/Talk:IBM_ThinkPad_X31))
-
 To hibernate using [pm-utils](/index.php/Pm-utils "Pm-utils") (tested with kernel 2.6.37), you have to adjust some screws of the default setup. Doing this, hibernation works flawlessly. You have to setup [pm-utils](/index.php/Pm-utils "Pm-utils") first. If it's working out of the box, do not read further.
 
 Don't forget to install _radeontool_ from the AUR, as it's needed to turn off the lcd backlight.

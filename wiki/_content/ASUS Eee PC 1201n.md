@@ -1,13 +1,5 @@
 # ASUS Eee PC 1201n
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Asus Eee PC 1201NL](/index.php/Asus_Eee_PC_1201NL "Asus Eee PC 1201NL").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:ASUS Eee PC 1201n#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_1201n))
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS EEE 1201n PC.
 
 Aside from incompatability with cpufrequtils, the [eeepc 1201NL](/index.php/ASUS_Eee_PC_1201NL "ASUS Eee PC 1201NL") is very similar to this model, and most of the tips on that page apply to this model as well.

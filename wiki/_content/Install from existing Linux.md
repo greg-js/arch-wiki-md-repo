@@ -69,14 +69,6 @@ Then follow [Installation guide#Installation](/index.php/Installation_guide#Inst
 
 **Tip:** In order to avoid redownloading all the packages, consider following [Pacman/Tips and tricks#Network shared pacman cache](/index.php/Pacman/Tips_and_tricks#Network_shared_pacman_cache "Pacman/Tips and tricks") or using _pacstrap'_s `-c` option.
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Moving_an_existing_install_into_(or_out_of)_a_virtual_machine#Moving_into_a_VM](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine#Moving_into_a_VM "Moving an existing install into (or out of) a virtual machine").**
-
-**Notes:** Same approach. (Discuss in [Talk:Install from existing Linux#](https://wiki.archlinux.org/index.php/Talk:Install_from_existing_Linux))
-
 **Note:** If you only want to create an exact copy of an existing Arch installation, it is also possible to just copy the filesystem to the new partition. With this method, you will still need to
 
 *   Create [`/etc/fstab`](/index.php/Beginners%27_guide#Generate_an_fstab "Beginners' guide") and edit `/etc/hostname`
@@ -270,22 +262,6 @@ Trying to create [LVM](/index.php/LVM "LVM") [logical volumes](/index.php/LVM#Lo
 (Physical volume and volume group creation worked despite `/run/lvm/lvmetad.socket: connect failed: No such file or directory` being displayed.)
 
 This could be easily worked around by creating the logical volumes outside the chroot (from the Debian host). They are then available once chrooted again.
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This problem did not arise when installing from a Debian 7 host without lvmetad enabled. The recommended messaround with `/etc/lvm/lvm.conf` looks rather error prone (2015-07-26). (Discuss in [Talk:Install from existing Linux#](https://wiki.archlinux.org/index.php/Talk:Install_from_existing_Linux))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Language and formatting are lacking, links to relevant articles in the wiki as well. (Discuss in [Talk:Install from existing Linux#](https://wiki.archlinux.org/index.php/Talk:Install_from_existing_Linux))
 
 Also, if the system you are using has lvm, you might have the following output:
 

@@ -1,18 +1,10 @@
 # ASP.NET with Apache
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Apache](/index.php/Apache "Apache").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:ASP.NET with Apache#](https://wiki.archlinux.org/index.php/Talk:ASP.NET_with_Apache))
-
 Describes how to show ASP.NET-sites under [Apache](/index.php/Apache "Apache") by using Mod_Mono.
 
 From [Mod_Mono's site](http://www.mono-project.com/Mod_mono):
 
-NaN
+	"_Mod_Mono is an Apache 2.0/2.2 module that provides ASP.NET support for the web's favorite server, Apache ([http://httpd.apache.org/](http://httpd.apache.org/))._"
 
 ## Contents
 
@@ -45,7 +37,7 @@ Now, Apache should be able to show ASP.NET-pages.
 
 ### AutoHosting
 
-NaN
+	_Further details: [http://www.mono-project.com/AutoHosting](http://www.mono-project.com/AutoHosting)_
 
 With this setting, configuring apache for each deployment is no longer needed; just place the application in any directory within html-root and it will be promptly auto-configured. Add the following lines to `/etc/httpd/conf/httpd.conf` to enable the option:
 

@@ -242,14 +242,6 @@ ac_adapter)
 
 ## Privilege granting under GNOME
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** See the note below. (Discuss in [Talk:CPU frequency scaling#](https://wiki.archlinux.org/index.php/Talk:CPU_frequency_scaling))
-
 **Note:** systemd introduced logind which handles consolekit and policykit actions. The following code below does not work. With logind, simply edit in the file `/usr/share/polkit-1/actions/org.gnome.cpufreqselector.policy` the <defaults> elements according to your needs and the polkit manual [[1]](http://www.freedesktop.org/software/polkit/docs/latest/polkit.8.html).
 
 [GNOME](/index.php/GNOME "GNOME") has a nice applet to change the governor on the fly. To use it without the need to enter the root password, simply create following file:
@@ -270,14 +262,6 @@ Where the word _user_ is replaced with the username of interest.
 The [desktop-privileges](https://aur.archlinux.org/packages/desktop-privileges/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR") contains a similar `.pkla` file for authorizing all users of the `power` [group](/index.php/Group "Group") to change the governor.
 
 ## Troubleshooting
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:CPU frequency scaling#](https://wiki.archlinux.org/index.php/Talk:CPU_frequency_scaling))
 
 *   Some applications, like [ntop](/index.php/Ntop "Ntop"), do not respond well to automatic frequency scaling. In the case of ntop it can result in segmentation faults and lots of lost information as even the `on-demand` governor cannot change the frequency quickly enough when a lot of packets suddenly arrive at the monitored network interface that cannot be handled by the current processor speed.
 

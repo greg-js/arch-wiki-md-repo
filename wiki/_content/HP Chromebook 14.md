@@ -86,14 +86,6 @@ See [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes#Using_udev 
 
 ### Adding hotkeys back
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Duplicated content, should move to [Chromebook](/index.php/Chromebook "Chromebook") (Discuss in [Talk:HP Chromebook 14#](https://wiki.archlinux.org/index.php/Talk:HP_Chromebook_14))
-
 Once you've applied the above fix you can set the function and arrow keys to act similar to how they are in ChromeOS using a modifer key. The example below uses Mod4 (Search on the chromebook's keyboard). This can be changed to Control or Alt if you prefer.
 
 First make sure you have all the needed packages: [xbindkeys](https://www.archlinux.org/packages/?name=xbindkeys), [xorg-xbacklight](https://www.archlinux.org/packages/?name=xorg-xbacklight), [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [xvkbd](https://www.archlinux.org/packages/?name=xvkbd), [xdotool](https://www.archlinux.org/packages/?name=xdotool).

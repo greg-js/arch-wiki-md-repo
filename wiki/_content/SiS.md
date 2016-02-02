@@ -27,14 +27,6 @@ Output of lspci should look like this (depends on present model):
 
 ## Modules & rc.conf
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Arch Linux is not using initscripts (rc.conf) anymore. (Discuss in [Talk:SiS#](https://wiki.archlinux.org/index.php/Talk:SiS))
-
 There are couple of modules related to SiS video cards:
 
 ```

@@ -4,7 +4,17 @@ Desktop entries is a [freedesktop.org](http://www.freedesktop.org/wiki/) standar
 
 There are roughly three types of desktop entries:
 
-NaN
+	Application 
+
+	a shortcut to an application
+
+	Link 
+
+	a shortcut to a web link.
+
+	Directory 
+
+	a container of meta data of a menu entry
 
 The following sections will roughly explain how these are created and validated.
 
@@ -223,7 +233,7 @@ If you use an XDG-compliant desktop environment, such as GNOME or KDE, the deskt
 
 *   System-wide: `$XDG_CONFIG_DIRS/autostart/` (`/etc/xdg/autostart/` by default)
 
-NaN
+*   GNOME also starts files found in `/usr/share/gnome/autostart/`
 
 *   User-specific: `$XDG_CONFIG_HOME/autostart/` (`~/.config/autostart/` by default)
 

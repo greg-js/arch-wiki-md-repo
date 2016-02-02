@@ -1,13 +1,5 @@
 # BIND
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Numerous style and content issues. (Discuss in [Talk:BIND#](https://wiki.archlinux.org/index.php/Talk:BIND))
-
 Berkeley Internet Name Daemon (BIND) is the reference implementation of the Domain Name System (DNS) protocols.
 
 ## Contents

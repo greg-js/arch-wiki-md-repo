@@ -57,14 +57,6 @@ In the example above, this limits the file system to read-only, except for `/var
 
 ## SSH jail
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** /var/log/auth.log does not exist on Arch (Discuss in [Talk:Fail2ban#](https://wiki.archlinux.org/index.php/Talk:Fail2ban))
-
 Edit `/etc/fail2ban/jail.conf` and modify the ssh-iptables section to enable it and configure the action.
 
 **Note:** Due to the possibility of the `jail.conf` file being overwritten or improved during a distribution update, it is recommended to provide customizations in a `jail.local` file, or separate _.conf_ files under the `jail.d/` directory, e.g. `jail.d/ssh-iptables.conf`.

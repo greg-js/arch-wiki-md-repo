@@ -274,7 +274,7 @@ See [WPA2 Enterprise#netctl](/index.php/WPA2_Enterprise#netctl "WPA2 Enterprise"
 
 From [kernel documentation](https://www.kernel.org/doc/Documentation/networking/bonding.txt):
 
-NaN
+	_The Linux bonding driver provides a method for aggregating multiple network interfaces into a single logical "bonded" interface. The behavior of the bonded interfaces depends on the mode. Generally speaking, modes provide either hot standby or load balancing services. Additionally, link integrity monitoring may be performed._
 
 #### Load balancing
 
@@ -493,14 +493,6 @@ DHCPClient='dhclient'
 
 ```
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** It would be useful to replace the example with a general hook that executes different actions depending on `$ACTION` being CONNECT and DISCONNECT. (Discuss in [Talk:Netctl#](https://wiki.archlinux.org/index.php/Talk:Netctl))
-
 ## Troubleshooting
 
 ### Job for netctl@wlan(...).service failed
@@ -536,14 +528,6 @@ Then retry:
 # netctl start wlan0-ssid
 
 ```
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** The following is an unsolved issue, using different DHCP client is just a poor/unexplained workaround. (Discuss in [Talk:Netctl#](https://wiki.archlinux.org/index.php/Talk:Netctl))
 
 2\. If it is down:
 

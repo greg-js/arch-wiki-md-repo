@@ -1,13 +1,5 @@
 # TunnelBear
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Instructions to copy 3rd party configs into `/etc/openvpn/` is not the ArchWiki way. (Discuss in [Talk:TunnelBear#](https://wiki.archlinux.org/index.php/Talk:TunnelBear))
-
 [TunnelBear](https://www.tunnelbear.com) is a VPN provider that utilizes OpenVPN protocol.
 
 In order to use this tutorial, one must have Giant or Grizzly subscription.

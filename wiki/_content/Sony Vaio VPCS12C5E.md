@@ -1,21 +1,5 @@
 # Sony Vaio VPCS12C5E
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:Sony Vaio VPCS12C5E#](https://wiki.archlinux.org/index.php/Talk:Sony_Vaio_VPCS12C5E))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Sony Vaio VPCS12C5E#](https://wiki.archlinux.org/index.php/Talk:Sony_Vaio_VPCS12C5E))
-
 This page is about setting up Arch Linux on the Sony Vaio VPCS12C5E laptop. It is advisable to read [Laptop](/index.php/Laptop "Laptop") beforehand to get an idea about the topic in general.
 
 ## Contents

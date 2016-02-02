@@ -1,13 +1,5 @@
 # Gapless Audio CD Creation from MP3s
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Optical_disc_drive#Burning_an_audio_CD](/index.php/Optical_disc_drive#Burning_an_audio_CD "Optical disc drive").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Gapless Audio CD Creation from MP3s#](https://wiki.archlinux.org/index.php/Talk:Gapless_Audio_CD_Creation_from_MP3s))
-
 ## Contents
 
 *   [1 Introduction](#Introduction)

@@ -1,21 +1,5 @@
 # Play framework
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** References to rc.d. (Discuss in [Talk:Play framework#](https://wiki.archlinux.org/index.php/Talk:Play_framework))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Installation details out dated. (Discuss in [Talk:Play framework#](https://wiki.archlinux.org/index.php/Talk:Play_framework))
-
 [Play framework](http://playframework.org/) is an open source web application framework, written in Java, which follows the model-view-controller architectural pattern. Build and deployment is all handled by Python scripts. It aims to optimize developer productivity by using convention over configuration, hot code reloading and display of errors in the browser.
 
 This document describes how to configure and run your play applications on Arch Linux system.

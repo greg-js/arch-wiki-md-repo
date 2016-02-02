@@ -377,14 +377,6 @@ To use encryption on top of [LVM](/index.php/LVM "LVM"), the LVM volumes are set
 
 The following short example creates a LUKS on LVM setup and mixes in the use of a key-file for the /home partition and temporary crypt volumes for `/tmp` and `/swap`. The latter is considered desirable from a security perspective, because no potentially sensitive temporary data survives the reboot, when the encryption is re-initialised. If you are experienced with LVM, you will be able to ignore/replace LVM and other specifics according to your plan. If you want to span a logical volume over multiple disks during setup already, a procedure to do so is described in [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** The intro of this scenario needs some adjustment now that a comparison has been added to [#Overview](#Overview). A suggested structure is to make it similar to the [#Simple partition layout with LUKS](#Simple_partition_layout_with_LUKS) intro. (Discuss in [Talk:Dm-crypt/Encrypting an entire system#](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Encrypting_an_entire_system))
-
 ### Preparing the disk
 
 Partitioning scheme:
@@ -496,14 +488,6 @@ and setup is done.
 If you want to expand the logical volume for `/home` (or any other volume) at a later point, it is important to note that the LUKS encrypted part has to be resized as well. For a procedure see [Dm-crypt/Specialties#Expanding LVM on multiple disks](/index.php/Dm-crypt/Specialties#Expanding_LVM_on_multiple_disks "Dm-crypt/Specialties").
 
 ## LUKS on software RAID
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Some references: [RAID](/index.php/RAID "RAID"), [Software RAID and LVM](/index.php/Software_RAID_and_LVM "Software RAID and LVM"), [http://wiki.drewhess.com/wiki/Creating_an_encrypted_filesystem_on_a_partition](http://wiki.drewhess.com/wiki/Creating_an_encrypted_filesystem_on_a_partition) , [http://jasonwryan.com/blog/2012/02/11/lvm/](http://jasonwryan.com/blog/2012/02/11/lvm/) . Note that full-disk encryption is [not deniable](https://forums.gentoo.org/viewtopic-p-7029704.html) with this configuration (consider RAID on LUKS instead?). (Discuss in [Talk:Dm-crypt/Encrypting an entire system#](https://wiki.archlinux.org/index.php/Talk:Dm-crypt/Encrypting_an_entire_system))
 
 ## Plain dm-crypt
 

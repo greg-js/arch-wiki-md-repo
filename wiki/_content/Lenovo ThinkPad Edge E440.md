@@ -1,13 +1,5 @@
 # Lenovo ThinkPad Edge E440
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") (Discuss in [Talk:Lenovo ThinkPad Edge E440#](https://wiki.archlinux.org/index.php/Talk:Lenovo_ThinkPad_Edge_E440))
-
 | **Device** | **Status** | **Modules** |
 | Graphics | Working | xf86-video-intel |
 | Ethernet | Working | r8169 |

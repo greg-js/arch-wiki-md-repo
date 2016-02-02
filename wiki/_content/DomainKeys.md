@@ -1,13 +1,5 @@
 # DomainKeys
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Mentions rc.conf. (Discuss in [Talk:DomainKeys#](https://wiki.archlinux.org/index.php/Talk:DomainKeys))
-
 **Note:** This is obsoleted by [OpenDKIM](/index.php/OpenDKIM "OpenDKIM").
 
 ## Contents

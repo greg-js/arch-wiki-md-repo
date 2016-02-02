@@ -46,21 +46,21 @@ Various flavours of MPlayer can be [installed](/index.php/Pacman "Pacman") from 
 
 *   ****MPlayer**** — Official package
 
-NaN
+	[https://mplayerhq.hu/](https://mplayerhq.hu/) || [mplayer](https://www.archlinux.org/packages/?name=mplayer)
 
 Notable variants are:
 
 *   **MPlayer-VAAPI** — VAAPI-enabled version
 
-NaN
+	[http://gitorious.org/vaapi/mplayer](http://gitorious.org/vaapi/mplayer) || [mplayer-vaapi](https://aur.archlinux.org/packages/mplayer-vaapi/)<sup><small>AUR</small></sup>
 
 *   **MPlayer-svn** — Development version
 
-NaN
+	|| [mplayer-svn](https://aur.archlinux.org/packages/mplayer-svn/)<sup><small>AUR</small></sup>
 
 *   **MPlayer2** — Fork of MPlayer
 
-NaN
+	[http://www.mplayer2.org/](http://www.mplayer2.org/) || [mplayer2](https://aur.archlinux.org/packages/mplayer2/)<sup><small>AUR</small></sup> [mplayer2-git](https://aur.archlinux.org/packages/mplayer2-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mplayer2-git)]</sup>
 
 **Note:** _mplayer2_ development seems to be ceased in favour of [mpv](/index.php/Mpv "Mpv"), which is focused on speed and quality of development, though this breaks compatibility with old hardware and software. Be aware of its [differences](https://github.com/mpv-player/mpv/blob/master/DOCS/man/changes.rst) if you want to use it.
 
@@ -68,31 +68,31 @@ NaN
 
 *   **Deepin Media Player** — Rich GTK2/Python interface for the Deepin desktop.
 
-NaN
+	[http://www.linuxdeepin.com/](http://www.linuxdeepin.com/) || [deepin-media-player](https://aur.archlinux.org/packages/deepin-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/deepin-media-player)]</sup>
 
 *   **GNOME MPlayer** — Simple GTK+-based GUI for MPlayer.
 
-NaN
+	[http://kdekorte.googlepages.com/gnomemplayer](http://kdekorte.googlepages.com/gnomemplayer) || [gnome-mplayer](https://www.archlinux.org/packages/?name=gnome-mplayer)
 
 *   **KPlayer** — Multimedia player for KDE4 using mplayer as a backend.
 
-NaN
+	[http://kplayer.sourceforge.net/](http://kplayer.sourceforge.net/) || [kplayer](https://aur.archlinux.org/packages/kplayer/)<sup><small>AUR</small></sup>
 
 *   **KMPlayer** — Video player plugin for Konqueror and basic MPlayer/Xine/ffmpeg/ffserver/VDR frontend for KDE.
 
-NaN
+	[http://kmplayer.kde.org/](http://kmplayer.kde.org/) || [kmplayer](https://aur.archlinux.org/packages/kmplayer/)<sup><small>AUR</small></sup>
 
 *   **Rosa Media Player** — Multimedia player based on SMPlayer with clean and elegant UI.
 
-NaN
+	[http://www.rosalab.com/](http://www.rosalab.com/) || [rosa-media-player](https://aur.archlinux.org/packages/rosa-media-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rosa-media-player)]</sup>
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.).
 
-NaN
+	[http://smplayer.sourceforge.net/](http://smplayer.sourceforge.net/) || [smplayer](https://www.archlinux.org/packages/?name=smplayer)
 
 *   **Xt7-Player** — Graphical user interface for MPlayer written in Gambas, with a huge list of features.
 
-NaN
+	[http://xt7-player.sourceforge.net/xt7forum/](http://xt7-player.sourceforge.net/xt7forum/) || [xt7-player](https://aur.archlinux.org/packages/xt7-player/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xt7-player)]</sup>
 
 ## Browser integration
 

@@ -118,19 +118,19 @@ The following styles are included in Qt4: _CDE_, _Cleanlooks_, _GTK+_, _Motif_, 
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
-NaN
+	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze-kde4](https://www.archlinux.org/packages/?name=breeze-kde4)
 
 *   **[Oxygen](https://en.wikipedia.org/wiki/Oxygen_Project "wikipedia:Oxygen Project")** — KDE Oxygen style.
 
-NaN
+	[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen-kde4](https://www.archlinux.org/packages/?name=oxygen-kde4)
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
-NaN
+	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt4](https://www.archlinux.org/packages/?name=qtcurve-qt4)
 
 *   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
-NaN
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt4](https://aur.archlinux.org/packages/adwaita-qt4/)<sup><small>AUR</small></sup>
 
 ### Qt5
 
@@ -146,19 +146,19 @@ The following styles are included in Qt5: _GTK+_, _Fusion_, _Windows_. Others ca
 
 *   **Breeze** — Artwork, styles and assets for the Breeze visual style for the Plasma Desktop.
 
-NaN
+	[https://projects.kde.org/projects/kde/workspace/breeze](https://projects.kde.org/projects/kde/workspace/breeze) || [breeze](https://www.archlinux.org/packages/?name=breeze)
 
 *   **Oxygen** — KDE Oxygen style.
 
-NaN
+	[https://projects.kde.org/projects/kde/workspace/oxygen](https://projects.kde.org/projects/kde/workspace/oxygen) || [oxygen](https://www.archlinux.org/packages/?name=oxygen)
 
 *   **QtCurve** — A configurable set of widget styles for KDE and Gtk.
 
-NaN
+	[https://projects.kde.org/projects/playground/base/qtcurve](https://projects.kde.org/projects/playground/base/qtcurve) || [qtcurve-qt5](https://www.archlinux.org/packages/?name=qtcurve-qt5)
 
 *   **Adwatia-Qt** — A style to bend Qt applications to look like they belong into GNOME Shell.
 
-NaN
+	[https://github.com/MartinBriza/adwaita-qt](https://github.com/MartinBriza/adwaita-qt) || [adwaita-qt5](https://aur.archlinux.org/packages/adwaita-qt5/)<sup><small>AUR</small></sup>
 
 Like with `qtconfig-qt4` for Qt4 apps, [qt5ct](https://www.archlinux.org/packages/?name=qt5ct) can be used to customize the look and feel of Qt5 apps.
 
@@ -193,67 +193,51 @@ Qt supports most platforms that are available today, even some of the more obscu
 
 #### Android
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Create a PKGBUILD and submit to the AUR as e.g. _qt-android_. (Discuss in [Talk:Qt#](https://wiki.archlinux.org/index.php/Talk:Qt))
-
 Use the [Qt for Android installer](http://download.qt.io/official_releases/qt/5.5/5.5.1/qt-opensource-linux-x64-android-5.5.1.run).
 
 ### Tools
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** missing references to Qt5 tools (Discuss in [Talk:Qt#](https://wiki.archlinux.org/index.php/Talk:Qt))
 
 The following are official Qt tools:
 
 *   **[Qt Creator](https://en.wikipedia.org/wiki/Qt_Creator "wikipedia:Qt Creator")** — A cross-platform IDE tailored for Qt that supports all of its features.
 
-NaN
+	[http://qt-project.org/doc/qtcreator/](http://qt-project.org/doc/qtcreator/) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
 *   **Qt Linguist** — A set of tools that speed the translation and internationalization of Qt applications.
 
-NaN
+	[http://qt-project.org/doc/qt-4.8/linguist-manual.html](http://qt-project.org/doc/qt-4.8/linguist-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Assistant** — A configurable and redistributable documentation reader for Qt _qch_ files.
 
-NaN
+	[http://qt-project.org/doc/qt-4.8/assistant-manual.html](http://qt-project.org/doc/qt-4.8/assistant-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Designer** — A powerful cross-platform GUI layout and forms builder for Qt widgets.
 
-NaN
+	[http://qt-project.org/doc/qt-4.8/designer-manual.html](http://qt-project.org/doc/qt-4.8/designer-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **Qt Quick Designer** — A visual editor for QML files which supports WYSIWYG. It allows you to rapidly design and build Qt Quick applications and components from scratch.
 
-NaN
+	[http://qt-project.org/doc/qtcreator-2.8/creator-using-qt-quick-designer.html](http://qt-project.org/doc/qtcreator-2.8/creator-using-qt-quick-designer.html) || [qtcreator](https://www.archlinux.org/packages/?name=qtcreator)
 
 *   **QML Viewer** — A tool for loading QML documents that makes it easy to quickly develop and debug QML applications.
 
-NaN
+	[http://qt-project.org/doc/qt-4.8/qmlviewer.html](http://qt-project.org/doc/qt-4.8/qmlviewer.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **[qmake](https://en.wikipedia.org/wiki/Qmake "wikipedia:Qmake")** — A tool that helps simplify the build process for development project across different platforms, similar to [cmake](https://en.wikipedia.org/wiki/CMake "wikipedia:CMake"), but with fewer options and tailored for Qt applications.
 
-NaN
+	[https://qt-project.org/doc/qt-4.8/qmake-manual.html](https://qt-project.org/doc/qt-4.8/qmake-manual.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **uic** — A tool that reads _*.ui_ XML files and generates the corresponding C++ files.
 
-NaN
+	[http://qt-project.org/doc/qt-4.8/uic.html](http://qt-project.org/doc/qt-4.8/uic.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **rcc** — A tool that is used to embed resources (such as pictures) into a Qt application during the build process. It works by generating a C++ source file containing data specified in a Qt resource (.qrc) file.
 
-NaN
+	[http://qt-project.org/doc/qt-4.8/rcc.html](http://qt-project.org/doc/qt-4.8/rcc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 *   **moc** — A tool that handles Qt's C++ extensions (the signals and slots mechanism, the run-time type information, and the dynamic property system, etc.).
 
-NaN
+	[http://doc.qt.digia.com/4.7-snapshot/moc.html](http://doc.qt.digia.com/4.7-snapshot/moc.html) || [qt4](https://www.archlinux.org/packages/?name=qt4)
 
 ### Bindings
 

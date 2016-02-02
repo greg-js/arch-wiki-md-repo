@@ -479,14 +479,6 @@ options snd-NAME-OF-MODULE ac97_quirk=1
 
 The above fix has been reported to work with `snd-intel8x0`
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Duplicated sections (e.g. for microphone) should be merged with eachother (Discuss in [Talk:Advanced Linux Sound Architecture/Troubleshooting#](https://wiki.archlinux.org/index.php/Talk:Advanced_Linux_Sound_Architecture/Troubleshooting))
-
 ### HP TX2500
 
 Add these 2 lines into `/etc/modprobe.d/modprobe.conf`:

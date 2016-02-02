@@ -2,7 +2,7 @@
 
 From [Subtle project page](http://subforge.org/projects/subtle):
 
-NaN
+	_Subtle is a manual tiling window manager with a rather uncommon approach of tiling: Instead of relying on predefined layouts, Subtle divides the screen into a grid with customizable slots (called gravities)._
 
 Subtle is configured with [Ruby](/index.php/Ruby "Ruby") for [Xorg](/index.php/Xorg "Xorg").
 

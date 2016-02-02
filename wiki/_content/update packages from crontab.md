@@ -109,14 +109,6 @@ xmessage -timeout 3 "${STARTit}"' * '"${ENDit}" & disown
 
 See also: [How to show a message box from a bash script in Linux](http://stackoverflow.com/questions/7035/how-to-show-a-message-box-from-a-bash-script-in-linux).
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** _testdb_ has been removed in pacman 5.0 [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). (Discuss in [Talk:Update packages from crontab#](https://wiki.archlinux.org/index.php/Talk:Update_packages_from_crontab))
-
 Before running `pacman` you can also add integrity of database check:
 
 ```

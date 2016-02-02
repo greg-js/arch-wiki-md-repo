@@ -116,14 +116,6 @@ See the main article: [QEMU](/index.php/QEMU "QEMU").
 
 ### Nested virtualization
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Is it possible also with `kvm_amd`? (Discuss in [Talk:KVM#](https://wiki.archlinux.org/index.php/Talk:KVM))
-
 Nested virtualization enables existing virtual machines to be run on third-party hypervisors and on other clouds without any modifications to the original virtual machines or their networking.
 
 On host, enable nested feature for `kvm_intel`:
@@ -168,14 +160,6 @@ $ egrep --color=auto 'vmx|svm' /proc/cpuinfo
 
 ### Alternative Networking with SSH tunnels
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [QEMU](/index.php/QEMU "QEMU").**
-
-**Notes:** This section is not KVM-specific, it's generally applicable to all QEMU VMs. (Discuss in [Talk:KVM#](https://wiki.archlinux.org/index.php/Talk:KVM))
-
 Setting up bridged networking can be a bit of a hassle sometimes. If the sole purpose of the VM is experimentation, one strategy to connect the host and the guests is to use SSH tunneling.
 
 The basic steps are as follows:
@@ -188,14 +172,6 @@ The basic steps are as follows:
 See: [SSH](/index.php/SSH "SSH") for the setup of SSH, especially [SSH#Forwarding other ports](/index.php/SSH#Forwarding_other_ports "SSH").
 
 When using the default user network stack, the host is reachable at address 10.0.2.2.
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Usage of `/etc/rc.local` is discouraged. This should be a proper [systemd](/index.php/Systemd "Systemd") service file. (Discuss in [Talk:KVM#](https://wiki.archlinux.org/index.php/Talk:KVM))
 
 If everything works and you can SSH into the host, simply add something like the following to your `/etc/rc.local`
 
@@ -213,31 +189,7 @@ In this example a tunnel is created to the SSH server of the VM and an arbitrary
 
 This is a quite basic strategy to do networking with VMs. However, it is very robust and should be quite sufficient most of the time.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Isn't this option enough? I think it should have the same effect: `-redir tcp:2222:10.0.2.15:22` (it redirects port 2222 from host to 10.0.2.15:22, where 10.0.2.15 is guest's IP address. (Discuss in [Talk:KVM#](https://wiki.archlinux.org/index.php/Talk:KVM))
-
 ### Enabling huge pages
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** With systemd, `hugetlbfs` is mounted on `/dev/hugepages` by default, but with mode 0755 and root's uid and gid. (Discuss in [Talk:KVM#](https://wiki.archlinux.org/index.php/Talk:KVM))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [QEMU](/index.php/QEMU "QEMU").**
-
-**Notes:** qemu-kvm no longer exists as all of its features have been merged into [qemu](https://www.archlinux.org/packages/?name=qemu). After the above issue is cleared, I suggest merging this section into [QEMU](/index.php/QEMU "QEMU"). (Discuss in [Talk:KVM#](https://wiki.archlinux.org/index.php/Talk:KVM))
 
 You may also want to enable hugepages to improve the performance of your virtual machine. With an up to date Arch Linux and a running KVM you probably already have everything you need. Check if you have the directory `/dev/hugepages`. If not, create it. Now we need the right permissions to use this directory.
 

@@ -1,13 +1,5 @@
 # Artwork
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This page is Work in Progress. TODO: add related articles, add more resources related to Arch artwork. (Discuss in [Talk:Artwork#](https://wiki.archlinux.org/index.php/Talk:Artwork))
-
 This page is intended to showcase art with Arch Linux.
 
 ## Arch ASCII logos

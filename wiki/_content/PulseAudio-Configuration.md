@@ -1,13 +1,5 @@
 # PulseAudio/Configuration
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [PulseAudio](/index.php/PulseAudio "PulseAudio").**
-
-**Notes:** Most of valuable informations have been merged; when it is done completely, please [redirect](/index.php/Help:Editing#Redirects "Help:Editing") this page to [PulseAudio#Configuration](/index.php/PulseAudio#Configuration "PulseAudio"). (Discuss in [Talk:PulseAudio/Configuration#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Configuration))
-
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") PulseAudio is a general purpose sound server intended to run as a middleware between your applications and your hardware devices, either using [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). In its default configuration, PulseAudio attemps to make controlling and routing audio streams to the correct place easier with its own graphical configuration tools and deep integration in some desktop environments, like the sound applet in [GNOME](/index.php/GNOME "GNOME") or veromix in [KDE](/index.php/KDE "KDE"). It also offers easy network streaming accross local devices using [Avahi](/index.php/Avahi "Avahi") if enabled. While its main purpose is to ease audio configuration, its modular design allows more advanced users to configure the daemon precisely to best suit their needs.
 
 ## Contents
@@ -142,52 +134,12 @@ PulseAudio also uses window properties on the root window of the X11 server to h
 
 ### Protocols
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Local sound, network sound, file sounds, streaming servers (Discuss in [Talk:PulseAudio/Configuration#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Configuration))
-
 ### ALSA
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** TODO: Explain both static ALSA configuration and automatic detection. How to use ALSA plugins. Mention that PulseAudio likes real hardware way better than plugins for latency and power-saving controls (Discuss in [Talk:PulseAudio/Configuration#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Configuration))
 
 ### JACK
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Jack auto-detection or static Jack client (Discuss in [Talk:PulseAudio/Configuration#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Configuration))
-
 ### Filters & Routing
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Collection of useful modules for audio processing (EQ) and routing (combining card, splitting cards, imitating JACK features (Discuss in [Talk:PulseAudio/Configuration#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Configuration))
-
 ## Further resources
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Links to useful documentation, official PA wiki, manual pages, etc. (Discuss in [Talk:PulseAudio/Configuration#](https://wiki.archlinux.org/index.php/Talk:PulseAudio/Configuration))
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Configuration&oldid=392594](https://wiki.archlinux.org/index.php?title=PulseAudio/Configuration&oldid=392594)"

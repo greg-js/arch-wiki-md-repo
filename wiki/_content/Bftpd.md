@@ -23,14 +23,6 @@ Most of the settings in bftpd are done by editing the file `/etc/bftpd.conf`.
 
 ## Using xinetd
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This section is referenced from [#Installation](#Installation) but has no content. (Discuss in [Talk:Bftpd#](https://wiki.archlinux.org/index.php/Talk:Bftpd))
-
 ## See also
 
 *   [bftpd official homepage](http://bftpd.sourceforge.net/)

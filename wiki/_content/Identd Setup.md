@@ -1,13 +1,5 @@
 # Identd Setup
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Unnecessary use of ordered lists; other style issues, see [Help:Style](/index.php/Help:Style "Help:Style"). (Discuss in [Talk:Identd Setup#](https://wiki.archlinux.org/index.php/Talk:Identd_Setup))
-
 The Ident service as specified by [RFC 1413](//tools.ietf.org/html/rfc1413) is mostly used by various IRC networks and the occasional old FTP server to ask a remote server which user is making a connection. This method is quite untrustworthy, as the remote host can simply choose to lie.
 
 So you have two choices:

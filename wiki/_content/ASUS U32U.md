@@ -1,13 +1,5 @@
 # ASUS U32U
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** please use the first argument of the template to provide more detailed indications. (Discuss in [Talk:ASUS U32U#](https://wiki.archlinux.org/index.php/Talk:ASUS_U32U))
-
 This page is aimed to collect the recipes needed after a fresh install of archlinux on a laptop from the Asus U32U serie.
 
 **Note:** You may not need those tricks if you are using a desktop environment such as [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), [Xfce](/index.php/Xfce "Xfce"),...

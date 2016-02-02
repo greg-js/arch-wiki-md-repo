@@ -1,21 +1,5 @@
 # Asus TX201LA
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** This article reflects experience of the recent installation. While it should collect various generic and corner cases (Discuss in [Talk:Asus TX201LA#](https://wiki.archlinux.org/index.php/Talk:Asus_TX201LA))
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Asus TX201LA#](https://wiki.archlinux.org/index.php/Talk:Asus_TX201LA))
-
 [Asus Trio TX201LA](http://www.asus.com/Notebooks_Ultrabooks/ASUS_Transformer_Book_Trio_TX201LA/specifications/) is a good piece of recent (for 2014) hardware, which allows one to combine desktop, laptop and tablet in a single piece. In fact the tablet is a different story - detachable screen runs Android and is out of scope. Nevertheless the base itself (which can serve as desktop) or with attached tablet (forming laptop) can boast Intel Haswell Core i7 or Core i5 CPU, 4G RAM and 500G HDD. And that is what running Linux, almost smoothly.
 
 ## Contents
@@ -122,7 +106,17 @@ If the driver still doesn't work (most of the time it doesn't - certain hardware
 
 Wireless switch does not work by default on linux. ACPI handler detects Win8 OS and delegates rfkill management to software driver, which is missing. One way to handle this is to remove Windows 2012 OSI string - which may affect other ACPI handlers though. When OSI is below Win8 - asus-nb-wmi's wapf parameter influences how hardware switch is acting. WAPF handling is different from the one documented in asus-nb-wmi.c - the implementation states following:
 
-NaN
+	Bit 3 is set (0x4)
+
+	Full software control, only keypress is sent (0x88) and handler terminates.
+
+	Bit 1 is set (0x1)
+
+	Fn switch toggles both radios (toggling airplane mode), sending corresponding ACPI key event when they are on or off.
+
+	Any other values
+
+	Toggles radios in a sequence - both off, WL on/BT off, WL off/BT on, both on.
 
 If OSI string is required to be preserved - the only way out is using driver for ACPI device ([ASHS](https://github.com/rufferson/ashs)) which will handle events and do radio management.
 

@@ -170,14 +170,6 @@ $ vncviewer -encodings "copyrect tight zrle hextile" localhost:0
 
 1\. You can check your ip address and make sure port 5900 is forwarded by visiting [this](http://www.realvnc.com/cgi-bin/nettest.cgi) website.
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:X11vnc#](https://wiki.archlinux.org/index.php/Talk:X11vnc))
-
 2\. Tested only on [GNOME](/index.php/GNOME "GNOME") + [GDM](/index.php/GDM "GDM")
 
 If you cannot start the tunnel, and get error like XOpenDisplay(":0") failed, Check if you have a `~/.Xauthority` directory. If that does not exist, You can create one easily (Actually a symlink to actual one) by running command given below as normal user NOT ROOT OR USING [Sudo](/index.php/Sudo "Sudo") as below:

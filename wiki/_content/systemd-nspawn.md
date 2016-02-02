@@ -110,14 +110,6 @@ then you can
 
 ### Building and Testing packages
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Please share how systemd-nspawn fits into your build environment (Discuss in [Talk:Systemd-nspawn#](https://wiki.archlinux.org/index.php/Talk:Systemd-nspawn))
-
 ## Management
 
 ### machinectl
@@ -160,14 +152,6 @@ See [Firefox tweaks](/index.php/Firefox_tweaks#Run_Firefox_inside_an_nspawn_cont
 
 ### Networking
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Systemd-nspawn#](https://wiki.archlinux.org/index.php/Talk:Systemd-nspawn))
-
 Note the canonical [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") host and container .network files are from [https://github.com/systemd/systemd/tree/master/network](https://github.com/systemd/systemd/tree/master/network)
 
 You need to set up the container .network manually after pacstrapping and `# systemctl enable [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")` (your dhcp client) with systemd-nspawn's -n switch to ensure a virtual Ethernet link is setup. Don't forget to set up DNS, e.g. by either 1) edit your container's `/etc/resolv.conf` by adding your DNS server's IP address, or have 2) [systemd-resolved](/index.php?title=Systemd-resolved&action=edit&redlink=1 "Systemd-resolved (page does not exist)") manage `/etc/resolv.conf` for you.
@@ -175,14 +159,6 @@ You need to set up the container .network manually after pacstrapping and `# sys
 See [systemd-networkd#Usage with containers](/index.php/Systemd-networkd#Usage_with_containers "Systemd-networkd") for more complex examples.
 
 #### nsswitch.conf
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd").**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Systemd-nspawn#](https://wiki.archlinux.org/index.php/Talk:Systemd-nspawn))
 
 To make it easier to connect to a container from the host, you can enable local DNS resolution for container names. In `/etc/nsswitch.conf`, add `mymachines` to the `hosts:` section, e.g.
 

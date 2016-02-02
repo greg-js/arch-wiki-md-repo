@@ -54,14 +54,6 @@ Due to security concerns, the default Arch kernel does NOT ship with the ability
 
 LXCs support different virtual network types. A bridge device on the host is required for most types of virtual networking. The examples of creating a bridge provided below are not meant to be limiting, but illustrative. Users may use other programs to achieve the same results. A wired and wireless example is provided below, but other setups are possible. Users are referred to the [Network bridge](/index.php/Network_bridge "Network bridge") article for additional options.
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Network bridge](/index.php/Network_bridge "Network bridge").**
-
-**Notes:** Duplication; this is not a guide on Linux networking. (Discuss in [Talk:Linux Containers#](https://wiki.archlinux.org/index.php/Talk:Linux_Containers))
-
 #### Example for a wired network
 
 [netctl](https://www.archlinux.org/packages/?name=netctl) is available from the [official repositories](/index.php/Official_repositories "Official repositories"). A bridge template can be found in `/etc/netctl/examples` which needs to be edited to match the host network hardware specs and IP ranges of the host network. Below are two example bridge configs, one using a dhcp setup and the other using a static IP setup.

@@ -34,13 +34,13 @@ Recommended Japanese fonts are as follows.
 
 *   [adobe-source-han-sans](https://github.com/adobe-fonts/source-han-sans) || [adobe-source-han-sans-jp-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-jp-fonts) or [adobe-source-han-sans-otc-fonts](https://www.archlinux.org/packages/?name=adobe-source-han-sans-otc-fonts)
 
-NaN
+	Open-source OTF fonts developed by Adobe.
 
 #### Serif (and Sans-serif)
 
 *   [IPA fonts](http://ossipedia.ipa.go.jp/ipafont/) || [otf-ipafont](https://www.archlinux.org/packages/?name=otf-ipafont)
 
-NaN
+	An open source OTF font set including sans-serif (Gothic) and serif (Mincho) glyphs provided by Information-technology Promotion Agency, Japan (IPA).
 
 If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art) properly, use one of the following fonts:
 

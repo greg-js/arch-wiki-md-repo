@@ -1,13 +1,5 @@
 # HP Pavilion dv6420la
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [HCL/Laptops/HP](/index.php?title=HCL/Laptops/HP&action=edit&redlink=1 "HCL/Laptops/HP (page does not exist)").**
-
-**Notes:** If information is still applicable, that is (Discuss in [Talk:HP Pavilion dv6420la#](https://wiki.archlinux.org/index.php/Talk:HP_Pavilion_dv6420la))
-
 ## Input devices
 
 [HP Pavilion dv6018](/index.php/HP_Pavilion_dv6018 "HP Pavilion dv6018") also worked here. This is a laptop for Latin America, so their keyboard layout is "la-latin1" on rc.conf and "latam" on xorg.conf.

@@ -1,13 +1,5 @@
 # TrackPoint
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Many pages in [Category:Lenovo](/index.php/Category:Lenovo "Category:Lenovo") contain more detailed configuration, which need to be merged here. See [[1]](https://wiki.ubuntuusers.de/Trackpoint) for a comparable article (untranslated) (Discuss in [ArchWiki:Requests#TrackPoint](https://wiki.archlinux.org/index.php/ArchWiki:Requests#TrackPoint))
-
 The TrackPoint is Lenovo's trademark for the pointing-stick in the middle of the keyboard. It is supported by [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) and [xf86-input-libinput](https://www.archlinux.org/packages/?name=xf86-input-libinput). The evdev driver is default for [Xorg](/index.php/Xorg "Xorg").
 
 Default [Xorg](/index.php/Xorg "Xorg") behavior supports click and point, but middle-click and scrolling requires extra configuration.
@@ -61,14 +53,6 @@ The TrackPoint supports tap-to-click functionality just as most touchpads do. To
 **Note:** The location of the `press_to_select` file may be different depending on the device you are using. Systems with both a TrackPoint and a touchpad device will use the `/sys/devices/platform/i8042/serio1/serio2/` path, whereas systems with only a TrackPoint device will use the `/sys/devices/platform/i8042/serio1/` path.
 
 ## udev configuration rule
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This rule does not trigger (Discuss in [Talk:TrackPoint#Udev rule](https://wiki.archlinux.org/index.php/Talk:TrackPoint#Udev_rule))
 
 This rule increases the trackpoint **speed** and enables **tap to select** (see above) on boot. Feel free to alter the values and add other modifications to files in /sys/devices/platform/i8042/serio1/serio2/. The rule also works for trackpoint-only devices.
 

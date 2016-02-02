@@ -55,17 +55,17 @@ Before using eCryptfs, the following disadvantages should be checked for applica
 
 *   Hard-coded variables
 
-NaN
+	The best usability of eCryptfs is achieved by relying on the so-called "Ubuntu tools" of the [ecryptfs-utils](https://www.archlinux.org/packages/?name=ecryptfs-utils) package. A considerable downside is that a lot of variables (encryption options, lower directory path) are hard-coded into the tools. Changing them infers considerable manual configuration to achieve similar integration.
 
 *   Network storage mounts
 
-NaN
+	eCryptfs has long-standing [bugs](https://bugs.launchpad.net/ecryptfs/+bug/277578) and/or feature requests relating to networked storage. Replicating a content backup of an encrypted directory to a network backup storage is always possible. However, if you want to employ ecryptfs to store the encrypted directory directly on a network storage and mount it locally, you should search for working solutions of the respective network tools (NFS, Samba, etc.) first. If in doubt, [EncFS](/index.php/EncFS "EncFS") may be a better choice for such application.
 
 *   Sparse files
 
-NaN
+	eCryptfs does not handle [sparse files](https://en.wikipedia.org/wiki/Sparse_file). This is sometimes referred to as a bug, but likewise is a consequence of the design as a [stacked filesystem encryption](/index.php/Disk_encryption#Stacked_filesystem_encryption "Disk encryption"). For example, in an eCryptfs directory a `truncate -s 1G file.img` creates 1GB encrypted data and passes it to the underlying filesystem to store; with the corresponding resource (disk space, data throughput) requirements. Unencrypted, the same file can be allocated efficiently as sparse file space by the filesystem; with a [block device encryption](/index.php/Disk_encryption#Block_device_encryption "Disk encryption") only the respective filesystem output would be encrypted.
 
-NaN
+	This should be considered before encrypting large portions of the directory structure. For most intents and purposes this deficiency does not pose a problem. One workaround is to place sparse files in an unencrypted `.Public` directory (as opposed to the standard eCryptfs `.Private` directory, explained below). Another method is to use a _dm-crypt_ [container](/index.php/Dm-crypt/Encrypting_a_non-root_file_system#Loop_device "Dm-crypt/Encrypting a non-root file system") in `.Public` for such.
 
 ## Setup example overview
 
@@ -133,9 +133,13 @@ and follow the instructions. The option `--nopwcheck` enables you to choose a pa
 
 The script will automatically create the `~/.Private/` and `~/.ecryptfs/` directory structures as described in the box above. It will also ask for two passphrases:
 
-NaN
+	**login passphrase**
 
-NaN
+	This is the password you will have to enter each time you want to mount the encrypted directory. If you want auto-mounting on login to work, it has to be the same password you use to login to your user account.
+
+	**mount passphrase**
+
+	This is used to derive the actual file encryption master key. Thus, you should not enter a custom one unless you know what you are doing - instead press Enter to let it auto-generate a secure random one. It will be encrypted using the login passphrase and stored in this encrypted form in `~/.ecryptfs/wrapped-passphrase`. Later it will automatically be decrypted ("unwrapped") again in RAM when needed, so you never have to enter it manually. Make sure this file does not get lost, otherwise you can never access your encrypted folder again! You may want to run `ecryptfs-unwrap-passphrase` to see the mount passphrase in unencrypted form, write it down on a piece of paper, and keep it in a safe (or similar), so you can use it to recover your encrypted data in case the _wrapped-passphrase_ file is accidentally lost/corrupted or in case you forget the login passphrase.
 
 The mount point ("upper directory") for the encrypted folder will be at `~/Private` by default, however you can manually change this right after the setup command has finished running, by doing:
 
@@ -510,16 +514,6 @@ Different methods can be employed to automount the previously defined user-mount
 
 Then, if you login via console, a simple way is to specify the [user-interactive](#Mounting_2) _mount_ and _umount_ in the user's shell configuration files, for example [Bash#Configuration files](/index.php/Bash#Configuration_files "Bash").
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:**
-- the section should be more generic than it is now
-- the described method does not work for users, for encountered problems: (Discuss in [Talk:ECryptfs##Automounting](https://wiki.archlinux.org/index.php/Talk:ECryptfs#.23Automounting))
-
 Another method is to automount the eCryptfs directory on user login using [pam_mount](/index.php/Pam_mount "Pam mount"). To configure this method, add the following lines to `/etc/security/pam_mount.conf.xml`:
 
 ```
@@ -572,16 +566,6 @@ auth    required                      pam_ecryptfs.so unwrap
 The article suggests adding these to `/etc/pam.d/login`, but the changes will need to be added to all other places you login, such as `/etc/pam.d/kde`.
 
 ## Usage
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Content that still needs to be covered: - point to the above "Setup & Mounting" section for how to mount and unmount [this section here will cover all other (i.e. setup-independent) usage info]
-- reference ecryptfs tools not used/mentioned in the prior sections (e.g. with a short link to the online manpages and mention of the other tools usage, as it seems useful (not covered yet are, e.g. ecryptfs-stat, ecryptfs-find, ecryptfs-rewrite-file.)
-- mention the options to share an encrypted folder between users and to place non-encrypted files or folders in the encrypted container ("pass-through") (Discuss in [Talk:ECryptfs#Major_restructuring/rewrite](https://wiki.archlinux.org/index.php/Talk:ECryptfs#Major_restructuring.2Frewrite))
 
 ### Symlinking into the encrypted directory
 

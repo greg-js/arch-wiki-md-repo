@@ -9,7 +9,7 @@ Related articles
 
 From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"):
 
-NaN
+	_A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats._
 
 Note that certain font licenses may impose some legal limitations.
 
@@ -69,7 +69,13 @@ Note that certain font licenses may impose some legal limitations.
 
 Most computer fonts used today are in either _bitmap_ or _outline_ data formats.
 
-NaN
+	Bitmap fonts
+
+	Consist of a matrix of dots or pixels representing the image of each glyph in each face and size.
+
+	Outline or _vector_ fonts
+
+	Use Bézier curves, drawing instructions and mathematical formulae to describe each glyph, which make the character outlines scalable to any size.
 
 ### Common extensions
 
@@ -430,7 +436,7 @@ Almost all Unicode fonts contain the Greek character set (polytonic included). S
 *   [ttf-freebanglafont](https://www.archlinux.org/packages/?name=ttf-freebanglafont) - Font for Bangla
 *   [ttf-indic-otf](https://www.archlinux.org/packages/?name=ttf-indic-otf) - Indic OpenType Fonts collection (containing ttf-freebanglafont)
 
-NaN
+	(This one contains a "look of disapproval" that might be more to your liking than the [bdf-unifont](https://www.archlinux.org/packages/?name=bdf-unifont) one mentioned elsewhere in this document)
 
 *   [lohit-fonts](https://aur.archlinux.org/packages/lohit-fonts/)<sup><small>AUR</small></sup> - Indic TrueType fonts from Fedora Project (containing Oriya Fonts and more)
 *   [ttf-devanagarifonts](https://aur.archlinux.org/packages/ttf-devanagarifonts/)<sup><small>AUR</small></sup> - Devanagari TrueType fonts (contains 283 fonts)
@@ -565,14 +571,6 @@ And a Stack Overflow question with some images: [Recommended fonts for programmi
 
 ### Unsorted
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section should be absorbed into the Monospace/Serif/Sans-Serif structure (Discuss in [Talk:Fonts#](https://wiki.archlinux.org/index.php/Talk:Fonts))
-
 *   [ttf-google-fonts-git](https://aur.archlinux.org/packages/ttf-google-fonts-git/)<sup><small>AUR</small></sup> — a huge collection of free fonts (including ubuntu, inconsolata, droid, etc.) - Note: Your font dialog might get very long as >100 fonts will be added.
 *   [ttf-mph-2b-damase](https://www.archlinux.org/packages/?name=ttf-mph-2b-damase) — Covers full plane 1 and several scripts
 *   [ttf-symbola](https://www.archlinux.org/packages/?name=ttf-symbola) — Provides emoji and many many other symbols
@@ -633,14 +631,6 @@ $ fc-list
 ```
 
 ### Set terminal font on-the-fly
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Which terminals specifically support this method? Where is the documentation for the escape codes? (Discuss in [Talk:Fonts#](https://wiki.archlinux.org/index.php/Talk:Fonts))
 
 For terminal emulators that use `Xresources`, fonts can be set by using escape sequences. Specifically, echo `\033]710;$font\007` to change the normal font (`*font` in `~/.Xresources`), and replace `710` with `711`, `712`, and `713` to change the `*boldFont`, `*italicFont`, and `*boldItalicFont`, respectively.
 

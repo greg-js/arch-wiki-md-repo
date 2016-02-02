@@ -1,13 +1,5 @@
 # Xephyr
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention how this can be used against keylogging attacks [[1]](http://theinvisiblethings.blogspot.be/2011/04/linux-security-circus-on-gui-isolation.html), mention layers like [gdm](https://www.archlinux.org/packages/?name=gdm) (Discuss in [Talk:Xephyr#](https://wiki.archlinux.org/index.php/Talk:Xephyr))
-
 **Xephyr** is a nested X server that runs as an X application.
 
 ## Installation

@@ -1,16 +1,8 @@
 # Comgt
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [List of applications](/index.php/List_of_applications "List of applications").**
-
-**Notes:** No content (Discuss in [Talk:Comgt#](https://wiki.archlinux.org/index.php/Talk:Comgt))
-
 From [Linux UMTS/GPRS command-line tool](http://comgt.sourceforge.net/):
 
-NaN
+	_Comgt is a command line tool for controlling, configuring and interacting with Option Wireless 3G and 2G (HSDPA, UMTS, EDGE, GPRS, GSM) data devices within the Linux environment._
 
 ## Installation
 

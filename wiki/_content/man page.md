@@ -132,7 +132,7 @@ Color-enabled man pages allow for a clearer presentation and easier digestion of
 
 ### Using less (Recommended)
 
-NaN
+	<small>_Source: [Less Colors For Man Pages | Linux Tidbits](http://linuxtidbits.wordpress.com/2009/03/23/less-colors-for-man-pages/)_</small>
 
 This method has the advantage that `less` has a bigger feature set than `most`, and is the default for viewing man pages.
 
@@ -186,14 +186,6 @@ To see the changes in your Man Pages (without restarting fish or linux), you may
 For a detailed explanation on these variables, see [this answer](http://unix.stackexchange.com/questions/108699/documentation-on-less-termcap-variables/108840#108840). To customize the colors, see [Wikipedia:ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code") for reference.
 
 #### If less doesn't display color man pages
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Which terminals on which systems don't support [SGR escape sequences](https://en.wikipedia.org/wiki/ANSI_escape_code#SGR "wikipedia:ANSI escape code")? Old versions of _less_ are not supported on Arch. Anyway, this option _disables_ colors, and everything _might_ have been just fine until the above has been applied. (Discuss in [Talk:Man page#](https://wiki.archlinux.org/index.php/Talk:Man_page))
 
 On some systems, terminals don't understand SGR escape sequences, and older versions of `less` (without the -R option) don't understand SGR either. `Groff` offers a few solutions to fix this. The easiest one is to set and export the variable `GROFF_NO_SGR` in your terminal environment:
 
@@ -282,7 +274,7 @@ setkey edit "v"
 
 ### Colored man pages on xterm or rxvt-unicode
 
-NaN
+	<small>_Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small><sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-09-10]</sup>
 
 A quick way to add color to manual pages viewed on [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` or [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is to modify `~/.Xresources`.
 
@@ -324,14 +316,6 @@ $ xrdb -load ~/.Xresources
 Launch a new `xterm/uxterm` or `rxvt-unicode` and you should see colorful man pages. This combination puts colors to **bold** and <u>underlined</u> words in `xterm/uxterm` or to **bold**, <u>underlined</u>, and _italicized_ text in `rxvt-unicode`. You can play with different combinations of these attributes (see the [sources](http://pub.ligatura.org/fs/xfree86/xresources/xterm)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-09-10]</sup> of this item).
 
 ## Dynamic page width
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** How is this dynamic? If you later resize the terminal window, the line breaks will still become wrong. (Discuss in [Talk:Man page#](https://wiki.archlinux.org/index.php/Talk:Man_page))
 
 The man page width is controlled by the `MANWIDTH` environment variable.
 

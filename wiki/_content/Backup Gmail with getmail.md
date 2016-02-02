@@ -1,13 +1,5 @@
 # Backup Gmail with getmail
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [getmail](/index.php/Getmail "Getmail").**
-
-**Notes:** Only [#Troubleshooting](#Troubleshooting) is specific to Gmail. (Discuss in [Talk:Backup Gmail with getmail#](https://wiki.archlinux.org/index.php/Talk:Backup_Gmail_with_getmail))
-
 We can use getmail to fully backup email messages from a Gmail account.
 
 Emails will be backed-up in Maildir format, meaning that each email will be a separate text file, readable with any email client, or even with a text editor.

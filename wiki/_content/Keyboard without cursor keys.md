@@ -1,21 +1,5 @@
 # Keyboard without cursor keys
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Looks more like a draft, does not give (many) instructions on how to configure things. (Discuss in [Talk:Keyboard without cursor keys#](https://wiki.archlinux.org/index.php/Talk:Keyboard_without_cursor_keys))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Keyboard Shortcuts](/index.php/Keyboard_Shortcuts "Keyboard Shortcuts").**
-
-**Notes:** When finished, move into better place. (Discuss in [Talk:Keyboard without cursor keys#Merge suggestion](https://wiki.archlinux.org/index.php/Talk:Keyboard_without_cursor_keys#Merge_suggestion))
-
 The original UNIX terminals does not have the eight movement keys:
 
 Up, Down, Left, Right, Top(HOME), Bottom(END), Page-UP, Page-DOWN.

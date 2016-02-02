@@ -27,7 +27,17 @@ Install the [xtrabackup](https://www.archlinux.org/packages/?name=xtrabackup) fr
 
 XtraBackup is really a set of three tools:
 
-NaN
+	xtrabackup
+
+	A compiled C binary, which copies only InnoDB and XtraDB data
+
+	innobackupex
+
+	A wrapper script that provides functionality to backup a whole MySQL database instance with MyISAM, InnoDB, and XtraDB tables.
+
+	tar4ibd
+
+	A patched version of [tar](/index.php/Tar "Tar") for handling InnoDB data safely.
 
 In all of the below examples, the following is assumed:
 

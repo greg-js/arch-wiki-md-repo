@@ -6,7 +6,7 @@ Related articles
 
 From [Wikipedia:Virtual private server](https://en.wikipedia.org/wiki/Virtual_private_server "wikipedia:Virtual private server"):
 
-NaN
+	_Virtual private server (VPS) is a term used by Internet hosting services to refer to a virtual machine. The term is used for emphasizing that the virtual machine, although running in software on the same physical computer as other customers' virtual machines, is in many respects functionally equivalent to a separate physical computer, is dedicated to the individual customer's needs, has the privacy of a separate physical computer, and can be configured to run server software._
 
 This article discusses the use of Arch Linux on Virtual Private Servers, and includes some fixes and installation instructions specific to VPSes.
 
@@ -81,14 +81,6 @@ This article discusses the use of Arch Linux on Virtual Private Servers, and inc
 
 ### KVM
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Are there instructions specific to VPSes? (Discuss in [Talk:Virtual Private Server#](https://wiki.archlinux.org/index.php/Talk:Virtual_Private_Server))
-
 See [QEMU#Preparing an (Arch) Linux guest](/index.php/QEMU#Preparing_an_.28Arch.29_Linux_guest "QEMU").
 
 ### OpenVZ
@@ -151,14 +143,6 @@ At minimum, only the `-a` (preserve timestamps, permissions, etc.), `-x` (do not
     *   If you do not have access to the serial console feature, you will need to preconfigure your network settings before synchronizing Arch to the VPS.
 
 ### Xen
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Are there instructions specific to VPSes? (Discuss in [Talk:Virtual Private Server#](https://wiki.archlinux.org/index.php/Talk:Virtual_Private_Server))
 
 See [Xen#Arch as Xen guest (PVHVM mode)](/index.php/Xen#Arch_as_Xen_guest_.28PVHVM_mode.29 "Xen") and/or [Xen#Arch as Xen guest (PV mode)](/index.php/Xen#Arch_as_Xen_guest_.28PV_mode.29 "Xen").
 

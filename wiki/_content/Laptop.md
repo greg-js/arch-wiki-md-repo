@@ -113,7 +113,7 @@ For a laptop, it may be a good idea to use [Chrony](/index.php/Chrony "Chrony") 
 
 ## See also
 
-NaN
+	General
 
 *   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling") is a technology used primarily by notebooks which enables the OS to scale the CPU frequency up or down, depending on the current system load and/or power scheme.
 *   [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") describes how to automatically turn off the laptop screen after a specified interval of inactivity (not just blanked with a screensaver but completely shut off).
@@ -121,13 +121,13 @@ NaN
 *   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys") describes configuration of Media keys.
 *   [acpid](/index.php/Acpid "Acpid") which is a flexible and extensible daemon for delivering ACPI events.
 
-NaN
+	Pages specific to certain laptop types
 
 *   See [Category:Laptops](/index.php/Category:Laptops "Category:Laptops") and its subcategories for pages dedicated to specific models/vendors.
 *   Battery tweaks for ThinkPads can be found in [TLP](/index.php/TLP "TLP") and the [tp_smapi](/index.php/Tp_smapi "Tp smapi") article.
 *   [acerhdf](/index.php/Acer_Aspire_One#acerhdf "Acer Aspire One") is a kernel module for controlling fan speed on Acer Aspire One and some Packard Bell Notebooks.
 
-NaN
+	External resources
 
 *   [http://www.linux-on-laptops.com/](http://www.linux-on-laptops.com/)
 *   [http://www.linlap.com/](http://www.linlap.com/)

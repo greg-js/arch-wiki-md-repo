@@ -1,29 +1,5 @@
 # Acer Aspire Timeline 1810tz
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Acer Aspire Timeline 1810tz#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_Timeline_1810tz))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** `rc.conf` references (Discuss in [Talk:Acer Aspire Timeline 1810tz#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_Timeline_1810tz))
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [HCL/Laptops/Asus](/index.php?title=HCL/Laptops/Asus&action=edit&redlink=1 "HCL/Laptops/Asus (page does not exist)").**
-
-**Notes:** Not enough content to warrant a separate page (Discuss in [Talk:Acer Aspire Timeline 1810tz#](https://wiki.archlinux.org/index.php/Talk:Acer_Aspire_Timeline_1810tz))
-
 **Acer Aspire Timeline 1810tz**
 
 ## Contents

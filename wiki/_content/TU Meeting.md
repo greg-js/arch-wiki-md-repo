@@ -1,13 +1,5 @@
 # TU Meeting
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:TU Meeting#](https://wiki.archlinux.org/index.php/Talk:TU_Meeting))
-
 This page was created to schedule TU meetings.
 
 Next meeting can be at:

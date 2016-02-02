@@ -5,17 +5,15 @@ Related articles
 *   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
 *   [Core Utilities](/index.php/Core_Utilities "Core Utilities")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Add Template:App (Discuss in [Talk:GNU Project#](https://wiki.archlinux.org/index.php/Talk:GNU_Project))
-
 From [http://www.gnu.org/](http://www.gnu.org/)
 
-NaN
+	_The GNU Project was launched in 1984 to develop the GNU operating system, a complete Unix-like operating system which is free software—software which respects your freedom._
+
+	_Unix-like operating systems are built from a software collection of applications, libraries, and developer tools—plus a program to allocate resources and talk to the hardware, known as a kernel. [...]_
+
+	_The combination of GNU and Linux is the GNU/Linux operating system, now used by millions and sometimes incorrectly called simply “Linux”._
+
+	_The name “GNU” is a recursive acronym for “GNU's Not Unix!”_
 
 The aim of the GNU Project is to produce a totally free operating system. While the GNU kernel has not reached a stable version, the project has resulted in the creation of many tools that power most Unix-like operating systems. [Arch Linux](/index.php/Arch_Linux "Arch Linux") is such a system, using GNU software like the [GRUB](/index.php/GRUB "GRUB") bootloader, [Bash](/index.php/Bash "Bash") shell, and numerous other utilities and libraries.
 
@@ -68,11 +66,11 @@ Among **base-devel** are several members of the [GNU toolchain](https://en.wikip
 
 [GNU Build System](https://en.wikipedia.org/wiki/GNU_build_system "wikipedia:GNU build system") (autotools):
 
-NaN
+	**automatically configure source code:** [autoconf](https://www.archlinux.org/packages/?name=autoconf)
 
-NaN
+	**automatically create Makefiles:** [automake](https://www.archlinux.org/packages/?name=automake)
 
-NaN
+	**library support script:** [libtool](https://www.archlinux.org/packages/?name=libtool)
 
 ## Other Tools
 

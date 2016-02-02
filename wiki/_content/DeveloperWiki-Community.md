@@ -5,14 +5,6 @@ Related articles
 *   [AUR User Guidelines#[community]](/index.php/AUR_User_Guidelines#.5Bcommunity.5D "AUR User Guidelines")
 *   [Getting involved#Community projects](/index.php/Getting_involved#Community_projects "Getting involved")
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** The community repository seems fine, this page discusses old plans. (Discuss in [Talk:DeveloperWiki:Community#](https://wiki.archlinux.org/index.php/Talk:DeveloperWiki:Community))
-
 Future policies for the community repository should be discussed to improve the usefulness of the repository and decrease the number of unused packages.
 
 ## Contents

@@ -247,14 +247,6 @@ Execute the following to disconnect from a VPN:
 
 ## Making A VPN Daemon and Connecting On Boot
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** recent changes to systemd. see [https://wiki.archlinux.org/index.php/Systemd/Services](https://wiki.archlinux.org/index.php/Systemd/Services) (Discuss in [Talk:PPTP VPN client setup with pptpclient#](https://wiki.archlinux.org/index.php/Talk:PPTP_VPN_client_setup_with_pptpclient))
-
 You can create a simple daemon for your VPN connection by creating an appropriate `/etc/rc.d/*` script:
 
 **Note:** As always, `<TUNNEL>` is the name of your tunnel. `<ROUTING COMMAND>` is the command you use to add the appropriate route to the routing table.

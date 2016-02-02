@@ -142,14 +142,6 @@ The [systemd](/index.php/Systemd "Systemd") package includes the service `system
 
 Some laptops have multiple video cards (e.g. Optimus) and the backlight restoration fails. Try [masking](/index.php/Systemd#Using_units "Systemd") an _instance_ of the service, e.g. `systemd-backlight@backlight\:acpi_video1` for `acpi_video1`.
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Poor wording, needs to be merged with the previous paragraphs. (Discuss in [Talk:Backlight#](https://wiki.archlinux.org/index.php/Talk:Backlight))
-
 From the systemd-backlight@.service man page:
 
 systemd-backlight understands the following kernel command line parameter:

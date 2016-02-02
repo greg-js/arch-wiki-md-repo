@@ -1,13 +1,5 @@
 # Dell XPS M1330
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** references to [initscripts](/index.php?title=Initscripts&action=edit&redlink=1 "Initscripts (page does not exist)") (Discuss in [Talk:Dell XPS M1330#](https://wiki.archlinux.org/index.php/Talk:Dell_XPS_M1330))
-
 Dell XPS M1330 works quite well out of the box with Arch and GNU/Linux in general, just like his big brother Dell XPS M1530\.
 
 ## Contents

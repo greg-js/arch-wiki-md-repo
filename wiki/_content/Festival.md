@@ -39,14 +39,6 @@ If you do not hear anything, see the [Troubleshooting](#Troubleshooting) section
 
 ### Using German IMS festival extension with mbrola
 
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-[![Tango-user-trash-full.png](/images/e/ee/Tango-user-trash-full.png)](/index.php/File:Tango-user-trash-full.png)
-
-**This article or section is being considered for deletion.**
-
-**Reason:** Please create a separate PKGBUILD and upload it to the AUR ... (Discuss in [Talk:Festival#](https://wiki.archlinux.org/index.php/Talk:Festival))
-
 The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/)<sup><small>AUR</small></sup>. To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified -- use [abs](https://www.archlinux.org/packages/?name=abs) to get it and the patches necessary to install festival under arch linux.
 
 Add these two files downloaded from the IMS (do NOT use the third file, _ims_german_1.3-os.fix.tgz_)
@@ -172,14 +164,6 @@ To permanently change the default voice you can add a line like this to the end 
 You cannot set the voice with festival.scm; to set voices globally, set order of searched voices in `/usr/share/festival/voices.scm`.
 
 #### HTS compatibility patches
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [festival-us](https://www.archlinux.org/packages/?name=festival-us) comes with `cmu_us_slt_arctic_hts` (Discuss in [Talk:Festival#](https://wiki.archlinux.org/index.php/Talk:Festival))
 
 Some say that HTS voices for Festival are the best ones freely available. Sadly they are not compatible with Festival >2.1 without patching it (and the new voice versions are not made available for downloading).
 

@@ -1,13 +1,5 @@
 # Sony Vaio VGN-SZ38GP
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Sony Vaio VGN-SZ38GP#](https://wiki.archlinux.org/index.php/Talk:Sony_Vaio_VGN-SZ38GP))
-
 ## Contents
 
 *   [1 Switch Mode](#Switch_Mode)

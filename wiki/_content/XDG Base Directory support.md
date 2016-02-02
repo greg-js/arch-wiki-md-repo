@@ -76,13 +76,21 @@ These directories and files are unlikely to ever change, there is far too much h
 
 While some of these tools are still in active development and maintainence, the developers are unwilling to accommodate for the necessary changes due to the aforementioned reasons.
 
-NaN
+	`~/.ssh`
 
-NaN
+	Assumed to be present by many ssh daemons and clients such as DropBear and OpenSSH. [OpenSSH Bug 2050](https://bugzilla.mindrot.org/show_bug.cgi?id=2050)
 
-NaN
+	`~/.pki`
 
-NaN
+	Part of Mozilla's [NSS Project](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/NSS).
+
+	`~/.netrc`
+
+	Like `~/.ssh`, many programs expect this file to be here. These include projects like curl (`CURLOPT_NETRC_FILE`), ftp (`NETRC`), s-nail (`NETRC`), etc. While some of them offer alternative configurable locations, many do not such as w3m, wget and lftp.
+
+	`~/.profile`
+
+	Used by the various shells and display managers, this file is expected to be here much like `~/.netrc`.
 
 ## Contributing
 
@@ -326,15 +334,31 @@ set viminfo+=n~/.cache/vim/viminfo
 
 ## Library and language support
 
-NaN
+	C
 
-NaN
+	[C99: Cloudef's simple implementation](https://github.com/Cloudef/chck/tree/master/chck/xdg).
 
-NaN
+	Haskell
 
-NaN
+	Officially in [directory](https://hackage.haskell.org/package/directory) since 1.2.3.0 [ab9d0810ce](https://github.com/haskell/directory/commit/ab9d0810ce).
 
-NaN
+	[xdg-basedir](https://hackage.haskell.org/package/xdg-basedir)
+
+	Perl
+
+	[File-BaseDir](http://search.cpan.org/dist/File-BaseDir/lib/File/BaseDir.pm)
+
+	[perl-file-xdg](https://github.com/Aerdan/perl-file-xdg)
+
+	Python
+
+	[pyxdg](http://freedesktop.org/wiki/Software/pyxdg/)
+
+	Vala
+
+	Builtin support via [GLib.Environment](http://valadoc.org/#!api=glib-2.0/GLib.Environment).
+
+	See `get_user_cache_dir`, `get_user_data_dir`, `get_user_config_dir`, etc.
 
 ## See also
 

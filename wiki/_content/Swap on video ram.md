@@ -1,21 +1,5 @@
 # Swap on video ram
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This article may need to be expanded or revised for contemporary hardware. (Discuss in [Talk:Swap on video ram#](https://wiki.archlinux.org/index.php/Talk:Swap_on_video_ram))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Graphics hardware referenced is quite old at this point. rconf is referenced instead of systemd. This article primarily references a now archived article from Gentoo's wiki. (Discuss in [Talk:Swap on video ram#](https://wiki.archlinux.org/index.php/Talk:Swap_on_video_ram))
-
 Related articles
 
 *   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")

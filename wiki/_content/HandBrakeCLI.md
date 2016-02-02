@@ -17,14 +17,6 @@
 
 ## Encoding examples
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Single-pass and Two-pass sections are the same? (Discuss in [Talk:HandBrakeCLI#](https://wiki.archlinux.org/index.php/Talk:HandBrakeCLI))
-
 ### Single-pass x264 (very high-quality)
 
  `HandBrakeCLI -i X-Men.First.Class.2011.vob -o X-Men.First.Class.2011.mkv -E lame -B 160k -6 stereo -R 48000 -e x264 -x b_adapt=2:bframes=8:direct=auto:fast_pskip=0:deblock=-1,-1:psy-rd=1,0.15:me=umh:me_range=24:partitions=all:ref=16:subq=10:trellis=2:rc_lookahead=60:frameref=15:threads=auto -s1 -S 2250 -2 -v2` 
@@ -38,14 +30,6 @@ ULTRAFAST TESTING
  `HandBrakeCLI -i Hostel.II.vob -o Hostel.II.mkv -E lame -B 128k -6 dpl2 -R 48000 -e x264 -x ref=1:bframes=0:cabac=0:8x8dct=0:weightp=0:me=dia:subq=0:rc-lookahead=0:mbtree=0:analyse=none:trellis=0:aq-mode=0:scenecut=0:no-deblock=1:threads=auto -s1 -S 750 -v` 
 
 ## Adding subtitles
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** TODO. (Discuss in [Talk:HandBrakeCLI#](https://wiki.archlinux.org/index.php/Talk:HandBrakeCLI))
 
 ## See also
 

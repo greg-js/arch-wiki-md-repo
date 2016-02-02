@@ -5,14 +5,6 @@ Related articles
 *   [Uswsusp](/index.php/Uswsusp "Uswsusp")
 *   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Need to address pm-utils relevance compared to systemd's suspend functions (Discuss in [Talk:Pm-utils#](https://wiki.archlinux.org/index.php/Talk:Pm-utils))
-
 **Warning:** Hibernating with Pm-utils and then updating systemd is reported to corrupt files: [https://bbs.archlinux.org/viewtopic.php?pid=1423442](https://bbs.archlinux.org/viewtopic.php?pid=1423442)
 
 **pm-utils** is a suspend and powerstate setting framework. It is designed to replace such scripts as those provided by the `powersave` package.
@@ -211,7 +203,17 @@ named `modules` or `config` into `/etc/pm/config.d` and it will override the set
 
 ### Available variables for use in config files
 
-NaN
+	SUSPEND_MODULES="button"
+
+	the list of modules to be unloaded before suspend
+
+	SLEEP_MODULE="tuxonice uswsusp kernel"
+
+	the default sleep/wake systems to try
+
+	HIBERNATE_MODE="shutdown"
+
+	forces the system to shut down rather than reboot
 
 ### Disabling a hook
 
@@ -241,7 +243,21 @@ HOOK_BLACKLIST="hal-cd-polling intel-audio-powersave journal-commit laptop-mode 
 
 If you want to do something specific to your setup during suspend or hibernate, then you can easily put your own hook into `/etc/pm/sleep.d`. The hooks in this directory will be called in alphabetic order during suspend (that is the reason their names all start with 2 digits, to make the ordering explicit) and in the reverse order during resume. The general convention to be followed on number ordering is:.
 
-NaN
+	00 - 49
+
+	User and most package supplied hooks. If a hook assumes that all of the usual services and userspace infrastructure is still running, it should be here.
+
+	50 - 74
+
+	Service handling hooks. Hooks that start or stop a service belong in this range. At or before 50, hooks can assume that all services are still enabled.
+
+	75 - 89
+
+	Module and non-core hardware handling. If a hook needs to load/unload a module, or if it needs to place non-video hardware that would otherwise break suspend or hibernate into a safe state, it belongs in this range. At or before 75, hooks can assume all modules are still loaded.
+
+	90 - 99
+
+	Reserved for critical suspend hooks.
 
 I am showing a pretty useless demonstration hook here, that will just put some informative lines into your log file:
 
@@ -282,11 +298,23 @@ There is also the possibility to set the machine into high-power and low-power m
 
 The hooks for suspend are placed in
 
-NaN
+	`/usr/lib/pm-utils/sleep.d`
+
+	distribution / package provided hooks
+
+	`/etc/pm/sleep.d`
+
+	hooks added by the system administrator
 
 The hooks for the power state are placed in
 
-NaN
+	`/usr/lib/pm-utils/power.d`
+
+	distribution / package provided hooks
+
+	`/etc/pm/power.d`
+
+	hooks added by the system administrator
 
 Hooks in `/etc/pm/` take precedence over those in `/usr/lib/pm-utils/`, so the system administrator can override the defaults provided by the distribution.
 

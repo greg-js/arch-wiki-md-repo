@@ -55,7 +55,25 @@ The option `launcher_icon_theme` seems not to be documented yet.
 
 `panel_items` is a new configuration option which defines which items tint2 shows and in what order:
 
-NaN
+	L
+
+	Show Launcher
+
+	T
+
+	Show Taskbar
+
+	S
+
+	Show Systray
+
+	B
+
+	Show Battery status
+
+	C
+
+	Show Clock
 
 ### Applications menu in Openbox
 

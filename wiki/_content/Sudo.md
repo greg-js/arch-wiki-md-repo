@@ -54,14 +54,6 @@ See [man sudo](http://www.gratisoft.us/sudo/man/sudo.html) for more information.
 
 ## Configuration
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Move [#Defaults skeleton](#Defaults_skeleton) here, and create an intro discussing `Defaults`, perhaps with a table that lists common settings (Discuss in [Talk:Sudo#](https://wiki.archlinux.org/index.php/Talk:Sudo))
-
 See [man sudoers](http://www.sudo.ws/man/1.8.13/sudoers.man.html) for more information, such as configuring the password timeout.
 
 ### View current settings
@@ -395,14 +387,6 @@ The format for entries in these drop-in files is the same as for `/etc/sudoers` 
 
 ### SSH TTY Problems
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Configuration](#Configuration).**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Sudo#](https://wiki.archlinux.org/index.php/Talk:Sudo))
-
 SSH does not allocate a tty by default when running a remote command. Without a tty, sudo cannot disable echo when prompting for a password. You can use ssh's `-tt` option to force it to allocate a tty (or `-t` twice).
 
 The `Defaults` option `requiretty` only allows the user to run sudo if they have a tty.
@@ -416,14 +400,6 @@ The `Defaults` option `requiretty` only allows the user to run sudo if they have
 
 ### Permissive umask
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Configuration](#Configuration).**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Sudo#](https://wiki.archlinux.org/index.php/Talk:Sudo))
-
 Sudo will union the user's [umask](/index.php/Umask "Umask") value with its own umask (which defaults to 0022). This prevents sudo from creating files with more open permissions than the user's umask allows. While this is a sane default if no custom umask is in use, this can lead to situations where a utility run by sudo may create files with different permissions than if run by root directly. If errors arise from this, sudo provides a means to fix the umask, even if the desired umask is more permissive than the umask that the user has specified. Adding this (using `visudo`) will override sudo's default behavior:
 
 ```
@@ -435,14 +411,6 @@ Defaults umask_override
 This sets sudo's umask to root's default umask (0022) and overrides the default behavior, always using the indicated umask regardless of what umask the user as set.
 
 ### Defaults skeleton
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [#Configuration](#Configuration).**
-
-**Notes:** please use the second argument of the template to provide more detailed indications. (Discuss in [Talk:Sudo#](https://wiki.archlinux.org/index.php/Talk:Sudo))
 
 The authors site has a [list of all the options](http://www.sudo.ws/sudo/sudoers.man.html#x5355444f455253204f5054494f4e53) that can be used with the `Defaults` command in the `/etc/sudoers` file.
 

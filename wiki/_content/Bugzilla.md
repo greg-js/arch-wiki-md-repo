@@ -47,14 +47,6 @@ Install all required and optional modules using:
 
 ### Missing Modules
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** No bug report, if there is none file one (Discuss in [Talk:Bugzilla#](https://wiki.archlinux.org/index.php/Talk:Bugzilla))
-
 **Warning:** BugZilla _may_ have missing dependencies that can effect normal usage and prevent the final configuration from completing successfully.
 
 Because of a missing dependency, the following perl module needs to be installed for user creation and bug filing to work properly:

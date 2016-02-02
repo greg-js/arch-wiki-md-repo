@@ -86,14 +86,6 @@ The problems treated in [ArchWiki talk:Reports](/index.php/ArchWiki_talk:Reports
 
 The following are the most common problems that recent changes patrols can find and report, with brief tips for possible fixes.
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** it may be useful to add more examples. (Discuss in [ArchWiki talk:Maintenance Team#](https://wiki.archlinux.org/index.php/ArchWiki_talk:Maintenance_Team))
-
 ### Content-related
 
 *   Removal of useful content: undo or contact the author.

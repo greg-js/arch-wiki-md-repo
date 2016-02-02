@@ -281,14 +281,6 @@ There is also the [AUR Archive](https://github.com/aur-archive) on GitHub with a
 
 ## AUR metadata
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This section was originally in a separate page, it may need adaptations to better fit into this article. (Discuss in [Talk:Arch User Repository#](https://wiki.archlinux.org/index.php/Talk:Arch_User_Repository))
-
 In order to display information in the [AUR](/index.php/AUR "AUR") web interface, the AUR's back-end code attempts to parse [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") files and salvage package name, version, and other information from it. `PKGBUILD`s are [Bash](/index.php/Bash "Bash") scripts, and correctly parsing Bash scripts without executing them is a huge challenge, which is why [makepkg](/index.php/Makepkg "Makepkg") is a Bash script itself: it includes the PKGBUILD of the package being built via the `source` directive. AUR metadata files were created to get rid of some hacks, used by AUR package maintainers to work around incorrect parsing in the web interface. See also [FS#25210](https://bugs.archlinux.org/task/25210), [FS#15043](https://bugs.archlinux.org/task/15043), and [FS#16394](https://bugs.archlinux.org/task/16394).
 
 ### How it works

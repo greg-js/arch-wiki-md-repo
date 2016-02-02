@@ -1,13 +1,5 @@
 # Croscore Fonts
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Fonts](/index.php/Fonts "Fonts").**
-
-**Notes:** Not enough content to warrant a separate page (Discuss in [Talk:Croscore Fonts#](https://wiki.archlinux.org/index.php/Talk:Croscore_Fonts))
-
 [Croscore Fonts](https://en.wikipedia.org/wiki/Croscore_fonts "wikipedia:Croscore fonts") are free and open source high quality fonts from the Chromium OS Project. These fonts are metrically compatible with [MS Fonts](/index.php/MS_Fonts "MS Fonts") and have better rendering instructions for FreeType library.
 
 ## Installation

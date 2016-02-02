@@ -2,7 +2,7 @@
 
 From [OpenConnect](http://www.infradead.org/openconnect.html):
 
-NaN
+	OpenConnect is a client for Cisco's AnyConnect SSL VPN, which is supported by the ASA5500 Series, by IOS 12.4(9)T or later on Cisco SR500, 870, 880, 1800, 2800, 3800, 7200 Series and Cisco 7301 Routers, and probably others.
 
 ## Contents
 

@@ -19,14 +19,6 @@ Gcin is a new generation of Chinese input method server developed by Edward Liu.
 
 ### Installing other input tables
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Gcin#](https://wiki.archlinux.org/index.php/Talk:Gcin))
-
 ## Configuration
 
 ### Autostart

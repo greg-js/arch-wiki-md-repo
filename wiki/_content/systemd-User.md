@@ -101,14 +101,6 @@ There are several ways to run xorg within systemd units. Below there are two opt
 
 ### Automatic login into Xorg without display manager
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** This setup ends up with two user D-Bus buses, one for the desktop, and an other for systemd. Why can't we use the systemd one alone? (Discuss in [Talk:Systemd/User#](https://wiki.archlinux.org/index.php/Talk:Systemd/User))
-
 This option will launch a system unit that will start a user session with an xorg server and then run the usual `~/.xinitrc` to launch the window manager, etc.
 
 You need to have [#D-Bus](#D-Bus) correctly set up and [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/)<sup><small>AUR</small></sup> installed.
@@ -255,14 +247,6 @@ Most X apps need a `DISPLAY` variable to run. See [#DISPLAY and XAUTHORITY](#DIS
 ## Some use cases
 
 ### Persistent terminal multiplexer
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** References `user-session@.service` instead of `user@.service`; the latter does not contain `Conflicts=getty@tty1.service`. (Discuss in [Talk:Systemd/User#](https://wiki.archlinux.org/index.php/Talk:Systemd/User))
 
 You may wish your user session to default to running a terminal multiplexer, such as [GNU Screen](/index.php/GNU_Screen "GNU Screen") or [Tmux](/index.php/Tmux "Tmux"), in the background rather than logging you into a window manager session. Separating login from X login is most likely only useful for those who boot to a TTY instead of to a display manager (in which case you can simply bundle everything you start in with myStuff.target).
 

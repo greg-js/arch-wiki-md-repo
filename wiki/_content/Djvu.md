@@ -2,11 +2,11 @@
 
 From [Wikipedia's DjVu Page](http://en.wikipedia.org/wiki/DjVu):
 
-NaN
+	_DjVu is a computer file format designed primarily to store scanned documents, especially those containing a combination of text, line drawings, indexed color images, and photographs. It uses technologies such as image layer separation of text and background/images, progressive loading, arithmetic coding, and lossy compression for bitonal (monochrome) images. This allows for high-quality, readable images to be stored in a minimum of space, so that they can be made available on the web._
 
-NaN
+	_DjVu has been promoted as an alternative to PDF, promising smaller files than PDF for most scanned documents. The DjVu developers report that color magazine pages compress to 40–70 kB, black and white technical papers compress to 15–40 kB, and ancient manuscripts compress to around 100 kB; a satisfactory JPEG image typically requires 500 kB. Like PDF, DjVu can contain an OCR text layer, making it easy to perform copy and paste and text search operations._
 
-NaN
+	_Free browser plug-ins and desktop viewers from different developers are available from the djvu.org website. DjVu is supported by a number of multi-format document viewers and e-book reader software on Linux (Okular, Evince), Android (VuDroid), Windows (SumatraPDF), iPhone/iPad (Stanza), and BlackBerry OS (DjVuBB)._
 
 ## Contents
 
@@ -21,7 +21,7 @@ NaN
 
 From [MobileRead Wiki's DjVU Page](http://wiki.mobileread.com/wiki/DJVU)
 
-NaN
+	DjVu starts by segmenting a page into layers.
 
 ```
    Foreground layer includes text, line art and other thin, low-color elements.
@@ -29,17 +29,17 @@ NaN
 
 ```
 
-NaN
+	Then the foreground layer is further divided into black and white mask layer and a color mask layer.
 
-NaN
+	Once everything is separated different compression techniques are used on the different layers. For example the black and white stuff that looks like text or repeated graphics is compressed using pattern matching. Repeats are stored once as individual elements in another layer and then placed on the page by just referencing the location. Using this "dictionary" of shapes permits high compression, typically 100 to 1, with precise reproduction.
 
-NaN
+	The foreground color layer is compressed using a similar technique to JPEG 2000\. The background layer is compressed using a technique that typically 3 times better than classic JPEG.
 
-NaN
+	These techniques permit a visually better image than JPEG with much less storage.
 
-NaN
+	DjVu supports an OCR hidden XML text layer that permits text searching, indexing etc and works even with color text. The OCR is superior to traditional approaches on colored background.
 
-NaN
+	When separate layers are not needed the format is called IW44\.
 
 ## Installation
 

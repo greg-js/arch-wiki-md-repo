@@ -1,13 +1,5 @@
 # Music Player Daemon
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** Needs improvements in structure and clarify; compare to the [User's manual](http://www.musicpd.org/doc/user/index.html). (Discuss in [Talk:Music Player Daemon#Style comment](https://wiki.archlinux.org/index.php/Talk:Music_Player_Daemon#Style_comment))
-
 Related articles
 
 *   [MPD/Tips and Tricks](/index.php/MPD/Tips_and_Tricks "MPD/Tips and Tricks")
@@ -301,51 +293,51 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 *   **mpc** — Command line user interface for MPD server
 
-NaN
+	[http://www.musicpd.org/clients/mpc/](http://www.musicpd.org/clients/mpc/) || [mpc](https://www.archlinux.org/packages/?name=mpc)
 
 *   **ncmpc** — Ncurses client for mpd
 
-NaN
+	[http://www.musicpd.org/clients/ncmpc/](http://www.musicpd.org/clients/ncmpc/) || [ncmpc](https://www.archlinux.org/packages/?name=ncmpc)
 
 *   **[ncmpcpp](/index.php/Ncmpcpp "Ncmpcpp")** — Almost exact clone of ncmpc with some new features written in C++ (tag editor, search engine)
 
-NaN
+	[http://ncmpcpp.rybczak.net/](http://ncmpcpp.rybczak.net/) || [ncmpcpp](https://www.archlinux.org/packages/?name=ncmpcpp)
 
 *   **pms** — Highly configurable and accessible ncurses client
 
-NaN
+	[http://pms.sourceforge.net/](http://pms.sourceforge.net/) || [pmus](https://aur.archlinux.org/packages/pmus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pmus)]</sup>
 
 *   **vimpc** — Ncurses based MPD client with vi-like key bindings
 
-NaN
+	[http://sourceforge.net/projects/vimpc/](http://sourceforge.net/projects/vimpc/) || [vimpc](https://aur.archlinux.org/packages/vimpc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vimpc)]</sup>
 
 ### Graphical
 
 *   **Ario** — Very feature-rich GTK2 GUI client for mpd, inspired by Rhythmbox
 
-NaN
+	[http://ario-player.sourceforge.net/](http://ario-player.sourceforge.net/) || [ario](https://www.archlinux.org/packages/?name=ario)
 
 *   **QmpdClient** — GUI client written with Qt 4.x
 
-NaN
+	[http://bitcheese.net/wiki/QMPDClient](http://bitcheese.net/wiki/QMPDClient) || [qmpdclient](https://www.archlinux.org/packages/?name=qmpdclient)
 
 *   **Sonata** — Elegant Python GTK+ client
 
-NaN
+	[http://www.nongnu.org/sonata/](http://www.nongnu.org/sonata/) || [sonata](https://www.archlinux.org/packages/?name=sonata)
 
 *   **gmpc** — GTK2 frontend for Music Player Daemon. It is designed to be lightweight and easy to use, while providing full access to all of MPD's features. Users are presented with several different methods to browse through their music. It can be extended by plugins, of which many are available.
 
-NaN
+	[http://gmpclient.org/](http://gmpclient.org/) || [gmpc](https://www.archlinux.org/packages/?name=gmpc)
 
 *   **Cantata** — High-feature, Qt4, Qt5 or KDE4 client for MPD with very configurable interface
 
-NaN
+	[https://code.google.com/p/cantata/](https://code.google.com/p/cantata/) || [cantata](https://www.archlinux.org/packages/?name=cantata)
 
 ### Web
 
 *   **Patchfork** — Web client for MPD written in PHP and Ajax
 
-NaN
+	[http://mpd.wikia.com/wiki/Client:Pitchfork](http://mpd.wikia.com/wiki/Client:Pitchfork) || [patchfork-git](https://aur.archlinux.org/packages/patchfork-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/patchfork-git)]</sup>.
 
 ## See also
 

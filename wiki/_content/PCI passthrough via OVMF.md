@@ -1,13 +1,5 @@
 # PCI passthrough via OVMF
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Missing introduction and descriptions of _why_ the steps are necessary (it may be explained in the external sources, but still...) (Discuss in [Talk:PCI passthrough via OVMF#](https://wiki.archlinux.org/index.php/Talk:PCI_passthrough_via_OVMF))
-
 This is a guide on how to do PCI VGA Passthrough on QEMU. Since kernel 3.9 and a change in QEMU, it is now possible to passthrough a graphics card, offering the VM native graphics performance which is useful when doing graphic-intensive tasks such as gaming. To do this, you need two graphics cards, one for the host and one for the VM; it is possible to use integrated graphics for the host. Your processor and motherboard also need to support AMD-VI/VT-D.
 
 ## Contents

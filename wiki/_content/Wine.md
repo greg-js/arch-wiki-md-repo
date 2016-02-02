@@ -466,14 +466,6 @@ Source: [Fedora Mailing List](http://www.spinics.net/linux/fedora/fedora-users/m
 
 ### Crackling sound when using PulseAudio
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Is this still present with native PulseAudio in [Wine 1.7.55](https://www.winehq.org/announce/1.7.55) and later? (Discuss in [Talk:Wine#](https://wiki.archlinux.org/index.php/Talk:Wine))
-
 If you experience crackling sound in Wine applications when PulseAudio is in use, edit the file `/etc/pulse/daemon.conf` by uncommenting the line `; default-fragment-size-msec = 25` and setting the value to `5` such that it looks like this:
 
 ```
@@ -552,14 +544,6 @@ For additional info, see the [WineHQ](http://appdb.winehq.org/appview.php?iVersi
 As an alternative to the above method, [playonlinux](https://www.archlinux.org/packages/?name=playonlinux) provides custom installer scripts that make the installation of Office 2003, 2007 and 2010 an ease. You just have to provide the _setup.exe_ or ISO and the installer will guide you seamlessly through the installation procedure. You do not have to deal with the underlying Wine at all. The playonlinux installation for Office 2010 improves on the minimum installation instructions provided above by enabling xml conversions for Word documents created with certain earlier versions of Word.
 
 #### Office 2013
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** [Wine 1.7.55](https://www.winehq.org/announce/1.7.55) (Discuss in [Talk:Wine#](https://wiki.archlinux.org/index.php/Talk:Wine))
 
 [CodeWeawers](https://www.codeweavers.com/) managed to install and run Microsoft Office 2013 with many bugs. It is still pretty unusable. You can read more [here](https://www.codeweavers.com/about/blogs/caron/2015/07/13/two-weeks-in-crossover-microsoft-office-2013-installs-and-launches).
 

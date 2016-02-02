@@ -1,13 +1,5 @@
 # ASUS Eee PC 901
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:ASUS Eee PC 901#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_901))
-
 This page contains instructions, tips, pointers, and links for installing and configuring Arch Linux on the ASUS EEE 901 PC.
 
 Most of the article can also be applied to eeepc-models which are similar to the 901 such the 901H, 1000 and 1000H. If you discover a configuration or software option applicable to a certain model that differs from what is described in this article, please add it, with a note about which model the suggestion pertains to.
@@ -255,14 +247,6 @@ Both the microphone and PC speakers should work out-of-the-box with current vers
 See the Arch Linux [ALSA](/index.php/ALSA "ALSA") wiki page for more information about configuring and using ALSA.
 
 ### X
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** This section is out-of-date, and needs to be cleaned up. (Discuss in [Talk:ASUS Eee PC 901#](https://wiki.archlinux.org/index.php/Talk:ASUS_Eee_PC_901))
 
 #### Video
 

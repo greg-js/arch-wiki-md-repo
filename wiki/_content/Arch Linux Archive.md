@@ -183,22 +183,6 @@ The [iso](http://ala.seblu.net/iso) directory contains official ISO images and b
 
 ## agetpkg
 
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages").**
-
-**Notes:** (Discuss in [Talk:Archive#agetpkg](https://wiki.archlinux.org/index.php/Talk:Archive#agetpkg))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** As of October 2015, the fate of the package is discussed in [arch-dev-public](https://lists.archlinux.org/pipermail/arch-dev-public/2015-October/027480.html). (Discuss in [Talk:Arch Linux Archive#](https://wiki.archlinux.org/index.php/Talk:Arch_Linux_Archive))
-
 [agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/)<sup><small>AUR</small></sup> is a command line tool used to quickly list/get/install packages stored in the Archive.
 
 ##### Download a previous version of ferm package

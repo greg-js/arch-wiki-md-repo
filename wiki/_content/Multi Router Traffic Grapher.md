@@ -1,21 +1,5 @@
 # Multi Router Traffic Grapher
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Multi Router Traffic Grapher#](https://wiki.archlinux.org/index.php/Talk:Multi_Router_Traffic_Grapher))
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:Multi Router Traffic Grapher#](https://wiki.archlinux.org/index.php/Talk:Multi_Router_Traffic_Grapher))
-
 ## Contents
 
 *   [1 Server Setup](#Server_Setup)
@@ -101,7 +85,7 @@ now we will begin dealing with the application scripts first we will create a ba
 
 ```
 
-NaN
+*   the mrtg.cfg files contains all the server interfaces. we do not need the "lo" interface so we are going to delete it and edit the global configuration
 
 ## mrtg.cfg Global configuration
 
@@ -124,7 +108,23 @@ Refresh: 600
 
 the global configuration lines mean :
 
-NaN
+	1) to load the Linux MIB in mrtg
+
+	2) to enable/disable IPv6
+
+	3) HTML home directory
+
+	4) the png files home directory
+
+	5) the log dir files locations
+
+	6) the Thresh folder
+
+	7) whether or not we want to run the application as a daemon , in this case : yes
+
+	8) the daemon interval (minimum 5 min)
+
+	9) the interval to refresh the HTML files
 
 ## Resource Monitoring
 
@@ -132,7 +132,21 @@ Now that we have the global configuration set we need to add the resources and d
 
 in this tutorial we are going to monitor:
 
-NaN
+	1)CPU
+
+	2)Memory Usage
+
+	3)swap
+
+	4)Number of Processes
+
+	5)Total TCP Established Connections
+
+	6)Users Count
+
+	7)the server mount points
+
+	8)the server interfaces
 
 ### CPU Monitoring
 

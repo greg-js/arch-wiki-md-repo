@@ -24,11 +24,11 @@
 
 ```
 
-NaN
+	assuming version 2.4\. Otherwise adapt the correct version number
 
 Start the Ampps Application from the GUI.
 
-NaN
+	Removal
 
 Be sure to stop all the services.
 

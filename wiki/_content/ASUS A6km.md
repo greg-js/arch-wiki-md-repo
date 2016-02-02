@@ -100,14 +100,6 @@ Not tested so far
 
 ## IrDA
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** please use the first argument of the template to provide a brief explanation. (Discuss in [Talk:ASUS A6km#](https://wiki.archlinux.org/index.php/Talk:ASUS_A6km))
-
 First make sure the device is enabled in the BIOS, then once booted up, start the daemon:
 
 ```

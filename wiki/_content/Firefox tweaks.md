@@ -115,7 +115,7 @@ $ rm -i ~/.mozilla/firefox/<profile_dir>/urlclassifier*
 
 ```
 
-NaN
+	Some of these files might be recreated by Firefox, but they will not grow any larger than their initial size.
 
 #### Stop urlclassifier3.sqlite from being created again
 
@@ -324,14 +324,6 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 #### Hide window border and title bar in Plasma
 
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** Many windows managers will respect application's request (not) to show it's titlebar, so Plasma is able to do so as well. The extension mentioned below can hide Firefox titlebar automatically and there is no need to do some configuration in plasma settings. (Discuss in [Talk:Firefox tweaks#](https://wiki.archlinux.org/index.php/Talk:Firefox_tweaks))
-
 *   Open Settings -> Application Style -> Window Decorations
 *   Select Breeze and click on the Settings-button
 *   Open the tab Window-Specific Overrides and click on the Add button
@@ -535,14 +527,6 @@ Other tips and tweaks.
 
 ### Enable additional media codecs
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** This section is not completed, there are many other variables related to Media Codecs in firefox. (Discuss in [Talk:Firefox tweaks#](https://wiki.archlinux.org/index.php/Talk:Firefox_tweaks))
-
 Before continuing, remember there is a reason some of these variables are not enabled by default, e.g. stability, memory leaks, etc. Go to `about:config` and check the following options:
 
 <caption>Suggested values</caption>
@@ -669,14 +653,6 @@ Now scrolling should flow smoothly.
 To prevent websites from getting your local IP address via [WebRTC](https://en.wikipedia.org/wiki/WebRTC)'s peer-to-peer (and JavaScript), open `about:config` and set `media.peerconnection.enabled` to **false** (or use this [addon](https://addons.mozilla.org/en-US/firefox/addon/happy-bonobo-disable-webrtc/)).
 
 ### Run Firefox inside an nspawn container
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-[![Tango-go-next.png](/images/f/f0/Tango-go-next.png)](/index.php/File:Tango-go-next.png)
-
-**This article or section is a candidate for moving to [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn").**
-
-**Notes:** This is potentially useful for any browser, so... move back? (Discuss in [Talk:Firefox tweaks#](https://wiki.archlinux.org/index.php/Talk:Firefox_tweaks))
 
 To run as PID 1
 

@@ -34,17 +34,32 @@ Previous experience with building and installing packages from the AUR and basic
 
 Prosody has optional depedencies that although not strictly required for its operation, provide useful features. These dependencies may also have to be built and installed from the AUR. If you are unfamiliar with how to build and install packages from the AUR please see [AUR User Guidelines#Installing packages](/index.php/AUR_User_Guidelines#Installing_packages "AUR User Guidelines").
 
-NaN
+	TLS/SSL Support (Recommended)
 
-NaN
+	Allow Prosody to encrypt streams to prevent eavesdropping.
+_Requires:_ [lua51-sec](https://www.archlinux.org/packages/?name=lua51-sec)
 
-NaN
+	MySQL/Postgresql Backend
+
+	Allow Prosody to use a MySQL/mariadb/Postgresql backend for better scaling and performance.
+_Requires:_ [luadbi](https://aur.archlinux.org/packages/luadbi/)<sup><small>AUR</small></sup>
+
+	Better Connection Scaling (Recommended)
+
+	Allow Prosody to use [libevent](http://www.monkey.org/~provos/libevent/) to handle a greater number of simultaneous connections.
+_Requires:_ [lua51-event](https://aur.archlinux.org/packages/lua51-event/)<sup><small>AUR</small></sup>
 
 **Warning:** Due to an open issue, when enabled luaevent, all s2s functionality breaks. A fix is expected in v0.10 [[1]](https://prosody.im/issues/issue/555)
 
-NaN
+	Stream Compression
 
-NaN
+	Allow Prosody to compress client-to-server streams for compatible clients to save bandwidth.
+_Requires:_ [lua51-zlib](https://www.archlinux.org/packages/?name=lua51-zlib)
+
+	Cyrus SASL Support
+
+	Allow Prosody to use the [Cyrus SASL](http://asg.web.cmu.edu/sasl/sasl-library.html) library to provide authentication.
+_Requires:_ [lua-cyrussasl](https://aur.archlinux.org/packages/lua-cyrussasl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lua-cyrussasl)]</sup>
 
 ## Configuration
 
@@ -165,11 +180,11 @@ This will enable the MUC component on host `conference.example.com`.
 
 To use an extra module download its raw file(s) from the source browser (when viewing a file, search for the link "View raw file"). Alternatively and likely easier, use Mercurial to clone the entire repository:
 
-NaN
+	Prosody 0.9+
 
 `$ hg clone https://hg.prosody.im/prosody-modules/ prosody-modules`
 
-NaN
+	Prosody 0.8
 
 `$ hg clone http://0-8.prosody-modules.googlecode.com/hg/ prosody-modules`
 

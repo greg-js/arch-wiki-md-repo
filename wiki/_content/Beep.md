@@ -1,13 +1,5 @@
 # Beep
 
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Disable PC speaker beep](/index.php/Disable_PC_speaker_beep "Disable PC speaker beep").**
-
-**Notes:** ...and rename to [PC speaker](/index.php?title=PC_speaker&action=edit&redlink=1 "PC speaker (page does not exist)")? (Discuss in [Talk:Beep#](https://wiki.archlinux.org/index.php/Talk:Beep))
-
 Beep is an advanced PC speaker beeping program. It is useful for situations where no sound card and/or speakers are available, and simple audio notification is desired.
 
 ## Contents

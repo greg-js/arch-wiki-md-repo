@@ -1,13 +1,5 @@
 # Talkd and the talk command
 
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-[![Tango-dialog-warning.png](/images/d/d8/Tango-dialog-warning.png)](/index.php/File:Tango-dialog-warning.png)
-
-**This article or section is out of date.**
-
-**Reason:** Should mention ytalk, too. (Discuss in [Talk:Talkd and the talk command#](https://wiki.archlinux.org/index.php/Talk:Talkd_and_the_talk_command))
-
 The "talk" command allows you to talk to other users on the same system, which is useful if you're both SSH'd in from somewhere. Using it is very simple; to talk to someone the command is just
 
  `$ talk <username> <tty>` 

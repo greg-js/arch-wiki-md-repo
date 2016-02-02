@@ -1,13 +1,5 @@
 # Dotclear
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** The most important part - how to install it - is missing ... (Discuss in [Talk:Dotclear#](https://wiki.archlinux.org/index.php/Talk:Dotclear))
-
 ## Contents
 
 *   [1 Introduction](#Introduction)

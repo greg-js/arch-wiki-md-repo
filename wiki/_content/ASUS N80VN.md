@@ -1,13 +1,5 @@
 # ASUS N80VN
 
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** ...and the following statement seems contraddicted. Poorly written, by the way. (Discuss in [Talk:ASUS N80VN#](https://wiki.archlinux.org/index.php/Talk:ASUS_N80VN))
-
 Works really good under Arch Linux.
 
 ## Sound card

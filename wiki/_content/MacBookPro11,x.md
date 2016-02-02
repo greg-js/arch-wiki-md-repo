@@ -8,14 +8,6 @@ Related articles
 *   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
 *   [MacBook](/index.php/MacBook "MacBook")
 
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-[![Tango-mail-mark-junk.png](/images/e/e7/Tango-mail-mark-junk.png)](/index.php/File:Tango-mail-mark-junk.png)
-
-**This article or section needs language, wiki syntax or style improvements.**
-
-**Reason:** This page flat-out ignores every possible [style](/index.php/Help:Style "Help:Style") rule (Discuss in [Talk:MacBookPro11,x#](https://wiki.archlinux.org/index.php/Talk:MacBookPro11,x))
-
 This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid 2014 to work with Arch Linux. (This includes models 1-3 in the 11,x series).
 
 ## Contents
@@ -231,14 +223,6 @@ Generate `grub.cfg` and `boot.efi` from Arch Linux:
 ```
 
 ##### Method 2: Using the default EFI System Partition with Grub
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-[![Tango-document-new.png](/images/f/f0/Tango-document-new.png)](/index.php/File:Tango-document-new.png)
-
-**This article is a stub.**
-
-**Notes:** Coming this weekend... (Discuss in [Talk:MacBookPro11,x#](https://wiki.archlinux.org/index.php/Talk:MacBookPro11,x))
 
 #### Direct EFI booting (rEFInd)
 

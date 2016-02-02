@@ -17,14 +17,6 @@ Related articles
 
 ## Supported hardware
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** [This revision](https://wiki.archlinux.org/index.php?title=ATI&diff=next&oldid=411145) contained some information about [libva-mesa-driver](https://www.archlinux.org/packages/?name=libva-mesa-driver) and `LIBVA_DRIVER_NAME=gallium`, which should be added here. (Discuss in [Talk:VA-API#](https://wiki.archlinux.org/index.php/Talk:VA-API))
-
 **Open source drivers:**
 
 *   [AMD](/index.php/ATI "ATI") Radeon 9500 and newer GPUs are supported by the [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) package together with the [mesa](https://www.archlinux.org/packages/?name=mesa) package.
@@ -89,14 +81,6 @@ In order to check what profiles (features) are supported by your GPU, you may wa
 
 ### Configuration
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Add notes on the `LIBVA_DRIVER_NAME` values for different drivers, c.f. [VDPAU#Configuration](/index.php/VDPAU#Configuration "VDPAU"). The drivers are installed in `/usr/lib/dri/`. (Discuss in [Talk:VA-API#](https://wiki.archlinux.org/index.php/Talk:VA-API))
-
 The [driver](http://www.freedesktop.org/wiki/Software/vaapi/#driversback-endsthatimplementva-api) used by VA-API is autodetected, but sometimes it may be necessary to configure it manually by setting the [environment variable](/index.php/Environment_variable "Environment variable") `LIBVA_DRIVER_NAME`, for example:
 
 ```
@@ -138,7 +122,7 @@ _VAEntrypointVLD_ means that your card is capable to decode this format, _VAEntr
 
 *   [GStreamer](/index.php/GStreamer "GStreamer") based players - VA-API is used automatically, if supported format found.
 
-NaN
+	See more at [http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding](http://docs.gstreamer.com/display/GstSDK/Playback+tutorial+8%3A+Hardware-accelerated+video+decoding).
 
 *   VLC media player: see [VLC media player#Hardware acceleration support](/index.php/VLC_media_player#Hardware_acceleration_support "VLC media player").
 *   Mpv: see [Mpv#Hardware Decoding](/index.php/Mpv#Hardware_Decoding "Mpv").

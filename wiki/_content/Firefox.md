@@ -49,23 +49,23 @@ Other alternatives include:
 
 *   **Firefox Extended Support Release** — long-term supported version
 
-NaN
+	[https://www.mozilla.org/en-US/firefox/organizations/](https://www.mozilla.org/en-US/firefox/organizations/) || [firefox-esr-bin](https://aur.archlinux.org/packages/firefox-esr-bin/)<sup><small>AUR</small></sup>
 
 *   **Firefox Beta** — cutting-edge version
 
-NaN
+	[https://www.mozilla.org/en-US/firefox/channel](https://www.mozilla.org/en-US/firefox/channel) || [firefox-beta-bin](https://aur.archlinux.org/packages/firefox-beta-bin/)<sup><small>AUR</small></sup>
 
 *   **Firefox Aurora/Developer edition** — for developers
 
-NaN
+	[https://www.mozilla.org/en-US/firefox/aurora/](https://www.mozilla.org/en-US/firefox/aurora/) || [firefox-aurora](https://aur.archlinux.org/packages/firefox-aurora/)<sup><small>AUR</small></sup>
 
 *   **Firefox Nightly** — nightly builds for testing
 
-NaN
+	[https://nightly.mozilla.org/](https://nightly.mozilla.org/) || [firefox-nightly](https://aur.archlinux.org/packages/firefox-nightly/)<sup><small>AUR</small></sup>
 
 *   **Firefox KDE** — Version of Firefox that incorporates an OpenSUSE patch for better KDE integration than is possible through simple Firefox plugins.
 
-NaN
+	[https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox](https://build.opensuse.org/package/show/mozilla:Factory/MozillaFirefox) || [firefox-kde-opensuse](https://aur.archlinux.org/packages/firefox-kde-opensuse/)<sup><small>AUR</small></sup>
 
 *   On top of the different Mozilla build channels, a number of forks exist with more or less special features; see [List of applications#Gecko-based](/index.php/List_of_applications#Gecko-based "List of applications").
 
@@ -201,22 +201,6 @@ See [Default applications](/index.php/Default_applications "Default applications
 
 #### File association problems
 
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-[![Tango-view-fullscreen.png](/images/3/38/Tango-view-fullscreen.png)](/index.php/File:Tango-view-fullscreen.png)
-
-**This article or section needs expansion.**
-
-**Reason:** Mention `xdg-open` trick in `Preferences > Applications`, and possible mistakes with `octet/binary-stream` [[1]](https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/918019/comments/12) (Discuss in [Talk:Firefox#](https://wiki.archlinux.org/index.php/Talk:Firefox))
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-[![Tango-emblem-important.png](/images/c/c8/Tango-emblem-important.png)](/index.php/File:Tango-emblem-important.png)
-
-**The factual accuracy of this article or section is disputed.**
-
-**Reason:** [firefox](https://www.archlinux.org/packages/?name=firefox) does not seem to use [libgnome](https://www.archlinux.org/packages/?name=libgnome) at all, though [this bug](https://bugzilla.mozilla.org/show_bug.cgi?id=694570) is still open. (Discuss in [Talk:Firefox#](https://wiki.archlinux.org/index.php/Talk:Firefox))
-
 For non-[GNOME](/index.php/GNOME "GNOME") users, Firefox may not associate file types properly or at all (in the "Open With" part of the download dialog). Installing [libgnome](https://www.archlinux.org/packages/?name=libgnome) amends the problem.
 
 See also [[2]](http://alien.slackbook.org/blog/make-firefox-understand-downloaded-files/).
@@ -277,14 +261,6 @@ $ rm -f cookies.sqlite
 Restart Firefox and see if it solved the problem.
 
 ### Unreadable input fields with dark GTK+ themes
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-[![Tango-two-arrows.png](/images/7/72/Tango-two-arrows.png)](/index.php/File:Tango-two-arrows.png)
-
-**This article or section is a candidate for merging with [Firefox tweaks#Appearance](/index.php/Firefox_tweaks#Appearance "Firefox tweaks").**
-
-**Notes:** Anything on that page might be in troubleshooting section as well, so let's keep the info in one place. (Discuss in [Talk:Firefox#](https://wiki.archlinux.org/index.php/Talk:Firefox))
 
 When using a dark [GTK+](/index.php/GTK%2B "GTK+") theme, one might encounter Internet pages with unreadable input and text fields (e.g. Amazon can have white text on white background). This can happen because the site only sets either background or text color, and Firefox takes the other one from the theme.
 

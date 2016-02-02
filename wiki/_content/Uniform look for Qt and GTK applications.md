@@ -95,11 +95,11 @@ To set a style as default, you can use [qt5ct](https://www.archlinux.org/package
 
 *   Calling `kgtk-wrapper` directly and using the GTK+ 2.x binary as an argument:
 
-NaN
+	 `$ /usr/bin/kgtk-wrapper gimp` 
 
 *   Modifying the KDE .desktop shortcuts files you can find at `/usr/share/applications/` to prefix the `Exec` statement with kgtk-wrapper.
 
-NaN
+	e.g. with [GIMP](/index.php/GIMP "GIMP"), edit the `/usr/share/applications/gimp.desktop` shortcut file and replace `Exec=gimp-2.8 %U` by `Exec=kgtk-wrapper gimp-2.8 %U`.
 
 ### Using a GTK+ icon theme in Qt apps
 
