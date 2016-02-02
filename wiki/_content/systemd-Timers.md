@@ -1,12 +1,5 @@
 # systemd/Timers
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
-*   [cron](/index.php/Cron "Cron")
-
 Timers are [systemd](/index.php/Systemd "Systemd") unit files whose name ends in `.timer` that control `.service` files or events. Timers have the ability to be an alternative to [cron](/index.php/Cron "Cron") (read [#As a cron replacement](#As_a_cron_replacement)). Timers have built-in support for calendar time events, monotonic time events, and have the ability to run asynchronously.
 
 ## Contents

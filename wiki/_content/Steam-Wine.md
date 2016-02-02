@@ -1,10 +1,5 @@
 # Steam/Wine
 
-Related articles
-
-*   [Steam](/index.php/Steam "Steam")
-*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
-
 This article covers running Steam in Wine, in order to play games not available through the native Linux [Steam](/index.php/Steam "Steam").
 
 ## Contents

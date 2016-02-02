@@ -1,9 +1,5 @@
 # pacman/Package signing
 
-Related articles
-
-*   [DeveloperWiki:Package signing](/index.php/DeveloperWiki:Package_signing "DeveloperWiki:Package signing")
-
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
 To determine if packages are authentic, _pacman_ uses [GnuPG keys](http://www.gnupg.org/) in a [web of trust](http://www.gnupg.org/gph/en/manual.html#AEN385) model. There are currently five [Master Signing Keys](https://www.archlinux.org/master-keys/). At least three of these Master Signing Keys are used to sign each of the Developer's and Trusted User's own keys which then in turn are used to sign their packages. The user also has a unique PGP key which is generated when you set up _pacman-key_. So the web of trust links the user's key to the five Master Keys.

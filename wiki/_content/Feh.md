@@ -1,10 +1,5 @@
 # Feh
 
-Related articles
-
-*   [Nitrogen](/index.php/Nitrogen "Nitrogen")
-*   [sxiv](/index.php/Sxiv "Sxiv")
-
 [feh](http://feh.finalrewind.org/) is a lightweight and powerful image viewer that can also be used to manage the desktop wallpaper for standalone window managers lacking such features.
 
 ## Contents

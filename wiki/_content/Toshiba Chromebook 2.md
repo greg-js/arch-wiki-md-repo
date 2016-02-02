@@ -1,9 +1,5 @@
 # Toshiba Chromebook 2
 
-Related articles
-
-*   [Chromebook](/index.php/Chromebook "Chromebook")
-
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 To install Arch Linux on this model of Chromebook, you have to run these commands to install a Seabios boot stub:

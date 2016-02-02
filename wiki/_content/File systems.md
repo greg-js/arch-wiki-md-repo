@@ -1,15 +1,5 @@
 # File systems
 
-Related articles
-
-*   [fstab](/index.php/Fstab "Fstab")
-*   [Mount](/index.php/Mount "Mount")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-*   [tmpfs](/index.php/Tmpfs "Tmpfs")
-*   [NFS](/index.php/NFS "NFS")
-*   [Samba](/index.php/Samba "Samba")
-*   [Backup programs#Distributed file systems](/index.php/Backup_programs#Distributed_file_systems "Backup programs")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/File_system "wikipedia:File system"):
 
 	_A file system (or filesystem) is a means to organize data expected to be retained after a program terminates by providing procedures to store, retrieve and update data, as well as manage the available space on the device(s) which contain it. A file system organizes data in an efficient manner and is tuned to the specific characteristics of the device._

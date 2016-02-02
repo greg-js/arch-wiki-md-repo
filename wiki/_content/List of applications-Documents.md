@@ -395,7 +395,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://gnu.org/s/emacs](https://gnu.org/s/emacs) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
-*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim, this package also provides the `vim` command.
+*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim.
 
 	[http://www.vim.org/](http://www.vim.org/) || [gvim](https://www.archlinux.org/packages/?name=gvim)
 
@@ -861,4 +861,4 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 	[http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418664](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418664)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418801](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418801)"

@@ -1,12 +1,5 @@
 # Wireless network configuration
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Software access point](/index.php/Software_access_point "Software access point")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-
 Configuring wireless is a two-part process; the first part is to identify and ensure the correct driver for your wireless device is installed (they are available on the installation media, but often have to be installed explicitly), and to configure the interface. The second is choosing a method of managing wireless connections. This article covers both parts, and provides additional links to wireless management tools.
 
 ## Contents

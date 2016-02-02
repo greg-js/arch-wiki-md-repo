@@ -1,10 +1,5 @@
 # Dropbox
 
-Related articles
-
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
-*   [Syncthing](/index.php/Syncthing "Syncthing")
-
 [Dropbox](https://www.dropbox.com) is a file sharing system with a GNU/Linux client. Use it to transparently sync files across computers and architectures. Simply drop files into your `~/Dropbox` folder, and they will automatically sync to your centralized repository.
 
 ## Contents

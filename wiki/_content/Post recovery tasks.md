@@ -1,10 +1,5 @@
 # Post recovery tasks
 
-Related articles
-
-*   [File recovery](/index.php/File_recovery "File recovery")
-*   [Sort images by resolution](/index.php/Sort_images_by_resolution "Sort images by resolution")
-
 **Note:** To speed up access to the recovered or restored files you can use [shake](https://www.archlinux.org/packages/?name=shake) utility to defragment them.
 
 ## Contents

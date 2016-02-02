@@ -1,10 +1,5 @@
 # imwheel
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Mouse_acceleration](/index.php/Mouse_acceleration "Mouse acceleration")
-
 _imwheel_ is a tool for tweaking mouse wheel behavior, on a per-program basis. It can map mousewheel input to keyboard input, increase mousewheel speed, and has support for modifier keys.
 
 ## Contents

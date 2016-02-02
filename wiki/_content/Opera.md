@@ -1,11 +1,5 @@
 # Opera
 
-Related articles
-
-*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Chromium](/index.php/Chromium "Chromium")
-
 [Opera](http://www.opera.com) is a free of charge web browser developed since 1994 by the Norwegian company [Opera Software](https://en.wikipedia.org/wiki/Opera_Software "wikipedia:Opera Software"). It is known for being the first to bring new browsing features to the world that have become common on all web browsers, such as tabbed browsing and built-in search.
 
 Opera continues to innovate with its integrated mail client, one-click bookmarking, tab stacks (a way of organizing your tabs) and very good support for [HTML5](https://en.wikipedia.org/wiki/HTML5 "wikipedia:HTML5") features.

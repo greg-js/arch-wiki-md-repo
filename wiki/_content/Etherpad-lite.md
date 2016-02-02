@@ -1,9 +1,5 @@
 # Etherpad-lite
 
-Related articles
-
-*   [Gobby](/index.php/Gobby "Gobby")
-
 [Etherpad-Lite](http://etherpad.org) or just Etherpad, is a collaborative, multi-user web-editor based on NodeJS with the ability to import/export various office file formats.
 
 ## Contents

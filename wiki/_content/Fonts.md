@@ -1,12 +1,5 @@
 # Fonts
 
-Related articles
-
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [Infinality](/index.php/Infinality "Infinality")
-*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
-*   [Microsoft fonts](/index.php/Microsoft_fonts "Microsoft fonts")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Computer_font "wikipedia:Computer font"):
 
 	_A computer font (or font) is an electronic data file containing a set of glyphs, characters, or symbols such as dingbats._

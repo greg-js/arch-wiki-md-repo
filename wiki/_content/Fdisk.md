@@ -1,11 +1,5 @@
 # Fdisk
 
-Related articles
-
-*   [parted](/index.php/Parted "Parted")
-*   [GParted](/index.php/GParted "GParted")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-
 ## Contents
 
 *   [1 Using GPT - modern method](#Using_GPT_-_modern_method)

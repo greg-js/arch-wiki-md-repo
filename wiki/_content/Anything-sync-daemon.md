@@ -1,9 +1,5 @@
 # Anything-sync-daemon
 
-Related articles
-
-*   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
-
 [Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> (asd) is a tiny pseudo-daemon designed to manage user specified directories referred to as sync targets from here on out, in tmpfs and to periodically sync them back to the physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backups. Additionally, asd features several crash recovery features.
 
 ## Contents

@@ -1,10 +1,5 @@
 # Pro Audio
 
-Related articles
-
-*   [Sound system](/index.php/Sound_system "Sound system")
-*   [envy24control](/index.php/Envy24control "Envy24control")
-
 Modern Linux systems are more than capable of supporting your (semi-)professional audio needs. Latencies of 5ms down to even as low as 1ms can be achieved with good hardware and proper configuration.
 
 ## Contents

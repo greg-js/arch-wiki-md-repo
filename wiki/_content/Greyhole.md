@@ -1,9 +1,5 @@
 # Greyhole
 
-Related articles
-
-*   [Samba](/index.php/Samba "Samba")
-
 [Greyhole](http://www.greyhole.net/) is an application that uses [Samba](/index.php/Samba "Samba") to create a storage pool of all your available hard drives (whatever their size, however they are connected), and allows you to create redundant copies of the files you store, in order to prevent data loss when part of your hardware fails.
 
 ## Contents

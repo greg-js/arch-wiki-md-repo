@@ -1,10 +1,5 @@
 # LILO
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-
 The _LI_nux _LO_ader, or **LILO** for short, is a legacy multi-boot loader for Linux systems. In spite of being the standard choice over the course of several years, it has been slowly phased out thanks to the advent of [GRUB](/index.php/GRUB "GRUB"), an alternative boot loader offering easier configuration and less chance of rendering systems unbootable. LILO is no longer actively developed.
 
 ## Contents

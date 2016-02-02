@@ -1,11 +1,5 @@
 # pacman/Tips and tricks
 
-Related articles
-
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Mirrors](/index.php/Mirrors "Mirrors")
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-
 See [pacman](/index.php/Pacman "Pacman") for the main article.
 
 For general methods to improve the flexibility of the provided tips or pacman itself, see [Core utilities](/index.php/Core_utilities "Core utilities") and [Bash](/index.php/Bash "Bash").

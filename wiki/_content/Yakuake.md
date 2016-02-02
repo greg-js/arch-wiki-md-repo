@@ -1,9 +1,5 @@
 # Yakuake
 
-Related articles
-
-*   [KDE](/index.php/KDE "KDE")
-
 [Yakuake](http://yakuake.kde.org/) is a top-down terminal for [KDE](/index.php/KDE "KDE") (in the style of [Guake](/index.php/Guake "Guake") for [GNOME](/index.php/GNOME "GNOME"), [Tilda](/index.php/Tilda "Tilda") or the terminal used in Quake).
 
 ## Contents

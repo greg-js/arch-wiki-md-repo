@@ -1,12 +1,5 @@
 # GTK+
 
-Related articles
-
-*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
-*   [Qt](/index.php/Qt "Qt")
-*   [GNU Project](/index.php/GNU_Project "GNU Project")
-*   [GTK+/Development](/index.php/GTK%2B/Development "GTK+/Development")
-
 From the [GTK+ website](http://www.gtk.org):
 
 	_GTK+, or the GIMP Toolkit, is a multi-platform toolkit for creating graphical user interfaces. Offering a complete set of widgets, GTK+ is suitable for projects ranging from small one-off tools to complete application suites._

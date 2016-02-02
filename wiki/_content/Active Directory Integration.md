@@ -1,12 +1,5 @@
 # Active Directory Integration
 
-Related articles
-
-*   [Samba](/index.php/Samba "Samba")
-*   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
-*   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
-*   [OpenChange server](/index.php/OpenChange_server "OpenChange server")
-
 **Warning:** Because Arch Linux is a rolling release distribution, it is possible that some of the information in this article could be outdated due to package or configuration changes made by the maintainers. Never blindly follow these or any other instructions. When the instructions say to edit or change a file, consider making a backup copy. Check the date of the last revision of this article.
 
 A key challenge for system administrators of any datacenter is trying to coexisting in Heterogeneous environments. By this we mean the mixing of different server operating system technologies (typically Microsoft Windows & Unix/Linux). User management and authentication is by far the most difficult of these to solve. The most common way of solving this problem is to use a Directory Server. There are a number of open-source and commercial solutions for the various flavors of *NIX; however, few solve the problem of interoperating with Windows. Active Directory (AD) is a directory service created by Microsoft for Windows domain networks. It is included in most Windows Server operating systems. Server computers on which Active Directory is running are called domain controllers.

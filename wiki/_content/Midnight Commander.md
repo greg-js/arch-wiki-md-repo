@@ -1,10 +1,5 @@
 # Midnight Commander
 
-Related articles
-
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [ranger](/index.php/Ranger "Ranger")
-
 [Midnight Commander](https://en.wikipedia.org/wiki/Midnight_Commander "wikipedia:Midnight Commander") is an orthodox (two-pane) file manager, supporting standard file operations, virtual filesystems, panelizing of external commands, and user menus. It also includes an internal viewer, editor, and visual diff tool.
 
 As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works on a regular console, inside an X Window terminal, over [SSH](/index.php/SSH "SSH") connections and all kinds of remote shells.

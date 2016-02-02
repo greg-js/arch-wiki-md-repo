@@ -1,17 +1,5 @@
 # Core utilities
 
-Related articles
-
-*   [Bash](/index.php/Bash "Bash")
-*   [Zsh](/index.php/Zsh "Zsh")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [GNU Project](/index.php/GNU_Project "GNU Project")
-*   [sudo](/index.php/Sudo "Sudo")
-*   [cron](/index.php/Cron "Cron")
-*   [man page](/index.php/Man_page "Man page")
-*   [Securely wipe disk#shred](/index.php/Securely_wipe_disk#shred "Securely wipe disk")
-*   [File permissions and attributes](/index.php/File_permissions_and_attributes "File permissions and attributes")
-
 This article deals with so-called _core_ utilities on a GNU/Linux system, such as _less_, _ls_, and _grep_. The scope of this article includes, but is not limited to, those utilities included with the GNU [coreutils](https://www.archlinux.org/packages/?name=coreutils) package. What follows are various tips and tricks and other helpful information related to these utilities.
 
 ## Contents

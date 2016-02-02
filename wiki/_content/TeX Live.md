@@ -1,12 +1,5 @@
 # TeX Live
 
-Related articles
-
-*   [TeX Live FAQ](/index.php/TeX_Live_FAQ "TeX Live FAQ")
-*   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
-*   [Ooolatex](/index.php/Ooolatex "Ooolatex")
-*   [List of applications/Documents#Scientific_documents](/index.php/List_of_applications/Documents#Scientific_documents "List of applications/Documents")
-
 [TeX Live](https://www.tug.org/texlive/) is an "easy way to get up and running with the [TeX](https://en.wikipedia.org/wiki/TeX "wikipedia:TeX") document production system. It provides a comprehensive TeX system with binaries for most flavors of Unix, including GNU/Linux, and also Windows. It includes all the major TeX-related programs, macro packages, and fonts that are free software, including support for many languages around the world."
 
 TeX Live is one of the most popular distribution for [LaTeX](https://en.wikipedia.org/wiki/LaTeX "wikipedia:LaTeX"), [ConTeXt](https://en.wikipedia.org/wiki/ConTeXt "wikipedia:ConTeXt") and friends.

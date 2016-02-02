@@ -1,11 +1,5 @@
 # Arch compared to other distributions
 
-Related articles
-
-*   [Arch Linux](/index.php/Arch_Linux "Arch Linux")
-*   [The Arch Way](/index.php/The_Arch_Way "The Arch Way")
-*   [Arch based distributions (active)](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)")
-
 This page attempts to draw a comparison between Arch Linux and other popular GNU/Linux distributions and UNIX-like operating systems. The summaries that follow are brief descriptions that may help a person decide if Arch Linux will suit his or her needs. Although reviews and descriptions can be useful, first-hand experience is invariably the best way to compare distributions.
 
 ## Contents

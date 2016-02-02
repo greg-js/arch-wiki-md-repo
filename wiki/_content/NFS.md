@@ -1,9 +1,5 @@
 # NFS
 
-Related articles
-
-*   [NFS/Troubleshooting](/index.php/NFS/Troubleshooting "NFS/Troubleshooting")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Network_File_System "wikipedia:Network File System"):
 
 	_Network File System (NFS) is a distributed file system protocol originally developed by Sun Microsystems in 1984, allowing a user on a client computer to access files over a network in a manner similar to how local storage is accessed._

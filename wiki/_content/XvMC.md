@@ -1,10 +1,5 @@
 # XvMC
 
-Related articles
-
-*   [VA-API](/index.php/VA-API "VA-API")
-*   [VDPAU](/index.php/VDPAU "VDPAU")
-
 **X-Video Motion Compensation (XvMC)** is an extension for the X.Org Server. The XvMC API allows video programs to offload portions of the video decoding process to the GPU video-hardware. Particularly, features that have the tendency of heavily depending on the processor. Since XvMC acceleration takes the load off the CPU, thereby reducing processor requirements for video playback, it is an ideal solution for HDTV video playback scenarios.
 
 **Note:** XvMC is obsoleted by [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") nowadays, which have better support for recent GPUs.

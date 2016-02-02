@@ -1,13 +1,5 @@
 # Compiz
 
-Related articles
-
-*   [Compiz configuration](/index.php/Compiz_configuration "Compiz configuration")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Xfce](/index.php/Xfce "Xfce")
-*   [MATE](/index.php/MATE "MATE")
-
 According to [Wikipedia](https://en.wikipedia.org/wiki/Compiz "wikipedia:Compiz"):
 
 	_Compiz is a [compositing window manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") for the [X Window System](/index.php/X_Window_System "X Window System"), using 3D graphics hardware to create fast compositing desktop effects for window management. Effects, such as a minimization animation or a cube workspace, are implemented as loadable plugins._

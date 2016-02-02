@@ -1,11 +1,5 @@
 # fsck
 
-Related articles
-
-*   [Ext4](/index.php/Ext4 "Ext4")
-*   [Btrfs](/index.php/Btrfs "Btrfs")
-*   [fstab](/index.php/Fstab "Fstab")
-
 [fsck](https://en.wikipedia.org/wiki/Fsck "wikipedia:Fsck") stands for _"file system check"_ and it is used to check and optionally repair one or more Linux file systems. Normally, the fsck program will try to handle filesystems on different physical disk drives in parallel to reduce the total amount of time needed to check all of the filesystems (see: `man fsck`).
 
 The [Arch Linux boot process](/index.php/Arch_boot_process "Arch boot process") conveniently takes care of the fsck procedure for you and will check all relevant partitions on your drive(s) automatically on every boot. Hence, there is usually no need to resort to the command-line unless necessary.

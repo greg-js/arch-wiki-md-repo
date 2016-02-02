@@ -1,14 +1,5 @@
 # Intel graphics
 
-Related articles
-
-*   [Intel GMA3600](/index.php/Intel_GMA3600 "Intel GMA3600")
-*   [Poulsbo](/index.php/Poulsbo "Poulsbo")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting")
-*   [Xrandr](/index.php/Xrandr "Xrandr")
-*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
-
 Since Intel provides and supports open source drivers, Intel graphics are now essentially plug-and-play.
 
 For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs, see [this comparison on Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Intel_graphics_processing_units "wikipedia:Comparison of Intel graphics processing units").

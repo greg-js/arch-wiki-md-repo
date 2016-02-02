@@ -1,10 +1,5 @@
 # Desktop notifications
 
-Related articles
-
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [Libcanberra](/index.php/Libcanberra "Libcanberra")
-
 Desktop notifications are small, passive popup dialogs that notify the user of particular events in an asynchronous manner.
 
 ## Contents

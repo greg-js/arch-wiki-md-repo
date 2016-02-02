@@ -1,9 +1,5 @@
 # F2FS
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-
 [F2FS](https://en.wikipedia.org/wiki/F2FS "wikipedia:F2FS") (Flash-Friendly File System) is a file system intended for NAND-based flash memory. It is supported from kernel 3.8 onwards.
 
 ## Creating a F2FS partition

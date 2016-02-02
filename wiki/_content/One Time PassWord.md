@@ -1,12 +1,5 @@
 # One Time PassWord
 
-Related articles
-
-*   [Secure Shell](/index.php/Secure_Shell "Secure Shell")
-*   [S/KEY Authentication](/index.php/S/KEY_Authentication "S/KEY Authentication")
-*   [Pam abl](/index.php/Pam_abl "Pam abl")
-*   [Google Authenticator](/index.php/Google_Authenticator "Google Authenticator")
-
 **One Time PassWord** (**OTPW**) is a PAM module allowing single-use passwords to login to a system. This is especially useful in the context of Secure Shell, allowing a user to login from a public or shared computer using a single-use password which will never work again.
 
 Instructions for installing OTPW and configuring SSH to allow OTPW logins are below.

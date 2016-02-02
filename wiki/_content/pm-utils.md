@@ -1,10 +1,5 @@
 # pm-utils
 
-Related articles
-
-*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-*   [TuxOnIce](/index.php/TuxOnIce "TuxOnIce")
-
 **Warning:** Hibernating with Pm-utils and then updating systemd is reported to corrupt files: [https://bbs.archlinux.org/viewtopic.php?pid=1423442](https://bbs.archlinux.org/viewtopic.php?pid=1423442)
 
 **pm-utils** is a suspend and powerstate setting framework. It is designed to replace such scripts as those provided by the `powersave` package.

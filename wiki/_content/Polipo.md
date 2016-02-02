@@ -1,9 +1,5 @@
 # Polipo
 
-Related articles
-
-*   [Squid](/index.php/Squid "Squid")
-
 From [Polipo's site](http://www.pps.jussieu.fr/~jch/software/polipo/):
 
 	"_Polipo is a small and fast caching web proxy (a web cache, an HTTP proxy, a proxy server). While Polipo was designed to be used by one person or a small group of people, there is nothing that prevents it from being used by a larger group._"

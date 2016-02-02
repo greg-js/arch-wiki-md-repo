@@ -1,12 +1,5 @@
 # Qt
 
-Related articles
-
-*   [KDE](/index.php/KDE "KDE")
-*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [Qt for Android](/index.php/Qt_for_Android "Qt for Android")
-
 [Qt](http://qt-project.org/) is a cross-platform application and widget toolkit that uses standard C++ but makes extensive use of a special code generator (called the [Meta Object Compiler](http://qt-project.org/doc/qt-4.8/moc.html), or _moc_) together with several macros to enrich the language. Some of its more important features include:
 
 *   Running on the major desktop platforms and some of the mobile platforms.

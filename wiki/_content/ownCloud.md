@@ -1,12 +1,5 @@
 # ownCloud
 
-Related articles
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [Nginx](/index.php/Nginx "Nginx")
-*   [OpenSSL](/index.php/OpenSSL "OpenSSL")
-*   [WebDAV](/index.php/WebDAV "WebDAV")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/ownCloud "wikipedia:ownCloud"):
 
 	_ownCloud is a software suite that provides a location-independent storage area for data (cloud storage)._

@@ -1,12 +1,5 @@
 # Kernel modules
 
-Related articles
-
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
-*   [Kernels](/index.php/Kernels "Kernels")
-*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
-*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
-
 [Kernel modules](https://en.wikipedia.org/wiki/Loadable_kernel_module "wikipedia:Loadable kernel module") are pieces of code that can be loaded and unloaded into the kernel upon demand. They extend the functionality of the kernel without the need to reboot the system.
 
 To create a kernel module, you can read [The Linux Kernel Module Programming Guide](http://tldp.org/LDP/lkmpg/2.6/html/index.html). A module can be configured as built-in or loadable. To dynamically load or remove a module, it has to be configured as a loadable module in the kernel configuration (the line related to the module will therefore display the letter `M`).

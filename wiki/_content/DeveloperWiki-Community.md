@@ -1,10 +1,5 @@
 # DeveloperWiki:Community
 
-Related articles
-
-*   [AUR User Guidelines#[community]](/index.php/AUR_User_Guidelines#.5Bcommunity.5D "AUR User Guidelines")
-*   [Getting involved#Community projects](/index.php/Getting_involved#Community_projects "Getting involved")
-
 Future policies for the community repository should be discussed to improve the usefulness of the repository and decrease the number of unused packages.
 
 ## Contents

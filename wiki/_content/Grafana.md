@@ -1,10 +1,5 @@
 # Grafana
 
-Related articles
-
-*   [Zabbix](/index.php/Zabbix "Zabbix")
-*   [Munin](/index.php/Munin "Munin")
-
 Grafana is an open-source, general purpose dashboard and graph composer, which runs as a web application. It supports graphite, influxdb or opentsdb as backends.
 
 ## Contents

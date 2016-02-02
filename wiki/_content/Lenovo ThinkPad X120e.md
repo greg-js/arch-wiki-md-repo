@@ -1,9 +1,5 @@
 # Lenovo ThinkPad X120e
 
-Related articles
-
-*   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
-
 Installation instructions for the Lenovo ThinkPad X120e. Should work for X121e too.
 
 ## Contents

@@ -1,10 +1,5 @@
 # Bluetooth headset
 
-Related articles
-
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
-
 Currently, Arch Linux supports the A2DP profile (Audio Sink) for remote audio playback with the default installation.
 
 **Note:** Bluez5 is only supported by [PulseAudio](/index.php/PulseAudio "PulseAudio") and not by [ALSA](/index.php/ALSA "ALSA"). If you do not want to use PulseAudio, you need to install an older Bluez version from the AUR.

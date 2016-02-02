@@ -1,12 +1,5 @@
 # Firefox
 
-Related articles
-
-*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
-*   [Chromium](/index.php/Chromium "Chromium")
-*   [Opera](/index.php/Opera "Opera")
-
 [Firefox](http://www.firefox.com) is a popular open-source graphical web browser from [Mozilla](http://www.mozilla.com).
 
 ## Contents

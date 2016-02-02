@@ -1,10 +1,5 @@
 # Default applications
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 Default applications can be set for use with particular file types (e.g. the [Firefox](/index.php/Firefox "Firefox") web browser for `HTML` files). Where undertaken, files may be opened and/or edited with the desired application much faster and more conveniently. There are also numerous methods to configure default applications in Linux. This page will explain the most common methods: File Managers, MIME types, and environment variables.
 
 ## Contents

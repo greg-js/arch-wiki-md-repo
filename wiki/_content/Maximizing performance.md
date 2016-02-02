@@ -1,18 +1,5 @@
 # Maximizing performance
 
-Related articles
-
-*   [ccache](/index.php/Ccache "Ccache")
-*   [Improve pacman performance](/index.php/Improve_pacman_performance "Improve pacman performance")
-*   [SSH#Speeding up SSH](/index.php/SSH#Speeding_up_SSH "SSH")
-*   [LibreOffice#Speed up LibreOffice](/index.php/LibreOffice#Speed_up_LibreOffice "LibreOffice")
-*   [Openoffice#Speed up OpenOffice](/index.php/Openoffice#Speed_up_OpenOffice "Openoffice")
-*   [Laptop](/index.php/Laptop "Laptop")
-*   [Swap#Swappiness](/index.php/Swap#Swappiness "Swap")
-*   [Preload](/index.php/Preload "Preload")
-*   [Cpulimit](/index.php/Cpulimit "Cpulimit")
-*   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
-
 This article provides information on basic system diagnostics relating to performance as well as steps that may be taken to reduce resource consumption or to otherwise optimize the system with the end-goal being either perceived or documented improvements to a system's performance.
 
 ## Contents

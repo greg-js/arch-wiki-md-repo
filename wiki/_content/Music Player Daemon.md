@@ -1,10 +1,5 @@
 # Music Player Daemon
 
-Related articles
-
-*   [MPD/Tips and Tricks](/index.php/MPD/Tips_and_Tricks "MPD/Tips and Tricks")
-*   [MPD/Troubleshooting](/index.php/MPD/Troubleshooting "MPD/Troubleshooting")
-
 **[MPD](http://www.musicpd.org/)** (**m**usic **p**layer **d**aemon) is an audio player that has a server-client architecture. It plays audio files, organizes playlists and maintains a music database all while using very few resources. In order to interface with it, a separate [client](#Clients) is needed.
 
 ## Contents

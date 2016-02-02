@@ -1,11 +1,5 @@
 # Benchmarking
 
-Related articles
-
-*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
-*   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
-*   [Sysstat](/index.php/Sysstat "Sysstat")
-
 Benchmarking is the act of measuring performance and comparing the results to another system's results or a widely accepted standard through a unified procedure. This unified method of evaluating system performance can help answer questions such as:
 
 *   Is the system performing as it should?

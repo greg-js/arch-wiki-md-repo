@@ -1,10 +1,5 @@
 # CUPS/Printer-specific problems
 
-Related articles
-
-*   [CUPS](/index.php/CUPS "CUPS")
-*   [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting")
-
 See [CUPS](/index.php/CUPS "CUPS") for the main article.
 
 This article contains printer or manufacturer-specific instructions for [CUPS](/index.php/CUPS "CUPS"). See [OpenPrinting](http://www.openprinting.org/printers) if your printer is not already listed here, or if none of the listed drivers work.

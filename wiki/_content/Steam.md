@@ -1,10 +1,5 @@
 # Steam
 
-Related articles
-
-*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
-*   [Steam/Game-specific troubleshooting](/index.php/Steam/Game-specific_troubleshooting "Steam/Game-specific troubleshooting")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Steam_(software) "wikipedia:Steam (software)"):
 
 	_Steam is a digital distribution, digital rights management, multiplayer and communications platform developed by Valve Corporation. It is used to distribute games and related media online, from small independent developers to larger software houses._

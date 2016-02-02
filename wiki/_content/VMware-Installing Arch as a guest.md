@@ -1,10 +1,5 @@
 # VMware/Installing Arch as a guest
 
-Related articles
-
-*   [VMware](/index.php/VMware "VMware")
-*   [Installing VMWare vCLI](/index.php/Installing_VMWare_vCLI "Installing VMWare vCLI")
-
 This article is about installing Arch Linux in a [VMware](/index.php/VMware "VMware") product, such as [Player (Plus)](http://www.vmware.com/products/player/), [Fusion](http://www.vmware.com/products/fusion/) or [Workstation](http://www.vmware.com/products/workstation/).
 
 ## Contents

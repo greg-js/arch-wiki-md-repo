@@ -1,10 +1,5 @@
 # GPGPU
 
-Related articles
-
-*   [Catalyst](/index.php/Catalyst "Catalyst")
-*   [Nvidia](/index.php/Nvidia "Nvidia")
-
 GPGPU stands for [General-purpose computing on graphics processing units](https://en.wikipedia.org/wiki/GPGPU "wikipedia:GPGPU"). In Linux, there are currently two major GPGPU frameworks: [OpenCL](https://en.wikipedia.org/wiki/OpenCL "wikipedia:OpenCL") and [CUDA](https://en.wikipedia.org/wiki/CUDA "wikipedia:CUDA")
 
 ## Contents

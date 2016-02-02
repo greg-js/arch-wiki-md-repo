@@ -1,13 +1,5 @@
 # Openbox
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Oblogout](/index.php/Oblogout "Oblogout")
-
 Openbox is a lightweight, powerful, and highly configurable _stacking_ [window manager](/index.php/Window_manager "Window manager") with extensive standards support. It may be built upon and run independently as the basis of a unique [desktop environment](/index.php/Desktop_environment "Desktop environment"), or within other integrated desktop environments such as [KDE](/index.php/KDE "KDE") and [Xfce](/index.php/Xfce "Xfce"), as an alternative to the window managers they provide. The [LXDE](/index.php/LXDE "LXDE") desktop environment is itself built around Openbox.
 
 A comprehensive list of features are documented at the [official Openbox website](http://openbox.org/). This article pertains to specifically installing Openbox under Arch Linux.

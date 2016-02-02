@@ -1,14 +1,5 @@
 # Help:Style
 
-Related articles
-
-*   [Help:Style/Formatting and punctuation](/index.php/Help:Style/Formatting_and_punctuation "Help:Style/Formatting and punctuation")
-*   [Help:Style/White space](/index.php/Help:Style/White_space "Help:Style/White space")
-*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
-*   [Help:Reading](/index.php/Help:Reading "Help:Reading")
-*   [Help:Discussion](/index.php/Help:Discussion "Help:Discussion")
-*   [Help:Template](/index.php/Help:Template "Help:Template")
-
 These style conventions encourage tidy, organized, and visually consistent articles. Follow them as closely as possible when editing the ArchWiki.
 
 ## Contents

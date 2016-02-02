@@ -1,9 +1,5 @@
 # Network Debugging
 
-Related articles
-
-*   [VLAN](/index.php/VLAN "VLAN")
-
 This article handles the steps needed for basic network troubleshooting.
 
 ## Contents

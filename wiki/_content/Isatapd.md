@@ -1,10 +1,5 @@
 # Isatapd
 
-Related articles
-
-*   [Daemon](/index.php/Daemon "Daemon")
-*   [IPv6_-_6in4_Tunnel](/index.php/IPv6_-_6in4_Tunnel "IPv6 - 6in4 Tunnel")
-
 [isatapd](http://www.saschahlusiak.de/linux/isatap.htm) is an [ISATAP](http://en.wikipedia.org/wiki/ISATAP) client. It is a daemon program to create and to maintain an ISATAP tunnel [RFC 5214](//tools.ietf.org/html/rfc5214) in Linux.
 
 ## Installation

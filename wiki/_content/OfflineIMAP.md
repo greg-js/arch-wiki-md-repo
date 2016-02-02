@@ -1,11 +1,5 @@
 # OfflineIMAP
 
-Related articles
-
-*   [isync](/index.php/Isync "Isync")
-*   [notmuch](/index.php/Notmuch "Notmuch")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-
 [OfflineIMAP](http://offlineimap.org/) is a Python utility to sync mail from IMAP servers. It does not work with the POP3 protocol or mbox, and is usually paired with a MUA such as [Mutt](/index.php/Mutt "Mutt").
 
 ## Contents

@@ -1,10 +1,5 @@
 # Ext4
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Ext3](/index.php/Ext3 "Ext3")
-
 Ext4 is the evolution of the most used Linux filesystem, Ext3\. In many ways, Ext4 is a deeper improvement over Ext3 than Ext3 was over Ext2\. Ext3 was mostly about adding journaling to Ext2, but Ext4 modifies important data structures of the filesystem such as the ones destined to store the file data. The result is a filesystem with an improved design, better performance, reliability, and features.
 
 Source: [Ext4 - Linux Kernel Newbies](http://kernelnewbies.org/Ext4)

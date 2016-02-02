@@ -1,9 +1,5 @@
 # ArchWiki Translation Team
 
-Related articles
-
-*   [ArchWiki Translation Day](/index.php/ArchWiki_Translation_Day "ArchWiki Translation Day")
-
 ## Create a new page and its translation
 
 1.  If you do not know how to edit wiki pages, read [Help:Editing](/index.php/Help:Editing "Help:Editing").

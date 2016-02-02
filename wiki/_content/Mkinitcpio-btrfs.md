@@ -1,14 +1,5 @@
 # Mkinitcpio-btrfs
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [Btrfs](/index.php/Btrfs "Btrfs")
-*   [GRUB](/index.php/GRUB "GRUB")
-*   [Syslinux](/index.php/Syslinux "Syslinux")
-
 Some of Btrfs's neat features like non-volatile rollback or automatic mounting of degraded Btrfs multi-device ([RAID](/index.php/RAID "RAID")) volumes need a special package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") called [mkinitcpio-btrfs](https://aur.archlinux.org/packages/mkinitcpio-btrfs/)<sup><small>AUR</small></sup>. The package integrates some helpers in the boot process, to handle these features correctly.
 
 **Note:**

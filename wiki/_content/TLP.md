@@ -1,10 +1,5 @@
 # TLP
 
-Related articles
-
-*   [Laptop](/index.php/Laptop "Laptop")
-*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-
 From the [project page](http://linrunner.de/en/tlp/tlp.html):
 
 	TLP brings you the benefits of advanced power management for Linux without the need to understand every technical detail. TLP comes with a default configuration already optimized for battery life, so you may just install and forget it. Nevertheless TLP is highly customizable to fulfill your specific requirements.

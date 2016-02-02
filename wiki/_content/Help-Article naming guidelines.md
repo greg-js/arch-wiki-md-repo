@@ -1,13 +1,5 @@
 # Help:Article naming guidelines
 
-Related articles
-
-*   [Help:Effective use of headers](/index.php/Help:Effective_use_of_headers "Help:Effective use of headers")
-*   [Help:Writing article introductions](/index.php/Help:Writing_article_introductions "Help:Writing article introductions")
-*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-*   [Help:i18n](/index.php/Help:I18n "Help:I18n")
-
 Article naming is one of the most important tasks for wiki writers and editors. This article is a complete guideline on choosing appropriate article names, and also presents ArchWiki writers and editors with some issues to consider when naming their articles.
 
 ## Contents

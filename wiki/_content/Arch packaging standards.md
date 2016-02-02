@@ -1,13 +1,5 @@
 # Arch packaging standards
 
-Related articles
-
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-
 When building packages for Arch Linux, **adhere to the package guidelines** below, especially if the intention is to **contribute** a new package to Arch Linux. You should also see the [PKGBUILD](https://archlinux.org/pacman/PKGBUILD.5.html) and [makepkg](https://archlinux.org/pacman/makepkg.8.html) manpages.
 
 **The submitted PKGBUILDs must not build applications already in any of the official binary repositories under any circumstances. Exception to this strict rule may only be packages having extra features enabled and/or patches in comparison to the official ones. In such an occasion, the pkgname array should be different.**

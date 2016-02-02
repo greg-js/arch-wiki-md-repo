@@ -1,10 +1,5 @@
 # OpenLDAP
 
-Related articles
-
-*   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
-*   [LDAP Hosts](/index.php/LDAP_Hosts "LDAP Hosts")
-
 OpenLDAP is an open-source implementation of the LDAP protocol. An LDAP server basically is a non-relational database which is optimised for accessing, but not writing, data. It is mainly used as an address book (for e.g. email clients) or authentication backend to various services (such as Samba, where it is used to emulate a domain controller, or [Linux system authentication](/index.php/LDAP_authentication "LDAP authentication"), where it replaces `/etc/passwd`) and basically holds the user data.
 
 **Note:** Commands related to OpenLDAP that begin with `ldap` (like `ldapsearch`) are client-side utilities, while commands that begin with `slap` (like `slapcat`) are server-side.

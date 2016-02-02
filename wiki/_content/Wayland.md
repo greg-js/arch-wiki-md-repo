@@ -1,11 +1,5 @@
 # Wayland
 
-Related articles
-
-*   [KMS](/index.php/KMS "KMS")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Mir](/index.php/Mir "Mir")
-
 **Wayland** is a new windowing protocol for Linux. Utilization of Wayland requires changes to and re-installation of parts of your system's software. For more information on Wayland see its [homepage](http://wayland.freedesktop.org/).
 
 ## Contents

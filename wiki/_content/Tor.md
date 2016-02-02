@@ -1,11 +1,5 @@
 # Tor
 
-Related articles
-
-*   [GNUnet](/index.php/GNUnet "GNUnet")
-*   [I2P](/index.php/I2P "I2P")
-*   [Freenet](/index.php/Freenet "Freenet")
-
 [Tor](https://www.torproject.org) is an open source implementation of 2nd generation [onion routing](https://en.wikipedia.org/wiki/Onion_routing "wikipedia:Onion routing") that provides free access to an anonymous proxy network. Its primary goal is to enable [online anonymity](https://en.wikipedia.org/wiki/Internet_anonymity "wikipedia:Internet anonymity") by protecting against [traffic analysis](https://en.wikipedia.org/wiki/Traffic_analysis "wikipedia:Traffic analysis") attacks.
 
 ## Contents

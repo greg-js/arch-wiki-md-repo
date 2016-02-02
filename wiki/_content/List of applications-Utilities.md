@@ -1013,17 +1013,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 ### File synchronization
 
-*   **[rsync](/index.php/Rsync "Rsync")** — An incremental transfer and synchronization program.
-
-	[http://rsync.samba.org](http://rsync.samba.org) || [rsync](https://www.archlinux.org/packages/?name=rsync)
-
-*   **[Syncthing](/index.php/Syncthing "Syncthing")** — Open, trustworthy and decentralized cloud synchronization service.
-
-	[https://syncthing.net](https://syncthing.net) || [syncthing](https://www.archlinux.org/packages/?name=syncthing)
-
-*   **[Unison](/index.php/Unison "Unison")** — Bidirectional sync. It keeps track of changes like a VCS.
-
-	[http://www.cis.upenn.edu/~bcpierce/unison](http://www.cis.upenn.edu/~bcpierce/unison) || [unison](https://www.archlinux.org/packages/?name=unison)
+See [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synchronization "Backup programs").
 
 ### Finders
 
@@ -1039,4 +1029,4 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418628](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418628)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418802](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418802)"

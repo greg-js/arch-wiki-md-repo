@@ -1,13 +1,5 @@
 # Cinnamon
 
-Related articles
-
-*   [Nemo](/index.php/Nemo "Nemo")
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [MATE](/index.php/MATE "MATE")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-
 [Cinnamon](http://cinnamon.linuxmint.com/) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") which combines a traditional desktop layout with modern graphical effects. The underlying technology was forked from the [GNOME](/index.php/GNOME "GNOME") desktop. As of version 2.0, Cinnamon is a complete desktop environment and not merely a frontend for GNOME like GNOME Shell and Unity.
 
 ## Contents

@@ -1,11 +1,5 @@
 # Mir
 
-Related articles
-
-*   [KMS](/index.php/KMS "KMS")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Wayland](/index.php/Wayland "Wayland")
-
 **Mir** is a next generation display server developed by Canonical which will soon replace the X-server on Ubuntu distributions.
 
 **Warning:** Mir is under heavy development. Support can not be guaranteed and it may not function as you expect.

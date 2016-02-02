@@ -1,17 +1,5 @@
 # Drupal
 
-Related articles
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [LAPP](/index.php/LAPP "LAPP")
-*   [LASP](/index.php?title=LASP&action=edit&redlink=1 "LASP (page does not exist)")
-*   [MySQL](/index.php/MySQL "MySQL")
-*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
-*   [SQLite](/index.php/SQLite "SQLite")
-*   [Sendmail](/index.php/Sendmail "Sendmail")
-*   [PostFix](/index.php/PostFix "PostFix")
-*   [Exim](/index.php/Exim "Exim")
-
 _"Drupal is a free and open source content management system (CMS) and Content Management framework (CMF) written in PHP and distributed under the GNU General Public License."_ - [Wikipedia](http://en.wikipedia.org/wiki/Drupal)
 
 This article describes how to setup Drupal and configure [Apache](/index.php/Apache "Apache"), [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL"), [PHP](/index.php/PHP "PHP"), and [Postfix](/index.php/Postfix "Postfix") to work with it. It is assumed that you have some sort of [LAMP](/index.php/LAMP "LAMP") (Linux, Apache, MySQL, PHP), LAPP (Linux, Apache, PostgreSQL, PHP) or LASP (Linux, Apache, SQLite, PHP) server already setup.

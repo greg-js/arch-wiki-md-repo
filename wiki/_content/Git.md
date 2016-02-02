@@ -1,14 +1,5 @@
 # Git
 
-Related articles
-
-*   [Super Quick Git Guide](/index.php/Super_Quick_Git_Guide "Super Quick Git Guide")
-*   [Gitweb](/index.php/Gitweb "Gitweb")
-*   [Cgit](/index.php/Cgit "Cgit")
-*   [HTTP tunneling#Tunneling Git](/index.php/HTTP_tunneling#Tunneling_Git "HTTP tunneling")
-*   [Subversion](/index.php/Subversion "Subversion")
-*   [Concurrent Versions System](/index.php/Concurrent_Versions_System "Concurrent Versions System")
-
 [Git](https://en.wikipedia.org/wiki/Git_(software) "wikipedia:Git (software)") is the version control system (VCS) designed and developed by Linus Torvalds, the creator of the Linux kernel. Git is now used to maintain sources for the Linux kernel, as well as many other projects, including a number of Arch Linux projects.
 
 ## Contents

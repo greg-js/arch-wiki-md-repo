@@ -1,11 +1,5 @@
 # Enlightenment
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 ## Contents
 
 *   [1 Enlightenment](#Enlightenment)

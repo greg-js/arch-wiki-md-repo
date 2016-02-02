@@ -1,12 +1,5 @@
 # Keyboard configuration in Xorg
 
-Related articles
-
-*   [Keyboard configuration in console](/index.php/Keyboard_configuration_in_console "Keyboard configuration in console")
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [X KeyBoard extension](/index.php/X_KeyBoard_extension "X KeyBoard extension")
-
 This article's purpose is to detail basic Xorg server keyboard configuration. For advanced topics such as keyboard layout modification or additional key mappings, see [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys").
 
 ## Contents

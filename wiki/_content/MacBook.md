@@ -1,20 +1,5 @@
 # MacBook
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [MacBook4,2 (late 2008)](/index.php/MacBook4,2_(late_2008) "MacBook4,2 (late 2008)")
-*   [MacBook5,2 (early-mid 2009)](/index.php/MacBook5,2_(early-mid_2009) "MacBook5,2 (early-mid 2009)")
-*   [MacBookPro7,1](/index.php/MacBookPro7,1 "MacBookPro7,1")
-*   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
-*   [MacBookPro9,2 (Mid-2012)](/index.php/MacBookPro9,2_(Mid-2012) "MacBookPro9,2 (Mid-2012)")
-*   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
-*   [MacBookPro11,x](/index.php/MacBookPro11,x "MacBookPro11,x")
-*   [iMac Aluminum](/index.php/IMac_Aluminum "IMac Aluminum")
-*   [Apple Fusion Drive](/index.php/Apple_Fusion_Drive "Apple Fusion Drive")
-
 Installing Arch Linux on a MacBook (Air/Pro) or an iMac is quite similar to installing it on any other computer. However, due to the specific hardware configuration of a Mac, there are a few deviations and special considerations which warrant a separate guide. For more background information, please see the [Installation guide](/index.php/Installation_guide "Installation guide"), [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") and [UEFI](/index.php/UEFI "UEFI"). This guide contains installation-instructions that can be used on any Apple computer whose hardware is supported by the Linux kernel. Please see 'related' pages (on the top right of this page) for model-specific tips and troubleshooting.
 
 ## Contents

@@ -1,10 +1,5 @@
 # Papyros shell
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 **Papyros** is a desktop environment based on Google's Material Design guidelines, created in 2014\. The operating system, desktop shell, and material design framework is still in active development and is in a pre-alpha state.
 
 ## Installation

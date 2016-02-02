@@ -1,12 +1,5 @@
 # Bluetooth
 
-Related articles
-
-*   [Bluez4](/index.php/Bluez4 "Bluez4")
-*   [Bluetooth mouse](/index.php/Bluetooth_mouse "Bluetooth mouse")
-*   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
-*   [Blueman](/index.php/Blueman "Blueman")
-
 [Bluetooth](http://www.bluetooth.org/) is a standard for the short-range wireless interconnection of cellular phones, computers, and other electronic devices. In Linux, the canonical implementation of the Bluetooth protocol stack is [BlueZ](http://www.bluez.org/).
 
 ## Contents

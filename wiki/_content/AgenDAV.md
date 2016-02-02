@@ -1,11 +1,5 @@
 # AgenDAV
 
-Related articles
-
-*   [DAViCal](/index.php/DAViCal "DAViCal")
-*   [Kcaldav](/index.php/Kcaldav "Kcaldav")
-*   [Radicale](/index.php/Radicale "Radicale")
-
 From [[1]](http://agendav.org/): "AgenDAV is an open source multilanguage CalDAV web client which features a rich AJAX interface with shared calendars support".
 
 ## Installation

@@ -1,9 +1,5 @@
 # dotfiles
 
-Related articles
-
-*   [XDG Base Directory support](/index.php/XDG_Base_Directory_support "XDG Base Directory support")
-
 This article collects user repositories with custom configuration files, commonly known as _dotfiles_.
 
 ## Contents

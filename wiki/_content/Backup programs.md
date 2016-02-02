@@ -1,13 +1,5 @@
 # Backup programs
 
-Related articles
-
-*   [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")
-*   [Full System Backup with tar](/index.php/Full_System_Backup_with_tar "Full System Backup with tar")
-*   [Disk cloning](/index.php/Disk_cloning "Disk cloning")
-*   [List of applications#File sharing](/index.php/List_of_applications#File_sharing "List of applications")
-*   [Snapper](/index.php/Snapper "Snapper")
-
 This wiki page contains information about various backup programs. It is a good idea to have regular backups of important data, most notably configuration files (`/etc/*`) and the local pacman database (usually `/var/lib/pacman/local/*`).
 
 ## Contents

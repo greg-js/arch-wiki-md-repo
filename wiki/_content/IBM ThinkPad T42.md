@@ -1,9 +1,5 @@
 # IBM ThinkPad T42
 
-Related articles
-
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-
 This page documents configuration and troubleshooting of the IBM ThinkPad T42.
 
 ## Contents

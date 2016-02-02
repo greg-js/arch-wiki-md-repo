@@ -1,13 +1,5 @@
 # GNOME Files
 
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [Nemo](/index.php/Nemo "Nemo")
-*   [Thunar](/index.php/Thunar "Thunar")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-
 Files is the default file manager for [GNOME](https://live.gnome.org/). Files attempts to provide a streamlined method to manage both files and applications.
 
 **Note:** Files was known as [Nautilus](http://live.gnome.org/Nautilus) prior to version 3.6\. The application was given new descriptive names, one for each supported language. The name _Nautilus_ is still used in numerous places such as the executable name, some package names, some desktop entries, and some GSettings schemas.

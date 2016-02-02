@@ -1,12 +1,5 @@
 # Solid State Drives
 
-Related articles
-
-*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
-*   [Solid State Drives/NVMe](/index.php/Solid_State_Drives/NVMe "Solid State Drives/NVMe")
-*   [SSD memory cell clearing](/index.php/SSD_memory_cell_clearing "SSD memory cell clearing")
-*   [profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
-
 Solid State Drives (SSDs) are not PnP devices. Special considerations such as partition alignment, choice of file system, TRIM support, etc. are needed to set up SSDs for optimal performance. This article attempts to capture referenced, key learnings to enable users to get the most out of SSDs under Linux. Users are encouraged to read this article in its entirety before acting on recommendations.
 
 **Note:** This article is targeted at users running Linux, but much of the content is also relevant to other operating systems like BSD, Mac OS X or Windows.

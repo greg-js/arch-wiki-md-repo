@@ -1,13 +1,5 @@
 # File manager functionality
 
-Related articles
-
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-*   [Thunar](/index.php/Thunar "Thunar")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Udisks](/index.php/Udisks "Udisks")
-
 This article outlines the additional software packages necessary to expand the features and functionality of file managers, particularly where using a [window manager](/index.php/Window_manager "Window manager") such as [Openbox](/index.php/Openbox "Openbox"). The ability to access partitions and removable media without a password - if affected - has also been provided.
 
 ## Contents

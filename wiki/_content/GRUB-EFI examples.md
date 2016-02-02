@@ -1,9 +1,5 @@
 # GRUB/EFI examples
 
-Related articles
-
-*   [Grub](/index.php/Grub "Grub")
-
 It is well known that different motherboard manufactures implement UEFI differently. The purpose of this page is to show hardware-specific methods known to work when installing/restoring GRUB in efi mode.
 
 ## Contents

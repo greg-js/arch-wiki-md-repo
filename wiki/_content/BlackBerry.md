@@ -1,9 +1,5 @@
 # BlackBerry
 
-Related articles
-
-*   [OpenSync](/index.php/OpenSync "OpenSync")
-
 BlackBerry is a line of mobile e-mail and smartphone devices developed by Canadian company BlackBerry Limited, formerly known as Research In Motion (RIM). Whilst including typical smartphone applications such as an address book, calendar and to-do lists, the BlackBerry is primarily known for its ability to send and receive Internet e-mail wherever it can access a mobile network of certain cellular phone carriers. The service is available in North America and in most European countries.
 
 ## Synchronization using Barry

@@ -1,9 +1,5 @@
 # Arch Linux Archive
 
-Related articles
-
-*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
-
 The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollback Machine** (a.k.a **ARM**), stores _official repositories snapshots_, _iso images_ and _bootstrap tarballs_ across time.
 
 **You can use it to**

@@ -1,12 +1,5 @@
 # Tomb
 
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
-*   [Tcplay](/index.php/Tcplay "Tcplay")
-
 From [the official website](http://tomb.dyne.org/):
 
 	Tomb is 100% free and open source software to make strong encryption easy to use.

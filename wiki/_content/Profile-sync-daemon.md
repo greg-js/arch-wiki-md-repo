@@ -1,14 +1,5 @@
 # Profile-sync-daemon
 
-Related articles
-
-*   [Anything-sync-daemon](/index.php/Anything-sync-daemon "Anything-sync-daemon")
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Chromium](/index.php/Chromium "Chromium")
-*   [Opera](/index.php/Opera "Opera")
-*   [Pdnsd](/index.php/Pdnsd "Pdnsd")
-*   [SSD](/index.php/SSD "SSD")
-
 [Profile-sync-daemon](https://aur.archlinux.org/packages/Profile-sync-daemon/)<sup><small>AUR</small></sup> (psd) is a tiny pseudo-daemon designed to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD). This is accomplished by an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backup of the browser profile(s). Additionally, psd features several crash recovery features.
 
 ## Contents

@@ -1,13 +1,5 @@
 # Thunar
 
-Related articles
-
-*   [Xfce](/index.php/Xfce "Xfce")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-*   [PCManFM](/index.php/PCManFM "PCManFM")
-*   [Nemo](/index.php/Nemo "Nemo")
-
 From the project [home page](http://docs.xfce.org/xfce/thunar/start):
 
 	_Thunar is a new modern file manager for the Xfce Desktop Environment. Thunar has been designed from the ground up to be fast and easy-to-use. Its user interface is clean and intuitive, and does not include any confusing or useless options by default. Thunar is fast and responsive with a good start up time and folder load time._

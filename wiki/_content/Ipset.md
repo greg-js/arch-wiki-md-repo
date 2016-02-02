@@ -1,10 +1,5 @@
 # Ipset
 
-Related articles
-
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Iptables](/index.php/Iptables "Iptables")
-
 [ipset](http://ipset.netfilter.org/) is a companion application for the [iptables](/index.php/Iptables "Iptables") Linux [firewall](/index.php/Firewall "Firewall"). It allows you to setup rules to quickly and easily block a set of IP addresses, among other things.
 
 ## Contents

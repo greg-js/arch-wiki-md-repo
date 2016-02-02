@@ -1,11 +1,5 @@
 # dhcpcd
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [dhcpd](/index.php/Dhcpd "Dhcpd")
-
 _dhcpcd_ is a DHCP and DHCPv6 client. It is currently the most feature-rich open source DHCP client, see the [home page](http://roy.marples.name/projects/dhcpcd/) for the full list of features.
 
 **Note:** _dhcpcd_ (DHCP **client** daemon) is not the same as _dhcpd_ (DHCP **(server)** daemon).

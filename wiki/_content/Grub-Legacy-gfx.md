@@ -2,11 +2,6 @@
 
 **Note:** [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") has been deprecated and replaced by [GRUB](/index.php/GRUB "GRUB") in Arch Linux. See the news [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). GRUB also offers enhanced graphical capabilities, such as background images and bitmap fonts. Users are recommended to switch to [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") instead.
 
-Related articles
-
-*   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
-*   [GRUB](/index.php/GRUB "GRUB")
-
 [grub-gfx](https://aur.archlinux.org/packages/grub-gfx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub-gfx)]</sup> is a version of GRUB Legacy patched to enable background images on your bootloader screen.
 
 ## Contents

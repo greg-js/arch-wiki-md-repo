@@ -1,15 +1,5 @@
 # Linux Containers
 
-Related articles
-
-*   [AirVPN](/index.php/AirVPN "AirVPN")
-*   [Cgroups](/index.php/Cgroups "Cgroups")
-*   [Docker](/index.php/Docker "Docker")
-*   [OpenVPN](/index.php/OpenVPN "OpenVPN")
-*   [OpenVPN in Linux containers](/index.php/OpenVPN_in_Linux_containers "OpenVPN in Linux containers")
-*   [PeerGuardian_Linux](/index.php/PeerGuardian_Linux "PeerGuardian Linux")
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-
 **LinuX Containers** (**LXC**) is an operating system-level virtualization method for running multiple isolated Linux systems (containers) on a single control host (LXC host). It does not provide a virtual machine, but rather provides a virtual environment that has its own CPU, memory, block I/O, network, etc. space. This is provided by [cgroups](/index.php/Cgroups "Cgroups") features in Linux kernel on LXC host. It is similar to a chroot, but offers much more isolation.
 
 ## Contents

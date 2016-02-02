@@ -1,13 +1,5 @@
 # Hawaii
 
-Related articles
-
-*   [Wayland](/index.php/Wayland "Wayland")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Qt](/index.php/Qt "Qt")
-
 From [phoronix.com](http://www.phoronix.com/scan.php?page=news_item&px=MTI4ODA):
 
 	The Hawaii Desktop is looking to be the very first [Wayland](/index.php/Wayland "Wayland")-friendly desktop environment for Linux.

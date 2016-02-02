@@ -1,10 +1,5 @@
 # Android
 
-Related articles
-
-*   [Android notifier](/index.php/Android_notifier "Android notifier")
-*   [Android tethering](/index.php/Android_tethering "Android tethering")
-
 ## Contents
 
 *   [1 Exploring Android device](#Exploring_Android_device)

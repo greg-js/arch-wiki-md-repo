@@ -1,10 +1,5 @@
 # QEMU
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [Libvirt](/index.php/Libvirt "Libvirt")
-
 From the [QEMU about page](http://wiki.qemu.org/Main_Page):
 
 	_QEMU is a generic and open source machine emulator and virtualizer._

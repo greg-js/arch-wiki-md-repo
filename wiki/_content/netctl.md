@@ -1,12 +1,5 @@
 # netctl
 
-Related articles
-
-*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 [netctl](https://projects.archlinux.org/netctl.git/) is a CLI-based tool used to configure and manage network connections via profiles.
 
 ## Contents

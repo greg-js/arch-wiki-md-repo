@@ -1,12 +1,5 @@
 # Mutt
 
-Related articles
-
-*   [fdm](/index.php/Fdm "Fdm")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-*   [offlineimap](/index.php/Offlineimap "Offlineimap")
-*   [isync](/index.php/Isync "Isync")
-
 **Mutt** is a text-based mail client renowned for its powerful features. Though over 2 decades old, Mutt remains the mail client of choice for a great number of power-users. Unfortunately, a default Mutt install is plagued by complex keybindings along with a daunting amount of documentation. This guide will help the average user get Mutt up and running, and begin customizing it to their particular needs.
 
 ## Contents

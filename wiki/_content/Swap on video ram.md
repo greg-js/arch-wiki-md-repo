@@ -1,9 +1,5 @@
 # Swap on video ram
 
-Related articles
-
-*   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
-
 A short article on utilizing video memory for system swap.
 
 **Warning:** This will not work with binary drivers.

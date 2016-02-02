@@ -1,9 +1,5 @@
 # wmii
 
-Related articles
-
-*   [i3](/index.php/I3 "I3")
-
 [wmii](http://wmii.suckless.org/) (window manager improved 2) is a dynamic window manager for X11\. It supports classic and dynamic window management with extended keyboard, mouse, and filesystem based remote control. It replaces the workspace paradigm with a new tagging approach.
 
 The following tips are intended to help the user get started with wmii. While wmii can be configured in almost any language, this article will focus on using the **wmiirc** configuration file, which is simply a shell script. Please see the [ruby-wmii](/index.php/Ruby-wmii "Ruby-wmii") article to see how to configure wmii in ruby.

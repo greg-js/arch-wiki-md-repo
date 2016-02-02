@@ -1,11 +1,5 @@
 # Lenovo S20-30
 
-Related articles
-
-*   [Touchpad](/index.php/Touchpad "Touchpad")
-*   [Acpid](/index.php/Acpid "Acpid")
-*   [Powertop](/index.php/Powertop "Powertop")
-
 This is one of the products from the [Lenovo S-series](http://shop.lenovo.com/de/de/laptops/lenovo/s-series), which is different from the IdeaPad S-Series.
 
 ## Contents

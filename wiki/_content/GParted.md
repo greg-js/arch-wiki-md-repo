@@ -1,11 +1,5 @@
 # GParted
 
-Related articles
-
-*   [GNU Parted](/index.php/GNU_Parted "GNU Parted")
-*   [fdisk](/index.php/Fdisk "Fdisk")
-*   [Partitioning](/index.php/Partitioning "Partitioning")
-
 [GParted](http://gparted.sourceforge.net/index.php) is a GTK+ frontend to [GNU Parted](/index.php/GNU_Parted "GNU Parted") and the official GNOME Partition Editor application. Use it to make/delete/resize/check partitions of nearly [any file format](http://gparted.sourceforge.net/features.php). You can also manage drive labels and flags as well as copy/paste entire partitions. GParted is available in the extra repo and also as a [Live CD](http://gparted.sourceforge.net/download.php) if you'd prefer. One reason to actually download the Live CD would be that you need to make modifications to your root filesystem's partition which you cannot do without unmounting it.
 
 **Warning:** Since GParted can read/write to your drive partitions misuse can result in data loss. It is recommended that you back-up affected partitions prior to using GParted.

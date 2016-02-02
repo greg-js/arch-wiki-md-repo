@@ -1,11 +1,5 @@
 # TuxOnIce
 
-Related articles
-
-*   [hibernate-script](/index.php/Hibernate-script "Hibernate-script")
-*   [Pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [Uswsusp](/index.php/Uswsusp "Uswsusp")
-
 This is a quick start guide for installing [TuxOnIce](http://www.tuxonice.net) (formerly suspend2), an advanced suspend/hibernate framework which supports suspending to a swap-disk or a regular file with fast LZO-compression. Visit the TuxOnIce website for a full list of [features](http://www.tuxonice.net/features).
 
 ## Contents

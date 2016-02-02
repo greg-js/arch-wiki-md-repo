@@ -1,12 +1,5 @@
 # OpenChange server
 
-Related articles
-
-*   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
-*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
-*   [Samba](/index.php/Samba "Samba")
-*   [Samba/Tips and tricks](/index.php/Samba/Tips_and_tricks "Samba/Tips and tricks")
-
 This article explains how to setup a mail server using OpenChange server following on from the [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller") article. Postfix is used for the MTA, Dovecot for the IMAP/POP server, and SOGo for the backend with all users stored in Samba's Active Directory (normal Exchange attributes are used throughout).
 
 ## Contents

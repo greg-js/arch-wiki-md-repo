@@ -1,10 +1,5 @@
 # Gqrx
 
-Related articles
-
-*   [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")
-*   [GNU Radio](/index.php/GNU_Radio "GNU Radio")
-
 [gqrx](http://gqrx.dk/) is a software defined radio receiver powered by the GNU Radio SDR framework and the Qt graphical toolkit.
 
 ## Installation

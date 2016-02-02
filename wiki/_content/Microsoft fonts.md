@@ -1,12 +1,5 @@
 # Microsoft fonts
 
-Related articles
-
-*   [Fonts](/index.php/Fonts "Fonts")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [Infinality](/index.php/Infinality "Infinality")
-*   [Java Runtime Environment Fonts](/index.php/Java_Runtime_Environment_Fonts "Java Runtime Environment Fonts")
-
 This article explains how to install TrueType Microsoft fonts and emulate Windows' font rendering.
 
 ## Contents

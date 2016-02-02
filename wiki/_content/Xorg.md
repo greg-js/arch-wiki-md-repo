@@ -1,18 +1,5 @@
 # Xorg
 
-Related articles
-
-*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
-*   [Autostarting](/index.php/Autostarting "Autostarting")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Wayland](/index.php/Wayland "Wayland")
-*   [Mir](/index.php/Mir "Mir")
-*   [Xinitrc](/index.php/Xinitrc "Xinitrc")
-
 From [http://www.x.org/wiki/](http://www.x.org/wiki/):
 
 	_The X.Org project provides an open source implementation of the X Window System. The development work is being done in conjunction with the freedesktop.org community. The X.Org Foundation is the educational non-profit corporation whose Board serves this effort, and whose Members lead this work._

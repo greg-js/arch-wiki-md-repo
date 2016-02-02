@@ -1,9 +1,5 @@
 # GNU Screen
 
-Related articles
-
-*   [tmux](/index.php/Tmux "Tmux")
-
 [GNU Screen](http://www.gnu.org/s/screen/) is a wrapper that allows separation between the text program and the shell from which it was launched. This allows the user to, for example, start a text program in a terminal in X, kill X, and continue to interact with the program.
 
 ## Contents

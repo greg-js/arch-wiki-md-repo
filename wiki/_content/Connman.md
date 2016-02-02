@@ -1,11 +1,5 @@
 # Connman
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 [ConnMan](https://01.org/connman) is a command-line network manager designed for use with embedded devices and fast resolve times. It is modular through a [plugin architecture](http://git.kernel.org/cgit/network/connman/connman.git/tree/plugins), but has native [dhcp](http://git.kernel.org/cgit/network/connman/connman.git/tree/src/dhcp.c) and [ntp](http://git.kernel.org/cgit/network/connman/connman.git/tree/src/ntp.c) support.
 
 ## Contents

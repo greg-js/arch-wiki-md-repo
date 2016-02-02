@@ -1,9 +1,5 @@
 # Apache Spark
 
-Related articles
-
-*   [Hadoop](/index.php/Hadoop "Hadoop")
-
 [Apache Spark](https://spark.apache.org) is an open-source cluster computing framework originally developed in the AMPLab at UC Berkeley. In contrast to Hadoop's two-stage disk-based MapReduce paradigm, Spark's in-memory primitives provide performance up to 100 times faster for certain applications. By allowing user programs to load data into a cluster's memory and query it repeatedly, Spark is well-suited to machine learning algorithms.
 
 ## Installation

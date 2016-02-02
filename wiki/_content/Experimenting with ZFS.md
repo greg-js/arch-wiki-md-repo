@@ -1,11 +1,5 @@
 # Experimenting with ZFS
 
-Related articles
-
-*   [ZFS](/index.php/ZFS "ZFS")
-*   [Installing Arch Linux on ZFS](/index.php/Installing_Arch_Linux_on_ZFS "Installing Arch Linux on ZFS")
-*   [ZFS on FUSE](/index.php/ZFS_on_FUSE "ZFS on FUSE")
-
 This article covers some basic tasks and usage of ZFS. It differs from the main article [ZFS](/index.php/ZFS "ZFS") somewhat in that the examples herein are demonstrated on a zpool built from virtual disks. So long as users do not place any critical data on the resulting zpool, they are free to experiment without fear of actual data loss.
 
 The examples in this article are shown with a set of virtual discs known in ZFS terms as VDEVs. Users may create their VDEVs either on an existing physical disk or in tmpfs (RAMdisk) depending on the amount of free memory on the system.

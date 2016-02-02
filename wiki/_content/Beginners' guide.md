@@ -1,13 +1,5 @@
 # Beginners' guide
 
-Related articles
-
-*   [Category:Accessibility](/index.php/Category:Accessibility "Category:Accessibility")
-*   [Help:Reading](/index.php/Help:Reading "Help:Reading")
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [General recommendations](/index.php/General_recommendations "General recommendations")
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-
 This document will guide you through the process of installing [Arch Linux](/index.php/Arch_Linux "Arch Linux") using the [Arch Install Scripts](https://projects.archlinux.org/arch-install-scripts.git/). Before installing, you are advised to skim over the [FAQ](/index.php/FAQ "FAQ").
 
 The community-maintained [ArchWiki](/index.php/Main_page "Main page") is the primary resource that should be consulted if issues arise. The [IRC channel](/index.php/IRC_channel "IRC channel") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)) and the [forums](https://bbs.archlinux.org/) are also excellent resources if an answer cannot be found elsewhere. In accordance with [the Arch Way](/index.php/The_Arch_Way "The Arch Way"), you are encouraged to type `man _command_` to read the [man page](/index.php/Man_page "Man page") of any command you are unfamiliar with.

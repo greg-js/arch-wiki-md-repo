@@ -1,9 +1,5 @@
 # L2TP/IPsec VPN client setup
 
-Related articles
-
-*   [strongSwan](/index.php/StrongSwan "StrongSwan")
-
 L2TP/IPsec is a secure Virtual Private Network solution that is well supported on many different platforms.
 
 This article aims to describe how to configure and use a L2TP/IPsec client on Arch Linux. This article will cover the installation and setup of several needed software packages. One of the packages is only available in the [AUR](/index.php/AUR "AUR"), so knowledge of how to build and install [AUR](/index.php/AUR "AUR") packages on your system is required.

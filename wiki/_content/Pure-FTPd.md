@@ -1,10 +1,5 @@
 # Pure-FTPd
 
-Related articles
-
-*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
-*   [SFTP](/index.php/SFTP "SFTP")
-
 [Pure-FTPd](http://www.pureftpd.org/project/pure-ftpd) is a FTP server designed with security in mind.
 
 ## Contents

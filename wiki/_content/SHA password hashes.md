@@ -1,9 +1,5 @@
 # SHA password hashes
 
-Related articles
-
-*   [Security#Password hashes](/index.php/Security#Password_hashes "Security")
-
 The Secure Hash Algorithms (SHA) are a set of [hash functions](https://en.wikipedia.org/wiki/Cryptographic_hash_function "wikipedia:Cryptographic hash function") often used to encrypt passwords. By default Arch uses SHA-512 for passwords, but some systems may still be using the older [MD5](https://en.wikipedia.org/wiki/MD5 "wikipedia:MD5") algorithm. This article describes how to increase password security.
 
 ## Contents

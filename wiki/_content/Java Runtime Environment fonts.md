@@ -1,12 +1,5 @@
 # Java Runtime Environment fonts
 
-Related articles
-
-*   [Fonts](/index.php/Fonts "Fonts")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [MS Fonts](/index.php/MS_Fonts "MS Fonts")
-*   [X Logical Font Description](/index.php/X_Logical_Font_Description "X Logical Font Description")
-
 Some users may find the default Java fonts or the display mode of fonts in Java applications to be unpleasant. Several methods to improve the font display in the Oracle Java Runtime Environment (JRE) are available. These methods may be used separately, but many users will find they achieve better results by combining them.
 
 TrueType fonts appear to be the best supported format for use with Java.

@@ -1,9 +1,5 @@
 # HiDPI
 
-Related articles
-
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-
 HiDPI (High Dots Per Inch) displays, also known by Apple's "[Retina Display](https://en.wikipedia.org/wiki/Retina_Display "wikipedia:Retina Display")" marketing name, are screens with a high resolution in a relatively small format. They are mostly found in high-end laptops and monitors.
 
 Not all software behaves well in high-resolution mode yet. Here are listed most common tweaks which make work on a HiDPI screen more pleasant.

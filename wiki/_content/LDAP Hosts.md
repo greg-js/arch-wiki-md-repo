@@ -1,10 +1,5 @@
 # LDAP Hosts
 
-Related articles
-
-*   [OpenLDAP](/index.php/OpenLDAP "OpenLDAP")
-*   [LDAP Authentication](/index.php/LDAP_Authentication "LDAP Authentication")
-
 This document will allow you to put your /etc/hosts into your LDAP server. At first make sure you have an LDAP server up and running (take [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication") as an introduction). Next you need to create a proper ldif file from /etc/hosts. Actually mine is like:
 
 ```

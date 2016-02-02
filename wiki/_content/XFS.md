@@ -1,9 +1,5 @@
 # XFS
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-
 XFS is a high-performance journaling file system created by Silicon Graphics, Inc. XFS is particularly proficient at parallel IO due to its allocation group based design. This enables extreme scalability of IO threads, filesystem bandwidth, file and filesystem size when spanning multiple storage devices.
 
 ## Contents

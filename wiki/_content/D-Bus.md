@@ -1,9 +1,5 @@
 # D-Bus
 
-Related articles
-
-*   [kdbus](/index.php/Kdbus "Kdbus")
-
 [D-Bus](https://en.wikipedia.org/wiki/D-Bus "wikipedia:D-Bus") is a message bus system that provides an easy way for inter-process communication. It consists of a daemon, which can be run both system-wide and for each user session, and a set of libraries to allow applications to use D-Bus.
 
 ## Contents

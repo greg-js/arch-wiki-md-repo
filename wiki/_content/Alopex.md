@@ -1,11 +1,5 @@
 # Alopex
 
-Related articles
-
-*   [dmenu](/index.php/Dmenu "Dmenu")
-*   [dwm](/index.php/Dwm "Dwm")
-*   [i3](/index.php/I3 "I3")
-
 [Alopex](https://github.com/TrilbyWhite/alopex) (formerly, TTWM) is a minimal tiling window manager combining concepts or elements from [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup>, [dwm](/index.php/Dwm "Dwm"), and [i3wm](/index.php/I3wm "I3wm"). Inspiration has also been drawn from other great tilers like [monsterwm](/index.php/Monsterwm "Monsterwm"). It manages windows using tiling, horizontal or vertical stacking layouts with transient floating and fullscreen modes.
 
 **Note:** This page will remain focused on Alopex 2.x until 3.x moves to a usable/testable state. From then on, this page will be edited to reflect documentation of the most recent version.

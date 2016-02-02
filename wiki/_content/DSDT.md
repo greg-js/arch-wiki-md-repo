@@ -1,10 +1,5 @@
 # DSDT
 
-Related articles
-
-*   [ACPI modules](/index.php/ACPI_modules "ACPI modules")
-*   [acpid](/index.php/Acpid "Acpid")
-
 DSDT (Differentiated System Description Table) is a part of the [ACPI](https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface "wikipedia:Advanced Configuration and Power Interface") specification. It supplies information about supported power events in a given system. ACPI tables are provided in firmware from the manufacturer. A common Linux problem is missing ACPI functionality, such as: fans not running, screens not turning off when the lid is closed, etc. This can stem from DSDTs made with Windows specifically in mind, which can be patched after installation. The goal of this article is to analyze and rebuild a faulty DSDT, so that the kernel can override the default one.
 
 Basically a DSDT table is the code run on ACPI (Power Management) events.

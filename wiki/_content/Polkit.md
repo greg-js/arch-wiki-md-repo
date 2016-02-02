@@ -1,11 +1,5 @@
 # Polkit
 
-Related articles
-
-*   [Session](/index.php/Session "Session")
-*   [Sudo](/index.php/Sudo "Sudo")
-*   [Users and groups](/index.php/Users_and_groups "Users and groups")
-
 From [polkit homepage](http://www.freedesktop.org/wiki/Software/polkit/):
 
 	_polkit is an application-level toolkit for defining and handling the policy that allows unprivileged processes to speak to privileged processes: It is a framework for centralizing the decision making process with respect to granting access to privileged operations for unprivileged applications._

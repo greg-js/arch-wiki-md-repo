@@ -1,10 +1,5 @@
 # SSD memory cell clearing
 
-Related articles
-
-*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
-*   [Securely wipe disk](/index.php/Securely_wipe_disk "Securely wipe disk")
-
 On occasion, users may wish to completely reset an SSD's cells to the same virgin state they were manufactured, thus restoring it to its [factory default write performance](http://www.anandtech.com/storage/showdoc.aspx?i=3531&p=8). Write performance is known to degrade over time even on SSDs with native TRIM support. TRIM only safeguards against file deletes, not replacements such as an incremental save.
 
 **Warning:**

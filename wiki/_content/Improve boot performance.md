@@ -1,13 +1,5 @@
 # Improve boot performance
 
-Related articles
-
-*   [Maximizing performance](/index.php/Maximizing_performance "Maximizing performance")
-*   [Silent boot](/index.php/Silent_boot "Silent boot")
-*   [Daemon](/index.php/Daemon "Daemon")
-*   [e4rat](/index.php/E4rat "E4rat")
-*   [Kexec](/index.php/Kexec "Kexec")
-
 Improving the boot performance of a system can provide reduced boot wait times and a means to learn more about how certain system files and scripts interact with one another. This article attempts to aggregate methods on how to improve the boot performance of an Arch Linux system.
 
 ## Contents

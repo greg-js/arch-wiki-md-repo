@@ -1,10 +1,5 @@
 # Security
 
-Related articles
-
-*   [List of Applications/Security](/index.php/List_of_Applications/Security "List of Applications/Security")
-*   [Category:Security](/index.php/Category:Security "Category:Security")
-
 This article contains recommendations and best practices for hardening an Arch Linux system.
 
 ## Contents

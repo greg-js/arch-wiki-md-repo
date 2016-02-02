@@ -1,10 +1,5 @@
 # List of games
 
-Related articles
-
-*   [List of applications](/index.php/List_of_applications "List of applications")
-*   [List of applications#Emulators](/index.php/List_of_applications#Emulators "List of applications")
-
 **Note:** This page strives to list all games known to run under GNU/Linux. Some of them are freely accessible via [official repositories](/index.php/Official_repositories "Official repositories") and [AUR](/index.php/AUR "AUR"). For more about running games, related system configuration tips, see [Gaming](/index.php/Gaming "Gaming"). For possibly more up to date selection of games available in the AUR, try checking the [AUR 'games' category](https://aur.archlinux.org/packages.php?O=0&K=&do_Search=Go&detail=1&C=6&SeB=nd&SB=n&SO=a&PP=25).
 
 ## Contents

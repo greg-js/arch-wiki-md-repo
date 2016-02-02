@@ -1,12 +1,5 @@
 # Firefox tweaks
 
-Related articles
-
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM")
-*   [Firefox privacy](/index.php/Firefox_privacy "Firefox privacy")
-
 This page contains advanced Firefox configuration options and performance tweaks.
 
 ## Contents

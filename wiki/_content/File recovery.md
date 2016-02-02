@@ -1,9 +1,5 @@
 # File recovery
 
-Related articles
-
-*   [Post recovery tasks#Photorec](/index.php/Post_recovery_tasks#Photorec "Post recovery tasks")
-
 This article lists data recovery and undeletion options for Arch Linux.
 
 ## Contents

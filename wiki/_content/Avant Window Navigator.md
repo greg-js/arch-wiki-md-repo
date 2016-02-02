@@ -1,9 +1,5 @@
 # Avant Window Navigator
 
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-
 [Avant Window Navigator](https://launchpad.net/awn) (AWN) is a lightweight dock written in C. It has support for launchers, task lists and third party applets.
 
 ## Contents

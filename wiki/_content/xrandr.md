@@ -1,10 +1,5 @@
 # xrandr
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Multihead](/index.php/Multihead "Multihead")
-
 _xrandr_ is an official configuration utility to the [RandR](https://en.wikipedia.org/wiki/RandR "wikipedia:RandR") [X Window System](https://en.wikipedia.org/wiki/X_Window_System "wikipedia:X Window System") extension. It can be used to set the size, orientation or reflection of the outputs for a screen. For configuring multiple monitors see the [Multihead](/index.php/Multihead "Multihead") page.
 
 ## Contents

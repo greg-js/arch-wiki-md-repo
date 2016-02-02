@@ -1,9 +1,5 @@
 # Lenovo ThinkPad T400
 
-Related articles
-
-*   [Lenovo ThinkPad T400s](/index.php/Lenovo_ThinkPad_T400s "Lenovo ThinkPad T400s")
-
 Installation instructions for the Lenovo ThinkPad T400.
 
 ## Contents

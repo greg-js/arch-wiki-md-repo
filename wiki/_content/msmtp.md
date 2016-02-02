@@ -1,10 +1,5 @@
 # msmtp
 
-Related articles
-
-*   [mutt](/index.php/Mutt "Mutt")
-*   [OfflineIMAP](/index.php/OfflineIMAP "OfflineIMAP")
-
 [msmtp](http://msmtp.sourceforge.net/) is a very simple and easy to use SMTP client with fairly complete [sendmail](https://en.wikipedia.org/wiki/sendmail "wikipedia:sendmail") compatibility.
 
 ## Contents

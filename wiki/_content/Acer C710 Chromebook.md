@@ -1,10 +1,5 @@
 # Acer C710 Chromebook
 
-Related articles
-
-*   [Chromebook](/index.php/Chromebook "Chromebook")
-*   [Acer C720 Chromebook](/index.php/Acer_C720_Chromebook "Acer C720 Chromebook")
-
 This page is a work in progress guide to running [Arch Linux](/index.php/Arch_Linux "Arch Linux") on the Acer C7 [Chromebook](/index.php/Chromebook "Chromebook").
 
 Over seven [models](http://us.acer.com/ac/en/US/content/models/chromebooks/chromebook-c) exist.

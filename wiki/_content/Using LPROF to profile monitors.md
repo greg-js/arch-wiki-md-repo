@@ -1,9 +1,5 @@
 # Using LPROF to profile monitors
 
-Related articles
-
-*   [CMYK support in The GIMP](/index.php/CMYK_support_in_The_GIMP "CMYK support in The GIMP")
-
 This article will explain the concept of monitor calibration and profiling. It explains the building of lprof color profiler from the provided PKGBUILD, and its use in profiling your monitor.
 
 ## Contents

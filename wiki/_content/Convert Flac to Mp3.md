@@ -1,9 +1,5 @@
 # Convert Flac to Mp3
 
-Related articles
-
-*   [Convert any Movie to DVD Video](/index.php/Convert_any_Movie_to_DVD_Video "Convert any Movie to DVD Video")
-
 This article presents ways of doing audio transcoding between FLAC and MP3 audio files using command line/scripted tools, and suggest a few graphical utilities to do the same and more.
 
 ## Contents

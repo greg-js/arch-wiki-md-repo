@@ -1,10 +1,5 @@
 # ATI
 
-Related articles
-
-*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst")
-*   [Xorg](/index.php/Xorg "Xorg")
-
 Owners of **AMD** (previously **ATI**) video cards have a choice between AMD's [proprietary driver](/index.php/AMD_Catalyst "AMD Catalyst") ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) and the open source driver ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the open source driver.
 
 The open source driver is _on par_ performance-wise with the proprietary driver for many cards. (See this [benchmark](http://www.phoronix.com/scan.php?page=article&item=radeonsi-cat-wow&num=1).) It also has good dual-head support but worse TV-out support. Newer cards support might be lagging behind Catalyst.

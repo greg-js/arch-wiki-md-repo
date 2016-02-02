@@ -1,10 +1,5 @@
 # Tile-windows
 
-Related articles
-
-*   [fluxbox](/index.php/Fluxbox "Fluxbox")
-*   [openbox](/index.php/Openbox "Openbox")
-
 The **Tile-windows** application is a tool which allows for the tiling of windows within non-tiling window manager. It is similar in nature to the application [PyTyle](/index.php/PyTyle "PyTyle"). As an alternative one can use a native tiling window manager, as explained in the article [Window manager#Tiling window managers](/index.php/Window_manager#Tiling_window_managers "Window manager").
 
 ## Installation

@@ -1,9 +1,5 @@
 # udev
 
-Related articles
-
-*   [udisks](/index.php/Udisks "Udisks")
-
 From [Wikipedia article](https://en.wikipedia.org/wiki/udev "wikipedia:udev"):
 
 	udev is a device manager for the Linux kernel. As the successor of devfsd and hotplug, udev primarily manages device nodes in the `/dev` directory. At the same time, udev also handles all user space events raised while hardware devices are added into the system or removed from it, including firmware loading as required by certain devices.

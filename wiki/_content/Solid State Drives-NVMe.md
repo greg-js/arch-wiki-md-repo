@@ -1,9 +1,5 @@
 # Solid State Drives/NVMe
 
-Related articles
-
-*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
-
 NVM Express (NVMe) is a specification for accessing SSDs attached through the PCI Express bus. As a logical device interface, NVM Express has been designed from the ground up, capitalizing on the low latency and parallelism of PCI Express SSDs, and mirroring the parallelism of contemporary CPUs, platforms and applications.
 
 ## Contents

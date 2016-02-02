@@ -1,19 +1,5 @@
 # Modoboa
 
-Related articles
-
-*   [Python](/index.php/Python "Python")
-*   [Django](/index.php/Django "Django")
-*   [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv")
-*   [Apache](/index.php/Apache "Apache")
-*   [Nginx](/index.php/Nginx "Nginx")
-*   [MariaDB](/index.php/MariaDB "MariaDB")
-*   [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")
-*   [Sqlite](/index.php/Sqlite "Sqlite")
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Dovecot](/index.php/Dovecot "Dovecot")
-*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
-
 Modoboa is a mail hosting and management platform including a modern and simplified Web User Interface. It provides useful components such as an administration panel or a webmail.
 
 Modoboa integrates with well known software such as [Postfix](/index.php/Postfix "Postfix") and/or [Dovecot](/index.php/Dovecot "Dovecot"). A SQL database ([MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL")) is used as a central point of communication between all components. Modoboa is developed with modularity in mind, expanding it is really easy. Actually, all current features are extensions.

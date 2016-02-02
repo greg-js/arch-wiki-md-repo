@@ -1,12 +1,5 @@
 # Chromium
 
-Related articles
-
-*   [Chromium/Tips and tricks](/index.php/Chromium/Tips_and_tricks "Chromium/Tips and tricks")
-*   [Browser plugins](/index.php/Browser_plugins "Browser plugins")
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Opera](/index.php/Opera "Opera")
-
 [Chromium](https://en.wikipedia.org/wiki/Chromium_(web_browser) "wikipedia:Chromium (web browser)") is an open-source graphical web browser from Google, based on the [Blink](https://en.wikipedia.org/wiki/Blink_(layout_engine) "wikipedia:Blink (layout engine)") rendering engine.
 
 ## Contents

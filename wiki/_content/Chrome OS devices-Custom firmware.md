@@ -1,10 +1,5 @@
 # Chrome OS devices/Custom firmware
 
-Related articles
-
-*   [Chromebook](/index.php/Chromebook "Chromebook")
-*   [Chromebook Pixel 2](/index.php/Chromebook_Pixel_2 "Chromebook Pixel 2")
-
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 ## Contents

@@ -1,11 +1,5 @@
 # TeX Live FAQ
 
-Related articles
-
-*   [TeX Live](/index.php/TeX_Live "TeX Live")
-*   [TeX Live and CJK](/index.php/TeX_Live_and_CJK "TeX Live and CJK")
-*   [LaTeX](/index.php/LaTeX "LaTeX")
-
 Frequently asked qustions about TeX, TeXLive.
 
 ## Contents

@@ -1,9 +1,5 @@
 # bspwm
 
-Related articles
-
-*   [bspwm/Example configurations](/index.php/Bspwm/Example_configurations "Bspwm/Example configurations")
-
 _bspwm_ is a tiling window manager that represents windows as the leaves of a full binary tree. It has support for [EWMH](http://standards.freedesktop.org/wm-spec/wm-spec-1.3.html) and multiple monitors, and is configured and controlled through messages.
 
 ## Contents

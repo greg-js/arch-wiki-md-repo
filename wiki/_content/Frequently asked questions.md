@@ -1,12 +1,5 @@
 # Frequently asked questions
 
-Related articles
-
-*   [Arch Terminology](/index.php/Arch_Terminology "Arch Terminology")
-*   [Arch64 FAQ](/index.php/Arch64_FAQ "Arch64 FAQ")
-*   [Arch User Repository#FAQ](/index.php/Arch_User_Repository#FAQ "Arch User Repository")
-*   [General troubleshooting](/index.php/General_troubleshooting "General troubleshooting")
-
 Besides the questions covered below, you may find [The Arch Way](/index.php/The_Arch_Way "The Arch Way") and [Arch Linux](/index.php/Arch_Linux "Arch Linux") helpful. Both articles contain a good deal of information about Arch Linux.
 
 ## Contents

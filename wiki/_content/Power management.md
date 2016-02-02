@@ -1,15 +1,5 @@
 # Power management
 
-Related articles
-
-*   [Power management/Suspend and hibernate](/index.php/Power_management/Suspend_and_hibernate "Power management/Suspend and hibernate")
-*   [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling")
-*   [CPU frequency scaling](/index.php/CPU_frequency_scaling "CPU frequency scaling")
-*   [Hybrid graphics](/index.php/Hybrid_graphics "Hybrid graphics")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   [sysctl](/index.php/Sysctl "Sysctl")
-*   [udev](/index.php/Udev "Udev")
-
 The purpose of this page is to provide general overview of power management in Arch Linux. Power management consists of two main parts:
 
 1.  Configuration of the Linux kernel, which interacts with hardware.

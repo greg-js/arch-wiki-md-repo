@@ -1,11 +1,5 @@
 # Infinality
 
-Related articles
-
-*   [Fonts](/index.php/Fonts "Fonts")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-*   [MS fonts](/index.php/MS_fonts "MS fonts")
-
 The [infinality](http://www.infinality.net/) patchset aims to greatly improve freetype2 font rendering. It adds multiple new capabilities.
 
 ## Contents

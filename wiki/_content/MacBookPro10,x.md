@@ -1,12 +1,5 @@
 # MacBookPro10,x
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [General Recommendations](/index.php/General_Recommendations "General Recommendations")
-*   [MacBook](/index.php/MacBook "MacBook")
-
 This page should help you setting up ArchLinux on a [MacBook Pro 10,1 with Retina display](https://en.wikipedia.org/wiki/MacBook_Pro#Third_generation_.28Retina.29 "wikipedia:MacBook Pro"). Most of the steps are the same or very similar to the regular ArchLinux installation. However, because this is very new hardware, the setup requires a few different steps. The general installation guidelines are descibed in [MacBook](/index.php/MacBook "MacBook").
 
 **Note:** To have all hardware supported, you should run this Notebook with Kernel 3.7 or newer.

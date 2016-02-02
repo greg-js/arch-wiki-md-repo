@@ -1,10 +1,5 @@
 # Uniform look for Qt and GTK applications
 
-Related articles
-
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [Qt](/index.php/Qt "Qt")
-
 [Qt](/index.php/Qt "Qt") and [GTK+](/index.php/GTK%2B "GTK+") based programs both use a different widget toolkit to render the graphical user interface. Each come with different themes, styles and icon sets by default, among other things, so the "look and feel" differ significantly. This article will help you make your Qt and GTK+ applications look similar for a more streamlined and integrated desktop experience.
 
 ## Contents

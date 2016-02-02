@@ -2,11 +2,6 @@
 
 This page explains how to get the Japanese input to work using [uim](http://code.google.com/p/uim/).
 
-Related articles
-
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-*   [Internationalization/Japanese](/index.php/Internationalization/Japanese "Internationalization/Japanese")
-
 If you use SCIM, see [Smart Common Input Method platform](/index.php/Smart_Common_Input_Method_platform "Smart Common Input Method platform").
 
 If you use IBus, see [IBus](/index.php/IBus "IBus").

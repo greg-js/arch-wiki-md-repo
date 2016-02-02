@@ -1,9 +1,5 @@
 # Mirrors
 
-Related articles
-
-*   [pacman](/index.php/Pacman "Pacman")
-
 This page is a guide to selecting and configuring your mirrors, and a listing of current available mirrors.
 
 ## Contents

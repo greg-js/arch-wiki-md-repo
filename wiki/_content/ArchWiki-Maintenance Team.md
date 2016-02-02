@@ -1,13 +1,5 @@
 # ArchWiki:Maintenance Team
 
-Related articles
-
-*   [ArchWiki:Administrators](/index.php/ArchWiki:Administrators "ArchWiki:Administrators")
-*   [ArchWiki:Maintainers](/index.php/ArchWiki:Maintainers "ArchWiki:Maintainers")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-*   [ArchWiki:Requests](/index.php/ArchWiki:Requests "ArchWiki:Requests")
-*   [ArchWiki:Tasks](/index.php/ArchWiki:Tasks "ArchWiki:Tasks")
-
 The Maintenance Team is ArchWiki's official group of users whose goal is supervising and fixing the edits that are made every day to the articles in the wiki.
 
 ## Contents

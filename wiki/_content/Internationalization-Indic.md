@@ -1,9 +1,5 @@
 # Internationalization/Indic
 
-Related articles
-
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-
 This page explains how setup your Arch installation in order to input Indic languages.
 
 ## Fonts

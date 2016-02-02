@@ -2,10 +2,6 @@
 
 **Note:** This wiki entry is a work-in-progress.
 
-Related articles
-
-*   [Puppet](/index.php/Puppet "Puppet")
-
 From the [Puppet Dashboard website](http://projects.puppetlabs.com/projects/dashboard/):
 
 	_The Puppet Dashboard is a web interface and reporting tool for your Puppet installation. Dashboard facilitates management and configuration tasks, provides a quick visual snapshot of important system information, and delivers valuable reports._

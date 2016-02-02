@@ -1,10 +1,5 @@
 # PulseAudio
 
-Related articles
-
-*   [PulseAudio/Examples](/index.php/PulseAudio/Examples "PulseAudio/Examples")
-*   [PulseAudio/Troubleshooting](/index.php/PulseAudio/Troubleshooting "PulseAudio/Troubleshooting")
-
 [PulseAudio](https://en.wikipedia.org/wiki/PulseAudio "wikipedia:PulseAudio") serves as a proxy to sound applications using existing kernel sound components like [ALSA](/index.php/ALSA "ALSA") or [OSS](/index.php/OSS "OSS"). Since ALSA is included in Arch Linux by default, the most common deployment scenarios include PulseAudio with ALSA.
 
 ## Contents

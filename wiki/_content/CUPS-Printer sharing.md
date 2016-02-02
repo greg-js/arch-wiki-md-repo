@@ -1,10 +1,5 @@
 # CUPS/Printer sharing
 
-Related articles
-
-*   [Samba](/index.php/Samba "Samba")
-*   [CUPS](/index.php/CUPS "CUPS")
-
 See [CUPS](/index.php/CUPS "CUPS") for the main article.
 
 This article contains instruction on sharing printers between systems, be it between two GNU/Linux systems or between a GNU/Linux system and Microsoft Windows.

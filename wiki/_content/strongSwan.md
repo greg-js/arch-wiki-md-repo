@@ -1,9 +1,5 @@
 # strongSwan
 
-Related articles
-
-*   [L2TP/IPsec VPN client setup](/index.php/L2TP/IPsec_VPN_client_setup "L2TP/IPsec VPN client setup")
-
 IPSec is an encryption and authentication standard that can be used to build secure Virtual Private Networks (VPNs).
 
 It is natively supported by the Linux kernel, but configuration of encryption keys is left to the user. The [IKE](https://en.wikipedia.org/wiki/Internet_Key_Exchange "wikipedia:Internet Key Exchange") protocols are therefore used in IPSec VPNs to automatically negotiate key exchanges securely using a variety of means, including certificates, pre-shared keys or both.

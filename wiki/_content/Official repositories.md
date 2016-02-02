@@ -1,15 +1,5 @@
 # Official repositories
 
-Related articles
-
-*   [Mirrors](/index.php/Mirrors "Mirrors")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-*   [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-
 A [software repository](https://en.wikipedia.org/wiki/software_repository "wikipedia:software repository") is a storage location from which software packages are retrieved for installation.
 
 Arch Linux **official repositories** contain essential and popular software, readily accessible via [pacman](/index.php/Pacman "Pacman"). They are maintained by [package maintainers](/index.php/Arch_Terminology#Package_maintainer "Arch Terminology").

@@ -1,9 +1,5 @@
 # Official repositories web interface
 
-Related articles
-
-*   [AurJson](/index.php/AurJson "AurJson")
-
 This article provides documentation for the web interface through which it is possible to query the official repositories and obtain results in JSON format.
 
 ## Contents

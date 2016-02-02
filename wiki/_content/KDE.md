@@ -1,17 +1,5 @@
 # KDE
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Dolphin](/index.php/Dolphin "Dolphin")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Qt](/index.php/Qt "Qt")
-*   [KDM](/index.php/KDM "KDM")
-*   [KDevelop 4](/index.php/KDevelop_4 "KDevelop 4")
-*   [Trinity](/index.php/Trinity "Trinity")
-*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
-
 KDE is a software project currently comprising of a [desktop environment](/index.php/Desktop_environment "Desktop environment") known as Plasma (or Plasma Workspaces), a collection of libraries and frameworks (KDE Frameworks) and several applications (KDE Applications) as well. KDE upstream has a well maintained [UserBase wiki](http://userbase.kde.org/). Detailed information about most KDE applications can be found there.
 
 ## Contents

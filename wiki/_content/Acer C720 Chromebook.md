@@ -1,10 +1,5 @@
 # Acer C720 Chromebook
 
-Related articles
-
-*   [Chrome OS devices](/index.php/Chrome_OS_devices "Chrome OS devices")
-*   [Laptop](/index.php/Laptop "Laptop")
-
 **Warning:** This article relies on third-party scripts and modifications, and may irreparably damage your hardware or data. Proceed at your own risk.
 
 The Acer C720 Chromebook (and newer Chromebooks in general) features a "legacy boot" mode that makes it easy to boot Linux and other operating systems. The legacy boot mode is provided by the [SeaBIOS](http://www.coreboot.org/SeaBIOS) payload of [Coreboot](http://www.coreboot.org/). SeaBIOS behaves like a traditional BIOS that boots into the MBR of a disk, and from there into your standard bootloaders like Syslinux and GRUB.

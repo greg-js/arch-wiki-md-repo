@@ -1,9 +1,5 @@
 # Network bridge
 
-Related articles
-
-*   [Bridge with netctl](/index.php/Bridge_with_netctl "Bridge with netctl")
-
 A bridge is a piece of software used to unite two or more network segments. A bridge behaves like a virtual network switch, working transparently (the other machines do not need to know or care about its existence). Any real devices (e.g. `eth0`) and virtual devices (e.g. `tap0`) can be connected to it.
 
 This article explains how to create a bridge that contains at least an ethernet device. This is useful for things like the bridge mode of [QEMU](/index.php/QEMU "QEMU"), setting a software based access point, etc.

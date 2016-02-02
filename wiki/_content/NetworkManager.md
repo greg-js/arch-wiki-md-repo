@@ -1,11 +1,5 @@
 # NetworkManager
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 [NetworkManager](http://projects.gnome.org/NetworkManager/) is a program for providing detection and configuration for systems to automatically connect to network. NetworkManager's functionality can be useful for both wireless and wired networks. For wireless networks, NetworkManager prefers known wireless networks and has the ability to switch to the most reliable network. NetworkManager-aware applications can switch from online and offline mode. NetworkManager also prefers wired connections over wireless ones, has support for modem connections and certain types of VPN. NetworkManager was originally developed by Red Hat and now is hosted by the [GNOME](/index.php/GNOME "GNOME") project.
 
 **Warning:** By default, Wi-Fi passwords are stored in clear text. See section [#Encrypted Wi-Fi passwords](#Encrypted_Wi-Fi_passwords)

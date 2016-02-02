@@ -1,9 +1,5 @@
 # Runit
 
-Related articles
-
-*   [init](/index.php/Init "Init")
-
 Runit is a process supervisor. It includes `runit-init`, which can replace sysv's init as pid1, or can be run from inittab or your init system of choice. Runit's simple collection of tools can be used to build flexible dependency structures and distributed systems, or blazing fast parallel runlevel changes (including the initial boot).
 
 See [G. Pape's Runit Page](http://smarden.org/runit/) for a complete description, but follow the installation instructions below for your Arch system.

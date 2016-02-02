@@ -1,9 +1,5 @@
 # Vifm
 
-Related articles
-
-*   [ranger](/index.php/Ranger "Ranger")
-
 From the [Vifm](http://vifm.info/) home page:
 
 	_Vifm is an ncurses based file manager with vi like keybindings/modes/options/commands/configuration, which also borrows some useful ideas from mutt._

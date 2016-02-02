@@ -1,12 +1,5 @@
 # Swap
 
-Related articles
-
-*   [Zswap](/index.php/Zswap "Zswap")
-*   [Swap on video ram](/index.php/Swap_on_video_ram "Swap on video ram")
-*   [fstab](/index.php/Fstab "Fstab")
-*   [Suspend and hibernate](/index.php/Suspend_and_hibernate "Suspend and hibernate")
-
 This page provides an introduction to swap space and paging on GNU/Linux. It covers creation and activation of swap partitions and swap files.
 
 From [All about Linux swap space](http://www.linux.com/news/software/applications/8208-all-about-linux-swap-space):

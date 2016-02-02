@@ -1,9 +1,5 @@
 # Insync
 
-Related articles
-
-*   [Dropbox](/index.php/Dropbox "Dropbox")
-
 [insync](https://insynchq.com) is an alternative Google Drive client which is available for Windows, Mac OS X and Linux which allows you to sync a local folder or symlinked folders with your Google Drive. Whilst previous Beta versions used to be for free, the final release features a trial period after which a one-time payment per Google account is required.
 
 ## Contents

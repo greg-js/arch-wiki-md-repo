@@ -1,10 +1,5 @@
 # Fprint
 
-Related articles
-
-*   [Fingerprint-gui](/index.php/Fingerprint-gui "Fingerprint-gui")
-*   [ThinkFinger](/index.php/ThinkFinger "ThinkFinger")
-
 From [the fprint homepage](http://www.freedesktop.org/wiki/Software/fprint/):
 
 	_The fprint project aims to plug a gap in the Linux desktop: support for consumer fingerprint reader devices._

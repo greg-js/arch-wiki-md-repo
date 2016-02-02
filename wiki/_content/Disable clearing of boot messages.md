@@ -1,9 +1,5 @@
 # Disable clearing of boot messages
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-
 After the boot process, the screen is cleared and the login prompt appears, leaving users unable to read init output and error messages. This default behavior may be modified using methods outlined in this article.
 
 Note that regardless of the chosen option, kernel messages can be displayed for inspection after booting by using `dmesg` or all logs from the current boot with `journalctl -b`.

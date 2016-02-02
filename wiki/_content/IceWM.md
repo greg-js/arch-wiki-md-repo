@@ -1,9 +1,5 @@
 # IceWM
 
-Related articles
-
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 
 	_IceWM is a window manager for the X Window System graphical infrastructure, written by Marko Maček. It was coded from scratch in C++ and is released under the terms of the GNU Lesser General Public License. It is relatively lightweight in terms of memory and CPU usage, and comes with themes that allow it to imitate the UI of Windows 95, OS/2, Motif, and other graphical user interfaces._

@@ -1,9 +1,5 @@
 # Touchpad Synaptics
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-
 This article details the installation and configuration process of the _**Synaptics input driver**_ for Synaptics (and ALPS) touchpads found on most notebooks.
 
 ## Contents

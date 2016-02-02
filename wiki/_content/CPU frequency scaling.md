@@ -1,12 +1,5 @@
 # CPU frequency scaling
 
-Related articles
-
-*   [Power saving](/index.php/Power_saving "Power saving")
-*   [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools")
-*   [pm-utils](/index.php/Pm-utils "Pm-utils")
-*   [PHC](/index.php/PHC "PHC")
-
 CPU frequency scaling enables the operating system to scale the CPU frequency up or down in order to save power. CPU frequencies can be scaled automatically depending on the system load, in response to ACPI events, or manually by userspace programs.
 
 CPU frequency scaling is implemented in the Linux kernel, the infrastructure is called _cpufreq_. Since kernel 3.4 the necessary modules are loaded automatically and the recommended [ondemand governor](#Scaling_governors) is enabled by default. However, userspace tools like [cpupower](#cpupower), [acpid](/index.php/Acpid "Acpid"), [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"), or GUI tools provided for your desktop environment, may still be used for advanced configuration.

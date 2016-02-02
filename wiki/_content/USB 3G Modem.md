@@ -1,12 +1,5 @@
 # USB 3G Modem
 
-Related articles
-
-*   [wvdial](/index.php/Wvdial "Wvdial")
-*   [Direct Modem Connection](/index.php/Direct_Modem_Connection "Direct Modem Connection")
-*   [3G and GPRS modems with pppd](/index.php/3G_and_GPRS_modems_with_pppd "3G and GPRS modems with pppd")
-*   [Category:Modems](/index.php/Category:Modems "Category:Modems")
-
 A number of mobile telephone networks around the world offer mobile internet connections over UMTS (or EDGE or GSM) using a portable USB modem device.
 
 ## Contents

@@ -1,11 +1,5 @@
 # Poulsbo
 
-Related articles
-
-*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [MPlayer](/index.php/MPlayer "MPlayer")
-
 The **Intel GMA 500** series, also known by it's codename **Poulsbo** or **[Intel System Controller Hub US15W](http://ark.intel.com/Product.aspx?id=35444)**, is a family of integrated video adapters based on the PowerVR SGX 535 graphics core. It is typically found on boards for the Atom Z processor series. Features include hardware decoding capability of up to 720p/1080i video content in various state-of-the-art codecs, e.g. H.264.
 
 As the PowerVR SGX 535 graphics core was developed by Imagination Technologies and then licensed by Intel, the standard opensource [Intel](/index.php/Intel "Intel") drivers do not work with this hardware.

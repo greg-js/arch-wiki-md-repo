@@ -1,9 +1,5 @@
 # Apache Mesos
 
-Related articles
-
-*   [Apache spark](/index.php/Apache_spark "Apache spark")
-
 Apache Mesos is a cluster manager. For more information, see the [official documentation](http://mesos.apache.org/documentation/latest/).
 
 ## Installation

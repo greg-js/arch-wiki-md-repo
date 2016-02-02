@@ -1,9 +1,5 @@
 # YAGF
 
-Related articles
-
-*   [List of applications#OCR software](/index.php/List_of_applications#OCR_software "List of applications")
-
 [YAGF](http://sourceforge.net/projects/yagf-ocr/) is a graphical interface for the [cuneiform](https://en.wikipedia.org/wiki/CuneiForm_(software) "wikipedia:CuneiForm (software)") OCR program on the Linux platform. With YAGF you can scan images via XSane, perform images preprocessing and recognize texts using cuneiform from a single command centre. YAGF also makes it easy to scan and recognize several images sequentially.
 
 ## Contents

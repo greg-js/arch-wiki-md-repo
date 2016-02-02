@@ -1,13 +1,5 @@
 # Kernels
 
-Related articles
-
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-*   [Compile kernel module](/index.php/Compile_kernel_module "Compile kernel module")
-*   [Kernel Panics](/index.php/Kernel_Panics "Kernel Panics")
-*   [Linux-ck](/index.php/Linux-ck "Linux-ck")
-*   [sysctl](/index.php/Sysctl "Sysctl")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Kernel_(computing) "wikipedia:Kernel (computing)"):
 
 	_the kernel is the main component of most computer operating systems; it is a bridge between applications and the actual data processing done at the hardware level. The kernel's responsibilities include managing the system's resources (the communication between hardware and software components)._

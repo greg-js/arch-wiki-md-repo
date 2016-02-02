@@ -1,10 +1,5 @@
 # Compile kernel module
 
-Related articles
-
-*   [Kernel](/index.php/Kernel "Kernel")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-
 Sometimes you may wish to compile Linux's [Kernel module](/index.php/Kernel_module "Kernel module") without recompiling the whole kernel.
 
 **Note:** You can only replace existing module if it is compiled as module (M) and not builtin (y) into kernel.

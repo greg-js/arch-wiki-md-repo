@@ -1,9 +1,5 @@
 # update packages from crontab
 
-Related articles
-
-*   [Recovery after failed update or upgrade](/index.php/Recovery_after_failed_update_or_upgrade "Recovery after failed update or upgrade")
-
 **Warning:** **Doing automatic updates from cron is strongly discouraged. It is likely to leave your machine in a broken and unbootable state.** If this breaks your machine, do not hold anyone but yourself responsible. You have been warned.
 
 ## Contents

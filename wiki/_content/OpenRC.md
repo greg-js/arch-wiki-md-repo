@@ -1,12 +1,5 @@
 # OpenRC
 
-Related articles
-
-*   [eudev](/index.php/Eudev "Eudev")
-*   [init](/index.php/Init "Init")
-*   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
-*   [SysVinit](/index.php/SysVinit "SysVinit")
-
 **Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). When using OpenRC, please mention so in support requests.
 
 [OpenRC](https://wiki.gentoo.org/wiki/OpenRC) is a service manager maintained by the Gentoo developers. OpenRC is dependency based and works with the system provided init program, normally [SysVinit](/index.php/SysVinit "SysVinit").

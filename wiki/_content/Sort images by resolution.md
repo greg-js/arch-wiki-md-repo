@@ -1,10 +1,5 @@
 # Sort images by resolution
 
-Related articles
-
-*   [File recovery](/index.php/File_recovery "File recovery")
-*   [Post recovery tasks](/index.php/Post_recovery_tasks "Post recovery tasks")
-
 **Note:** To speed up access to the recovered or restored files you can use [shake](https://www.archlinux.org/packages/?name=shake) utility to defragment them.
 
 When recovery of files done and you restored images with help of a [post recovery tasks](/index.php/Post_recovery_tasks "Post recovery tasks") script then it could be wise to sort images by the resolution. This will help to sort the photos you made, webcam images or any other images into the folders by the resolutions, most of them are often using the same related image resolutions.

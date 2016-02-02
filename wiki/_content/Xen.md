@@ -1,10 +1,5 @@
 # Xen
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
-
 From [Xen Overview](http://wiki.xen.org/wiki/Xen_Overview):
 
 	_Xen is an open-source type-1 or baremetal hypervisor, which makes it possible to run many instances of an operating system or indeed different operating systems in parallel on a single machine (or host). Xen is the only type-1 hypervisor that is available as open source. Xen is used as the basis for a number of different commercial and open source applications, such as: server virtualization, Infrastructure as a Service (IaaS), desktop virtualization, security applications, embedded and hardware appliances._

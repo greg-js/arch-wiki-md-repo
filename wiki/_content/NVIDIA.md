@@ -1,12 +1,5 @@
 # NVIDIA
 
-Related articles
-
-*   [Nouveau](/index.php/Nouveau "Nouveau")
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
-*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
-*   [Xorg](/index.php/Xorg "Xorg")
-
 This article covers installing and configuring [NVIDIA](http://www.nvidia.com)'s _proprietary_ graphic card driver. For information about the open-source drivers, see [Nouveau](/index.php/Nouveau "Nouveau"). If you have a laptop with hybrid Intel/NVIDIA graphics, see [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus") instead.
 
 ## Contents

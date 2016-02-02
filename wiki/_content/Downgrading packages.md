@@ -1,12 +1,5 @@
 # Downgrading packages
 
-Related articles
-
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive")
-
 Before downgrading a single or multiple packages, consider why you wish to do so. If it is due to a bug, search the [Bugtracker](https://bugs.archlinux.org/) for existing tasks. If there is none, add a new task; it is better to correct bugs, or at least warn other users of possible issues.
 
 **Warning:**

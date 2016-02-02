@@ -1,9 +1,5 @@
 # Logitech G13
 
-Related articles
-
-*   [Logitech Gaming Keyboards](/index.php/Logitech_Gaming_Keyboards "Logitech Gaming Keyboards")
-
 The Logitech G13 is a 25-key "advanced gameboard" from Logitech's Gaming series, with the intention of replacing the left half of your keyboard whilst gaming. It uses rubber dome keyswitches for the main 22-keys, mouse-like buttons for the two buttons around the joystick, a joystick (which can be pressed in), four Mode buttons, four option buttons, a menu button, and a backlight toggle. ([Official Site](http://gaming.logitech.com/en-us/product/g13-advanced-gameboard))
 
 There are a couple options for drivers, but only one that appears to work well today:

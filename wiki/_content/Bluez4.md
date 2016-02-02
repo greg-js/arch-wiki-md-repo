@@ -1,12 +1,5 @@
 # Bluez4
 
-Related articles
-
-*   [Bluetooth](/index.php/Bluetooth "Bluetooth")
-*   [Bluetooth mouse](/index.php/Bluetooth_mouse "Bluetooth mouse")
-*   [Bluetooth mouse configuration](/index.php/Bluetooth_mouse_configuration "Bluetooth mouse configuration")
-*   [Bluetooth headset](/index.php/Bluetooth_headset "Bluetooth headset")
-
 Bluez4 is an older version of the Linux bluetooth stack. Information on the current version of the bluetooth stack, Bluez5, can be found in the [Bluetooth](/index.php/Bluetooth "Bluetooth") article.
 
 ## Contents

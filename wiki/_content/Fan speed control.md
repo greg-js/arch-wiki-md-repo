@@ -1,9 +1,5 @@
 # Fan speed control
 
-Related articles
-
-*   [Lm_sensors](/index.php/Lm_sensors "Lm sensors")
-
 Fancontrol, part of [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors), can be used to control the speed and sound of CPU/case fans. This article covers configuration/setup of the utility.
 
 ## Contents

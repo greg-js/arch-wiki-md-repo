@@ -1,13 +1,5 @@
 # GDM
 
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [LightDM](/index.php/LightDM "LightDM")
-*   [LXDM](/index.php/LXDM "LXDM")
-
 From [GDM - GNOME Display Manager](http://projects.gnome.org/gdm/about.html):
 
 	_The GNOME Display Manager (GDM) is a program that manages graphical display servers and handles graphical user logins._

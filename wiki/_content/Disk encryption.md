@@ -1,15 +1,5 @@
 # Disk encryption
 
-Related articles
-
-*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-*   [TrueCrypt](/index.php/TrueCrypt "TrueCrypt")
-*   [eCryptfs](/index.php/ECryptfs "ECryptfs")
-*   [EncFS](/index.php/EncFS "EncFS")
-*   [Tomb](/index.php/Tomb "Tomb")
-*   [tcplay](/index.php/Tcplay "Tcplay")
-*   [GnuPG](/index.php/GnuPG "GnuPG")
-
 This article discusses common techniques available in Arch Linux for cryptographically protecting a logical part of a storage disk (folder, partition, whole disk, ...), so that all data that is written to it is automatically encrypted, and decrypted on-the-fly when read again.
 
 "Storage disks" in this context can be your computer's hard drive(s), external devices like USB flash drives or DVD's, as well as _virtual_ storage disks like loop-back devices or cloud storage _(as long as Arch Linux can address it as a block device or filesystem)_.

@@ -1,10 +1,5 @@
 # Reflector
 
-Related articles
-
-*   [Mirrors](/index.php/Mirrors "Mirrors")
-*   [Pacman](/index.php/Pacman "Pacman")
-
 [Reflector](http://xyne.archlinux.ca/projects/reflector/) is a script which can retrieve the latest mirror list from the [MirrorStatus](https://www.archlinux.org/mirrors/status/) page, filter the most up-to-date mirrors, sort them by speed and overwrite the file `/etc/pacman.d/mirrorlist`.
 
 ## Contents

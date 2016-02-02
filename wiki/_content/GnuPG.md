@@ -1,10 +1,5 @@
 # GnuPG
 
-Related articles
-
-*   [Disk encryption](/index.php/Disk_encryption "Disk encryption")
-*   [List of applications/Security#Encryption, signing, steganography](/index.php/List_of_applications/Security#Encryption.2C_signing.2C_steganography "List of applications/Security")
-
 According to the [official website](http://www.gnupg.org):
 
 	GnuPG is a complete and free implementation of the OpenPGP standard as defined by RFC4880 (also known as [PGP](https://en.wikipedia.org/wiki/PGP "wikipedia:PGP")). GnuPG allows to encrypt and sign your data and communication, features a versatile key management system as well as access modules for all kinds of public key directories. GnuPG, also known as GPG, is a command line tool with features for easy integration with other applications. A wealth of frontend applications and libraries are available. Version 2 of GnuPG also provides support for S/MIME and Secure Shell (ssh).

@@ -1,9 +1,5 @@
 # Taking a screenshot
 
-Related articles
-
-*   [Extra_keyboard_keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-
 This article explain different methods to take [screenshots](https://en.wikipedia.org/wiki/Screenshot "wikipedia:Screenshot") on your system.
 
 ## Contents

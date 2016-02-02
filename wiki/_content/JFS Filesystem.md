@@ -1,9 +1,5 @@
 # JFS Filesystem
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-
 This article introduces the reader to the JFS file system. In particular, procedures for implementation, maintenance and optimization will be presented along with background information on the file system itself and some cautionary notes on precarious implementations.
 
 ## Contents

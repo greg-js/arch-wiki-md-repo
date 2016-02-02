@@ -1,11 +1,5 @@
 # xdg-open
 
-Related articles
-
-*   [Default applications](/index.php/Default_applications "Default applications")
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
-*   [Desktop entries](/index.php/Desktop_entries "Desktop entries")
-
 **xdg-open** is a desktop-independent tool for configuring the [default applications](/index.php/Default_applications "Default applications") of a user. Many applications invoke the `xdg-open` command internally.
 
 Inside a [desktop environment](/index.php/Desktop_environment "Desktop environment") (like [GNOME](/index.php/GNOME "GNOME"), [KDE](/index.php/KDE "KDE"), or [Xfce](/index.php/Xfce "Xfce")), _xdg-open_ simply passes the arguments to those desktop environment's file-opener application (eg. _gvfs-open_, _kde-open_, or _exo-open_). which means that the associations are left up to the desktop environment.

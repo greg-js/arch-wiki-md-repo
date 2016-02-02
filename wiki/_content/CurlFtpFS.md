@@ -1,9 +1,5 @@
 # CurlFtpFS
 
-Related articles
-
-*   [List of applications/Internet#FTP clients](/index.php/List_of_applications/Internet#FTP_clients "List of applications/Internet")
-
 **Note:** As of February 2015, curlftpfs is reported to be extremely slow, see for example [a Ubuntu bug report](https://bugs.launchpad.net/ubuntu/+source/curlftpfs/+bug/1267749) and a [stackoverflow.com question](http://stackoverflow.com/questions/24360479/ftp-with-curlftpfs-is-extremely-slow-to-the-point-it-is-impossible-to-work-with).
 
 ## Installation

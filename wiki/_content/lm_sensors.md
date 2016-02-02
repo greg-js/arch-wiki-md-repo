@@ -1,10 +1,5 @@
 # lm_sensors
 
-Related articles
-
-*   [hddtemp](/index.php/Hddtemp "Hddtemp")
-*   [monitorix](/index.php/Monitorix "Monitorix")
-
 [lm_sensors](http://lm-sensors.org/) (Linux monitoring sensors) is a free and open-source application that provides tools and drivers for monitoring temperatures, voltage, and fans. This document explains how to install, configure, and use lm_sensors.
 
 ## Contents

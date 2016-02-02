@@ -1,13 +1,5 @@
 # User:Elinux/MacBook Pro 12,1
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [General Recommendations](/index.php/General_Recommendations "General Recommendations")
-*   [MacBookPro11,x](/index.php/MacBookPro11,x "MacBookPro11,x")
-*   [MacBook](/index.php/MacBook "MacBook")
-
 On MacBook Pro models from 2015 (i.e. 12,x) most of the installation methods are the same as 11,1, with a few variations.
 
 ## Contents

@@ -1,12 +1,5 @@
 # Vagrant
 
-Related articles
-
-*   [Docker](/index.php/Docker "Docker")
-*   [KVM](/index.php/KVM "KVM")
-*   [Libvirt](/index.php/Libvirt "Libvirt")
-*   [VirtualBox](/index.php/VirtualBox "VirtualBox")
-
 [Vagrant](http://www.vagrantup.com) is a tool for managing and configuring virtualised development environments.
 
 Vagrant has a concept of 'providers', which map to the virtualisation engine and its API. The most popular and well-supported provider is Virtualbox; plugins exist for `libvirt`, `kvm`, `lxc`, `vmware` and more.

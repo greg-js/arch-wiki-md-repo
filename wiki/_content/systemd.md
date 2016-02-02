@@ -1,17 +1,5 @@
 # systemd
 
-Related articles
-
-*   [systemd/User](/index.php/Systemd/User "Systemd/User")
-*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
-*   [systemd FAQ](/index.php/Systemd_FAQ "Systemd FAQ")
-*   [init](/index.php/Init "Init")
-*   [init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
-*   [Daemons#List of daemons](/index.php/Daemons#List_of_daemons "Daemons")
-*   [udev](/index.php/Udev "Udev")
-*   [Improve boot performance](/index.php/Improve_boot_performance "Improve boot performance")
-*   [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown")
-
 From the [project web page](http://freedesktop.org/wiki/Software/systemd):
 
 	_systemd_ is a system and service manager for Linux, compatible with SysV and LSB init scripts. systemd provides aggressive parallelization capabilities, uses socket and [D-Bus](/index.php/D-Bus "D-Bus") activation for starting services, offers on-demand starting of daemons, keeps track of processes using Linux [control groups](/index.php/Control_groups "Control groups"), supports snapshotting and restoring of the system state, maintains mount and automount points and implements an elaborate transactional dependency-based service control logic.

@@ -1,11 +1,5 @@
 # XScreenSaver
 
-Related articles
-
-*   [DPMS](/index.php/DPMS "DPMS")
-*   [Xresources](/index.php/Xresources "Xresources")
-*   [List of applications#Screen lockers](/index.php/List_of_applications#Screen_lockers "List of applications")
-
 XScreenSaver is a screen saver and locker for the X Window System.
 
 ## Contents

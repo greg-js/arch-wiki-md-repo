@@ -1,10 +1,5 @@
 # GNU Radio
 
-Related articles
-
-*   [DVB-T](/index.php/DVB-T "DVB-T")
-*   [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")
-
 [GNU Radio](http://gnuradio.org/redmine/projects/gnuradio/wiki) is a free & open-source software development toolkit that provides signal processing blocks to implement software radios. It can be used with readily-available low-cost external RF hardware to create software-defined radios, or without hardware in a simulation-like environment. It is widely used in hobbyist, academic and commercial environments to support both wireless communications research and real-world radio systems.
 
 ## Contents

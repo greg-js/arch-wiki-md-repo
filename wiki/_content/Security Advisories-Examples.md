@@ -1,11 +1,5 @@
 # Security Advisories/Examples
 
-Related articles
-
-*   [Arch CVE Monitoring Team](/index.php/Arch_CVE_Monitoring_Team "Arch CVE Monitoring Team")
-*   [CVE](/index.php/CVE "CVE")
-*   [Security Advisories](/index.php/Security_Advisories "Security Advisories")
-
 This article gives examples and templates for the Arch Linux Security Advisories and CVE-related bugreports.
 
 ## Contents

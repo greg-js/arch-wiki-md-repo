@@ -1,9 +1,5 @@
 # GROMACS
 
-Related articles
-
-*   [List of applications/Science](/index.php/List_of_applications/Science "List of applications/Science")
-
 **Note:** GROMACS should not be used as a [black box](https://en.wikipedia.org/wiki/black_box "wikipedia:black box"). The user is strongly encouraged to read and study the scientific papers related to the methods and force fields that are employed by GROMACS.
 
 According to the [official website](http://www.gromacs.org/), GROMACS is:

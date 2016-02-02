@@ -1,13 +1,5 @@
 # General troubleshooting
 
-Related articles
-
-*   [Reporting bug guidelines](/index.php/Reporting_bug_guidelines "Reporting bug guidelines")
-*   [Step-by-step debugging guide](/index.php/Step-by-step_debugging_guide "Step-by-step debugging guide")
-*   [Debug - Getting Traces](/index.php/Debug_-_Getting_Traces "Debug - Getting Traces")
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
-*   [IRC Collaborative Debugging](/index.php/IRC_Collaborative_Debugging "IRC Collaborative Debugging")
-
 This article explains some methods for general troubleshooting. For application specific issues, please reference the particular wiki page for that program.
 
 ## Contents

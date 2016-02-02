@@ -1,10 +1,5 @@
 # Php-codesniffer-drupal
 
-Related articles
-
-*   [Drupal](/index.php/Drupal "Drupal")
-*   [PHP-Codesniffer](/index.php?title=PHP-Codesniffer&action=edit&redlink=1 "PHP-Codesniffer (page does not exist)")
-
 [PHP_Codesniffer Drupal](https://www.drupal.org/project/coder) (coder) is a coding standards checker for Drupal .
 
 ## Installing

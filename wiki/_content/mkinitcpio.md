@@ -1,10 +1,5 @@
 # mkinitcpio
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-
 **mkinitcpio** is the next generation of [initramfs](https://en.wikipedia.org/wiki/initrd "wikipedia:initrd") creation.
 
 ## Contents

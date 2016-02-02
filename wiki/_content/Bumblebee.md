@@ -1,12 +1,5 @@
 # Bumblebee
 
-Related articles
-
-*   [NVIDIA Optimus](/index.php/NVIDIA_Optimus "NVIDIA Optimus")
-*   [Nouveau](/index.php/Nouveau "Nouveau")
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
-
 From Bumblebee's [FAQ](https://github.com/Bumblebee-Project/Bumblebee/wiki/FAQ):
 
 "_Bumblebee is an effort to make NVIDIA Optimus enabled laptops work in GNU/Linux systems. Such feature involves two graphics cards with two different power consumption profiles plugged in a layered way sharing a single framebuffer._"

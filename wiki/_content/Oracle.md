@@ -1,9 +1,5 @@
 # Oracle
 
-Related articles
-
-*   [Oracle client](/index.php/Oracle_client "Oracle client")
-
 This document will help you install Oracle Database 11gR1 on Arch Linux. If you only want to connect to Oracle databases running elsewhere, see the instructions for installing the [Oracle client](/index.php/Oracle_client "Oracle client"). For installation of Oracle Express Edition, see [oracle-xe](https://aur.archlinux.org/packages/oracle-xe/)<sup><small>AUR</small></sup> and get back to method 2 for after-install configurations.
 
 By using the install method 2 you will be able to finalize the long installation process with only a few steps.

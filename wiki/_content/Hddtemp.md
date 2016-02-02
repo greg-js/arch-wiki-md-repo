@@ -1,9 +1,5 @@
 # Hddtemp
 
-Related articles
-
-*   [lm sensors](/index.php/Lm_sensors "Lm sensors")
-
 [hddtemp](https://savannah.nongnu.org/projects/hddtemp/) is a small utility (with daemon) that gives the hard-drive temperature via S.M.A.R.T. (for drives supporting this feature).
 
 ## Contents

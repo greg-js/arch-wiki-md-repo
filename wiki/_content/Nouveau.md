@@ -1,11 +1,5 @@
 # Nouveau
 
-Related articles
-
-*   [NVIDIA](/index.php/NVIDIA "NVIDIA")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Bumblebee](/index.php/Bumblebee "Bumblebee")
-
 This article covers installing and configuring the [Nouveau](http://nouveau.freedesktop.org/) open-source driver for NVIDIA graphic cards. For information about the official proprietary driver, see [NVIDIA](/index.php/NVIDIA "NVIDIA").
 
 Find your card's [codename](http://nouveau.freedesktop.org/wiki/CodeNames) (a more detailed list is available on [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_Nvidia_Graphics_Processing_Units "wikipedia:Comparison of Nvidia Graphics Processing Units")), and compare it with the [feature matrix](http://nouveau.freedesktop.org/wiki/FeatureMatrix/) for supported features.

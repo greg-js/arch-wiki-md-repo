@@ -1,11 +1,5 @@
 # systemd/User
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [Automatic login to virtual console](/index.php/Automatic_login_to_virtual_console "Automatic login to virtual console")
-*   [Start X at login](/index.php/Start_X_at_login "Start X at login")
-
 [systemd](/index.php/Systemd "Systemd") offers users the ability to manage services under the user's control with a per-user systemd instance, enabling users to start, stop, enable, and disable their own units. This is convenient for daemons and other services that are commonly run for a single user, such as [mpd](/index.php/Mpd "Mpd"), or to perform automated tasks like fetching mail. With some caveats it is even possible to run xorg and the entire window manager from user services.
 
 ## Contents

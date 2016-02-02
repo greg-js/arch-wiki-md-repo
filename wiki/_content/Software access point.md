@@ -1,12 +1,5 @@
 # Software access point
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-*   [Internet sharing](/index.php/Internet_sharing "Internet sharing")
-
 A software access point is used when you want your computer to act as a Wi-Fi access point for the local network. It saves you the trouble of getting a separate wireless router.
 
 ## Contents

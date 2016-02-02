@@ -1,10 +1,5 @@
 # PostFix Howto With SASL
 
-Related articles
-
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Dovecot](/index.php/Dovecot "Dovecot")
-
 From [Postfix's site](http://www.postfix.org/SASL_README.html):
 
 	_People who go to the trouble of installing Postfix may have the expectation that Postfix is more secure than some other mailers. The Cyrus SASL library contains a lot of code. With this, Postfix becomes as secure as other mail systems that use the Cyrus SASL library. Dovecot provides an alternative that may be worth considering._

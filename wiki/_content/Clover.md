@@ -1,12 +1,5 @@
 # Clover
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-*   [EFISTUB](/index.php/EFISTUB "EFISTUB")
-
 Clover is a UEFI bootloader developed for booting Hackintosh and multiboot with other operating systems. It can be used to boot Linux kernels with [EFISTUB](/index.php/EFISTUB "EFISTUB") support. The advantage of Clover to other bootloaders is it supports native resolution GUI on wide screens people commonly use today.
 
 ## Installation

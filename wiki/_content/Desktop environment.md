@@ -1,13 +1,5 @@
 # Desktop environment
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Wayland](/index.php/Wayland "Wayland")
-*   [Default applications](/index.php/Default_applications "Default applications")
-
 A [desktop environment](https://en.wikipedia.org/wiki/Desktop_environment "wikipedia:Desktop environment") provides a _complete_ graphical user interface (GUI) for a system by bundling together a variety of components written using a common widget toolkit and set of libraries.
 
 ## Contents

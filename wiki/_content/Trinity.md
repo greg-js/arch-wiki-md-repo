@@ -1,10 +1,5 @@
 # Trinity
 
-Related articles
-
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [pacman tips](/index.php/Pacman_tips "Pacman tips")
-
 The [Trinity Desktop Environment](http://trinitydesktop.org/) (TDE) project is a feature rich desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style. TDE is a fast, stable and mature desktop for Linux.
 
 ## Contents

@@ -1,11 +1,5 @@
 # Fcitx
 
-Related articles
-
-*   [IBus](/index.php/IBus "IBus")
-*   [SCIM](/index.php/SCIM "SCIM")
-*   [UIM](/index.php/UIM "UIM")
-
 [Fcitx](https://fcitx-im.org/wiki/Fcitx) (Flexible Input Method Framework) is a lightweight [input method framework](http://en.wikipedia.org/wiki/Input_method) aimed at providing environment independent language support for Linux. It supports a lot of different languages and also provides many useful non-CJK features.
 
 ## Contents

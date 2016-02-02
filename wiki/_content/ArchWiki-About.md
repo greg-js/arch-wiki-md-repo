@@ -1,11 +1,5 @@
 # ArchWiki:About
 
-Related articles
-
-*   [Help:Editing](/index.php/Help:Editing "Help:Editing")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-*   [Help:Reading](/index.php/Help:Reading "Help:Reading")
-
 This article is a general overview of the ArchWiki, answering the questions "Who?", "What?", "Why?", and "How?".
 
 ## Contents

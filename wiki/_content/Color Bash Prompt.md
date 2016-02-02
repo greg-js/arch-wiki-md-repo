@@ -1,10 +1,5 @@
 # Color Bash Prompt
 
-Related articles
-
-*   [Bash](/index.php/Bash "Bash")
-*   [Environment variables](/index.php/Environment_variables "Environment variables")
-
 You can add colors and additional information to the [Bash](/index.php/Bash "Bash")'s prompt (PS1) to increase productivity and make the prompt stand out.
 
 This article shows how to _customize the personal prompt of a regular user_.

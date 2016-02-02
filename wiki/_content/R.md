@@ -1,9 +1,5 @@
 # R
 
-Related articles
-
-*   [Intel C++](/index.php/Intel_C%2B%2B "Intel C++")
-
 _R is a free software environment for statistical computing and graphics_ ([http://www.r-project.org/](http://www.r-project.org/)).
 
 ## Contents

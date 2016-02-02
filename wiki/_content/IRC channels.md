@@ -1,10 +1,5 @@
 # IRC channels
 
-Related articles
-
-*   [IRC channel](/index.php/IRC_channel "IRC channel")
-*   [International communities](/index.php/International_communities "International communities")
-
 The size of our community led to the creation of multiple IRC channels. To get a list of all channels on freenode that contain "archlinux" in their name, use the command `/query alis list *archlinux*`.
 
 [#archlinux](irc://irc.freenode.net/archlinux), the main Arch Linux support channel, and [#archlinux-offtopic](irc://irc.freenode.net/archlinux-offtopic), the main Arch Linux social channel, have their own article at [IRC channel](/index.php/IRC_channel "IRC channel").

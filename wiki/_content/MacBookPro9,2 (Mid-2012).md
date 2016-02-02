@@ -1,12 +1,5 @@
 # MacBookPro9,2 (Mid-2012)
 
-Related articles
-
-*   [MacBook](/index.php/MacBook "MacBook")
-*   [MacBookPro7,1](/index.php/MacBookPro7,1 "MacBookPro7,1")
-*   [MacBookPro8,1/8,2/8,3 (2011)](/index.php/MacBookPro8,1/8,2/8,3_(2011) "MacBookPro8,1/8,2/8,3 (2011)")
-*   **MacBookPro9,2 (Mid-2012)**
-
 This guide outlines special information on installing and configuring Arch on the more recent Macbook 9,x (Mid-2012) hardware alongside a pre-existing OSX operating system. This requires adequate free disk space, install media (such as a USB or CD), and a wired connection for the initial steps of the install procedure.
 
 This article is written with a dual-boot setup in mind, and does _not_ cover how to replace OSX with Arch.

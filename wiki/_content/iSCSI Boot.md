@@ -1,10 +1,5 @@
 # iSCSI Boot
 
-Related articles
-
-*   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
-*   [iSCSI Initiator](/index.php/ISCSI_Initiator "ISCSI Initiator")
-
 You can install Arch on an [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target"). This allows you to boot from an iscsi target using a diskless machine. No physical disk is required unless you need an ipxe boot USB (because your NIC isn't iBFT capable or you don't want to setup a TFTP server).
 
 ## Contents

@@ -1,9 +1,5 @@
 # IRC channel
 
-Related articles
-
-*   [IRC channels](/index.php/IRC_channels "IRC channels")
-
 This article is about **#archlinux**, the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and **#archlinux-offtopic**, the main Arch Linux social channel, both available on the [Freenode](http://www.freenode.net/) network.
 
 There are also a number of other channels dedicated to Arch Linux maintained by community members: see [IRC channels](/index.php/IRC_channels "IRC channels") for a listing.

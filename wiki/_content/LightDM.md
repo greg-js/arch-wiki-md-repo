@@ -1,12 +1,5 @@
 # LightDM
 
-Related articles
-
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [GDM](/index.php/GDM "GDM")
-*   [KDM](/index.php/KDM "KDM")
-*   [LXDM](/index.php/LXDM "LXDM")
-
 [LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager") that aims to be the standard display manager for the X server. Its key features are:
 
 *   A lightweight codebase

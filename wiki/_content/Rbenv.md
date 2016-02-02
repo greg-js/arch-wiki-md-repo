@@ -1,11 +1,5 @@
 # Rbenv
 
-Related articles
-
-*   [RVM](/index.php/RVM "RVM")
-*   [Chruby](/index.php/Chruby "Chruby")
-*   [Ruby](/index.php/Ruby "Ruby")
-
 [rbenv](https://github.com/sstephenson/rbenv) (Simple Ruby Version Management) lets you easily switch between multiple versions of Ruby. It's simple, unobtrusive, and follows the UNIX tradition of single-purpose tools that do one thing well.
 
 Another tool to be used for the same purpose is [RVM](/index.php/RVM "RVM").

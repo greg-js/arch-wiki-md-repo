@@ -1,9 +1,5 @@
 # Connecting your MP3 Player
 
-Related articles
-
-*   [USB storage devices](/index.php/USB_storage_devices "USB storage devices")
-
 This article discusses plugging portable audio players (also sometimes called "MP3 players").
 
 ## Contents

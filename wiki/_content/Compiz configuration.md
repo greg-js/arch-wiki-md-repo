@@ -1,10 +1,5 @@
 # Compiz configuration
 
-Related articles
-
-*   [Compiz](/index.php/Compiz "Compiz")
-*   [Window manager](/index.php/Window_manager "Window manager")
-
 This article details more advanced Compiz configuration. It is assumed that you have successfully installed Compiz and have a basic, working configuration. For information on installation, basic configuration and troubleshooting, please consult the [Compiz](/index.php/Compiz "Compiz") article.
 
 ## Contents

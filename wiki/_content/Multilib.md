@@ -1,9 +1,5 @@
 # Multilib
 
-Related articles
-
-*   [Install bundled 32-bit system in Arch64](/index.php/Install_bundled_32-bit_system_in_Arch64 "Install bundled 32-bit system in Arch64")
-
 Enabling the _multilib_ repository allows the user to run and build 32-bit applications on 64-bit installations of Arch Linux. _multilib_ creates a directory containing 32-bit instruction set libraries inside `/usr/lib32/`, which 32-bit binary applications may need when executed.
 
 ## Contents

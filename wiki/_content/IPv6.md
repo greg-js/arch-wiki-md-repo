@@ -1,9 +1,5 @@
 # IPv6
 
-Related articles
-
-*   [IPv6 tunnel broker setup](/index.php/IPv6_tunnel_broker_setup "IPv6 tunnel broker setup")
-
 In Arch Linux, IPv6 is enabled by default.
 
 ## Contents

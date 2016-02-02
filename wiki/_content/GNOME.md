@@ -1,21 +1,5 @@
 # GNOME
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Window manager](/index.php/Window_manager "Window manager")
-*   [GTK+](/index.php/GTK%2B "GTK+")
-*   [GDM](/index.php/GDM "GDM")
-*   [GNOME Files](/index.php/GNOME_Files "GNOME Files")
-*   [Gedit](/index.php/Gedit "Gedit")
-*   [GNOME Web](/index.php/GNOME_Web "GNOME Web")
-*   [Evolution](/index.php/Evolution "Evolution")
-*   [GNOME Flashback](/index.php/GNOME_Flashback "GNOME Flashback")
-*   [GNOME Keyring](/index.php/GNOME_Keyring "GNOME Keyring")
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
-*   [MATE](/index.php/MATE "MATE")
-
 GNOME (pronounced _gah-nohm_ or _nohm_) is a [desktop environment](/index.php/Desktop_environment "Desktop environment") that aims to be simple and easy to use. It is designed by [The GNOME Project](https://en.wikipedia.org/wiki/The_GNOME_Project "wikipedia:The GNOME Project") and is composed entirely of free and open-source software. GNOME is a part of the [GNU Project](https://en.wikipedia.org/wiki/GNU_Project "wikipedia:GNU Project").
 
 ## Contents

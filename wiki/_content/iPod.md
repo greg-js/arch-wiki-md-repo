@@ -1,9 +1,5 @@
 # iPod
 
-Related articles
-
-*   [Audiobook](/index.php/Audiobook "Audiobook")
-
 The purpose of this article is to demonstrate the use of iDevices under Arch Linux.
 
 ## Contents

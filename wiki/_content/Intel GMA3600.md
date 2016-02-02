@@ -1,10 +1,5 @@
 # Intel GMA3600
 
-Related articles
-
-*   [Intel graphics](/index.php/Intel_graphics "Intel graphics")
-*   [Xorg](/index.php/Xorg "Xorg")
-
 The **Intel GMA 3600** series is a family of integrated video adapters based on the PowerVR SGX 545 graphics core. It is used in the Atom N2600 and Atom N2800.
 
 ## Contents

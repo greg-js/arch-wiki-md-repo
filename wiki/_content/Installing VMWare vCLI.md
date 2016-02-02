@@ -1,10 +1,5 @@
 # Installing VMWare vCLI
 
-Related articles
-
-*   [VMware](/index.php/VMware "VMware")
-*   [Installing_Arch_Linux_in_VMWare](/index.php/Installing_Arch_Linux_in_VMWare "Installing Arch Linux in VMWare")
-
 The vCLI utilities make it possible to manage VMWare ESX servers (with the possibility of using vCenter). Eventhough Archlinux is not one of the "supported platforms"; the installation process is relatively straightforward. We have a two method's of VMWare vCLI installation. It's a build package from AUR, or manually installation.
 
 ## Contents

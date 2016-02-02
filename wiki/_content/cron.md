@@ -1,10 +1,5 @@
 # cron
 
-Related articles
-
-*   [systemd/Timers](/index.php/Systemd/Timers "Systemd/Timers")
-*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Cron "wikipedia:Cron"):
 
 _**cron** is the time-based job scheduler in Unix-like computer operating systems. cron enables users to schedule jobs (commands or shell scripts) to run periodically at certain times or dates. It is commonly used to automate system maintenance or administration._

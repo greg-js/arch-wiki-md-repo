@@ -1,9 +1,5 @@
 # LibreOffice
 
-Related articles
-
-*   [Apache OpenOffice](/index.php/Apache_OpenOffice "Apache OpenOffice")
-
 From [Home - LibreOffice](http://www.libreoffice.org/):
 
 	_LibreOffice is the free power-packed Open Source personal productivity suite for Windows, Macintosh and Linux, that gives you six feature-rich applications for all your document production and data processing needs: Writer, Calc, Impress, Draw, Math and Base. [Support](http://www.libreoffice.org/get-help/) and [documentation](http://www.libreoffice.org/get-help/documentation/) is free from our large, dedicated community of users, contributors and developers. [You, too, can also get involved!](http://www.libreoffice.org/get-involved/)_

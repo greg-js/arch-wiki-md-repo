@@ -1,10 +1,5 @@
 # Eudev
 
-Related articles
-
-*   [OpenRC](/index.php/OpenRC "OpenRC")
-*   [udev](/index.php/Udev "Udev")
-
 **Warning:** This package will remove [systemd](/index.php/Systemd "Systemd") as it replaces udev. Therefore, you should install an alternative [init](/index.php/Init "Init") system and have it boot successfully under that init system **prior** to installing eudev.
 
 `eudev` is a fork of [udev](/index.php/Udev "Udev") started by the Gentoo project, with the goal of isolation from the [init](/index.php/Init "Init") system. It is primarily designed and tested with [OpenRC](/index.php/OpenRC "OpenRC"), but is agnostic to any other init systems.

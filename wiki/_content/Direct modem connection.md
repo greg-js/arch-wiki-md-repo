@@ -1,9 +1,5 @@
 # Direct modem connection
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-
 This article describes how one can connect directly to the Internet from an Arch Linux box using an internal modem or external modem in bridge mode.
 
 Due to a lack of developers for dialup issues, connecting Arch to the Internet with a dialup line requires a lot of manual setup. If at all possible, set up a dedicated router which can be used as a default gateway on the Arch box.

@@ -1,10 +1,5 @@
 # Fingerprint-gui
 
-Related articles
-
-*   [Fprint](/index.php/Fprint "Fprint")
-*   [ThinkFinger](/index.php/ThinkFinger "ThinkFinger")
-
 [Fingerprint-gui](http://www.ullrich-online.cc/fingerprint/) is a program that provides an interface and drivers for fingerprint readers. The package includes drivers from the open-source project [fprint](/index.php/Fprint "Fprint") as well as proprietary drivers not included in fprint.
 
 ## Contents

@@ -1,10 +1,5 @@
 # Lenovo Thinkpad X60 Tablet
 
-Related articles
-
-*   [IBM ThinkPad X60](/index.php/IBM_ThinkPad_X60 "IBM ThinkPad X60")
-*   [IBM ThinkPad X60s](/index.php/IBM_ThinkPad_X60s "IBM ThinkPad X60s")
-
 Installation instructions for the Lenovo Thinkpad X60 Tablet.
 
 ## Contents

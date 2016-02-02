@@ -1,11 +1,5 @@
 # Unity
 
-Related articles
-
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [Compiz](/index.php/Compiz "Compiz")
-
 [Unity](http://unity.ubuntu.com/) is a desktop shell for the [GNOME](/index.php/GNOME "GNOME") desktop environment developed by [Canonical Ltd](http://www.canonical.com/about) for [Ubuntu](http://www.ubuntu.com). Unity is implemented as a plugin of the [Compiz](/index.php/Compiz "Compiz") [window manager](/index.php/Window_manager "Window manager").
 
 ## Contents

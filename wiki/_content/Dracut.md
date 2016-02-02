@@ -1,10 +1,5 @@
 # Dracut
 
-Related articles
-
-*   [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")
-*   [Kernel modules](/index.php/Kernel_modules "Kernel modules")
-
 Dracut is a generic, modular, cross-distribution initramfs generation tool. Please refer to its extensive documentation for details:
 
 *   [Wiki](http://dracut.wiki.kernel.org)

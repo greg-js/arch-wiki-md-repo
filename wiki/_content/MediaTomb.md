@@ -1,9 +1,5 @@
 # MediaTomb
 
-Related articles
-
-*   [Streaming media](/index.php/Streaming_media "Streaming media")
-
 From [MediaTomb - Free UPnP MediaServer](http://mediatomb.cc/):
 
 	_MediaTomb is an open source (GPL) UPnP MediaServer with a nice web user interface, it allows you to stream your digital media through your home network and listen to/watch it on a variety of UPnP compatible devices._

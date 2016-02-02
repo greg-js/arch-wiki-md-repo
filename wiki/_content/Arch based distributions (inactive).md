@@ -1,9 +1,5 @@
 # Arch based distributions (inactive)
 
-Related articles
-
-*   [Arch based distributions (active)](/index.php/Arch_based_distributions_(active) "Arch based distributions (active)")
-
 This is list of inactive Arch derivatives, sorted by latest activity from a project. Purpose of this page is historical reference.
 
 ## Contents

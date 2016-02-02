@@ -1,10 +1,5 @@
 # IBM ThinkPad X60s
 
-Related articles
-
-*   [IBM ThinkPad X60](/index.php/IBM_ThinkPad_X60 "IBM ThinkPad X60")
-*   [Lenovo Thinkpad X60 Tablet](/index.php/Lenovo_Thinkpad_X60_Tablet "Lenovo Thinkpad X60 Tablet")
-
 The IBM Thinkpad X60s is a small light laptop with a Core Duo or Core 2 Duo processor and [Intel graphics](/index.php/Intel_graphics "Intel graphics"). It has no internal optical drive. You can see the specs at [ThinkWiki](http://www.thinkwiki.org/wiki/Category:X60s), a wonderful resource with additional information.
 
 ## Contents

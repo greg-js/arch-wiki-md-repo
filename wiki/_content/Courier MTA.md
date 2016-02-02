@@ -1,10 +1,5 @@
 # Courier MTA
 
-Related articles
-
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Virtual user mail system](/index.php/Virtual_user_mail_system "Virtual user mail system")
-
 [Courier MTA](http://www.courier-mta.org/) is an SMTP and POP3/IMAP4 Server with courier.
 
 The advantages of Courier-MTA are:

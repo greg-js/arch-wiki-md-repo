@@ -1,11 +1,5 @@
 # USB flash installation media
 
-Related articles
-
-*   [CD Burning](/index.php/CD_Burning "CD Burning")
-*   [Archiso](/index.php/Archiso "Archiso")
-*   [Multiboot USB drive](/index.php/Multiboot_USB_drive "Multiboot USB drive")
-
 This page discusses various multi-platform methods on how to create an Arch Linux Installer USB drive (also referred to as _"flash drive", "USB stick", "USB key"_, etc) for booting in BIOS and UEFI systems. The result will be a LiveUSB (LiveCD-like) system that can be used for installing Arch Linux, system maintenance or for recovery purposes, and that, because of the nature of [SquashFS](https://en.wikipedia.org/wiki/SquashFS "wikipedia:SquashFS"), will discard all changes once the computer shuts down.
 
 If you would like to run a full install of Arch Linux from a USB drive (i.e. with persistent settings), see [Installing Arch Linux on a USB key](/index.php/Installing_Arch_Linux_on_a_USB_key "Installing Arch Linux on a USB key"). If you would like to use your bootable Arch Linux USB stick as a rescue USB, see [Change root](/index.php/Change_root "Change root").

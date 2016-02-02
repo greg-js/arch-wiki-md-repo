@@ -1,9 +1,5 @@
 # Recovery after failed update or upgrade
 
-Related articles
-
-*   [Update packages from crontab](/index.php/Update_packages_from_crontab "Update packages from crontab")
-
 **Note:** This is focused mostly on setting up recovery environment for the home user with low knowledge about computer usage or needs.
 
 If something goes wrong during the update process, like your computer losing power half way through or the process getting stopped, some damage could be caused to your installation as a result of packages being half installed and some dependencies missing. This article covers the creation of a separate recovery environment in order to help mitigate damage caused by something going wrong during the update process and fix any issues arising from it.

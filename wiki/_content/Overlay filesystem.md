@@ -1,9 +1,5 @@
 # Overlay filesystem
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-
 From [the initial kernel commit](https://github.com/torvalds/linux/commit/e9be9d5e76e34872f0c37d72e25bc27fe9e2c54c)
 
 	_Overlayfs allows one, usually read-write, directory tree to be overlaid onto another, read-only directory tree. All modifications go to the upper, writable layer. This type of mechanism is most often used for live CDs but there's a wide variety of other uses._

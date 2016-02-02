@@ -1,11 +1,5 @@
 # libinput
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics")
-*   [Wayland](/index.php/Wayland "Wayland")
-
 From the [libinput](http://wayland.freedesktop.org/libinput/doc/latest/index.html) project:
 
 	libinput is a library that handles input devices for display servers and other applications that need to directly deal with input devices.

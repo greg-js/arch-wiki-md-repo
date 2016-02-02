@@ -1,10 +1,5 @@
 # Slurm
 
-Related articles
-
-*   [distcc](/index.php/Distcc "Distcc")
-*   [TORQUE](/index.php/TORQUE "TORQUE")
-
 **Slurm** (also referred as Slurm Workload Manager or slurm-llnl) is an open-source workload manager designed for Linux clusters of all sizes, used by many of the world's supercomputers and computer clusters. It provides three key functions. First it allocates exclusive and/or non-exclusive access to resources (computer nodes) to users for some duration of time so they can perform work. Second, it provides a framework for starting, executing, and monitoring work (typically a parallel job) on a set of allocated nodes. Finally, it arbitrates contention for resources by managing a queue of pending work.
 
 ## Contents

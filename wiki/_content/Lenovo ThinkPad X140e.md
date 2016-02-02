@@ -1,10 +1,5 @@
 # Lenovo ThinkPad X140e
 
-Related articles
-
-*   [IBM ThinkPad X100e](/index.php/IBM_ThinkPad_X100e "IBM ThinkPad X100e")
-*   [IBM ThinkPad X120e](/index.php/IBM_ThinkPad_X120e "IBM ThinkPad X120e")
-
 Installation instructions for the Lenovo ThinkPad X140e. Should work for E145 as well.
 
 ## Contents

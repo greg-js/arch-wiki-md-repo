@@ -1,10 +1,5 @@
 # Pipelight
 
-Related articles
-
-*   [Wine](/index.php/Wine "Wine")
-*   [Firefox](/index.php/Firefox "Firefox")
-
 Pipelight is a special browser plugin which allows one to use Windows-only plugins inside Linux browsers. The main focus of the project is on Silverlight and its features, such as watching DRM protected videos. It works by creating a bridge between a Windows application, which handles the Windows-only plugin (e.g. Silverlight), and a native Linux browser plugin. The Windows application is run using a patched version of Wine, therefore requiring Pipelight users to move to this version. Pipelight can be used in browsers that support NPAPI plugins, such as Firefox. It does **not** work with Chromium.
 
 **Tip:**

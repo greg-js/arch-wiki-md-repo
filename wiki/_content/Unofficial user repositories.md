@@ -1,10 +1,5 @@
 # Unofficial user repositories
 
-Related articles
-
-*   [pacman-key](/index.php/Pacman-key "Pacman-key")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-
 This article lists binary repositories freely created and shared by the community, often providing pre-built versions of PKGBUILDS found in the [AUR](/index.php/AUR "AUR").
 
 **Warning:** Neither the official Arch Linux Developers nor the Trusted Users perform tests of any sort to verify the contents of these repositories; it is up to each user to decide whether to trust their maintainers, and take full responsibility for whatever their decision brings.

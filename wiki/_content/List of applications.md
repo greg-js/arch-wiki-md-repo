@@ -6,11 +6,6 @@
 
 [Internet](/index.php/List_of_applications/Internet "List of applications/Internet") – [Multimedia](/index.php/List_of_applications/Multimedia "List of applications/Multimedia") – [Utilities](/index.php/List_of_applications/Utilities "List of applications/Utilities") – [Documents](/index.php/List_of_applications/Documents "List of applications/Documents") – [Security](/index.php/List_of_applications/Security "List of applications/Security") – [Science](/index.php/List_of_applications/Science "List of applications/Science") – [Other](/index.php/List_of_applications/Other "List of applications/Other")
 
-Related articles
-
-*   [Core utilities](/index.php/Core_utilities "Core utilities")
-*   [List of games](/index.php/List_of_games "List of games")
-
 This article is a general list of applications sorted by category, as a reference for those looking for packages. Many sections are split between console and graphical applications.
 
 **Tip:**
@@ -3271,17 +3266,7 @@ See also [Wikipedia:Input method](https://en.wikipedia.org/wiki/Input_method "wi
 
 ### File synchronization
 
-*   **[rsync](/index.php/Rsync "Rsync")** — An incremental transfer and synchronization program.
-
-	[http://rsync.samba.org](http://rsync.samba.org) || [rsync](https://www.archlinux.org/packages/?name=rsync)
-
-*   **[Syncthing](/index.php/Syncthing "Syncthing")** — Open, trustworthy and decentralized cloud synchronization service.
-
-	[https://syncthing.net](https://syncthing.net) || [syncthing](https://www.archlinux.org/packages/?name=syncthing)
-
-*   **[Unison](/index.php/Unison "Unison")** — Bidirectional sync. It keeps track of changes like a VCS.
-
-	[http://www.cis.upenn.edu/~bcpierce/unison](http://www.cis.upenn.edu/~bcpierce/unison) || [unison](https://www.archlinux.org/packages/?name=unison)
+See [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synchronization "Backup programs").
 
 ### Finders
 
@@ -3651,7 +3636,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 	[https://gnu.org/s/emacs](https://gnu.org/s/emacs) || [emacs](https://www.archlinux.org/packages/?name=emacs)
 
-*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim, this package also provides the `vim` command.
+*   **[gVim](/index.php/GVim "GVim")** — Graphical interface for Vim.
 
 	[http://www.vim.org/](http://www.vim.org/) || [gvim](https://www.archlinux.org/packages/?name=gvim)
 

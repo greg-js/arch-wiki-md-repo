@@ -1,10 +1,5 @@
 # AMD Catalyst
 
-Related articles
-
-*   [ATI](/index.php/ATI "ATI")
-*   [Xorg](/index.php/Xorg "Xorg")
-
 Owners of ATI/AMD video cards have a choice between AMD's proprietary driver ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) and the [open source driver](/index.php/ATI "ATI") ([xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati)). This article covers the proprietary driver.
 
 AMD's Linux driver package _catalyst_ was previously named _fglrx_ (**F**ire**GL** and **R**adeon **X**). Only the package name has changed, while the kernel module retains its original _fglrx.ko_ filename. Therefore, any mention of fglrx below is specifically in reference to the _kernel module_, **not the package**.

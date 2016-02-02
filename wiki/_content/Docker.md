@@ -1,12 +1,5 @@
 # Docker
 
-Related articles
-
-*   [systemd-nspawn](/index.php/Systemd-nspawn "Systemd-nspawn")
-*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
-*   [Vagrant](/index.php/Vagrant "Vagrant")
-
 [Docker](http://www.docker.io) is a utility to pack, ship and run any application as a lightweight container.
 
 ## Contents

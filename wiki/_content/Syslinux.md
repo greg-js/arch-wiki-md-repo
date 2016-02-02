@@ -1,10 +1,5 @@
 # Syslinux
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-
 [Syslinux](https://en.wikipedia.org/wiki/SYSLINUX "wikipedia:SYSLINUX") is a collection of boot loaders capable of booting from hard drives, CDs, and over the network via PXE. It supports the [FAT](https://en.wikipedia.org/wiki/File_Allocation_Table "wikipedia:File Allocation Table"), [ext2](https://en.wikipedia.org/wiki/ext2 "wikipedia:ext2"), [ext3](/index.php/Ext3 "Ext3"), [ext4](/index.php/Ext4 "Ext4"), and [Btrfs](/index.php/Btrfs "Btrfs") [file systems](/index.php/File_systems "File systems").
 
 **Note:** Syslinux cannot access files from partitions other than its own. For an alternative bootloader with the multi-fs feature see [GRUB](/index.php/GRUB "GRUB").

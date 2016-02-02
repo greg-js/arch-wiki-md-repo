@@ -1,11 +1,5 @@
 # VMware
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-*   [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest")
-*   [Moving an existing install into (or out of) a virtual machine](/index.php/Moving_an_existing_install_into_(or_out_of)_a_virtual_machine "Moving an existing install into (or out of) a virtual machine")
-
 This article is about installing VMware in Arch Linux; you may also be interested in [VMware/Installing Arch as a guest](/index.php/VMware/Installing_Arch_as_a_guest "VMware/Installing Arch as a guest").
 
 **Note:**

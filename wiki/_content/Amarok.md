@@ -1,9 +1,5 @@
 # Amarok
 
-Related articles
-
-*   [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4")
-
 [Amarok](http://amarok.kde.org/) is a music player and organizer for Linux with an intuitive [Qt](/index.php/Qt "Qt") interface that integrates very well with [KDE](/index.php/KDE "KDE").
 
 Amarok 2 has not yet and will not implement all features from [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4")[[1]](http://amarok.kde.org/blog/archives/809-Missing-features-in-Amarok-2.html), so if you are not satisfied with the new version and would rather have the old one back, refer to that article.

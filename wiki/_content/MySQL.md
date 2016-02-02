@@ -1,10 +1,5 @@
 # MySQL
 
-Related articles
-
-*   [phpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
-*   [Adminer](/index.php/Adminer "Adminer")
-
 MySQL is a widely spread, multi-threaded, multi-user SQL database. For more information about features, see the [official homepage](http://www.mysql.com/).
 
 **Note:** MariaDB is now officially Arch Linux's default implementation of MySQL. It is recommended for all users to [upgrade](#Upgrade_from_Oracle_MySQL_to_MariaDB) to MariaDB. Oracle MySQL was dropped to the [AUR](/index.php/AUR "AUR"). See [the announcement](https://www.archlinux.org/news/mariadb-replaces-mysql-in-repositories/).

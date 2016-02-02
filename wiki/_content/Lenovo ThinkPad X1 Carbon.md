@@ -1,10 +1,5 @@
 # Lenovo ThinkPad X1 Carbon
 
-Related articles
-
-*   [Lenovo ThinkPad X1 Carbon (Gen 2)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_2) "Lenovo ThinkPad X1 Carbon (Gen 2)")
-*   [Lenovo ThinkPad X1 Carbon (Gen 3)](/index.php/Lenovo_ThinkPad_X1_Carbon_(Gen_3) "Lenovo ThinkPad X1 Carbon (Gen 3)")
-
 ## Contents
 
 *   [1 Model description](#Model_description)

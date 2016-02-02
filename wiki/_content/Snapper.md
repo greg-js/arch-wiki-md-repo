@@ -1,11 +1,5 @@
 # Snapper
 
-Related articles
-
-*   [Btrfs](/index.php/Btrfs "Btrfs")
-*   [mkinitcpio-btrfs](/index.php/Mkinitcpio-btrfs "Mkinitcpio-btrfs")
-*   [Btrfs - Tips and tricks](/index.php/Btrfs_-_Tips_and_tricks "Btrfs - Tips and tricks")
-
 [Snapper](http://snapper.io) is a tool created by openSUSE's Arvin Schnell that helps with managing snapshots of [Btrfs](/index.php/Btrfs "Btrfs") subvolumes and [LVM](/index.php/LVM "LVM") volumes. It can create and compare snapshots, revert between snapshots, and supports automatic snapshots timelines.
 
 **Warning:**

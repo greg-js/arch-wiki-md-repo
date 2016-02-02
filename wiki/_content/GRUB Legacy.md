@@ -1,13 +1,5 @@
 # GRUB Legacy
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Boot debugging](/index.php/Boot_debugging "Boot debugging")
-*   [grub-gfx](/index.php/Grub-gfx "Grub-gfx")
-*   [Kernel parameters](/index.php/Kernel_parameters "Kernel parameters")
-
 [GRUB Legacy](http://www.gnu.org/software/grub/grub-legacy.html) is a [multiboot](http://www.gnu.org/software/grub/manual/multiboot/) bootloader previously maintained by the [GNU Project](/index.php/GNU_Project "GNU Project"). It was derived from GRUB, the GRand Unified Bootloader, which was originally designed and implemented by Erich Stefan Boleyn.
 
 Briefly, the _bootloader_ is the first software program that runs when a computer starts. It is responsible for loading and transferring control to the Linux kernel. The kernel, in turn, initializes the rest of the operating system.

@@ -1,11 +1,5 @@
 # Kcaldav
 
-Related articles
-
-*   [DAViCal](/index.php/DAViCal "DAViCal")
-*   [AgenDAV](/index.php/AgenDAV "AgenDAV")
-*   [Radicale](/index.php/Radicale "Radicale")
-
 If you want to connect your google calendar with korganizer you need kcaldav from [AUR](/index.php/AUR "AUR") package [kcaldav](https://aur.archlinux.org/packages/kcaldav/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcaldav)]</sup>.
 
 After installing kcaldav you need to log out and in again to register the caldav service.

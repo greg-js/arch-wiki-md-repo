@@ -1,10 +1,5 @@
 # DVB-S
 
-Related articles
-
-*   [DVB-T](/index.php/DVB-T "DVB-T")
-*   [MythTV Walkthrough](/index.php/MythTV_Walkthrough "MythTV Walkthrough")
-
 This article describes the setup and use of DVB-S (sat TV) cards on Arch Linux.
 
 **Warning:** This was only tested with the Pinnacle PCTV Sat, and may not work or will not help you with different cards.

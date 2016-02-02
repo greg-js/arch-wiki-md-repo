@@ -1,11 +1,5 @@
 # Xcompmgr
 
-Related articles
-
-*   [Compiz](/index.php/Compiz "Compiz")
-*   [Cairo Compmgr](/index.php/Cairo_Compmgr "Cairo Compmgr")
-*   [Compton](/index.php/Compton "Compton")
-
 [Xcompmgr](http://cgit.freedesktop.org/xorg/app/xcompmgr/) is a simple [composite manager](https://en.wikipedia.org/wiki/Compositing_window_manager "wikipedia:Compositing window manager") capable of rendering drop shadows and, with the use of the **transset** utility, primitive window transparency. Designed solely as a proof-of-concept, Xcompmgr is a lightweight alternative to Compiz and similar composite managers.
 
 Because it does not replace any existing window manager, it is an ideal solution for users of lightweight [window managers](/index.php/Window_managers "Window managers"), seeking a more elegant desktop.

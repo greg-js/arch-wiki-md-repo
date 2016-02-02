@@ -1,9 +1,5 @@
 # Dual boot with Windows
 
-Related articles
-
-*   [Dual boot with Windows/SafeBoot](/index.php/Dual_boot_with_Windows/SafeBoot "Dual boot with Windows/SafeBoot")
-
 This is a simple article detailing different methods of Arch/Windows coexistence.
 
 ## Contents

@@ -1,9 +1,5 @@
 # hdparm
 
-Related articles
-
-*   [Securely_wipe_disk#hdparm](/index.php/Securely_wipe_disk#hdparm "Securely wipe disk")
-
 hdparm is a command line utility to set and view hardware parameters of [hard disk drives](https://en.wikipedia.org/wiki/Hard_disk_drive "wikipedia:Hard disk drive"). It can also be used as a simple [benchmarking](/index.php/Benchmarking "Benchmarking") tool.
 
 **Warning:** Be careful, changing default parameters can damage the drive or freeze the system.

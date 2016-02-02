@@ -1,11 +1,5 @@
 # Browser plugins
 
-Related articles
-
-*   [Opera](/index.php/Opera "Opera")
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Chromium](/index.php/Chromium "Chromium")
-
 There are two types of browser plugins, based on the plugin API they use:
 
 *   Netscape plugin API (NPAPI): these plugins work in [Firefox](/index.php/Firefox "Firefox") and most other browsers (**not** in Chromium and Opera).

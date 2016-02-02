@@ -1,17 +1,5 @@
 # Arch Build System
 
-Related articles
-
-*   [Arch packaging standards](/index.php/Arch_packaging_standards "Arch packaging standards")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS")
-*   [makepkg](/index.php/Makepkg "Makepkg")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-*   [pacman](/index.php/Pacman "Pacman")
-*   [PKGBUILD](/index.php/PKGBUILD "PKGBUILD")
-*   [Patching in ABS](/index.php/Patching_in_ABS "Patching in ABS")
-
 This article provides an overview of the Arch Build System (ABS) along with a walkthrough for beginners. It is not intended to be a complete reference guide.
 
 ## Contents

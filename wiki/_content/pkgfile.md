@@ -1,9 +1,5 @@
 # pkgfile
 
-Related articles
-
-*   [pacman](/index.php/Pacman "Pacman")
-
 **pkgfile** is a tool for searching files from packages in the [official repositories](/index.php/Official_repositories "Official repositories").
 
 ## Contents

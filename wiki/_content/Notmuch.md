@@ -1,9 +1,5 @@
 # Notmuch
 
-Related articles
-
-*   [mutt](/index.php/Mutt "Mutt")
-
 [Notmuch](http://notmuchmail.org/) is a mail indexer. Essentially, is a very thin front end on top of _xapian_. Much like [Sup](/index.php/Sup "Sup"), it focuses on one thing: indexing your email messages. Notmuch can be used as an email reader, or simply as an indexer and search tool for other MUAs, like [mutt](/index.php/Mutt "Mutt").
 
 ## Contents

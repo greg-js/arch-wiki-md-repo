@@ -1,10 +1,5 @@
 # Internationalization/Japanese
 
-Related articles
-
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-*   [Input Japanese using uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")
-
 This document provides instructions on how to set up a Japanese language environment on an Arch linux installation. This document will not cover setting up Japanese input on the console.
 
 ## Contents

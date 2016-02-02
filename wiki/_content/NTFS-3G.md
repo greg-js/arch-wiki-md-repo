@@ -1,10 +1,5 @@
 # NTFS-3G
 
-Related articles
-
-*   [File systems](/index.php/File_systems "File systems")
-*   [Mount](/index.php/Mount "Mount")
-
 [NTFS-3G](http://www.tuxera.com/community/ntfs-3g-download/) is an open source implementation of Microsoft's NTFS file system that includes read and write support. NTFS-3G developers use the FUSE file system to facilitate development and to help with portability.
 
 ## Contents

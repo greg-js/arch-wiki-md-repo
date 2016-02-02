@@ -1,9 +1,5 @@
 # libvirt
 
-Related articles
-
-*   [Category:Hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors")
-
 Libvirt is collection of software that provides a convenient way to manage virtual machines and other virtualization functionality, such as storage and network interface management. These software pieces include a long term stable C API, a daemon (libvirtd), and a command line utility (virsh). A primary goal of libvirt is to provide a single way to manage multiple different virtualization providers/hypervisors, such as the [KVM/QEMU](/index.php/QEMU "QEMU"), [Xen](/index.php/Xen "Xen"), [LXC](/index.php/LXC "LXC"), [OpenVZ](http://openvz.org) or [VirtualBox](/index.php/VirtualBox "VirtualBox") [hypervisors](/index.php/Category:Hypervisors "Category:Hypervisors") ([among others](http://libvirt.org/drivers.html)).
 
 Some of the major libvirt features are:

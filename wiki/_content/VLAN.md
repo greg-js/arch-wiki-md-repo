@@ -1,11 +1,5 @@
 # VLAN
 
-Related articles
-
-*   [Network Configuration](/index.php/Network_Configuration "Network Configuration")
-*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
-*   [Netctl](/index.php/Netctl "Netctl")
-
 Virtual LANs give you the ability to sub-divide a LAN. Linux can accept **VLAN** tagged traffic and presents each **VLAN ID** as a different network interface (eg: `eth0.100` for **VLAN ID** `100`)
 
 This article explains how to configure a VLAN using [iproute2](https://www.archlinux.org/packages/?name=iproute2) and [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd") or [netctl](/index.php/Netctl "Netctl").

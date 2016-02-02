@@ -1,12 +1,5 @@
 # General recommendations
 
-Related articles
-
-*   [FAQ](/index.php/FAQ "FAQ")
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [List of applications](/index.php/List_of_applications "List of applications")
-
 This document is an annotated index of popular articles and important information for improving and adding functionalities to the installed Arch system. Readers are assumed to have read and followed the [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide") or [Installation guide](/index.php/Installation_guide "Installation guide") to obtain a basic Arch Linux installation. Having read and understood the concepts explained in [#System administration](#System_administration) and [#Package management](#Package_management) is _required_ for following the other sections of this page and the other articles in the wiki.
 
 ## Contents

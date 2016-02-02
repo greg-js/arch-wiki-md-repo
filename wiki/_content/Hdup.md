@@ -1,9 +1,5 @@
 # Hdup
 
-Related articles
-
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
-
 This wiki page contains a guide on how to set up [hdup](http://www.miek.nl/projects/hdup2/hdup.html), "The little, spiffy, backup tool". (Don't be discouraged by the fact that on its website it says "Unmaintained!". It is a mature program, and that warning means only that its author, Miek Gieben, develops and uses a similar program ([rdup](http://www.miek.nl/projects/rdup/index.html)), which is a bit more difficult to use.) Although `hdup` is a command line program, it's easy to set up, so do not be afraid.
 
 ## Contents

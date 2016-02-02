@@ -1,13 +1,5 @@
 # Firefox privacy
 
-Related articles
-
-*   [Firefox](/index.php/Firefox "Firefox")
-*   [Tor](/index.php/Tor "Tor")
-*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
-*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
-*   [Firefox on RAM](/index.php/Firefox_on_RAM "Firefox on RAM")
-
 This article overviews some useful extensions which enhance security and privacy while using the [Firefox](/index.php/Firefox "Firefox") web browser.
 
 ## Contents

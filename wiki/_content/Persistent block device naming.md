@@ -1,11 +1,5 @@
 # Persistent block device naming
 
-Related articles
-
-*   [fstab](/index.php/Fstab "Fstab")
-*   [udev](/index.php/Udev "Udev")
-*   [LVM](/index.php/LVM "LVM")
-
 This article describes how to use persistent names for your block devices. This has been made possible by the introduction of udev and has some advantages over bus-based naming. If your machine has more than one SATA, SCSI or IDE disk controller, the order in which their corresponding device nodes are added is arbitrary. This may result in device names like `/dev/**sda**` and `/dev/**sdb**` switching around on each boot, culminating in an unbootable system, kernel panic, or a block device disappearing. Persistent naming solves these issues.
 
 **Note:**

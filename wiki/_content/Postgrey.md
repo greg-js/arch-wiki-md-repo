@@ -1,9 +1,5 @@
 # Postgrey
 
-Related articles
-
-*   [Postfix](/index.php/Postfix "Postfix")
-
 [Postgrey](http://postgrey.schweikert.ch/) can be used to enable greylisting for a Postfix mail server.
 
 ## Installation

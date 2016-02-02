@@ -1,11 +1,5 @@
 # FTP over SSH
 
-Related articles
-
-*   [SFTP chroot](/index.php/SFTP_chroot "SFTP chroot")
-*   [Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")
-*   [SFTP](/index.php/SFTP "SFTP")
-
 [FTP over SSH](https://en.wikipedia.org/wiki/File_Transfer_Protocol#FTP_over_SSH "wikipedia:File Transfer Protocol") encrypts passwords unlike plain FTP. FTP over SSH is not really a true protocol, it is just SSH + FTP.
 
 This setup in particular (using [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)<sup><small>AUR</small></sup> + TLS) encrypts usernames, passwords, commands and server replies, but does NOT encrypt the data channel. This also means that there is reduced performance cost on data transfer.

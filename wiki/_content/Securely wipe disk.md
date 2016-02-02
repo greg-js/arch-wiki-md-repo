@@ -1,14 +1,5 @@
 # Securely wipe disk
 
-Related articles
-
-*   [Securely wipe disk/Tips and tricks](/index.php/Securely_wipe_disk/Tips_and_tricks "Securely wipe disk/Tips and tricks")
-*   [File recovery](/index.php/File_recovery "File recovery")
-*   [Benchmarking/Data storage devices](/index.php/Benchmarking/Data_storage_devices "Benchmarking/Data storage devices")
-*   [Frandom](/index.php/Frandom "Frandom")
-*   [Disk encryption#Preparing the disk](/index.php/Disk_encryption#Preparing_the_disk "Disk encryption")
-*   [dm-crypt](/index.php/Dm-crypt "Dm-crypt")
-
 Wiping a disk is done by writing new data over every single bit.
 
 **Note:** References to "disks" in this article also apply to loopback devices.

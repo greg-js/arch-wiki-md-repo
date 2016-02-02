@@ -1,11 +1,5 @@
 # Flyspray
 
-Related articles
-
-*   [LAMP](/index.php/LAMP "LAMP")
-*   [PHP](/index.php/PHP "PHP")
-*   [Bugzilla](/index.php/Bugzilla "Bugzilla")
-
 [Flyspray](http://www.flyspray.org/) is a bug tracking system written in PHP.
 
 ## Installation

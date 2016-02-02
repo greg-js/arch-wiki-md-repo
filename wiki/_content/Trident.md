@@ -1,9 +1,5 @@
 # Trident
 
-Related articles
-
-*   [Xorg](/index.php/Xorg "Xorg")
-
 The Trident driver supports the accelerated video chipsets made by the now-defunct Trident. It supports chips from the (Cyber)Blade, Image, ProVidia and TGUI series. It also supports some ISA and VLB Trident cards.
 
 ## Contents

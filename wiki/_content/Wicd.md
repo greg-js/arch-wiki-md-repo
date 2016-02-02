@@ -1,11 +1,5 @@
 # Wicd
 
-Related articles
-
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Category:Network managers](/index.php/Category:Network_managers "Category:Network managers")
-
 [Wicd](https://launchpad.net/wicd) is a network connection manager that can manage wireless and wired interfaces, similar and an alternative to [NetworkManager](/index.php/NetworkManager "NetworkManager"). Wicd is written in [Python](/index.php/Python "Python") and [GTK+](/index.php/GTK%2B "GTK+"). Alternatively, a version of Wicd for [KDE](/index.php/KDE "KDE"), written in [Qt](/index.php/Qt "Qt"), is available from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Wicd can also run from the terminal in a curses interface, requiring no X server session or task panel (see [#Running Wicd in Text Mode](#Running_Wicd_in_Text_Mode)).
 
 ## Contents

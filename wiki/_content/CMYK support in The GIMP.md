@@ -1,9 +1,5 @@
 # CMYK support in The GIMP
 
-Related articles
-
-*   [Using lprof to profile monitors](/index.php/Using_lprof_to_profile_monitors "Using lprof to profile monitors")
-
 This article will show how to enable rudimentary CMYK support in Gimp using the Separate and Separate+ plug-ins, and explain how to use color proof filter to soft-proof your images. It will also cover more general topics on CMYK colors and DTP.
 
 ## Contents

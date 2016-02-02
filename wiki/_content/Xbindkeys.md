@@ -1,10 +1,5 @@
 # Xbindkeys
 
-Related articles
-
-*   [Xmodmap](/index.php/Xmodmap "Xmodmap")
-*   [Sxhkd](/index.php/Sxhkd "Sxhkd")
-
 Xbindkeys is a program that allows to bind commands to certain keys or key combinations on the keyboard. Xbindkeys works with multimedia keys and is window manager / DE independent, so if you switch much, xbindkeys is very handy.
 
 ## Contents

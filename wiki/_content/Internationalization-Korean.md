@@ -1,9 +1,5 @@
 # Internationalization/Korean
 
-Related articles
-
-*   [Internationalization](/index.php/Internationalization "Internationalization")
-
 This document provides instructions on how to set up a Korean language environment on an Arch linux installation. This document will not cover setting up Korean input on the console.
 
 ## Contents

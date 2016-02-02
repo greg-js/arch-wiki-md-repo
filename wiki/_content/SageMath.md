@@ -1,11 +1,5 @@
 # SageMath
 
-Related articles
-
-*   [Matlab](/index.php/Matlab "Matlab")
-*   [Octave](/index.php/Octave "Octave")
-*   [Mathematica](/index.php/Mathematica "Mathematica")
-
 [SageMath](http://www.sagemath.org) (formerly **Sage**) is a program for numerical and symbolic mathematical computation that uses [Python](/index.php/Python "Python") as its main language. It is meant to provide an alternative for commercial programs such as Maple, Matlab, and Mathematica.
 
 SageMath provides support for the following:

@@ -1,9 +1,5 @@
 # Proxy settings
 
-Related articles
-
-*   [HTTP tunneling](/index.php/HTTP_tunneling "HTTP tunneling")
-
 A proxy is "an interface for a service, especially for one that is remote, resource-intensive, or otherwise difficult to use directly". Source: [Proxy - Wiktionary](http://en.wiktionary.org/wiki/proxy).
 
 ## Contents

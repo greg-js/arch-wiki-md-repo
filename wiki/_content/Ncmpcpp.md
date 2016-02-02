@@ -1,9 +1,5 @@
 # Ncmpcpp
 
-Related articles
-
-*   [mpd](/index.php/Mpd "Mpd")
-
 [Ncmpcpp](http://unkart.ovh.org/ncmpcpp/) or ncmpcpp is an [mpd](/index.php/Mpd "Mpd") client (compatible with _mopidy_) with a UI very similar to _ncmpc_, but it provides new useful features such as support for regular expressions for library searches, extended song format, items filtering, the ability to sort playlists, and a local filesystem browser.
 
 To use it, a functional _mpd_ must be present on the system since _ncmpcpp_/_mpd_ work together in a client/server relationship.

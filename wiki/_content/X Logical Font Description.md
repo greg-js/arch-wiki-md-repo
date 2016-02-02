@@ -1,10 +1,5 @@
 # X Logical Font Description
 
-Related articles
-
-*   [Fonts](/index.php/Fonts "Fonts")
-*   [Font configuration](/index.php/Font_configuration "Font configuration")
-
 Two different font systems are used by X11: the older or core X Logical Font Description, _XLFD,_ and the newer X FreeType, _Xft,_ systems (see [An Xft Tutorial](http://keithp.com/~keithp/render/Xft.tutorial) for font names format). XLFD was originally designed for bitmap fonts and support for scalable fonts (Type1, TrueType and OpenType) was added later. XLFD does not support anti‑aliasing and sub‑pixel rasterization. Xft uses the FreeType and Fontconfig libraries and is more suitable when the smooth appearance of fonts is desired. A guide for using Fontconfig and Xft may be found at [Font configuration](/index.php/Font_configuration "Font configuration").
 
 ## Contents

@@ -1,12 +1,5 @@
 # Udisks
 
-Related articles
-
-*   [udev](/index.php/Udev "Udev")
-*   [Mount](/index.php/Mount "Mount")
-*   [Polkit](/index.php/Polkit "Polkit")
-*   [File manager functionality](/index.php/File_manager_functionality "File manager functionality")
-
 [udisks](http://www.freedesktop.org/wiki/Software/udisks/) provides a daemon _udisksd_, that implements D-Bus interfaces used to query and manipulate storage devices, and a command-line tool _udisksctl_, used to query and use the daemon.
 
 ## Contents

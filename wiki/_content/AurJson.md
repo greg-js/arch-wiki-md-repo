@@ -1,9 +1,5 @@
 # AurJson
 
-Related articles
-
-*   [Official repositories web interface](/index.php/Official_repositories_web_interface "Official repositories web interface")
-
 The **AurJson** interface is a lightweight remote interface for the [AUR](/index.php/AUR "AUR"). It utilizes http GET queries as the request format, and [json](http://www.json.org/) as the response data exchange format.
 
 ## Contents

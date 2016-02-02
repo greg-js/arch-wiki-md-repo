@@ -1,11 +1,5 @@
 # Python
 
-Related articles
-
-*   [Python package guidelines](/index.php/Python_package_guidelines "Python package guidelines")
-*   [Python/Virtualenv](/index.php/Python/Virtualenv "Python/Virtualenv")
-*   [mod_wsgi](/index.php/Mod_wsgi "Mod wsgi")
-
 From [Wikipedia](https://en.wikipedia.org/wiki/Python_(programming_language) "wikipedia:Python (programming language)"):
 
 	_Python is a widely used general-purpose, high-level programming language. Its design philosophy emphasizes code readability, and its syntax allows programmers to express concepts in fewer lines of code than would be possible in languages such as C. The language provides constructs intended to enable clear programs on both a small and large scale._

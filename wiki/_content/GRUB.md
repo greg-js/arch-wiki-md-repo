@@ -1,16 +1,5 @@
 # GRUB
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Master Boot Record](/index.php/Master_Boot_Record "Master Boot Record")
-*   [GUID Partition Table](/index.php/GUID_Partition_Table "GUID Partition Table")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-*   [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy")
-*   [GRUB/EFI examples](/index.php/GRUB/EFI_examples "GRUB/EFI examples")
-*   [GRUB/Tips and tricks](/index.php/GRUB/Tips_and_tricks "GRUB/Tips and tricks")
-
 [GRUB](https://www.gnu.org/software/grub/) — not to be confused with [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") — is the next generation of the GRand Unified Bootloader. GRUB is derived from [PUPA](http://www.nongnu.org/pupa/) which was a research project to develop the next generation of what is now GRUB Legacy. GRUB has been rewritten from scratch to clean up everything and provide modularity and portability [[1]](https://www.gnu.org/software/grub/grub-faq.html#q1).
 
 ## Contents

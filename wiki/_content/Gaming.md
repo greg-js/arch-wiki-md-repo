@@ -1,11 +1,5 @@
 # Gaming
 
-Related articles
-
-*   [List of games](/index.php/List_of_games "List of games")
-*   [Xorg](/index.php/Xorg "Xorg")
-*   [NVIDIA#Gaming using TwinView](/index.php/NVIDIA#Gaming_using_TwinView "NVIDIA")
-
 This page only contains information about running games and related system configuration tips. For lists of popular games for GNU/Linux see [List of games](/index.php/List_of_games "List of games").
 
 ## Contents

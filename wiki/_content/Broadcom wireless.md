@@ -1,9 +1,5 @@
 # Broadcom wireless
 
-Related articles
-
-*   [Wireless](/index.php/Wireless "Wireless")
-
 This article details how to install and setup a Broadcom wireless network device.
 
 ## Contents

@@ -1,10 +1,5 @@
 # Wine
 
-Related articles
-
-*   [Steam/Wine](/index.php/Steam/Wine "Steam/Wine")
-*   [CrossOver](/index.php/CrossOver "CrossOver")
-
 [Wine](https://en.wikipedia.org/wiki/Wine_(software) "wikipedia:Wine (software)") is a _compatibility layer_ capable of running Microsoft Windows applications on Unix-like operating systems. Programs running in Wine act as native programs would, without the performance/memory penalties of an emulator. See the [official project home](http://www.winehq.org/) and [wiki](http://wiki.winehq.org/) pages for longer introduction.
 
 ## Contents

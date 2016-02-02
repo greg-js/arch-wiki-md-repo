@@ -1,9 +1,5 @@
 # Fbterm
 
-Related articles
-
-*   [KMSCON](/index.php/KMSCON "KMSCON")
-
 **Fbterm** (**F**rame **b**uffer **term**inal emulator) is standalone replacement of Linux kernel terminal that can function outside of [Xorg](/index.php/Xorg "Xorg").
 
 ## Contents

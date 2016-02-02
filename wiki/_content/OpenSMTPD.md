@@ -1,9 +1,5 @@
 # OpenSMTPD
 
-Related articles
-
-*   [Dovecot](/index.php/Dovecot "Dovecot")
-
 This article explains how to install and configure a simple OpenSMTPD server.
 
 ## Contents

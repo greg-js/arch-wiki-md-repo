@@ -1,19 +1,5 @@
 # pacman
 
-Related articles
-
-*   [Creating packages](/index.php/Creating_packages "Creating packages")
-*   [Downgrading packages](/index.php/Downgrading_packages "Downgrading packages")
-*   [pacman/Package signing](/index.php/Pacman/Package_signing "Pacman/Package signing")
-*   [pacman/Pacnew and Pacsave](/index.php/Pacman/Pacnew_and_Pacsave "Pacman/Pacnew and Pacsave")
-*   [pacman/Rosetta](/index.php/Pacman/Rosetta "Pacman/Rosetta")
-*   [pacman/Tips and tricks](/index.php/Pacman/Tips_and_tricks "Pacman/Tips and tricks")
-*   [FAQ#Package Management](/index.php/FAQ#Package_Management "FAQ")
-*   [System maintenance](/index.php/System_maintenance "System maintenance")
-*   [Arch Build System](/index.php/Arch_Build_System "Arch Build System")
-*   [Official repositories](/index.php/Official_repositories "Official repositories")
-*   [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
-
 The [pacman](https://www.archlinux.org/pacman/) [package manager](https://en.wikipedia.org/wiki/Package_management_system "wikipedia:Package management system") is one of the major distinguishing features of Arch Linux. It combines a simple binary package format with an easy-to-use [build system](/index.php/Arch_Build_System "Arch Build System"). The goal of _pacman_ is to make it possible to easily manage packages, whether they are from the [official repositories](/index.php/Official_repositories "Official repositories") or the user's own builds.
 
 _pacman_ keeps the system up to date by synchronizing package lists with the master server. This server/client model also allows the user to download/install packages with a simple command, complete with all required dependencies.

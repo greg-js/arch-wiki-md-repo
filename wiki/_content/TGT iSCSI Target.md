@@ -1,10 +1,5 @@
 # TGT iSCSI Target
 
-Related articles
-
-*   [iSCSI Target](/index.php/ISCSI_Target "ISCSI Target")
-*   [iSCSI Boot](/index.php/ISCSI_Boot "ISCSI Boot")
-
 The [TGT SCSI framework](http://stgt.sourceforge.net) can be used for several storage protocols. This document describes the usage of TGT as iSCSI target.
 
 ## Contents

@@ -1,11 +1,5 @@
 # Restore name of a tar.gz archive
 
-Related articles
-
-*   [Post recovery tasks](/index.php/Post_recovery_tasks "Post recovery tasks")
-*   [File recovery](/index.php/File_recovery "File recovery")
-*   [Sort images by resolution](/index.php/Sort_images_by_resolution "Sort images by resolution")
-
 ## Introduction
 
 Here describes about how you can restore normal names for the most of a recovered tar.gz archives by [photorec](/index.php/File_recovery#Testdisk_and_PhotoRec "File recovery"). First you need to create a file with a more detailed information about files, see: [post recovery tasks](/index.php/File_recovery#Creating_a_database_with_more_details_about_files "File recovery"). Restored tar.gz files with photorec might look like `./recup_dir.996/f864593944_wmmaiload-1.0.5.tar.gz` or `./recup_dir.996/f864589184.tar.gz`.

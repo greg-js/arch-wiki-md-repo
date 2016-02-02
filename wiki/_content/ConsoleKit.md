@@ -1,10 +1,5 @@
 # ConsoleKit
 
-Related articles
-
-*   [PolicyKit](/index.php/PolicyKit "PolicyKit")
-*   [init](/index.php/Init "Init")
-
 **Warning:** Arch Linux only has official support for _logind_ [[1]](https://www.archlinux.org/news/consolekit-replaced-by-logind/) and [systemd](/index.php/Systemd "Systemd"). When using _ConsoleKit_, please mention so in support requests.
 
 **Note:** While Consolekit is no longer maintained upstream, the fork ConsoleKit2 is under development. [[2]](https://github.com/ConsoleKit2/ConsoleKit2)

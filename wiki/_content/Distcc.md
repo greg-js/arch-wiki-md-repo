@@ -1,10 +1,5 @@
 # Distcc
 
-Related articles
-
-*   [TORQUE](/index.php/TORQUE "TORQUE")
-*   [Slurm](/index.php/Slurm "Slurm")
-
 Distcc is a program to distribute builds of C, C++, Objective C or Objective C++ code across several machines on a network. distcc should always generate the same results as a local build, is simple to install and use, and is usually much faster than a local compile. The cool part is one can use it together with pacman/srcpac.
 
 ## Contents

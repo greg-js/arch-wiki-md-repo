@@ -1,12 +1,5 @@
 # Midori
 
-Related articles
-
-*   [Browser Plugins](/index.php/Browser_Plugins "Browser Plugins")
-*   [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon")
-*   [UZBL-Browser](/index.php/UZBL-Browser "UZBL-Browser")
-*   [Dillo](/index.php/Dillo "Dillo")
-
 [Midori](http://midori-browser.org) is a lightweight Webkit-based web browser developed by Christian Dywan. It is part of the [Xfce](/index.php/Xfce "Xfce") Goodies project.
 
 Some of its features are:

@@ -1,9 +1,5 @@
 # Vim
 
-Related articles
-
-*   [List of applications/Documents#Vi_text_editors](/index.php/List_of_applications/Documents#Vi_text_editors "List of applications/Documents")
-
 [Vim](https://en.wikipedia.org/wiki/Vim_(text_editor) "wikipedia:Vim (text editor)") is a [terminal](https://en.wikipedia.org/wiki/Computer_terminal#Text_terminals "wikipedia:Computer terminal") text editor, an extended version of [vi](https://en.wikipedia.org/wiki/vi "wikipedia:vi") with additional features. To primarily help with editing source code some of Vim's added features include syntax highlighting, a comprehensive help system, native scripting (vimscript), a visual mode for text selection, and comparison of files (vimdiff).
 
 Vim's focus is keyboard-centric and is not a simple text editor like nano or pico—it requires time to learn, and a lifetime to master.

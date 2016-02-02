@@ -1,10 +1,5 @@
 # dwm
 
-Related articles
-
-*   [dmenu](/index.php/Dmenu "Dmenu")
-*   [wmii](/index.php/Wmii "Wmii")
-
 [dwm](http://dwm.suckless.org/) is a dynamic window manager for [Xorg](/index.php/Xorg "Xorg"). It manages windows in tiled, stacked, and full-screen layouts, as well as many others with the help of [optional patches](#Patches). Layouts can be applied dynamically, optimizing the environment for the application in use and the task being performed. dwm is extremely lightweight and fast, written in C and with a stated design goal of remaining under 2000 source lines of code. It provides [multihead](/index.php/Multihead "Multihead") support for [xrandr](/index.php/Xrandr "Xrandr") and Xinerama.
 
 ## Contents

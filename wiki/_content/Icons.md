@@ -1,10 +1,5 @@
 # Icons
 
-Related articles
-
-*   [Cursor themes](/index.php/Cursor_themes "Cursor themes")
-*   [Xfce](/index.php/Xfce "Xfce")
-
 The freedesktop project provides the [Icon Theme Specification](http://standards.freedesktop.org/icon-theme-spec/latest/), which applies to most linux desktop environments and tries to unify the look of a whole bunch of icons in an _icon-theme_. Freedesktop also provides the [Icon Naming Specification](http://standards.freedesktop.org/icon-naming-spec/latest/), which defines a standard naming scheme for icons believed to be installed on any system. The default theme _hicolor_ should include them all.
 
 ## Contents

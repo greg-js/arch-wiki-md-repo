@@ -1,13 +1,5 @@
 # nmh
 
-Related articles
-
-*   [S-nail](/index.php/S-nail "S-nail")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-*   [Mutt](/index.php/Mutt "Mutt")
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Notmuch](/index.php/Notmuch "Notmuch")
-
 **nmh** (new message handler), is a powerful electronic mail handling system. Following the Unix Philosophy, nmh is made up by a collection of simple programs each of which has a single purpose. This architecture allows the user to intersperse nmh with other commands at the shell prompt and to write scripts tailored to their needs.
 
 ## Contents

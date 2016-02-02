@@ -1,12 +1,5 @@
 # Chrony
 
-Related articles
-
-*   [Time](/index.php/Time "Time")
-*   [Network Time Protocol daemon](/index.php/Network_Time_Protocol_daemon "Network Time Protocol daemon")
-*   [systemd-timesyncd](/index.php/Systemd-timesyncd "Systemd-timesyncd")
-*   [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
-
 This article describes how to set up and run Chrony, an alternative NTP client and server that is roaming friendly and designed specifically for systems that are not online all the time.
 
 ## Contents

@@ -1,10 +1,5 @@
 # Canon CAPT
 
-Related articles
-
-*   [CUPS](/index.php/CUPS "CUPS")
-*   [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems")
-
 **Note:** See [CUPS](/index.php/CUPS "CUPS") for the main article, and [CUPS/Printer-specific problems](/index.php/CUPS/Printer-specific_problems "CUPS/Printer-specific problems") for information on non-CAPT Canon printers
 
 CAPT is Canon's proprietary Canon Advanced Printing Technology (CAPT) driver, supporting the **Canon i-Sensys** series of laser printers. For more information, see [Setting up CAPT printers on Ubuntu](https://help.ubuntu.com/community/CanonCaptDrv190).

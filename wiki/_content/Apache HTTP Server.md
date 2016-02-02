@@ -1,14 +1,5 @@
 # Apache HTTP Server
 
-Related articles
-
-*   [PHP](/index.php/PHP "PHP")
-*   [MySQL](/index.php/MySQL "MySQL")
-*   [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin")
-*   [Adminer](/index.php/Adminer "Adminer")
-*   [Xampp](/index.php/Xampp "Xampp")
-*   [mod_perl](/index.php/Mod_perl "Mod perl")
-
 The [Apache HTTP Server](https://en.wikipedia.org/wiki/Apache_HTTP_Server "wikipedia:Apache HTTP Server"), or Apache for short, is a very popular web server, developed by the Apache Software Foundation.
 
 Apache is often used together with a scripting language such as PHP and database such as MySQL. This combination is often referred to as a [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle) "wikipedia:LAMP (software bundle)") stack (**L**inux, **A**pache, **M**ySQL, **P**HP). This article describes how to set up Apache and how to optionally integrate it with [PHP](/index.php/PHP "PHP") and [MySQL](/index.php/MySQL "MySQL").

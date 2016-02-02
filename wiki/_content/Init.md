@@ -1,10 +1,5 @@
 # Init
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Init Rosetta](/index.php/Init_Rosetta "Init Rosetta")
-
 **Warning:** Arch Linux only has official support for [systemd](/index.php/Systemd "Systemd"). [[1]](https://lists.archlinux.org/pipermail/arch-general/2015-July/039460.html) When using a different init system, please mention so in support requests.
 
 [Init](https://en.wikipedia.org/wiki/Init "wikipedia:Init") is the first process started during system boot. It is a a daemon process that continues running until the system is shut down. Init is the direct or indirect ancestor of all other processes, and automatically adopts all orphaned processes. It is started by the kernel using a hard-coded filename; if the kernel is unable to start it, panic will result. Init is typically assigned process identifier 1.

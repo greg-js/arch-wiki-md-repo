@@ -1,12 +1,5 @@
 # WPA2 Enterprise
 
-Related articles
-
-*   [Wireless configuration](/index.php/Wireless_configuration "Wireless configuration")
-*   [Network configuration](/index.php/Network_configuration "Network configuration")
-*   [Software access point](/index.php/Software_access_point "Software access point")
-*   [Ad-hoc networking](/index.php/Ad-hoc_networking "Ad-hoc networking")
-
 **WPA2 Enterprise** is a mode of [Wi-Fi Protected Access](https://en.wikipedia.org/wiki/Wi-Fi_Protected_Access "wikipedia:Wi-Fi Protected Access"). It provides better security and key management than _WPA2 Personal_, and supports other enterprise-type functionality, such as VLANs and [NAP](https://en.wikipedia.org/wiki/Network_Access_Protection "wikipedia:Network Access Protection"). However, it requires an external authentication server, called [RADIUS](https://en.wikipedia.org/wiki/RADIUS "wikipedia:RADIUS") server to handle the authentication of users. This is in contrast to Personal mode which does not require anything beyond the wireless router or access points (APs), and uses a single passphrase or password for all users.
 
 The Enterprise mode enables users to log onto the Wi-Fi network with a username and password and/or a digital certificate. Since each user has a dynamic and unique encryption key, it also helps to prevent user-to-user snooping on the wireless network, and improves encryption strength.

@@ -1,10 +1,5 @@
 # VA-API
 
-Related articles
-
-*   [VDPAU](/index.php/VDPAU "VDPAU")
-*   [XvMC](/index.php/XvMC "XvMC")
-
 **[Video Acceleration API](http://www.freedesktop.org/wiki/Software/vaapi)** is a specification and open source library to provide hardware accelerated video encoding and decoding.
 
 ## Contents

@@ -1,13 +1,5 @@
 # systemd-nspawn
 
-Related articles
-
-*   [systemd](/index.php/Systemd "Systemd")
-*   [Linux Containers](/index.php/Linux_Containers "Linux Containers")
-*   [systemd-networkd](/index.php/Systemd-networkd "Systemd-networkd")
-*   [Docker](/index.php/Docker "Docker")
-*   [Lxc-systemd](/index.php/Lxc-systemd "Lxc-systemd")
-
 _systemd-nspawn_ is like the [chroot](/index.php/Chroot "Chroot") command, but it is a _chroot on steroids_.
 
 _systemd-nspawn_ may be used to run a command or OS in a light-weight namespace container. It is more powerful than [chroot](/index.php/Chroot "Chroot") since it fully virtualizes the file system hierarchy, as well as the process tree, the various IPC subsystems and the host and domain name.

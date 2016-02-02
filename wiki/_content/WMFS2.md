@@ -1,10 +1,5 @@
 # WMFS2
 
-Related articles
-
-*   [WMFS](/index.php/WMFS "WMFS")
-*   [Comparison of tiling window managers](/index.php/Comparison_of_tiling_window_managers "Comparison of tiling window managers")
-
 From the [project home page](http://wmfs.info/):
 
 	_WMFS<sup>2</sup> is a lightweight and highly configurable tiling window manager for X written in C. WMFS<sup>2</sup> is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable._

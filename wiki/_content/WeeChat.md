@@ -1,12 +1,5 @@
 # WeeChat
 
-Related articles
-
-*   [IRC channels](/index.php/IRC_channels "IRC channels")
-*   [IRC](/index.php/IRC "IRC")
-*   [irssi](/index.php/Irssi "Irssi")
-*   [HexChat](/index.php/HexChat "HexChat")
-
 **WeeChat** is a highly extendable and feature rich IRC Client currently under heavy development.
 
 ## Contents

@@ -1,9 +1,5 @@
 # SickRage
 
-Related articles
-
-*   [SickBeard](/index.php/SickBeard "SickBeard")
-
 [Sick Rage](https://www.sickrage.tv/) is an automatic video library manager for TV Shows. It watches for new episodes of your favorite shows, and when they are posted it does its magic.
 
 ## Contents

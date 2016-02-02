@@ -1,13 +1,5 @@
 # Network configuration
 
-Related articles
-
-*   [Jumbo frames](/index.php/Jumbo_frames "Jumbo frames")
-*   [Firewalls](/index.php/Firewalls "Firewalls")
-*   [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration")
-*   [Network bridge](/index.php/Network_bridge "Network bridge")
-*   [List of applications/Internet#Network managers](/index.php/List_of_applications/Internet#Network_managers "List of applications/Internet")
-
 This page explains how to set up a **wired** connection to a network. If you need to set up **wireless** networking see the [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") page.
 
 ## Contents

@@ -1,9 +1,5 @@
 # Rdesktop
 
-Related articles
-
-*   [xrdp](/index.php/Xrdp "Xrdp")
-
 [rdesktop](http://www.rdesktop.org/) is a free, open source client for Microsoft's proprietary RDP protocol released under the GNU General Public License. Use rdesktop to connect to Windows 2000/XP/Vista/Win7 RDP server to remotely administrate the Windows box.
 
 As of July 2008, rdesktop implements a large subset of the RDP 5 protocol, including:

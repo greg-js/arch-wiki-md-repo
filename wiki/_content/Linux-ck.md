@@ -1,11 +1,5 @@
 # Linux-ck
 
-Related articles
-
-*   [Linux-ck/Changelog](/index.php/Linux-ck/Changelog "Linux-ck/Changelog")
-*   [Repo-ck](/index.php/Repo-ck "Repo-ck")
-*   [Modprobed-db](/index.php/Modprobed-db "Modprobed-db")
-
 ## Contents
 
 *   [1 General package details](#General_package_details)

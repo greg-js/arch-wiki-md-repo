@@ -1,10 +1,5 @@
 # ranger
 
-Related articles
-
-*   [Midnight Commander](/index.php/Midnight_Commander "Midnight Commander")
-*   [vifm](/index.php/Vifm "Vifm")
-
 **ranger** is a text-based file manager written in Python. Directories are displayed in one pane with three columns. Moving between them is accomplished with keystrokes, bookmarks, the mouse or the command history. File previews and directory contents show automatically for the current selection.
 
 Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, command history, the ability to make symbolic links, several console modes, and a task view. _ranger_ has customizable commands and key bindings, including bindings to external scripts. The closest competitor is [Vifm](/index.php/Vifm "Vifm"), which has two panes and vi-style key bindings, but fewer features overall.

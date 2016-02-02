@@ -1,11 +1,5 @@
 # Mathematica
 
-Related articles
-
-*   [Scientific Applications](/index.php/Scientific_Applications "Scientific Applications")
-*   [Sage-mathematics](/index.php/Sage-mathematics "Sage-mathematics")
-*   [Matlab](/index.php/Matlab "Matlab")
-
 Mathematica is a commercial program used in scientific, engineering and mathematical fields. Here we explain how to install it.
 
 ## Contents

@@ -1,13 +1,5 @@
 # fdm
 
-Related articles
-
-*   [Alpine](/index.php/Alpine "Alpine")
-*   [msmtp](/index.php/Msmtp "Msmtp")
-*   [Mutt](/index.php/Mutt "Mutt")
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [SSMTP](/index.php/SSMTP "SSMTP")
-
 **fdm** (_fetch and deliver mail_), is a simple program for delivering and filtering mail. Comparing it to other same-purposed applications shows that it has similarities with [Mutt](/index.php/Mutt "Mutt")'s very focused design principles.
 
 ## Contents

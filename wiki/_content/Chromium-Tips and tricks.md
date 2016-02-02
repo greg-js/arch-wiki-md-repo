@@ -1,10 +1,5 @@
 # Chromium/Tips and tricks
 
-Related articles
-
-*   [Chromium](/index.php/Chromium "Chromium")
-*   [Firefox tweaks](/index.php/Firefox_tweaks "Firefox tweaks")
-
 ## Contents
 
 *   [1 Browsing experience](#Browsing_experience)

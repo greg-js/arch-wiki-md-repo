@@ -1,11 +1,5 @@
 # Virtual user mail system
 
-Related articles
-
-*   [Postfix](/index.php/Postfix "Postfix")
-*   [Courier MTA](/index.php/Courier_MTA "Courier MTA")
-*   [OpenDKIM](/index.php/OpenDKIM "OpenDKIM")
-
 This article describes how to set up a complete virtual user mail system on an Arch Linux system in the simplest manner possible. However, since a mail system consists of many complex components, quite a bit of configuration will still be necessary.
 
 Roughly, the components used in this article are Postfix as the mail server, Dovecot as the IMAP server, Roundcube as the webmail interface and PostfixAdmin as the administration interface to manage it all.

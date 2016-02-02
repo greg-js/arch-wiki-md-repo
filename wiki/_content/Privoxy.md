@@ -1,11 +1,5 @@
 # Privoxy
 
-Related articles
-
-*   [Tor](/index.php/Tor "Tor")
-*   [Polipo](/index.php/Polipo "Polipo")
-*   [Hostsblock](/index.php/Hostsblock "Hostsblock")
-
 [Privoxy](http://www.privoxy.org/) is a filtering proxy for the HTTP protocol, frequently used in combination with [Tor](/index.php/Tor "Tor"). Privoxy is a web proxy with advanced filtering capabilities for protecting privacy, filtering web page content, managing cookies, controlling access, and removing ads, banners, pop-ups, etc. It supports both stand-alone systems and multi-user networks.
 
 Using Privoxy is necessary when they use a [SOCKS](https://en.wikipedia.org/wiki/SOCKS "wikipedia:SOCKS") proxy directly because browsers leak your DNS requests, which reduces your anonymity.

@@ -1,10 +1,5 @@
 # Amateur radio
 
-Related articles
-
-*   [GNU Radio](/index.php/GNU_Radio "GNU Radio")
-*   [RTL-SDR](/index.php/RTL-SDR "RTL-SDR")
-
 Amateur radio enthusiasts (sometimes called ham radio operators or "hams") have been at the forefront of experimentation and development since the earliest days of radio. A wide variety of communication modes are used on a vast range of frequencies that span the electromagnetic spectrum. This page lists software related to amateur radio that can be found in the [AUR](/index.php/AUR "AUR"). Some of it is stand-alone while the various digital communication applications require interfacing to radio hardware and possibly the computer soundcard. Interface hardware can be purchased from vendors or home-built.
 
 **Warning:** International treaties require that users of amateur radio frequencies have a government-issued license. This only affects you if you have a transmitter and an antenna, receiving amateur radio or just downloading amateur radio software isn't illegal.

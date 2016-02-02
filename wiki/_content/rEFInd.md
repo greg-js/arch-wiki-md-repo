@@ -1,12 +1,5 @@
 # rEFInd
 
-Related articles
-
-*   [Arch boot process](/index.php/Arch_boot_process "Arch boot process")
-*   [Boot loaders](/index.php/Boot_loaders "Boot loaders")
-*   [Unified Extensible Firmware Interface](/index.php/Unified_Extensible_Firmware_Interface "Unified Extensible Firmware Interface")
-*   [EFISTUB](/index.php/EFISTUB "EFISTUB")
-
 rEFInd is a [UEFI](/index.php/UEFI "UEFI") boot manager. It is a fork of the no-longer-maintained [rEFIt](http://refit.sourceforge.net/) and fixes many issues with respect to non-Mac UEFI booting. It is designed to be platform-neutral and to simplify booting multiple OSes.
 
 **Note:** In the entire article `$esp` denotes the mountpoint of the [EFI System Partition](/index.php/UEFI#EFI_System_Partition "UEFI") aka ESP.

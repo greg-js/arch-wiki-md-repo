@@ -1,10 +1,5 @@
 # Help:Reading
 
-Related articles
-
-*   [Help:Searching](/index.php/Help:Searching "Help:Searching")
-*   [Help:Style](/index.php/Help:Style "Help:Style")
-
 Because the vast majority of the ArchWiki contains indications that may need clarification for users new to GNU/Linux, this rundown of basic procedures was written both to avoid confusion in the assimilation of the articles and to deter repetition in the content itself.
 
 ## Contents

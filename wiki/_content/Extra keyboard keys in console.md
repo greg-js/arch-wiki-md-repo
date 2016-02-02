@@ -1,11 +1,5 @@
 # Extra keyboard keys in console
 
-Related articles
-
-*   [Extra keyboard keys](/index.php/Extra_keyboard_keys "Extra keyboard keys")
-*   [Extra keyboard keys in Xorg](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg")
-*   [Map scancodes to keycodes](/index.php/Map_scancodes_to_keycodes "Map scancodes to keycodes")
-
 When using the console, you can use hotkeys to print a specific character. Moreover we can also print a sequence of characters and some escape sequences. Thus, if we print the sequence of characters constituting a command and afterwards an escape character for a new line, that command will be executed!
 
 One method of doing this is editing [the keymap](/index.php/KEYMAP "KEYMAP"). However, the keymap is a sensitive file, and since it will be rewritten anytime the package it belongs to is updated, editing this file is discouraged. It is better to integrate the existing keymap with a personal keymap. The `loadkeys` utility can do this.

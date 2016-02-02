@@ -1,9 +1,5 @@
 # MPlayer
 
-Related articles
-
-*   [mpv](/index.php/Mpv "Mpv")
-
 **MPlayer** is a popular movie player for GNU/Linux. It has support for most video and audio formats and is thus highly versatile, even if it is mostly used for viewing videos.
 
 ## Contents

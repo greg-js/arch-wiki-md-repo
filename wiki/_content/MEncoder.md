@@ -1,11 +1,5 @@
 # MEncoder
 
-Related articles
-
-*   [DVD Ripping](/index.php/DVD_Ripping "DVD Ripping")
-*   [MPlayer](/index.php/MPlayer "MPlayer")
-*   [Video2dvdiso](/index.php/Video2dvdiso "Video2dvdiso")
-
 An overview of [MEncoder](https://en.wikipedia.org/wiki/MEncoder "wikipedia:MEncoder"), the video encoding/decoding tool provided by [MPlayer](/index.php/MPlayer "MPlayer") as part of the [mencoder](https://www.archlinux.org/packages/?name=mencoder) package.
 
 ## Contents

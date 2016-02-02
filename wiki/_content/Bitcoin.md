@@ -1,9 +1,5 @@
 # Bitcoin
 
-Related articles
-
-*   [List of applications/Internet#Bitcoin](/index.php/List_of_applications/Internet#Bitcoin "List of applications/Internet")
-
 [Bitcoin](https://en.wikipedia.org/wiki/Bitcoin "wikipedia:Bitcoin") is a decentralized P2P electronic cash system without a central server or trusted parties. Users hold the cryptographic keys to their own money and make transactions directly with each other, with the help of the network to check for double-spending. Bitcoins, usually denoted by BTC (i.e. '144 BTC'), can also be exchanged for traditional currencies like US dollars.
 
 ## Contents

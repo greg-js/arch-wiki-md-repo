@@ -1,10 +1,5 @@
 # rsync
 
-Related articles
-
-*   [Full system backup with rsync](/index.php/Full_system_backup_with_rsync "Full system backup with rsync")
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
-
 [rsync](https://rsync.samba.org/) is an open source utility that provides fast incremental file transfer.
 
 ## Contents

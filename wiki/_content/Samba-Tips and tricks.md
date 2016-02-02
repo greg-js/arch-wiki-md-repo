@@ -1,11 +1,5 @@
 # Samba/Tips and tricks
 
-Related articles
-
-*   [NFS](/index.php/NFS "NFS")
-*   [Samba 4 Active Directory domain controller](/index.php/Samba_4_Active_Directory_domain_controller "Samba 4 Active Directory domain controller")
-*   [Active Directory Integration](/index.php/Active_Directory_Integration "Active Directory Integration")
-
 ## Contents
 
 *   [1 Share files without a username and password](#Share_files_without_a_username_and_password)

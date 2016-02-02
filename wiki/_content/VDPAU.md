@@ -1,10 +1,5 @@
 # VDPAU
 
-Related articles
-
-*   [VA-API](/index.php/VA-API "VA-API")
-*   [XvMC](/index.php/XvMC "XvMC")
-
 **[Video Decode and Presentation API for Unix](http://http.download.nvidia.com/XFree86/vdpau/doxygen/html/)** is an open source library and API to offload portions of the video decoding process and video post-processing to the GPU video-hardware.
 
 ## Contents

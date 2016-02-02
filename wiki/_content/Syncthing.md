@@ -1,10 +1,5 @@
 # Syncthing
 
-Related articles
-
-*   [Backup programs](/index.php/Backup_programs "Backup programs")
-*   [Dropbox](/index.php/Dropbox "Dropbox")
-
 [Syncthing](https://syncthing.net) is an open-source file synchronization client/server application, written in Go, implementing its own, equally free Block Exchange Protocol. All transit communications between syncthing nodes are encrypted, and all nodes are uniquely identified with cryptographic certificates.
 
 ## Contents

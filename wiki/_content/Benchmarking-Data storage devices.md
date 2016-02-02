@@ -1,10 +1,5 @@
 # Benchmarking/Data storage devices
 
-Related articles
-
-*   [Solid State Drives](/index.php/Solid_State_Drives "Solid State Drives")
-*   [Benchmarking](/index.php/Benchmarking "Benchmarking")
-
 This article covers several Linux-native apps that benchmark I/O devices such as HDDs, SSDs, USB thumb drives, etc. There is also a "database" section specific to SSDs meant to capture user-entered benchmark results.
 
 ## Contents

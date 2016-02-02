@@ -1,13 +1,5 @@
 # MacBookPro11,x
 
-Related articles
-
-*   [Installation guide](/index.php/Installation_guide "Installation guide")
-*   [Beginners' guide](/index.php/Beginners%27_guide "Beginners' guide")
-*   [General Recommendations](/index.php/General_Recommendations "General Recommendations")
-*   [MacBookPro10,x](/index.php/MacBookPro10,x "MacBookPro10,x")
-*   [MacBook](/index.php/MacBook "MacBook")
-
 This wiki page should help you in getting your MacBook Pro from Late 2013 or Mid 2014 to work with Arch Linux. (This includes models 1-3 in the 11,x series).
 
 ## Contents

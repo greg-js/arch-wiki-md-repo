@@ -1,10 +1,5 @@
 # RTL-SDR
 
-Related articles
-
-*   [DVB-T](/index.php/DVB-T "DVB-T")
-*   [GNU Radio](/index.php/GNU_Radio "GNU Radio")
-
 [RTL-SDR](http://sdr.osmocom.org/trac/wiki/rtl-sdr) is a set of tools that enables [DVB-T](/index.php/DVB-T "DVB-T") USB dongles based on the Realtek RTL2832U chipset to be used as cheap software defined radios, given that the chip allows transferring raw I/Q samples from the tuner straight to the host device.
 
 See the [RTL-SDR wiki](http://sdr.osmocom.org/trac/wiki/rtl-sdr) for exact technical specifications.

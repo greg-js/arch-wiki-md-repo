@@ -1,13 +1,5 @@
 # MATE
 
-Related articles
-
-*   [GNOME](/index.php/GNOME "GNOME")
-*   [Cinnamon](/index.php/Cinnamon "Cinnamon")
-*   [Desktop environment](/index.php/Desktop_environment "Desktop environment")
-*   [Display manager](/index.php/Display_manager "Display manager")
-*   [Uniform Look for Qt and GTK Applications](/index.php/Uniform_Look_for_Qt_and_GTK_Applications "Uniform Look for Qt and GTK Applications")
-
 From [MATE homepage](http://mate-desktop.org/):
 
 	_The MATE Desktop Environment is the continuation of GNOME 2\. It provides an intuitive and attractive desktop environment using traditional metaphors for Linux and other Unix-like operating systems. MATE is [under active development](https://github.com/mate-desktop) to add support for new technologies while preserving a traditional desktop experience._

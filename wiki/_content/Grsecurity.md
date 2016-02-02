@@ -1,11 +1,5 @@
 # Grsecurity
 
-Related articles
-
-*   [PaX](/index.php/PaX "PaX")
-*   [Security](/index.php/Security "Security")
-*   [sysctl](/index.php/Sysctl "Sysctl")
-
 [Grsecurity](https://grsecurity.net/) is an extensive security enhancement to the Linux kernel that defends against a wide range of security threats. The [PaX](/index.php/PaX "PaX") project is included, hardening both userspace applications and the kernel against memory corruption-based exploits. Grsecurity includes a powerful Mandatory Access Control system with an effortless automatic learning mode and a host of other miscellaneous hardening features.
 
 ## Contents

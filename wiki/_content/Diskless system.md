@@ -1,12 +1,5 @@
 # Diskless system
 
-Related articles
-
-*   [NFS](/index.php/NFS "NFS")
-*   [NFS Troubleshooting](/index.php/NFS_Troubleshooting "NFS Troubleshooting")
-*   [PXE](/index.php/PXE "PXE")
-*   [Mkinitcpio#Using_net](/index.php/Mkinitcpio#Using_net "Mkinitcpio")
-
 From [Wikipedia:Diskless node](https://en.wikipedia.org/wiki/Diskless_node "wikipedia:Diskless node")
 
 	_A diskless node (or diskless workstation) is a workstation or personal computer without disk drives, which employs network booting to load its operating system from a server._
