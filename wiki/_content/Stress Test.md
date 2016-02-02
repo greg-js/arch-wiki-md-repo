@@ -111,8 +111,8 @@ Main Menu
 
 There are several options for the torture test (menu option 15).
 
-*   Small FFTs (option 1) to stress the CPU (option 1)
-*   In-place large FFTs (option 1) to test the CPU and memory controller
+*   Small FFTs (option 1) to stress the CPU
+*   In-place large FFTs (option 2) to test the CPU and memory controller
 *   Blend (option 3) is the default and constitutes a hybrid mode which stresses the CPU and RAM.
 
 Errors will be reported should they occur both to stdout and to `~/results.txt` for review later. Many do not consider a system as 'stable' unless it can run the Large FFTs for a 24 hour period.
@@ -140,6 +140,8 @@ Self-test 560K passed!
 **Note:** Users suspecting bad memory or memory controllers should try the blend test first as the small FFT test uses very little memory.
 
 ### Linpack
+
+**Note:** The AUR linpack package runs only on Intel CPUs.
 
 Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. [linpack](https://aur.archlinux.org/packages/linpack/)<sup><small>AUR</small></sup> is available from the AUR. After installation, users should adjust `/etc/linpack.conf` according to the amount of memory on the target system.
 
@@ -179,4 +181,4 @@ Either download and burn the ISO to a CD and boot from it, or install [memtest86
 
 **Tip:** Allowing Memtest86+ to run for >10 cycles without errors is usually sufficient.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=415398](https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=415398)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=418785](https://wiki.archlinux.org/index.php?title=Stress_Test&oldid=418785)"
