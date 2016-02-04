@@ -36,6 +36,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### February 2016
 
+*   [3 February 2016] [ASA-201602-6](https://lists.archlinux.org/pipermail/arch-security/2016-February/000546.html) [lib32-nettle](https://www.archlinux.org/packages/?name=lib32-nettle) improper cryptographic calculations
+*   [3 February 2016] [ASA-201602-5](https://lists.archlinux.org/pipermail/arch-security/2016-February/000545.html) [nettle](https://www.archlinux.org/packages/?name=nettle) improper cryptographic calculations
 *   [2 February 2016] [ASA-201602-4](https://lists.archlinux.org/pipermail/arch-security/2016-February/000544.html) [lib32-curl](https://www.archlinux.org/packages/?name=lib32-curl) man-in-the-middle
 *   [2 February 2016] [ASA-201602-3](https://lists.archlinux.org/pipermail/arch-security/2016-February/000543.html) [curl](https://www.archlinux.org/packages/?name=curl) man-in-the-middle
 *   [2 February 2016] [ASA-201602-2](https://lists.archlinux.org/pipermail/arch-security/2016-February/000542.html) [python2-django](https://www.archlinux.org/packages/?name=python2-django) permission bypass
@@ -559,4 +561,4 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=418815](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=418815)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=418891](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=418891)"

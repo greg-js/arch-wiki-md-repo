@@ -97,7 +97,7 @@ There are several ways to run xorg within systemd units. Below there are two opt
 
 This option will launch a system unit that will start a user session with an xorg server and then run the usual `~/.xinitrc` to launch the window manager, etc.
 
-You need to have [#D-Bus](#D-Bus) correctly set up and [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/)<sup><small>AUR</small></sup> installed.
+You need to have [#D-Bus](#D-Bus) correctly set up and [xlogin-git](https://aur.archlinux.org/packages/xlogin-git/) installed.
 
 Set up your [xinitrc](/index.php/Xinitrc "Xinitrc") from the skeleton, so that it will source the files in `/etc/X11/xinit/xinitrc.d/`. Running your `~/.xinitrc` should not return, so either have `wait` as the last command, or add `exec` to the last command that will be called and which should not return (your window manager, for instance).
 
@@ -119,7 +119,7 @@ Alternatively, [xorg](/index.php/Xorg "Xorg") can be run from within a systemd u
 Since version 1.16 [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) provides better integration with systemd in two ways:
 
 *   Can be run unprivileged, delegating device management to logind (see Hans de Goede commits around [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=82863656ec449644cd34a86388ba40f36cea11e9)).
-*   Can be made into a socket activated service (see [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=b3d3ffd19937827bcbdb833a628f9b1814a6e189)). This removes the need for [systemd-xorg-launch-helper-git](https://aur.archlinux.org/packages/systemd-xorg-launch-helper-git/)<sup><small>AUR</small></sup>.
+*   Can be made into a socket activated service (see [this commit](http://cgit.freedesktop.org/xorg/xserver/commit/?id=b3d3ffd19937827bcbdb833a628f9b1814a6e189)). This removes the need for [systemd-xorg-launch-helper-git](https://aur.archlinux.org/packages/systemd-xorg-launch-helper-git/).
 
 Unfortunately, to be able to run xorg in unprivileged mode, it needs to run inside a session. So, right now the handicap of running xorg as user service is that it must be run with root privileges (like before 1.16), and can't take advantage of the unprivileged mode introduced in 1.16.
 
@@ -309,7 +309,6 @@ WantedBy=wm.target
 
 *   [KaiSforza's Bitbucket wiki](https://bitbucket.org/KaiSforza/systemd-user-units/wiki/Home)
 *   [Zoqaeski's units on GitHub](https://github.com/zoqaeski/systemd-user-units)
-*   [Collection of useful systemd user units](https://github.com/grawity/systemd-user-units)
 *   [Arch forum thread about changes in systemd 206 user instances](https://bbs.archlinux.org/viewtopic.php?id=167115)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418531](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418531)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418872](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418872)"

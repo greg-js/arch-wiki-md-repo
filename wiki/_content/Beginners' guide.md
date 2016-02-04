@@ -556,7 +556,7 @@ Install the [grub](https://www.archlinux.org/packages/?name=grub) package. To se
 Install the bootloader to the _drive_ Arch was installed to:
 
 ```
-# grub-install --recheck _/dev/sda_
+# grub-install _/dev/sda_
 
 ```
 
@@ -642,4 +642,4 @@ Your new Arch Linux base system is now a functional GNU/Linux environment ready 
 
 For a list of applications that may be of interest, see [List of applications](/index.php/List_of_applications "List of applications").
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=418762](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=418762)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=418915](https://wiki.archlinux.org/index.php?title=Beginners%27_guide&oldid=418915)"

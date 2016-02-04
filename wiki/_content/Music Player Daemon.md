@@ -25,14 +25,13 @@
 *   [3 Clients](#Clients)
     *   [3.1 Console](#Console)
     *   [3.2 Graphical](#Graphical)
-    *   [3.3 Web](#Web)
 *   [4 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mpd](https://www.archlinux.org/packages/?name=mpd) package, or [mpd-git](https://aur.archlinux.org/packages/mpd-git/)<sup><small>AUR</small></sup> for the development version.
+[Install](/index.php/Install "Install") the [mpd](https://www.archlinux.org/packages/?name=mpd) package, or [mpd-git](https://aur.archlinux.org/packages/mpd-git/) for the development version.
 
-**Note:** An alternative plug-in based implementation called [Mopidy](http://www.mopidy.com) exists. It is available as [mopidy](https://www.archlinux.org/packages/?name=mopidy) and [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/)<sup><small>AUR</small></sup>. Be warned that is not a complete MPD [drop-in replacement](http://docs.mopidy.com/en/latest/ext/mpd/#limitations).
+**Note:** An alternative plug-in based implementation called [Mopidy](http://www.mopidy.com) exists. It is available as [mopidy](https://www.archlinux.org/packages/?name=mopidy) and [mopidy-git](https://aur.archlinux.org/packages/mopidy-git/). Be warned that is not a complete MPD [drop-in replacement](http://docs.mopidy.com/en/latest/ext/mpd/#limitations).
 
 ## Setup
 
@@ -300,11 +299,11 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 *   **pms** — Highly configurable and accessible ncurses client
 
-	[http://pms.sourceforge.net/](http://pms.sourceforge.net/) || [pmus](https://aur.archlinux.org/packages/pmus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pmus)]</sup>
+	[http://pms.sourceforge.net/](http://pms.sourceforge.net/) || [pmus-git](https://aur.archlinux.org/packages/pmus-git/)
 
 *   **vimpc** — Ncurses based MPD client with vi-like key bindings
 
-	[http://sourceforge.net/projects/vimpc/](http://sourceforge.net/projects/vimpc/) || [vimpc](https://aur.archlinux.org/packages/vimpc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vimpc)]</sup>
+	[http://sourceforge.net/projects/vimpc/](http://sourceforge.net/projects/vimpc/) || [vimpc-git](https://aur.archlinux.org/packages/vimpc-git/)
 
 ### Graphical
 
@@ -328,16 +327,10 @@ A separate client is needed to control mpd. See a long list of clients at the [m
 
 	[https://code.google.com/p/cantata/](https://code.google.com/p/cantata/) || [cantata](https://www.archlinux.org/packages/?name=cantata)
 
-### Web
-
-*   **Patchfork** — Web client for MPD written in PHP and Ajax
-
-	[http://mpd.wikia.com/wiki/Client:Pitchfork](http://mpd.wikia.com/wiki/Client:Pitchfork) || [patchfork-git](https://aur.archlinux.org/packages/patchfork-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/patchfork-git)]</sup>.
-
 ## See also
 
 *   [MPD Forum](http://forum.musicpd.org/)
 *   [MPD User Manual](http://www.musicpd.org/doc/user/)
 *   [Wikipedia article](https://en.wikipedia.org/wiki/Music_Player_Daemon "wikipedia:Music Player Daemon")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=417054](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=417054)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=418829](https://wiki.archlinux.org/index.php?title=Music_Player_Daemon&oldid=418829)"

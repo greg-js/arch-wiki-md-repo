@@ -12,10 +12,11 @@
     *   [1.7 BlackArch Linux](#BlackArch_Linux)
     *   [1.8 Bluestar Linux](#Bluestar_Linux)
     *   [1.9 Bridge Linux](#Bridge_Linux)
-    *   [1.10 Papyros](#Papyros)
-    *   [1.11 Ninja OS](#Ninja_OS)
-    *   [1.12 TalkingArch](#TalkingArch)
-    *   [1.13 Tux Hat Linux](#Tux_Hat_Linux)
+    *   [1.10 PacBang Linux](#PacBang_Linux)
+    *   [1.11 Papyros](#Papyros)
+    *   [1.12 Ninja OS](#Ninja_OS)
+    *   [1.13 TalkingArch](#TalkingArch)
+    *   [1.14 Tux Hat Linux](#Tux_Hat_Linux)
 *   [2 Counterpart distributions](#Counterpart_distributions)
     *   [2.1 Arch Linux ARM](#Arch_Linux_ARM)
     *   [2.2 MSYS2](#MSYS2)
@@ -131,9 +132,17 @@ Changes and updates are documented on a regular basis. Fixes are always incorpor
 
 Bridge Linux provides pre-installed versions of LXDE, Openbox, GNOME, Cinnamon, Xfce, and KDE.
 
-*   Homepage: [https://sourceforge.net/projects/bridgelinux/](https://sourceforge.net/projects/bridgelinux/)
-*   Forums: [http://millertechnologies.net/forum](http://millertechnologies.net/forum)
+*   Homepage: [http://bridgelinux.org/](http://bridgelinux.org/)
+*   Forums: [http://bridgelinux.org/forum/](http://bridgelinux.org/forum/)
 *   Screenshots: [http://www.linuxscreenshots.org/?distro=bridge](http://www.linuxscreenshots.org/?distro=bridge)
+
+### PacBang Linux
+
+A sister project of Architect Linux, PacBang was originally developed as a revamped version of ArchBang. A minimalist distribution built around the Openbox window manager, it is built using only official Arch packages and features a powerful, user-friendly custom installer.
+
+*   Forums: [http://architectlinux.boardhost.com/index.php](http://architectlinux.boardhost.com/index.php)
+*   G+ Hub: [https://plus.google.com/u/0/communities/109428906975670306458](https://plus.google.com/u/0/communities/109428906975670306458)
+*   Downloads and Screenshots: [http://sourceforge.net/projects/architect-linux/files/pacbang/](http://sourceforge.net/projects/architect-linux/files/pacbang/)
 
 ### Papyros
 
@@ -347,4 +356,4 @@ Manjaro-based operating system developed by Blue Systems. Offers customised KDE 
 
 *   List at distrowatch.com - [http://distrowatch.com/search.php?basedon=Arch&status=Active](http://distrowatch.com/search.php?basedon=Arch&status=Active)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=414301](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=414301)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=418860](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=418860)"

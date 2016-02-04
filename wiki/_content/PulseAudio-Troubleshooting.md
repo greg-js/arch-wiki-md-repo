@@ -7,16 +7,17 @@ See [PulseAudio](/index.php/PulseAudio "PulseAudio") for the main article.
 *   [1 Volume](#Volume)
     *   [1.1 Auto-Mute Mode](#Auto-Mute_Mode)
     *   [1.2 Muted audio device](#Muted_audio_device)
-    *   [1.3 Muted application](#Muted_application)
-    *   [1.4 Volume adjustment does not work properly](#Volume_adjustment_does_not_work_properly)
-    *   [1.5 Per-application volumes change when the Master volume is adjusted](#Per-application_volumes_change_when_the_Master_volume_is_adjusted)
-    *   [1.6 Volume gets louder every time a new application is started](#Volume_gets_louder_every_time_a_new_application_is_started)
-    *   [1.7 Sound output is only mono on M-Audio Audiophile 2496 sound card](#Sound_output_is_only_mono_on_M-Audio_Audiophile_2496_sound_card)
-    *   [1.8 No sound below a volume cutoff](#No_sound_below_a_volume_cutoff)
-    *   [1.9 Low volume for internal microphone](#Low_volume_for_internal_microphone)
-    *   [1.10 Clients alter master output volume (a.k.a. volume jumps to 100% after running application)](#Clients_alter_master_output_volume_.28a.k.a._volume_jumps_to_100.25_after_running_application.29)
-    *   [1.11 No sound after resume from suspend](#No_sound_after_resume_from_suspend)
-    *   [1.12 ALSA channels mute when headphones are plugged/unplugged improperly](#ALSA_channels_mute_when_headphones_are_plugged.2Funplugged_improperly)
+    *   [1.3 Output stuck muted while Master is toggled](#Output_stuck_muted_while_Master_is_toggled)
+    *   [1.4 Muted application](#Muted_application)
+    *   [1.5 Volume adjustment does not work properly](#Volume_adjustment_does_not_work_properly)
+    *   [1.6 Per-application volumes change when the Master volume is adjusted](#Per-application_volumes_change_when_the_Master_volume_is_adjusted)
+    *   [1.7 Volume gets louder every time a new application is started](#Volume_gets_louder_every_time_a_new_application_is_started)
+    *   [1.8 Sound output is only mono on M-Audio Audiophile 2496 sound card](#Sound_output_is_only_mono_on_M-Audio_Audiophile_2496_sound_card)
+    *   [1.9 No sound below a volume cutoff](#No_sound_below_a_volume_cutoff)
+    *   [1.10 Low volume for internal microphone](#Low_volume_for_internal_microphone)
+    *   [1.11 Clients alter master output volume (a.k.a. volume jumps to 100% after running application)](#Clients_alter_master_output_volume_.28a.k.a._volume_jumps_to_100.25_after_running_application.29)
+    *   [1.12 No sound after resume from suspend](#No_sound_after_resume_from_suspend)
+    *   [1.13 ALSA channels mute when headphones are plugged/unplugged improperly](#ALSA_channels_mute_when_headphones_are_plugged.2Funplugged_improperly)
 *   [2 Microphone](#Microphone)
     *   [2.1 Microphone not detected by PulseAudio](#Microphone_not_detected_by_PulseAudio)
     *   [2.2 PulseAudio uses wrong microphone](#PulseAudio_uses_wrong_microphone)
@@ -96,6 +97,17 @@ $ alsamixer -c 0
 ```
 
 **Note:** alsamixer will not tell you which output device is set as the default. One possible cause of no sound after install is that PulseAudio detects the wrong output device as a default. Install [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) and check if there is any output on the pavucontrol panel when playing a _.wav_ file.
+
+### Output stuck muted while Master is toggled
+
+In setups with multiple outputs (e.g. 'Headphone' and 'Speaker') using plain amixer to toggle Master can trigger PulseAudio to mute the active output too, but it doesn't necessarily unmute it when Master is toggled back to be unmuted. To resolve this, amixer must have the device flag set to 'pulse':
+
+```
+$ amixer -D pulse sset Master toggle
+
+```
+
+This will cause amixer to ask PulseAudio to do the toggling rather than toggling it directly. Because of this, PulseAudio will correctly unmute Master as well as any applicable output.
 
 ### Muted application
 
@@ -916,7 +928,7 @@ E: [pulseaudio] main.c: Failed to acquire autospawn lock
 
 Known programs that changes permissions for `/run/user/_user id_/pulse` when using [Polkit](/index.php/Polkit "Polkit") for root elevation:
 
-*   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)<sup><small>AUR</small></sup>
+*   [sakis3g](https://aur.archlinux.org/packages/sakis3g/)
 
 As a workaround, include [gksu](https://www.archlinux.org/packages/?name=gksu) or [kdesu](https://www.archlinux.org/packages/?name=kdesu) in a [desktop entry](/index.php/Desktop_entry "Desktop entry"), or add `_username_ ALL=NOPASSWD: /usr/bin/_program_name_` to [sudoers](/index.php/Sudoers "Sudoers") to run it with [sudo](https://www.archlinux.org/packages/?name=sudo) or `gksudo` without a password.
 
@@ -1119,7 +1131,7 @@ Afterwards, you need to add your user to the `pulse-rt` group:
 
 PulseAudio does not have a true default device. Instead it uses a ["fallback"](http://www.freedesktop.org/wiki/Software/PulseAudio/Documentation/User/DefaultDevice/), which only applies to new sound streams. This means previously run applications are not affected by the newly set fallback device.
 
-[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) and [paswitch](https://aur.archlinux.org/packages/paswitch/)<sup><small>AUR</small></sup> handle this gracefully. Alternatively:
+[gnome-control-center](https://www.archlinux.org/packages/?name=gnome-control-center), [mate-media](https://www.archlinux.org/packages/?name=mate-media) and [paswitch](https://aur.archlinux.org/packages/paswitch/) handle this gracefully. Alternatively:
 
 1\. Move the old streams in [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) manually to the new sound card.
 
@@ -1134,4 +1146,4 @@ load-module module-stream-restore restore_device=false
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=416177](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=416177)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=418850](https://wiki.archlinux.org/index.php?title=PulseAudio/Troubleshooting&oldid=418850)"

@@ -11,22 +11,20 @@ Remmina is a remote desktop client written in GTK+. It supports the following pr
 
 ## Installation
 
-Install the [remmina](https://www.archlinux.org/packages/?name=remmina) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want RDP support, also install [freerdp](https://www.archlinux.org/packages/?name=freerdp).
+Install the [remmina](https://www.archlinux.org/packages/?name=remmina) package. If you want RDP support, also install [freerdp](https://www.archlinux.org/packages/?name=freerdp).
 
 **Note:** If the RDP option is not available in the Remmina dropdown menu after installing [freerdp](https://www.archlinux.org/packages/?name=freerdp), make sure to completely quit Remmina first: run `killall remmina`. When you restart Remmina, RDP should be available.
 
 ## Using from command line
 
-You can do
+To open previously saved connection profile you can do:
 
 ```
 $ remmina -c ~/.remmina/file-name.remmina
 
 ```
 
-to open previously saved connection profile.
-
-Here is the script, which renames connection profile files basing on name= property to make it human readable.
+Here is the script, which renames connection profile files basing on `name=` property to make it human readable:
 
 ```
 #!/bin/bash
@@ -38,11 +36,6 @@ done
 
 ```
 
-To minimize to tray on startup, run:
+To minimize to tray on startup, use `-i` option.
 
-```
-remmina -i
-
-```
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=418312](https://wiki.archlinux.org/index.php?title=Remmina&oldid=418312)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=418909](https://wiki.archlinux.org/index.php?title=Remmina&oldid=418909)"

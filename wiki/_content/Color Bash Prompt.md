@@ -25,6 +25,7 @@ This article shows how to _customize the personal prompt of a regular user_.
     *   [5.3 Colorized Arch latest news at logon](#Colorized_Arch_latest_news_at_logon)
     *   [5.4 Colors overview](#Colors_overview)
     *   [5.5 Colorized git prompt](#Colorized_git_prompt)
+    *   [5.6 Colorized existing prompts](#Colorized_existing_prompts)
 *   [6 See also](#See_also)
 
 ## Applying changes
@@ -686,10 +687,27 @@ source /usr/share/git/completion/git-prompt.sh
 
 and use `__git_ps1` inside `PS1` or `PROMPT_COMMAND`. See [Don't Reinvent the Wheel](http://ithaca.arpinum.org/2013/01/02/git-prompt.html) for details.
 
+### Colorized existing prompts
+
+Add to your `~/.bashrc`:
+
+ `~/.bashrc` 
+
+```
+# Colorize prompts
+for i in {1..4}; do
+	PSi="PS$i"
+	export $PSi="\[\e[1;37m\]${!PSi}\[\e[0m\]"
+done
+unset i
+unset PSi
+
+```
+
 ## See also
 
 *   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
-*   The original _not modified_ Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-08-05]</sup>. See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/)<sup><small>AUR</small></sup>.
+*   The original _not modified_ Gentoo's `/etc/bash.bashrc` file can be found [here](http://www.jeremysands.com/archlinux/gentoo-bashrc-2008.0). See also [gentoo-bashrc](https://aur.archlinux.org/packages/gentoo-bashrc/).
 *   tput(1)
     *   [tput reference on bash-hackers.org](http://wiki.bash-hackers.org/scripting/terminalcodes)
     *   [Colours and Cursor Movement With tput](http://tldp.org/HOWTO/Bash-Prompt-HOWTO/x405.html)
@@ -699,4 +717,4 @@ and use `__git_ps1` inside `PS1` or `PROMPT_COMMAND`. See [Don't Reinvent the Wh
 *   [Bash tips: Colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
 *   [Liquid Prompt — a useful adaptive prompt for Bash & zsh](https://github.com/nojhan/liquidprompt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=412243](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=412243)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=418927](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=418927)"

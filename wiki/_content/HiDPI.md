@@ -53,28 +53,36 @@ gsettings set org.gnome.desktop.interface scaling-factor 2
 
 A setting of `2, 3, etc`, which is all you can do with `scaling-factor`, may not be ideal for certain HiDPI displays and smaller screens (e.g. small tablets).
 
-Alternatively, you can achieve scales of 1.25, 1.5, 1.75 and more by using a combination of `scaling-factor` and `xrandr`. This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone.
+Alternatively, you can achieve any non-integer scale factor by using a combination of `scaling-factor` and `xrandr`. This combination keeps the TTF fonts properly scaled so that they do not become blurry if using `xrandr` alone. You specify zoom-in factor with `gsettings` and zoom-out factor with `xrandr`.
 
-For example, to set a scale of 1.5 (which is 150%):
+Here is a method to find a comfortable scale factor for your screen:
 
 ```
-# First get the native display size for the screen.
-xrandr
-Screen 0: minimum 1 x 1, current 1920 x 1080, maximum 16384 x 16384
-eDP1 connected 1920x1080+0+0 (normal left inverted right x axis y axis) 256mm x 144mm
-  1920x1080     60.00*+  50.00
-
-# This 11.5" display on output eDP1 has a native resolution of 1920x1080.
-# Multiple these numbers by your desired scale.  For 150%, multiple by 1.5
-# and use this numbers to set a --scale-from and --panning
-xrandr --output eDP1 --scale-from 2880x1620 --panning 2880x1620
-
-# Now use `org.gnome.desktop.interface scaling-factor` to get 1.5 scale.
+# First scale Gnome up to the minimum size which is too big.
+# Usually "2" is already too big, but if "2" is still small for you, try "3", etc.
 gsettings set org.gnome.desktop.interface scaling-factor 2
+# Now start scaling down by setting zoom-out factor with xrandr.
+# First get the output name:
+xrandr | grep -v disconnected | grep connected | cut -d' ' -f1
+# eDP1
+#
+# Use this value to specify --output further on.
+# If you have two or more screens you can set their scale independently.
+# Now, to zoom-out 1.2 times, run the following:
+xrandr --output eDP1 --scale 1.2x1.2
+# If the UI is still too big, increase the scale:
+xrandr --output eDP1 --scale 1.25x1.25
+# If UI becomes too small, decrease the scale factor a bit.
+# Repeat until you find a value which works best for your screen and your eyes.
+# Finally, you need to allow the mouse to navigate the whole screen.
+# To do this you need to get the current scaled resolution:
+xrandr | grep eDP1
+# eDP1 connected primary 2304x1296+0+0 (normal left inverted right x axis y axis) 239mm x 134mm
+#
+# Now use the acquired resolution value to set correct panning:
+xrandr --output eDP1 --panning 2304x1296
 
 ```
-
-This will be approximately a 1.5x scale factor using the native resolution of the display.
 
 ### KDE
 
@@ -183,7 +191,7 @@ From Firefox version 38 onwards, your system (GTK+ 3.10) settings should be take
 
 #### Chromium / Google Chrome
 
-Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
+Full out of the box HiDPI support is available in [chromium](https://www.archlinux.org/packages/?name=chromium) and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) as tested (with google-chrome) on Gnome and Cinnamon. Additionally, for environments where out of the box support does not work, the browser can be launched with the command line flag `--force-device-scale-factor` and a scaling value. This will scale all content and ui, including tab and font size. For example:
 
  `chromium --force-device-scale-factor=2` 
 
@@ -254,11 +262,11 @@ Use a high DPI theme, or [adjust](http://gimpforums.com/thread-increase-all-icon
 
 ### VLC
 
-As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/)<sup><small>AUR</small></sup> seems to solve some of the problems.
+As of May 2015, the git version [vlc-git](https://aur.archlinux.org/packages/vlc-git/) seems to solve some of the problems.
 
 ### Unsupported applications
 
-One approach is to run the application full screen and without decoration in its own VNC desktop. Then scale the viewer. With Vncdesk ([vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")) you can set up a desktop per application, then start server and client with a simple command such as `vncdesk 2`.
+One approach is to run the application full screen and without decoration in its own VNC desktop. Then scale the viewer. With Vncdesk ([vncdesk-git](https://aur.archlinux.org/packages/vncdesk-git/) from the [AUR](/index.php/AUR "AUR")) you can set up a desktop per application, then start server and client with a simple command such as `vncdesk 2`.
 
 [x11vnc](/index.php/X11vnc "X11vnc") has an experimental option `-appshare`, which opens one viewer per application window. Perhaps something could be hacked up with that.
 
@@ -320,4 +328,4 @@ The default console font will be very small on hidpi displays, the largest font 
 *   [Ultra HD 4K Linux Graphics Card Testing](http://www.phoronix.com/scan.php?page=article&item=linux_uhd4k_gpus) (Nov 2013)
 *   [Understanding pixel density](http://www.eizo.com/library/basics/pixel_density_4k/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417178](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=417178)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=HiDPI&oldid=418931](https://wiki.archlinux.org/index.php?title=HiDPI&oldid=418931)"

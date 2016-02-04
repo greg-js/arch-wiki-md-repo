@@ -42,9 +42,9 @@ Inotify (inode notify) is a Linux kernel subsystem that acts to extend filesyste
 
 ## Run a Relay
 
-Since version 0.12 Syncthing has the ability to connect two devices via a relay when there exists no direct path between them. There is a default set of relays that is used out of the box. Relayed connections are encrypted in the usual manner, end to end, so the relay has no more insight into the connection than any other random eavesdropper on the internet [[1]](https://forum.syncthing.net/t/syncthing-v0-12-beryllium-bedbug-release-notes-v0-12-0-beta1/5480?u=rumpelsepp). To run a relay install [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/)<sup><small>AUR</small></sup> from AUR, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `syncthing-relaysrv.service` service.
+Since version 0.12 Syncthing has the ability to connect two devices via a relay when there exists no direct path between them. There is a default set of relays that is used out of the box. Relayed connections are encrypted in the usual manner, end to end, so the relay has no more insight into the connection than any other random eavesdropper on the internet [[1]](https://forum.syncthing.net/t/syncthing-v0-12-beryllium-bedbug-release-notes-v0-12-0-beta1/5480?u=rumpelsepp). To run a relay install [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/) from AUR, then [start](/index.php/Start "Start") and [enable](/index.php/Enable "Enable") the `syncthing-relaysrv.service` service.
 
-More information about the [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/)<sup><small>AUR</small></sup> package are available in the [Syncthing forum](https://forum.syncthing.net/t/syncthing-relaysrv-for-arch-linux/5862u=rumpelsepp).
+More information about the [syncthing-relaysrv-git](https://aur.archlinux.org/packages/syncthing-relaysrv-git/) package are available in the [Syncthing forum](https://forum.syncthing.net/t/syncthing-relaysrv-for-arch-linux/5862u=rumpelsepp).
 
 Per default the relay joins the [Syncthing relay pool](https://relays.syncthing.net/) and is publicy available. Rate limiting and other options can be configured via command line flags (check `syncthing-relaysrv -help`). To edit the command line flags just create a [drop-in snippet](/index.php/Systemd#Drop-in_snippets "Systemd") for `syncthing-relaysrv.service` and replace the `ExecStart` directive:
 
@@ -56,10 +56,10 @@ ExecStart=
 ExecStart=/usr/bin/syncthing-relaysrv FLAGS
 ```
 
-A traffic statistics page is available at port 22070, e.g. [http://5.9.90.188:22070/status](http://5.9.90.188:22070/status).
+A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:22070/status](http://78.47.248.86:22070/status).
 
 ## Troubleshooting
 
 See [Debugging syncthing](http://docs.syncthing.net/dev/debugging.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Syncthing&oldid=417260](https://wiki.archlinux.org/index.php?title=Syncthing&oldid=417260)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Syncthing&oldid=418833](https://wiki.archlinux.org/index.php?title=Syncthing&oldid=418833)"
