@@ -89,7 +89,7 @@ If `/query` happens to not work in your client you can try using either `/quote 
 
 ### #archlinux operators
 
-If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 11 Feb 2014:
+If you for some reason need the help of an op, do not be shy to `/query` or `/msg` us. Here is the list of ops as of 4 Feb 2016:
 
 *   [demize](/index.php/User:Kyrias "User:Kyrias")
 *   brain0
@@ -99,7 +99,6 @@ If you for some reason need the help of an op, do not be shy to `/query` or `/ms
 *   heftig
 *   jelle
 *   MrElendig / Mion
-*   phrakture
 *   tigrmesh / tigr
 *   vodik
 *   wonder / ioni
@@ -198,4 +197,4 @@ Arch operators are ops in both channels, see [#archlinux operators](#.23archlinu
 
 	Ban / Banned
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=415935](https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=415935)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=418972](https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=418972)"

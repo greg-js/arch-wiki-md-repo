@@ -677,7 +677,7 @@ Boot using zfs_force and write down the hostid. This one is just an example.
 
 ```
 
-This number have to be added to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") as `spl.spl_hostid=0a0af0f8`. Another solution is writing the hostid inside the initram image, see the [installation guide](/index.php/Installing_Arch_Linux_on_ZFS#After_the_first_boot "Installing Arch Linux on ZFS") explanation about this.
+This number have to be added to the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters") as `spl.spl_hostid=0x0a0af0f8`. Another solution is writing the hostid inside the initram image, see the [installation guide](/index.php/Installing_Arch_Linux_on_ZFS#After_the_first_boot "Installing Arch Linux on ZFS") explanation about this.
 
 Users can always ignore the check adding `zfs_force=1` in the [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"), but it is not advisable as a permanent solution.
 
@@ -940,4 +940,4 @@ WantedBy=local-fs.target
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=417325](https://wiki.archlinux.org/index.php?title=ZFS&oldid=417325)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=418994](https://wiki.archlinux.org/index.php?title=ZFS&oldid=418994)"

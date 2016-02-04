@@ -52,4 +52,4 @@ Unclutter is a tool from the early 90s and has not been updated since. It works 
 
 [http://linuxappfinder.com/package/unclutter](http://linuxappfinder.com/package/unclutter) - Unclutter on Linux App Finder
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unclutter&oldid=412197](https://wiki.archlinux.org/index.php?title=Unclutter&oldid=412197)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unclutter&oldid=418966](https://wiki.archlinux.org/index.php?title=Unclutter&oldid=418966)"

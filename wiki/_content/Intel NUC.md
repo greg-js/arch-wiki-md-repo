@@ -9,6 +9,7 @@ The barebone kits consist of the board, in a plastic case with a fan, an externa
 *   [1 Installation](#Installation)
     *   [1.1 NVMe](#NVMe)
     *   [1.2 Graphics](#Graphics)
+        *   [1.2.1 Skylake](#Skylake)
     *   [1.3 Wireless](#Wireless)
 *   [2 Performance](#Performance)
     *   [2.1 Boot](#Boot)
@@ -36,7 +37,11 @@ Intel NUCs support NVMe drives connected to the PCIe M.2 connector. See [Solid S
 
 Most NUCs use integrated [Intel Graphics](/index.php/Intel_Graphics "Intel Graphics"). Make sure to install [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") to enjoy the hardware graphics acceleration on supported NUC models.
 
-**Note:** The `i915` Intel DRM driver suffers from various bugs and will throw kernel log errors. Fixes are pending in 4.5.x kernel branch.
+#### Skylake
+
+**Warning:** The `i915` Intel DRM driver suffers from various bugs that can result in kernel errors, GPU crashes and even complete system freezes.
+
+There are no pending fixes for DRM bugs in latest kernel versions (last tested on `4.5-rc2`). See [Intel_graphics#Skylake_Support](/index.php/Intel_graphics#Skylake_Support "Intel graphics") for useful workarounds.
 
 ### Wireless
 
@@ -72,4 +77,4 @@ The workaround for this issue is to disable all wake-on-CIR (infrared sensor) op
 
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418886](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418886)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418983](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418983)"

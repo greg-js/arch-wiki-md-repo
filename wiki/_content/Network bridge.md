@@ -138,7 +138,7 @@ See [systemd-networkd#Bridge interface](/index.php/Systemd-networkd#Bridge_inter
 
 ### With NetworkManager
 
-Gnome's NetworkManager can create bridges, but currently will not auto-connect to them. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
+Gnome's NetworkManager can create bridges, but currently will not auto-connect to them or slave/attached interfaces. Open Network Settings, add a new interface of type Bridge, add a new bridged connection, and select the MAC address of the device to attach to the bridge.
 
 Now, find the UUID of the attached device (by default named "bridge0 slave 1"):
 
@@ -178,4 +178,4 @@ See also [Bridging with a wireless NIC](https://wiki.debian.org/BridgeNetworkCon
 *   [Official documentation for bridge-utils](http://www.linuxfoundation.org/collaborate/workgroups/networking/bridge)
 *   [Official documentation for iproute2](http://www.linuxfoundation.org/collaborate/workgroups/networking/iproute2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=414091](https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=414091)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=418968](https://wiki.archlinux.org/index.php?title=Network_bridge&oldid=418968)"

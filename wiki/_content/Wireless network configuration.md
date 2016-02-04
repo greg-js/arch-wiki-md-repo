@@ -22,6 +22,7 @@ Configuring wireless is a two-part process; the first part is to identify and en
         *   [2.2.3 Wicd](#Wicd)
         *   [2.2.4 NetworkManager](#NetworkManager)
         *   [2.2.5 WiFi Radar](#WiFi_Radar)
+        *   [2.2.6 ‎The kernel bonding module and systemd](#.E2.80.8EThe_kernel_bonding_module_and_systemd)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Temporary internet access](#Temporary_internet_access)
     *   [3.2 Rfkill caveat](#Rfkill_caveat)
@@ -472,6 +473,10 @@ See [NetworkManager](/index.php/NetworkManager "NetworkManager").
 _WiFi Radar_ is a Python/PyGTK2 utility for managing wireless (and **only** wireless) profiles. It enables you to scan for available networks and create profiles for your preferred networks.
 
 See [Wifi Radar](/index.php/Wifi_Radar "Wifi Radar").
+
+#### ‎The kernel bonding module and systemd
+
+See [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding").
 
 ## Troubleshooting
 
@@ -1054,4 +1059,4 @@ Please read the package's [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for any oth
 *   [The Linux Wireless project](http://wireless.kernel.org/)
 *   [Aircrack-ng guide on installing drivers](http://aircrack-ng.org/doku.php?id=install_drivers)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=417389](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=417389)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=419008](https://wiki.archlinux.org/index.php?title=Wireless_network_configuration&oldid=419008)"

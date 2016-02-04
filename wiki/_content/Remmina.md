@@ -38,4 +38,4 @@ done
 
 To minimize to tray on startup, use `-i` option.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=418909](https://wiki.archlinux.org/index.php?title=Remmina&oldid=418909)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Remmina&oldid=418965](https://wiki.archlinux.org/index.php?title=Remmina&oldid=418965)"

@@ -18,4 +18,4 @@ The configuration file can be found at `/etc/shairport-sync.conf`. It contains u
 
 [Start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `shairport-sync.service` using systemd.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Shairport_Sync&oldid=413849](https://wiki.archlinux.org/index.php?title=Shairport_Sync&oldid=413849)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Shairport_Sync&oldid=418967](https://wiki.archlinux.org/index.php?title=Shairport_Sync&oldid=418967)"

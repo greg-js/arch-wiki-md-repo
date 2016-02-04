@@ -193,6 +193,8 @@ Create directory if it does not exist:
 
 ```
 
+**Note:** Symlinks for `nspawn` are currently broken(2/4/2016) [https://github.com/systemd/systemd/issues/2001](https://github.com/systemd/systemd/issues/2001), and will give you a "too many levels of symlinks" error. As a (possibly insecure) workaround, simply pacstrap your install to the container directory instead.
+
 Symlink to register the container on the host, as per [Systemd-nspawn#Boot your container at your machine startup](/index.php/Systemd-nspawn#Boot_your_container_at_your_machine_startup "Systemd-nspawn"):
 
 ```
@@ -219,7 +221,7 @@ LimitNOFILE=32768
 
 ```
 
-`--network-macvlan=$INTERFACE --private-network` automagically creates a macvlan named `mv-$INTERFACE` inside the container, which is not visible from the host. `--private-network` is implied by `--network-macvlan=` according to `man systemd-nspawn`.
+`--network-macvlan=$INTERFACE --private-network` automagically creates a macvlan named `mv-$INTERFACE` inside the container, which is not visible from the host. `--private-network` is implied by `--network-macvlan=` according to `man systemd-nspawn`. This is advisable for security as it will allow you to give a private IP to the container, and it won't know what your machine's IP is. This can help obscure DNS requests.
 
 `LimitNOFILE=32768` per [#Raise maximum number of open file descriptors](#Raise_maximum_number_of_open_file_descriptors).
 
@@ -392,7 +394,7 @@ A Tor bridge is a Tor relay that is not listed in the public Tor directory, thus
 
 #### Configuration
 
-According to [https://www.torproject.org/docs/bridges](https://www.torproject.org/docs/bridges) , make your torrc be just these four lines:
+According to [https://www.torproject.org/docs/bridges](https://www.torproject.org/docs/bridges) , make your torrc be just these four lines (Default: /etc/tor/torrc, or $HOME/.torrc if that file is not found)
 
 ```
    SocksPort 0
@@ -912,4 +914,4 @@ Now save changes and run the daemon:
 *   [How to set up a Tor _Hidden Service_](https://www.torproject.org/docs/tor-hidden-service.html.en)
 *   [List of tor pluggable transports for obfuscating tor's traffic](https://trac.torproject.org/projects/tor/wiki/doc/PluggableTransports)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=414065](https://wiki.archlinux.org/index.php?title=Tor&oldid=414065)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tor&oldid=419013](https://wiki.archlinux.org/index.php?title=Tor&oldid=419013)"

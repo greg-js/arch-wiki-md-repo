@@ -236,7 +236,7 @@ Note that [scrot](https://www.archlinux.org/packages/?name=scrot) actually uses 
 
 ### maim
 
-[maim-git](https://aur.archlinux.org/packages/maim-git/) is aimed to be an improved scrot.
+[maim](https://www.archlinux.org/packages/?name=maim) is aimed to be an improved scrot.
 
 Takes screenshots of your desktop using imlib2 and [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot and performs better in [several ways](https://github.com/naelstrof/maim#why-use-maim-over-import-or-scrot).
 
@@ -352,4 +352,4 @@ If you merely want to capture the text in the console and not an actual image, y
 
 Root permission is needed because the contents of `/dev/vcs1` need to be read.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=417224](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=417224)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=418946](https://wiki.archlinux.org/index.php?title=Taking_a_screenshot&oldid=418946)"

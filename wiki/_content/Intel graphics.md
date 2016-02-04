@@ -32,7 +32,7 @@ For a comprehensive list of Intel GPU models and corresponding chipsets and CPUs
     *   [6.7 Disabling frame buffer compression](#Disabling_frame_buffer_compression)
     *   [6.8 Corruption/Unresponsiveness in Chromium and Firefox](#Corruption.2FUnresponsiveness_in_Chromium_and_Firefox)
     *   [6.9 Kernel crashing w/kernels 4.0+ on Broadwell/Core-M chips](#Kernel_crashing_w.2Fkernels_4.0.2B_on_Broadwell.2FCore-M_chips)
-    *   [6.10 Driver not working for Intel Skylake chips](#Driver_not_working_for_Intel_Skylake_chips)
+    *   [6.10 Skylake Support](#Skylake_Support)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -404,12 +404,27 @@ i915.enable_execlists=0
 
 This is known to be broken to at least kernel 4.0.5.
 
-### Driver not working for Intel Skylake chips
+### Skylake Support
 
-For the driver to work on the new Intel Skylake (6th gen.) GPUs, `i915.preliminary_hw_support=1` must be added to your boot parameters.
+For linux kernels older than 4.3.x, `i915.preliminary_hw_support=1` must be added to your boot parameters for the driver to work on the new Intel Skylake (6th gen.) GPUs. On a fully updated system running kernel 4.3.x and up, this step is unneccesary.
+
+If i915 DRM driver is causing lots of crashes [[6]](https://bbs.archlinux.org/viewtopic.php?pid=1601531#p1601531) it might be neccesary to disable hardware acceleration to workaround the bugs:
+
+ `/etc/X11/xorg.conf.d/20-intel.conf` 
+
+```
+Section "Device"
+	Identifier  "Intel Graphics"
+	Driver      "intel"
+	#Option      "AccelMethod"  "false" # unneccesary but optional
+	#Option      "TearFree"    "false" # unneccesary but optional
+	Option	    "DRI"	"false"
+EndSection
+
+```
 
 ## See also
 
 *   [https://01.org/linuxgraphics/documentation](https://01.org/linuxgraphics/documentation) (includes a list of supported hardware)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=414326](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=414326)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=418985](https://wiki.archlinux.org/index.php?title=Intel_graphics&oldid=418985)"
