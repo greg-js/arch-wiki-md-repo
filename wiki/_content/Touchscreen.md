@@ -44,7 +44,7 @@ Less common drivers, not contained in the repository, are:
 *   xf86-input-plpevtch
 *   xf86-input-palmax
 
-Proprietary drivers exist for some devices (e.g.: [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/)<sup><small>AUR</small></sup>), but it's recommended to try the open source drivers first.
+Proprietary drivers exist for some devices (e.g.: [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/)), but it's recommended to try the open source drivers first.
 
 Depending on your touchscreen device choose an appropriate driver. Again, evdev is likely to be the default if your touchscreen "just works."
 
@@ -52,7 +52,7 @@ Depending on your touchscreen device choose an appropriate driver. Again, evdev 
 
 ### Calibration
 
-Install [xinput_calibrator](https://aur.archlinux.org/packages/xinput_calibrator/)<sup><small>AUR</small></sup> (AUR). Then, run xinput_calibrator and follow the instructions.
+Install [xinput_calibrator](https://aur.archlinux.org/packages/xinput_calibrator/) (AUR). Then, run xinput_calibrator and follow the instructions.
 
 ## Using a touchscreen in a multi-head setup
 

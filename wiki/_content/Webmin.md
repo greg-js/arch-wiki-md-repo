@@ -14,7 +14,7 @@ From the project [home page](http://www.webmin.com/):
 
 ## Installation
 
-You can install [webmin](https://aur.archlinux.org/packages/webmin/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Webmin requires [perl-net-ssleay](https://www.archlinux.org/packages/?name=perl-net-ssleay) to enable access via [https](https://en.wikipedia.org/wiki/https "wikipedia:https").
+You can install [webmin](https://aur.archlinux.org/packages/webmin/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). Webmin requires [perl-net-ssleay](https://www.archlinux.org/packages/?name=perl-net-ssleay) to enable access via [https](https://en.wikipedia.org/wiki/https "wikipedia:https").
 
 ## Configuration
 

@@ -12,7 +12,7 @@
 
 ## Installation
 
-[prboom](https://aur.archlinux.org/packages/prboom/)<sup><small>AUR</small></sup> is available from the AUR.
+[prboom](https://aur.archlinux.org/packages/prboom/) is available from the AUR.
 
 ## Use
 
@@ -69,7 +69,7 @@ Please note that freepats is an incomplete soundfont ; therefore it will not pl
 
 ## Data
 
-If you do not have the original Doom data available to play PrBoom, you can install the [freedoom1](https://aur.archlinux.org/packages/freedoom1/)<sup><small>AUR</small></sup> or [freedoom2](https://aur.archlinux.org/packages/freedoom2/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+If you do not have the original Doom data available to play PrBoom, you can install the [freedoom1](https://aur.archlinux.org/packages/freedoom1/) or [freedoom2](https://aur.archlinux.org/packages/freedoom2/) package from the [AUR](/index.php/AUR "AUR").
 
 This will place the data in the correct directory, so you can just start PrBoom and frag away!
 

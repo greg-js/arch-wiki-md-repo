@@ -153,7 +153,7 @@ Parameters always come in `parameter` or `parameter=value`. All of these paramet
 
 | parameter | Description |
 | root= | Root filesystem. |
-| ro | Mount root device read-only on boot (default<sup>1</sup>). |
+| ro | Mount root device read-only on boot (default). |
 | rw | Mount root device read-write on boot. |
 | initrd= | Specify the location of the initial ramdisk. |
 | init= | Run specified binary instead of `/sbin/init` (symlinked to [systemd](/index.php/Systemd "Systemd") in Arch) as init process. |
@@ -165,7 +165,7 @@ Parameters always come in `parameter` or `parameter=value`. All of these paramet
 | zswap.enabled | Enable [Zswap](/index.php/Zswap "Zswap"). |
 | video=<videosetting> | Override framebuffer video defaults. |
 
-<sup>1</sup> [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") uses `ro` as default value when neither `rw` or `ro` is set by the [boot loader](/index.php/Boot_loader "Boot loader"). Boot loaders may set the value to use, for example GRUB uses `rw` by default (see [FS#36275](https://bugs.archlinux.org/task/36275) as a reference).
+ [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio") uses `ro` as default value when neither `rw` or `ro` is set by the [boot loader](/index.php/Boot_loader "Boot loader"). Boot loaders may set the value to use, for example GRUB uses `rw` by default (see [FS#36275](https://bugs.archlinux.org/task/36275) as a reference).
 
 For a complete list of all options, please see the [kernel documentation](https://www.kernel.org/doc/Documentation/kernel-parameters.txt).
 

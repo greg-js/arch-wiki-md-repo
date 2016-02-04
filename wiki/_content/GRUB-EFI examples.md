@@ -45,7 +45,7 @@ More info at [https://help.ubuntu.com/community/UEFIBooting#Apple_Mac_EFI_system
 
 **Note:** TODO: GRUB upstream Bazaar mactel branch [http://bzr.savannah.gnu.org/lh/grub/branches/mactel/changes](http://bzr.savannah.gnu.org/lh/grub/branches/mactel/changes). No further update from grub developers.
 
-**Note:** TODO: Experimental "bless" utility for Linux by Fedora developers - [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/)<sup><small>AUR</small></sup>. Requires more testing.
+**Note:** TODO: Experimental "bless" utility for Linux by Fedora developers - [mactel-boot](https://aur.archlinux.org/packages/mactel-boot/). Requires more testing.
 
 ## Asus
 

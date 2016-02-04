@@ -117,7 +117,7 @@ Esc
 
 ### Browsing URLs
 
-To browse URLs inside tmux you must have [urlview](https://aur.archlinux.org/packages/urlview/)<sup><small>AUR</small></sup> installed and configured.
+To browse URLs inside tmux you must have [urlview](https://aur.archlinux.org/packages/urlview/) installed and configured.
 
 Inside a new terminal:
 
@@ -445,7 +445,7 @@ While in tmux, Shift+MiddleMouseClick will paste the clipboard selection while j
 
 ### Start tmux with default session layout
 
-To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"). Test your installation with
+To setup your default Tmux session layout, you install [tmuxinator](https://aur.archlinux.org/packages/tmuxinator/) from [AUR](/index.php/AUR "AUR"). Test your installation with
 
 ```
 tmuxinator doctor

@@ -88,7 +88,7 @@ See [ASUS Zenbook Prime UX31A](/index.php/ASUS_Zenbook_Prime_UX31A "ASUS Zenbook
 
 For automatic powersaving when on battery configure [Laptop Mode Tools](/index.php/Laptop_Mode_Tools "Laptop Mode Tools"). For manual power saving see [Power saving](/index.php/Power_saving "Power saving"). Also check out [Powertop](/index.php/Powertop "Powertop").
 
-The UX51Vz can run a little hot, this is especially true for the HiDPI variant (aka UX51VZH) because the discrete GPU is always on. Be sure to check out [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/)<sup><small>AUR</small></sup> in the AUR), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. It can do wonders for temperature management while avoiding to spin up the fans.
+The UX51Vz can run a little hot, this is especially true for the HiDPI variant (aka UX51VZH) because the discrete GPU is always on. Be sure to check out [Linux Thermal Daemon](https://01.org/linux-thermal-daemon) (available as [thermald](https://aur.archlinux.org/packages/thermald/) in the AUR), which proactively controls thermal using P-states, T-states, and the Intel power clamp driver. It can do wonders for temperature management while avoiding to spin up the fans.
 
 ## Hardware and Modules
 

@@ -50,7 +50,7 @@ Thunar uses [GVFS](/index.php/GVFS "GVFS") for automounting. See also [File mana
 
 *   **Thunar Shares Plugin** — Plugin which allows you to quickly share a folder using Samba from Thunar without requiring root access. See also [how to configure directions](/index.php/Samba#Creating_usershare_path "Samba").
 
-	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)<sup><small>AUR</small></sup>
+	[http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin](http://goodies.xfce.org/projects/thunar-plugins/thunar-shares-plugin) || [thunar-shares-plugin](https://aur.archlinux.org/packages/thunar-shares-plugin/)
 
 *   **[Thunar Volume Manager](#Thunar_Volume_Manager)** — Automatic management of removeable devices in Thunar. Part of [xfce4](https://www.archlinux.org/groups/x86_64/xfce4/).
 
@@ -161,7 +161,7 @@ To use this action you need to have [catfish](https://www.archlinux.org/packages
 
 ### Scan for viruses
 
-To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://aur.archlinux.org/packages/clamtk/)<sup><small>AUR</small></sup> installed.
+To use this action you need to have [clamav](https://www.archlinux.org/packages/?name=clamav) and [clamtk](https://aur.archlinux.org/packages/clamtk/) installed.
 
 | Name | Command | File patterns | Appears if selection contains |
 | Scan for virus | `clamtk %F` | * | Select all |

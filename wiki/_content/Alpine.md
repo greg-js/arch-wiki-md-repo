@@ -17,7 +17,7 @@ Right now, this article is just a quick and dirty guide for configuring Alpine t
 
 ## Installation
 
-[Install](/index.php/Install "Install") [alpine](https://aur.archlinux.org/packages/alpine/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [alpine](https://aur.archlinux.org/packages/alpine/).
 
 You might also want to grab something to check your spelling, like [aspell](https://www.archlinux.org/packages/?name=aspell).
 

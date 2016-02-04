@@ -50,7 +50,7 @@ This is for Firefox version 29 and onward.
 
 ### Installation
 
-[mozilla-firefox-sync-server-git](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[mozilla-firefox-sync-server-git](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-git/) is available in the [AUR](/index.php/AUR "AUR").
 
 The setup creates an isolated Python environment in which all necessary dependencies are downloaded and installed. Afterwards, running the server only relies on the isolated Python environment, independently of the system-wide Python.
 
@@ -123,7 +123,7 @@ This is for Firefox version up to but not including version 32.
 
 ### Installation
 
-[mozilla-firefox-sync-server-hg](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-hg/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[mozilla-firefox-sync-server-hg](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-hg/) is available in the [AUR](/index.php/AUR "AUR").
 
 The setup creates an isolated Python environment in which all necessary dependencies are downloaded and installed. Afterwards, running the server only relies on the isolated Python environment, independently of the system-wide Python.
 
@@ -210,7 +210,7 @@ Create this folder now by running:
 
  `# systemd-tmpfiles --create ffsync.conf` 
 
-Enable and start the Gunicorn serveur using the systemd service unit provided in [mozilla-firefox-sync-server-hg](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-hg/)<sup><small>AUR</small></sup>:
+Enable and start the Gunicorn serveur using the systemd service unit provided in [mozilla-firefox-sync-server-hg](https://aur.archlinux.org/packages/mozilla-firefox-sync-server-hg/):
 
 ```
 # systemctl enable ffsync

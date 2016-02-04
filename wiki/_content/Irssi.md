@@ -65,7 +65,7 @@ Personal configuration file should be located at `~/.irssi/config`; there is a t
 
 ### Authenticating with SASL
 
-[Install](/index.php/Install "Install") the [irssi-script-sasl](https://aur.archlinux.org/packages/irssi-script-sasl/)<sup><small>AUR</small></sup> package. Load the script with each start of irssi:
+[Install](/index.php/Install "Install") the [irssi-script-sasl](https://aur.archlinux.org/packages/irssi-script-sasl/) package. Load the script with each start of irssi:
 
 ```
 $ mkdir -p ~/.irssi/scripts/autorun

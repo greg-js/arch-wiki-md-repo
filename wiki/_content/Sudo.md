@@ -262,7 +262,7 @@ $ kwriteconfig5 --file kdesurc --group super-user-command --key super-user-comma
 
 ```
 
-Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/)<sup><small>AUR</small></sup>, which has the added advantage of tab-completion for the command following.
+Alternatively, install [kdesudo](https://aur.archlinux.org/packages/kdesudo/), which has the added advantage of tab-completion for the command following.
 
 ### Harden with Sudo Example
 

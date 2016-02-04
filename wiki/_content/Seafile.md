@@ -20,7 +20,7 @@ Seafile lets you create groups with file syncing, wiki, and discussion -- enabli
 
 ### Installation
 
-Install [seafile-server](https://aur.archlinux.org/packages/seafile-server/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
+Install [seafile-server](https://aur.archlinux.org/packages/seafile-server/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository")
 
 As root, add a new user to run seafile server instances under:
 
@@ -189,7 +189,7 @@ First, stop each of your seafile server instances (repeat for example.org, foo.b
 
 ```
 
-Upgrade [seafile-server](https://aur.archlinux.org/packages/seafile-server/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Upgrade [seafile-server](https://aur.archlinux.org/packages/seafile-server/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Become the user the seafile server instances run as (following commands are to be executed as that user unless otherwise stated):
 

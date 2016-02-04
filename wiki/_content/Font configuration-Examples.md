@@ -174,7 +174,7 @@ Some users prefer the sharper rendering that anti-aliasing does not offer:
 
 ## Chrome OS fonts
 
-Web browser and another common applications use `Serif`, `Sans-Serif` and `Monospace` as default fonts ([Fonts#Font alias](/index.php/Fonts#Font_alias "Fonts")). The procedure to change default fonts is similar to replace them. For example, to use Chrome OS fonts [ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/)<sup><small>AUR</small></sup>:
+Web browser and another common applications use `Serif`, `Sans-Serif` and `Monospace` as default fonts ([Fonts#Font alias](/index.php/Fonts#Font_alias "Fonts")). The procedure to change default fonts is similar to replace them. For example, to use Chrome OS fonts [ttf-chromeos-fonts](https://aur.archlinux.org/packages/ttf-chromeos-fonts/):
 
 ```
 <?xml version="1.0"?>
@@ -213,11 +213,11 @@ Web browser and another common applications use `Serif`, `Sans-Serif` and `Monos
 
 *   **freetype2-ubuntu** — Font configuration shipped with Ubuntu. [[1]](http://bazaar.launchpad.net/~ubuntu-branches/ubuntu/wily/fontconfig/wily/files/head:/debian/patches/) [[2]](http://bazaar.launchpad.net/~ubuntu-branches/ubuntu/wily/freetype/wily/files/head:/debian/patches-freetype/)
 
-	[https://launchpad.net/ubuntu/+source/freetype](https://launchpad.net/ubuntu/+source/freetype) || [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/)<sup><small>AUR</small></sup> [fontconfig-ubuntu](https://aur.archlinux.org/packages/fontconfig-ubuntu/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/ubuntu/+source/freetype](https://launchpad.net/ubuntu/+source/freetype) || [freetype2-ubuntu](https://aur.archlinux.org/packages/freetype2-ubuntu/) [fontconfig-ubuntu](https://aur.archlinux.org/packages/fontconfig-ubuntu/)
 
 *   **[Infinality](/index.php/Infinality "Infinality")** — Font configuration files, patches, and scripts.
 
-	[https://github.com/bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate) || [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/)<sup><small>AUR</small></sup> [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)<sup><small>AUR</small></sup>
+	[https://github.com/bohoomil/fontconfig-ultimate](https://github.com/bohoomil/fontconfig-ultimate) || [freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)
 
 To restore the original packages, reinstall [freetype2](https://www.archlinux.org/packages/?name=freetype2), [cairo](https://www.archlinux.org/packages/?name=cairo), and [fontconfig](https://www.archlinux.org/packages/?name=fontconfig) as dependencies (use the `--asdeps` flag with pacman when reinstalling). Include [lib32-cairo](https://www.archlinux.org/packages/?name=lib32-cairo), [lib32-fontconfig](https://www.archlinux.org/packages/?name=lib32-fontconfig), and [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2) if you also installed 32-bit versions.
 

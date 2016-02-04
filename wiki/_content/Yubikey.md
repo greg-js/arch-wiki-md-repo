@@ -165,13 +165,13 @@ These steps will allow you to install the OATH applet onto your Yubikey NEO. Thi
 
 ### Configure the NEO as a CCID Device
 
-1.  Get [yubikey-personalization-gui-git](https://aur.archlinux.org/packages/yubikey-personalization-gui-git/)<sup><small>AUR</small></sup> from the AUR.
+1.  Get [yubikey-personalization-gui-git](https://aur.archlinux.org/packages/yubikey-personalization-gui-git/) from the AUR.
 2.  Add the udev rules and reboot so you can manage the YubiKey without needing to be root
 3.  Run `ykpersonalize -m82`, enter `y`, and hit enter.
 
 ### Install the Applet
 
-1.  Install [gpshell](https://aur.archlinux.org/packages/gpshell/)<sup><small>AUR</small></sup>, [gppcscconnectionplugin](https://aur.archlinux.org/packages/gppcscconnectionplugin/)<sup><small>AUR</small></sup>, [globalplatform](https://aur.archlinux.org/packages/globalplatform/)<sup><small>AUR</small></sup>, and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite).
+1.  Install [gpshell](https://aur.archlinux.org/packages/gpshell/), [gppcscconnectionplugin](https://aur.archlinux.org/packages/gppcscconnectionplugin/), [globalplatform](https://aur.archlinux.org/packages/globalplatform/), and [pcsclite](https://www.archlinux.org/packages/?name=pcsclite).
 2.  Start `pcscd` with `sudo systemctl start pcscd.service`.
 3.  Download the most recent CAP file from the [ykneo-oath](http://opensource.yubico.com/ykneo-oath/releases.html) site.
 4.  Download `gpinstall.txt` from [GitHub](https://github.com/Yubico/ykneo-oath/blob/master/gpinstall.txt).
@@ -201,7 +201,7 @@ release_context
 
 ### (Optional) Install the Yubico Authenticator Desktop client
 
-You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/)<sup><small>AUR</small></sup>.
+You can get the desktop version of the Yubico Authenticator by installing [yubico-yubioath-desktop-git](https://aur.archlinux.org/packages/yubico-yubioath-desktop-git/).
 
 ## Enabling U2F in the browser
 

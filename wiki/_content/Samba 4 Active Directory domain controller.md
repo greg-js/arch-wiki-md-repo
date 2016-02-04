@@ -438,7 +438,7 @@ Computer Configuration
           Register PTR Records = Disabled
 ```
 
-[Install](/index.php/Install "Install") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package and the [samba-dhcpd-update](https://aur.archlinux.org/packages/samba-dhcpd-update/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [dhcp](https://www.archlinux.org/packages/?name=dhcp) package and the [samba-dhcpd-update](https://aur.archlinux.org/packages/samba-dhcpd-update/) package.
 
 Create an unprivileged user in AD for performing the updates. When prompted for password, use a secure password. 63 random, mixed case, alpha-numeric characters is sufficient. Optionally samba-tool also takes a random argument:
 

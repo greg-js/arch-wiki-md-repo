@@ -23,7 +23,7 @@ The original author of this article runs Squid and DansGuardian content filters 
 
 ## Installation
 
-DansGuardian is available from the [AUR](/index.php/AUR "AUR"), as the [dansguardian](https://aur.archlinux.org/packages/dansguardian/)<sup><small>AUR</small></sup> package.
+DansGuardian is available from the [AUR](/index.php/AUR "AUR"), as the [dansguardian](https://aur.archlinux.org/packages/dansguardian/) package.
 
 Start **dansguardian** [daemon](/index.php/Daemon "Daemon"). If you wish to have it at boot, enable it.
 

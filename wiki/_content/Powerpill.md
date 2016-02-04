@@ -18,7 +18,7 @@ A test of pacman vs. powerpill on one system revealed a 4x speed up in the above
 
 ## Installation
 
-You can get it from [AUR](/index.php/AUR "AUR") [powerpill](https://aur.archlinux.org/packages/powerpill/)<sup><small>AUR</small></sup> or directly from [Xyne's repository](http://xyne.archlinux.ca/repos/).
+You can get it from [AUR](/index.php/AUR "AUR") [powerpill](https://aur.archlinux.org/packages/powerpill/) or directly from [Xyne's repository](http://xyne.archlinux.ca/repos/).
 
 ## Configuration
 

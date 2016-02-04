@@ -140,7 +140,7 @@ Good to download updates after few hours of idle and limit it only to a day time
 Steps for downloading process
 
 1.  Check if stop mark after download exist, e.g. `if [ ! -f /tmp/.downloaded_yes ];then echo Is OK to download;else echo Already downloaded;fi`
-2.  Check if computer is idle and how long time. Utilities [xprintidle](https://aur.archlinux.org/packages/xprintidle/)<sup><small>AUR</small></sup>[[2]](http://www.ruddwire.com/handy-code/date-to-millisecond-calculators/) for X and command `w` for tty.
+2.  Check if computer is idle and how long time. Utilities [xprintidle](https://aur.archlinux.org/packages/xprintidle/)[[2]](http://www.ruddwire.com/handy-code/date-to-millisecond-calculators/) for X and command `w` for tty.
 3.  Check if computer is connected with cable or how much battery is charged. You will need to install [upower](https://www.archlinux.org/packages/?name=upower).
 
     ```

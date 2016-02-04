@@ -30,7 +30,7 @@ When partitioning you may want to keep the EFI-partition (usually the last, smal
 
 ## Fn keys
 
-Install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") and add this file [https://github.com/nbigaouette/acpi-eeepc-generic/blob/afeb3a328258b0298a5edaa0e8de22d1bb48643d/acpi-eeepc-1001PX-events.conf](https://github.com/nbigaouette/acpi-eeepc-generic/blob/afeb3a328258b0298a5edaa0e8de22d1bb48643d/acpi-eeepc-1001PX-events.conf)
+Install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) from [AUR](/index.php/AUR "AUR") and add this file [https://github.com/nbigaouette/acpi-eeepc-generic/blob/afeb3a328258b0298a5edaa0e8de22d1bb48643d/acpi-eeepc-1001PX-events.conf](https://github.com/nbigaouette/acpi-eeepc-generic/blob/afeb3a328258b0298a5edaa0e8de22d1bb48643d/acpi-eeepc-1001PX-events.conf)
 
 ## Laptop Mode Tools & powersaving
 
@@ -60,7 +60,7 @@ alone seems to fix that.
 
 Personal Remark: The overall endurance seems good. While I never actually reached the promised 10h, 8h-9h are possible with dimmed display, 4h while really working with it. The power-saving-support is probably not worse than on Windows.
 
-Another edit: I recommend getting [kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kernel-netbook)]</sup> and not using `acpi_osi=Linux` anymore.
+Another edit: I recommend getting [kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/) and not using `acpi_osi=Linux` anymore.
 
 ## Graphics
 

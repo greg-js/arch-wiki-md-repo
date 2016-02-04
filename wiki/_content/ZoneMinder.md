@@ -22,7 +22,7 @@ ZoneMinder is an integrated set of applications which provide a complete surveil
 
 **Note:** It is very important that [LAMP](/index.php/LAMP "LAMP") stack is installed and properly configured in order for ZoneMinder to work.
 
-[Install](/index.php/Install "Install") the [zoneminder](https://aur.archlinux.org/packages/zoneminder/)<sup><small>AUR</small></sup> package. The development branch is also available with [zoneminder-git](https://aur.archlinux.org/packages/zoneminder-git/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the [zoneminder](https://aur.archlinux.org/packages/zoneminder/) package. The development branch is also available with [zoneminder-git](https://aur.archlinux.org/packages/zoneminder-git/).
 
 For thumbnail generation (used rarely), install the [netpbm](https://www.archlinux.org/packages/?name=netpbm) package.
 

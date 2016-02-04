@@ -103,7 +103,7 @@ Type=oneshot
 WantedBy=multi-user.target
 ```
 
-Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-systemd/)<sup><small>AUR</small></sup> package.
+Alternatively install the [wol-systemd](https://aur.archlinux.org/packages/wol-systemd/) package.
 
 Then activate this new service by [starting](/index.php/Starting "Starting") `wol@_interface_.service`.
 

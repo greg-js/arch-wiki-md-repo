@@ -268,7 +268,7 @@ The check operation scans the drives for bad sectors and mismatches. Bad sectors
 
 **Note:** Users may alternatively echo **repair** to /sys/block/md0/md/sync_action but this is ill-advised since if a mismatch in the data is encountered, it would be automatically updated to be consistent. The danger is that we really don't know whether it's the parity or the data block that's correct (or which data block in case of RAID1). It's luck-of-the-draw whether or not the operation gets the right data instead of the bad data.
 
-It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/)<sup><small>AUR</small></sup> which can assist with this.
+It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/) which can assist with this.
 
 ##### RAID1 and RAID10 Notes on Scrubbing
 

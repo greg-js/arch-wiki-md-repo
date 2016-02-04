@@ -22,10 +22,10 @@ From [Qtile web site](http://qtile.org/):
 
 [Install](/index.php/Install "Install") one of the following packages:
 
-*   [qtile](https://aur.archlinux.org/packages/qtile/)<sup><small>AUR</small></sup> for the latest official release, running on Python 3.
-*   [qtile-python2](https://aur.archlinux.org/packages/qtile-python2/)<sup><small>AUR</small></sup> for the latest official release, running on Python 2.
-*   [qtile-python3-git](https://aur.archlinux.org/packages/qtile-python3-git/)<sup><small>AUR</small></sup> for the latest git commit, running on Python 3.
-*   [qtile-git](https://aur.archlinux.org/packages/qtile-git/)<sup><small>AUR</small></sup> for the latest git commit, running on Python 2.
+*   [qtile](https://aur.archlinux.org/packages/qtile/) for the latest official release, running on Python 3.
+*   [qtile-python2](https://aur.archlinux.org/packages/qtile-python2/) for the latest official release, running on Python 2.
+*   [qtile-python3-git](https://aur.archlinux.org/packages/qtile-python3-git/) for the latest git commit, running on Python 3.
+*   [qtile-git](https://aur.archlinux.org/packages/qtile-git/) for the latest git commit, running on Python 2.
 
 ## Starting
 

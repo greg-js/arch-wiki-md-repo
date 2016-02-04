@@ -11,13 +11,13 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dasom-git](https://aur.archlinux.org/packages/dasom-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [dasom-git](https://aur.archlinux.org/packages/dasom-git/) package.
 
-Additionally, you might want to install input method modules packages such as [dasom-gtk-git](https://aur.archlinux.org/packages/dasom-gtk-git/)<sup><small>AUR</small></sup> for GTK+, [dasom-qt-git](https://aur.archlinux.org/packages/dasom-qt-git/)<sup><small>AUR</small></sup> for Qt applications.
+Additionally, you might want to install input method modules packages such as [dasom-gtk-git](https://aur.archlinux.org/packages/dasom-gtk-git/) for GTK+, [dasom-qt-git](https://aur.archlinux.org/packages/dasom-qt-git/) for Qt applications.
 
 ### Input method engines
 
-*   [dasom-jeongeum-git](https://aur.archlinux.org/packages/dasom-jeongeum-git/)<sup><small>AUR</small></sup>, for typing Korean hangul, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
+*   [dasom-jeongeum-git](https://aur.archlinux.org/packages/dasom-jeongeum-git/), for typing Korean hangul, based on [libhangul](https://www.archlinux.org/packages/?name=libhangul).
 
 ### Initial setup
 

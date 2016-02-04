@@ -603,7 +603,7 @@ It appears that setting _Integrated Peripherals --> Onboard LAN Boot ROM --> Ena
 
 ### No interface with Atheros chipsets
 
-Users of some Atheros ethernet chips are reporting it does not work out-of-the-box (with installation media of February 2014). The working solution for this is to install [backports-patched](https://aur.archlinux.org/packages/backports-patched/)<sup><small>AUR</small></sup>.
+Users of some Atheros ethernet chips are reporting it does not work out-of-the-box (with installation media of February 2014). The working solution for this is to install [backports-patched](https://aur.archlinux.org/packages/backports-patched/).
 
 ### Broadcom BCM57780
 

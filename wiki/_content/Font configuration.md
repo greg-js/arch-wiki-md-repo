@@ -561,7 +561,7 @@ In this example, hinting is set to "grayscale".
 
 [GNOME](/index.php/GNOME "GNOME") uses the XSETTINGS system to configure font rendering. Without gnome-settings-daemon, GTK applications rely on fontconfig, but some fonts get the hinting wrong causing them to look too bold or too light.
 
-A simple solution is using [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/)<sup><small>AUR</small></sup> as a replacement for gnome-settings-daemon to provide the configuration, for example:
+A simple solution is using [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/) as a replacement for gnome-settings-daemon to provide the configuration, for example:
 
  `~/.xsettingsd` 
 

@@ -83,7 +83,7 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 *   **reiser4progs** — [ReiserFSv4](/index.php/Reiser4 "Reiser4") support.
 
-	[http://sourceforge.net/projects/reiser4/](http://sourceforge.net/projects/reiser4/) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/reiser4/](http://sourceforge.net/projects/reiser4/) || [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)
 
 *   **reiserfsprogs** — ReiserFSv3 support.
 
@@ -95,7 +95,7 @@ The other filesystems provide ordered-mode journaling, which only logs meta-data
 
 *   **zfs** — [ZFS](/index.php/ZFS "ZFS") support.
 
-	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-git](https://aur.archlinux.org/packages/zfs-git/)<sup><small>AUR</small></sup>
+	[http://zfsonlinux.org/](http://zfsonlinux.org/) || [zfs-git](https://aur.archlinux.org/packages/zfs-git/)
 
 ### FUSE-based file systems
 
@@ -105,15 +105,15 @@ Some FUSE-based file systems:
 
 *   **acd-fuse** — FUSE filesystem driver for Amazon's Cloud Drive.
 
-	[https://github.com/handyman5/acd_fuse](https://github.com/handyman5/acd_fuse) || [acdfuse-git](https://aur.archlinux.org/packages/acdfuse-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acdfuse-git)]</sup>
+	[https://github.com/handyman5/acd_fuse](https://github.com/handyman5/acd_fuse) || [acdfuse-git](https://aur.archlinux.org/packages/acdfuse-git/)
 
 *   **adbfs-git** — Mount an Android device filesystem.
 
-	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)<sup><small>AUR</small></sup>
+	[http://collectskin.com/adbfs/](http://collectskin.com/adbfs/) || [adbfs-git](https://aur.archlinux.org/packages/adbfs-git/)
 
 *   **cddfs** — Mount audio CDs.
 
-	[http://castet.matthieu.free.fr/](http://castet.matthieu.free.fr/) || [cddfs](https://aur.archlinux.org/packages/cddfs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cddfs)]</sup>
+	[http://castet.matthieu.free.fr/](http://castet.matthieu.free.fr/) || [cddfs](https://aur.archlinux.org/packages/cddfs/)
 
 *   **fuse-exfat** — exFAT mount support.
 
@@ -125,23 +125,23 @@ Some FUSE-based file systems:
 
 *   **vdfuse** — Mounting VirtualBox disk images (VDI/VMDK/VHD).
 
-	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)<sup><small>AUR</small></sup>
+	[https://github.com/muflone/virtualbox-includes](https://github.com/muflone/virtualbox-includes) || [vdfuse](https://aur.archlinux.org/packages/vdfuse/)
 
 *   **wiifuse** — Mount a Gamecube or Wii DVD disc image read-only.
 
-	[http://wiibrew.org/wiki/Wiifuse](http://wiibrew.org/wiki/Wiifuse) || [wiifuse](https://aur.archlinux.org/packages/wiifuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wiifuse)]</sup>
+	[http://wiibrew.org/wiki/Wiifuse](http://wiibrew.org/wiki/Wiifuse) || [wiifuse](https://aur.archlinux.org/packages/wiifuse/)
 
 *   **xbfuse-git** — Mount an Xbox (360) ISO.
 
-	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xbfuse-git)]</sup>
+	[http://multimedia.cx/xbfuse/](http://multimedia.cx/xbfuse/) || [xbfuse-git](https://aur.archlinux.org/packages/xbfuse-git/)
 
 *   **xmlfs** — Represent an XML file as a directory structure for easy access.
 
-	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)<sup><small>AUR</small></sup>
+	[https://github.com/halhen/xmlfs](https://github.com/halhen/xmlfs) || [xmlfs](https://aur.archlinux.org/packages/xmlfs/)
 
 *   **zfs-fuse** — [ZFS support via FUSE](/index.php/ZFS_on_FUSE "ZFS on FUSE").
 
-	[http://zfs-fuse.net/](http://zfs-fuse.net/) || [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfs-fuse)]</sup>
+	[http://zfs-fuse.net/](http://zfs-fuse.net/) || [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)
 
 See [Wikipedia:Filesystem in Userspace#Example uses](https://en.wikipedia.org/wiki/Filesystem_in_Userspace#Example_uses "wikipedia:Filesystem in Userspace") for more.
 

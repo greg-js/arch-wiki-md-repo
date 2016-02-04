@@ -399,7 +399,7 @@ For detailed instructions on using ATA Secure Erase, see the [Linux ATA wiki](ht
 
 ### secure-delete
 
-The [secure-delete](https://aur.archlinux.org/packages/secure-delete/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") provides several utilites for secure erasion, including `sfill`, which deletes only free space in a specified mount. For example:
+The [secure-delete](https://aur.archlinux.org/packages/secure-delete/) package from [AUR](/index.php/AUR "AUR") provides several utilites for secure erasion, including `sfill`, which deletes only free space in a specified mount. For example:
 
 ```
 # sfill -v /

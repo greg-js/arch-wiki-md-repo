@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Yandex-disk](https://aur.archlinux.org/packages/Yandex-disk/)<sup><small>AUR</small></sup> client for Linux can be installed in from the [AUR](/index.php/AUR "AUR"). Note that it's a console client - there's no GUI for it present for it at the moment.
+[Yandex-disk](https://aur.archlinux.org/packages/Yandex-disk/) client for Linux can be installed in from the [AUR](/index.php/AUR "AUR"). Note that it's a console client - there's no GUI for it present for it at the moment.
 
 To setup your proxy, user and local folder, enter
 
@@ -57,8 +57,8 @@ Here're some examples of use:
 
 ## Unofficial clients
 
-*   [ydcmd](https://aur.archlinux.org/packages/ydcmd/)<sup><small>AUR</small></sup> - console client written on [python](/index.php/Python "Python").
-*   [ekstertera](https://aur.archlinux.org/packages/ekstertera/)<sup><small>AUR</small></sup> - gui client written on [qt5](/index.php/Qt "Qt").
+*   [ydcmd](https://aur.archlinux.org/packages/ydcmd/) - console client written on [python](/index.php/Python "Python").
+*   [ekstertera](https://aur.archlinux.org/packages/ekstertera/) - gui client written on [qt5](/index.php/Qt "Qt").
 
 ## See also
 

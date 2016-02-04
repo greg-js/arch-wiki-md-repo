@@ -21,8 +21,8 @@ Several other applications are required for an example setup of CoovaChilli. [In
 *   [nginx](https://www.archlinux.org/packages/?name=nginx)
 *   [mariadb](https://www.archlinux.org/packages/?name=mariadb)
 *   [php](https://www.archlinux.org/packages/?name=php)
-*   [daloradius](https://aur.archlinux.org/packages/daloradius/)<sup><small>AUR</small></sup>
-*   [coova-chilli](https://aur.archlinux.org/packages/coova-chilli/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/coova-chilli)]</sup>.
+*   [daloradius](https://aur.archlinux.org/packages/daloradius/)
+*   [coova-chilli](https://aur.archlinux.org/packages/coova-chilli/).
 
 ## Example configuration
 

@@ -12,7 +12,7 @@ Preloading is the action of putting and keeping target files into the RAM. The b
 
 ## Go-preload
 
-[gopreload-git](https://aur.archlinux.org/packages/gopreload-git/)<sup><small>AUR</small></sup> is a small daemon created in the [Gentoo forum](https://forums.gentoo.org/viewtopic-t-622085-highlight-preload.html). To use it, first run this command in a terminal for each program you want to preload at boot:
+[gopreload-git](https://aur.archlinux.org/packages/gopreload-git/) is a small daemon created in the [Gentoo forum](https://forums.gentoo.org/viewtopic-t-622085-highlight-preload.html). To use it, first run this command in a terminal for each program you want to preload at boot:
 
 ```
 # gopreload-prepare _program_
@@ -43,7 +43,7 @@ To disable the loading of a program, remove the appropriate list in `/usr/share/
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [preload](https://aur.archlinux.org/packages/preload/)<sup><small>AUR</small></sup> package. You may now [start](/index.php/Daemon "Daemon") the [systemd](/index.php/Systemd "Systemd") service `preload`, and/or enable it in order to start at boot.
+[Install](/index.php/Install "Install") the [preload](https://aur.archlinux.org/packages/preload/) package. You may now [start](/index.php/Daemon "Daemon") the [systemd](/index.php/Systemd "Systemd") service `preload`, and/or enable it in order to start at boot.
 
 ### Configuration
 

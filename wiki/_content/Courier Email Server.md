@@ -19,7 +19,7 @@ For more complex setup see [Creating a Linux Mail Server (Postfix, Procmail, Fet
 
 ## Installation
 
-[Install](/index.php/Install "Install") [fetchmail](https://www.archlinux.org/packages/?name=fetchmail), [procmail](https://www.archlinux.org/packages/?name=procmail), and [courier-imap](https://aur.archlinux.org/packages/courier-imap/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [fetchmail](https://www.archlinux.org/packages/?name=fetchmail), [procmail](https://www.archlinux.org/packages/?name=procmail), and [courier-imap](https://aur.archlinux.org/packages/courier-imap/).
 
 ### Using fetchmail
 

@@ -15,7 +15,7 @@ Volnoti can be useful to check volume changes if you are running a lightweight w
 
 ## Installation
 
-Install the [volnoti](https://aur.archlinux.org/packages/volnoti/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+Install the [volnoti](https://aur.archlinux.org/packages/volnoti/) package from [AUR](/index.php/AUR "AUR").
 
 ## Usage and configuration
 

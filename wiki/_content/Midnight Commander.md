@@ -26,13 +26,13 @@ As it is based on versatile text interfaces, such as Ncurses or S-Lang, it works
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mc](https://www.archlinux.org/packages/?name=mc) package, or [mc-git](https://aur.archlinux.org/packages/mc-git/)<sup><small>AUR</small></sup> for the development version.
+[Install](/index.php/Install "Install") the [mc](https://www.archlinux.org/packages/?name=mc) package, or [mc-git](https://aur.archlinux.org/packages/mc-git/) for the development version.
 
 ### Skins
 
 *   **mc-solarized-git** — Solarized color scheme for Midnight Commander
 
-	[https://github.com/nkulikov/mc-solarized-skin](https://github.com/nkulikov/mc-solarized-skin) || [mc-solarized-git](https://aur.archlinux.org/packages/mc-solarized-git/)<sup><small>AUR</small></sup>
+	[https://github.com/nkulikov/mc-solarized-skin](https://github.com/nkulikov/mc-solarized-skin) || [mc-solarized-git](https://aur.archlinux.org/packages/mc-solarized-git/)
 
 *   **mc-skin-candy** — Candy color scheme (256color)
 
@@ -102,7 +102,7 @@ Midnight Commander does [not support](https://www.midnight-commander.org/ticket/
 
 #### Using libtrash
 
-Install the [libtrash](https://aur.archlinux.org/packages/libtrash/)<sup><small>AUR</small></sup> package, and create an _mc_ alias in the initialization file of your shell (e.g., `~/.bashrc` or `~/.zshrc`):
+Install the [libtrash](https://aur.archlinux.org/packages/libtrash/) package, and create an _mc_ alias in the initialization file of your shell (e.g., `~/.bashrc` or `~/.zshrc`):
 
 ```
 alias mc='LD_PRELOAD=/usr/lib/libtrash.so.3.3 mc'

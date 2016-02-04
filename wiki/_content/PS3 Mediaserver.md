@@ -13,9 +13,9 @@ Server implemented in java. Has very good default transcoding profiles for sever
 
 ## Installation
 
-**Note:** Because of the dependency [tsmuxer](https://aur.archlinux.org/packages/tsmuxer/)<sup><small>AUR</small></sup> having extra 32-bit dependencies, you will need to enable the [multilib](/index.php/Multilib "Multilib") repository if you have a 64-bit system.
+**Note:** Because of the dependency [tsmuxer](https://aur.archlinux.org/packages/tsmuxer/) having extra 32-bit dependencies, you will need to enable the [multilib](/index.php/Multilib "Multilib") repository if you have a 64-bit system.
 
-Install [pms](https://aur.archlinux.org/packages/pms/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+Install [pms](https://aur.archlinux.org/packages/pms/) from [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

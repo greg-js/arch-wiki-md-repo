@@ -24,7 +24,7 @@ You have to choose a backend to play sounds:
 Also, you have to install a sound theme in order to hear any event sound:
 
 *   The default sound theme is 'freedesktop', which can be installed with the package [sound-theme-freedesktop](https://www.archlinux.org/packages/?name=sound-theme-freedesktop), available in the [Official repositories](/index.php/Official_repositories "Official repositories").
-*   Alternatively, you can install [ubuntu-sounds](https://aur.archlinux.org/packages/ubuntu-sounds/)<sup><small>AUR</small></sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   Alternatively, you can install [ubuntu-sounds](https://aur.archlinux.org/packages/ubuntu-sounds/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 

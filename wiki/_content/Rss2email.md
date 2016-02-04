@@ -13,7 +13,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [rss2email-wking](https://aur.archlinux.org/packages/rss2email-wking/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [rss2email-wking](https://aur.archlinux.org/packages/rss2email-wking/) from the [AUR](/index.php/AUR "AUR").
 
 ## Adding feeds
 

@@ -120,9 +120,9 @@ For ease of use, add the script to your `PATH`. Open up a terminal, `cd` to the 
 
 ### Packages
 
-*   [whatmp3](https://aur.archlinux.org/packages/whatmp3/)<sup><small>AUR</small></sup> - A small Python script that accepts a list of directories containing FLAC files as arguments and converts them to MP3 with the specified options.
-*   [flac2all](https://aur.archlinux.org/packages/flac2all/)<sup><small>AUR</small></sup> - Audio converter of FLAC to either Ogg Vorbis or MP3 retaining all tags and metadata.
-*   [flac2mp3-bash](https://aur.archlinux.org/packages/flac2mp3-bash/)<sup><small>AUR</small></sup> - Bash script to convert Flac to Mp3 easily.
+*   [whatmp3](https://aur.archlinux.org/packages/whatmp3/) - A small Python script that accepts a list of directories containing FLAC files as arguments and converts them to MP3 with the specified options.
+*   [flac2all](https://aur.archlinux.org/packages/flac2all/) - Audio converter of FLAC to either Ogg Vorbis or MP3 retaining all tags and metadata.
+*   [flac2mp3-bash](https://aur.archlinux.org/packages/flac2mp3-bash/) - Bash script to convert Flac to Mp3 easily.
 
 ## Graphical applications
 

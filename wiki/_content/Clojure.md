@@ -6,11 +6,11 @@ Clojure is a dialect of Lisp, and shares with Lisp the code-as-data philosophy a
 
 ## Installation
 
-From the [Official repositories](/index.php/Official_repositories "Official repositories"): [clojure](https://www.archlinux.org/packages/?name=clojure), or from the [AUR](/index.php/AUR "AUR"): [clojure-git](https://aur.archlinux.org/packages/clojure-git/)<sup><small>AUR</small></sup>.
+From the [Official repositories](/index.php/Official_repositories "Official repositories"): [clojure](https://www.archlinux.org/packages/?name=clojure), or from the [AUR](/index.php/AUR "AUR"): [clojure-git](https://aur.archlinux.org/packages/clojure-git/).
 
 ## REPL
 
-To run the REPL, install [leiningen](http://leiningen.org/) from [leiningen](https://aur.archlinux.org/packages/leiningen/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package. Then in a terminal type
+To run the REPL, install [leiningen](http://leiningen.org/) from [leiningen](https://aur.archlinux.org/packages/leiningen/) [AUR](/index.php/AUR "AUR") package. Then in a terminal type
 
 ```
 lein repl

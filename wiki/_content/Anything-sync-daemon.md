@@ -1,6 +1,6 @@
 # Anything-sync-daemon
 
-[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> (asd) is a tiny pseudo-daemon designed to manage user specified directories referred to as sync targets from here on out, in tmpfs and to periodically sync them back to the physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backups. Additionally, asd features several crash recovery features.
+[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/) (asd) is a tiny pseudo-daemon designed to manage user specified directories referred to as sync targets from here on out, in tmpfs and to periodically sync them back to the physical disc (HDD/SSD). This is accomplished via a symlinking step and an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backups. Additionally, asd features several crash recovery features.
 
 ## Contents
 
@@ -37,7 +37,7 @@ Since the sync target(s) is relocated into tmpfs (RAM disk), the corresponding o
 
 ## Setup and Installation
 
-[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> is available for download from the [AUR](/index.php/AUR "AUR").
+[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/) is available for download from the [AUR](/index.php/AUR "AUR").
 
 ### Edit /etc/asd.conf
 

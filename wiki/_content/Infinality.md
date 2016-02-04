@@ -87,10 +87,10 @@ The installation consists of adding the selected repositories to `pacman.conf` a
 
 Below you will find a list of fonts that cannot be freely redistributed and thus could not be included in the _infinality-bundle-fonts_ collection as binary packages. However, they can still be installed and used free of charge under specified conditions. Source packages can be found in the [AUR](/index.php/AUR "AUR"). Please, read the EULAs for details before you use the fonts!
 
-*   [ttf-brill](https://aur.archlinux.org/packages/ttf-brill/)<sup><small>AUR</small></sup>
-*   [otf-neris](https://aur.archlinux.org/packages/otf-neris/)<sup><small>AUR</small></sup>
-*   [ttf-aller](https://aur.archlinux.org/packages/ttf-aller/)<sup><small>AUR</small></sup>
-*   [ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)<sup><small>AUR</small></sup>
+*   [ttf-brill](https://aur.archlinux.org/packages/ttf-brill/)
+*   [otf-neris](https://aur.archlinux.org/packages/otf-neris/)
+*   [ttf-aller](https://aur.archlinux.org/packages/ttf-aller/)
+*   [ttf-envy-code-r](https://aur.archlinux.org/packages/ttf-envy-code-r/)
 
 #### Usage
 
@@ -165,7 +165,7 @@ One frequent issue users may face with this repositories is that the package dat
 
 #### Updating
 
-_fontconfig-infinality-ultimate_ is updated frequently, usually every 3-4 weeks, after a number of recently reported minor bugs has been fixed. As every fix is immediately committed to the GitHub repository, users who chose [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fontconfig-infinality-ultimate-git)]</sup> from the AUR will get them sooner, i.e. when they rebuild the package.
+_fontconfig-infinality-ultimate_ is updated frequently, usually every 3-4 weeks, after a number of recently reported minor bugs has been fixed. As every fix is immediately committed to the GitHub repository, users who chose [fontconfig-infinality-ultimate-git](https://aur.archlinux.org/packages/fontconfig-infinality-ultimate-git/) from the AUR will get them sooner, i.e. when they rebuild the package.
 
 **Note:**
 
@@ -176,9 +176,9 @@ _fontconfig-infinality-ultimate_ is updated frequently, usually every 3-4 weeks,
 
 **Warning:** Upstream infinality patches are intended for the older 2.4x freetype2 branch. Users are advised to use the [infinality-bundle](#Infinality-bundle) by _bohoomil_.
 
-[freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/)<sup><small>AUR</small></sup> can be installed from the [AUR](/index.php/AUR "AUR"). If you are a multilib user, also install [lib32-freetype2-infinality](https://aur.archlinux.org/packages/lib32-freetype2-infinality/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-freetype2-infinality)]</sup> from the AUR. The AUR also contains the latest development snapshot of freetype2 with the Infinality patchset: [freetype2-infinality-git](https://aur.archlinux.org/packages/freetype2-infinality-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/freetype2-infinality-git)]</sup> and [lib32-freetype2-infinality-git](https://aur.archlinux.org/packages/lib32-freetype2-infinality-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-freetype2-infinality-git)]</sup>.
+[freetype2-infinality](https://aur.archlinux.org/packages/freetype2-infinality/) can be installed from the [AUR](/index.php/AUR "AUR"). If you are a multilib user, also install [lib32-freetype2-infinality](https://aur.archlinux.org/packages/lib32-freetype2-infinality/) from the AUR. The AUR also contains the latest development snapshot of freetype2 with the Infinality patchset: [freetype2-infinality-git](https://aur.archlinux.org/packages/freetype2-infinality-git/) and [lib32-freetype2-infinality-git](https://aur.archlinux.org/packages/lib32-freetype2-infinality-git/).
 
-It is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)<sup><small>AUR</small></sup> to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself. After doing so, you can select the font style (win7, winxp, osx, linux, ...) with:
+It is recommended to also install [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) to enable selection of predefined font substitution styles and antialiasing settings, apart from the rendering settings of the engine itself. After doing so, you can select the font style (win7, winxp, osx, linux, ...) with:
 
 ```
 # fc-presets set
@@ -189,8 +189,8 @@ The corresponding fonts need to be installed.
 
 **Note:**
 
-*   Install [grip-git](https://aur.archlinux.org/packages/grip-git/)<sup><small>AUR</small></sup> from the AUR to have a realtime font preview.
-*   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/)<sup><small>AUR</small></sup> says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
+*   Install [grip-git](https://aur.archlinux.org/packages/grip-git/) from the AUR to have a realtime font preview.
+*   The `README` for [fontconfig-infinality](https://aur.archlinux.org/packages/fontconfig-infinality/) says that `/etc/fonts/local.conf` should either not exist, or have no infinality-related configurations in it. The `local.conf` is now obsolete and completely replaced by this configuration.
 
 For more information see this forum post: [http://www.infinality.net/forum/viewtopic.php?f=2&t=77#p794](http://www.infinality.net/forum/viewtopic.php?f=2&t=77#p794)
 

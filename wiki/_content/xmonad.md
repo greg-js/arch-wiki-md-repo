@@ -50,7 +50,7 @@ For more information, please visit the xmonad website: [http://xmonad.org/](http
 
 [Install](/index.php/Install "Install") the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package, and possibly [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) for third party tiling algorithms, configurations, scripts, etc.
 
-Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/)<sup><small>AUR</small></sup>, the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/)<sup><small>AUR</small></sup> if wanted.
+Alternatively, install [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), the development version, with some additional dependencies; and likewise [xmonad-contrib-git](https://aur.archlinux.org/packages/xmonad-contrib-git/) if wanted.
 
 **Note:** If you choose to use the [ArchHaskell](/index.php/ArchHaskell "ArchHaskell") repositories, you need to install the _haskell-xmonad_ package instead of [xmonad](https://www.archlinux.org/packages/?name=xmonad), as they have different dependencies.
 
@@ -201,11 +201,11 @@ There are number of complementary utilities that work well with xmonad. The most
 
 *   **[xmobar](/index.php/Xmobar "Xmobar")** — A lightweight, text-based, status bar written in Haskell.
 
-	[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup>
+	[http://projects.haskell.org/xmobar/](http://projects.haskell.org/xmobar/) || [xmobar](https://www.archlinux.org/packages/?name=xmobar), [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)
 
 *   **xmonad-log-applet** — [https://github.com/alexkay/xmonad-log-applet](https://github.com/alexkay/xmonad-log-applet)
 
-	An applet for the GNOME, MATE or xfce panel. || [xmonad-log-applet-xfce4-git](https://aur.archlinux.org/packages/xmonad-log-applet-xfce4-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-log-applet-xfce4-git)]</sup>, [xmonad-log-applet-gnome-git](https://aur.archlinux.org/packages/xmonad-log-applet-gnome-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-log-applet-gnome-git)]</sup>
+	An applet for the GNOME, MATE or xfce panel. || [xmonad-log-applet-xfce4-git](https://aur.archlinux.org/packages/xmonad-log-applet-xfce4-git/), [xmonad-log-applet-gnome-git](https://aur.archlinux.org/packages/xmonad-log-applet-gnome-git/)
 
 ### Increase the number of workspaces
 
@@ -245,7 +245,7 @@ If you ever want to toggle the gaps, this action can be added to your key bindin
 
 ### Using xmobar with xmonad
 
-**[xmobar](/index.php/Xmobar "Xmobar")** is a light and minimalistic text-based bar, designed to work with xmonad. To use xmobar with xmonad, you will need two packages in addition to the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package. These packages are [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) and [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"), or you can use [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") instead of the official [xmobar](https://www.archlinux.org/packages/?name=xmobar) package.
+**[xmobar](/index.php/Xmobar "Xmobar")** is a light and minimalistic text-based bar, designed to work with xmonad. To use xmobar with xmonad, you will need two packages in addition to the [xmonad](https://www.archlinux.org/packages/?name=xmonad) package. These packages are [xmonad-contrib](https://www.archlinux.org/packages/?name=xmonad-contrib) and [xmobar](https://www.archlinux.org/packages/?name=xmobar) from the [official repositories](/index.php/Official_repositories "Official repositories"), or you can use [xmobar-git](https://aur.archlinux.org/packages/xmobar-git/) from the [AUR](/index.php/AUR "AUR") instead of the official [xmobar](https://www.archlinux.org/packages/?name=xmobar) package.
 
 Here we will start xmobar from within xmonad, which reloads xmobar whenever you reload xmonad.
 
@@ -340,7 +340,7 @@ xdotool key Super+n
 
 ### Launching another window manager within xmonad
 
-If you are using [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/)<sup><small>AUR</small></sup>, as of January of 2011, you can restart to another window manager from within xmonad. You just need to write a small script, and add stuff to your `~/.xmonad/xmonad.hs`. Here is the script.
+If you are using [xmonad-git](https://aur.archlinux.org/packages/xmonad-git/), as of January of 2011, you can restart to another window manager from within xmonad. You just need to write a small script, and add stuff to your `~/.xmonad/xmonad.hs`. Here is the script.
 
  `~/bin/obtoxmd` 
 
@@ -419,7 +419,7 @@ Below are some example configurations from fellow xmonad users. Feel free to add
 
 With the release of GNOME 3 [custom GNOME sessions](/index.php/GNOME#Custom_GNOME_sessions "GNOME") require additional steps to make GNOME play nicely with xmonad.
 
-Either install [xmonad-gnome3](https://aur.archlinux.org/packages/xmonad-gnome3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xmonad-gnome3)]</sup> from the AUR, or, manually:
+Either install [xmonad-gnome3](https://aur.archlinux.org/packages/xmonad-gnome3/) from the AUR, or, manually:
 
 Add an xmonad session file for use by gnome-session (`/usr/share/gnome-session/sessions/xmonad.session`):
 
@@ -529,7 +529,7 @@ If you have problems, like Java application Windows not resizing, or menus immed
 
 See [Vim#Empty space at the bottom of gVim windows](/index.php/Vim#Empty_space_at_the_bottom_of_gVim_windows "Vim") for a solution which makes the area match the background color.
 
-For [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode"), you can use [rxvt-unicode-patched](https://aur.archlinux.org/packages/rxvt-unicode-patched/)<sup><small>AUR</small></sup>.
+For [rxvt-unicode](/index.php/Rxvt-unicode "Rxvt-unicode"), you can use [rxvt-unicode-patched](https://aur.archlinux.org/packages/rxvt-unicode-patched/).
 
 You can also configure xmonad to respect size hints, but this will leave a gap instead. See [the documentation on Xmonad.Layout.LayoutHints](http://www.eng.uwaterloo.ca/~aavogt/xmonad/docs/xmonad-contrib/XMonad-Layout-LayoutHints.html).
 

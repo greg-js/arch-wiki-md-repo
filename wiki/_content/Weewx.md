@@ -17,7 +17,7 @@
 
 ### Using Pacman to Install Prerequisites
 
-Install [python2](https://www.archlinux.org/packages/?name=python2), [python2-configobj](https://www.archlinux.org/packages/?name=python2-configobj), [python2-cheetah](https://www.archlinux.org/packages/?name=python2-cheetah) and [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow) from the [official repositories](/index.php/Official_repositories "Official repositories"). You may be able to use [python2-imaging](https://aur.archlinux.org/packages/python2-imaging/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") instead of [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), but I have not tried this.
+Install [python2](https://www.archlinux.org/packages/?name=python2), [python2-configobj](https://www.archlinux.org/packages/?name=python2-configobj), [python2-cheetah](https://www.archlinux.org/packages/?name=python2-cheetah) and [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow) from the [official repositories](/index.php/Official_repositories "Official repositories"). You may be able to use [python2-imaging](https://aur.archlinux.org/packages/python2-imaging/) from the [AUR](/index.php/AUR "AUR") instead of [python2-pillow](https://www.archlinux.org/packages/?name=python2-pillow), but I have not tried this.
 
 ### Using PIP to Install Prerequisites
 

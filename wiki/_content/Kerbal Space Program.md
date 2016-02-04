@@ -17,7 +17,7 @@ Since version 0.19, Kerbal Space Program includes a native Linux version. Howeve
 
 ## Installation
 
-Install [kerbalspaceprogram](https://aur.archlinux.org/packages/kerbalspaceprogram/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kerbalspaceprogram)]</sup> from the [AUR](/index.php/AUR "AUR") or install it in [Steam](/index.php/Steam "Steam") client if you bought steam version of the game.
+Install [kerbalspaceprogram](https://aur.archlinux.org/packages/kerbalspaceprogram/) from the [AUR](/index.php/AUR "AUR") or install it in [Steam](/index.php/Steam "Steam") client if you bought steam version of the game.
 
 ## Known issues
 
@@ -34,7 +34,7 @@ This is also relevant if your rocket's parts do not connect.
 
 ### No text display
 
-The game requires Arial and Arial Black fonts, provided in the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> [AUR](/index.php/AUR "AUR") package.
+The game requires Arial and Arial Black fonts, provided in the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) [AUR](/index.php/AUR "AUR") package.
 
 Another alternative is to try to use [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont), from the [official repositories](/index.php/Official_repositories "Official repositories"). This worked using KSP 0.90.0 on x86_64 Arch Linux. YMMV
 

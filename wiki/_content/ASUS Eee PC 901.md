@@ -164,7 +164,7 @@ Your mileage may vary, but experience seems to show that the `ap_scan=1` paramet
 
 #### Option 1: acpi-eeepc-generic
 
-Install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup>. For this package to work, make sure the **eeepc_laptop** and **rfkill** modules are loaded at boot.
+Install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/). For this package to work, make sure the **eeepc_laptop** and **rfkill** modules are loaded at boot.
 
 Consult the notes included with the install for instructions on configuring `/etc/conf.d/acpi-eeepc-generic.conf`.
 

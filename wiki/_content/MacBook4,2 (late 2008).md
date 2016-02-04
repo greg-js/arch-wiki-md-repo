@@ -101,7 +101,7 @@ You will need this for iSight functionality
 
 ### Wireless Setup
 
-This model of Macbook has Broadcom BCM4328(rev03). There are two methods: (a) using [ndiswrapper](/index.php/Ndiswrapper "Ndiswrapper") or (b) using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>
+This model of Macbook has Broadcom BCM4328(rev03). There are two methods: (a) using [ndiswrapper](/index.php/Ndiswrapper "Ndiswrapper") or (b) using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
 
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more information.
 

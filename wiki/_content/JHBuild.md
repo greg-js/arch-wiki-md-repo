@@ -32,8 +32,8 @@ JHBuild was originally written for building [GNOME](/index.php/GNOME "GNOME"), b
 
 [Install](/index.php/Install "Install") a JHBuild variant from the [AUR](/index.php/AUR "AUR"):
 
-*   [jhbuild](https://aur.archlinux.org/packages/jhbuild/)<sup><small>AUR</small></sup> - Stable version.
-*   [jhbuild-git](https://aur.archlinux.org/packages/jhbuild-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jhbuild-git)]</sup> - Development version.
+*   [jhbuild](https://aur.archlinux.org/packages/jhbuild/) - Stable version.
+*   [jhbuild-git](https://aur.archlinux.org/packages/jhbuild-git/) - Development version.
 
 ## Configuration
 
@@ -131,7 +131,7 @@ $ yes 3 | jhbuild --try-checkout build
 
 ## Troubleshooting
 
-**Note:** If you encounter an issue that is not documented below, please report it in a comment on the [jhbuild](https://aur.archlinux.org/packages/jhbuild/)<sup><small>AUR</small></sup> package.
+**Note:** If you encounter an issue that is not documented below, please report it in a comment on the [jhbuild](https://aur.archlinux.org/packages/jhbuild/) package.
 
 ### Python issues
 
@@ -268,10 +268,10 @@ This list includes modules transitively depending on broken modules (i.e. some o
 ## Packages needed to build specific modules
 
 *   gitg requires [gtkspell3](https://www.archlinux.org/packages/?name=gtkspell3)
-*   gtk-vnc requires [perl-text-csv](https://aur.archlinux.org/packages/perl-text-csv/)<sup><small>AUR</small></sup>
-*   latexila requires [lcov](https://aur.archlinux.org/packages/lcov/)<sup><small>AUR</small></sup>
-*   pango requires [libpthread-stubs](https://aur.archlinux.org/packages/libpthread-stubs/)<sup><small>AUR</small></sup>
-*   totem-pl-parser requires [libgcrypt15](https://aur.archlinux.org/packages/libgcrypt15/)<sup><small>AUR</small></sup>
+*   gtk-vnc requires [perl-text-csv](https://aur.archlinux.org/packages/perl-text-csv/)
+*   latexila requires [lcov](https://aur.archlinux.org/packages/lcov/)
+*   pango requires [libpthread-stubs](https://aur.archlinux.org/packages/libpthread-stubs/)
+*   totem-pl-parser requires [libgcrypt15](https://aur.archlinux.org/packages/libgcrypt15/)
 *   xf86-video-intel requires [xorg-server-devel](https://www.archlinux.org/packages/?name=xorg-server-devel)
 *   xwayland requires [xtrans](https://www.archlinux.org/packages/?name=xtrans), [xcmiscproto](https://www.archlinux.org/packages/?name=xcmiscproto), and [bigreqsproto](https://www.archlinux.org/packages/?name=bigreqsproto)
 *   zeitgeist requires [python2-rdflib](https://www.archlinux.org/packages/?name=python2-rdflib)

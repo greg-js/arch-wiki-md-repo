@@ -98,14 +98,14 @@ The [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) pack
 
 ### Modules
 
-The [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> package comes with the following modules:
+The [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) package comes with the following modules:
 
 *   `vmhgfs` - Legacy filesystem driver. Enables legacy sharing implementation between host and guest.
 *   `vmxnet` - for the old VMXNET network adapter.
 
 ### Installation
 
-[Install](/index.php/Install "Install") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want to use shared folders you also need to install [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools) from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want to use shared folders you also need to install [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) from the [AUR](/index.php/AUR "AUR").
 
 Open-VM-Tools reads version information from `/etc/arch-release`, which is empty:
 
@@ -128,7 +128,7 @@ If you are booting into a graphical environment then follow these steps to enabl
 
 Enable the `vmware-vmblock-fuse.service` Systemd service.
 
-If you have installed [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> then you should enable the `dkms.service` Systemd service which automatically recompiles the kernel modules after a kernel update.
+If you have installed [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) then you should enable the `dkms.service` Systemd service which automatically recompiles the kernel modules after a kernel update.
 
 Try to install [gtkmm](https://www.archlinux.org/packages/?name=gtkmm) manually if it does not work properly.
 
@@ -641,7 +641,7 @@ Workstation 11 has a bug where vmware-hostd crashes if an Arch guest is running 
 
 ### Shared folder not mounted after system upgrade
 
-This is probably only happens to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the vmhgfs module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> which belongs to AUR repositiory, therefore would not get's updated automatically by the `pacman -Syu` command. Always update the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/)<sup><small>AUR</small></sup> manually before the system upgrade.
+This is probably only happens to [open-vm-tools](https://www.archlinux.org/packages/?name=open-vm-tools). Since the vmhgfs module belongs to [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) which belongs to AUR repositiory, therefore would not get's updated automatically by the `pacman -Syu` command. Always update the [open-vm-tools-dkms](https://aur.archlinux.org/packages/open-vm-tools-dkms/) manually before the system upgrade.
 
 If you happened to get in to this situation, you need to remove the automount for shared file system, upgrade and do a `mkinitcpio -p linux`.
 

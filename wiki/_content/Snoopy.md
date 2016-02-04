@@ -15,7 +15,7 @@ Snoopy is a program similar to Warcraft III Banlist, aimed at improving the expe
 
 ## Installation
 
-Snoopy can be found in the [AUR](/index.php/AUR "AUR") as package [snoopy](https://aur.archlinux.org/packages/snoopy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/snoopy)]</sup>.
+Snoopy can be found in the [AUR](/index.php/AUR "AUR") as package [snoopy](https://aur.archlinux.org/packages/snoopy/).
 
 ## Getting started
 

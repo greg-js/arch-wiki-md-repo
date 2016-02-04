@@ -196,15 +196,15 @@ Also please note that:
 
 ### Java SE
 
-Several packages from [AUR](/index.php/AUR "AUR") provide Oracle's implementations of JRE and JDK, but the main ones are [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup>, [server-jre](https://aur.archlinux.org/packages/server-jre/)<sup><small>AUR</small></sup> and [jdk](https://aur.archlinux.org/packages/jdk/)<sup><small>AUR</small></sup>.
+Several packages from [AUR](/index.php/AUR "AUR") provide Oracle's implementations of JRE and JDK, but the main ones are [jre](https://aur.archlinux.org/packages/jre/), [server-jre](https://aur.archlinux.org/packages/server-jre/) and [jdk](https://aur.archlinux.org/packages/jdk/).
 
 #### Java SE 6/7
 
-Older versions include [jre6](https://aur.archlinux.org/packages/jre6/)<sup><small>AUR</small></sup>/[jre7](https://aur.archlinux.org/packages/jre7/)<sup><small>AUR</small></sup> and [jdk6](https://aur.archlinux.org/packages/jdk6/)<sup><small>AUR</small></sup>/[jdk7](https://aur.archlinux.org/packages/jdk7/)<sup><small>AUR</small></sup>.
+Older versions include [jre6](https://aur.archlinux.org/packages/jre6/)/[jre7](https://aur.archlinux.org/packages/jre7/) and [jdk6](https://aur.archlinux.org/packages/jdk6/)/[jdk7](https://aur.archlinux.org/packages/jdk7/).
 
 ### Oracle JRockit
 
-[JRockit](http://www.oracle.com/technetwork/middleware/jrockit/overview/index.html) is Oracle's JIT version of Java, available as [jrockit](https://aur.archlinux.org/packages/jrockit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jrockit)]</sup>.
+[JRockit](http://www.oracle.com/technetwork/middleware/jrockit/overview/index.html) is Oracle's JIT version of Java, available as [jrockit](https://aur.archlinux.org/packages/jrockit/).
 
 ### VMkit
 
@@ -212,7 +212,7 @@ Older versions include [jre6](https://aur.archlinux.org/packages/jre6/)<sup><sma
 
 ### Parrot VM
 
-[Parrot](http://www.parrot.org/) is a VM that offers experimental [support for Java](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: Either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/) or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk). [parrot](https://www.archlinux.org/packages/?name=parrot) is available in the [official repositories](/index.php/Official_repositories "Official repositories") and [parrot-git](https://aur.archlinux.org/packages/parrot-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/parrot-git)]</sup> in the AUR.
+[Parrot](http://www.parrot.org/) is a VM that offers experimental [support for Java](http://trac.parrot.org/parrot/wiki/Languages) through two different methods: Either as a [Java VM bytecode translator](http://code.google.com/p/parrot-jvm/) or as a [Java compiler targeting the Parrot VM](https://github.com/chrisdolan/perk). [parrot](https://www.archlinux.org/packages/?name=parrot) is available in the [official repositories](/index.php/Official_repositories "Official repositories") and [parrot-git](https://aur.archlinux.org/packages/parrot-git/) in the AUR.
 
 ## Troubleshooting
 
@@ -235,7 +235,7 @@ This works because the JVM contains a hard-coded list of known, non-re-parenting
 
 ### Illegible fonts
 
-In addition to the suggestions mentioned below in [#Better font rendering](#Better_font_rendering), some fonts may still not be legible afterwards. If this is the case, there is a good chance Microsoft fonts are being used. Install [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+In addition to the suggestions mentioned below in [#Better font rendering](#Better_font_rendering), some fonts may still not be legible afterwards. If this is the case, there is a good chance Microsoft fonts are being used. Install [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) from the [AUR](/index.php/AUR "AUR").
 
 ### Missing text in some applications
 

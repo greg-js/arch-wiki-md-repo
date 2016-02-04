@@ -13,7 +13,7 @@ Mod_python is an [Apache](/index.php/Apache "Apache") module that embeds the [Py
 
 ## Installation
 
-Install the [mod_python](https://aur.archlinux.org/packages/mod_python/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR").
+Install the [mod_python](https://aur.archlinux.org/packages/mod_python/) package in the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

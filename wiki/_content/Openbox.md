@@ -204,11 +204,11 @@ Several GUI applications are available to quickly and easily configure your Open
 
 *   **obkey** — Configure Openbox keyboard shortcuts
 
-	[https://code.google.com/p/obkey/](https://code.google.com/p/obkey/) || [obkey](https://aur.archlinux.org/packages/obkey/)<sup><small>AUR</small></sup>
+	[https://code.google.com/p/obkey/](https://code.google.com/p/obkey/) || [obkey](https://aur.archlinux.org/packages/obkey/)
 
 *   **ob-autostart** — A simple autostart application for Openbox.
 
-	[http://pastebin.com/012YgXTk](http://pastebin.com/012YgXTk) || [ob-autostart](https://aur.archlinux.org/packages/ob-autostart/)<sup><small>AUR</small></sup>
+	[http://pastebin.com/012YgXTk](http://pastebin.com/012YgXTk) || [ob-autostart](https://aur.archlinux.org/packages/ob-autostart/)
 
 Programs and applications relating to the configuration of Openbox's desktop menu are discussed in the [Menus](#Menus) section.
 
@@ -234,7 +234,7 @@ Where intending to add this command as a keybind to `~/.config/openbox/rc.xml`, 
 
 ## Keybinds
 
-All keybinds must be added to the `~/.config/openbox/rc.xml` file, and below the `<!-- Keybindings for running aplications -->` heading. Although a brief overview has been provided here, a more in-depth explanation of keybindings can be found at [openbox.org](http://openbox.org/wiki/Help:Bindings). [obkey](https://aur.archlinux.org/packages/obkey/)<sup><small>AUR</small></sup> is a utility for adjust key-binding. Before using obkey, you should use obconf to create `~/.config/openbox/rc.xml`.
+All keybinds must be added to the `~/.config/openbox/rc.xml` file, and below the `<!-- Keybindings for running aplications -->` heading. Although a brief overview has been provided here, a more in-depth explanation of keybindings can be found at [openbox.org](http://openbox.org/wiki/Help:Bindings). [obkey](https://aur.archlinux.org/packages/obkey/) is a utility for adjust key-binding. Before using obkey, you should use obconf to create `~/.config/openbox/rc.xml`.
 
 ### Special keys
 
@@ -366,7 +366,7 @@ In the following example, [MPD](/index.php/MPD "MPD") has been configured to use
 
 ### Media player control
 
-The [playerctl](https://aur.archlinux.org/packages/playerctl/)<sup><small>AUR</small></sup> command-line utility can be used to bind multimedia keys to player actions. It should work with most media players.
+The [playerctl](https://aur.archlinux.org/packages/playerctl/) command-line utility can be used to bind multimedia keys to player actions. It should work with most media players.
 
 ```
 <keybind key="XF86AudioPlay">
@@ -448,7 +448,7 @@ However, it should be noted that once a window has been 'snapped' to an edge, it
 
 ```
 
-This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/)<sup><small>AUR</small></sup> are also available to automatically simulate window snapping behaviour without the use of keybinds.
+This [Ubuntu forum thread](http://ubuntuforums.org/showthread.php?t=1796793) provides more information. Applications such as [opensnap-git](https://aur.archlinux.org/packages/opensnap-git/) are also available to automatically simulate window snapping behaviour without the use of keybinds.
 
 ### Desktop menu
 
@@ -559,9 +559,9 @@ This type of menu is in essence a script that provides dynamic, refreshed lists 
 
 #### Examples
 
-*   [openbox-xdgmenu](https://aur.archlinux.org/packages/openbox-xdgmenu/)<sup><small>AUR</small></sup>: fast xdg-menu converter to xml-pipe-menu
-*   [obfilebrowser](https://aur.archlinux.org/packages/obfilebrowser/)<sup><small>AUR</small></sup>: Application and file browser
-*   [obdevicemenu](https://aur.archlinux.org/packages/obdevicemenu/)<sup><small>AUR</small></sup>: Management of removable media with [Udisks](/index.php/Udisks "Udisks")
+*   [openbox-xdgmenu](https://aur.archlinux.org/packages/openbox-xdgmenu/): fast xdg-menu converter to xml-pipe-menu
+*   [obfilebrowser](https://aur.archlinux.org/packages/obfilebrowser/): Application and file browser
+*   [obdevicemenu](https://aur.archlinux.org/packages/obdevicemenu/): Management of removable media with [Udisks](/index.php/Udisks "Udisks")
 *   [wifi pipe menu](https://bbs.archlinux.org/viewtopic.php?pid=1345031): Wireless networking using [Netctl](/index.php/Netctl "Netctl")
 
 [Openbox.org](http://openbox.org/download-pipemenus.php) also provides a further list of pipe menus.
@@ -574,9 +574,9 @@ A menu generator will have to be executed from the `~/.config/openbox/menu.xml` 
 
 #### obmenu-generator
 
-**Tip:** icons can still be disabled in [obmenu-generator](https://aur.archlinux.org/packages/obmenu-generator/)<sup><small>AUR</small></sup>, even where enabled in `~/.config/openbox/rc.xml`.
+**Tip:** icons can still be disabled in [obmenu-generator](https://aur.archlinux.org/packages/obmenu-generator/), even where enabled in `~/.config/openbox/rc.xml`.
 
-[obmenu-generator](https://aur.archlinux.org/packages/obmenu-generator/)<sup><small>AUR</small></sup> is highly recommended despite being an unofficial package. With the ability to be used as a static or dynamic menu, it is highly configurable, powerful, and versatile. Menu categories and individual entries may also be easily hidden, customised, and/or added with ease. The [official homepage](http://trizenx.blogspot.co.uk/2012/02/obmenu-generator.html) provides further information and screenshots.
+[obmenu-generator](https://aur.archlinux.org/packages/obmenu-generator/) is highly recommended despite being an unofficial package. With the ability to be used as a static or dynamic menu, it is highly configurable, powerful, and versatile. Menu categories and individual entries may also be easily hidden, customised, and/or added with ease. The [official homepage](http://trizenx.blogspot.co.uk/2012/02/obmenu-generator.html) provides further information and screenshots.
 
 Below is an example of how obmenu-generator would be dynamically executed without icons in `~/.config/openbox/menu.xml`:
 
@@ -600,11 +600,11 @@ To automatically iconify entries, the `-i` option would be added:
 
 **Tip:** If this menu produces an error, it may be solved by enabling icons in `~/.config/openbox/rc.xml`.
 
-[openbox-menu](https://aur.archlinux.org/packages/openbox-menu/)<sup><small>AUR</small></sup> uses the [LXDE](/index.php/LXDE "LXDE") [menu-cache](http://sourceforge.net/projects/lxde/files/menu-cache/) to create dynamic menus. The [official homepage](http://mimasgpc.free.fr/openbox-menu_en.html) provides further information and screenshots.
+[openbox-menu](https://aur.archlinux.org/packages/openbox-menu/) uses the [LXDE](/index.php/LXDE "LXDE") [menu-cache](http://sourceforge.net/projects/lxde/files/menu-cache/) to create dynamic menus. The [official homepage](http://mimasgpc.free.fr/openbox-menu_en.html) provides further information and screenshots.
 
 #### obmenugen
 
-[Obmenugen](https://aur.archlinux.org/packages/Obmenugen/)<sup><small>AUR</small></sup> can be used to a generate static or dynamic application menu based on `.desktop` files. The [official homepage](http://obmenugen.sourceforge.net/) provides further information.
+[Obmenugen](https://aur.archlinux.org/packages/Obmenugen/) can be used to a generate static or dynamic application menu based on `.desktop` files. The [official homepage](http://obmenugen.sourceforge.net/) provides further information.
 
 ### Menu icons
 
@@ -629,7 +629,7 @@ Where using a static menu, it will then be necessary to edit the `~/.config/open
 [xdotool](https://www.archlinux.org/packages/?name=xdotool) is a package that can issue commands to simulate key presses / keybinds, meaning that it is possible to use it to invoke keybind-related actions without having to actually press their assigned keys. As this includes the ability to invoke an assigned keybind for the Openbox desktop menu, it is therefore possible to use XDoTool to turn the Openbox desktop menu into a panel menu. Especially where the desktop menu is heavily customised and feature-rich, this may prove very useful to:
 
 *   Replace an existing panel menu
-*   Implement a panel menu where otherwise not provided or possible (e.g. for [tint2-git](https://aur.archlinux.org/packages/tint2-git/)<sup><small>AUR</small></sup>)
+*   Implement a panel menu where otherwise not provided or possible (e.g. for [tint2-git](https://aur.archlinux.org/packages/tint2-git/))
 *   Compensate where losing access to the desktop menu due to the use of an application like [xfdesktop](#xfdesktop) to [manage the desktop](#Desktop_icons_and_wallpapers).
 
 Once XDoTool has been installed - if not already present - it will be necessary to create a keybind to access the root menu in `~/.config/openbox/rc.xml`, and again below the `<!-- Keybindings for running aplications -->` heading. For example, the following code will bring up the menu by pressing `CTRL` + `m`:
@@ -671,7 +671,7 @@ $ chmod +x ~/.config/obpanelmenu.sh
 
 ```
 
-Executing it will bring up the Openbox desktop menu. Consequently, where using a panel that supports drag-and-drop functionality to add new launchers, simply drag the executable script onto it before changing the icon to suit personal taste. For instructions on how to use this executable script with [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/)<sup><small>AUR</small></sup> - a derivative of the popular [tint2](https://www.archlinux.org/packages/?name=tint2) panel that allows launchers to be added - see [Tint2-Svn launchers](/index.php/Tint2#Application_Launchers_in_tint2-svn_.28AUR.29 "Tint2").
+Executing it will bring up the Openbox desktop menu. Consequently, where using a panel that supports drag-and-drop functionality to add new launchers, simply drag the executable script onto it before changing the icon to suit personal taste. For instructions on how to use this executable script with [tint2-svn](https://aur.archlinux.org/packages/tint2-svn/) - a derivative of the popular [tint2](https://www.archlinux.org/packages/?name=tint2) panel that allows launchers to be added - see [Tint2-Svn launchers](/index.php/Tint2#Application_Launchers_in_tint2-svn_.28AUR.29 "Tint2").
 
 ## Desktop theming
 
@@ -710,13 +710,13 @@ Where expected files and directories are present and correct, then on occasion i
 
 #### Theme looks broken
 
-Of course, the first line of enquiry would be to check that it is not just a badly made, broken theme! Otherwise, ensure that the [Openbox GTK fix](/index.php/Openbox#GTK.2B_2 "Openbox")<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-11-28]</sup> has been implemented, and then re-start the session. Unfortunately some older themes can simply break if not maintained sufficiently to keep pace with the changes incurred by [GTK](/index.php/GTK "GTK") updates. To avoid such occurrences, it is best to check that desired themes have recently been created or at least updated / patched.
+Of course, the first line of enquiry would be to check that it is not just a badly made, broken theme! Otherwise, ensure that the [Openbox GTK fix](/index.php/Openbox#GTK.2B_2 "Openbox") has been implemented, and then re-start the session. Unfortunately some older themes can simply break if not maintained sufficiently to keep pace with the changes incurred by [GTK](/index.php/GTK "GTK") updates. To avoid such occurrences, it is best to check that desired themes have recently been created or at least updated / patched.
 
 ### Edit or create new themes
 
 **Tip:** Where deciding to modify an existing theme (e.g. the colour scheme), it would be best to work on a copy of it, rather than the original. This will retain the original should anything go wrong, and ensure that your changes are not over-written through an update.
 
-The process of creating new or modifying existing themes is covered extensively at the official [openbox.org](http://openbox.org/wiki/Help:Themes) website. [obtheme](https://aur.archlinux.org/packages/obtheme/)<sup><small>AUR</small></sup> is a user-friendly GUI for doing so.
+The process of creating new or modifying existing themes is covered extensively at the official [openbox.org](http://openbox.org/wiki/Help:Themes) website. [obtheme](https://aur.archlinux.org/packages/obtheme/) is a user-friendly GUI for doing so.
 
 ## Compositing effects
 
@@ -781,13 +781,13 @@ See the [Oblogout](/index.php/Oblogout "Oblogout") article for an overview on ho
 
 ## Openbox for multihead users
 
-While Openbox provides better than average multihead support on its own, [openbox-multihead-git](https://aur.archlinux.org/packages/openbox-multihead-git/)<sup><small>AUR</small></sup> provides a development branch called **Openbox Multihead** that gives multihead users per-monitor desktops. This model is not commonly found in floating window managers, but exists mainly in tiling window managers. It is explained well on the [Xmonad web site](http://xmonad.org/tour.html#workspace). Also, please see [README.MULTIHEAD](https://github.com/BurntSushi/openbox-multihead/blob/multihead/README.MULTIHEAD) for a more comprehensive description of the new features and configuration options found in Openbox Multihead.
+While Openbox provides better than average multihead support on its own, [openbox-multihead-git](https://aur.archlinux.org/packages/openbox-multihead-git/) provides a development branch called **Openbox Multihead** that gives multihead users per-monitor desktops. This model is not commonly found in floating window managers, but exists mainly in tiling window managers. It is explained well on the [Xmonad web site](http://xmonad.org/tour.html#workspace). Also, please see [README.MULTIHEAD](https://github.com/BurntSushi/openbox-multihead/blob/multihead/README.MULTIHEAD) for a more comprehensive description of the new features and configuration options found in Openbox Multihead.
 
 Openbox Multihead will function like normal Openbox when only a single head is available.
 
-A downside to using Openbox Multihead is that it breaks the EWMH assumption that one and only one desktop is visible at any time. Thus, existing pagers will not work well with it. To remedy this, you can install [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/)<sup><small>AUR</small></sup> alongside Openbox Multihead.
+A downside to using Openbox Multihead is that it breaks the EWMH assumption that one and only one desktop is visible at any time. Thus, existing pagers will not work well with it. To remedy this, you can install [pager-multihead-git](https://aur.archlinux.org/packages/pager-multihead-git/) alongside Openbox Multihead.
 
-Finally, [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/)<sup><small>AUR</small></sup> is a new version of [PyTyle](/index.php/PyTyle "PyTyle") that will work with Openbox Multihead.
+Finally, [pytyle3-git](https://aur.archlinux.org/packages/pytyle3-git/) is a new version of [PyTyle](/index.php/PyTyle "PyTyle") that will work with Openbox Multihead.
 
 Both _pytyle3_ and _pager-multihead-git_ will work without Openbox Multihead if only one monitor is active.
 
@@ -1042,7 +1042,7 @@ See the article section [switching between keyboard layouts](/index.php/Keyboard
 
 ### Set grid layout for virtual desktops
 
-Install [obsetlayout](https://aur.archlinux.org/packages/obsetlayout/)<sup><small>AUR</small></sup>. To set a 2x2 grid for example:
+Install [obsetlayout](https://aur.archlinux.org/packages/obsetlayout/). To set a 2x2 grid for example:
 
 ```
 obsetlayout 0 2 2 0

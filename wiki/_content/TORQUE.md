@@ -23,7 +23,7 @@
 
 **Note:** Although TORQUE is a very powerful queuing system, if the goal of the cluster is solely to increase compilation throughput, [distcc](/index.php/Distcc "Distcc") is a much easier and elegant solution.
 
-[Install](/index.php/Install "Install") the [torque](https://aur.archlinux.org/packages/torque/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/torque)]</sup> package found in the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [torque](https://aur.archlinux.org/packages/torque/) package found in the [AUR](/index.php/AUR "AUR").
 
 ## Must haves
 

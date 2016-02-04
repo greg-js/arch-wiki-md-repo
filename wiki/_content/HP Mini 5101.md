@@ -47,7 +47,7 @@ Problem with reconnecting after suspending might be solved by:
 #### Driver Overview
 
 1.  brcmsmac: Works best but the red/blue led isn't working.
-2.  broadcom-wl: Needs to be compiled newly from the AUR ([broadcom-wifi-builder](https://aur.archlinux.org/packages/broadcom-wifi-builder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/broadcom-wifi-builder)]</sup> or [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>) after each kernel upgrade. LED works but reconnecting problem after suspending.
+2.  broadcom-wl: Needs to be compiled newly from the AUR ([broadcom-wifi-builder](https://aur.archlinux.org/packages/broadcom-wifi-builder/) or [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) after each kernel upgrade. LED works but reconnecting problem after suspending.
 3.  b43: Alternatively your network chip may be supported by [b43](/index.php/Broadcom_wireless#b43.2Fb43legacy "Broadcom wireless") (kernel > 2.6.32).
 
 ## Bluetooth

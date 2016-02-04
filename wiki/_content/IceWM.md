@@ -25,7 +25,7 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Icewm "wikipedia:Icewm"):
 
 IceWM can be [installed](/index.php/Installed "Installed") with the [icewm](https://www.archlinux.org/packages/?name=icewm) package.
 
-A forked version of IceWM exists on [GitHub](https://github.com/bbidulock/icewm). It can be installed from either of the following: [icewm2](https://aur.archlinux.org/packages/icewm2/)<sup><small>AUR</small></sup>, [icewm-git](https://aur.archlinux.org/packages/icewm-git/)<sup><small>AUR</small></sup>.
+A forked version of IceWM exists on [GitHub](https://github.com/bbidulock/icewm). It can be installed from either of the following: [icewm2](https://aur.archlinux.org/packages/icewm2/), [icewm-git](https://aur.archlinux.org/packages/icewm-git/).
 
 ## Starting IceWM
 
@@ -53,7 +53,7 @@ See [xinitrc](/index.php/Xinitrc "Xinitrc") for details, such as preserving the 
 
 ## Configuration
 
-Although IceWM configuration is originally text-based, there are GUI-based tools available, notably [icewm-utils](https://aur.archlinux.org/packages/icewm-utils/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR"). However these tools are relatively old and most users prefer to simply edit the text configuration files. Configuration changes from defaults can be made either system wide (in `/etc/icewm/`) or on a user-specific basis (in `~/.icewm/`).
+Although IceWM configuration is originally text-based, there are GUI-based tools available, notably [icewm-utils](https://aur.archlinux.org/packages/icewm-utils/) in the [AUR](/index.php/AUR "AUR"). However these tools are relatively old and most users prefer to simply edit the text configuration files. Configuration changes from defaults can be made either system wide (in `/etc/icewm/`) or on a user-specific basis (in `~/.icewm/`).
 
 To change your icewm configuration from the default, simply copy the default configuration files from `/usr/share/icewm/` to `~/.icewm/`, for example:
 

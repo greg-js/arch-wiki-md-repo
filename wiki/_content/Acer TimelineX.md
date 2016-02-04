@@ -85,7 +85,7 @@ Wi-Fi driver needs to be installed. Open source [brcm80211](/index.php/Broadcom_
 
 #### TimelineX 4820TG
 
-Wi-Fi driver does not work by default. You need to install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> and [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup>. See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
+Wi-Fi driver does not work by default. You need to install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) and [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/). See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
 
 #### TimelineX 3820TG
 

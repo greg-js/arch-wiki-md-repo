@@ -32,9 +32,9 @@ LIO target is included in the kernel since 2.6.38\. However, the iSCSI target fa
 
 The important kernel modules are _target_core_mod_ and _iscsi_target_mod_, which should be in the kernel and loaded automatically.
 
-It is highly recommended to use the free branch versions of the packages: [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)<sup><small>AUR</small></sup>, [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/)<sup><small>AUR</small></sup> and [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/)<sup><small>AUR</small></sup>. The original [targetcli](https://aur.archlinux.org/packages/targetcli/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/targetcli)]</sup> is also available but has a different way of saving the configuration using the deprecated _lio-utils_ and depends on _epydoc_.
+It is highly recommended to use the free branch versions of the packages: [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/), [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) and [python-configshell-fb](https://aur.archlinux.org/packages/python-configshell-fb/). The original [targetcli](https://aur.archlinux.org/packages/targetcli/) is also available but has a different way of saving the configuration using the deprecated _lio-utils_ and depends on _epydoc_.
 
-A systemd `target.service` is included in [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/)<sup><small>AUR</small></sup> when you use the free branch and a `/etc/rc.d/target` in [lio-utils](https://aur.archlinux.org/packages/lio-utils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lio-utils)]</sup> when you use the original _targetcli_ or _lio-utils_ directly.
+A systemd `target.service` is included in [python-rtslib-fb](https://aur.archlinux.org/packages/python-rtslib-fb/) when you use the free branch and a `/etc/rc.d/target` in [lio-utils](https://aur.archlinux.org/packages/lio-utils/) when you use the original _targetcli_ or _lio-utils_ directly.
 
 You start LIO target with `# systemctl start target` 
 
@@ -153,27 +153,27 @@ The first two fields are the username and password of the target. The initiator 
 
 ### Using (plain) LIO utils
 
-You have to install [lio-utils](https://aur.archlinux.org/packages/lio-utils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lio-utils)]</sup> from [AUR](/index.php/AUR "AUR") and the dependencies (python2).
+You have to install [lio-utils](https://aur.archlinux.org/packages/lio-utils/) from [AUR](/index.php/AUR "AUR") and the dependencies (python2).
 
 ### Tips & Tricks
 
-*   With `targetcli sessions` you can list the current open sessions. This command is included in the [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)<sup><small>AUR</small></sup> package, but not in _lio-utils_ or the original _targetcli_.
+*   With `targetcli sessions` you can list the current open sessions. This command is included in the [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/) package, but not in _lio-utils_ or the original _targetcli_.
 
 ### Upstream Documentation
 
 *   [targetcli](http://www.linux-iscsi.org/wiki/Targetcli)
 *   [LIO utils](http://www.linux-iscsi.org/wiki/Lio-utils_HOWTO)
-*   You can also use `man targetcli` when you installed the _free branch_ version [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/)<sup><small>AUR</small></sup>.
+*   You can also use `man targetcli` when you installed the _free branch_ version [targetcli-fb](https://aur.archlinux.org/packages/targetcli-fb/).
 
 ## Setup with SCSI Target Framework (STGT/TGT)
 
-You will need the Package [tgt](https://aur.archlinux.org/packages/tgt/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+You will need the Package [tgt](https://aur.archlinux.org/packages/tgt/) from [AUR](/index.php/AUR "AUR").
 
 See: [TGT iSCSI Target](/index.php/TGT_iSCSI_Target "TGT iSCSI Target")
 
 ## Setup with iSCSI Enterprise Target (IET)
 
-You will need [iscsitarget-kernel](https://aur.archlinux.org/packages/iscsitarget-kernel/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/iscsitarget-kernel)]</sup> and [iscsitarget-usr](https://aur.archlinux.org/packages/iscsitarget-usr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/iscsitarget-usr)]</sup> from [AUR](/index.php/AUR "AUR").
+You will need [iscsitarget-kernel](https://aur.archlinux.org/packages/iscsitarget-kernel/) and [iscsitarget-usr](https://aur.archlinux.org/packages/iscsitarget-usr/) from [AUR](/index.php/AUR "AUR").
 
 ### Create the Target
 

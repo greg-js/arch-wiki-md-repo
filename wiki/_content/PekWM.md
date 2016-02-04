@@ -70,7 +70,7 @@ Now you can modify the menu file by hand, or simply regenerate the list whenever
 
 #### Using pekwm-menu
 
-[pekwm-menu](https://aur.archlinux.org/packages/pekwm-menu/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") can create a dynamically updated applications menu based on the freedesktop.org xdg menu specification. Usage is fairly straightforward. Add a section similar to the following to your `~/.pekwm/menu` file:
+[pekwm-menu](https://aur.archlinux.org/packages/pekwm-menu/) from the [AUR](/index.php/AUR "AUR") can create a dynamically updated applications menu based on the freedesktop.org xdg menu specification. Usage is fairly straightforward. Add a section similar to the following to your `~/.pekwm/menu` file:
 
 ```
  Submenu = "Applications" { Icon = "ICON"

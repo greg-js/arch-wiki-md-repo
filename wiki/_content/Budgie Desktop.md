@@ -6,7 +6,7 @@ At this time Budgie is heavily under development, so you can expect minor bugs a
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup> package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/)<sup><small>AUR</small></sup> for current git master.
+[Install](/index.php/Install "Install") the [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) package for the latest stable or [budgie-desktop-git](https://aur.archlinux.org/packages/budgie-desktop-git/) for current git master.
 
 For additional settings, install [gnome-tweak-tool](https://www.archlinux.org/packages/?name=gnome-tweak-tool).
 

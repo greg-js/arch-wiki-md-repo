@@ -30,11 +30,11 @@ See [Network configuration#Broadcom BCM57780](/index.php/Network_configuration#B
 
 ## Wireless
 
-The Broadcom BCM4313 card requires the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> module which is available in the AUR.
+The Broadcom BCM4313 card requires the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) module which is available in the AUR.
 
 Intel Corporation WiMAX/WiFi Link 6050 Series works out of the box (2.6.34).
 
-For WiMAX requires the kernel 2.6.35, [i2400m-firmware](https://aur.archlinux.org/packages.php?ID=39403)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-26]</sup>, [libeap](https://aur.archlinux.org/packages/libeap/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libeap)]</sup>, [wimax-tools](https://aur.archlinux.org/packages/wimax-tools/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wimax-tools)]</sup> and [wimax-network-service](https://aur.archlinux.org/packages/wimax-network-service/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wimax-network-service)]</sup> which is available in the AUR.
+For WiMAX requires the kernel 2.6.35, [i2400m-firmware](https://aur.archlinux.org/packages.php?ID=39403), [libeap](https://aur.archlinux.org/packages/libeap/), [wimax-tools](https://aur.archlinux.org/packages/wimax-tools/) and [wimax-network-service](https://aur.archlinux.org/packages/wimax-network-service/) which is available in the AUR.
 
 ## Graphics
 

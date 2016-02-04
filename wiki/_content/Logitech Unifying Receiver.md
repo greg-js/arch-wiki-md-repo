@@ -19,11 +19,11 @@ The [Logitech Unifying Receiver](http://www.logitech.com/349/6072) is a wireless
 
 ## Installation
 
-Benjamin's program can directly be installed from AUR: [pairing_tool](https://aur.archlinux.org/packages/pairing_tool/)<sup><small>AUR</small></sup>.
+Benjamin's program can directly be installed from AUR: [pairing_tool](https://aur.archlinux.org/packages/pairing_tool/).
 
-Solaar is also available from the AUR: [solaar](https://aur.archlinux.org/packages/solaar/)<sup><small>AUR</small></sup>. At installation the Solaar package is creating the group plugdev. After installation add you user to the plugdev group (`# gpasswd -a $USER plugdev`) to use Solaar as non-root user.
+Solaar is also available from the AUR: [solaar](https://aur.archlinux.org/packages/solaar/). At installation the Solaar package is creating the group plugdev. After installation add you user to the plugdev group (`# gpasswd -a $USER plugdev`) to use Solaar as non-root user.
 
-ltunify is now also available from the AUR: [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/)<sup><small>AUR</small></sup>. Create the plugdev group before installation and add yourself to it (to avoid the need of running ltunify as root). After installation, you can edit the file `/etc/udev/rules.d/42-logitech-unify-permissions.rules` to change the device group (the default group is plugdev).
+ltunify is now also available from the AUR: [ltunify-git](https://aur.archlinux.org/packages/ltunify-git/). Create the plugdev group before installation and add yourself to it (to avoid the need of running ltunify as root). After installation, you can edit the file `/etc/udev/rules.d/42-logitech-unify-permissions.rules` to change the device group (the default group is plugdev).
 
 ## Usage
 

@@ -173,7 +173,7 @@ For Qt4 applications to have a consistent appearance, there are two options: Ins
 
 	GTK+
 
-The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>, a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in _System Settings > Application Style > GNOME Application Style_.
+The recommended theme for a pleasant appearance in GTK+ applications is [breeze-gtk](https://www.archlinux.org/packages/?name=breeze-gtk) or [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/), a GTK+ theme designed to mimic the appearance of Plasma 5 Breeze. Install [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config) and select the installed GTK-theme for GTK2/GTK3-Theme in _System Settings > Application Style > GNOME Application Style_.
 
 ##### Widgets
 
@@ -315,7 +315,7 @@ Plasma has an integrated power saving service called "**Powerdevil Power Managem
 
 ### Monitoring changes on local files and directories
 
-KDE now uses **inotify** directly from the kernel with **kdirwatch** (included in kdelibs), so Gamin or FAM are no longer needed. You may want to install this [kdirwatch](https://aur.archlinux.org/packages/kdirwatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdirwatch)]</sup> from AUR which is a GUI frontend for kdirwatch.
+KDE now uses **inotify** directly from the kernel with **kdirwatch** (included in kdelibs), so Gamin or FAM are no longer needed. You may want to install this [kdirwatch](https://aur.archlinux.org/packages/kdirwatch/) from AUR which is a GUI frontend for kdirwatch.
 
 ### Autostarting applications
 
@@ -338,24 +338,24 @@ KCM stands for **KC**onfig **M**odule. KCMs can help you configure your system b
 **Configuration for look and feel of GTK applications.**
 
 *   [kde-gtk-config](https://www.archlinux.org/packages/?name=kde-gtk-config)
-*   [kcm-gtk](https://aur.archlinux.org/packages/kcm-gtk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-gtk)]</sup>
-*   [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)<sup><small>AUR</small></sup>
+*   [kcm-gtk](https://aur.archlinux.org/packages/kcm-gtk/)
+*   [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)
 
 **Configuration for the GRUB bootloader.**
 
-*   [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub2-editor)]</sup>
+*   [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
 
 **Configuration for the [Uncomplicated Firewall](/index.php/Uncomplicated_Firewall "Uncomplicated Firewall") (UFW)**
 
-*   [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)<sup><small>AUR</small></sup>
+*   [kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)
 
 **Configuration for [PolicyKit](/index.php/PolicyKit "PolicyKit")**
 
-*   [kcm-polkit-kde-git](https://aur.archlinux.org/packages/kcm-polkit-kde-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm-polkit-kde-git)]</sup>
+*   [kcm-polkit-kde-git](https://aur.archlinux.org/packages/kcm-polkit-kde-git/)
 
 **Configuration for Wacom tablets**
 
-*   [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)<sup><small>AUR</small></sup>
+*   [kcm-wacomtablet](https://aur.archlinux.org/packages/kcm-wacomtablet/)
 
 **Configuration for systemd**
 
@@ -379,7 +379,7 @@ Alternatively you can edit your `~/.config/baloofilerc` file ([info](https://com
 
 Once you added additional folders to the blacklist or disabled Baloo entirely, a process named `baloo_file_cleaner` removes all unneeded index files automatically. They are stored under `~/.local/share/baloo/`.
 
-More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kcm_baloo_advanced)]</sup>.
+More advanced configuration options are available through [kcm_baloo_advanced](https://aur.archlinux.org/packages/kcm_baloo_advanced/).
 
 #### How do I index a removable device?
 
@@ -482,7 +482,7 @@ To install all Telepathy protocols, install the [telepathy](https://www.archlinu
 
 #### Use Telegram with KDE Telepathy
 
-Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), installing [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/)<sup><small>AUR</small></sup> or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/)<sup><small>AUR</small></sup> and [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/)<sup><small>AUR</small></sup>. The username is the Telegram account telephone number (complete with the national prefix '+xx', e.g. '+49' for Germany). The configuration through the GUI may be tricky: if the phone number is not accepted when configuring a new account in the KDE Telepathy client (with an error message complaining about an invalid parameter which prevents the account creation), insert it between single quotes and then remove the quotes manually from the configuration file (`~/.local/share/telepathy/mission-control/accounts.cfg`) after the account creation (if the quotes are not removed after, an authentication error should rise). Note that the configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
+Telegram protocol is available using [telepathy-haze](https://www.archlinux.org/packages/?name=telepathy-haze), installing [telegram-purple](https://aur.archlinux.org/packages/telegram-purple/) or [telegram-purple-git](https://aur.archlinux.org/packages/telegram-purple-git/) and [telepathy-morse-git](https://aur.archlinux.org/packages/telepathy-morse-git/). The username is the Telegram account telephone number (complete with the national prefix '+xx', e.g. '+49' for Germany). The configuration through the GUI may be tricky: if the phone number is not accepted when configuring a new account in the KDE Telepathy client (with an error message complaining about an invalid parameter which prevents the account creation), insert it between single quotes and then remove the quotes manually from the configuration file (`~/.local/share/telepathy/mission-control/accounts.cfg`) after the account creation (if the quotes are not removed after, an authentication error should rise). Note that the configuration file should be edited manually when KDE Telepathy is not running, e.g. when there is no KDE desktop session active, otherwise manual changes may be overwritten by the software.
 
 ## Tips and tricks
 
@@ -692,7 +692,7 @@ The raster paint engine enables the CPU to do the majority of the painting, as o
 
 Since Qt 4.7+, recompiling Qt is not needed. Simply export `QT_GRAPHICSSYSTEM=raster`, or `opengl`, or `native` (for the default). Raster depends on the CPU, OpenGL depends on the GPU and high driver support, and Native is just using the X11 rendering (mixture, usually).
 
-**The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/)<sup><small>AUR</small></sup> from AUR and configure this particular Qt setting through _System Settings > Qt Graphics System_.
+**The best and automatic way to do that** is to install [kcm-qt-graphicssystem](https://aur.archlinux.org/packages/kcm-qt-graphicssystem/) from AUR and configure this particular Qt setting through _System Settings > Qt Graphics System_.
 
 For more information, consult this [KDE Developer blog entry](http://apachelog.wordpress.com/2010/09/05/qt-graphics-system-kcm/) and/or this [Qt Developer blog entry](http://labs.trolltech.com/blogs/2009/12/18/qt-graphics-and-performance-the-raster-engine/).
 

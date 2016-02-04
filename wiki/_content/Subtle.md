@@ -21,7 +21,7 @@ Subtle is configured with [Ruby](/index.php/Ruby "Ruby") for [Xorg](/index.php/X
 
 ## Installing
 
-[Install](/index.php/Install "Install") the [subtle-git](https://aur.archlinux.org/packages/subtle-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [subtle-git](https://aur.archlinux.org/packages/subtle-git/) package.
 
 ## Starting Subtle
 

@@ -44,7 +44,7 @@ According to the [official documentation](http://nagios.sourceforge.net/docs/3_0
 
 ### Installation
 
-Install [nagios](https://aur.archlinux.org/packages/nagios/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [nagios](https://aur.archlinux.org/packages/nagios/) from the [AUR](/index.php/AUR "AUR").
 
 Users may also want to install [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins). When you do, make sure to edit `/etc/nagios/resource.cfg` later to reflect the new paths:
 

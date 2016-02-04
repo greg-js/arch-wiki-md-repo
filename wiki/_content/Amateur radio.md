@@ -34,7 +34,7 @@ then logoff and logon.
 
 *   **Hamlib** — provides an interface between hardware and radio control programs. It is a software layer to facilitate the control of radios and other hardware (eg. for logging, digital modes) and is not a stand-alone application.
 
-	[http://sourceforge.net/apps/mediawiki/hamlib/](http://sourceforge.net/apps/mediawiki/hamlib/) || [hamlib](https://aur.archlinux.org/packages/hamlib/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/apps/mediawiki/hamlib/](http://sourceforge.net/apps/mediawiki/hamlib/) || [hamlib](https://aur.archlinux.org/packages/hamlib/)
 
 *   **Soundmodem** — was written by Tom Sailer (HB9JNX/AE4WA) to allow a standard PC soundcard to act as a packet radio modem for use with the various AX.25 communication modes. The data rate can be as high as 9600 baud depending on the hardware and application. Soundmodem can be used as a KISS modem on the serial port or as an AX.25 network device. To use soundmodem as an MKISS network device, the kernel must be re-built with MKISS modules. More information is in the [Xastir wiki](http://www.xastir.org/wiki/index.php/HowTo:SoundModem)
 
@@ -46,31 +46,31 @@ then logoff and logon.
 
 	 `# chmod 666 /dev/soundmodem0` 
 
-	[http://www.baycom.org/~tom/ham/soundmodem/](http://www.baycom.org/~tom/ham/soundmodem/) || [soundmodem](https://aur.archlinux.org/packages/soundmodem/)<sup><small>AUR</small></sup>
+	[http://www.baycom.org/~tom/ham/soundmodem/](http://www.baycom.org/~tom/ham/soundmodem/) || [soundmodem](https://aur.archlinux.org/packages/soundmodem/)
 
 *   **Grig** — simple control program based on Hamlib
 
-	[http://groundstation.sourceforge.net/grig/](http://groundstation.sourceforge.net/grig/) || [grig](https://aur.archlinux.org/packages/grig/)<sup><small>AUR</small></sup>
+	[http://groundstation.sourceforge.net/grig/](http://groundstation.sourceforge.net/grig/) || [grig](https://aur.archlinux.org/packages/grig/)
 
 *   **gMFSK** — is a user interface that supports a multitude of digital modes. It uses hamlib and xlog for logging
 
-	[http://gmfsk.connect.fi](http://gmfsk.connect.fi) || [gmfsk](https://aur.archlinux.org/packages/gmfsk/)<sup><small>AUR</small></sup>
+	[http://gmfsk.connect.fi](http://gmfsk.connect.fi) || [gmfsk](https://aur.archlinux.org/packages/gmfsk/)
 
 *   **lysdr** — highly customizable radio interface
 
-	[https://github.com/gordonjcp/lysdr](https://github.com/gordonjcp/lysdr) || [lysdr-git](https://aur.archlinux.org/packages/lysdr-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lysdr-git)]</sup>
+	[https://github.com/gordonjcp/lysdr](https://github.com/gordonjcp/lysdr) || [lysdr-git](https://aur.archlinux.org/packages/lysdr-git/)
 
 *   **linrad** — Software defined radio by SM5BSZ
 
-	[http://www.sm5bsz.com/linuxdsp/linrad.htm](http://www.sm5bsz.com/linuxdsp/linrad.htm) || [linrad](https://aur.archlinux.org/packages/linrad/)<sup><small>AUR</small></sup>
+	[http://www.sm5bsz.com/linuxdsp/linrad.htm](http://www.sm5bsz.com/linuxdsp/linrad.htm) || [linrad](https://aur.archlinux.org/packages/linrad/)
 
 *   **quisk** — Software defined radio by N2ADR
 
-	[http://james.ahlstrom.name/quisk/](http://james.ahlstrom.name/quisk/) || [quisk](https://aur.archlinux.org/packages/quisk/)<sup><small>AUR</small></sup>
+	[http://james.ahlstrom.name/quisk/](http://james.ahlstrom.name/quisk/) || [quisk](https://aur.archlinux.org/packages/quisk/)
 
 *   **[owx](/index.php/Owx "Owx")** — command-line utility for programming Wouxun radios
 
-	[http://owx.chmurka.net](http://owx.chmurka.net) || [owx](https://aur.archlinux.org/packages/owx/)<sup><small>AUR</small></sup>
+	[http://owx.chmurka.net](http://owx.chmurka.net) || [owx](https://aur.archlinux.org/packages/owx/)
 
 *   **twcw** — extension for cwirc
 
@@ -78,35 +78,35 @@ then logoff and logon.
 
 *   **fldigi** — popular GUI developed by W1HKJ for a variety of digital communication modes
 
-	[http://w1hkj.com/Fldigi.html](http://w1hkj.com/Fldigi.html) || [fldigi](https://aur.archlinux.org/packages/fldigi/)<sup><small>AUR</small></sup>
+	[http://w1hkj.com/Fldigi.html](http://w1hkj.com/Fldigi.html) || [fldigi](https://aur.archlinux.org/packages/fldigi/)
 
 *   **libfap** — APRS packet parser
 
-	[http://pakettiradio.net/libfap/](http://pakettiradio.net/libfap/) || [libfap](https://aur.archlinux.org/packages/libfap/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libfap)]</sup>
+	[http://pakettiradio.net/libfap/](http://pakettiradio.net/libfap/) || [libfap](https://aur.archlinux.org/packages/libfap/)
 
 *   **aprx** — lightweight APRS digipeater and i-Gate interface
 
-	[http://wiki.ham.fi/Aprx.en](http://wiki.ham.fi/Aprx.en) || [aprx-svn](https://aur.archlinux.org/packages/aprx-svn/)<sup><small>AUR</small></sup>
+	[http://wiki.ham.fi/Aprx.en](http://wiki.ham.fi/Aprx.en) || [aprx-svn](https://aur.archlinux.org/packages/aprx-svn/)
 
 *   **xdx** — network client
 
-	[http://www.qsl.net/pg4i/linux/xdx.html](http://www.qsl.net/pg4i/linux/xdx.html) || [xdx](https://aur.archlinux.org/packages/xdx/)<sup><small>AUR</small></sup>
+	[http://www.qsl.net/pg4i/linux/xdx.html](http://www.qsl.net/pg4i/linux/xdx.html) || [xdx](https://aur.archlinux.org/packages/xdx/)
 
-*   [d-rats](https://aur.archlinux.org/packages/d-rats/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/d-rats)]</sup> – D-STAR communication tool
-*   [qsstv](https://aur.archlinux.org/packages/qsstv/)<sup><small>AUR</small></sup> – Slow-scan television
-*   [linpsk](https://aur.archlinux.org/packages/linpsk/)<sup><small>AUR</small></sup> – PSK31
-*   [psk31lx](https://aur.archlinux.org/packages/psk31lx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/psk31lx)]</sup> – PSK31 using Pulseaudio
-*   [twpsk](https://aur.archlinux.org/packages/twpsk/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/twpsk)]</sup> – Soundcard based program for PSK31
-*   [xpsk31](https://aur.archlinux.org/packages/xpsk31/)<sup><small>AUR</small></sup> – PSK31 using a GUI rendered by GTK+
+*   [d-rats](https://aur.archlinux.org/packages/d-rats/) – D-STAR communication tool
+*   [qsstv](https://aur.archlinux.org/packages/qsstv/) – Slow-scan television
+*   [linpsk](https://aur.archlinux.org/packages/linpsk/) – PSK31
+*   [psk31lx](https://aur.archlinux.org/packages/psk31lx/) – PSK31 using Pulseaudio
+*   [twpsk](https://aur.archlinux.org/packages/twpsk/) – Soundcard based program for PSK31
+*   [xpsk31](https://aur.archlinux.org/packages/xpsk31/) – PSK31 using a GUI rendered by GTK+
 
 ### AX.25
 
 **[AX.25](https://en.wikipedia.org/wiki/AX.25 "wikipedia:AX.25")** — data link layer protocol that is used extensively in packet radio networks. It supports connected operation (eg. keyboard-to-keyboard contacts, access to local bulletin board systems, and DX clusters) as well as connectionless operation (eg. [APRS](https://en.wikipedia.org/wiki/APRS "wikipedia:APRS")). The Linux kernel includes native support for AX.25 networking. Please refer to this [guide](http://tldp.org/HOWTO/AX25-HOWTO/) for more information. The following software is available in the AUR:
 
-*   [ax25-apps](https://aur.archlinux.org/packages/ax25-apps/)<sup><small>AUR</small></sup>
-*   [ax25-tools](https://aur.archlinux.org/packages/ax25-tools/)<sup><small>AUR</small></sup>
-*   [libax25](https://aur.archlinux.org/packages/libax25/)<sup><small>AUR</small></sup>
-*   [node](https://aur.archlinux.org/packages/node/)<sup><small>AUR</small></sup>
+*   [ax25-apps](https://aur.archlinux.org/packages/ax25-apps/)
+*   [ax25-tools](https://aur.archlinux.org/packages/ax25-tools/)
+*   [libax25](https://aur.archlinux.org/packages/libax25/)
+*   [node](https://aur.archlinux.org/packages/node/)
 
 	[http://www.ax25.net/](http://www.ax25.net/) || present in stock kernel
 
@@ -124,13 +124,13 @@ or
 If you build with one and experience problems, edit PKGBUILD to try the other.
 WSJT requires access to the serial port; see the note in the Interfacing section above about the uucp group.
 
-	[http://www.physics.princeton.edu/pulsar/K1JT/](http://www.physics.princeton.edu/pulsar/K1JT/) || [wsjt-svn](https://aur.archlinux.org/packages/wsjt-svn/)<sup><small>AUR</small></sup>
+	[http://www.physics.princeton.edu/pulsar/K1JT/](http://www.physics.princeton.edu/pulsar/K1JT/) || [wsjt-svn](https://aur.archlinux.org/packages/wsjt-svn/)
 
 ### WSPR
 
 **[WSPR](https://en.wikipedia.org/wiki/WSPR_(amateur_radio_software) "wikipedia:WSPR (amateur radio software)") (Weak Signal Propagation Reporter, pronounced whisper)** — enables the probing of propagation paths on the amateur radio bands using low power transmissions. It was introduced in 2008 by K1JT following the success and widespread adoption of WSJT by the amateur radio community. Stations with Internet access can automatically upload their reception reports to a central database called [WSPRnet](http://wsprnet.org/drupal/), which includes a [mapping facility](http://wsprnet.org/drupal/wsprnet/map)
 
-	[http://physics.princeton.edu/pulsar/K1JT/wspr.html](http://physics.princeton.edu/pulsar/K1JT/wspr.html) || [wspr-svn](https://aur.archlinux.org/packages/wspr-svn/)<sup><small>AUR</small></sup>
+	[http://physics.princeton.edu/pulsar/K1JT/wspr.html](http://physics.princeton.edu/pulsar/K1JT/wspr.html) || [wspr-svn](https://aur.archlinux.org/packages/wspr-svn/)
 
 ### Xastir
 
@@ -144,59 +144,59 @@ or you can write a simple script to automate the sequential starting process. Th
 The PKGBUILD automatically downloads an 850 kB bundle of .wav files and places them here: `/usr/share/xastir/sounds/`.
 These are audio alarm recordings of a North American English speaker that do not require the presence of festival to render. The audio play command `play' in the configure menu may not work; try `aplay' instead.
 
-	[http://www.xastir.org](http://www.xastir.org) || [xastir](https://aur.archlinux.org/packages/xastir/)<sup><small>AUR</small></sup>
+	[http://www.xastir.org](http://www.xastir.org) || [xastir](https://aur.archlinux.org/packages/xastir/)
 
 ### Digital Voice
 
 **FreeDV** — is a Digital Voice mode for HF radio. It uses the free and open Codec2 voice codec to enable efficient narrow bandwith, low bitrate voice communication ideally suited for shortwave radio contacts. A SSB radio connected to a computer running the FreeDV GUI application are all that is needed to start using the FreeDV mode. FreeDV as well as Codec2 are available to Arch Linux via the AUR system. Both are needed for FreeDV to work!
 
-*   [http://www.rowetel.com/codec2.html](http://www.rowetel.com/codec2.html) [codec2](https://aur.archlinux.org/packages/codec2/)<sup><small>AUR</small></sup>
+*   [http://www.rowetel.com/codec2.html](http://www.rowetel.com/codec2.html) [codec2](https://aur.archlinux.org/packages/codec2/)
 
-	[http://freedv.org](http://freedv.org) || [freedv](https://aur.archlinux.org/packages/freedv/)<sup><small>AUR</small></sup>
+	[http://freedv.org](http://freedv.org) || [freedv](https://aur.archlinux.org/packages/freedv/)
 
 ### Analysis tools
 
-*   [fl_moxgen](https://aur.archlinux.org/packages/fl_moxgen/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fl_moxgen)]</sup> – Moxon antenna designer
-*   [geoid](https://aur.archlinux.org/packages/geoid/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/geoid)]</sup> – Geodetic calculator
-*   [gpredict](https://aur.archlinux.org/packages/gpredict/)<sup><small>AUR</small></sup> – Real-time satellite tracking and orbit prediction application
-*   [hamsolar](https://aur.archlinux.org/packages/hamsolar/)<sup><small>AUR</small></sup> – Small desktop display of the current solar indices
-*   [splat](https://aur.archlinux.org/packages/splat/)<sup><small>AUR</small></sup> – rf signal propagation, loss, and terrain analysis
-*   [sunclock](https://aur.archlinux.org/packages/sunclock/)<sup><small>AUR</small></sup> – Useful for predicting grayline propagation paths
-*   [xnec2c](https://aur.archlinux.org/packages/xnec2c/)<sup><small>AUR</small></sup> – Electromagnetic antenna modeler
+*   [fl_moxgen](https://aur.archlinux.org/packages/fl_moxgen/) – Moxon antenna designer
+*   [geoid](https://aur.archlinux.org/packages/geoid/) – Geodetic calculator
+*   [gpredict](https://aur.archlinux.org/packages/gpredict/) – Real-time satellite tracking and orbit prediction application
+*   [hamsolar](https://aur.archlinux.org/packages/hamsolar/) – Small desktop display of the current solar indices
+*   [splat](https://aur.archlinux.org/packages/splat/) – rf signal propagation, loss, and terrain analysis
+*   [sunclock](https://aur.archlinux.org/packages/sunclock/) – Useful for predicting grayline propagation paths
+*   [xnec2c](https://aur.archlinux.org/packages/xnec2c/) – Electromagnetic antenna modeler
 
 ### Logging
 
-*   [cqrlog](https://aur.archlinux.org/packages/cqrlog/)<sup><small>AUR</small></sup> – a popular Linux logging program
-*   [fdlog](https://aur.archlinux.org/packages/fdlog/)<sup><small>AUR</small></sup> – a Field Day Logger with networked nodes
-*   [klog](https://aur.archlinux.org/packages/klog/)<sup><small>AUR</small></sup> – a Ham radio logging program for Linux / KDE.
-*   [qle](https://aur.archlinux.org/packages/qle/)<sup><small>AUR</small></sup> – QSO Logger and log Editor for amateur radio operators written in Perl
-*   [tlf](https://aur.archlinux.org/packages/tlf/)<sup><small>AUR</small></sup> – a console mode networked logging and contest program
-*   [trustedqsl](https://aur.archlinux.org/packages/trustedqsl/)<sup><small>AUR</small></sup> – QSL application for ARRL's Logbook of the World
-*   [tucnak2](https://aur.archlinux.org/packages/tucnak2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tucnak2)]</sup> – a multiplatform VHF/HF contest logbook
-*   [xlog](https://aur.archlinux.org/packages/xlog/)<sup><small>AUR</small></sup> – a logging program for amateur radio operators.
-*   [yfklog](https://aur.archlinux.org/packages/yfklog/)<sup><small>AUR</small></sup> – a general purpose ham radio logbook for *nix operating systems.
-*   [yfktest](https://aur.archlinux.org/packages/yfktest/)<sup><small>AUR</small></sup> – a logbook program for ham radio contests.
+*   [cqrlog](https://aur.archlinux.org/packages/cqrlog/) – a popular Linux logging program
+*   [fdlog](https://aur.archlinux.org/packages/fdlog/) – a Field Day Logger with networked nodes
+*   [klog](https://aur.archlinux.org/packages/klog/) – a Ham radio logging program for Linux / KDE.
+*   [qle](https://aur.archlinux.org/packages/qle/) – QSO Logger and log Editor for amateur radio operators written in Perl
+*   [tlf](https://aur.archlinux.org/packages/tlf/) – a console mode networked logging and contest program
+*   [trustedqsl](https://aur.archlinux.org/packages/trustedqsl/) – QSL application for ARRL's Logbook of the World
+*   [tucnak2](https://aur.archlinux.org/packages/tucnak2/) – a multiplatform VHF/HF contest logbook
+*   [xlog](https://aur.archlinux.org/packages/xlog/) – a logging program for amateur radio operators.
+*   [yfklog](https://aur.archlinux.org/packages/yfklog/) – a general purpose ham radio logbook for *nix operating systems.
+*   [yfktest](https://aur.archlinux.org/packages/yfktest/) – a logbook program for ham radio contests.
 
 ### Tools
 
-*   [callsign](https://aur.archlinux.org/packages/callsign/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/callsign)]</sup> – a small program for finding information about a ham radio based on his callsign
-*   [cty](https://aur.archlinux.org/packages/cty/)<sup><small>AUR</small></sup> – package contains databases of entities (countries), prefixes and callsigns that are used by amateur radio logging software.
-*   [dxcc](https://aur.archlinux.org/packages/dxcc/)<sup><small>AUR</small></sup> – a small program for determining ARRL DXCC entity of a ham radio callsign
-*   [nato](https://aur.archlinux.org/packages/nato/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nato)]</sup> – Python script to convert string into NATO alphabet representation
-*   [tqsllib](https://aur.archlinux.org/packages/tqsllib/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tqsllib)]</sup> – Trusted QSL library (supports ARRL Logbook of the World)
+*   [callsign](https://aur.archlinux.org/packages/callsign/) – a small program for finding information about a ham radio based on his callsign
+*   [cty](https://aur.archlinux.org/packages/cty/) – package contains databases of entities (countries), prefixes and callsigns that are used by amateur radio logging software.
+*   [dxcc](https://aur.archlinux.org/packages/dxcc/) – a small program for determining ARRL DXCC entity of a ham radio callsign
+*   [nato](https://aur.archlinux.org/packages/nato/) – Python script to convert string into NATO alphabet representation
+*   [tqsllib](https://aur.archlinux.org/packages/tqsllib/) – Trusted QSL library (supports ARRL Logbook of the World)
 
 ### Morse code training
 
-*   [aldo](https://aur.archlinux.org/packages/aldo/)<sup><small>AUR</small></sup>
-*   [cutecw](https://aur.archlinux.org/packages/cutecw/)<sup><small>AUR</small></sup>
-*   [ebook2cw](https://aur.archlinux.org/packages/ebook2cw/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ebook2cw)]</sup>
-*   [gtkmmorse](https://aur.archlinux.org/packages/gtkmmorse/)<sup><small>AUR</small></sup>
-*   [kochmorse](https://aur.archlinux.org/packages/kochmorse/)<sup><small>AUR</small></sup>
-*   [qrq](https://aur.archlinux.org/packages/qrq/)<sup><small>AUR</small></sup>
-*   [unixcw](https://aur.archlinux.org/packages/unixcw/)<sup><small>AUR</small></sup>
+*   [aldo](https://aur.archlinux.org/packages/aldo/)
+*   [cutecw](https://aur.archlinux.org/packages/cutecw/)
+*   [ebook2cw](https://aur.archlinux.org/packages/ebook2cw/)
+*   [gtkmmorse](https://aur.archlinux.org/packages/gtkmmorse/)
+*   [kochmorse](https://aur.archlinux.org/packages/kochmorse/)
+*   [qrq](https://aur.archlinux.org/packages/qrq/)
+*   [unixcw](https://aur.archlinux.org/packages/unixcw/)
 
 ### Other
 
-*   [cwirc](https://aur.archlinux.org/packages/cwirc/)<sup><small>AUR</small></sup> – Send and receive Morse code messages via IRC
+*   [cwirc](https://aur.archlinux.org/packages/cwirc/) – Send and receive Morse code messages via IRC
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Amateur_radio&oldid=404340](https://wiki.archlinux.org/index.php?title=Amateur_radio&oldid=404340)"

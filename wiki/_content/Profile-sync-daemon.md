@@ -1,6 +1,6 @@
 # Profile-sync-daemon
 
-[Profile-sync-daemon](https://aur.archlinux.org/packages/Profile-sync-daemon/)<sup><small>AUR</small></sup> (psd) is a tiny pseudo-daemon designed to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD). This is accomplished by an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backup of the browser profile(s). Additionally, psd features several crash recovery features.
+[Profile-sync-daemon](https://aur.archlinux.org/packages/Profile-sync-daemon/) (psd) is a tiny pseudo-daemon designed to manage browser profile(s) in tmpfs and to periodically sync back to the physical disc (HDD/SSD). This is accomplished by an innovative use of rsync to maintain synchronization between a tmpfs copy and media-bound backup of the browser profile(s). Additionally, psd features several crash recovery features.
 
 ## Contents
 
@@ -38,7 +38,7 @@ Since the profile(s), browser cache*, etc. are relocated into [tmpfs](/index.php
 
 ## Setup and installation
 
-[Install](/index.php/Install "Install") the [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) package.
 
 ### Edit the config file
 
@@ -101,21 +101,21 @@ Currently, the following browsers are auto-detected and managed:
 
 *   [Chromium](/index.php/Chromium "Chromium")
 *   [chromium-dev](/index.php/AUR "AUR")
-*   [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)<sup><small>AUR</small></sup>
+*   [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
 *   [Epiphany](/index.php/Epiphany "Epiphany")
 *   [Firefox](/index.php/Firefox "Firefox") (all flavors including stable, beta, and aurora)
-*   [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup>
-*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)<sup><small>AUR</small></sup>
-*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)<sup><small>AUR</small></sup>
+*   [google-chrome](https://aur.archlinux.org/packages/google-chrome/)
+*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)
+*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)
 *   [heftig's version of Aurora](https://bbs.archlinux.org/viewtopic.php?id=117157): An Arch Linux-only browser
-*   [icecat](https://aur.archlinux.org/packages/icecat/)<sup><small>AUR</small></sup>
+*   [icecat](https://aur.archlinux.org/packages/icecat/)
 *   [Luakit](/index.php/Luakit "Luakit")
 *   [Midori](/index.php/Midori "Midori")
 *   [Opera](/index.php/Opera "Opera")
 *   Qupzilla
 *   [rekonq](https://www.archlinux.org/packages/?name=rekonq)
 *   [seamonkey](https://www.archlinux.org/packages/?name=seamonkey)
-*   [vivaldi](https://aur.archlinux.org/packages/vivaldi/)<sup><small>AUR</small></sup>
+*   [vivaldi](https://aur.archlinux.org/packages/vivaldi/)
 
 ## Using psd
 

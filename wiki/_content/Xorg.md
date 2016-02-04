@@ -88,7 +88,7 @@ In order for video acceleration to work, and often to expose all the modes that 
 | Brand | Type | Driver | [Multilib](/index.php/Multilib "Multilib") | Documentation |
 | **AMD/ATI** | Open source | [xf86-video-amdgpu](https://www.archlinux.org/packages/?name=xf86-video-amdgpu) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [ATI](/index.php/ATI "ATI") |
 | [xf86-video-ati](https://www.archlinux.org/packages/?name=xf86-video-ati) |
-| Proprietary | [catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup> | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/)<sup><small>AUR</small></sup> | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
+| Proprietary | [catalyst](https://aur.archlinux.org/packages/catalyst/) | [lib32-catalyst-libgl](https://aur.archlinux.org/packages/lib32-catalyst-libgl/) | [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") |
 | **Intel** | Open source | [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Intel graphics](/index.php/Intel_graphics "Intel graphics") |
 | **Nvidia** | Open source | [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) | [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) | [Nouveau](/index.php/Nouveau "Nouveau") |
 | Proprietary | [nvidia](https://www.archlinux.org/packages/?name=nvidia) | [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) | [NVIDIA](/index.php/NVIDIA "NVIDIA") |
@@ -346,15 +346,15 @@ The Composite extension for X causes an entire sub-tree of the window hierarchy 
 
 *   **[Cairo Composite Manager](/index.php/Cairo_Compmgr "Cairo Compmgr")** — Cairo based composite manager
 
-	[http://cairo-compmgr.tuxfamily.org/](http://cairo-compmgr.tuxfamily.org/) || [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)<sup><small>AUR</small></sup>
+	[http://cairo-compmgr.tuxfamily.org/](http://cairo-compmgr.tuxfamily.org/) || [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)
 
 *   **[Compiz](/index.php/Compiz "Compiz")** — Composite manager for Aiglx and Xgl, with plugins and CCSM
 
-	[http://www.compiz.org/](http://www.compiz.org/) || [compiz](https://aur.archlinux.org/packages/compiz/)<sup><small>AUR</small></sup>
+	[http://www.compiz.org/](http://www.compiz.org/) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
 *   **[Compton](/index.php/Compton "Compton")** — Compositor (a fork of xcompmgr-dana)
 
-	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://aur.archlinux.org/packages/compton/)<sup><small>AUR</small></sup>
+	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton](https://aur.archlinux.org/packages/compton/)
 
 *   **[Xcompmgr](/index.php/Xcompmgr "Xcompmgr")** — Composite window-effects manager
 
@@ -362,7 +362,7 @@ The Composite extension for X causes an entire sub-tree of the window hierarchy 
 
 *   **Unagi** — Modular compositing manager which aims written in C and based on XCB
 
-	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)<sup><small>AUR</small></sup>
+	[http://projects.mini-dweeb.org/projects/unagi](http://projects.mini-dweeb.org/projects/unagi) || [unagi](https://aur.archlinux.org/packages/unagi/)
 
 ## Tips and tricks
 

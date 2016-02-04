@@ -243,7 +243,7 @@ While the OS/2 port of JFS supports block sizes of 512, 1024, 2048, and 4096 byt
 
 In the event that the file system does not get properly unmounted before being powered down, one will usually have to run **fsck** on a JFS file system in order to be able to remount it. This procedure usually only takes a few seconds, unless the log has been damaged. If running fsck returns an unrecognized file system error, try running **fsck.jfs** on the target device. Normally, _fsck_ is all that is needed.
 
-If the superblock on your file system gets destroyed, it may be possible to recover some parts of the file system. Currently, the only tool able to do this is a utility called **jfsrec**. JFSrec is currently available from the AUR using the [jfsrec-svn](https://aur.archlinux.org/packages/jfsrec-svn/)<sup><small>AUR</small></sup> package.
+If the superblock on your file system gets destroyed, it may be possible to recover some parts of the file system. Currently, the only tool able to do this is a utility called **jfsrec**. JFSrec is currently available from the AUR using the [jfsrec-svn](https://aur.archlinux.org/packages/jfsrec-svn/) package.
 
 There is also an AUR package called _jfsrec_, but this is merely a placeholder for _jfsrec-svn_ as JFSrec is currently only in its seventh SVN revision. Once installed, one simply need to type:
 

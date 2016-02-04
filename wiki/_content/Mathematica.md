@@ -112,7 +112,7 @@ The second issue with Mathematica 8 in 64-bit archlinux (may also affect 32-bit 
 
 ### Mathematica 10
 
-[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). The _Mathematica_10.XX.YY_LINUX.sh_ installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
+[Install](/index.php/Install "Install") [mathematica](https://aur.archlinux.org/packages/mathematica/) from the [AUR](/index.php/AUR "AUR"). The _Mathematica_10.XX.YY_LINUX.sh_ installation script is required; you will need to download this separately from Wolfram.com, your university, etc. You will also need an activation key.
 
 #### HiDPI / Retina Screens
 

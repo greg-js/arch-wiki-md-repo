@@ -25,7 +25,7 @@ Battery: Yes
 CPU frequency scaling: Yes | untested | Hot keys: untested
 FireWire (Texas Instruments) TSB43AB23: OK(?) | FireWire detects well but I haven't tested it yet |
 | Aspire 5024 | 0.7.2 | ATI Radeon X700
-Runs Compiz on both fglrx ([catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup>) >= 8.02 and radeon driver | AC97: OK | Realtek: OK | Broadcom 4318
+Runs Compiz on both fglrx ([catalyst](https://aur.archlinux.org/packages/catalyst/)) >= 8.02 and radeon driver | AC97: OK | Realtek: OK | Broadcom 4318
 Needs _acer_apci_ + firmware or ndiswrapper driver | N/A | Battery: Yes
 Suspend: Video and Wi-Fi problems
 CPU frequency scaling: powernow-k8 driver | untested | KeyTouch works for hot keys
@@ -68,5 +68,8 @@ Synaptic touchpad: OK
 Suspend to disk: OK.
 CPU frequency scaling: untested | Untested | Hot keys: OK (except Bluetooth: untested)
 Synaptic Touchpad: OK |
+| TravelMate TimelineX 8473T | archlinux-2016.02.01-dual | Intel HD 3000 | OK | Untested | OK | Untested | Untested | Untested | Hot keys: Display/No Backlight/Disable Trackpad work
+Sound, sleep, wireless, brightness not working out of box
+Synaptic Touchpad: OK | Live Media boots in Gummiboot and attempts to load EFI media, even though MOBO supports legacy boot ONLY. Delete the /EFI partition on the boot media to force Grub (this may cause other problems)} |
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Acer&oldid=411299](https://wiki.archlinux.org/index.php?title=Laptop/Acer&oldid=411299)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Laptop/Acer&oldid=418923](https://wiki.archlinux.org/index.php?title=Laptop/Acer&oldid=418923)"

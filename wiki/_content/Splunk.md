@@ -28,9 +28,9 @@ Splunk's online documentation is open to the public and reasonably comprehensive
 
 ## Installation
 
-There is now a [splunk](https://aur.archlinux.org/packages/splunk/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR") which will create the `splunk` user and group, install Splunk, and install a systemd unit file.
+There is now a [splunk](https://aur.archlinux.org/packages/splunk/) package in the [AUR](/index.php/AUR "AUR") which will create the `splunk` user and group, install Splunk, and install a systemd unit file.
 
-There is also a [splunkforwarder](https://aur.archlinux.org/packages/splunkforwarder/)<sup><small>AUR</small></sup> package which will install the Splunk Universal Forwarder.
+There is also a [splunkforwarder](https://aur.archlinux.org/packages/splunkforwarder/) package which will install the Splunk Universal Forwarder.
 
 ### Manual
 

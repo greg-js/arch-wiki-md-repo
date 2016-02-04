@@ -100,7 +100,7 @@ Under the opensource ATI video card driver you can control the clockspeed of the
 
 #### Using PHC
 
-The Fusion Processor can be undervolted with the PHC-K8 tool. See [PHC](/index.php/PHC "PHC") for usage information. For the AMD Fusion you'll want to download [phc-k8](https://aur.archlinux.org/packages/phc-k8/)<sup><small>AUR</small></sup> from the AUR.
+The Fusion Processor can be undervolted with the PHC-K8 tool. See [PHC](/index.php/PHC "PHC") for usage information. For the AMD Fusion you'll want to download [phc-k8](https://aur.archlinux.org/packages/phc-k8/) from the AUR.
 
 **Note:** In order to lower CPU power usage you must actually raise the PHC values. (somewhat counter-intuitive)
 
@@ -110,7 +110,7 @@ The Fusion Processor can be undervolted with the PHC-K8 tool. See [PHC](/index.p
 
 #### Using tpc
 
-Another method for undervolting is [tpc](https://aur.archlinux.org/packages/tpc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpc)]</sup>. It is more intuitive then PHC tool and needs Kernelmodule _cpuid_ and _msr_.
+Another method for undervolting is [tpc](https://aur.archlinux.org/packages/tpc/). It is more intuitive then PHC tool and needs Kernelmodule _cpuid_ and _msr_.
 
 Information output available cores and current frequencies and voltage:
 
@@ -165,7 +165,7 @@ commands:	watchdog <timeout> (<timeout> is 0 (off), 1-120 (seconds))
 
 ```
 
-At this point the fan will still be safely under the system's control. You can either directly modify the values in /proc/acpi/ibm (NOT RECOMMENDED. e.g. 'echo level 1 > /proc/acpi/ibm/fan') or install a fan control daemon such as [thinkfan](https://aur.archlinux.org/packages/thinkfan/)<sup><small>AUR</small></sup> from the AUR.
+At this point the fan will still be safely under the system's control. You can either directly modify the values in /proc/acpi/ibm (NOT RECOMMENDED. e.g. 'echo level 1 > /proc/acpi/ibm/fan') or install a fan control daemon such as [thinkfan](https://aur.archlinux.org/packages/thinkfan/) from the AUR.
 
 ## Suspend and hibernation
 

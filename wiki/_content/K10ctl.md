@@ -18,7 +18,7 @@ Lowering the voltage saves energy and leads to less heat and noise.
 
 ## Installation
 
-k10ctl is available in the AUR: [k10ctl](https://aur.archlinux.org/packages/k10ctl/)<sup><small>AUR</small></sup>
+k10ctl is available in the AUR: [k10ctl](https://aur.archlinux.org/packages/k10ctl/)
 
 ## Configuration
 
@@ -140,6 +140,6 @@ For the module 'msr' take a look at [Kernel modules#Loading](/index.php/Kernel_m
 
 ## Tips and tricks
 
-Use [mprime](https://aur.archlinux.org/packages/mprime/)<sup><small>AUR</small></sup> to test the stability of your computer.
+Use [mprime](https://aur.archlinux.org/packages/mprime/) to test the stability of your computer.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=K10ctl&oldid=400293](https://wiki.archlinux.org/index.php?title=K10ctl&oldid=400293)"

@@ -204,13 +204,13 @@ See [FS#27677](https://bugs.archlinux.org/task/27677) and [[1]](https://bugs.deb
 
 Light is the successor and C-port of _LightScript_.
 
-[Install](/index.php/Install "Install") [light](https://aur.archlinux.org/packages/light/)<sup><small>AUR</small></sup> for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/)<sup><small>AUR</small></sup> for the latest development version. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") [light](https://aur.archlinux.org/packages/light/) for the latest tagged version, or [light-git](https://aur.archlinux.org/packages/light-git/) for the latest development version. Patches are frequently committed to the git repository so it is recommended to use the [light-git](https://aur.archlinux.org/packages/light-git/) package.
 
 See the [GitHub page](http://haikarainen.github.io/light/) for more information.
 
 ### relight
 
-[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and _relight-menu_, a dialog-based menu for selecting and configuring backlights for different screens.
+[relight](http://xyne.archlinux.ca/projects/relight) is available in [Xyne's repos](http://xyne.archlinux.ca/repos) and as package [relight](https://aur.archlinux.org/packages/relight/) in the [AUR](/index.php/AUR "AUR"). The package provides `relight.service`, a [systemd](/index.php/Systemd "Systemd") service to automatically restore previous backlight settings during reboot along using the ACPI method explained above, and _relight-menu_, a dialog-based menu for selecting and configuring backlights for different screens.
 
 ### setpci (use with great care)
 
@@ -227,8 +227,8 @@ When using this method, you need to use `lspci` first to find out where your gra
 
 The software [calise](http://calise.sourceforge.net/wordpress/) can be found in AUR.
 
-*   Stable version: [calise](https://aur.archlinux.org/packages/calise/)<sup><small>AUR</small></sup>
-*   Development version: [calise-git](https://aur.archlinux.org/packages/calise-git/)<sup><small>AUR</small></sup>
+*   Stable version: [calise](https://aur.archlinux.org/packages/calise/)
+*   Development version: [calise-git](https://aur.archlinux.org/packages/calise-git/)
 
 It basically computes ambient brightness, and set screen's correct backlight, simply making captures from the webcam, for laptop without light sensor. For more information, calise has its own wiki: [Calise wiki](http://calise.sourceforge.net/mediawiki/index.php/Main_Page).
 
@@ -236,7 +236,7 @@ The main features of this program are that it is very precise, very light on res
 
 ### brightd
 
-Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/)<sup><small>AUR</small></sup> automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
+Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/) automatically dims (but does not put to standby) the screen when there is no user input for some time. A good companion of [Display Power Management Signaling](/index.php/Display_Power_Management_Signaling "Display Power Management Signaling") so that the screen does not blank out in a sudden.
 
 ## Color correction
 
@@ -244,7 +244,7 @@ Macbook-inspired [brightd](https://aur.archlinux.org/packages/brightd/)<sup><sma
 
 **Note:** _xcalib_ does _not_ change the backlight power, it just modifies the video LUT table: this means that your battery life will be unaffected by the change. Nevertheless, it could be useful when no backlight control is available (Desktop PCs). Use `xcalib -clear` to reset the LUT.
 
-The package [xcalib](https://aur.archlinux.org/packages/xcalib/)<sup><small>AUR</small></sup> ([upstream URL](http://xcalib.sourceforge.net/)) is available in the [AUR](/index.php/AUR "AUR") and can be used to dim the screen. A demonstration video is available on [YouTube](https://www.youtube.com/watch?v=A9xsvntT6i4). This program can correct gamma, invert colors, and reduce contrast, the latter of which we use in this case. For example, to dim down:
+The package [xcalib](https://aur.archlinux.org/packages/xcalib/) ([upstream URL](http://xcalib.sourceforge.net/)) is available in the [AUR](/index.php/AUR "AUR") and can be used to dim the screen. A demonstration video is available on [YouTube](https://www.youtube.com/watch?v=A9xsvntT6i4). This program can correct gamma, invert colors, and reduce contrast, the latter of which we use in this case. For example, to dim down:
 
 ```
 $ xcalib -co 40 -a
@@ -257,7 +257,7 @@ This program uses ICC technology to interact with X11 and while the screen is di
 
 Xflux is the [f.lux](http://justgetflux.com) port for the X-Windows system. It fluctuates your screen between blue during the day and yellow or orange at night. This helps you adapt to the time of day and stop staying up late because of your bright computer screen.
 
-Various packages exist in the AUR that use _f.lux_.[[2]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/)<sup><small>AUR</small></sup> which handles the command line functionality of _f.lux_. Various daemons exist to handle the automatic startup of the xflux package.
+Various packages exist in the AUR that use _f.lux_.[[2]](https://aur.archlinux.org/packages/?O=0&K=xflux) The "main" package is [xflux](https://aur.archlinux.org/packages/xflux/) which handles the command line functionality of _f.lux_. Various daemons exist to handle the automatic startup of the xflux package.
 
 ### redshift
 

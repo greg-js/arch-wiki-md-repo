@@ -4,9 +4,9 @@
 
 ## Installation
 
-Install [invoiceplane](https://aur.archlinux.org/packages/invoiceplane/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [invoiceplane](https://aur.archlinux.org/packages/invoiceplane/) from the [AUR](/index.php/AUR "AUR").
 
-If you want to choose a different language than English you should also install [invoiceplane-translations](https://aur.archlinux.org/packages/invoiceplane-translations/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/invoiceplane-translations)]</sup>. Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")), a web server (like [Nginx](/index.php/Nginx "Nginx")) with php-support. You may refer following sites:
+If you want to choose a different language than English you should also install [invoiceplane-translations](https://aur.archlinux.org/packages/invoiceplane-translations/). Further you will need a database (e.g. [MariaDB](/index.php/MariaDB "MariaDB")), a web server (like [Nginx](/index.php/Nginx "Nginx")) with php-support. You may refer following sites:
 
 *   [Apache](/index.php/Apache "Apache")
 *   [Lighttpd](/index.php/Lighttpd "Lighttpd")

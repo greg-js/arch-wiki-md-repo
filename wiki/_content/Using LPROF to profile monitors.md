@@ -70,7 +70,7 @@ The phosphors, or _primaries_ as they are often called, are three sets of values
 
 ## Building lprof
 
-Install [lprof](https://aur.archlinux.org/packages/lprof/)<sup><small>AUR</small></sup>, which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [lprof](https://aur.archlinux.org/packages/lprof/), which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Calibrating the monitor
 

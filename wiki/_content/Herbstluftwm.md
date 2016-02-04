@@ -17,7 +17,7 @@
 
 ## Installation
 
-Herbstluftwm can be [installed](/index.php/Installed "Installed") with the package [herbstluftwm](https://www.archlinux.org/packages/?name=herbstluftwm) or the package [herbstluftwm-git](https://aur.archlinux.org/packages/herbstluftwm-git/)<sup><small>AUR</small></sup>.
+Herbstluftwm can be [installed](/index.php/Installed "Installed") with the package [herbstluftwm](https://www.archlinux.org/packages/?name=herbstluftwm) or the package [herbstluftwm-git](https://aur.archlinux.org/packages/herbstluftwm-git/).
 
 ## First steps
 

@@ -14,7 +14,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [cdm-git](https://aur.archlinux.org/packages/cdm-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [cdm-git](https://aur.archlinux.org/packages/cdm-git/) package.
 
 Now ensure no other display managers get started by disabling their systemd services with `systemctl disable`.
 

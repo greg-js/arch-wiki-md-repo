@@ -36,7 +36,7 @@ As of kernel version 2.6.37, there is now a Free driver in the kernel: [brcmsmac
 
 ### Non-free alternative driver for the Broadcom BCM4113 chipset
 
-An alternative may be the [802.11 Linux STA driver](http://www.broadcom.com/support/802.11/linux_sta.php), which can be installed from the [AUR](/index.php/AUR "AUR"): [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>
+An alternative may be the [802.11 Linux STA driver](http://www.broadcom.com/support/802.11/linux_sta.php), which can be installed from the [AUR](/index.php/AUR "AUR"): [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)
 
 ### Free kernel driver for the Atheros AR9285 802.11b/g chipset
 

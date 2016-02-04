@@ -42,7 +42,7 @@ options thinkpad_acpi enabled=0 # enables Mute-Button on ThinkPads with IdeaPad-
 
 ### External Audio still on:
 
-	Install [tpb](https://aur.archlinux.org/packages/tpb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpb)]</sup> from the [AUR](/index.php/AUR "AUR") and create an file "/root/.tpbrc":
+	Install [tpb](https://aur.archlinux.org/packages/tpb/) from the [AUR](/index.php/AUR "AUR") and create an file "/root/.tpbrc":
 
 ```
 #tpb-Settings: 

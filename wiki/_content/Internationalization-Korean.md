@@ -21,7 +21,7 @@ This document provides instructions on how to set up a Korean language environme
 
 ## Fonts
 
-To use any korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/)<sup><small>AUR</small></sup> or the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-unfonts-core)]</sup> from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/)<sup><small>AUR</small></sup> from the AUR. Alternatively, if you use the [Infinality](/index.php/Infinality "Infinality") patches and have the [Infinality-bundle-fonts repository](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") enabled, you can install `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, and `ttf-unfonts-core-ibx` from the `infinality-bundle-fonts` repository. If you want to view and use Yethangul(옛한글), install the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-unfonts-core)]</sup> and/or the [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-hamchorom-lvt)]</sup> fonts.
+To use any korean input method, you need to have Korean fonts installed. Install [ttf-nanum](https://aur.archlinux.org/packages/ttf-nanum/) or the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) from the [AUR](/index.php/AUR "AUR"). If you also want Korean monospaced fonts, install [ttf-nanumgothic_coding](https://aur.archlinux.org/packages/ttf-nanumgothic_coding/) from the AUR. Alternatively, if you use the [Infinality](/index.php/Infinality "Infinality") patches and have the [Infinality-bundle-fonts repository](/index.php/Unofficial_user_repositories#infinality-bundle-fonts "Unofficial user repositories") enabled, you can install `ttf-nanum-fonts-ibx`, `ttf-nanumgothic-coding-ibx`, and `ttf-unfonts-core-ibx` from the `infinality-bundle-fonts` repository. If you want to view and use Yethangul(옛한글), install the [ttf-unfonts-core](https://aur.archlinux.org/packages/ttf-unfonts-core/) and/or the [ttf-hamchorom-lvt](https://aur.archlinux.org/packages/ttf-hamchorom-lvt/) fonts.
 
 ## Locale
 
@@ -31,7 +31,7 @@ You should have `ko_KR.UTF-8` enabled in `/etc/locale.gen`. It is recommended th
 
 ### Choose a Korean input method
 
-Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease. Frameworks such as [IBus](/index.php/IBus "IBus"), [uim](/index.php/UIM "UIM"), [fcitx](/index.php/Fcitx "Fcitx") and [scim](/index.php/Scim "Scim"), as well as [nabi](https://aur.archlinux.org/packages/nabi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nabi)]</sup>, a stand-alone Korean input method, support Korean input. This section will try to help you choose a suitable IM framework.
+Input method (IM) frameworks act as frontends to various input methods and libraries, allowing the user to switch between different languages with ease. Frameworks such as [IBus](/index.php/IBus "IBus"), [uim](/index.php/UIM "UIM"), [fcitx](/index.php/Fcitx "Fcitx") and [scim](/index.php/Scim "Scim"), as well as [nabi](https://aur.archlinux.org/packages/nabi/), a stand-alone Korean input method, support Korean input. This section will try to help you choose a suitable IM framework.
 
 **Note:** Check the issues associated with each input method framework before choosing which one to use.
 
@@ -57,7 +57,7 @@ Input method (IM) frameworks act as frontends to various input methods and libra
 
 	nabi
 
-	[nabi](https://aur.archlinux.org/packages/nabi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nabi)]</sup> is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
+	[nabi](https://aur.archlinux.org/packages/nabi/) is a standalone Korean input method that is being developed by Choehwanjin. Nabi provides many unique features, such as Yethangul support. If you only need to use Korean and English input, you may want to install nabi. Currently, nabi causes an issue with chromium. When you press the spacebar, the preedit string will be placed after the space, causing your input to look like this: `한 글입력 에문제 가있습니다`
 
 If you have chosen which framework to use, continue with the configuration section.
 
@@ -119,7 +119,7 @@ export XMODIFIERS=@im=fcitx
 
 #### nabi
 
-[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") the [nabi](https://aur.archlinux.org/packages/nabi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nabi)]</sup> package from the AUR.
+[Install](/index.php/Arch_User_Repository#Installing_packages "Arch User Repository") the [nabi](https://aur.archlinux.org/packages/nabi/) package from the AUR.
 
 If you want the latest version of nabi, run `git clone [https://github.com/choehwanjin/nabi.git](https://github.com/choehwanjin/nabi.git)`, `cd` into the cloned git repo, check if you have all the necessary libraries for building nabi by running `./configure`, and then run `make`. When make finishes building the binary, run `make install` as root.
 

@@ -23,7 +23,7 @@ KDM (KDE Display Manager) is the login manager of [KDE](/index.php/KDE "KDE"). I
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/).
 
 Then follow [Display manager#Loading the display manager](/index.php/Display_manager#Loading_the_display_manager "Display manager") to start KDM at boot.
 

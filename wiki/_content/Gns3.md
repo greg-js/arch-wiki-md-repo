@@ -20,7 +20,7 @@
 
 ## Installation
 
-You can get [gns3](https://aur.archlinux.org/packages/gns3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gns3)]</sup> from the [AUR](/index.php/AUR "AUR"), or install in manually by getting the package from the [GNS3 website](http://www.gns3.net/download/)
+You can get [gns3](https://aur.archlinux.org/packages/gns3/) from the [AUR](/index.php/AUR "AUR"), or install in manually by getting the package from the [GNS3 website](http://www.gns3.net/download/)
 
 ## Adding virtual machines
 

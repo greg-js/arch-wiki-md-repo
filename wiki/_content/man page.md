@@ -274,7 +274,7 @@ setkey edit "v"
 
 ### Colored man pages on xterm or rxvt-unicode
 
-	<small>_Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small><sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-09-10]</sup>
+	<small>_Source: [XFree resources file for XTerm program](http://pub.ligatura.org/fs/xfree86/xresources/xterm)_</small>
 
 A quick way to add color to manual pages viewed on [xterm](https://www.archlinux.org/packages/?name=xterm)/`uxterm` or [rxvt-unicode](https://www.archlinux.org/packages/?name=rxvt-unicode) is to modify `~/.Xresources`.
 
@@ -313,7 +313,7 @@ $ xrdb -load ~/.Xresources
 
 ```
 
-Launch a new `xterm/uxterm` or `rxvt-unicode` and you should see colorful man pages. This combination puts colors to **bold** and <u>underlined</u> words in `xterm/uxterm` or to **bold**, <u>underlined</u>, and _italicized_ text in `rxvt-unicode`. You can play with different combinations of these attributes (see the [sources](http://pub.ligatura.org/fs/xfree86/xresources/xterm)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-09-10]</sup> of this item).
+Launch a new `xterm/uxterm` or `rxvt-unicode` and you should see colorful man pages. This combination puts colors to **bold** and <u>underlined</u> words in `xterm/uxterm` or to **bold**, <u>underlined</u>, and _italicized_ text in `rxvt-unicode`. You can play with different combinations of these attributes (see the [sources](http://pub.ligatura.org/fs/xfree86/xresources/xterm) of this item).
 
 ## Dynamic page width
 
@@ -356,7 +356,7 @@ From the [Official repositories](/index.php/Official_repositories "Official repo
 
 #### mdocml
 
-Install [mdocml](https://aur.archlinux.org/packages/mdocml/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mdocml)]</sup> from [AUR](/index.php/AUR "AUR"). To convert a page, for example `free(1)`:
+Install [mdocml](https://aur.archlinux.org/packages/mdocml/) from [AUR](/index.php/AUR "AUR"). To convert a page, for example `free(1)`:
 
 ```
 $ gunzip -c /usr/share/man/man1/free.1.gz | mandoc -Thtml -Ostyle=style.css 1> free.html
@@ -396,7 +396,7 @@ This will read your `BROWSER` [environment variable](/index.php/Environment_vari
 
 #### roffit
 
-First install [roffit](https://aur.archlinux.org/packages/roffit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/roffit)]</sup> from [AUR](/index.php/AUR "AUR").
+First install [roffit](https://aur.archlinux.org/packages/roffit/) from [AUR](/index.php/AUR "AUR").
 
 To convert a man page:
 

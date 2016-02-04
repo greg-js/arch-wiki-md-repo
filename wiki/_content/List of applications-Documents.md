@@ -57,19 +57,19 @@ See also [Wikipedia:Comparison of office suites](https://en.wikipedia.org/wiki/C
 
 *   **[OpenOffice](/index.php/OpenOffice "OpenOffice")** — Open-source office software suite for word processing, spreadsheets, presentations, graphics, databases and more, under the Apache Licence.
 
-	[http://www.openoffice.org/](http://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)<sup><small>AUR</small></sup>
+	[http://www.openoffice.org/](http://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
 *   **[Siag Office](https://en.wikipedia.org/wiki/Siag_Office "wikipedia:Siag Office")** — Extremely lightweight office suite that provides a word processor, spreadsheet, text editor, file manager and previewer.
 
-	[http://siag.nu/](http://siag.nu/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/siag-office)]</sup>
+	[http://siag.nu/](http://siag.nu/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
 *   **[SoftMaker Office](https://en.wikipedia.org/wiki/SoftMaker_Office "wikipedia:SoftMaker Office")** — A complete, reliable, lightning-fast and Microsoft Office-compatible office suite with a word processor, spreadsheet, and presentation graphics software.
 
-	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)<sup><small>AUR</small></sup>
+	[http://www.freeoffice.com/](http://www.freeoffice.com/) || [freeoffice](https://aur.archlinux.org/packages/freeoffice/)
 
 *   **[WPS Office](https://en.wikipedia.org/wiki/Kingsoft_Office "wikipedia:Kingsoft Office")** — Propietary office productivity suite, previously known as Kingsoft Office.
 
-	[http://www.wps.com/](http://www.wps.com/) || [wps-office](https://aur.archlinux.org/packages/wps-office/)<sup><small>AUR</small></sup>
+	[http://www.wps.com/](http://www.wps.com/) || [wps-office](https://aur.archlinux.org/packages/wps-office/)
 
 ### Word processors
 
@@ -97,11 +97,11 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[OpenOffice Writer](/index.php/OpenOffice "OpenOffice")** — Full-featured word processor included in the OpenOffice suite.
 
-	[http://www.openoffice.org/](http://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)<sup><small>AUR</small></sup>
+	[http://www.openoffice.org/](http://www.openoffice.org/) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
 *   **Pathetic Writer** — X-based rich text processor included in Siag Office.
 
-	[http://siag.nu/pw/](http://siag.nu/pw/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/siag-office)]</sup>
+	[http://siag.nu/pw/](http://siag.nu/pw/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
 *   **[Scribus](https://en.wikipedia.org/wiki/Scribus "wikipedia:Scribus")** — Desktop publishing program.
 
@@ -109,7 +109,7 @@ See also [Wikipedia:Comparison of word processors](https://en.wikipedia.org/wiki
 
 *   **[Ted](https://en.wikipedia.org/wiki/Ted_(word_processor) "wikipedia:Ted (word processor)")** — Easy to use GTK+-based rich text processor (with footnote support).
 
-	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)<sup><small>AUR</small></sup>
+	[http://www.nllgg.nl/Ted/](http://www.nllgg.nl/Ted/) || [ted](https://aur.archlinux.org/packages/ted/)
 
 ### Document markup languages
 
@@ -121,7 +121,7 @@ See also [Wikipedia:Comparison of document markup languages](https://en.wikipedi
 
 *   **Asciidoctor** — An asciidoc implementation written in Ruby, with many extra features.
 
-	[http://asciidoctor.org/](http://asciidoctor.org/) || [ruby-asciidoctor](https://aur.archlinux.org/packages/ruby-asciidoctor/)<sup><small>AUR</small></sup>
+	[http://asciidoctor.org/](http://asciidoctor.org/) || [ruby-asciidoctor](https://aur.archlinux.org/packages/ruby-asciidoctor/)
 
 *   **[Markdown](https://en.wikipedia.org/wiki/Markdown "wikipedia:Markdown")** — Text-to-HTML conversion tool that allows you to write using a simple plain text format.
 
@@ -157,15 +157,15 @@ See also [Wikipedia:Comparison of spreadsheet software](https://en.wikipedia.org
 
 *   **[OpenOffice Calc](/index.php/OpenOffice "OpenOffice")** — Full-featured spreadsheet application included in the OpenOffice suite.
 
-	[http://openoffice.org/product/calc](http://openoffice.org/product/calc) || [openoffice](https://aur.archlinux.org/packages/openoffice/)<sup><small>AUR</small></sup>
+	[http://openoffice.org/product/calc](http://openoffice.org/product/calc) || [openoffice](https://aur.archlinux.org/packages/openoffice/)
 
 *   **Pyspread** — Pyspread is a non-traditional spreadsheet application that is based on and written in the programming language Python.
 
-	[http://manns.github.io/pyspread/index.html](http://manns.github.io/pyspread/index.html) || [pyspread](https://aur.archlinux.org/packages/pyspread/)<sup><small>AUR</small></sup>
+	[http://manns.github.io/pyspread/index.html](http://manns.github.io/pyspread/index.html) || [pyspread](https://aur.archlinux.org/packages/pyspread/)
 
 *   **Siag** — Spreadsheet application based on the X Window System and the Scheme programming language included in Siag Office.
 
-	[http://siag.nu/siag/](http://siag.nu/siag/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/siag-office)]</sup>
+	[http://siag.nu/siag/](http://siag.nu/siag/) || [siag-office](https://aur.archlinux.org/packages/siag-office/)
 
 ### Scientific documents
 
@@ -179,11 +179,11 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **EqualX** — LaTeX equation editor with real time preview.
 
-	[http://equalx.sourceforge.net/index.html](http://equalx.sourceforge.net/index.html) || [equalx](https://aur.archlinux.org/packages/equalx/)<sup><small>AUR</small></sup>
+	[http://equalx.sourceforge.net/index.html](http://equalx.sourceforge.net/index.html) || [equalx](https://aur.archlinux.org/packages/equalx/)
 
 *   **gedit-latex** — Add code-completion to gedit and allows for compiling LaTeX documents and managing BibTeX bibliographies.
 
-	[http://www.gnome.org/](http://www.gnome.org/) || [gedit-latex](https://aur.archlinux.org/packages/gedit-latex/)<sup><small>AUR</small></sup>
+	[http://www.gnome.org/](http://www.gnome.org/) || [gedit-latex](https://aur.archlinux.org/packages/gedit-latex/)
 
 *   **[Gummi](https://en.wikipedia.org/wiki/Gummi_(software) "wikipedia:Gummi (software)")** — Lightweight TeX/LaTeX GTK+-based editor. It features a continuous preview mode, integrated BibTeX support, extendable snippet interface and multi-document support.
 
@@ -191,7 +191,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **JabRef** — Java GUI frontend for managing BibTeX and other bibliographies.
 
-	[http://jabref.sourceforge.net/index.php](http://jabref.sourceforge.net/index.php) || [jabref](https://aur.archlinux.org/packages/jabref/)<sup><small>AUR</small></sup> [jabref-git](https://aur.archlinux.org/packages/jabref-git/)<sup><small>AUR</small></sup>
+	[http://jabref.sourceforge.net/index.php](http://jabref.sourceforge.net/index.php) || [jabref](https://aur.archlinux.org/packages/jabref/) [jabref-git](https://aur.archlinux.org/packages/jabref-git/)
 
 *   **[Kile](https://en.wikipedia.org/wiki/Kile "wikipedia:Kile")** — User-friendly TeX/LaTeX editor for the KDE desktop with many features.
 
@@ -203,7 +203,7 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **LaTeXila** — LaTeX editor for the GNOME Desktop including support for code completion, compiling and project management.
 
-	[https://wiki.gnome.org/Apps/LaTeXila](https://wiki.gnome.org/Apps/LaTeXila) || [latexila](https://aur.archlinux.org/packages/latexila/)<sup><small>AUR</small></sup>
+	[https://wiki.gnome.org/Apps/LaTeXila](https://wiki.gnome.org/Apps/LaTeXila) || [latexila](https://aur.archlinux.org/packages/latexila/)
 
 *   **[LyX](https://en.wikipedia.org/wiki/LyX "wikipedia:LyX")** — Document processor that encourages an approach to writing based on the structure of your documents (WYSIWYM) and not simply their appearance (WYSIWYG).
 
@@ -231,21 +231,21 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **WhizzyTeX** — WhizzyTeX provides a nice live preview editor for Emacs.
 
-	[http://www.emacswiki.org/emacs/WhizzyTeX/](http://www.emacswiki.org/emacs/WhizzyTeX/) || [whizzytex](https://aur.archlinux.org/packages/whizzytex/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/whizzytex)]</sup>
+	[http://www.emacswiki.org/emacs/WhizzyTeX/](http://www.emacswiki.org/emacs/WhizzyTeX/) || [whizzytex](https://aur.archlinux.org/packages/whizzytex/)
 
 *   **Winefish** — A very lightweight LaTeX editing suite. It supports highlighting and code completion, compile-from-editor, among other things.
 
-	[http://winefish.berlios.de/](http://winefish.berlios.de/) || [winefish](https://aur.archlinux.org/packages/winefish/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/winefish)]</sup>
+	[http://winefish.berlios.de/](http://winefish.berlios.de/) || [winefish](https://aur.archlinux.org/packages/winefish/)
 
 *   **Zotero** — This is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. There is a stand-alone version and a Firefox add-on available.
 
-	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
+	[https://www.zotero.org/](https://www.zotero.org/) || [zotero](https://aur.archlinux.org/packages/zotero/)
 
 ### Translation and localization
 
 *   **[Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium")** — Free and open source rule-based machine translation platform with available language data. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, TMX, MediaWiki and others.
 
-	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)<sup><small>AUR</small></sup>
+	[http://apertium.org/](http://apertium.org/) || [apertium](https://aur.archlinux.org/packages/apertium/)
 
 *   **[Gtranslator](https://en.wikipedia.org/wiki/Gtranslator "wikipedia:Gtranslator")** — Enhanced gettext po file editor for the GNOME. It handles all forms of gettext po files and includes very useful features.
 
@@ -257,11 +257,11 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **[Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)")** — Statistical machine translation tool (language data not included).
 
-	[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/)<sup><small>AUR</small></sup> [mosesdecoder-git](https://aur.archlinux.org/packages/mosesdecoder-git/)<sup><small>AUR</small></sup>
+	[http://statmt.org/moses](http://statmt.org/moses) || [mosesdecoder](https://aur.archlinux.org/packages/mosesdecoder/) [mosesdecoder-git](https://aur.archlinux.org/packages/mosesdecoder-git/)
 
 *   **[OmegaT](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT")** — General translator's tool which contains a lot of translation memory features and can give suggestions from Google Translate. It supports the following formats: HTML, Microsoft Office 2007 XML, OpenDocument, XLIFF/Okapi, MediaWiki, plain text, TMX and others.
 
-	[http://omegat.org](http://omegat.org) || [omegat](https://aur.archlinux.org/packages/omegat/)<sup><small>AUR</small></sup>
+	[http://omegat.org](http://omegat.org) || [omegat](https://aur.archlinux.org/packages/omegat/)
 
 *   **[Poedit](https://en.wikipedia.org/wiki/Poedit "wikipedia:Poedit")** — Simple gettext/po-based translation tool.
 
@@ -269,11 +269,11 @@ See also [Wikipedia:Comparison of TeX editors](https://en.wikipedia.org/wiki/Com
 
 *   **Pology** — Set of Python tools for dealing with gettext/po-files.
 
-	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)<sup><small>AUR</small></sup>
+	[http://techbase.kde.org/Localization/Tools/Pology](http://techbase.kde.org/Localization/Tools/Pology) || [pology](https://aur.archlinux.org/packages/pology/)
 
 *   **[Virtaal](https://en.wikipedia.org/wiki/Virtaal "wikipedia:Virtaal")** — Editor for translation of both software and other text, based on [Translate Toolkit](https://en.wikipedia.org/wiki/Translate_Toolkit "wikipedia:Translate Toolkit"). It supports the following formats: [gettext](https://en.wikipedia.org/wiki/gettext "wikipedia:gettext"), [XLIFF](https://en.wikipedia.org/wiki/XLIFF "wikipedia:XLIFF") , TMX, TBX, [Wordfast](https://en.wikipedia.org/wiki/Wordfast "wikipedia:Wordfast"), Qt Linguist , Qt Phrase Book, [OmegaT glossary](https://en.wikipedia.org/wiki/OmegaT "wikipedia:OmegaT") and others. It can also show suggestions from [Apertium](https://en.wikipedia.org/wiki/Apertium "wikipedia:Apertium"), [Google Translate](https://en.wikipedia.org/wiki/Google_Translate "wikipedia:Google Translate"), [Bing Translator](https://en.wikipedia.org/wiki/Bing_Translator "wikipedia:Bing Translator"), [Moses](https://en.wikipedia.org/wiki/Moses_(machine_translation) "wikipedia:Moses (machine translation)") and others.
 
-	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)<sup><small>AUR</small></sup>
+	[http://translate.sourceforge.net/wiki/virtaal](http://translate.sourceforge.net/wiki/virtaal) || [virtaal](https://aur.archlinux.org/packages/virtaal/)
 
 ### Text editors
 
@@ -289,11 +289,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **ee** — A classic curse-based text editor. Born in HP-UX, used in FreeBSD.
 
-	[http://www.users.qwest.net/~hmahon/](http://www.users.qwest.net/~hmahon/) || [ee-editor](https://aur.archlinux.org/packages/ee-editor/)<sup><small>AUR</small></sup>
+	[http://www.users.qwest.net/~hmahon/](http://www.users.qwest.net/~hmahon/) || [ee-editor](https://aur.archlinux.org/packages/ee-editor/)
 
 *   **dex** — Small and easy to use text editor with support for ctags and parsing compiler errors.
 
-	[https://github.com/tihirvon/dex](https://github.com/tihirvon/dex) || [dex-editor-git](https://aur.archlinux.org/packages/dex-editor-git/)<sup><small>AUR</small></sup>
+	[https://github.com/tihirvon/dex](https://github.com/tihirvon/dex) || [dex-editor-git](https://aur.archlinux.org/packages/dex-editor-git/)
 
 *   **[Emacs-nox](/index.php/Emacs "Emacs")** — The extensible, customizable, self-documenting real-time display editor, without X11 support.
 
@@ -301,7 +301,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[JED](https://en.wikipedia.org/wiki/JED_(text_editor) "wikipedia:JED (text editor)")** — Text editor that makes extensive use of the [S-Lang library](https://en.wikipedia.org/wiki/S-Lang_(programming_library) "wikipedia:S-Lang (programming library)"). Includes a console version (jed) and an X-window version (xjed).
 
-	[http://jedsoft.org/jed/](http://jedsoft.org/jed/) || [jed](https://aur.archlinux.org/packages/jed/)<sup><small>AUR</small></sup>
+	[http://jedsoft.org/jed/](http://jedsoft.org/jed/) || [jed](https://aur.archlinux.org/packages/jed/)
 
 *   **[Joe](/index.php/Joe "Joe") (Joe's Own Editor)** — Terminal-based text editor designed to be easy to use.
 
@@ -313,7 +313,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[MicroEmacs](https://en.wikipedia.org/wiki/MicroEMACS "wikipedia:MicroEMACS")** — Ncurses-based text editor. Includes a console version (me -n) and an X-window version (me).
 
-	[http://www.jasspa.com/](http://www.jasspa.com/) || [jasspa-me](https://aur.archlinux.org/packages/jasspa-me/)<sup><small>AUR</small></sup>
+	[http://www.jasspa.com/](http://www.jasspa.com/) || [jasspa-me](https://aur.archlinux.org/packages/jasspa-me/)
 
 *   **[mg](https://en.wikipedia.org/wiki/mg_(editor) "wikipedia:mg (editor)")** — Small, fast, and portable Emacs-like editor.
 
@@ -321,7 +321,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **mp** — Minimum Profit is a text editor for programmers. It helps you definitively abandon vi, emacs and other six-legged freaks.
 
-	[http://triptico.com/software/mp.html](http://triptico.com/software/mp.html) || [mp](https://aur.archlinux.org/packages/mp/)<sup><small>AUR</small></sup>
+	[http://triptico.com/software/mp.html](http://triptico.com/software/mp.html) || [mp](https://aur.archlinux.org/packages/mp/)
 
 *   **[nano](/index.php/Nano "Nano")** — Console text editor based on pico with on-screen key bindings help.
 
@@ -329,11 +329,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Ne** — Minimalist text editor with Windows-like key-bindings.
 
-	[http://ne.di.unimi.it/](http://ne.di.unimi.it/) || [ne](https://aur.archlinux.org/packages/ne/)<sup><small>AUR</small></sup>
+	[http://ne.di.unimi.it/](http://ne.di.unimi.it/) || [ne](https://aur.archlinux.org/packages/ne/)
 
 *   **Slap** — Sublime-like terminal-based text editor.
 
-	[https://github.com/slap-editor/slap](https://github.com/slap-editor/slap) || [slap](https://aur.archlinux.org/packages/slap/)<sup><small>AUR</small></sup>
+	[https://github.com/slap-editor/slap](https://github.com/slap-editor/slap) || [slap](https://aur.archlinux.org/packages/slap/)
 
 *   **[vile](https://en.wikipedia.org/wiki/Vile_(editor) "wikipedia:Vile (editor)")** — A lightweight Emacs clone with _vi_-like key bindings.
 
@@ -365,7 +365,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Atom](/index.php/Atom "Atom")** — A promising text editor developed by GitHub. With support for plug-ins written in Node.js and embedded [Git](/index.php/Git "Git") Control.
 
-	[https://atom.io/](https://atom.io/) || [atom-editor](https://aur.archlinux.org/packages/atom-editor/)<sup><small>AUR</small></sup>
+	[https://atom.io/](https://atom.io/) || [atom-editor](https://aur.archlinux.org/packages/atom-editor/)
 
 *   **Beaver** — A GTK+ editor designed to be modular, lightweight and stylish.
 
@@ -373,15 +373,15 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Brackets** — An open source code editor for the web, written in JavaScript, HTML and CSS.
 
-	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)<sup><small>AUR</small></sup>
+	[http://brackets.io/](http://brackets.io/) || [brackets](https://aur.archlinux.org/packages/brackets/)
 
 *   **[Cream](https://en.wikipedia.org/wiki/Cream_(software) "wikipedia:Cream (software)")** — A user-friendly editor atop of gVim.
 
-	[http://cream.sourceforge.net/](http://cream.sourceforge.net/) || [cream](https://aur.archlinux.org/packages/cream/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cream)]</sup>
+	[http://cream.sourceforge.net/](http://cream.sourceforge.net/) || [cream](https://aur.archlinux.org/packages/cream/)
 
 *   **Edile** — PyGTK code and scripting editor implemented in one file.
 
-	[https://code.google.com/p/edile/](https://code.google.com/p/edile/) || [edile](https://aur.archlinux.org/packages/edile/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/edile)]</sup>
+	[https://code.google.com/p/edile/](https://code.google.com/p/edile/) || [edile](https://aur.archlinux.org/packages/edile/)
 
 *   **[Geany](https://en.wikipedia.org/wiki/Geany "wikipedia:Geany")** — A text editor using the GTK2 toolkit with basic features of an integrated development environment. It has support for TeX-based documents.
 
@@ -405,7 +405,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[JuffEd](https://en.wikipedia.org/wiki/JuffEd "wikipedia:JuffEd")** — Simple tabbed text editor with syntax highlighting, written in Qt.
 
-	[http://juffed.com/en/index.html](http://juffed.com/en/index.html) || [juffed](https://aur.archlinux.org/packages/juffed/)<sup><small>AUR</small></sup>
+	[http://juffed.com/en/index.html](http://juffed.com/en/index.html) || [juffed](https://aur.archlinux.org/packages/juffed/)
 
 *   **[Kate](https://en.wikipedia.org/wiki/Kate_(text_editor) "wikipedia:Kate (text editor)")** — Full-featured programmer's editor for the KDE desktop with MDI and a filesystem browser.
 
@@ -441,19 +441,19 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[PyRoom](https://en.wikipedia.org/wiki/PyRoom "wikipedia:PyRoom")** — Great distractionless PyGTK text editor, a clone of the infamous WriteRoom.
 
-	[http://pyroom.org/](http://pyroom.org/) || [pyroom](https://aur.archlinux.org/packages/pyroom/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pyroom)]</sup>
+	[http://pyroom.org/](http://pyroom.org/) || [pyroom](https://aur.archlinux.org/packages/pyroom/)
 
 *   **QEdit** — A multi-purpose text editor based on NEdit using Qt.
 
-	[http://hugo.pereira.free.fr/software/index.php?page=package&package_list=software_list_qt4&package=qedit](http://hugo.pereira.free.fr/software/index.php?page=package&package_list=software_list_qt4&package=qedit) || [qedit](https://aur.archlinux.org/packages/qedit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qedit)]</sup>
+	[http://hugo.pereira.free.fr/software/index.php?page=package&package_list=software_list_qt4&package=qedit](http://hugo.pereira.free.fr/software/index.php?page=package&package_list=software_list_qt4&package=qedit) || [qedit](https://aur.archlinux.org/packages/qedit/)
 
 *   **QSciTE** — Qt clone of the SciTE text and code editor.
 
-	[http://code.google.com/p/qscite/](http://code.google.com/p/qscite/) || [qscite](https://aur.archlinux.org/packages/qscite/)<sup><small>AUR</small></sup>
+	[http://code.google.com/p/qscite/](http://code.google.com/p/qscite/) || [qscite](https://aur.archlinux.org/packages/qscite/)
 
 *   **QXmlEdit** — Simple Qt XML editor and XSD viewer.
 
-	[http://qxmledit.org/](http://qxmledit.org/) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qxmledit)]</sup>
+	[http://qxmledit.org/](http://qxmledit.org/) || [qxmledit](https://aur.archlinux.org/packages/qxmledit/)
 
 *   **[Sam](https://en.wikipedia.org/wiki/Sam_(text_editor) "wikipedia:Sam (text editor)")** — Minimalist text editor with a graphical user interface, a very powerful command language and remote editing capabilities, developed by Rob Pike.
 
@@ -469,7 +469,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Sublime Text 2](https://en.wikipedia.org/wiki/Sublime_Text "wikipedia:Sublime Text")** — Closed-source C++ and Python-based editor with many advanced features and plugins while staying lightweight and pretty.
 
-	[http://sublimetext.com](http://sublimetext.com) || [sublime-text](https://aur.archlinux.org/packages/sublime-text/)<sup><small>AUR</small></sup>
+	[http://sublimetext.com](http://sublimetext.com) || [sublime-text](https://aur.archlinux.org/packages/sublime-text/)
 
 *   **Tea** — Qt-based feature rich text editor.
 
@@ -477,11 +477,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **[Textadept](/index.php/Textadept "Textadept")** — Lua-extensible feature rich text editor based on Scintilla and written in C.
 
-	[http://foicica.com/textadept/](http://foicica.com/textadept/) || [textadept](https://aur.archlinux.org/packages/textadept/)<sup><small>AUR</small></sup>
+	[http://foicica.com/textadept/](http://foicica.com/textadept/) || [textadept](https://aur.archlinux.org/packages/textadept/)
 
 *   **[Visual Studio Code](https://en.wikipedia.org/wiki/Visual_Studio_Code "wikipedia:Visual Studio Code")** — Editor for building and debugging modern web and cloud applications.
 
-	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)<sup><small>AUR</small></sup>
+	[https://code.visualstudio.com/](https://code.visualstudio.com/) || [visual-studio-code](https://aur.archlinux.org/packages/visual-studio-code/)
 
 *   **XEdit** — Simple text editor for the X Window System.
 
@@ -505,11 +505,11 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **Cool Reader** — E-book viewer with many supported formats such as EPUB (non-DRM), FictionBook, TXT, RTF, HTML, CHM and TCR.
 
-	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader](https://aur.archlinux.org/packages/coolreader/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/coolreader)]</sup>
+	[http://crengine.sourceforge.net/](http://crengine.sourceforge.net/) || [coolreader](https://aur.archlinux.org/packages/coolreader/)
 
 *   **epub** — A console EPUB reader using Python and Curses.
 
-	[https://pypi.python.org/pypi/epub](https://pypi.python.org/pypi/epub) || [python-epub](https://aur.archlinux.org/packages/python-epub/)<sup><small>AUR</small></sup>
+	[https://pypi.python.org/pypi/epub](https://pypi.python.org/pypi/epub) || [python-epub](https://aur.archlinux.org/packages/python-epub/)
 
 *   **[FBReader](https://en.wikipedia.org/wiki/FBReader "wikipedia:FBReader")** — E-book viewer with many supported formats such as EPUB, FictionBook, HTML, plucker, PalmDoc, zTxt, TCR, CHM, RTF, OEB, Mobipocket (non-DRM) and TXT.
 
@@ -517,7 +517,7 @@ Some of the lighter-weight [Integrated development environments](/index.php/List
 
 *   **pPub** — Simple EPUB reader using Python, GTK3 and WebKit.
 
-	[https://github.com/sakisds/pPub](https://github.com/sakisds/pPub) || [ppub](https://aur.archlinux.org/packages/ppub/)<sup><small>AUR</small></sup>
+	[https://github.com/sakisds/pPub](https://github.com/sakisds/pPub) || [ppub](https://aur.archlinux.org/packages/ppub/)
 
 *   **[Sigil](https://en.wikipedia.org/wiki/Sigil_(application) "wikipedia:Sigil (application)")** — WYSIWYG ebook editor.
 
@@ -529,17 +529,17 @@ for more collection apps, see also [Multimedia#Collection managers](/index.php/M
 
 *   **Alexandria** — GNOME application to help manage your book collection.
 
-	[http://alexandria.rubyforge.org/](http://alexandria.rubyforge.org/) || [alexandria](https://aur.archlinux.org/packages/alexandria/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/alexandria)]</sup>
+	[http://alexandria.rubyforge.org/](http://alexandria.rubyforge.org/) || [alexandria](https://aur.archlinux.org/packages/alexandria/)
 
 *   **[Koha](https://en.wikipedia.org/wiki/Koha_(software) "wikipedia:Koha (software)")** — Open source Integrated Library System (ILS), used world-wide by public, school and special libraries.
 
-	[http://koha-community.org/](http://koha-community.org/) || [koha](https://aur.archlinux.org/packages/koha/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/koha)]</sup>
+	[http://koha-community.org/](http://koha-community.org/) || [koha](https://aur.archlinux.org/packages/koha/)
 
 #### PDF and DjVu
 
 **Note:** [PDF forms](https://en.wikipedia.org/wiki/Portable_Document_Format#Interactive_elements "wikipedia:Portable Document Format") support:
 
-*   [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup> is able to save both AcroForms and XFA forms into PDF files.
+*   [acroread](https://aur.archlinux.org/packages/acroread/) is able to save both AcroForms and XFA forms into PDF files.
 *   Poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular) support AcroForms, but not full XFA forms. [[2]](https://bugs.freedesktop.org/show_bug.cgi?id=18935) [[3]](https://bugs.launchpad.net/ubuntu/+source/poppler/+bug/321720)
 *   For CJK(Chinese, Japanese, Korean) support in poppler-based readers such as [evince](https://www.archlinux.org/packages/?name=evince) and [kdegraphics-okular](https://www.archlinux.org/packages/?name=kdegraphics-okular), install [poppler-data](https://www.archlinux.org/packages/?name=poppler-data). poppler-data is an optional dependency of poppler which is an indirect dependency of evince and okular.
 
@@ -549,11 +549,11 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **fbpdf** — Small framebuffer PDF and DjVu viewer based off of MuPDF, with [Vim](/index.php/Vim "Vim") keybindings and written in C
 
-	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)<sup><small>AUR</small></sup>
+	[http://repo.or.cz/w/fbpdf.git](http://repo.or.cz/w/fbpdf.git) || [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)
 
 *   **jfbview** — Framebuffer PDF and image viewer. Features include Vim-like controls, zoom-to-fit, a TOC (outline) view, fast multi-threaded rendering and asynchronous pre-caching. Originally a fork of _fbpdf_ called _jfbpdf_, now completely rewritten.
 
-	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)<sup><small>AUR</small></sup>
+	[http://seasonofcode.com/pages/jfbview.html](http://seasonofcode.com/pages/jfbview.html) || [jfbview](https://aur.archlinux.org/packages/jfbview/)
 
 ##### Graphical
 
@@ -561,7 +561,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **acroread** — A PDF file viewer offered by Adobe (closed source).
 
-	[http://www.adobe.com/products/reader.html](http://www.adobe.com/products/reader.html) || [acroread](https://aur.archlinux.org/packages/acroread/)<sup><small>AUR</small></sup>
+	[http://www.adobe.com/products/reader.html](http://www.adobe.com/products/reader.html) || [acroread](https://aur.archlinux.org/packages/acroread/)
 
 *   **apvlv** — Lightweight PDF/DjVu/UMD/TXT viewer with [Vim](/index.php/Vim "Vim") keybindings.
 
@@ -581,7 +581,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Foxit Reader](https://en.wikipedia.org/wiki/Foxit_Reader "wikipedia:Foxit Reader")** — Small, fast (compared to Acrobat) PDF viewer. (closed source)
 
-	[http://www.foxitsoftware.com/pdf/desklinux/](http://www.foxitsoftware.com/pdf/desklinux/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)<sup><small>AUR</small></sup>
+	[http://www.foxitsoftware.com/pdf/desklinux/](http://www.foxitsoftware.com/pdf/desklinux/) || [foxitreader](https://aur.archlinux.org/packages/foxitreader/)
 
 *   **gv** — Graphical user interface for the Ghostscript interpreter that allows to view and navigate through PostScript and PDF documents.
 
@@ -589,7 +589,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[llpp](/index.php/Llpp "Llpp")** — Very fast PDF reader based off of MuPDF, that supports continuous page scrolling, bookmarking, and text search through the whole document.
 
-	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://aur.archlinux.org/packages/llpp/)<sup><small>AUR</small></sup>
+	[http://repo.or.cz/w/llpp.git](http://repo.or.cz/w/llpp.git) || [llpp](https://aur.archlinux.org/packages/llpp/)
 
 *   **[MuPDF](https://en.wikipedia.org/wiki/MuPDF "wikipedia:MuPDF")** — Very fast PDF and XPS viewer and toolkit written in portable C. Features CJK font support.
 
@@ -605,11 +605,11 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **PDF Studio** — All-in-one PDF editor similar to Adobe Acrobat (proprietary).
 
-	[http://www.qoppa.com/pdfstudio/](http://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)<sup><small>AUR</small></sup>
+	[http://www.qoppa.com/pdfstudio/](http://www.qoppa.com/pdfstudio/) || [pdfstudio](https://aur.archlinux.org/packages/pdfstudio/)
 
 *   **qpdfview** — Tabbed document viewer. It uses Poppler for PDF support, libspectre for PS support, DjVuLibre for DjVu support, CUPS for printing support and the Qt toolkit for its interface.
 
-	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/qpdfview](https://launchpad.net/qpdfview) || [qpdfview](https://aur.archlinux.org/packages/qpdfview/)
 
 *   **[Xournal](https://en.wikipedia.org/wiki/Xournal "wikipedia:Xournal")** — Pdf viewer/note taking application.
 
@@ -617,7 +617,7 @@ See also [Wikipedia:List of PDF software](https://en.wikipedia.org/wiki/List_of_
 
 *   **[Xpdf](https://en.wikipedia.org/wiki/Xpdf "wikipedia:Xpdf")** — Viewer that can decode LZW and read encrypted PDFs.
 
-	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)<sup><small>AUR</small></sup>
+	[http://www.foolabs.com/xpdf/](http://www.foolabs.com/xpdf/) || [xpdf](https://aur.archlinux.org/packages/xpdf/)
 
 *   **[zathura](https://en.wikipedia.org/wiki/Zathura_(document_viewer) "wikipedia:Zathura (document viewer)")** — Highly customizable and functional PDF/DjVu/PostScript/ComicBook viewer (plugin based).
 
@@ -632,7 +632,7 @@ See also [Wikipedia:Terminal pager](https://en.wikipedia.org/wiki/Terminal_pager
 
 	[http://www.gnu.org/software/less](http://www.gnu.org/software/less) || [less](https://www.archlinux.org/packages/?name=less)
 
-*   **less-mouse** — less with mouse scrolling support. It is present in the AUR as [less-mouse](https://aur.archlinux.org/packages/less-mouse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/less-mouse)]</sup>.
+*   **less-mouse** — less with mouse scrolling support. It is present in the AUR as [less-mouse](https://aur.archlinux.org/packages/less-mouse/).
 *   **[most](https://en.wikipedia.org/wiki/Most_(Unix) "wikipedia:Most (Unix)")** — A pager with support for multiple windows, left and right scrolling, and built-in colour support
 
 	[http://www.jedsoft.org/most/](http://www.jedsoft.org/most/) || [most](https://www.archlinux.org/packages/?name=most)
@@ -651,7 +651,7 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **ChmSee** — CHM viewer based on xulrunner.
 
-	[https://code.google.com/p/chmsee/](https://code.google.com/p/chmsee/) || [chmsee](https://aur.archlinux.org/packages/chmsee/)<sup><small>AUR</small></sup>
+	[https://code.google.com/p/chmsee/](https://code.google.com/p/chmsee/) || [chmsee](https://aur.archlinux.org/packages/chmsee/)
 
 *   **Kchmviewer** — Qt-based CHM viewer that uses chmlib and borrows some ideas from xchm. It does not depend on [KDE](/index.php/KDE "KDE"), but it can be compiled to integrate with it.
 
@@ -669,11 +669,11 @@ See also [Wikipedia:Microsoft Compiled HTML Help](https://en.wikipedia.org/wiki/
 
 *   **QComicBook** — Lightweight comic book viewer written in C++ and Qt4.
 
-	[http://qcomicbook.org/](http://qcomicbook.org/) || [qcomicbook](https://aur.archlinux.org/packages/qcomicbook/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qcomicbook)]</sup>
+	[http://qcomicbook.org/](http://qcomicbook.org/) || [qcomicbook](https://aur.archlinux.org/packages/qcomicbook/)
 
 *   **YACReader** — Comic book viewer written in C++ and Qt5\. Comes with YACReaderLibrary for managing comics.
 
-	[http://yacreader.com/](http://yacreader.com/) || [yacreader](https://aur.archlinux.org/packages/yacreader/)<sup><small>AUR</small></sup>
+	[http://yacreader.com/](http://yacreader.com/) || [yacreader](https://aur.archlinux.org/packages/yacreader/)
 
 ### Scanning software
 
@@ -705,11 +705,11 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **gImageReader** — Graphical GTK frontend to Tesseract.
 
-	[http://gimagereader.sourceforge.net/](http://gimagereader.sourceforge.net/) || [gimagereader](https://aur.archlinux.org/packages/gimagereader/)<sup><small>AUR</small></sup>
+	[http://gimagereader.sourceforge.net/](http://gimagereader.sourceforge.net/) || [gimagereader](https://aur.archlinux.org/packages/gimagereader/)
 
 *   **gscan2pdf** — Scans, runs an OCR engine, minor post-processing, creates a document.
 
-	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)<sup><small>AUR</small></sup>
+	[http://gscan2pdf.sourceforge.net/](http://gscan2pdf.sourceforge.net/) || [gscan2pdf](https://aur.archlinux.org/packages/gscan2pdf/)
 
 *   **OCRFeeder** — Python GUI for Gnome which performs document analysis and rendition, and can use either CuneiForm, GOCR, Ocrad or Tesseract as OCR engines. It can import from PDF or image files, and export to HTML or OpenDocument.
 
@@ -717,7 +717,7 @@ See also [Wikipedia:Comparison of optical character recognition software](https:
 
 *   **OCRopy** — OCR _platform_, modules exist for document layout analysis, OCR engines (it can use Tesseract or its own engine), natural language modeling, etc.
 
-	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)<sup><small>AUR</small></sup>
+	[https://github.com/tmbdev/ocropy](https://github.com/tmbdev/ocropy) || [ocropy](https://aur.archlinux.org/packages/ocropy/)
 
 *   **[YAGF](/index.php/YAGF "YAGF")** — Graphical interface for the CuneiForm text recognition program on the Linux platform.
 
@@ -731,11 +731,11 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **hnb (hierarchical notebook)** — Program to organize many kinds of data (addresses, to-do lists, ideas, book reviews, etc.) in one place using the XML format.
 
-	[http://hnb.sourceforge.net/](http://hnb.sourceforge.net/) || [hnb](https://aur.archlinux.org/packages/hnb/)<sup><small>AUR</small></sup>
+	[http://hnb.sourceforge.net/](http://hnb.sourceforge.net/) || [hnb](https://aur.archlinux.org/packages/hnb/)
 
 *   **pynote** — Manage notes on the commandline
 
-	[https://github.com/rumpelsepp/pynote](https://github.com/rumpelsepp/pynote) || [pynote](https://aur.archlinux.org/packages/pynote/)<sup><small>AUR</small></sup>
+	[https://github.com/rumpelsepp/pynote](https://github.com/rumpelsepp/pynote) || [pynote](https://aur.archlinux.org/packages/pynote/)
 
 #### Graphical
 
@@ -761,11 +761,11 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **NoteCase** — Portable hierarchical note manager, coded in C++ using bindings to the GTK+ toolkit.
 
-	[http://notecase.sourceforge.net](http://notecase.sourceforge.net) || [notecase](https://aur.archlinux.org/packages/notecase/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/notecase)]</sup>
+	[http://notecase.sourceforge.net](http://notecase.sourceforge.net) || [notecase](https://aur.archlinux.org/packages/notecase/)
 
 *   **[org-mode](https://en.wikipedia.org/wiki/org-mode "wikipedia:org-mode")** — [Emacs](/index.php/Emacs "Emacs") mode for notes, project planning and authoring.
 
-	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)<sup><small>AUR</small></sup>
+	[http://orgmode.org](http://orgmode.org) || [emacs-org-mode](https://aur.archlinux.org/packages/emacs-org-mode/)
 
 *   **[Tomboy](https://en.wikipedia.org/wiki/Tomboy_(software) "wikipedia:Tomboy (software)")** — Desktop note-taking application for Linux and Unix with a wiki-like linking system to connect notes together.
 
@@ -781,7 +781,7 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **znotes** — A lightweight crossplatform application for notes managment with simple interface, use qt4 libraries.
 
-	[http://znotes.sourceforge.net/](http://znotes.sourceforge.net/) || [znotes](https://aur.archlinux.org/packages/znotes/)<sup><small>AUR</small></sup>
+	[http://znotes.sourceforge.net/](http://znotes.sourceforge.net/) || [znotes](https://aur.archlinux.org/packages/znotes/)
 
 ### Mind-mapping tools
 
@@ -791,15 +791,15 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Freeplane** — Free and open source software application that supports thinking, sharing information and getting things done at work, in school and at home. The software can be used for mind mapping and analyzing the information contained in mind maps.
 
-	[http://freeplane.sourceforge.net](http://freeplane.sourceforge.net) || [freeplane](https://aur.archlinux.org/packages/freeplane/)<sup><small>AUR</small></sup>
+	[http://freeplane.sourceforge.net](http://freeplane.sourceforge.net) || [freeplane](https://aur.archlinux.org/packages/freeplane/)
 
 *   **Semantik** — A mind-mapping application for KDE.
 
-	[https://ita1024.github.io/semantik/](https://ita1024.github.io/semantik/) || [semantik](https://aur.archlinux.org/packages/semantik/)<sup><small>AUR</small></sup>
+	[https://ita1024.github.io/semantik/](https://ita1024.github.io/semantik/) || [semantik](https://aur.archlinux.org/packages/semantik/)
 
 *   **TreeSheets** — The ultimate replacement for spreadsheets, mind mappers, outliners, PIMs, text editors and small databases.
 
-	[http://strlen.com/treesheets/](http://strlen.com/treesheets/) || [treesheets-git](https://aur.archlinux.org/packages/treesheets-git/)<sup><small>AUR</small></sup>
+	[http://strlen.com/treesheets/](http://strlen.com/treesheets/) || [treesheets-git](https://aur.archlinux.org/packages/treesheets-git/)
 
 *   **View Your Mind** — Tool to generate and manipulate maps which show your thoughts. Such maps can help you to improve your creativity and effectivity. You can use them for time management, to organize tasks, to get an overview over complex contexts, to sort your ideas etc.
 
@@ -831,11 +831,11 @@ See also [Wikipedia:Comparison of notetaking software](https://en.wikipedia.org/
 
 *   **Write** — a word processor for hand writing.
 
-	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)<sup><small>AUR</small></sup>
+	[http://www.styluslabs.com/](http://www.styluslabs.com/) || [write_stylus](https://aur.archlinux.org/packages/write_stylus/)
 
 *   **Gournal** — note-taking application written for usage on Tablet-PC, written in perl.
 
-	[http://www.adebenham.com/old-stuff/gournal/](http://www.adebenham.com/old-stuff/gournal/) || [gournal](https://aur.archlinux.org/packages/gournal/)<sup><small>AUR</small></sup>
+	[http://www.adebenham.com/old-stuff/gournal/](http://www.adebenham.com/old-stuff/gournal/) || [gournal](https://aur.archlinux.org/packages/gournal/)
 
 *   **Xournal** — an application for notetaking, sketching, keeping a journal using a stylus.
 
@@ -847,18 +847,18 @@ See also [Wikipedia:Comparison of reference management software](https://en.wiki
 
 *   **Bibus** — A bibliographic database that can directly insert references in OpenOffice.org/LibreOffice and generate the bibliographic index.
 
-	[http://bibus-biblio.sourceforge.net](http://bibus-biblio.sourceforge.net) || [bibus](https://aur.archlinux.org/packages/bibus/)<sup><small>AUR</small></sup>
+	[http://bibus-biblio.sourceforge.net](http://bibus-biblio.sourceforge.net) || [bibus](https://aur.archlinux.org/packages/bibus/)
 
 *   **DocEar** — Docear is an academic literature suite for searching, organizing and creating academic literature, built upon the mind mapping software Freeplane and the reference manager JabRef.
 
-	[https://www.docear.org](https://www.docear.org) || [docear](https://aur.archlinux.org/packages/docear/)<sup><small>AUR</small></sup>
+	[https://www.docear.org](https://www.docear.org) || [docear](https://aur.archlinux.org/packages/docear/)
 
 *   **JabRef** — GUI frontend for BibTeX, written in Java.
 
-	[http://jabref.sourceforge.net](http://jabref.sourceforge.net) || [jabref](https://aur.archlinux.org/packages/jabref/)<sup><small>AUR</small></sup>
+	[http://jabref.sourceforge.net](http://jabref.sourceforge.net) || [jabref](https://aur.archlinux.org/packages/jabref/)
 
 *   **Zotero** — Zotero Standalone. Is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources.
 
-	[http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)<sup><small>AUR</small></sup>
+	[http://www.zotero.org](http://www.zotero.org) || [zotero](https://aur.archlinux.org/packages/zotero/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418801](https://wiki.archlinux.org/index.php?title=List_of_applications/Documents&oldid=418801)"

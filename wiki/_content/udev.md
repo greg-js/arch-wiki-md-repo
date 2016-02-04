@@ -221,7 +221,7 @@ If your eSATA drive is not detected when you plug it in, there are a few things 
 
 ```
 
-Or you could install [scsiadd](https://aur.archlinux.org/packages/scsiadd/)<sup><small>AUR</small></sup> (from the AUR) and try
+Or you could install [scsiadd](https://aur.archlinux.org/packages/scsiadd/) (from the AUR) and try
 
 ```
 # scsiadd -s

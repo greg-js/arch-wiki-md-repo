@@ -11,7 +11,7 @@ Pytvshows is a python script for downloading .torrent files from trvrss.net or e
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pytvshows](https://aur.archlinux.org/packages/pytvshows/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pytvshows)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [pytvshows](https://aur.archlinux.org/packages/pytvshows/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

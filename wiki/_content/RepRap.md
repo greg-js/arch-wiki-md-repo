@@ -39,7 +39,7 @@ Connect your 3D printer to your computer and run the host software. Use the host
 
 #### Cura
 
-*   Install [cura](https://aur.archlinux.org/packages/cura/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+*   Install [cura](https://aur.archlinux.org/packages/cura/) from [AUR](/index.php/AUR "AUR").
 
 Run cura
 
@@ -52,7 +52,7 @@ Configure it to use RepRap in the startup configuration wizard. Select the RepRa
 
 #### MatterControl
 
-MatterControl is a combined slicer/host similar to Cura. Install [mattercontrol](https://aur.archlinux.org/packages/mattercontrol/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"), then run it.
+MatterControl is a combined slicer/host similar to Cura. Install [mattercontrol](https://aur.archlinux.org/packages/mattercontrol/) from [AUR](/index.php/AUR "AUR"), then run it.
 
 ```
 $ mattercontrol
@@ -104,7 +104,7 @@ Printrun consists of printcore, pronsole and pronterface, and a small collection
 
 It is pronterface and pronsole which will be most usefull to us.
 
-*   Install [printrun](https://aur.archlinux.org/packages/printrun/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+*   Install [printrun](https://aur.archlinux.org/packages/printrun/) from [AUR](/index.php/AUR "AUR").
 
 Now you can run the pronterface and pronsole commands directly. Let's start pronterface, as it has a GUI.
 
@@ -124,7 +124,7 @@ If you have to run it by calling a helper script like mendel.sh, it might be a g
 
 #### ReplicatorG
 
-*   Install [replicatorg](https://aur.archlinux.org/packages/replicatorg/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+*   Install [replicatorg](https://aur.archlinux.org/packages/replicatorg/) from [AUR](/index.php/AUR "AUR").
 *   Make sure you are in group users
 
 Set write permissions in /opt/replicatorg
@@ -160,7 +160,7 @@ $ ./replicatorg
 
 Repetier is a little like pronterface.
 
-*   Install [repetier-host](https://aur.archlinux.org/packages/repetier-host/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+*   Install [repetier-host](https://aur.archlinux.org/packages/repetier-host/) from [AUR](/index.php/AUR "AUR").
 
 Read more at [http://www.repetier.com/](http://www.repetier.com/)
 

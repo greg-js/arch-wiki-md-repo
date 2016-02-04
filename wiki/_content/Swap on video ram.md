@@ -128,6 +128,6 @@ The following command may help you getting the used swap in the different spaces
 
 *   [Archived Gentoo Wiki articles. Note the warnings.](http://www.gentoo-wiki.info/TIP_Use_memory_on_video_card_as_swap)
 *   [MTD website](http://www.linux-mtd.infradead.org)
-*   [Gentoo Wiki](http://en.gentoo-wiki.com/wiki/Using_Graphics_Card_Memory_as_Swap)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-08-17]</sup>
+*   [Gentoo Wiki](http://en.gentoo-wiki.com/wiki/Using_Graphics_Card_Memory_as_Swap)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Swap_on_video_ram&oldid=361730](https://wiki.archlinux.org/index.php?title=Swap_on_video_ram&oldid=361730)"

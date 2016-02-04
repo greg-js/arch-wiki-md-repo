@@ -52,16 +52,16 @@ Then regenerate the fontconfig cache:
 
 **Note:** These packages do **require access to a Windows 7/8/10 and/or a Office 2007** setup or installation media, consult corresponding [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for details.
 
-*   [ttf-office-2007-fonts](https://aur.archlinux.org/packages/ttf-office-2007-fonts/)<sup><small>AUR</small></sup> — Office 2007 fonts
-*   [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/)<sup><small>AUR</small></sup> — Windows 7 fonts
-*   [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/)<sup><small>AUR</small></sup> — Windows 8.1 fonts
-*   [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/)<sup><small>AUR</small></sup> — Windows 10 fonts
+*   [ttf-office-2007-fonts](https://aur.archlinux.org/packages/ttf-office-2007-fonts/) — Office 2007 fonts
+*   [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/) — Windows 7 fonts
+*   [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/) — Windows 8.1 fonts
+*   [ttf-ms-win10](https://aur.archlinux.org/packages/ttf-ms-win10/) — Windows 10 fonts
 
 ### Legacy packages
 
 **Note:** The fonts provided by these packages are out-of-date and are missing modern hinting instructions and the full character sets. It is recommended to use the above packages.
 
-[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> includes:
+[ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) includes:
 
 *   [Andalé Mono](https://en.wikipedia.org/wiki/Andal%C3%A9_Mono "wikipedia:Andalé Mono")
 *   [Arial](https://en.wikipedia.org/wiki/Arial "wikipedia:Arial")
@@ -82,9 +82,9 @@ Then regenerate the fontconfig cache:
 
 **Warning:** According to [original Microsoft's End User License Agreement](http://web.archive.org/web/20020227054122/www.microsoft.com/typography/fontpack/eula.htm), there are _some_ legal limitations when using the above fonts.
 
-You can also obtain [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/)<sup><small>AUR</small></sup> which, as you might expect, contains [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)").
+You can also obtain [ttf-tahoma](https://aur.archlinux.org/packages/ttf-tahoma/) which, as you might expect, contains [Tahoma](https://en.wikipedia.org/wiki/Tahoma_(typeface) "wikipedia:Tahoma (typeface)").
 
-[ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)<sup><small>AUR</small></sup> includes:
+[ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/) includes:
 
 *   [Calibri](https://en.wikipedia.org/wiki/Calibri "wikipedia:Calibri")
 *   [Cambria](https://en.wikipedia.org/wiki/Cambria_(typeface) "wikipedia:Cambria (typeface)")
@@ -138,7 +138,7 @@ Use [Infinality's patched freetype2 package](/index.php/Infinality "Infinality")
 
 ## Windows 8
 
-The [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/)<sup><small>AUR</small></sup> split package is intended as a more up-to-date replacement for [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>, [ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/)<sup><small>AUR</small></sup> and [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/)<sup><small>AUR</small></sup>.
+The [ttf-ms-win8](https://aur.archlinux.org/packages/ttf-ms-win8/) split package is intended as a more up-to-date replacement for [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/), [ttf-vista-fonts](https://aur.archlinux.org/packages/ttf-vista-fonts/) and [ttf-win7-fonts](https://aur.archlinux.org/packages/ttf-win7-fonts/).
 
 Although it provides newer versions of the fonts, it **cannot automatically download the fonts** due to license issues .
 
@@ -150,7 +150,7 @@ On the installed Windows 8.1 system fonts are usually located in `[%WINDIR%](htt
 
 You need the files listed in the `source=()` array. Place them in the same directory as this [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") file, then run [makepkg](/index.php/Makepkg "Makepkg").
 
-`makepkg --pkg ttf-ms-win8` will make just the Windows 8.1 core fonts package which should cover even more than [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup>.
+`makepkg --pkg ttf-ms-win8` will make just the Windows 8.1 core fonts package which should cover even more than [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/).
 
 Fonts are best viewed with [Infinality](/index.php/Infinality "Infinality"). Infinality offers great font rendering and customization.
 

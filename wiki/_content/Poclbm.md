@@ -27,7 +27,7 @@ Also, there is a bug on some drivers (both ATI and NVIDIA) that makes the miner 
 
 ## Installation
 
-Install [poclbm-git](https://aur.archlinux.org/packages/poclbm-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [poclbm-git](https://aur.archlinux.org/packages/poclbm-git/) from the [AUR](/index.php/AUR "AUR").
 
 ## Execute the miner
 

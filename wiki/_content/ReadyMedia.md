@@ -26,7 +26,7 @@ ReadyMedia is a simple, lightweight alternative to [MediaTomb](/index.php/MediaT
 
 Install the [minidlna](https://www.archlinux.org/packages/?name=minidlna) package.
 
-If you want to use an unofficial branch which supports transcoding, install the [readymedia-transcode-git](https://aur.archlinux.org/packages/readymedia-transcode-git/)<sup><small>AUR</small></sup> package.
+If you want to use an unofficial branch which supports transcoding, install the [readymedia-transcode-git](https://aur.archlinux.org/packages/readymedia-transcode-git/) package.
 
 ## Configuration and starting
 

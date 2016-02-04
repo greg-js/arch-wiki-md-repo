@@ -68,7 +68,7 @@ You must have [acpid](/index.php/Acpid "Acpid") installed to use the Function ke
 
 After installing acpid, you will have to add it to your DAEMONS array in rc.conf.
 
-Then, you need to install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup> package from AUR and edit file **/etc/conf.d/acpi-eeepc-generic.conf**:
+Then, you need to install [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) package from AUR and edit file **/etc/conf.d/acpi-eeepc-generic.conf**:
 
 ```
 EEEPC_MODEL="1201N"

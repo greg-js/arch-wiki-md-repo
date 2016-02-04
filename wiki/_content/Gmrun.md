@@ -12,7 +12,7 @@
 
 ## Installation
 
-Gmrun can be [installed](/index.php/Pacman "Pacman") with the package [gmrun](https://www.archlinux.org/packages/?name=gmrun), available in the [official repositories](/index.php/Official_repositories "Official repositories"). A multihead aware version can be installed with the [gmrun-multihead](https://aur.archlinux.org/packages/gmrun-multihead/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+Gmrun can be [installed](/index.php/Pacman "Pacman") with the package [gmrun](https://www.archlinux.org/packages/?name=gmrun), available in the [official repositories](/index.php/Official_repositories "Official repositories"). A multihead aware version can be installed with the [gmrun-multihead](https://aur.archlinux.org/packages/gmrun-multihead/) package from the [AUR](/index.php/AUR "AUR").
 
 ## Usage
 

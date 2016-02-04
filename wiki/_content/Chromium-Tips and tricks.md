@@ -93,7 +93,7 @@ Relocate the browser profile to a [tmpfs](https://en.wikipedia.org/wiki/Tmpfs "w
 
 Use an active profile management script for maximal reliability and ease of use.
 
-[profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)<sup><small>AUR</small></sup> is such a script and is directly available from the [AUR](/index.php/AUR "AUR"). It symlinks and syncs the browser profile directories to RAM. Refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for additional information on it.
+[profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) is such a script and is directly available from the [AUR](/index.php/AUR "AUR"). It symlinks and syncs the browser profile directories to RAM. Refer to the [Profile-sync-daemon](/index.php/Profile-sync-daemon "Profile-sync-daemon") wiki article for additional information on it.
 
 ### Launch a new browser instance
 
@@ -122,7 +122,7 @@ See [xdg-open](/index.php/Xdg-open "Xdg-open") to change the default assocation.
 
 ### Touch Scrolling on touchscreen devices
 
-Chrome and Chromium do not support touchscreen by default. There are a couple settings you can change in the "Flags" portion of Chrome to potentially make it work for your device. This has been tested in [chromium](https://www.archlinux.org/packages/?name=chromium) from the [official repositories](/index.php/Official_repositories "Official repositories") and [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Chrome and Chromium do not support touchscreen by default. There are a couple settings you can change in the "Flags" portion of Chrome to potentially make it work for your device. This has been tested in [chromium](https://www.archlinux.org/packages/?name=chromium) from the [official repositories](/index.php/Official_repositories "Official repositories") and [google-chrome](https://aur.archlinux.org/packages/google-chrome/) from the [AUR](/index.php/AUR "AUR").
 
 *   Browse to **chrome://flags** and set everything to default
 *   Switch "_Enable Touch events_" to "_Enabled_" (**chrome://flags/#touch-events**)
@@ -178,7 +178,7 @@ An official, automatically updated listing of Chromium releases which also shows
 
 Chromium uses [SQLite](/index.php/SQLite "SQLite") databases to manage history and the like. Sqlite databases become fragmented over time and empty spaces appear all around. But, since there are no managing processes checking and optimizing the database, these factors eventually result in a performance hit. A good way to improve startup and some other bookmarks- and history-related tasks is to defragment and trim unused space from these databases.
 
-[profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/)<sup><small>AUR</small></sup> and [browser-vacuum](https://aur.archlinux.org/packages/browser-vacuum/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR") do just this.
+[profile-cleaner](https://aur.archlinux.org/packages/profile-cleaner/) and [browser-vacuum](https://aur.archlinux.org/packages/browser-vacuum/) in the [AUR](/index.php/AUR "AUR") do just this.
 
 ## Security
 

@@ -74,9 +74,9 @@ Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-m
 
 ### Automation
 
-[downgrader](https://aur.archlinux.org/packages/downgrader/)<sup><small>AUR</small></sup> tool which works with libalpm, supports the pacman log, downgrade packages using Arch Linux Archive, local cache and ARM ([http://repo-arm.archlinuxcn.org](http://repo-arm.archlinuxcn.org)). May be particularly useful to identify problematic packages.
+[downgrader](https://aur.archlinux.org/packages/downgrader/) tool which works with libalpm, supports the pacman log, downgrade packages using Arch Linux Archive, local cache and ARM ([http://repo-arm.archlinuxcn.org](http://repo-arm.archlinuxcn.org)). May be particularly useful to identify problematic packages.
 
-The [downgrade](https://aur.archlinux.org/packages/downgrade/)<sup><small>AUR</small></sup> package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
+The [downgrade](https://aur.archlinux.org/packages/downgrade/) package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
 
 ## Return from [testing]
 

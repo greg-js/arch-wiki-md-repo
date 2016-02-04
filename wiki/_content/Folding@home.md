@@ -18,7 +18,7 @@ From the project [home page](http://folding.stanford.edu/):
 
 ## Installation
 
-Install [foldingathome](https://aur.archlinux.org/packages/foldingathome/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [foldingathome](https://aur.archlinux.org/packages/foldingathome/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -35,7 +35,7 @@ $ systemctl status foldingathome
 
 ### The graphical way
 
-You can manage the daemon by opening a web browser and heading to [http://localhost:7396/](http://localhost:7396/). Alternately, you can install [fahcontrol](https://aur.archlinux.org/packages/fahcontrol/)<sup><small>AUR</small></sup> and use the FAHControl program.
+You can manage the daemon by opening a web browser and heading to [http://localhost:7396/](http://localhost:7396/). Alternately, you can install [fahcontrol](https://aur.archlinux.org/packages/fahcontrol/) and use the FAHControl program.
 
 The daemon can also be controlled remotely. Instructions for doing so are listed in `/opt/fah/sample-config.xml`. Remember to open firewall ports if necessary.
 
@@ -78,7 +78,7 @@ There are several ways of monitoring the progress of your FAH clients, both on t
 
 The FAHControl software distributed by folding at home provides you with efficient means to control remote hosts. Just add another client with the corresponding button "Add" and enter the name, ip address, port and password (if you set one) and hit save. The software should now try to establish a connection to the remote host and show you the progress in a seperate client tab.
 
-In AUR there is [fahmon](https://aur.archlinux.org/packages/fahmon/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fahmon)]</sup>, which provides a GUI with the ability to watch multiple clients and get info on the work-unit itself. Fahmon has a dedicated site at [http://www.fahmon.net/](http://www.fahmon.net/)
+In AUR there is [fahmon](https://aur.archlinux.org/packages/fahmon/), which provides a GUI with the ability to watch multiple clients and get info on the work-unit itself. Fahmon has a dedicated site at [http://www.fahmon.net/](http://www.fahmon.net/)
 
 On the CLI, you can add a command to your shell configuration file (e.g: _.bashrc_ or _.zshrc_). Replace _fah_user_ with the actual user first.
 

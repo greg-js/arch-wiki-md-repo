@@ -577,19 +577,19 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 *   **cdw** — Ncurses frontend to _cdrecord_, _mkisofs_, _growisofs_, _dvd+rw-mediainfo_, _dvd+rw-format_ and _xorriso_.
 
-	[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)<sup><small>AUR</small></sup>
+	[http://cdw.sourceforge.net/](http://cdw.sourceforge.net/) || [cdw](https://aur.archlinux.org/packages/cdw/)
 
 *   **[GnomeBaker](https://en.wikipedia.org/wiki/GnomeBaker "wikipedia:GnomeBaker")** — Full featured CD/DVD burning application for the GNOME desktop.
 
-	[http://gnomebaker.sourceforge.net/](http://gnomebaker.sourceforge.net/) || [gnomebaker](https://aur.archlinux.org/packages/gnomebaker/)<sup><small>AUR</small></sup>
+	[http://gnomebaker.sourceforge.net/](http://gnomebaker.sourceforge.net/) || [gnomebaker](https://aur.archlinux.org/packages/gnomebaker/)
 
 *   **Graveman** — GTK-based CD/DVD burning application. It requires configuration to point to correct devices.
 
-	[http://graveman.tuxfamily.org/](http://graveman.tuxfamily.org/) || [graveman](https://aur.archlinux.org/packages/graveman/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/graveman)]</sup>
+	[http://graveman.tuxfamily.org/](http://graveman.tuxfamily.org/) || [graveman](https://aur.archlinux.org/packages/graveman/)
 
 *   **[isomaster](https://en.wikipedia.org/wiki/ISO_Master "wikipedia:ISO Master")** — ISO image editor.
 
-	[http://littlesvr.ca/isomaster](http://littlesvr.ca/isomaster) || [isomaster](https://aur.archlinux.org/packages/isomaster/)<sup><small>AUR</small></sup>
+	[http://littlesvr.ca/isomaster](http://littlesvr.ca/isomaster) || [isomaster](https://aur.archlinux.org/packages/isomaster/)
 
 *   **[K3b](https://en.wikipedia.org/wiki/K3b "wikipedia:K3b")** — Feature-rich and easy to handle CD burning application based on KDElibs.
 
@@ -597,7 +597,7 @@ See also [Wikipedia:Comparison of disc authoring software](https://en.wikipedia.
 
 *   **[X-CD-Roast](https://en.wikipedia.org/wiki/X-CD-Roast "wikipedia:X-CD-Roast")** — Lightweight _cdrtools_ front-end for CD and DVD writing.
 
-	[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcdroast)]</sup>
+	[http://www.xcdroast.org/](http://www.xcdroast.org/) || [xcdroast](https://aur.archlinux.org/packages/xcdroast/)
 
 *   **Xfburn** — Simple front-end to the libburnia libraries with support for CD/DVD(-RW), ISO images, and BurnFree.
 
@@ -667,7 +667,7 @@ Additionally, you must install player software. Popular DVD players are [MPlayer
 
 *   **ripright** — Minimal CD ripper modeled on autorip.
 
-	[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)<sup><small>AUR</small></sup>
+	[http://www.mcternan.me.uk/ripright/](http://www.mcternan.me.uk/ripright/) || [ripright](https://aur.archlinux.org/packages/ripright/)
 
 *   **rubyripper** — Audiodisk ripper that tries to deliver a secure rip through multiple rippings of the same track and corrections of any differences.
 
@@ -692,7 +692,7 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **dvd-vr** — Tool which easily converts VRO files extracted from a [DVD-VR](https://en.wikipedia.org/wiki/DVD-VR "wikipedia:DVD-VR") and splits them in regular VOB files.
 
-	[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dvd-vr)]</sup>
+	[http://www.pixelbeat.org/programs/dvd-vr/](http://www.pixelbeat.org/programs/dvd-vr/) || [dvd-vr](https://aur.archlinux.org/packages/dvd-vr/)
 
 *   **[dvdbackup](/index.php/Dvdbackup "Dvdbackup")** — Tool for pure data extraction which does not transcode. It is useful for creating _exact_ copies of encrypted DVDs in conjunction with **libdvdcss** or for decrypting video for other utilities unable to read encrypted DVDs.
 
@@ -708,9 +708,9 @@ Some utilities perform both tasks, whilst others focus on one aspect or the othe
 
 *   **Hybrid** — Multi platform Qt based frontend for a bunch of other tools which can convert nearly every input to x264/Xvid/VP8 + ac3/ogg/mp3/aac/flac inside an mp4/m2ts/mkv/webm/mov/avi container, a Blu-ray or an AVCHD structure.
 
-	[http://www.selur.de/](http://www.selur.de/) || [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)<sup><small>AUR</small></sup>
+	[http://www.selur.de/](http://www.selur.de/) || [hybrid-encoder](https://aur.archlinux.org/packages/hybrid-encoder/)
 
-*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool released under the GNU GPL. It is a close sibling to MPlayer and can convert all the formats that MPlayer understands into a variety of compressed and uncompressed formats using different codecs. Wrapper programs like [h264enc](https://aur.archlinux.org/packages/h264enc/)<sup><small>AUR</small></sup> and [undvd](https://aur.archlinux.org/packages/undvd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/undvd)]</sup> can provide an assistive interface. Many [GUI frontends](/index.php/MEncoder#GUI_frontends "MEncoder") are available.
+*   **[MEncoder](/index.php/MEncoder "MEncoder")** — Free command line video decoding, encoding and filtering tool released under the GNU GPL. It is a close sibling to MPlayer and can convert all the formats that MPlayer understands into a variety of compressed and uncompressed formats using different codecs. Wrapper programs like [h264enc](https://aur.archlinux.org/packages/h264enc/) and [undvd](https://aur.archlinux.org/packages/undvd/) can provide an assistive interface. Many [GUI frontends](/index.php/MEncoder#GUI_frontends "MEncoder") are available.
 
 	[http://www.mplayerhq.hu/](http://www.mplayerhq.hu/) || [mencoder](https://www.archlinux.org/packages/?name=mencoder)
 
@@ -727,8 +727,8 @@ The following packages should be installed:
 *   [dvdrip](https://www.archlinux.org/packages/?name=dvdrip): GTK front-end for [transcode](https://www.archlinux.org/packages/?name=transcode), which performs the ripping and encoding
 *   [libdv](https://www.archlinux.org/packages/?name=libdv): Software codec for DV video
 *   [xvidcore](https://www.archlinux.org/packages/?name=xvidcore): If you want to encode your ripped files as XviD, an open source MPEG-4 video codec (free alternative to DivX).
-*   [divx4linux](https://aur.archlinux.org/packages/divx4linux/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/divx4linux)]</sup>: If you want to encode your ripped files as DivX.
-*   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/subtitleripper)]</sup>: If you want to read and process subtitles.
+*   [divx4linux](https://aur.archlinux.org/packages/divx4linux/): If you want to encode your ripped files as DivX.
+*   [subtitleripper](https://aur.archlinux.org/packages/subtitleripper/): If you want to read and process subtitles.
 
 The dvd::rip preferences are mostly well-documented/self-explanatory. If you need help with something, see [http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp](http://www.exit1.org/dvdrip/doc/gui-gui_pref.cipp).
 
@@ -830,11 +830,11 @@ Any speed that is supported by the drive can be used, or 0 for the maximum speed
 
 ### Playback does not work with new computer (new DVD-Drive)
 
-If playback does not work and you have a new computer (new DVD-Drive) the reason might be that the [region code](https://en.wikipedia.org/wiki/DVD_region_code "wikipedia:DVD region code") is not set. You can read and set the region code with the [regionset](https://aur.archlinux.org/packages/regionset/)<sup><small>AUR</small></sup> package.
+If playback does not work and you have a new computer (new DVD-Drive) the reason might be that the [region code](https://en.wikipedia.org/wiki/DVD_region_code "wikipedia:DVD region code") is not set. You can read and set the region code with the [regionset](https://aur.archlinux.org/packages/regionset/) package.
 
 ### None of the above programs are able to rip/encode a DVD to my hard disk!
 
-Make sure the region of your DVD reader is set correctly; otherwise, you will get loads of inexplicable [CSS](https://en.wikipedia.org/wiki/Content_Scramble_System "wikipedia:Content Scramble System")-related errors. Use the [regionset](https://aur.archlinux.org/packages/regionset/)<sup><small>AUR</small></sup> package to do so.
+Make sure the region of your DVD reader is set correctly; otherwise, you will get loads of inexplicable [CSS](https://en.wikipedia.org/wiki/Content_Scramble_System "wikipedia:Content Scramble System")-related errors. Use the [regionset](https://aur.archlinux.org/packages/regionset/) package to do so.
 
 ### GUI program log indicates problems with backend program
 

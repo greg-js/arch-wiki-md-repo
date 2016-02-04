@@ -19,9 +19,9 @@
 
 These are considered unstable and insecure. They are however the only way to get any form of 3D acceleration or even reliable modesetting on certain chipsets, and can be installed using one of the following packages from the [AUR](/index.php/AUR "AUR"):
 
-*   [via-chrome9-dkms](https://aur.archlinux.org/packages/via-chrome9-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/via-chrome9-dkms)]</sup>
-*   [xf86-video-via-chrome9](https://aur.archlinux.org/packages/xf86-video-via-chrome9/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-via-chrome9)]</sup>
-*   [via-chrome9-dri](https://aur.archlinux.org/packages/via-chrome9-dri/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/via-chrome9-dri)]</sup>
+*   [via-chrome9-dkms](https://aur.archlinux.org/packages/via-chrome9-dkms/)
+*   [xf86-video-via-chrome9](https://aur.archlinux.org/packages/xf86-video-via-chrome9/)
+*   [via-chrome9-dri](https://aur.archlinux.org/packages/via-chrome9-dri/)
 
 ### The OpenChrome driver
 
@@ -74,7 +74,7 @@ After installing the system you will need to [blacklist](/index.php/Kernel_modul
 
 #### VIA kernel
 
-Some video cards, such as VX900 require booting [linux-openchrome](https://aur.archlinux.org/packages/linux-openchrome/)<sup><small>AUR</small></sup> kernel in order to properly initialize.
+Some video cards, such as VX900 require booting [linux-openchrome](https://aur.archlinux.org/packages/linux-openchrome/) kernel in order to properly initialize.
 
 ## Unichrome and OpenGL
 

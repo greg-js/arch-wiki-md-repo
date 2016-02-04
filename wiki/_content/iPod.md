@@ -123,7 +123,7 @@ If you do decide to take the CLI way, a good guide is available at [http://trac.
 
 #### DVD to iPod
 
-**Get from:** [podencoder](https://aur.archlinux.org/packages/podencoder/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/podencoder)]</sup>
+**Get from:** [podencoder](https://aur.archlinux.org/packages/podencoder/)
 **Depends on:** aur/gpac mplayer
 
 Has detailed help, and is fairly self explanatory.
@@ -203,7 +203,7 @@ Refer to this page:[[1]](https://help.ubuntu.com/community/PortableDevices/iPhon
 
 #### The SSHFS Way
 
-After this the easiest way to properly initialise a few things on the device's side is with the [iPod convenience script](http://launchpad.net/ipod-convenience). This is available in the AUR as [ipod-convenience](https://aur.archlinux.org/packages/ipod-convenience/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ipod-convenience)]</sup>
+After this the easiest way to properly initialise a few things on the device's side is with the [iPod convenience script](http://launchpad.net/ipod-convenience). This is available in the AUR as [ipod-convenience](https://aur.archlinux.org/packages/ipod-convenience/)
 
 Next do `modprobe fuse` to actually load the fuse module. You may also want to add it to your MODULES array in `/etc/rc.conf` to have it loaded on boot.
 
@@ -489,7 +489,7 @@ Your iPod can now be managed with Amarok or gtkpod.
 *   [jakpod](http://www.jakpod.de/)
     *   JakPod is based on Java and allows you to copy music and video files to your iPod.
     *   iPod Nano 6th support
-    *   [jakpod](https://aur.archlinux.org/packages/jakpod/)<sup><small>AUR</small></sup>
+    *   [jakpod](https://aur.archlinux.org/packages/jakpod/)
 
 ## See also
 

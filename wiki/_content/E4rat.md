@@ -43,7 +43,7 @@ It is always better to be safe than sorry. Just make backup if you cannot afford
 
 ## Installation
 
-Install [e4rat](https://aur.archlinux.org/packages/e4rat/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [e4rat](https://aur.archlinux.org/packages/e4rat/) from the [AUR](/index.php/AUR "AUR").
 
 **Note:**
 
@@ -114,7 +114,7 @@ The savings come from
 
 *   preloading only the first 100 files (both inodes and file contents) before starting /sbin/init, then continuing to load the remaining files in parallel with the normal boot sequence.
 
-You can install [e4rat-preload-lite](https://aur.archlinux.org/packages/e4rat-preload-lite/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/e4rat-preload-lite)]</sup> from the [AUR](/index.php/AUR "AUR").
+You can install [e4rat-preload-lite](https://aur.archlinux.org/packages/e4rat-preload-lite/) from the [AUR](/index.php/AUR "AUR").
 
 Append (or replace) `init=/usr/sbin/e4rat-preload-lite` permanently to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters"). Reboot and enjoy.
 

@@ -4,11 +4,11 @@
 
 ## Installation
 
-BMPanel is available as [bmpanel2](https://aur.archlinux.org/packages/bmpanel2/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR"). If you prefer the legacy version not mantained anymore install [bmpanel](https://aur.archlinux.org/packages/bmpanel/)<sup><small>AUR</small></sup>.
+BMPanel is available as [bmpanel2](https://aur.archlinux.org/packages/bmpanel2/) in the [AUR](/index.php/AUR "AUR"). If you prefer the legacy version not mantained anymore install [bmpanel](https://aur.archlinux.org/packages/bmpanel/).
 
 ## Themes
 
-BMPanel2 themes are available in the [bmpanel2-themes](https://aur.archlinux.org/packages/bmpanel2-themes/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bmpanel2-themes)]</sup> package. Further information about available themes can be found [here](http://code.google.com/p/bmpanel2/wiki/ThemeGallery). Here you can find more themes. Extract them to `~/.local/share/bmpanel2/themes` (respectively `~/.bmpanel/themes` for bmpanel legacy). Altering design of the theme can be done by adapting the `~/.local/share/bmpanel2/themes/_theme name_/theme` file (respectively `~/.bmpanel/themes/_theme name_/theme`). More information on this can be found [here](https://code.google.com/p/bmpanel2/).
+BMPanel2 themes are available in the [bmpanel2-themes](https://aur.archlinux.org/packages/bmpanel2-themes/) package. Further information about available themes can be found [here](http://code.google.com/p/bmpanel2/wiki/ThemeGallery). Here you can find more themes. Extract them to `~/.local/share/bmpanel2/themes` (respectively `~/.bmpanel/themes` for bmpanel legacy). Altering design of the theme can be done by adapting the `~/.local/share/bmpanel2/themes/_theme name_/theme` file (respectively `~/.bmpanel/themes/_theme name_/theme`). More information on this can be found [here](https://code.google.com/p/bmpanel2/).
 
 ## Starting bmpanel
 

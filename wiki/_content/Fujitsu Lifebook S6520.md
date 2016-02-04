@@ -73,9 +73,9 @@ The laptop's Bluetooth HCI is supported by BlueZ, the Linux Bluetooth Stack. The
 
 Prerequisites:
 
-*   [irda-utils](https://aur.archlinux.org/packages/irda-utils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/irda-utils)]</sup>
+*   [irda-utils](https://aur.archlinux.org/packages/irda-utils/)
 
-Under Linux the notebook's infrared port is viewed as `/dev/ttyS3`. Under Arch Linux you just need to install the [irda-utils](https://aur.archlinux.org/packages/irda-utils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/irda-utils)]</sup> package and configure `/etc/conf.d/irda` as follows:
+Under Linux the notebook's infrared port is viewed as `/dev/ttyS3`. Under Arch Linux you just need to install the [irda-utils](https://aur.archlinux.org/packages/irda-utils/) package and configure `/etc/conf.d/irda` as follows:
 
 ```
 # Parameters to be passed to irattach

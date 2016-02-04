@@ -21,7 +21,7 @@ Please note that games must be burned onto DVD+R DL (Dual Layered), as DVD-R DL 
 
 ## Stealth Patching
 
-Stealth patching patches a game image to make it ignore the security check done by the Xbox 360 console upon boot. If you use a stealth firmware, you will need to patch your backup. You can do this with a tool called [abgx360](https://aur.archlinux.org/packages/abgx360/)<sup><small>AUR</small></sup>, which can be found in the [AUR](/index.php/AUR "AUR").
+Stealth patching patches a game image to make it ignore the security check done by the Xbox 360 console upon boot. If you use a stealth firmware, you will need to patch your backup. You can do this with a tool called [abgx360](https://aur.archlinux.org/packages/abgx360/), which can be found in the [AUR](/index.php/AUR "AUR").
 
 abgx360 works on .iso _and_ .000 images. In order to patch these images, use the `--af3` flag, as such:
 
@@ -38,7 +38,7 @@ Using this tool should patch the file with no issues. It will also output metada
 
 Burning an iso is best done through the command line with growisofs. This is found in the [dvd+rw-tools](https://www.archlinux.org/packages/?name=dvd%2Brw-tools) package found in the [Official repositories](/index.php/Official_repositories "Official repositories").
 
-There are other applications you can use to burn the image ([k3b](https://www.archlinux.org/packages/?name=k3b), [gnomebaker](https://aur.archlinux.org/packages/gnomebaker/)<sup><small>AUR</small></sup>, etc) but you may miss some configuration options and end up with a dud burn. Use the following command to burn the image to disc.
+There are other applications you can use to burn the image ([k3b](https://www.archlinux.org/packages/?name=k3b), [gnomebaker](https://aur.archlinux.org/packages/gnomebaker/), etc) but you may miss some configuration options and end up with a dud burn. Use the following command to burn the image to disc.
 
 XGD1/XGD2:
 

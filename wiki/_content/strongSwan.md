@@ -25,7 +25,7 @@ They are typically implemented in userspace daemons on the server side. [strongS
 
 ## Server Configuration
 
-First, install the [strongswan](https://aur.archlinux.org/packages/strongswan/)<sup><small>AUR</small></sup> package.
+First, install the [strongswan](https://aur.archlinux.org/packages/strongswan/) package.
 
 ### Certificates
 

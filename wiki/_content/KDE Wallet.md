@@ -14,7 +14,7 @@
 
 If your KWallet password is the same as your username password, you can unlock your wallet automatically on login.
 
-For **Plasma 4**, install the [pam_kwallet-git](https://aur.archlinux.org/packages/pam_kwallet-git/)<sup><small>AUR</small></sup>.
+For **Plasma 4**, install the [pam_kwallet-git](https://aur.archlinux.org/packages/pam_kwallet-git/).
 
 Then edit `/etc/pam.d/kde` and add the two lines under their corresponding sections:
 
@@ -87,7 +87,7 @@ First, make sure that you have an [SSH agent](/index.php/SSH_agent "SSH agent") 
 
 [Install](/index.php/Install "Install") the [ksshaskpass](https://www.archlinux.org/packages/?name=ksshaskpass) package.
 
-**Note:** If you use KDE4 and run into problems due to ksshaskpass connecting to a [second instance of kwallet](https://bbs.archlinux.org/viewtopic.php?pid=1525004), try installing [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/)<sup><small>AUR</small></sup> instead.
+**Note:** If you use KDE4 and run into problems due to ksshaskpass connecting to a [second instance of kwallet](https://bbs.archlinux.org/viewtopic.php?pid=1525004), try installing [ksshaskpass4](https://aur.archlinux.org/packages/ksshaskpass4/) instead.
 
 Create an autostart file (KDE4: `~/.kde4/Autostart/ssh-add.sh`, KDE Plasma: `~/.config/autostart/ssh-add.sh`) with this content:
 

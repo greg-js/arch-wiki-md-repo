@@ -18,7 +18,7 @@ NVM Express (NVMe) is a specification for accessing SSDs attached through the PC
 
 The Linux NVMe driver is natively included in the kernel since version 3.3\. NVMe devices should show up under `/dev/nvme*`.
 
-Extra userspace NVMe tools can be found in [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/)<sup><small>AUR</small></sup>
+Extra userspace NVMe tools can be found in [nvme-cli-git](https://aur.archlinux.org/packages/nvme-cli-git/)
 
 ### Limitations
 

@@ -4,7 +4,7 @@
 
 ## Installation
 
-Minetest can be installed from [minetest](https://www.archlinux.org/packages/?name=minetest) or [minetest-git](https://aur.archlinux.org/packages/minetest-git/)<sup><small>AUR</small></sup>.
+Minetest can be installed from [minetest](https://www.archlinux.org/packages/?name=minetest) or [minetest-git](https://aur.archlinux.org/packages/minetest-git/).
 
 A dedicated server package for the game engine is provided in [minetest-server](https://www.archlinux.org/packages/?name=minetest-server).
 

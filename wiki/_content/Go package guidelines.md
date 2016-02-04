@@ -38,7 +38,7 @@ The [go](https://www.archlinux.org/packages/?name=go) package contains the **go*
     *   Similarly for mercurial packages, only add "-hg" to the package name if it is not a release-revision.
     *   Extend this pattern for other version control systems.
     *   The go tool has its own logic for which branch or tag it should use. See `go get --help`.
-*   Consider adding the name of the author to the package name if there are several applications that are named the same, like [dcpu16-kballard](https://aur.archlinux.org/packages/dcpu16-kballard/)<sup><small>AUR</small></sup>.
+*   Consider adding the name of the author to the package name if there are several applications that are named the same, like [dcpu16-kballard](https://aur.archlinux.org/packages/dcpu16-kballard/).
     *   In general, the most popular packages should be allowed to use the shortest or "best" name.
 *   Postfixes to the package names (like `-hg`, `-git` or `-svn`) are optional if there are no official releases from the project in question. On one hand, it is common to use them when the package downloads from a VCS. On the other hand, most Go projects do not have any release-tarballs, only the repo which is used for branching/tagging the official release, if it is not _trunk_. Also, `go get`, which is the "official" way to install Go modules, uses the repositories directly. Use your better judgement.
 
@@ -91,7 +91,7 @@ package() {
 ### Sample packages
 
 *   [gendesk](https://www.archlinux.org/packages/?name=gendesk)
-*   [dcpu16](https://aur.archlinux.org/packages/dcpu16/)<sup><small>AUR</small></sup>
+*   [dcpu16](https://aur.archlinux.org/packages/dcpu16/)
 
 ## Sample PKGBUILD for when only a single source file is available
 
@@ -123,7 +123,7 @@ package() {
 
 ### Sample packages
 
-*   [gorun](https://aur.archlinux.org/packages/gorun/)<sup><small>AUR</small></sup>
+*   [gorun](https://aur.archlinux.org/packages/gorun/)
 
 ## Sample PKGBUILDs for Go libraries that also includes executables
 

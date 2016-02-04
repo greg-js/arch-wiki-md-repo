@@ -6,7 +6,7 @@ Like [Xcompmgr](/index.php/Xcompmgr "Xcompmgr"), it does not replace an existing
 
 ## Installation
 
-Install either [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/)<sup><small>AUR</small></sup> or [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/)<sup><small>AUR</small></sup> (for the development version).
+Install either [cairo-compmgr](https://aur.archlinux.org/packages/cairo-compmgr/) or [cairo-compmgr-git](https://aur.archlinux.org/packages/cairo-compmgr-git/) (for the development version).
 
 Note that the dependency on [gconf](https://www.archlinux.org/packages/?name=gconf) can be safely removed however the dependency on [vala](https://www.archlinux.org/packages/?name=vala) cannot be removed. If you do remove the [gconf](https://www.archlinux.org/packages/?name=gconf) dependency, you also need to remove the last three lines from the `package()` function in the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD").
 

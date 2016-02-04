@@ -2,7 +2,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [autodl-irssi-svn](https://aur.archlinux.org/packages/autodl-irssi-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/autodl-irssi-svn)]</sup> package.
+[Install](/index.php/Install "Install") the [autodl-irssi-svn](https://aur.archlinux.org/packages/autodl-irssi-svn/) package.
 
 ```
  $ mkdir -p ~/.irssi/scripts/autorun

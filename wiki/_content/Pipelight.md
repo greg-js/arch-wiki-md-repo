@@ -4,8 +4,8 @@ Pipelight is a special browser plugin which allows one to use Windows-only plugi
 
 **Tip:**
 
-*   If you are here because you want to watch **Netflix** or **Amazon Instant Videos**, you do not need to install Silverlight/Pipelight. It is easier to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup>, which includes the Widevine content decryption plugin which satisfies Netflix's DRM requirements. This should move to other browsers e.g. Firefox (who have agreed to implement the HTML5 code) in due course.
-*   If you are here because you want to watch **BlinkBox** (UK) you need to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> (Requires: version 42+) and use the [User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) extension with a Mac UA string 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'. Windows UA strings will result in WP209 playback errors due to HDCP.
+*   If you are here because you want to watch **Netflix** or **Amazon Instant Videos**, you do not need to install Silverlight/Pipelight. It is easier to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/), which includes the Widevine content decryption plugin which satisfies Netflix's DRM requirements. This should move to other browsers e.g. Firefox (who have agreed to implement the HTML5 code) in due course.
+*   If you are here because you want to watch **BlinkBox** (UK) you need to install [google-chrome](https://aur.archlinux.org/packages/google-chrome/) (Requires: version 42+) and use the [User-Agent Switcher for Chrome](https://chrome.google.com/webstore/detail/user-agent-switcher-for-c/djflhoibgkdhkhhcedjiklpkjnoahfmg) extension with a Mac UA string 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36'. Windows UA strings will result in WP209 playback errors due to HDCP.
 
 **Note:** Pipelight playback of **BlinkBox** content (which used to work fine with the Silverlight 5.0 plugin) now appears broken.
 
@@ -42,7 +42,7 @@ Pipelight is not presently available in the [official repositories](/index.php/O
 
 ### Installing from the AUR
 
-Pipelight is available in the [AUR](/index.php/AUR "AUR") as the [pipelight](https://aur.archlinux.org/packages/pipelight/)<sup><small>AUR</small></sup> package.
+Pipelight is available in the [AUR](/index.php/AUR "AUR") as the [pipelight](https://aur.archlinux.org/packages/pipelight/) package.
 
 ### Installing from the unofficial pipelight repositories
 
@@ -154,14 +154,14 @@ silverlightGraphicDriverCheck = /bin/true
 
 The selection of custom variables found in Wine-Silverlight and Pipelight are as following:
 
-*   [wine-silverlight](https://aur.archlinux.org/packages/wine-silverlight/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wine-silverlight)]</sup>
+*   [wine-silverlight](https://aur.archlinux.org/packages/wine-silverlight/)
 
 1.  `customprefix`
     *   Installs Wine to `/opt` instead of `/usr` (to not conflict with [wine](https://www.archlinux.org/packages/?name=wine)).
 2.  `_prefix`
     *   Allows setting a custom location.
 
-*   [pipelight](https://aur.archlinux.org/packages/pipelight/)<sup><small>AUR</small></sup>
+*   [pipelight](https://aur.archlinux.org/packages/pipelight/)
 
 1.  `_prefix`
     *   Allows setting a custom location. Default is `/usr`.

@@ -16,7 +16,7 @@ It is lightweight, highly extensible, and is designed to look similar to uTorren
 
 ## Installation
 
-Install [rutorrent](https://aur.archlinux.org/packages/rutorrent/)<sup><small>AUR</small></sup> from the AUR.
+Install [rutorrent](https://aur.archlinux.org/packages/rutorrent/) from the AUR.
 
 ## Web Server Configuration
 
@@ -31,7 +31,7 @@ Install and configure Apache with PHP according to the [LAMP](/index.php/LAMP "L
 
 ```
 
-Install [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/)<sup><small>AUR</small></sup> from the AUR.
+Install [mod_scgi](https://aur.archlinux.org/packages/mod_scgi/) from the AUR.
 
 *   Load the SCGI module in `/etc/httpd/conf/httpd.conf`:
 

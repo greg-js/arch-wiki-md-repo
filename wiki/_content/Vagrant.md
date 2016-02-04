@@ -63,7 +63,7 @@ It currently has the same issue with ruby as the vagrant-kvm plugin. As of vagra
 
 ```
 
-If starting a box with vagrant-libvirt still gives you errors it can help to replace the `ruby-libvirt` gem located in `~/.vagrant.d` with the one from the [AUR](/index.php/AUR "AUR"). First install [ruby-libvirt](https://aur.archlinux.org/packages/ruby-libvirt/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") Arch User repository. Then copy `/usr/lib/ruby/gems/2.2.0/gems/ruby-libvirt-*` to `~/.vagrant.d/gems/gems/` (make sure to remove the `ruby-libvirt-*` directory under `~/.vagrant.d/gems/gems/` beforehand).
+If starting a box with vagrant-libvirt still gives you errors it can help to replace the `ruby-libvirt` gem located in `~/.vagrant.d` with the one from the [AUR](/index.php/AUR "AUR"). First install [ruby-libvirt](https://aur.archlinux.org/packages/ruby-libvirt/) from the [AUR](/index.php/AUR "AUR") Arch User repository. Then copy `/usr/lib/ruby/gems/2.2.0/gems/ruby-libvirt-*` to `~/.vagrant.d/gems/gems/` (make sure to remove the `ruby-libvirt-*` directory under `~/.vagrant.d/gems/gems/` beforehand).
 
 ### vagrant-lxc
 
@@ -114,7 +114,7 @@ Please see and follow [the complete installation guide for Arch Linux](https://g
 
 ## Provisioning
 
-_Provisioners_ allow you to automatically install software, alter and automate configurations as part of the vagrant up process. The two most common provisioners are [puppet](https://www.archlinux.org/packages/?name=puppet) from [official repositories](/index.php/Official_repositories "Official repositories") and [chef](https://aur.archlinux.org/packages/chef/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/chef)]</sup> from the [AUR](/index.php/AUR "AUR") Arch User Repository.
+_Provisioners_ allow you to automatically install software, alter and automate configurations as part of the vagrant up process. The two most common provisioners are [puppet](https://www.archlinux.org/packages/?name=puppet) from [official repositories](/index.php/Official_repositories "Official repositories") and [chef](https://aur.archlinux.org/packages/chef/) from the [AUR](/index.php/AUR "AUR") Arch User Repository.
 
 ## Base Boxes for Vagrant
 

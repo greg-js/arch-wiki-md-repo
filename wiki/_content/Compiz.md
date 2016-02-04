@@ -63,63 +63,63 @@ Required:
 
 *   **Compiz** — OpenGL compositing window manager with CCSM, Plugins and GTK Window Decorator.
 
-	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
 Optional:
 
 *   **Emerald** — A standalone window decorator for Compiz.
 
-	[http://www.compiz.org/](http://www.compiz.org/) || [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)<sup><small>AUR</small></sup>
+	[http://www.compiz.org/](http://www.compiz.org/) || [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)
 
 *   **Emerald Themes** — Extra themes for the Emerald window decorator.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
 
 *   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
 
-	[https://github.com/kozec/fusion-icon-gtk3](https://github.com/kozec/fusion-icon-gtk3) || [fusion-icon0.9](https://aur.archlinux.org/packages/fusion-icon0.9/)<sup><small>AUR</small></sup>
+	[https://github.com/kozec/fusion-icon-gtk3](https://github.com/kozec/fusion-icon-gtk3) || [fusion-icon0.9](https://aur.archlinux.org/packages/fusion-icon0.9/)
 
 ### Installing the 0.8 series
 
-**Note:** The [compiz-core](https://aur.archlinux.org/packages/compiz-core/)<sup><small>AUR</small></sup> package does not provide the GTK Window Decorator by default. Users of this package should use [emerald](https://aur.archlinux.org/packages/emerald/)<sup><small>AUR</small></sup> for [#Window decoration](#Window_decoration). Alternatively, use [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/)<sup><small>AUR</small></sup> for a Compiz Core package that also provides GTK Window Decorator.
+**Note:** The [compiz-core](https://aur.archlinux.org/packages/compiz-core/) package does not provide the GTK Window Decorator by default. Users of this package should use [emerald](https://aur.archlinux.org/packages/emerald/) for [#Window decoration](#Window_decoration). Alternatively, use [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/) for a Compiz Core package that also provides GTK Window Decorator.
 
 Required:
 
 *   **Compiz Core** — OpenGL compositing window manager.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/)<sup><small>AUR</small></sup>, [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-core](https://aur.archlinux.org/packages/compiz-core/), [compiz-gtk-standalone](https://aur.archlinux.org/packages/compiz-gtk-standalone/)
 
 Highly recommended:
 
 *   **CompizConfig Settings Manager** — Graphical settings manager for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [ccsm](https://aur.archlinux.org/packages/ccsm/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [ccsm](https://aur.archlinux.org/packages/ccsm/)
 
 *   **Compiz Fusion Plugins Main** — Main plugins collection for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-main](https://aur.archlinux.org/packages/compiz-fusion-plugins-main/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-main](https://aur.archlinux.org/packages/compiz-fusion-plugins-main/)
 
 *   **Compiz Fusion Plugins Extra** — Extra plugins collection for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-extra](https://aur.archlinux.org/packages/compiz-fusion-plugins-extra/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-extra](https://aur.archlinux.org/packages/compiz-fusion-plugins-extra/)
 
 Optional:
 
 *   **Compiz Fusion Plugins Unsupported** — Unsupported Compiz plugins.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-unsupported](https://aur.archlinux.org/packages/compiz-fusion-plugins-unsupported/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [compiz-fusion-plugins-unsupported](https://aur.archlinux.org/packages/compiz-fusion-plugins-unsupported/)
 
 *   **Emerald** — A standalone window decorator for Compiz.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald](https://aur.archlinux.org/packages/emerald/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald](https://aur.archlinux.org/packages/emerald/)
 
 *   **Emerald Themes** — Extra themes for the Emerald window decorator.
 
-	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)<sup><small>AUR</small></sup>
+	[http://www.northfield.ws/projects/compiz/](http://www.northfield.ws/projects/compiz/) || [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/)
 
 *   **Fusion Icon** — A tray applet for starting Compiz and switching window managers and decorators on the fly.
 
-	[http://www.compiz.org/](http://www.compiz.org/) || [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/)<sup><small>AUR</small></sup>
+	[http://www.compiz.org/](http://www.compiz.org/) || [fusion-icon](https://aur.archlinux.org/packages/fusion-icon/)
 
 ## Starting Compiz
 
@@ -221,7 +221,7 @@ A Compiz session can be started with _startx_. Define either _compiz_ or _fusion
 
 ### Add a root menu
 
-To add a root menu similar to that in [Openbox](/index.php/Openbox "Openbox") and other standalone window managers install [compiz-boxmenu](https://aur.archlinux.org/packages/compiz-boxmenu/)<sup><small>AUR</small></sup>. This program is a fork of [compiz-deskmenu](https://aur.archlinux.org/packages/compiz-deskmenu/)<sup><small>AUR</small></sup>.
+To add a root menu similar to that in [Openbox](/index.php/Openbox "Openbox") and other standalone window managers install [compiz-boxmenu](https://aur.archlinux.org/packages/compiz-boxmenu/). This program is a fork of [compiz-deskmenu](https://aur.archlinux.org/packages/compiz-deskmenu/).
 
 Then copy the config files to your home directory as shown below:
 
@@ -241,7 +241,7 @@ You should now find that a menu appears when you click `Control+Space`. To launc
 
 ### Allow users to shutdown/reboot
 
-An unprivileged user should be able to execute commands such as `systemctl poweroff` and `systemctl reboot`. You could assign a keyboard shortcut to one of these commands using the _Commands_ plugin in CCSM. Alternatively, you could create a launcher for one of these commands in [compiz-boxmenu](https://aur.archlinux.org/packages/compiz-boxmenu/)<sup><small>AUR</small></sup> - see above. For more detailed information on shutting down see the following article: [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown").
+An unprivileged user should be able to execute commands such as `systemctl poweroff` and `systemctl reboot`. You could assign a keyboard shortcut to one of these commands using the _Commands_ plugin in CCSM. Alternatively, you could create a launcher for one of these commands in [compiz-boxmenu](https://aur.archlinux.org/packages/compiz-boxmenu/) - see above. For more detailed information on shutting down see the following article: [Allow users to shutdown](/index.php/Allow_users_to_shutdown "Allow users to shutdown").
 
 ## Tips and tricks
 
@@ -470,7 +470,7 @@ Likewise, Compiz Plugins Unsupported (a package which includes plugins such as _
 
 ### Xfce panel window buttons are not refreshed when a window changes viewport
 
-You may find that if you right click on a window title and choose an option such as _Move to Workspace Right_ then the window will move but the window button will still be visible in the viewport the window moved from until you switch viewports. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/)<sup><small>AUR</small></sup> which incorporates a patch for this issue. See the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=10908) for more information.
+You may find that if you right click on a window title and choose an option such as _Move to Workspace Right_ then the window will move but the window button will still be visible in the viewport the window moved from until you switch viewports. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/) which incorporates a patch for this issue. See the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=10908) for more information.
 
 ### Compiz crashes when enabling the D-Bus plugin
 
@@ -488,7 +488,7 @@ Only a few [panels and docks](/index.php/List_of_applications#Taskbars_.2F_panel
 
 ### Xfce workspace switcher has wrong aspect ratio
 
-When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use the width of only one workspace but will divide this space into ever smaller bars, according to how many viewports Compiz will specify. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/)<sup><small>AUR</small></sup> which incorporates a patch for this issue. For more information, see the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=11697).
+When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use the width of only one workspace but will divide this space into ever smaller bars, according to how many viewports Compiz will specify. This issue can be fixed by replacing [xfce4-panel](https://www.archlinux.org/packages/?name=xfce4-panel) with [xfce4-panel-compiz](https://aur.archlinux.org/packages/xfce4-panel-compiz/) which incorporates a patch for this issue. For more information, see the following [upstream bug report](https://bugzilla.xfce.org/show_bug.cgi?id=11697).
 
 ## See also
 

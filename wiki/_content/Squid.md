@@ -210,7 +210,7 @@ Adding Anti-virus capabilities to Squid is done using the HAVP program to interf
 
 ### Installing dependencies
 
-Follow [ClamAV](/index.php/ClamAV "ClamAV") to install ClamAV on your system. When it is installed, install [havp](https://aur.archlinux.org/packages/havp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/havp)]</sup> from [AUR](/index.php/AUR "AUR").
+Follow [ClamAV](/index.php/ClamAV "ClamAV") to install ClamAV on your system. When it is installed, install [havp](https://aur.archlinux.org/packages/havp/) from [AUR](/index.php/AUR "AUR").
 
 ### Configuration
 

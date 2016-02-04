@@ -23,7 +23,7 @@ Writing [PKGBUILDs](/index.php/PKGBUILD "PKGBUILD") for software written in [Rub
 
 For libraries, use `ruby-$gemname`. For applications, use the program name. In either case, the name should be entirely lowercase.
 
-Always use `ruby-` prefix even if `$gemname` already starts with word `ruby`. It is needed to avoid future name clashes in case if a gem with shorter name appear. It also makes names more easily parseble by tools (think about PKGBUILD generators/version or dependency checkers, etc...). Examples: [ruby-ruby-protocol-buffers](https://aur.archlinux.org/packages/ruby-ruby-protocol-buffers/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ruby-ruby-protocol-buffers)]</sup>.
+Always use `ruby-` prefix even if `$gemname` already starts with word `ruby`. It is needed to avoid future name clashes in case if a gem with shorter name appear. It also makes names more easily parseble by tools (think about PKGBUILD generators/version or dependency checkers, etc...). Examples: [ruby-ruby-protocol-buffers](https://aur.archlinux.org/packages/ruby-ruby-protocol-buffers/).
 
 ### Versioned packages
 
@@ -35,7 +35,7 @@ Another problem with versioned packages is that it can conflict with other versi
 
 ## Examples
 
-For examples, please see [ruby-rethinkdb](https://aur.archlinux.org/packages/ruby-rethinkdb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ruby-rethinkdb)]</sup> [ruby-json_pure](https://aur.archlinux.org/packages/ruby-json_pure/)<sup><small>AUR</small></sup> [ruby-hpricot](https://www.archlinux.org/packages/?name=ruby-hpricot).
+For examples, please see [ruby-rethinkdb](https://aur.archlinux.org/packages/ruby-rethinkdb/) [ruby-json_pure](https://aur.archlinux.org/packages/ruby-json_pure/) [ruby-hpricot](https://www.archlinux.org/packages/?name=ruby-hpricot).
 
 ## Notes
 
@@ -59,8 +59,8 @@ After `gem install` is over the `Makefile` is not needed anymore. In fact none o
 
 ## Automation
 
-The gem installation can be automated completely with the tool [pacgem](https://aur.archlinux.org/packages/pacgem/)<sup><small>AUR</small></sup> which creates a temporary PKGBUILD, calls [makepkg](/index.php/Makepkg "Makepkg") and [namcap](/index.php/Namcap "Namcap"). The resulting package is then installed with `sudo pacman`.
+The gem installation can be automated completely with the tool [pacgem](https://aur.archlinux.org/packages/pacgem/) which creates a temporary PKGBUILD, calls [makepkg](/index.php/Makepkg "Makepkg") and [namcap](/index.php/Namcap "Namcap"). The resulting package is then installed with `sudo pacman`.
 
-There is also [gem2arch](https://aur.archlinux.org/packages/gem2arch/)<sup><small>AUR</small></sup> tools which aid in automating the process of creating a ruby gem PKGBUILD. Make sure to manually check the PKGBUILD after generation.
+There is also [gem2arch](https://aur.archlinux.org/packages/gem2arch/) tools which aid in automating the process of creating a ruby gem PKGBUILD. Make sure to manually check the PKGBUILD after generation.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby_Gem_package_guidelines&oldid=408720](https://wiki.archlinux.org/index.php?title=Ruby_Gem_package_guidelines&oldid=408720)"

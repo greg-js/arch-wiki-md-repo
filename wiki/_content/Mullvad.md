@@ -90,6 +90,6 @@ The VPN can then be [controlled](/index.php/Enabled "Enabled") through `openvpn@
 
 ## Mullvad Client
 
-Mullvad also supply their own [graphical client](https://mullvad.net/en/download/), packaged as [mullvad](https://aur.archlinux.org/packages/mullvad/)<sup><small>AUR</small></sup>.
+Mullvad also supply their own [graphical client](https://mullvad.net/en/download/), packaged as [mullvad](https://aur.archlinux.org/packages/mullvad/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415851](https://wiki.archlinux.org/index.php?title=Mullvad&oldid=415851)"

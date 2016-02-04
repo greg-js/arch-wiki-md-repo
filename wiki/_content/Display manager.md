@@ -24,11 +24,11 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[CDM](/index.php/CDM "CDM")** — Ultra-minimalistic, yet full-featured login manager written in Bash.
 
-	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)<sup><small>AUR</small></sup>
+	[https://github.com/ghost1227/cdm](https://github.com/ghost1227/cdm) || [cdm-git](https://aur.archlinux.org/packages/cdm-git/)
 
 *   **[Console TDM](/index.php/Console_TDM "Console TDM")** — Extension for _xinit_ written in pure Bash.
 
-	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)<sup><small>AUR</small></sup>
+	[http://code.google.com/p/t-display-manager/](http://code.google.com/p/t-display-manager/) || [console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)
 
 *   **[nodm](/index.php/Nodm "Nodm")** — Minimalistic display manager for automatic logins.
 
@@ -38,7 +38,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[Entrance](/index.php/Enlightenment "Enlightenment")** — An EFL based display manager, highly experimental.
 
-	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)<sup><small>AUR</small></sup>
+	[http://enlightenment.org/](http://enlightenment.org/) || [entrance-git](https://aur.archlinux.org/packages/entrance-git/)
 
 *   **[GDM](/index.php/GDM "GDM")** — [GNOME](/index.php/GNOME "GNOME") display manager.
 
@@ -46,7 +46,7 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **[KDM](/index.php/KDM "KDM")** — [KDE](/index.php/KDE "KDE")4 display manager (discontinued).
 
-	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)<sup><small>AUR</small></sup>
+	[http://www.kde.org/](http://www.kde.org/) || [kdebase-workspace](https://aur.archlinux.org/packages/kdebase-workspace/)
 
 *   **[LightDM](/index.php/LightDM "LightDM")** — Cross-desktop display manager, can use various front-ends written in any toolkit.
 
@@ -58,11 +58,11 @@ A [display manager](https://en.wikipedia.org/wiki/X_display_manager_(program_typ
 
 *   **MDM** — MDM display manager, used in Linux Mint, a fork of GDM 2.
 
-	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)<sup><small>AUR</small></sup>
+	[https://github.com/linuxmint/mdm](https://github.com/linuxmint/mdm) || [mdm-display-manager](https://aur.archlinux.org/packages/mdm-display-manager/)
 
 *   **[Qingy](/index.php/Qingy "Qingy")** — Ultralight and very configurable graphical login independent on X Windows (uses DirectFB). (discontinued)
 
-	[http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qingy)]</sup>
+	[http://qingy.sourceforge.net/](http://qingy.sourceforge.net/) || [qingy](https://aur.archlinux.org/packages/qingy/)
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — QML-based display manager and successor to KDE4's kdm; recommended for Plasma 5 and LXQt.
 
@@ -115,11 +115,11 @@ Type=XSession
 
 ### Run ~/.xinitrc as a session
 
-Installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/)<sup><small>AUR</small></sup> will provide an option to run your .xinitrc as a session.
+Installing [xinit-xsession](https://aur.archlinux.org/packages/xinit-xsession/) will provide an option to run your .xinitrc as a session.
 
 ### Starting applications without a window manager
 
-You can also launch an application without any decoration, desktop, or window management. For example to launch [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> create a `web-browser.desktop` file in `/usr/share/xsessions/` like this:
+You can also launch an application without any decoration, desktop, or window management. For example to launch [google-chrome](https://aur.archlinux.org/packages/google-chrome/) create a `web-browser.desktop` file in `/usr/share/xsessions/` like this:
 
 ```
 [Desktop Entry]

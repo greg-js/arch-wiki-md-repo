@@ -13,15 +13,15 @@
 
 ## Installation
 
-Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/)<sup><small>AUR</small></sup> package. [eid-viewer](https://aur.archlinux.org/packages/eid-viewer/)<sup><small>AUR</small></sup> is useful to verify a functional setup, before trying to read an eid from within a browser.
+Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/) package. [eid-viewer](https://aur.archlinux.org/packages/eid-viewer/) is useful to verify a functional setup, before trying to read an eid from within a browser.
 
-As a driver for the card reader hardware is required, install the [ccid](https://www.archlinux.org/packages/?name=ccid) package. In some cases, [acsccid](https://aur.archlinux.org/packages/acsccid/)<sup><small>AUR</small></sup> is needed instead.
+As a driver for the card reader hardware is required, install the [ccid](https://www.archlinux.org/packages/?name=ccid) package. In some cases, [acsccid](https://aur.archlinux.org/packages/acsccid/) is needed instead.
 
 After installing the right driver, [start](/index.php/Start "Start") and enable the `pcscd` service.
 
 ### Import public keys
 
-To install [eid-mw](https://aur.archlinux.org/packages/eid-mw/)<sup><small>AUR</small></sup>, you will need to import the public keys listed [here](http://files.eid.belgium.be/%7C), i.e. each (or at least the continuous build key) of the `*.asc` files, like so:
+To install [eid-mw](https://aur.archlinux.org/packages/eid-mw/), you will need to import the public keys listed [here](http://files.eid.belgium.be/%7C), i.e. each (or at least the continuous build key) of the `*.asc` files, like so:
 
  `# gpg --import *.asc ` 
 

@@ -29,7 +29,7 @@
 
 ## Packages
 
-1\. [Install](/index.php/Install "Install") the [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/)<sup><small>AUR</small></sup> package
+1\. [Install](/index.php/Install "Install") the [reiser4progs](https://aur.archlinux.org/packages/reiser4progs/) package
 
 2\. You will need a reiser4 patched kernel. Patches can be found here [http://sourceforge.net/projects/reiser4/files/reiser4-for-linux-3.x/](http://sourceforge.net/projects/reiser4/files/reiser4-for-linux-3.x/)
 

@@ -39,32 +39,32 @@ This article contains printer or manufacturer-specific instructions for [CUPS](/
 ## Brother
 
 | Printer | Driver/filter | Notes |
-| DCP-135C | [brother-dcp135c](https://aur.archlinux.org/packages/brother-dcp135c/)<sup><small>AUR</small></sup> |
-| DCP-150C | [brother-dcp150c](https://aur.archlinux.org/packages/brother-dcp150c/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/brother-dcp150c)]</sup> |
+| DCP-135C | [brother-dcp135c](https://aur.archlinux.org/packages/brother-dcp135c/) |
+| DCP-150C | [brother-dcp150c](https://aur.archlinux.org/packages/brother-dcp150c/) |
 | DCP-7020 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or Brother's driver. |
-| DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/)<sup><small>AUR</small></sup> |
-| DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/)<sup><small>AUR</small></sup> |
-| HL-2030 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/)<sup><small>AUR</small></sup> |
+| DCP-7030 | [brother-dcp7030](https://aur.archlinux.org/packages/brother-dcp7030/) |
+| DCP-7065DN | [brother-dcp7065dn](https://aur.archlinux.org/packages/brother-dcp7065dn/) |
+| HL-2030 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2030](https://aur.archlinux.org/packages/brother-hl2030/) |
 | HL-2035 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Should be compatible with any drivers for the HL-2030. |
-| HL-2040 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/)<sup><small>AUR</small></sup> |
+| HL-2040 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2040](https://aur.archlinux.org/packages/brother-hl2040/) |
 | HL-2130 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) (using the HL-2140 driver) | Or [hplip](https://www.archlinux.org/packages/?name=hplip) |
-| HL-2140 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/)<sup><small>AUR</small></sup> |
+| HL-2140 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or [brother-hl2140](https://aur.archlinux.org/packages/brother-hl2140/) |
 | HL-2170W | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or Brother's driver. |
-| HL-2250DN | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/)<sup><small>AUR</small></sup> |
-| HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/)<sup><small>AUR</small></sup> |
-| HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/)<sup><small>AUR</small></sup> |
+| HL-2250DN | [brother-hl2250dn](https://aur.archlinux.org/packages/brother-hl2250dn/) |
+| HL-2270DW | [brother-hl2270dw](https://aur.archlinux.org/packages/brother-hl2270dw/) |
+| HL-2280DW | [brother-hl2280dw](https://aur.archlinux.org/packages/brother-hl2280dw/) |
 | HL-3045CN | Install Brother's driver. |
-| HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/)<sup><small>AUR</small></sup> |
-| HL-3170CDW | [brother-cups-wrapper-ac](https://aur.archlinux.org/packages/brother-cups-wrapper-ac/)<sup><small>AUR</small></sup> | Use BRScript3 Driver for HL-4070CDW |
+| HL-3150CDW | [brother-hl3150cdw](https://aur.archlinux.org/packages/brother-hl3150cdw/) |
+| HL-3170CDW | [brother-cups-wrapper-ac](https://aur.archlinux.org/packages/brother-cups-wrapper-ac/) | Use BRScript3 Driver for HL-4070CDW |
 | HL-5140 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or Brother's driver. |
-| MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/brother-mfc-420cn)]</sup> |
-| MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/brother-mfc-440cn)]</sup> |
-| MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/brother-mfc-465cn)]</sup> |
+| MFC-420CN | [brother-mfc-420cn](https://aur.archlinux.org/packages/brother-mfc-420cn/) |
+| MFC-440CN | [brother-mfc-440cn](https://aur.archlinux.org/packages/brother-mfc-440cn/) |
+| MFC-465CN | [brother-mfc-465cn](https://aur.archlinux.org/packages/brother-mfc-465cn/) |
 | MFC-7360N | Install Brother's driver. |
 | MFC-9320CW | Install Brother's driver. |
 | MFC-9840CDW | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) | Or Brother's driver. This printer also works with the generic PCL-6 driver from the [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) package. Use **pcl_p1** for the printer's address when using the PCL-6 driver. |
-| MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/)<sup><small>AUR</small></sup> |
-| MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/brother-mfc-j5910dw)]</sup> |
+| MFC-J470DW | [brother-mfc-j470dw](https://aur.archlinux.org/packages/brother-mfc-j470dw/) |
+| MFC-J5910DW | [brother-mfc-j5910dw](https://aur.archlinux.org/packages/brother-mfc-j5910dw/) |
 | MFC-J650DW | Install Brother's driver. |
 | Printer | Driver/filter | Notes |
 
@@ -91,15 +91,15 @@ Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should autom
 ## Canon
 
 | Driver | Description |
-| [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/)<sup><small>AUR</small></sup> | Canon UFR II /LIPSLX Printer Driver build from source for LBP, iR & MF printers |
-| [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/)<sup><small>AUR</small></sup> | Canon UFR II/UFR II LT Printer Driver (including Canon imageCLASS MF4720w) |
-| [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/)<sup><small>AUR</small></sup> | Canon IJ Printer Driver (for mg4200 series) |
-| [capt-src](https://aur.archlinux.org/packages/capt-src/)<sup><small>AUR</small></sup> | Canon CAPT Printer Driver (for Canon i-Sensys printers) |
-| [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/)<sup><small>AUR</small></sup> | CUPS back-end for the canon printers using the proprietary USB over IP BJNP protocol |
+| [cndrvcups-lb](https://aur.archlinux.org/packages/cndrvcups-lb/) | Canon UFR II /LIPSLX Printer Driver build from source for LBP, iR & MF printers |
+| [cndrvcups-lb-bin](https://aur.archlinux.org/packages/cndrvcups-lb-bin/) | Canon UFR II/UFR II LT Printer Driver (including Canon imageCLASS MF4720w) |
+| [cnijfilter-mg4200](https://aur.archlinux.org/packages/cnijfilter-mg4200/) | Canon IJ Printer Driver (for mg4200 series) |
+| [capt-src](https://aur.archlinux.org/packages/capt-src/) | Canon CAPT Printer Driver (for Canon i-Sensys printers) |
+| [cups-bjnp](https://aur.archlinux.org/packages/cups-bjnp/) | CUPS back-end for the canon printers using the proprietary USB over IP BJNP protocol |
 
 | Printer | Driver/filter | Notes |
-| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use Canon's [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cnijfilter-ip4300)]</sup> driver, or the [TurboPrint](http://www.turboprint.info/) driver. |
-| LBP810 | [capt-src](https://aur.archlinux.org/packages/capt-src/)<sup><small>AUR</small></sup> |
+| iP4300 | [gutenprint](https://www.archlinux.org/packages/?name=gutenprint) | Or use Canon's [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) driver, or the [TurboPrint](http://www.turboprint.info/) driver. |
+| LBP810 | [capt-src](https://aur.archlinux.org/packages/capt-src/) |
 | LBP1120 |
 | LBP1210 |
 | LBP2900 |
@@ -135,11 +135,11 @@ Run the cups wrapper file in `/usr/local/Brother/cupswrapper`. This should autom
 | LBP9100C |
 | Printer | Driver/filter | Notes |
 
-Some Canon printers will use a similar setup to the iP4300, so consider modifying the [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cnijfilter-ip4300)]</sup> package for other, similar printers.
+Some Canon printers will use a similar setup to the iP4300, so consider modifying the [cnijfilter-ip4300](https://aur.archlinux.org/packages/cnijfilter-ip4300/) package for other, similar printers.
 
 ### CARPS
 
-Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing System (CARPS) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/)<sup><small>AUR</small></sup>. The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
+Some of Canon's printers use Canon's proprietary Canon Advanced Raster Printing System (CARPS) driver. [Rainbow Software](http://www.rainbow-software.org/2014/01/23/cups-driver-for-canon-carps-printers/) have managed to reverse engineer the CARPS data format and have successfully created a CARPS CUPS driver, which is available as [carps-cups](https://aur.archlinux.org/packages/carps-cups/). The project's [GitHub](https://github.com/ondrej-zary/carps-cups) page includes a list of working printers.
 
 ### CAPT
 
@@ -148,7 +148,7 @@ See [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 ## Dell
 
 | Printer | Driver/filter | Notes |
-| 1250C | [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/)<sup><small>AUR</small></sup> | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Xerox_Phaser_6000B). |
+| 1250C | [foo2zjs](https://aur.archlinux.org/packages/foo2zjs/) | See [http://cybercom.net/~dcoffin/hbpl](http://cybercom.net/~dcoffin/hbpl), the patch has been merged into upstream. The printer may also work with the [Xerox Phaser 6000B driver](#Xerox_Phaser_6000B). |
 | Printer | Driver/filter | Notes |
 
 ### Custom drivers
@@ -159,14 +159,14 @@ See [Canon CAPT](/index.php/Canon_CAPT "Canon CAPT").
 
 ## Epson
 
-[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/)<sup><small>AUR</small></sup> is a driver for the Epson Inkjet Printer Driver (ESC/P-R) for Linux.
+[epson-inkjet-printer-escpr](https://aur.archlinux.org/packages/epson-inkjet-printer-escpr/) is a driver for the Epson Inkjet Printer Driver (ESC/P-R) for Linux.
 
 There is a large selection of printer drivers/filters available in the [AUR](/index.php/AUR "AUR").
 
 | Printer | Driver/filter | Notes |
-| AcuLaser CX11(NF) | [epson-alcx11-filter](https://aur.archlinux.org/packages/epson-alcx11-filter/)<sup><small>AUR</small></sup> |
+| AcuLaser CX11(NF) | [epson-alcx11-filter](https://aur.archlinux.org/packages/epson-alcx11-filter/) |
 | AcuLaser C900 | This printer uses Epson's driver, with a device URI of '**usb://EPSON/AL-C900'**, and may need the pipsplus service to be running. |
-| TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/)<sup><small>AUR</small></sup> |
+| TX125 | [epson-inkjet-printer-n10-nx127](https://aur.archlinux.org/packages/epson-inkjet-printer-n10-nx127/) |
 | LP-S5000 | This printer requires a [custom driver from Avasys](#Avasys). |
 | Printer | Driver/filter | Notes |
 
@@ -210,23 +210,23 @@ If you have any problems on a 64 system, some other lib32 libraries may be requi
 
 | Printer | Driver/filter | Notes |
 | DocuPrint 203A | [hplip](https://www.archlinux.org/packages/?name=hplip) | Using the **DocuPrint P8e(hpijs)** driver, or the Brother driver on FujiXerox's website (see [#Brother](#Brother) for more information on how to install custom Brother drivers). |
-|  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fxlinuxprint)]</sup> |
+|  ? | [fxlinuxprint](https://aur.archlinux.org/packages/fxlinuxprint/) |
 | Printer | Driver/filter | Notes |
 
 ## HP
 
-Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/)<sup><small>AUR</small></sup>.
+Most HP printers will use [hplip](https://www.archlinux.org/packages/?name=hplip), but some may use [hpoj](https://aur.archlinux.org/packages/hpoj/).
 
 | Printer | Driver/filter | Notes |
 | Photosmart 2575 | [hplip](https://www.archlinux.org/packages/?name=hplip) | Or use the hpijs driver in [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db). |
-| DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 712C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 720C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 722C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 820se | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 820Cxi | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 1000Cse | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
-| DeskJet 1000Cxi | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/)<sup><small>AUR</small></sup> |
+| DeskJet 710C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 712C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 720C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 722C | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 820se | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 820Cxi | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 1000Cse | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
+| DeskJet 1000Cxi | [pnm2ppa](https://aur.archlinux.org/packages/pnm2ppa/) |
 | Printer | Driver/filter | Notes |
 
 ###### HPLIP Driver
@@ -256,7 +256,7 @@ $ hp-systray
 
 PPD files are in `/usr/share/ppd/HP/`.
 
-For printers that require the proprietary HP plugin (like the Laserjet Pro P1102w or 1020), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR").
+For printers that require the proprietary HP plugin (like the Laserjet Pro P1102w or 1020), install the [hplip-plugin](https://aur.archlinux.org/packages/hplip-plugin/) package from [AUR](/index.php/AUR "AUR").
 
 **Note:**
 
@@ -344,7 +344,7 @@ For printers requiring the _cnijfilter_ drivers, search for the correct driver [
 
 | Printer | Driver/filter | Notes |
 | ML-2010 | [splix](https://www.archlinux.org/packages/?name=splix) |
-| Newer printers? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/)<sup><small>AUR</small></sup> |
+| Newer printers? | [samsung-unified-driver](https://aur.archlinux.org/packages/samsung-unified-driver/) |
 | Printer | Driver/filter | Notes |
 
 ## Xerox

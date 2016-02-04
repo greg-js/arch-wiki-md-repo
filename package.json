@@ -1,22 +1,76 @@
 {
-  "name": "arch-wiki-md-repo",
-  "version": "0.4.0",
+  "_args": [
+    [
+      "arch-wiki-md-repo",
+      "/home/greg/dev/nodejs/test"
+    ]
+  ],
+  "_from": "arch-wiki-md-repo@*",
+  "_id": "arch-wiki-md-repo@0.5.1",
+  "_inCache": true,
+  "_location": "/arch-wiki-md-repo",
+  "_nodeVersion": "5.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-6-west.internal.npmjs.com",
+    "tmp": "tmp/arch-wiki-md-repo-0.5.1.tgz_1454552081681_0.34557615243829787"
+  },
+  "_npmUser": {
+    "email": "gregory.scheerlinck@gmail.com",
+    "name": "gregjs"
+  },
+  "_npmVersion": "3.3.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "name": "arch-wiki-md-repo",
+    "raw": "arch-wiki-md-repo",
+    "rawSpec": "",
+    "scope": null,
+    "spec": "*",
+    "type": "range"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_shasum": "521b79d25cd17ec82056b92277795ed677035de7",
+  "_shrinkwrap": null,
+  "_spec": "arch-wiki-md-repo",
+  "_where": "/home/greg/dev/nodejs/test",
+  "author": {
+    "name": "Gregory J. Scheerlinck"
+  },
+  "bugs": {
+    "url": "https://github.com/greg-js/arch-wiki-md-repo/issues"
+  },
+  "dependencies": {},
   "description": "All arch-wiki articles in markdown format, updated every two days.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {},
+  "directories": {},
+  "dist": {
+    "shasum": "521b79d25cd17ec82056b92277795ed677035de7",
+    "tarball": "http://registry.npmjs.org/arch-wiki-md-repo/-/arch-wiki-md-repo-0.5.1.tgz"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/greg-js/arch-wiki-md-repo.git"
-  },
+  "gitHead": "642cc730e37d861e0d32c051765414c731c7bd14",
+  "homepage": "https://github.com/greg-js/arch-wiki-md-repo#readme",
+  "installable": true,
   "keywords": [
     "arch",
     "wiki"
   ],
-  "author": "Gregory J. Scheerlinck",
   "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/greg-js/arch-wiki-md-repo/issues"
+  "maintainers": [
+    {
+      "name": "gregjs",
+      "email": "gregory.scheerlinck@gmail.com"
+    }
+  ],
+  "name": "arch-wiki-md-repo",
+  "optionalDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greg-js/arch-wiki-md-repo.git"
   },
-  "homepage": "https://github.com/greg-js/arch-wiki-md-repo#readme"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.5.1"
 }

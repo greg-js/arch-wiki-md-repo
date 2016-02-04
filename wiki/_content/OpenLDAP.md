@@ -315,6 +315,6 @@ to allow slapd write access to its data directory as the user "ldap".
 *   [Official OpenLDAP Software 2.4 Administrator's Guide](http://www.openldap.org/doc/admin24/)
 *   [phpLDAPadmin](/index.php/PhpLDAPadmin "PhpLDAPadmin") is a web interface tool in the style of phpMyAdmin.
 *   [LDAP authentication](/index.php/LDAP_authentication "LDAP authentication")
-*   [apachedirectorystudio](https://aur.archlinux.org/packages/apachedirectorystudio/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is an Eclipse-based LDAP viewer. Works perfect with OpenLDAP installations.
+*   [apachedirectorystudio](https://aur.archlinux.org/packages/apachedirectorystudio/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") is an Eclipse-based LDAP viewer. Works perfect with OpenLDAP installations.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=413876](https://wiki.archlinux.org/index.php?title=OpenLDAP&oldid=413876)"

@@ -205,7 +205,7 @@ Disabling logging may be useful to stop UFW filling up the kernel (`dmesg`) and 
 
 ### kcm-ufw
 
-[kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/)<sup><small>AUR</small></sup> is KDE4 control module for ufw. The following features are supported:
+[kcm-ufw](https://aur.archlinux.org/packages/kcm-ufw/) is KDE4 control module for ufw. The following features are supported:
 
 *   Enable/disable firewall
 *   Configure firewall default settings

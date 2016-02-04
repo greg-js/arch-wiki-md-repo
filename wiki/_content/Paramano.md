@@ -28,7 +28,7 @@ It was later renamed to Paramano, initially a nonsense word which turned out to 
 
 ## Installation
 
-Install [paramano](https://aur.archlinux.org/packages/paramano/)<sup><small>AUR</small></sup> from the AUR. Then optionally edit the configuration file. If you want to have per-user configuration, then create a configuration file in your home directory:
+Install [paramano](https://aur.archlinux.org/packages/paramano/) from the AUR. Then optionally edit the configuration file. If you want to have per-user configuration, then create a configuration file in your home directory:
 
 ```
 $ cp /etc/paramano.conf ~/.paramano.conf

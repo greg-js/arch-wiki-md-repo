@@ -20,15 +20,15 @@ Despite the difficulty, they can be very addicting games.
 
 ## Installation
 
-PC-98 games can be played using Linux-native X Neko Project II emulator ([xnp2](https://aur.archlinux.org/packages/xnp2/)<sup><small>AUR</small></sup> in [AUR](/index.php/AUR "AUR")).
+PC-98 games can be played using Linux-native X Neko Project II emulator ([xnp2](https://aur.archlinux.org/packages/xnp2/) in [AUR](/index.php/AUR "AUR")).
 
 The following AUR packages only depend on [Wine](/index.php/Wine "Wine") to run (and timidity++ to play MIDI music). A python engine is under development to remove the wine dependency. They install the free trial versions. You can easily replace the trials with the full game if you have it.
 
 These games have been packages in the AUR for your convenience:
 
-*   Touhou 6: Embodiment of Scarlet Devil — [th06-demo-wine](https://aur.archlinux.org/packages/th06-demo-wine/)<sup><small>AUR</small></sup> or [th06-demo-pytouhou](https://aur.archlinux.org/packages/th06-demo-pytouhou/)<sup><small>AUR</small></sup>
-*   Touhou 7: Perfect Cherry Blossom — [th07](https://aur.archlinux.org/packages/th07/)<sup><small>AUR</small></sup>
-*   Touhou 8: Imperishable Night — [th08](https://aur.archlinux.org/packages/th08/)<sup><small>AUR</small></sup>
+*   Touhou 6: Embodiment of Scarlet Devil — [th06-demo-wine](https://aur.archlinux.org/packages/th06-demo-wine/) or [th06-demo-pytouhou](https://aur.archlinux.org/packages/th06-demo-pytouhou/)
+*   Touhou 7: Perfect Cherry Blossom — [th07](https://aur.archlinux.org/packages/th07/)
+*   Touhou 8: Imperishable Night — [th08](https://aur.archlinux.org/packages/th08/)
 
 We need help [packaging](/index.php/Wine_PKGBUILD_Guidelines "Wine PKGBUILD Guidelines") more Touhou games for the AUR. This is a list of games that have free, downloadable trial editions to build off of:
 
@@ -40,7 +40,7 @@ We need help [packaging](/index.php/Wine_PKGBUILD_Guidelines "Wine PKGBUILD Guid
 
 ### Python Engine
 
-[Linkmauve](http://linkmauve.fr/doc/touhou/) has made an experimental python engine to make the games more portable. It is definitely not stable, and is more of an outline for an engine than an actual one, but it is interesting nonetheless. See packages [pytouhou-hg](https://aur.archlinux.org/packages/pytouhou-hg/)<sup><small>AUR</small></sup> and [th06-demo-data](https://aur.archlinux.org/packages/th06-demo-data/)<sup><small>AUR</small></sup> in AUR.
+[Linkmauve](http://linkmauve.fr/doc/touhou/) has made an experimental python engine to make the games more portable. It is definitely not stable, and is more of an outline for an engine than an actual one, but it is interesting nonetheless. See packages [pytouhou-hg](https://aur.archlinux.org/packages/pytouhou-hg/) and [th06-demo-data](https://aur.archlinux.org/packages/th06-demo-data/) in AUR.
 
 ## Extra Info
 
@@ -74,7 +74,7 @@ Remember to [start](/index.php/Daemons "Daemons") the **timidity++** daemon befo
 
 ### Audio in Windows-era games
 
-If you find that you have no audio in any of the Windows era or later games (Touhou 6 and later), make sure to install [lib32-alsa-utils](https://www.archlinux.org/packages/?name=lib32-alsa-utils)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins), and recheck your configuration in winecfg. In addition, set the audio in-game to "WAV" mode.
+If you find that you have no audio in any of the Windows era or later games (Touhou 6 and later), make sure to install [lib32-alsa-utils](https://www.archlinux.org/packages/?name=lib32-alsa-utils) and [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins), and recheck your configuration in winecfg. In addition, set the audio in-game to "WAV" mode.
 
 ## See also
 

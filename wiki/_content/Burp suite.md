@@ -13,7 +13,7 @@ From the [official website](http://portswigger.net/burp/):
 
 ## Installation
 
-Install [burpsuite](https://aur.archlinux.org/packages/burpsuite/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+Install [burpsuite](https://aur.archlinux.org/packages/burpsuite/) from [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

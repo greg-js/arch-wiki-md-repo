@@ -262,7 +262,7 @@ reset
 
 	Instead, just use a simple statement like:
 
-	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package.
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/) package.
 
 	You are granted the flexibility to adapt the wording to your specific article, see the section on [#Official packages](#Official_packages) for more examples.
 
@@ -276,11 +276,11 @@ reset
 
 	If the package is also available in the [AUR](/index.php/AUR "AUR"):
 
-	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package, also available in the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/) package, also available in the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
 
 	If the package is available in the [AUR](/index.php/AUR "AUR") with a different name:
 
-	Install the [aurpkg](https://aur.archlinux.org/packages/aurpkg/)<sup><small>AUR</small></sup> package, also available as _builtpackage_ from the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
+	Install the [aurpkg](https://aur.archlinux.org/packages/aurpkg/) package, also available as _builtpackage_ from the [example](/index.php/Unofficial_user_repositories#example "Unofficial user repositories") repository.
 
 	You are granted the flexibility to adapt the wording to your specific article.
 

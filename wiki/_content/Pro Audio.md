@@ -54,16 +54,16 @@ The following packages are a good start to build a full-featured pro audio syste
 
 Other packages you may need that are available from the [AUR](/index.php/AUR "AUR"):
 
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/)<sup><small>AUR</small></sup> (also see [Linuxsampler](/index.php/Linuxsampler "Linuxsampler"))
-*   [tal-plugins-vst-bin](https://aur.archlinux.org/packages/tal-plugins-vst-bin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
-*   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)<sup><small>AUR</small></sup>
-*   [carla](https://aur.archlinux.org/packages/carla/)<sup><small>AUR</small></sup>
-*   [guitarix-git](https://aur.archlinux.org/packages/guitarix-git/)<sup><small>AUR</small></sup>
-*   [fluidsynth-dssi](https://aur.archlinux.org/packages/fluidsynth-dssi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fluidsynth-dssi)]</sup>
-*   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)<sup><small>AUR</small></sup>
-*   [XCFA](https://aur.archlinux.org/packages/XCFA/)<sup><small>AUR</small></sup>
-*   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)<sup><small>AUR</small></sup>
-*   [wineasio](https://aur.archlinux.org/packages/wineasio/)<sup><small>AUR</small></sup>
+*   [qsampler](https://aur.archlinux.org/packages/qsampler/) (also see [Linuxsampler](/index.php/Linuxsampler "Linuxsampler"))
+*   [tal-plugins-vst-bin](https://aur.archlinux.org/packages/tal-plugins-vst-bin/)
+*   [mhwaveedit](https://aur.archlinux.org/packages/mhwaveedit/)
+*   [carla](https://aur.archlinux.org/packages/carla/)
+*   [guitarix-git](https://aur.archlinux.org/packages/guitarix-git/)
+*   [fluidsynth-dssi](https://aur.archlinux.org/packages/fluidsynth-dssi/)
+*   [rakarrack-git](https://aur.archlinux.org/packages/rakarrack-git/)
+*   [XCFA](https://aur.archlinux.org/packages/XCFA/)
+*   [yoshimi](https://aur.archlinux.org/packages/yoshimi/)
+*   [wineasio](https://aur.archlinux.org/packages/wineasio/)
 *   [vst-bridge](https://github.com/abique/vst-bridge)
 
 See also [List of applications#Audio systems](/index.php/List_of_applications#Audio_systems "List of applications") and [List of applications#Sound editing](/index.php/List_of_applications#Sound_editing "List of applications").
@@ -78,7 +78,7 @@ You may want to consider the following often seen system optimizations:
 **Warning:** Enabling threadirqs seems to be causing system lockups in conjunction with usb devices in at least some kernel versions starting with 3.13 and including at least 3.14-rc2\. See for example [https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1279081) and [http://www.spinics.net/lists/linux-usb/msg102504.html](http://www.spinics.net/lists/linux-usb/msg102504.html) also linked from there.
 EDIT: The changelog seems to indicate that this has been fixed in the 3.13.6 vanilla kernel. (Search for threadirqs in [https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6](https://www.kernel.org/pub/linux/kernel/v3.x/ChangeLog-3.13.6))
 
-*   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/)<sup><small>AUR</small></sup> kernel.
+*   Install [linux-rt](https://aur.archlinux.org/packages/linux-rt/) kernel.
 *   Set the [cpufreq](/index.php/Cpufreq "Cpufreq") governor to _performance_.
 *   Add _noatime_ to the [filesystem mount options](/index.php/Fstab "Fstab") (see [Maximizing Performance](/index.php/Maximizing_performance#Mount_options "Maximizing performance")).
 
@@ -175,7 +175,7 @@ $ /usr/bin/jackd -R -P89 -dalsa -dhw:0 -r48000 -p256 -n3
 
 ```
 
-[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://aur.archlinux.org/packages/cadence/)<sup><small>AUR</small></sup> and [patchage](https://www.archlinux.org/packages/?name=patchage) can all be used to as GUIs to monitor JACK's status and simplify its configuration .
+[qjackctl](https://www.archlinux.org/packages/?name=qjackctl), [cadence](https://aur.archlinux.org/packages/cadence/) and [patchage](https://www.archlinux.org/packages/?name=patchage) can all be used to as GUIs to monitor JACK's status and simplify its configuration .
 
 **Note:** Once you set up JACK, try different audio applications to test your configuration results. I spent days trying to troubleshoot JACK xrun issues with LMMS which in the end turned out to be the problem with the latter.
 
@@ -183,7 +183,7 @@ _Further reading: [http://w3.linux-magazine.com/issue/67/JACK_Audio_Server.pdf](
 
 #### FireWire
 
-**Note:** Nothing much is needed to be done as most things have been automated, especially with the introduction of the [new FireWire stack](https://ieee1394.wiki.kernel.org/articles/j/u/j/Juju_Migration_e8a6.html), deprecation of HAL and more focus on [udev](/index.php/Udev "Udev"). You should not need to edit device permissions, but if you suspect that your device may not be working due to such issues, see `/lib/udev/rules.d/60-ffado.rules` and if needed, create and put your changes into `/etc/udev/rules.d/60-ffado.rules`. Most often than not, your device will work with the [libffado-svn](https://aur.archlinux.org/packages/libffado-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libffado-svn)]</sup> development version of the driver.
+**Note:** Nothing much is needed to be done as most things have been automated, especially with the introduction of the [new FireWire stack](https://ieee1394.wiki.kernel.org/articles/j/u/j/Juju_Migration_e8a6.html), deprecation of HAL and more focus on [udev](/index.php/Udev "Udev"). You should not need to edit device permissions, but if you suspect that your device may not be working due to such issues, see `/lib/udev/rules.d/60-ffado.rules` and if needed, create and put your changes into `/etc/udev/rules.d/60-ffado.rules`. Most often than not, your device will work with the [libffado-svn](https://aur.archlinux.org/packages/libffado-svn/) development version of the driver.
 
 JACK(2) is built against FFADO, you only need to install it with the [libffado](https://www.archlinux.org/packages/?name=libffado) package.
 
@@ -217,7 +217,7 @@ you need to disable the "snd_dice" module.
 
 If after getting jack setup you will find that Flash has no audio.
 
-In order to get flash to work with jack you will need to install [libflashsupport-jack](https://aur.archlinux.org/packages/libflashsupport-jack/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+In order to get flash to work with jack you will need to install [libflashsupport-jack](https://aur.archlinux.org/packages/libflashsupport-jack/) from the [AUR](/index.php/AUR "AUR").
 
 You can also use more flexible method to allow Alsa programs (including Flash) play sound while jack is running:
 
@@ -264,7 +264,7 @@ A great way to quickly diagnose your system and find out what it is missing in o
 
 [https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl](https://github.com/raboof/realtimeconfigquickscan/blob/master/realTimeConfigQuickScan.pl)
 
-(or just install [realtimeconfigquickscan](https://aur.archlinux.org/packages/realtimeconfigquickscan/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/realtimeconfigquickscan)]</sup> from the [AUR](/index.php/AUR "AUR"))
+(or just install [realtimeconfigquickscan](https://aur.archlinux.org/packages/realtimeconfigquickscan/) from the [AUR](/index.php/AUR "AUR"))
 
 The output should tell you where your system is lacking and will point you to places to find more information.
 
@@ -307,9 +307,9 @@ You can use [ABS](/index.php/ABS "ABS") to recompile [linux](https://www.archlin
 
 From the [AUR](/index.php/AUR "AUR") itself, you have the following options:
 
-*   [linux-rt](https://aur.archlinux.org/packages/linux-rt/)<sup><small>AUR</small></sup>
-*   [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/)<sup><small>AUR</small></sup> (Long Term Support, stable release)
-*   [linux-rt-ice](https://aur.archlinux.org/packages/linux-rt-ice/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-rt-ice)]</sup>
+*   [linux-rt](https://aur.archlinux.org/packages/linux-rt/)
+*   [linux-rt-lts](https://aur.archlinux.org/packages/linux-rt-lts/) (Long Term Support, stable release)
+*   [linux-rt-ice](https://aur.archlinux.org/packages/linux-rt-ice/)
 
 The first two are standard kernels with the CONFIG_PREEMPT_RT patch, while -ice includes patches some may consider to be nasty, while to others are a blessing.
 
@@ -351,7 +351,7 @@ export DSSI_PATH=/usr/lib/dssi:/usr/local/lib/dssi:~/.dssi:/someother/custom/dir
 
 *   Some USB audio hardware is known not to work properly when plugged into USB 3 ports so try USB 2/1 ports instead.
 
-*   IRQ issues can occur and cause problems. An example is video hardware reserving the bus, causing needless interrupts in the system I/O path. See discussion at [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). If you have a realtime or a recent kernel, you can use [rtirq](https://aur.archlinux.org/packages/rtirq/)<sup><small>AUR</small></sup> to adjust priorities of IRQ handling threads.
+*   IRQ issues can occur and cause problems. An example is video hardware reserving the bus, causing needless interrupts in the system I/O path. See discussion at [FFADO IRQ Priorities How-To](http://subversion.ffado.org/wiki/IrqPriorities). If you have a realtime or a recent kernel, you can use [rtirq](https://aur.archlinux.org/packages/rtirq/) to adjust priorities of IRQ handling threads.
 
 *   Do not use the **irqbalance** daemon, or do so carefully [[1]](http://docs.redhat.com/docs/en-US/Red_Hat_Enterprise_MRG/1.3/html/Realtime_Tuning_Guide/sect-Realtime_Tuning_Guide-General_System_Tuning-Interrupt_and_Process_Binding.html).
 
@@ -523,7 +523,7 @@ Volume levels are hardware and routing can be done through QjackCtl, even with m
 
 _**This does not apply to the US-122L**_
 
-1.  Required packages: [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) [fxload](https://aur.archlinux.org/packages/fxload/)<sup><small>AUR</small></sup>
+1.  Required packages: [alsa-tools](https://www.archlinux.org/packages/?name=alsa-tools) [alsa-firmware](https://www.archlinux.org/packages/?name=alsa-firmware) [fxload](https://aur.archlinux.org/packages/fxload/)
 2.  udev rules: create the following rules file, then reload udev rules, [Udev#Loading new rules](/index.php/Udev#Loading_new_rules "Udev")
 
  `/etc/udev/rules.d/51-tascam-us-122.rules` 
@@ -538,7 +538,7 @@ Plug in the unit The device should now be working, there are no software mixer c
 
 ### RME Babyface
 
-It works very well at low latencies (~5ms) with [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [jack2](https://www.archlinux.org/packages/?name=jack2) and [linux-rt](https://aur.archlinux.org/packages/linux-rt/)<sup><small>AUR</small></sup>. Running on ALSA only with the standard kernel may cause crackling at lower latencies.
+It works very well at low latencies (~5ms) with [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils), [jack2](https://www.archlinux.org/packages/?name=jack2) and [linux-rt](https://aur.archlinux.org/packages/linux-rt/). Running on ALSA only with the standard kernel may cause crackling at lower latencies.
 
 To be recognized and work, the firmware version of the Babyface needs to be >= 200, which introduces the Class Compliant Mode. To enter Class Compliant Mode hold the "Select" and "Recall" buttons while connecting the Babyface to the computer via USB. It should now be recognized.
 

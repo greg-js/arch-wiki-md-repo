@@ -10,7 +10,7 @@ Dynamic Disks is a technology from Microsoft and Veritas Software (now owned by 
 
 **Note:** This tool will only give you the ability to use Dynamic Disks in Arch Linux. For all other tasks, you will have to use Windows' Logical Disk Manager.
 
-Install the [ldmtool](https://aur.archlinux.org/packages/ldmtool/)<sup><small>AUR</small></sup> package. Once installed, `ldmtool` can be used to query and mount Dynamic Disks.
+Install the [ldmtool](https://aur.archlinux.org/packages/ldmtool/) package. Once installed, `ldmtool` can be used to query and mount Dynamic Disks.
 
 To find all disk groups:
 

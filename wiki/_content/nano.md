@@ -146,7 +146,7 @@ include "/etc/nano/pkgbuild.nanorc"
 
 #### Other definitions
 
-Syntax highlighting enhancements which replace and expand the defaults can be found in the AUR, [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/)<sup><small>AUR</small></sup>.
+Syntax highlighting enhancements which replace and expand the defaults can be found in the AUR, [nano-syntax-highlighting-git](https://aur.archlinux.org/packages/nano-syntax-highlighting-git/).
 
 ### Suggested configuration
 

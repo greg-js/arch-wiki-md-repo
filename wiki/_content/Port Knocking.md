@@ -32,7 +32,7 @@ user@host's password:
 
 **Warning:** Port knocking should be used as part of a security strategy, not as the only protection. That would be a fragile [security through obscurity](https://en.wikipedia.org/wiki/Security_through_obscurity "wikipedia:Security through obscurity"). In case of SSH protection, see [SSH keys](/index.php/SSH_keys "SSH keys") for a strong method that can be used along with port knocking. Further, do not use the port sequence used in this example for live configurations permanently.
 
-**Note:** There are additions to iptables in current development that have commands for port knocking in a single rule. They also offer many other advanced options, but are not in the standard kernel yet (August 2013). If interested: [xtables-addons](https://aur.archlinux.org/packages/xtables-addons/)<sup><small>AUR</small></sup>
+**Note:** There are additions to iptables in current development that have commands for port knocking in a single rule. They also offer many other advanced options, but are not in the standard kernel yet (August 2013). If interested: [xtables-addons](https://aur.archlinux.org/packages/xtables-addons/)
 
 It is wise to randomly select the ports that you use for the knock sequence. [random.org](https://www.random.org/) can help you generate a selection of ports between 1 and 65535\. To check that you have not inadvertantly selected commonly used ports, use this [port database](https://www.grc.com/PortDataHelp.htm), and/or your `/etc/services` file.
 

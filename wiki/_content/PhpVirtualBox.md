@@ -20,7 +20,7 @@ To remotely control virtual machine you need two components: VirtualBox web serv
 
 ### VirtualBox web service
 
-To use the web console, you must install the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/)<sup><small>AUR</small></sup> package.
+To use the web console, you must install the [virtualbox-ext-oracle](https://aur.archlinux.org/packages/virtualbox-ext-oracle/) package.
 
 ### VirtualBox web interface (phpvirtualbox)
 

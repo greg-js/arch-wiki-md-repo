@@ -13,9 +13,9 @@
 
 ## Installation
 
-The development version [vogl-git](https://aur.archlinux.org/packages/vogl-git/)<sup><small>AUR</small></sup> is available on the [AUR](/index.php/AUR "AUR").
+The development version [vogl-git](https://aur.archlinux.org/packages/vogl-git/) is available on the [AUR](/index.php/AUR "AUR").
 
-To capture and debug 32-Bit applications you need libvogltrace32.so, voglreplay32 and vogleditor32 from [lib32-vogl-git](https://aur.archlinux.org/packages/lib32-vogl-git/)<sup><small>AUR</small></sup>.
+To capture and debug 32-Bit applications you need libvogltrace32.so, voglreplay32 and vogleditor32 from [lib32-vogl-git](https://aur.archlinux.org/packages/lib32-vogl-git/).
 
 ## Capturing a tracefile
 

@@ -69,7 +69,7 @@ where you have to replace 192.168.0 to your corresponding IP-Adresses you want t
 
 #### Single-purpose Apache settings
 
-[Install](/index.php/Install "Install") [mod_perl](https://aur.archlinux.org/packages/mod_perl/)<sup><small>AUR</small></sup> from the [official repositories](/index.php/Official_repositories "Official repositories").
+[Install](/index.php/Install "Install") [mod_perl](https://aur.archlinux.org/packages/mod_perl/) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Edit the Apache configuration file to load mod_perl, tell Apache to run as user backuppc and to include `/etc/httpd/conf/extra/backuppc.conf`:
 

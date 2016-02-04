@@ -73,7 +73,7 @@ sda            0 931.5G disk sata
 sdb            0 931.5G disk sata
 ```
 
-HDDs. [Hpfall](/index.php/Hpfall "Hpfall") or [freefall](https://aur.archlinux.org/packages/freefall/)<sup><small>AUR</small></sup> are theoretically compatible (and seem to run on 3.18 kernels), however at this writing:
+HDDs. [Hpfall](/index.php/Hpfall "Hpfall") or [freefall](https://aur.archlinux.org/packages/freefall/) are theoretically compatible (and seem to run on 3.18 kernels), however at this writing:
 
 *   The unit has not been 'dropped' to confirm actual functionality.
 *   Either package only currently allows one device to be specified for protection.
@@ -114,7 +114,7 @@ A switch is present for lid-closed/lid-open events, and lid-closed operation is 
 ⎜   ↳ eGalax Inc. eGalaxTouch
 ```
 
-The integrated display includes a [Touchscreen](/index.php/Touchscreen "Touchscreen"). Basic (single-touch) gestures work successfully without intervention. Some complex (multi-touch) gestures could be made to work at this writing with a combination of [Touchegg](/index.php/Touchegg "Touchegg") and the proprietary [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/)<sup><small>AUR</small></sup> package.
+The integrated display includes a [Touchscreen](/index.php/Touchscreen "Touchscreen"). Basic (single-touch) gestures work successfully without intervention. Some complex (multi-touch) gestures could be made to work at this writing with a combination of [Touchegg](/index.php/Touchegg "Touchegg") and the proprietary [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/) package.
 
 **Note:** When working with the laptop lid closed, the touchscreen sends spurious touch events. It is recommended to disable touchscreen input when the lid is closed and re-enable it when the lid is opened (using e.g. `xinput --disable` and `xinput --enable` respectively). Touchscreen calibration has not been tested at this writing.
 

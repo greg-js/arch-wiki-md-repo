@@ -55,7 +55,7 @@ General MIDI (GM) is a specification to standardise numerous MIDI-related matter
 
 "Why can I play MIDI with Windows Media Player, then?"
 
-Well, because Windows has a default software synthesizer which acts globally. Even then, it lacks the quality which should be expected of modern computers. If there were a way to do it on Linux, you would be able to play back MIDI from any player too. Perhaps a MIDI server (which will hold a synthesizer of choice like [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) or [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth)) that sits within the sound server, like Phonon or PulseAudio. Nevertheless, nothing of this sort has been implemented and you can only play MIDI with a player that has a plug-in to source a synthesizer (for example [xmms](https://aur.archlinux.org/packages/xmms/)<sup><small>AUR</small></sup> or [audacious](https://www.archlinux.org/packages/?name=audacious)) or has a synthesizer itself.
+Well, because Windows has a default software synthesizer which acts globally. Even then, it lacks the quality which should be expected of modern computers. If there were a way to do it on Linux, you would be able to play back MIDI from any player too. Perhaps a MIDI server (which will hold a synthesizer of choice like [timidity++](https://www.archlinux.org/packages/?name=timidity%2B%2B) or [fluidsynth](https://www.archlinux.org/packages/?name=fluidsynth)) that sits within the sound server, like Phonon or PulseAudio. Nevertheless, nothing of this sort has been implemented and you can only play MIDI with a player that has a plug-in to source a synthesizer (for example [xmms](https://aur.archlinux.org/packages/xmms/) or [audacious](https://www.archlinux.org/packages/?name=audacious)) or has a synthesizer itself.
 
 ### Hardware
 
@@ -81,7 +81,7 @@ First, make sure that the **Synth** mixer control is not muted and that **Audigy
 
 To check and adjust them, use `alsamixer` or your mixer of choice.
 
-Next, build and install the [awesfx](https://aur.archlinux.org/packages/awesfx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/awesfx)]</sup> package from the [AUR](/index.php/AUR "AUR"). Then, load a SoundFont file on the Emux WaveTable, like so:
+Next, build and install the [awesfx](https://aur.archlinux.org/packages/awesfx/) package from the [AUR](/index.php/AUR "AUR"). Then, load a SoundFont file on the Emux WaveTable, like so:
 
 ```
 $ asfxload /path/to/any/file.sf2
@@ -124,7 +124,7 @@ And, if you installed e.g. fluidr3 as wiki says, set the location to:
 **Note:**
 
 *   Read the [mailing list thread](https://mailman.archlinux.org/pipermail/aur-general/2014-February/027378.html) about merging fluidr3 with [soundfont-fluid](https://www.archlinux.org/packages/?name=soundfont-fluid).
-*   Fluidsynth support is not included in the [vlc](https://www.archlinux.org/packages/?name=vlc) package, however it is included in [vlc-git](https://aur.archlinux.org/packages/vlc-git/)<sup><small>AUR</small></sup>.
+*   Fluidsynth support is not included in the [vlc](https://www.archlinux.org/packages/?name=vlc) package, however it is included in [vlc-git](https://aur.archlinux.org/packages/vlc-git/).
 
 #### Audacious
 

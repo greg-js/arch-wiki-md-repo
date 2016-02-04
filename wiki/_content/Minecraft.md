@@ -19,7 +19,7 @@ Minecraft is a game about breaking and placing blocks. At first, people built st
 
 ### Installation
 
-[minecraft](https://aur.archlinux.org/packages/minecraft/)<sup><small>AUR</small></sup> includes the official game launcher and a script to launch it. Otherwise, just get the launcher on the [official download site](https://minecraft.net/download).
+[minecraft](https://aur.archlinux.org/packages/minecraft/) includes the official game launcher and a script to launch it. Otherwise, just get the launcher on the [official download site](https://minecraft.net/download).
 
 ### Running
 
@@ -41,19 +41,19 @@ $ java -jar Minecraft.jar
 
 There are several [programs and editors](http://www.minecraftwiki.net/wiki/Programs_and_editors) which can make your Minecraft experience a little easier to navigate. The most common of these programs are map generators. Using one of these programs will allow you to load up a Minecraft world file and render it as a 2D image, providing you with a top-down map of the world.
 
-*   AMIDST (Advanced Minecraft Interface and Data/Structure Tracking) is a program that aids in the process of finding structures, biomes, and players in Minecraft worlds. It can draw the biomes of a world out and show where points of interest are likely to be by either giving it a seed, telling it to make a random seed, or having it read the seed from an existing world (in which case it can also show where players in that world are). [amidst](https://aur.archlinux.org/packages/amidst/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR"). Bear in mind that AMIDST is currently unmaintained due to its main author being busy with work and other real life obligations. The primary fork is "Amidst Exporter" and has an AUR package at [amidstexporter](https://aur.archlinux.org/packages/amidstexporter/)<sup><small>AUR</small></sup>. This is notably updated to include a patch for calculating Ocean Monument locations in 1.8+ worlds.
+*   AMIDST (Advanced Minecraft Interface and Data/Structure Tracking) is a program that aids in the process of finding structures, biomes, and players in Minecraft worlds. It can draw the biomes of a world out and show where points of interest are likely to be by either giving it a seed, telling it to make a random seed, or having it read the seed from an existing world (in which case it can also show where players in that world are). [amidst](https://aur.archlinux.org/packages/amidst/) is available in the [AUR](/index.php/AUR "AUR"). Bear in mind that AMIDST is currently unmaintained due to its main author being busy with work and other real life obligations. The primary fork is "Amidst Exporter" and has an AUR package at [amidstexporter](https://aur.archlinux.org/packages/amidstexporter/). This is notably updated to include a patch for calculating Ocean Monument locations in 1.8+ worlds.
 
-*   Mapcrafter is a high performance Minecraft map renderer which renders worlds to maps with an 3D-isometric perspective. You can view these maps in any webbrowser and you can host them with a webserver for example for the players of your server. Mapcrafter has a simple configuration file format to specify worlds to render, different rendermodes such as day/night/cave and can also render worlds from different rotations. [mapcrafter-git](https://aur.archlinux.org/packages/mapcrafter-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+*   Mapcrafter is a high performance Minecraft map renderer which renders worlds to maps with an 3D-isometric perspective. You can view these maps in any webbrowser and you can host them with a webserver for example for the players of your server. Mapcrafter has a simple configuration file format to specify worlds to render, different rendermodes such as day/night/cave and can also render worlds from different rotations. [mapcrafter-git](https://aur.archlinux.org/packages/mapcrafter-git/) is available in the [AUR](/index.php/AUR "AUR").
 
-*   Minutor is described as a minimalistic map generator for Minecraft. Do not let this mislead you, it generates maps of existing worlds, not the other way around. You are provided with a simple GTK+ based interface for viewing your world. Several rendering modes are available, as well as custom coloring modes and the ability to slice through z-levels. [minutor](https://aur.archlinux.org/packages/minutor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/minutor)]</sup> is available in the [AUR](/index.php/AUR "AUR").
+*   Minutor is described as a minimalistic map generator for Minecraft. Do not let this mislead you, it generates maps of existing worlds, not the other way around. You are provided with a simple GTK+ based interface for viewing your world. Several rendering modes are available, as well as custom coloring modes and the ability to slice through z-levels. [minutor](https://aur.archlinux.org/packages/minutor/) is available in the [AUR](/index.php/AUR "AUR").
 
 ## Server
 
 ### Installation
 
-**Note:** Regardless of how you install the Minecraft server, it will need [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)<sup><small>AUR</small></sup>) instead. Your mileage may vary.
+**Note:** Regardless of how you install the Minecraft server, it will need [Java](/index.php/Java "Java") to run. Some people (apparently especially on ARMv7 machines) have reported that the server doesn't run well, if at all, using the OpenJDK packages and have reported success using the Oracle Java packages ([jdk-arm](https://aur.archlinux.org/packages/jdk-arm/)) instead. Your mileage may vary.
 
-The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/)<sup><small>AUR</small></sup> package. It provides additional systemd unit files and includes a small control script.
+The simplest way to install the Minecraft server on an Arch Linux system is by using the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. It provides additional systemd unit files and includes a small control script.
 
 ### Setup
 
@@ -76,7 +76,7 @@ To tweak the default settings (e.g. the maximum RAM, number of threads etc.) edi
 
 ### Spigot (respectively Craftbukkit)
 
-Spigot is the most widely-used **modded** Minecraft server software in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/)<sup><small>AUR</small></sup> package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecrafd` and the configuration file resides under `/etc/conf.d/spigot`.
+Spigot is the most widely-used **modded** Minecraft server software in the world, hence there is a [spigot](https://aur.archlinux.org/packages/spigot/) package in the [AUR](/index.php/AUR "AUR"). The spigot PKGBUILD builds on top of the files from the [minecraft-server](https://aur.archlinux.org/packages/minecraft-server/) package. This means that the spigot server as well provides its own systemd unit files, spigot script and the corresponding script configuration file. The binary is called `spigot` and is capable of fulfilling the same commands as `minecrafd` and the configuration file resides under `/etc/conf.d/spigot`.
 
 It is somewhat affiliated with [Bukkit](http://bukkit.org/) and has grown in popularity since Bukkit's demise.
 

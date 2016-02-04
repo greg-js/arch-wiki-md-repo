@@ -33,7 +33,7 @@ $ scala HelloWorld
 
 ```
 
-Many different [IDEs](/index.php/IDE#Integrated_development_environments "IDE") such as [Eclipse](/index.php/Eclipse "Eclipse") or [Netbeans](/index.php/Netbeans "Netbeans") offer support for Scala. The [eclipse-scala-ide](https://aur.archlinux.org/packages/eclipse-scala-ide/)<sup><small>AUR</small></sup> package for example is available in the [AUR](/index.php/AUR "AUR"). But you can also download an IDE that is optimized for Scala and also based on Eclipse directly from [the official Scala Website](https://scala-lang.org).
+Many different [IDEs](/index.php/IDE#Integrated_development_environments "IDE") such as [Eclipse](/index.php/Eclipse "Eclipse") or [Netbeans](/index.php/Netbeans "Netbeans") offer support for Scala. The [eclipse-scala-ide](https://aur.archlinux.org/packages/eclipse-scala-ide/) package for example is available in the [AUR](/index.php/AUR "AUR"). But you can also download an IDE that is optimized for Scala and also based on Eclipse directly from [the official Scala Website](https://scala-lang.org).
 
 ## See also
 

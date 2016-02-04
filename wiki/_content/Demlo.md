@@ -12,7 +12,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [demlo](https://aur.archlinux.org/packages/demlo/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") the [demlo](https://aur.archlinux.org/packages/demlo/) package from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

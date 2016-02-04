@@ -15,9 +15,9 @@ It's a simpler alternative to [PhpMyAdmin](/index.php/PhpMyAdmin "PhpMyAdmin"). 
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> package or [download Adminer](https://www.adminer.org/#download) and place it manually in the document-root instead.
+[Install](/index.php/Install "Install") the [adminer](https://aur.archlinux.org/packages/adminer/) package or [download Adminer](https://www.adminer.org/#download) and place it manually in the document-root instead.
 
-When using the [adminer](https://aur.archlinux.org/packages/adminer/)<sup><small>AUR</small></sup> package, Adminer will be installed as `/usr/share/webapps/adminer/index.php`.
+When using the [adminer](https://aur.archlinux.org/packages/adminer/) package, Adminer will be installed as `/usr/share/webapps/adminer/index.php`.
 
 Ensure the correct extensions in `/etc/php/php.ini` are uncommented, e.g. `extension=pdo_mysql.so` should provide [MySQL](/index.php/MySQL "MySQL") database management.
 

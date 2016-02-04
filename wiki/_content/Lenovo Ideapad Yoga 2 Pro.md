@@ -108,7 +108,7 @@ Touchscreen USB device seems to come and go if the `usbtouchscreen` module is no
 
 ### Multitouch gestures
 
-You need to install [Touchegg](https://aur.archlinux.org/packages/Touchegg/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") in order to enable multitouch gestures. Optionally, you can install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/)<sup><small>AUR</small></sup> as a graphical front-end. See more details in the [dedicated wiki page](/index.php/Touchegg "Touchegg").
+You need to install [Touchegg](https://aur.archlinux.org/packages/Touchegg/) from the [AUR](/index.php/AUR "AUR") in order to enable multitouch gestures. Optionally, you can install [touchegg-gce-git](https://aur.archlinux.org/packages/touchegg-gce-git/) as a graphical front-end. See more details in the [dedicated wiki page](/index.php/Touchegg "Touchegg").
 
 **Tip:** If you use [Gnome Shell](/index.php/Gnome_Shell "Gnome Shell") you should start `touchegg` before it, in order to avoid conflicts.
 

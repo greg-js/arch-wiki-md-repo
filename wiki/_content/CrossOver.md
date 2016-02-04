@@ -4,7 +4,7 @@
 
 ## Installation
 
-In this article it is suggested that you want install trial verison of crossover. [Install](/index.php/Install "Install") [crossover](https://aur.archlinux.org/packages/crossover/)<sup><small>AUR</small></sup> package.
+In this article it is suggested that you want install trial verison of crossover. [Install](/index.php/Install "Install") [crossover](https://aur.archlinux.org/packages/crossover/) package.
 
 ## Using CrossOver
 

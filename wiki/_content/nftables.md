@@ -4,7 +4,7 @@
 
 You can also visit the [official nftables wiki page](http://wiki.nftables.org) for more information.
 
-The first release is available in Linux 3.13, which is in the _core_ repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the _extra_ repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/)<sup><small>AUR</small></sup>.
+The first release is available in Linux 3.13, which is in the _core_ repository ([linux](https://www.archlinux.org/packages/?name=linux)), and nftables (the user-space components) is available in the _extra_ repository ([nftables](https://www.archlinux.org/packages/?name=nftables)), and on the [AUR](/index.php/AUR "AUR") in package [nftables-git](https://aur.archlinux.org/packages/nftables-git/).
 
 ## Contents
 

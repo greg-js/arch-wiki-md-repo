@@ -16,7 +16,7 @@
 
 ## Installation
 
-Enemy Territory can be [installed](/index.php/AUR "AUR") from [enemy-territory](https://aur.archlinux.org/packages/enemy-territory/)<sup><small>AUR</small></sup>. Alternatively, the [official installer](http://www.splashdamage.com/content/download-wolfenstein-enemy-territory) can be downloaded from here: [http://filebase.trackbase.net/et/full/et260b.x86_full.zip](http://filebase.trackbase.net/et/full/et260b.x86_full.zip). Once installed you can run the game by executing this command:
+Enemy Territory can be [installed](/index.php/AUR "AUR") from [enemy-territory](https://aur.archlinux.org/packages/enemy-territory/). Alternatively, the [official installer](http://www.splashdamage.com/content/download-wolfenstein-enemy-territory) can be downloaded from here: [http://filebase.trackbase.net/et/full/et260b.x86_full.zip](http://filebase.trackbase.net/et/full/et260b.x86_full.zip). Once installed you can run the game by executing this command:
 
 ```
 $ et
@@ -70,7 +70,7 @@ To execute the CFG file:
 
 Enemy Territory was developed during a time when [OSS](/index.php/OSS "OSS") was still the 'official' Linux's sound system but was superseded by [ALSA](/index.php/ALSA "ALSA"). As a result, Enemy Territory might not be able to emit sound.
 
-This problem can be solved by installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/)<sup><small>AUR</small></sup>. If you are using an x86_64 architecture, you might need to [install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) before installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/)<sup><small>AUR</small></sup>. Once et-sdl-sound is installed, you can launch the game using the following command:
+This problem can be solved by installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/). If you are using an x86_64 architecture, you might need to [install](/index.php/Install "Install") the [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) before installing [et-sdl-sound](https://aur.archlinux.org/packages/et-sdl-sound/). Once et-sdl-sound is installed, you can launch the game using the following command:
 
 ```
 $ enemy-territory.sdl

@@ -4,7 +4,7 @@
 
 ## Installing
 
-[Install](/index.php/Install "Install") the [php-codesniffer-drupal](https://aur.archlinux.org/packages/php-codesniffer-drupal/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [php-codesniffer-drupal](https://aur.archlinux.org/packages/php-codesniffer-drupal/) package.
 
 ## Example
 

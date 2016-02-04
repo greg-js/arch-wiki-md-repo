@@ -53,7 +53,7 @@ The main command used to introspect and control _systemd_ is _systemctl_. Some o
 **Tip:**
 
 *   You can use all of the following _systemctl_ commands with the `-H _user_@_host_` switch to control a _systemd_ instance on a remote machine. This will use [SSH](/index.php/SSH "SSH") to connect to the remote _systemd_ instance.
-*   _systemadm_ is the official graphical frontend for _systemctl_. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/systemd-ui-git)]</sup> from the [AUR](/index.php/AUR "AUR") for the development version.
+*   _systemadm_ is the official graphical frontend for _systemctl_. It is provided by [systemd-ui](https://www.archlinux.org/packages/?name=systemd-ui) from the [official repositories](/index.php/Official_repositories "Official repositories") or by [systemd-ui-git](https://aur.archlinux.org/packages/systemd-ui-git/) from the [AUR](/index.php/AUR "AUR") for the development version.
 *   [Plasma](/index.php/Plasma "Plasma") users can install [systemd-kcm](https://www.archlinux.org/packages/?name=systemd-kcm) as a graphical fronted for _systemctl_. After installing the module will be added under _System administration_.
 
 ### Analyzing the system state

@@ -203,7 +203,7 @@ Uncompressed methods
 *   `proxy`
 *   `xv`
 
-Here is a performance table tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>:
+Here is a performance table tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/):
 
 | Command | FPS | Score | Min FPS | Max FPS |
 | optirun unigine-heaven | 25.0 | 630 | 16.4 | 36.1 |
@@ -268,7 +268,7 @@ Or, set `Bridge=primus` in `/etc/bumblebee/bumblebee.conf` and you won't have to
 
 ### Power management
 
-The goal of the power management feature is to turn off the NVIDIA card when it is not used by Bumblebee any more. If [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (or [bbswitch-dkms](https://aur.archlinux.org/packages/bbswitch-dkms/)<sup><small>AUR</small></sup>) is installed, it will be detected automatically when the Bumblebee daemon starts. No additional configuration is necessary. However, [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is for [Optimus laptops only and will not work on desktop computers](https://bugs.launchpad.net/ubuntu/+source/bbswitch/+bug/1338404/comments/6). So, Bumblebee power management is not available for desktop computers, and there is no reason to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) on a desktop. (Nevertheless, the other features of Bumblebee do work on some desktop computers.)
+The goal of the power management feature is to turn off the NVIDIA card when it is not used by Bumblebee any more. If [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) (or [bbswitch-dkms](https://aur.archlinux.org/packages/bbswitch-dkms/)) is installed, it will be detected automatically when the Bumblebee daemon starts. No additional configuration is necessary. However, [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) is for [Optimus laptops only and will not work on desktop computers](https://bugs.launchpad.net/ubuntu/+source/bbswitch/+bug/1338404/comments/6). So, Bumblebee power management is not available for desktop computers, and there is no reason to install [bbswitch](https://www.archlinux.org/packages/?name=bbswitch) on a desktop. (Nevertheless, the other features of Bumblebee do work on some desktop computers.)
 
 #### Default power state of NVIDIA card using bbswitch
 
@@ -411,15 +411,15 @@ The advantage of using _intel-virtual-output_ in foreground mode is that once th
 
 ##### xf86-video-intel-virtual-crtc and hybrid-screenclone
 
-This method uses a patched Intel driver, which is extended to have a VIRTUAL Display, and the program hybrid-screenclone which is used to copy the display over from the virtual display to a second X Server which is running on the NVIDIA card using Optirun. Credit goes to [Triple-head monitors on a Thinkpad T520](http://judsonsnotes.com/notes/index.php?option=com_content&view=article&id=673:triple-head-monitors-on-thinkpad-t520&catid=37:tech-notes&Itemid=59) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-10-03]</sup> which has a detailed explanation on how this is done on a Ubuntu system.
+This method uses a patched Intel driver, which is extended to have a VIRTUAL Display, and the program hybrid-screenclone which is used to copy the display over from the virtual display to a second X Server which is running on the NVIDIA card using Optirun. Credit goes to [Triple-head monitors on a Thinkpad T520](http://judsonsnotes.com/notes/index.php?option=com_content&view=article&id=673:triple-head-monitors-on-thinkpad-t520&catid=37:tech-notes&Itemid=59)  which has a detailed explanation on how this is done on a Ubuntu system.
 
 For simplicity, DP is used below to refer to the Digital Output (DisplayPort). The instructions should be the same if the notebook has a HDMI port instead.
 
 *   Set system to use NVIDIA card exclusively, test DP/Monitor combination and generate xorg.nvidia.conf. This step is not required, but recommended if your system Bios has an option to switch the graphics into NVIDIA-only mode. To do this, first uninstall the bumblebee package and install just the NVIDIA driver. Then reboot, enter the Bios and switch the Graphics to NVIDIA-only. When back in Arch, connect you Monitor on DP and use startx to test if it is working in principle. Use Xorg -configure to generate an xorg.conf file for your NVIDIA card. This will come in handy further down below.
 
 *   Reinstall bumlbebee and bbswitch, reboot and set the system Gfx back to Hybrid in the BIOS.
-*   Install [xf86-video-intel-virtual-crtc](https://aur.archlinux.org/packages/xf86-video-intel-virtual-crtc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-video-intel-virtual-crtc)]</sup>, and replace your xf86-video-intel package with it.
-*   Install [screenclone-git](https://aur.archlinux.org/packages/screenclone-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/screenclone-git)]</sup>
+*   Install [xf86-video-intel-virtual-crtc](https://aur.archlinux.org/packages/xf86-video-intel-virtual-crtc/), and replace your xf86-video-intel package with it.
+*   Install [screenclone-git](https://aur.archlinux.org/packages/screenclone-git/)
 *   Change these bumblebee.conf settings:
 
  `/etc/bumblebee/bumblebee.conf` 
@@ -540,7 +540,7 @@ Thats it, all three displays should be up and running now.
 
 In Windows, the way that Optimus works is NVIDIA has a whitelist of applications that require Optimus for, and you can add applications to this whitelist as needed. When you launch the application, it automatically decides which card to use.
 
-To mimic this behavior in Linux, you can use [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libgl-switcheroo-git)]</sup>. After installing, you can add the below in your .xprofile.
+To mimic this behavior in Linux, you can use [libgl-switcheroo-git](https://aur.archlinux.org/packages/libgl-switcheroo-git/). After installing, you can add the below in your .xprofile.
 
  `~/.xprofile` 
 
@@ -809,7 +809,7 @@ In conclusion, it doesn't make significant performance improvement, but as menti
 | optiprime unigine-heaven | 31.5 | 793 | 22.3 | 54.8 |
 | primusrun unigine-heaven | 31.4 | 792 | 18.7 | 54.2 |
 
-_Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>._
+_Tested with [ASUS N550JV](/index.php/ASUS_N550JV "ASUS N550JV") laptop and benchmark app [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)._
 
 **Note:** To disable vertical synchronization system-wide, see [Intel graphics#Disable Vertical Synchronization (VSYNC)](/index.php/Intel_graphics#Disable_Vertical_Synchronization_.28VSYNC.29 "Intel graphics").
 

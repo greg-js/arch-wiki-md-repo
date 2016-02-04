@@ -122,7 +122,7 @@ wget http://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/j9uj18wd.iso
 
 Newest version can be found at [E440 Downloads](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e440?TabName=Downloads)
 
-2) Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/)<sup><small>AUR</small></sup> utility.
+2) Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) utility.
 
 3) Convert ISO image (change 'XX' to match the filename of downloaded .iso):
 

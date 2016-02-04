@@ -159,7 +159,7 @@ Perform these steps on the machine used to connect the remote console.
 
 ##### dterm
 
-[dterm](https://aur.archlinux.org/packages/dterm/)<sup><small>AUR</small></sup> is a tiny serial communication program. If you invoke it without parameters, it will connect to `/dev/ttyS0` at 9600 baud by default. The following example connect to `/dev/ttyS0` at 115200 baud, with 8 data bits, no parity bit and 1 stop bit-times:
+[dterm](https://aur.archlinux.org/packages/dterm/) is a tiny serial communication program. If you invoke it without parameters, it will connect to `/dev/ttyS0` at 9600 baud by default. The following example connect to `/dev/ttyS0` at 115200 baud, with 8 data bits, no parity bit and 1 stop bit-times:
 
 ```
 $ dterm 115200 8 n 1
@@ -237,9 +237,9 @@ On Windows machines, connect to the serial port using programs like PuTTY[[3]](h
 
 #### Graphical front-ends
 
-[gtkterm](https://aur.archlinux.org/packages/gtkterm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtkterm)]</sup> provides a graphical interface to the task, with most abilities provided by [vte](https://www.archlinux.org/packages/?name=vte).
+[gtkterm](https://aur.archlinux.org/packages/gtkterm/) provides a graphical interface to the task, with most abilities provided by [vte](https://www.archlinux.org/packages/?name=vte).
 
-[cutecom](https://aur.archlinux.org/packages/cutecom/)<sup><small>AUR</small></sup> is another gui enabled serial monitor.
+[cutecom](https://aur.archlinux.org/packages/cutecom/) is another gui enabled serial monitor.
 
 [putty](https://www.archlinux.org/packages/?name=putty) is also available for Linux.
 

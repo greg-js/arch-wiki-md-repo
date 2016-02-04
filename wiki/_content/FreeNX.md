@@ -42,7 +42,7 @@ From [FreeNX - the free NX](http://freenx.berlios.de/):
 
 ## Installation
 
-Get FreeNX/Nomachine from [nx-all](https://aur.archlinux.org/packages/nx-all/)<sup><small>AUR</small></sup>. Both server and client packages are included in the package. The sshd daemon (available in openssh package) must be installed and running for it to function properly.
+Get FreeNX/Nomachine from [nx-all](https://aur.archlinux.org/packages/nx-all/). Both server and client packages are included in the package. The sshd daemon (available in openssh package) must be installed and running for it to function properly.
 
 ## Setup
 
@@ -142,7 +142,7 @@ As of installation nxserver is set to start up automatically, however, you are l
 
 #### Arch Linux
 
-Install one or both of [opennx](https://aur.archlinux.org/packages/opennx/)<sup><small>AUR</small></sup> and [nx-all](https://aur.archlinux.org/packages/nx-all/)<sup><small>AUR</small></sup> packages.
+Install one or both of [opennx](https://aur.archlinux.org/packages/opennx/) and [nx-all](https://aur.archlinux.org/packages/nx-all/) packages.
 
 #### Windows
 
@@ -200,7 +200,7 @@ If you like to have the same font-sizes/dpi sizes on all your client session, se
 
 ## FreeNX to existing display
 
-Usually, when connecting to a NX server, a new X session is created. Sometimes it might be useful, to connect to an existing X session, e.g. the root session. This is not possible with NX in default setup, but can be reached, using [tightvnc](https://aur.archlinux.org/packages/tightvnc/)<sup><small>AUR</small></sup> and [x11vnc](https://www.archlinux.org/packages/?name=x11vnc). Install them on the NX server system.
+Usually, when connecting to a NX server, a new X session is created. Sometimes it might be useful, to connect to an existing X session, e.g. the root session. This is not possible with NX in default setup, but can be reached, using [tightvnc](https://aur.archlinux.org/packages/tightvnc/) and [x11vnc](https://www.archlinux.org/packages/?name=x11vnc). Install them on the NX server system.
 
 x11vnc will serve the X session, we have to create a file `$HOME/.x11vncrc` to give x11vnc some options, e.g.:
 

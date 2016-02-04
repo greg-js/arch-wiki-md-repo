@@ -41,7 +41,7 @@
 *   To use Archiso you must be running on a x86_64 platform. [[1]](https://projects.archlinux.org/archiso.git/tree/docs/README.build#n67)
 *   It is recommended to act as root in all the following steps. If not, it is very likely to have problems with false permissions later.
 
-Before we begin, we need to [install](/index.php/Install "Install") [archiso](https://www.archlinux.org/packages/?name=archiso) from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, [archiso-git](https://aur.archlinux.org/packages/archiso-git/)<sup><small>AUR</small></sup> can be found in the [AUR](/index.php/AUR "AUR").
+Before we begin, we need to [install](/index.php/Install "Install") [archiso](https://www.archlinux.org/packages/?name=archiso) from the [official repositories](/index.php/Official_repositories "Official repositories"). Alternatively, [archiso-git](https://aur.archlinux.org/packages/archiso-git/) can be found in the [AUR](/index.php/AUR "AUR").
 
 Archiso comes with two "profiles": _releng_ and _baseline_.
 
@@ -309,6 +309,8 @@ Rebuilding the iso after modifications is not officially supported. However, it 
 
 Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an id command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[2]](https://bugs.archlinux.org/task/41865).
 
+**Note:** persistent data such as `created users` or symlinks such as `/etc/sudoers` will require you to do `rm -rf work/*`. (You could probably narrow this down, but this will do the trick)
+
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch
 
@@ -440,4 +442,4 @@ After all of these, now you can follow the [Beginners' guide#Locale](/index.php/
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533](https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=418912](https://wiki.archlinux.org/index.php?title=Archiso&oldid=418912)"

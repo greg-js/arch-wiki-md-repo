@@ -36,7 +36,7 @@ The following examples display a simple "Hello world" in a message dialog.
 
 ### Ada
 
-*   Dependency: [gtkada](https://aur.archlinux.org/packages/gtkada/)<sup><small>AUR</small></sup> from AUR
+*   Dependency: [gtkada](https://aur.archlinux.org/packages/gtkada/) from AUR
 *   Makedependency: [gcc-ada](https://www.archlinux.org/packages/?name=gcc-ada)
 *   Build with: `gnatmake hello_world `gtkada-config``
 
@@ -150,7 +150,7 @@ public class HelloWorld {
 ### Cobra
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
-*   Makedependency: [cobra](https://aur.archlinux.org/packages/cobra/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cobra)]</sup> from AUR
+*   Makedependency: [cobra](https://aur.archlinux.org/packages/cobra/) from AUR
 *   Build with: `cobra -c hello_world`
 *   Run with: `mono hello_world.exe`
 
@@ -170,7 +170,7 @@ class HelloWorld
 
 ### D
 
-*   Dependency: [gtkd](https://aur.archlinux.org/packages/gtkd/)<sup><small>AUR</small></sup> from AUR
+*   Dependency: [gtkd](https://aur.archlinux.org/packages/gtkd/) from AUR
 *   Makedependency: [dmd](https://www.archlinux.org/packages/?name=dmd)
 *   Build with: `dmd hello_world $(pkg-config --cflags --libs gtkd-2)`
 
@@ -191,7 +191,7 @@ void main(string[] args)
 ### F#
 
 *   Dependency: [gtk-sharp-3](https://www.archlinux.org/packages/?name=gtk-sharp-3)
-*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)<sup><small>AUR</small></sup> from AUR
+*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/) from AUR
 *   Build with: `fsharpc -r:gtk-sharp.dll -I:/usr/lib/mono/gtk-sharp-3.0/`
 *   Run with: `mono hello_world.exe`
 
@@ -208,7 +208,7 @@ Hello.Run() |> ignore
 
 ### Fortran
 
-*   Dependency: [gtk-3-fortran-git](https://aur.archlinux.org/packages/gtk-3-fortran-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtk-3-fortran-git)]</sup> from AUR
+*   Dependency: [gtk-3-fortran-git](https://aur.archlinux.org/packages/gtk-3-fortran-git/) from AUR
 *   Makedependency: [gcc-fortran](https://www.archlinux.org/packages/?name=gcc-fortran)
 *   Build with: `gfortran hello_world.f90 -o hello_world $(pkg-config --cflags --libs gtk-3-fortran)`
 
@@ -251,7 +251,7 @@ init
 ### Go
 
 *   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3)
-*   Makedependency: [gotk3-git](https://aur.archlinux.org/packages/gotk3-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gotk3-git)]</sup> from AUR
+*   Makedependency: [gotk3-git](https://aur.archlinux.org/packages/gotk3-git/) from AUR
 *   Build with: `go build hello_world.go`
 *   (Or run with: `go run hello_world.go`)
 
@@ -271,7 +271,7 @@ func main() {
 
 ### Groovy
 
-*   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)<sup><small>AUR</small></sup> from AUR
+*   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/) from AUR
 *   Build with: `groovyc -cp /usr/share/java/gtk.jar HelloWorld.groovy && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
 *   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`)
 
@@ -287,7 +287,7 @@ Hello.run()
 ### Haskell
 
 *   Dependency: [gtk3](https://www.archlinux.org/packages/?name=gtk3)
-*   Makedependency: [haskell-gtk3](https://aur.archlinux.org/packages/haskell-gtk3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-gtk3)]</sup> from AUR
+*   Makedependency: [haskell-gtk3](https://aur.archlinux.org/packages/haskell-gtk3/) from AUR
 *   Build with: `ghc hello_world`
 
  `hello_world.hs` 
@@ -305,7 +305,7 @@ main = do
 
 ### Java
 
-*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/)<sup><small>AUR</small></sup> from AUR
+*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/) from AUR
 *   Makedependency: java-environment
 *   Build with: `javac -cp /usr/share/java/gtk.jar HelloWorld.java && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld`
@@ -384,7 +384,7 @@ end.
 
 ### Perl
 
-*   Dependency: [perl-gtk3](https://aur.archlinux.org/packages/perl-gtk3/)<sup><small>AUR</small></sup> from AUR
+*   Dependency: [perl-gtk3](https://aur.archlinux.org/packages/perl-gtk3/) from AUR
 
  `hello_world.pl` 
 
@@ -413,7 +413,7 @@ Hello.run()
 
 ### Ruby
 
-*   Dependency: [ruby-gtk3](https://aur.archlinux.org/packages/ruby-gtk3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ruby-gtk3)]</sup>
+*   Dependency: [ruby-gtk3](https://aur.archlinux.org/packages/ruby-gtk3/)
 
  `hello_world.rb` 
 
@@ -430,7 +430,7 @@ Hello.run
 
 ### Scala
 
-*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/)<sup><small>AUR</small></sup> from AUR (and [scala](https://www.archlinux.org/packages/?name=scala))
+*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/) from AUR (and [scala](https://www.archlinux.org/packages/?name=scala))
 *   Makedependency: [scala](https://www.archlinux.org/packages/?name=scala)
 *   Build with: `scalac -cp /usr/share/java/gtk.jar -d HelloWorld.jar HelloWorld.scala`
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `scala -cp /usr/share/java/gtk.jar HelloWorld.scala`)

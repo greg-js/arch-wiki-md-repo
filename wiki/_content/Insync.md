@@ -15,7 +15,7 @@
 
 ## Installation
 
-Install [insync](https://aur.archlinux.org/packages/insync/)<sup><small>AUR</small></sup>, available in the [AUR](/index.php/AUR "AUR"). It contains the synchronization daemon, a systemd service file and a command line utility for configuration. It can be used and integrates nicely with different desktop environments such as KDE, Gnome or Cinnamon.
+Install [insync](https://aur.archlinux.org/packages/insync/), available in the [AUR](/index.php/AUR "AUR"). It contains the synchronization daemon, a systemd service file and a command line utility for configuration. It can be used and integrates nicely with different desktop environments such as KDE, Gnome or Cinnamon.
 
 ## Configuration
 
@@ -48,7 +48,7 @@ See [How to control Insync via command line (CLI)](https://support.insynchq.com/
 
 ### Slow sync process
 
-The default systemd service file provided in [insync](https://aur.archlinux.org/packages/insync/)<sup><small>AUR</small></sup> uses the `--synchronous-full` flag to make sqlite transactions safer and prevent database corruption. However, for some users this might considerably slow down the sync process. If you do not need full synchronisation, create `/etc/systemd/system/insync@.service` to override the provided service file and modify the `ExecStart` variable:
+The default systemd service file provided in [insync](https://aur.archlinux.org/packages/insync/) uses the `--synchronous-full` flag to make sqlite transactions safer and prevent database corruption. However, for some users this might considerably slow down the sync process. If you do not need full synchronisation, create `/etc/systemd/system/insync@.service` to override the provided service file and modify the `ExecStart` variable:
 
  `/etc/systemd/system/insync@.service` 
 

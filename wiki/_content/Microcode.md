@@ -160,10 +160,10 @@ Users may consult either Intel or AMD at the following links to see if a particu
 
 ### Detecting available microcode update
 
-It is possible to find out if the `intel-ucode.img` contains a microcode image for the running CPU with [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)<sup><small>AUR</small></sup>.
+It is possible to find out if the `intel-ucode.img` contains a microcode image for the running CPU with [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/).
 
 *   Install [intel-ucode](https://www.archlinux.org/packages/?name=intel-ucode) (changing initrd is not required for detection)
-*   Install [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
+*   Install [iucode-tool](https://aur.archlinux.org/packages/iucode-tool/) from the [AUR](/index.php/AUR "AUR")
 *   `# modprobe cpuid`
 *   `# bsdtar -Oxf /boot/intel-ucode.img | iucode_tool -tb -lS -`
 

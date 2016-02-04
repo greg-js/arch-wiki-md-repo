@@ -291,7 +291,7 @@ augroup END
 
 Create an [alias](/index.php/Alias "Alias") for `vi` to `vim`.
 
-Alternatively, if you want to be able to type `sudo vi` and get `vim`, install [vi-vim-symlink](https://aur.archlinux.org/packages/vi-vim-symlink/)<sup><small>AUR</small></sup> which will remove `vi` and replace it with a symlink to `vim`.
+Alternatively, if you want to be able to type `sudo vi` and get `vim`, install [vi-vim-symlink](https://aur.archlinux.org/packages/vi-vim-symlink/) which will remove `vi` and replace it with a symlink to `vim`.
 
 ### DOS/Windows carriage returns
 
@@ -432,7 +432,7 @@ nnoremap <C-l> :TlistToggle<CR>
 *   [Vim Introduction and Tutorial](http://blog.interlinked.org/tutorials/vim_tutorial.html)
 *   [Open Vim](http://www.openvim.com/) — collection of Vim learning tools
 *   [Learn Vim Progressively](http://yannesposito.com/Scratch/en/blog/Learn-Vim-Progressively/)
-*   [know vim](http://www.knowvim.com/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-10-29]</sup>
+*   [know vim](http://www.knowvim.com/) 
 *   [Learning Vim in 2014](http://benmccormick.org/learning-vim-in-2014/)
 *   [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
 
@@ -458,11 +458,11 @@ nnoremap <C-l> :TlistToggle<CR>
 
 ### Other
 
-*   [HOWTO Vim](http://www.gentoo-wiki.info/HOWTO_VIM) — Gentoo wiki article which this article was based on (author unknown).
-*   [Vivify](http://bytefluent.com/vivify/) — a colorscheme editor for Vim
-*   [Usevim](http://www.usevim.com/) — frequently updated blog highlighting plugins, tips, etc
-*   [Vim Awesome](http://vimawesome.com/) — a website that lists and ranks Vim plugins by popularity among GitHub users.
-*   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/) — a reference chart for Vim, primarily aimed at beginners.
-*   [Vim colorscheme tailoring](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — override installed colorscheme to try-out or permanently alter.
+*   [HOWTO Vim](http://www.gentoo-wiki.info/HOWTO_VIM) — The Gentoo wiki article the Usage section was based on.
+*   [Vivify](http://bytefluent.com/vivify/) — A colorscheme editor for Vim.
+*   [Usevim](http://www.usevim.com/) — A blog highlighting plugins, tips, etc..
+*   [Vim Awesome](http://vimawesome.com/) — A website that lists and ranks Vim plugins by popularity among GitHub users.
+*   [Basic Vim Tips](http://bencrowder.net/files/vim-fu/) — A reference chart for Vim primarily aimed at beginners.
+*   [Vim colorscheme customization](https://linuxtidbits.wordpress.com/2014/10/14/vim-customize-installed-colorschemes/) — A tutorial on how to customize an installed colorscheme.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=417505](https://wiki.archlinux.org/index.php?title=Vim&oldid=417505)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Vim&oldid=418823](https://wiki.archlinux.org/index.php?title=Vim&oldid=418823)"

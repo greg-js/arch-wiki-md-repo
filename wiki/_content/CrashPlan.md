@@ -17,7 +17,7 @@ CrashPlan is a backup program that backs up data to remote servers, other comput
 
 ## Installation
 
-Install [crashplan](https://aur.archlinux.org/packages/crashplan/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). There is also [crashplan-pro](https://aur.archlinux.org/packages/crashplan-pro/)<sup><small>AUR</small></sup> and [crashplan-pro-e](https://aur.archlinux.org/packages/crashplan-pro-e/)<sup><small>AUR</small></sup> available which are the paid enterprise packages.
+Install [crashplan](https://aur.archlinux.org/packages/crashplan/) from the [AUR](/index.php/AUR "AUR"). There is also [crashplan-pro](https://aur.archlinux.org/packages/crashplan-pro/) and [crashplan-pro-e](https://aur.archlinux.org/packages/crashplan-pro-e/) available which are the paid enterprise packages.
 
 ## Basic Usage
 
@@ -63,7 +63,7 @@ Another, simpler, way of running CrashPlan headlessly is to use ssh's X11 forwar
 
 ### Waiting for connection
 
-On some systems it can happen that CrashPlan does not wait until an internet connection is established. If using [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can install [networkmanager-dispatcher-crashplan-systemd](https://aur.archlinux.org/packages/networkmanager-dispatcher-crashplan-systemd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/networkmanager-dispatcher-crashplan-systemd)]</sup> which will automatically restart the CrashPlan service once a connection is successfully established.
+On some systems it can happen that CrashPlan does not wait until an internet connection is established. If using [NetworkManager](/index.php/NetworkManager "NetworkManager"), you can install [networkmanager-dispatcher-crashplan-systemd](https://aur.archlinux.org/packages/networkmanager-dispatcher-crashplan-systemd/) which will automatically restart the CrashPlan service once a connection is successfully established.
 
 ### Waiting for Backup
 

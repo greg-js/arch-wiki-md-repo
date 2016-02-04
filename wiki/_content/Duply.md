@@ -14,7 +14,7 @@ From [duply.net](http://www.duply.net/):
 
 ## Installation
 
-Duply is available in the [duply](https://aur.archlinux.org/packages/duply/)<sup><small>AUR</small></sup> package.
+Duply is available in the [duply](https://aur.archlinux.org/packages/duply/) package.
 
 ## Usage
 

@@ -74,7 +74,7 @@ Necessary driver packages:
 **Note:**
 
 *   For additional information, see the [Xorg](/index.php/Xorg "Xorg") page.
-*   Update: Oct, 24, 2010: The AUR package [mach64drm](https://aur.archlinux.org/packages/mach64drm/)<sup><small>AUR</small></sup> should bring back 3D rendering for current kernel versions.
+*   Update: Oct, 24, 2010: The AUR package [mach64drm](https://aur.archlinux.org/packages/mach64drm/) should bring back 3D rendering for current kernel versions.
 
 ### CPU scaling
 

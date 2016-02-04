@@ -101,7 +101,7 @@ These instructions are for those using the stock [linux](https://www.archlinux.o
 *   For GeForce 6000/7000 series cards [NV4x and NV6x] from around 2004-2006, [install](/index.php/Install "Install") the [nvidia-304xx](https://www.archlinux.org/packages/?name=nvidia-304xx) or [nvidia-304xx-lts](https://www.archlinux.org/packages/?name=nvidia-304xx-lts) package along with [nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=nvidia-304xx-libgl).
 
 *   For even older cards, have a look at [#Unsupported drivers](#Unsupported_drivers).
-*   For the very latest GPU models, it may be required to [install](/index.php/Install "Install") the [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/)<sup><small>AUR</small></sup> package, since the stable drivers may not support the newly introduced features.
+*   For the very latest GPU models, it may be required to [install](/index.php/Install "Install") the [nvidia-beta](https://aur.archlinux.org/packages/nvidia-beta/) package, since the stable drivers may not support the newly introduced features.
 
 4\. If you are on 64-bit and also need 32-bit OpenGL support, you must also install the equivalent _lib32_ package from the [multilib](/index.php/Multilib "Multilib") repository (e.g. [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl), [lib32-nvidia-340xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-340xx-libgl) or [lib32-nvidia-304xx-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-304xx-libgl)).
 
@@ -115,8 +115,8 @@ If you have a GeForce 5 FX series card or older, Nvidia no longer supports drive
 
 However, Nvidia's legacy drivers are still available and might provide better 3D performance/stability if you are willing to downgrade Xorg:
 
-*   For GeForce 5 FX series cards [NV30-NV36], install the [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)<sup><small>AUR</small></sup> package. Last supported Xorg version is 1.15.
-*   For GeForce 2/3/4 MX/Ti series cards [NV11, NV17-NV28], install the [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)<sup><small>AUR</small></sup> package. Last supported Xorg version is 1.12.
+*   For GeForce 5 FX series cards [NV30-NV36], install the [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/) package. Last supported Xorg version is 1.15.
+*   For GeForce 2/3/4 MX/Ti series cards [NV11, NV17-NV28], install the [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/) package. Last supported Xorg version is 1.12.
 
 **Tip:** The legacy nvidia-96xx-dkms and nvidia-173xx-dkms drivers can also be installed from the unofficial [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). (It is strongly advised that you do not skip any dependencies restriction when installing from here)
 
@@ -528,7 +528,7 @@ Option "RegistryDwords" "EnableBrightnessControl=1"
 
 ```
 
-If brightness control still does not work with this option, try installing [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/)<sup><small>AUR</small></sup> or [nvidiabl](https://aur.archlinux.org/packages/nvidiabl/)<sup><small>AUR</small></sup>.
+If brightness control still does not work with this option, try installing [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) or [nvidiabl](https://aur.archlinux.org/packages/nvidiabl/).
 
 #### Enabling SLI
 
@@ -617,7 +617,7 @@ To enable multiple features, add the _Coolbits_ values together. For example, to
 
 The documentation of _Coolbits_ can be found in `/usr/share/doc/nvidia/html/xconfigoptions.html`. Driver version 346.16 documentation on _Coolbits_ can be found online [here](ftp://download.nvidia.com/XFree86/Linux-x86/355.11/README/xconfigoptions.html).
 
-**Note:** An alternative is to edit and reflash the GPU BIOS either under DOS (preferred), or within a Win32 environment by way of [nvflash](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,127/orderby,2/page,1/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-05-25]</sup> and [NiBiTor 6.0](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,135/orderby,2/page,1/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-05-25]</sup>. The advantage of BIOS flashing is that not only can voltage limits be raised, but stability is generally improved over software overclocking methods such as Coolbits. [Fermi BIOS modification tutorial](http://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html)
+**Note:** An alternative is to edit and reflash the GPU BIOS either under DOS (preferred), or within a Win32 environment by way of [nvflash](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,127/orderby,2/page,1/) and [NiBiTor 6.0](http://www.mvktech.net/component/option,com_remository/Itemid,26/func,select/id,135/orderby,2/page,1/). The advantage of BIOS flashing is that not only can voltage limits be raised, but stability is generally improved over software overclocking methods such as Coolbits. [Fermi BIOS modification tutorial](http://ivanvojtko.blogspot.sk/2014/03/how-to-overclock-geforce-460gtx-fermi.html)
 
 ##### Setting static 2D/3D clocks
 
@@ -840,7 +840,7 @@ Reference: [http://www.question-defense.com/2010/03/22/gpu-linux-shell-temp-get-
 
 #### Method 3 - nvclock
 
-Use [nvclock](https://aur.archlinux.org/packages/nvclock/)<sup><small>AUR</small></sup> which is available from the [AUR](/index.php/AUR "AUR").
+Use [nvclock](https://aur.archlinux.org/packages/nvclock/) which is available from the [AUR](/index.php/AUR "AUR").
 
 **Note:** `nvclock` cannot access thermal sensors on newer NVIDIA cards such as Geforce 200 series cards.
 
@@ -1195,7 +1195,7 @@ A problem with [flashplugin](https://www.archlinux.org/packages/?name=flashplugi
 2.  Patch `vdpau_trace.so` with [this makepkg](https://bbs.archlinux.org/viewtopic.php?pid=1078368#p1078368).
 3.  Right click on a video, select "Settings..." and uncheck "Enable hardware acceleration". Reload the page for it to take affect. Note that this disables GPU acceleration.
 4.  [Downgrade](/index.php/Downgrade "Downgrade") the [flashplugin](https://www.archlinux.org/packages/?name=flashplugin) package to version 11.1.102.63-1 at most.
-5.  Use [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> with the new Pepper API [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)<sup><small>AUR</small></sup>.
+5.  Use [google-chrome](https://aur.archlinux.org/packages/google-chrome/) with the new Pepper API [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/).
 6.  Try one of the few Flash alternatives.
 
 The merits of each are discussed in [this thread](https://bbs.archlinux.org/viewtopic.php?id=137877).

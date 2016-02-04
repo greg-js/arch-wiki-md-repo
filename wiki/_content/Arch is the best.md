@@ -16,7 +16,7 @@ The visionary project was originally devised in April 2008 by long time Arch com
 
 ## Installation
 
-A sample PKGBUILD called [archbest-mod1](https://aur.archlinux.org/packages/archbest-mod1/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/archbest-mod1)]</sup> has been uploaded to [AUR](/index.php/AUR "AUR").
+A sample PKGBUILD called [archbest-mod1](https://aur.archlinux.org/packages/archbest-mod1/) has been uploaded to [AUR](/index.php/AUR "AUR").
 
 ## The code
 

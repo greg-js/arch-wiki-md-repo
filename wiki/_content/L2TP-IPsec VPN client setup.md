@@ -23,7 +23,7 @@ This guide is primarily targeted for clients connecting to a Windows Server mach
 
 ## Installation
 
-Install [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [xl2tpd](https://www.archlinux.org/packages/?name=xl2tpd) from the repos and [openswan](https://aur.archlinux.org/packages/openswan/) from the [AUR](/index.php/AUR "AUR").
 
 Make sure that the openswan service is running with `systemctl start openswan.service`, or you may get an error message about a missing pluto_ctl `connect(pluto_ctl) failed: No such file or directory`.
 
@@ -352,6 +352,6 @@ exit 0
 
 *   [http://openswan.org/](http://openswan.org/)
 *   [http://www.xelerance.com/software/xl2tpd/](http://www.xelerance.com/software/xl2tpd/)
-*   [http://strongvpn.com/forum/viewtopic.php?pid=1844/](http://strongvpn.com/forum/viewtopic.php?pid=1844/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-08-29]</sup> — The main source used to write the initial revisions of this article.
+*   [http://strongvpn.com/forum/viewtopic.php?pid=1844/](http://strongvpn.com/forum/viewtopic.php?pid=1844/) — The main source used to write the initial revisions of this article.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=416587](https://wiki.archlinux.org/index.php?title=L2TP/IPsec_VPN_client_setup&oldid=416587)"

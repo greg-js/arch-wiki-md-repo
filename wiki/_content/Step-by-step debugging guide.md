@@ -153,7 +153,7 @@ $ readelf -a /usr/bin/appname | grep interp
 
 (replace /usr/bin/appname with the location of your executable)
 
-Make sure the interpreter in question (like /lib/ld-linux-x86-64.so.2) actually exists. Install [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") if need be.
+Make sure the interpreter in question (like /lib/ld-linux-x86-64.so.2) actually exists. Install [ld-lsb](https://aur.archlinux.org/packages/ld-lsb/) from the [AUR](/index.php/AUR "AUR") if need be.
 
 ## If it is not written in C or C++, but perhaps in Python
 

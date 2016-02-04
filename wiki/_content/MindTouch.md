@@ -8,8 +8,8 @@ Feel free to follow along on the [MindTouch Installation Guide](http://developer
 
 *   Install [MySQL](/index.php/MySQL "MySQL").
 *   Install [Nginx](/index.php/Nginx "Nginx") and php-fpm.
-*   Compile the [mindtouch](https://aur.archlinux.org/packages/mindtouch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mindtouch)]</sup> [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") package and install the resulting `mindtouch` and `mindtouch-setup` packages.
-*   If you would like to use [Prince](http://www.princexml.com/) to allow PDF export, install the [princexml](https://aur.archlinux.org/packages/princexml/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   Compile the [mindtouch](https://aur.archlinux.org/packages/mindtouch/) [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") package and install the resulting `mindtouch` and `mindtouch-setup` packages.
+*   If you would like to use [Prince](http://www.princexml.com/) to allow PDF export, install the [princexml](https://aur.archlinux.org/packages/princexml/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 **Note:** Although Prince is not free for commercial use, there is an [explicit exception](http://www.princexml.com/purchase/mindtouch) made for MindTouch, which allows it to be used for free, even if your MindTouch installation will be used for commercial purposes. (A note is added to the first page of every generated PDF.) Prince can also be installed at a later date if necessary.
 
@@ -99,7 +99,7 @@ For instance:
 
 MindTouch can be configured to start using Prince if it's installed after the MindTouch installation. It's also possible to remove Prince, in which case the PDF export option becomes unavailable in MindTouch.
 
-*   Install (or remove) the [princexml](https://aur.archlinux.org/packages/princexml/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   Install (or remove) the [princexml](https://aur.archlinux.org/packages/princexml/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 *   Edit the `/etc/webapps/mindtouch/mindtouch.deki.startup.xml` file.
 *   Find the `princexml-path` configuration tag.
 *   Set the content of the tag to be `/usr/bin/prince`, or remove it if you want to remove Prince.

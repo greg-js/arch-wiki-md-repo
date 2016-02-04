@@ -128,7 +128,7 @@ dev/mac_hid/mouse_button3_keycode = 999
 
 ## Mouse Wheel Mode
 
-In order to enable or disable mouse wheel's free spinning, you can use [revoco2](https://aur.archlinux.org/packages/revoco2/)<sup><small>AUR</small></sup>. Giving the following command from shell, or, alternatively, putting it in a script executed at the startup should enable/disable free spinning.
+In order to enable or disable mouse wheel's free spinning, you can use [revoco2](https://aur.archlinux.org/packages/revoco2/). Giving the following command from shell, or, alternatively, putting it in a script executed at the startup should enable/disable free spinning.
 
 ```
 # revoco free  # in order to enable free spinning

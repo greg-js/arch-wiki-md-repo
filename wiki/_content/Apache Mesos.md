@@ -4,6 +4,6 @@ Apache Mesos is a cluster manager. For more information, see the [official docum
 
 ## Installation
 
-Install the [mesos](https://aur.archlinux.org/packages/mesos/)<sup><small>AUR</small></sup> package.
+Install the [mesos](https://aur.archlinux.org/packages/mesos/) package.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Apache_Mesos&oldid=408296](https://wiki.archlinux.org/index.php?title=Apache_Mesos&oldid=408296)"

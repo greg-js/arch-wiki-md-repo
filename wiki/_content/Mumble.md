@@ -25,9 +25,9 @@ This page goes over installation and configuration of both the client portion of
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [mumble](https://www.archlinux.org/packages/?name=mumble) package (or [mumble-git](https://aur.archlinux.org/packages/mumble-git/)<sup><small>AUR</small></sup> for the development version).
+[Install](/index.php/Install "Install") the [mumble](https://www.archlinux.org/packages/?name=mumble) package (or [mumble-git](https://aur.archlinux.org/packages/mumble-git/) for the development version).
 
-For [JACK](/index.php/JACK "JACK") support, install the [mumble-jack](https://aur.archlinux.org/packages/mumble-jack/)<sup><small>AUR</small></sup> package (or [mumble-jack-git](https://aur.archlinux.org/packages/mumble-jack-git/)<sup><small>AUR</small></sup> for the development version).
+For [JACK](/index.php/JACK "JACK") support, install the [mumble-jack](https://aur.archlinux.org/packages/mumble-jack/) package (or [mumble-jack-git](https://aur.archlinux.org/packages/mumble-jack-git/) for the development version).
 
 ### Configuration
 
@@ -43,7 +43,7 @@ The Mumble project maintains a good guide for setting up the server here: [Murmu
 
 [Install](/index.php/Install "Install") the [murmur](https://www.archlinux.org/packages/?name=murmur) package.
 
-For ICE support, install the [murmur-ice](https://aur.archlinux.org/packages/murmur-ice/)<sup><small>AUR</small></sup> package.
+For ICE support, install the [murmur-ice](https://aur.archlinux.org/packages/murmur-ice/) package.
 
 The postinstall script will tell you to reload dbus and set the supervisor password. The default configuration does not use dbus, so you can ignore that if you want. Setting the supervisor password is recommended, however.
 

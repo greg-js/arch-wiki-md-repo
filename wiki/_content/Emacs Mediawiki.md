@@ -14,7 +14,7 @@ Emacs Mediawiki Mode is an emacs major mode which is evolved from an old copy of
 
 ## Installation
 
-There is a package in [AUR](/index.php/AUR "AUR"):[emacs-mediawiki-bzr](https://aur.archlinux.org/packages/emacs-mediawiki-bzr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/emacs-mediawiki-bzr)]</sup>.
+There is a package in [AUR](/index.php/AUR "AUR"):[emacs-mediawiki-bzr](https://aur.archlinux.org/packages/emacs-mediawiki-bzr/).
 
 Or you can directly download the source from [https://launchpad.net/mediawiki-el](https://launchpad.net/mediawiki-el) .
 

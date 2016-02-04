@@ -6,7 +6,7 @@
 
 ## Pages in category "Arch User Repository"
 
-The following 4 pages are in this category, out of 4 total.
+The following 5 pages are in this category, out of 5 total.
 
 ### A
 
@@ -14,5 +14,9 @@ The following 4 pages are in this category, out of 4 total.
 *   [AUR Cleanup Day](/index.php/AUR_Cleanup_Day "AUR Cleanup Day")
 *   [AUR helpers](/index.php/AUR_helpers "AUR helpers")
 *   [Aura](/index.php/Aura "Aura")
+
+### H
+
+*   [User:Horo](/index.php/User:Horo "User:Horo")
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Category:Arch_User_Repository&oldid=397384](https://wiki.archlinux.org/index.php?title=Category:Arch_User_Repository&oldid=397384)"

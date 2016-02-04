@@ -57,8 +57,8 @@ Most of the new Hybrid-graphics technologies involves two graphic cards as the b
 *   [PRIME](/index.php/PRIME "PRIME") -- long-term Optimus solution in progress -- by David Airlie
 *   [Bumblebee](/index.php/Bumblebee "Bumblebee") -- allows you to run specific programs on the discrete graphic card, inside of an X session using the integrated graphic card. Works on Nvidia Optimus cards -- by Martin Juhl
 *   hybrid-windump -- dump window using Nvidia onto Intel display -- by Florian Berger and Joakim Gebart
-*   [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/)<sup><small>AUR</small></sup> -- gpu-switch is an application to switch between the integrated and dedicated GPU of dual-GPU MacBook Pro models for the next reboot
-*   [systemd-vgaswitcheroo-units](https://aur.archlinux.org/packages/systemd-vgaswitcheroo-units/)<sup><small>AUR</small></sup> -- Disable discrete GPU at boot for AMD/NVIDIA & Intel dual GPU setups.
+*   [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/) -- gpu-switch is an application to switch between the integrated and dedicated GPU of dual-GPU MacBook Pro models for the next reboot
+*   [systemd-vgaswitcheroo-units](https://aur.archlinux.org/packages/systemd-vgaswitcheroo-units/) -- Disable discrete GPU at boot for AMD/NVIDIA & Intel dual GPU setups.
 
 ### ATI Dynamic Switchable Graphics
 
@@ -78,7 +78,7 @@ As of now, there are 3 choices:
 
 ### Fully Power Down Discrete GPU
 
-You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the the [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acpi_call-git)]</sup> or [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/)<sup><small>AUR</small></sup> package from the AUR.
+You may want to turn off the high-performance graphics processor to save battery power, this can be done by installing the the [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/) or [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/) package from the AUR.
 
 Once installed load the kernel module:
 
@@ -152,7 +152,7 @@ w /proc/acpi/call - - - - \\_SB.PCI0.PEG0.PEGP._OFF
 
 The above config will be loaded at boot by systemd. What it does is write the specific OFF signal to the `/proc/acpi/call` file. Obviously, replace the `\_SB.PCI0.PEG0.PEGP._OFF` with the one which works on your system (please note that you need to escape the backslash).
 
-**Tip:** To prevent manual reinstalling the [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acpi_call-git)]</sup> package after each kernel upgrade, you can use the [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/)<sup><small>AUR</small></sup> package.
+**Tip:** To prevent manual reinstalling the [acpi_call-git](https://aur.archlinux.org/packages/acpi_call-git/) package after each kernel upgrade, you can use the [acpi_call-git-dkms](https://aur.archlinux.org/packages/acpi_call-git-dkms/) package.
 
 ## See Also
 

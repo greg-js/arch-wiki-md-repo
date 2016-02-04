@@ -107,7 +107,7 @@ Once confirming that it works, you can create a file /etc/modprobe.d/b43.conf wi
 
 permanently.
 
--- other option - use the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> driver from the AUR.
+-- other option - use the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver from the AUR.
 
 ## Power
 

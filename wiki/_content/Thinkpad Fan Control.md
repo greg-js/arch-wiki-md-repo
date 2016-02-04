@@ -24,19 +24,19 @@ From the Thinkpad Fan Control website:
 
 **Note:** tpfand is not actively developed anymore! There's a fork called tpfanco (see below).
 
-The [tpfand](https://aur.archlinux.org/packages/tpfand/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfand)]</sup> daemon can be installed from the [AUR](/index.php/AUR "AUR"). Alternatively, a version that doesn't require [HAL](/index.php/HAL "HAL") is also available from the [AUR](/index.php/AUR "AUR"): [tpfand-no-hal](https://aur.archlinux.org/packages/tpfand-no-hal/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfand-no-hal)]</sup>
+The [tpfand](https://aur.archlinux.org/packages/tpfand/) daemon can be installed from the [AUR](/index.php/AUR "AUR"). Alternatively, a version that doesn't require [HAL](/index.php/HAL "HAL") is also available from the [AUR](/index.php/AUR "AUR"): [tpfand-no-hal](https://aur.archlinux.org/packages/tpfand-no-hal/)
 
-An additional GTK+ frontend is provided in the [tpfan-admin](https://aur.archlinux.org/packages/tpfan-admin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfan-admin)]</sup> package in the [AUR](/index.php/AUR "AUR") which enables the monitoring of temperatures as well as the graphical adjustment of trigger points.
+An additional GTK+ frontend is provided in the [tpfan-admin](https://aur.archlinux.org/packages/tpfan-admin/) package in the [AUR](/index.php/AUR "AUR") which enables the monitoring of temperatures as well as the graphical adjustment of trigger points.
 
 ### tpfanco
 
-Due to tpfand not beeing actively developed anymore, there's a fork called tpfanco (which in fact uses the same names for the executables as tpfand): [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfanco-svn)]</sup>. It may be used as a complete replacement for tpfand.
+Due to tpfand not beeing actively developed anymore, there's a fork called tpfanco (which in fact uses the same names for the executables as tpfand): [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/). It may be used as a complete replacement for tpfand.
 
 # Configuration
 
 The configuration file for tpfand (same for tpfanco) is found in `/etc/tpfand.conf`. This file can be edited to adjust the fan trigger points to suit your needs.
 
-Additionally, the [tpfand-profiles](https://aur.archlinux.org/packages/tpfand-profiles/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfand-profiles)]</sup> package in the [AUR](/index.php/AUR "AUR") gives the latest fan profiles for various thinkpad models.
+Additionally, the [tpfand-profiles](https://aur.archlinux.org/packages/tpfand-profiles/) package in the [AUR](/index.php/AUR "AUR") gives the latest fan profiles for various thinkpad models.
 
 ## Running
 

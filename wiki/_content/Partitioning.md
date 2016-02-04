@@ -210,7 +210,7 @@ The size of the partitions depends on personal preference, but the following inf
 
 *   **QtParted** — Similar to Partitionmanager, available in [AUR](/index.php/AUR "AUR").
 
-	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qtparted)]</sup>
+	[http://qtparted.sourceforge.net/](http://qtparted.sourceforge.net/) || [qtparted](https://aur.archlinux.org/packages/qtparted/)
 
 ## Partition alignment
 

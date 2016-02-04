@@ -259,7 +259,7 @@ User accounts may be deleted with the _userdel_ command.
 
 The `-r` option specifies that the user's home directory and mail spool should also be deleted.
 
-**Tip:** The [AUR](/index.php/AUR "AUR") packages [adduser](https://aur.archlinux.org/packages/adduser/)<sup><small>AUR</small></sup>, [adduser-defaults](https://aur.archlinux.org/packages/adduser-defaults/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/adduser-defaults)]</sup> or [adduser-deb](https://aur.archlinux.org/packages/adduser-deb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/adduser-deb)]</sup> provide an _adduser_ script that allows carrying out the jobs of _useradd_, _chfn_ and _passwd_ interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
+**Tip:** The [AUR](/index.php/AUR "AUR") packages [adduser](https://aur.archlinux.org/packages/adduser/), [adduser-defaults](https://aur.archlinux.org/packages/adduser-defaults/) or [adduser-deb](https://aur.archlinux.org/packages/adduser-deb/) provide an _adduser_ script that allows carrying out the jobs of _useradd_, _chfn_ and _passwd_ interactively. See also [FS#32893](https://bugs.archlinux.org/task/32893).
 
 ### Username change tips
 

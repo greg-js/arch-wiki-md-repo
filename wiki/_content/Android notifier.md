@@ -19,7 +19,7 @@ Android Notifier is a linux application that receives notifications on sms, mms,
 
 ## Installation
 
-Get it from AUR: [android-notifier-desktop](https://aur.archlinux.org/packages/android-notifier-desktop/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-notifier-desktop)]</sup>
+Get it from AUR: [android-notifier-desktop](https://aur.archlinux.org/packages/android-notifier-desktop/)
 
 ## Configuration
 

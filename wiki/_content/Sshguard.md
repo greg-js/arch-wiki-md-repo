@@ -37,7 +37,7 @@ You must configure a firewall to be used with sshguard in order for blocking to 
 
 #### UFW
 
-**Warning:** Currently, ufw-033-3 in [community] is not compatible with the method shown below. Users must use [ufw-bzr](https://aur.archlinux.org/packages/ufw-bzr/)<sup><small>AUR</small></sup> from the AUR.
+**Warning:** Currently, ufw-033-3 in [community] is not compatible with the method shown below. Users must use [ufw-bzr](https://aur.archlinux.org/packages/ufw-bzr/) from the AUR.
 
 If UFW is installed and enabled, it must be given the ability to pass along DROP control to sshguard. This is accomplished by modifying `/etc/ufw/before.rules` to contain the following lines which should be inserted just after the section for loopback devices.
 

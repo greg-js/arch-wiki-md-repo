@@ -16,11 +16,11 @@
 
 *   [AMD](/index.php/ATI "ATI") Radeon 9500 and newer GPUs are supported by the [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) package together with the [mesa](https://www.archlinux.org/packages/?name=mesa) package.
 *   [Intel](/index.php/Intel "Intel") GMA 4500 series and newer GPUs are supported by the [libva-intel-driver](https://www.archlinux.org/packages/?name=libva-intel-driver) package together with the [mesa](https://www.archlinux.org/packages/?name=mesa) package.
-*   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by the [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) package together with the [mesa](https://www.archlinux.org/packages/?name=mesa) package. It uses the [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/)<sup><small>AUR</small></sup> package, which contains the required firmware to operate that is presently extracted from the NVIDIA binary driver.
+*   [NVIDIA](/index.php/Nouveau "Nouveau") GeForce 8 series and newer GPUs are supported by the [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) package together with the [mesa](https://www.archlinux.org/packages/?name=mesa) package. It uses the [nouveau-fw](https://aur.archlinux.org/packages/nouveau-fw/) package, which contains the required firmware to operate that is presently extracted from the NVIDIA binary driver.
 
 **Proprietary drivers:**
 
-*   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 series and newer GPUs are supported by the [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/)<sup><small>AUR</small></sup> package. It uses the [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/)<sup><small>AUR</small></sup> driver for Radeon HD 5000 series and newer, and [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/)<sup><small>AUR</small></sup> for Radeon HD 4000 series.
+*   [AMD](/index.php/AMD_Catalyst "AMD Catalyst") Radeon HD 4000 series and newer GPUs are supported by the [libva-xvba-driver](https://aur.archlinux.org/packages/libva-xvba-driver/) package. It uses the [catalyst-utils](https://aur.archlinux.org/packages/catalyst-utils/) driver for Radeon HD 5000 series and newer, and [catalyst-total-hd234k](https://aur.archlinux.org/packages/catalyst-total-hd234k/) for Radeon HD 4000 series.
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA") GeForce 8 series and newer GPUs are supported by the [libva-vdpau-driver](https://www.archlinux.org/packages/?name=libva-vdpau-driver) package together with the [nvidia-utils](https://www.archlinux.org/packages/?name=nvidia-utils) driver.
 
 ### Supported formats
@@ -33,7 +33,7 @@
 <center>—</center>
 
  | GeForce 200 and newer | Radeon HD 6000 and newer | GeForce 200 and newer |
-| H264 decoding | Radeon HD 4000 and newer | GMA 4500<sup>1</sup>, Ironlake Graphics and newer | GeForce 8 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
+| H264 decoding | Radeon HD 4000 and newer | GMA 4500, Ironlake Graphics and newer | GeForce 8 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
 | VC1 decoding | Radeon HD 4000 and newer | Sandy Bridge Graphics and newer | GeForce 8200, 8300, 8400, 9300, 200 and newer | Radeon HD 4000 and newer | GeForce 8 and newer |
 | MPEG2 encoding | 
 
@@ -70,7 +70,7 @@
 
  |
 
-<sup>1</sup>Supported by the [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/)<sup><small>AUR</small></sup> package. See [H.264 decoding on GMA 4500](/index.php/Intel_graphics#H.264_decoding_on_GMA_4500 "Intel graphics") for instructions and caveats.
+Supported by the [libva-intel-driver-g45-h264](https://aur.archlinux.org/packages/libva-intel-driver-g45-h264/) package. See [H.264 decoding on GMA 4500](/index.php/Intel_graphics#H.264_decoding_on_GMA_4500 "Intel graphics") for instructions and caveats.
 
 In order to check what profiles (features) are supported by your GPU, you may want to read the [#Verifying](#Verifying) section.
 

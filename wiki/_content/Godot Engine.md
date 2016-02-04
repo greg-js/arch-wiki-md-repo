@@ -14,11 +14,11 @@
 
 ### Stable version
 
-You can either install the [AUR](/index.php/AUR "AUR") package [godot](https://aur.archlinux.org/packages/godot/)<sup><small>AUR</small></sup> or download it from their [downloads page](http://godotengine.org/projects/godot-engine/documents).
+You can either install the [AUR](/index.php/AUR "AUR") package [godot](https://aur.archlinux.org/packages/godot/) or download it from their [downloads page](http://godotengine.org/projects/godot-engine/documents).
 
 ### Latest Git version
 
-If you want to install from the AUR, use the package [godot-git](https://aur.archlinux.org/packages/godot-git/)<sup><small>AUR</small></sup>. If you want to compile it manually, have a look at [this page](http://godotengine.org/projects/godot-engine/wiki/Compiling_for_Linux) from the official wiki.
+If you want to install from the AUR, use the package [godot-git](https://aur.archlinux.org/packages/godot-git/). If you want to compile it manually, have a look at [this page](http://godotengine.org/projects/godot-engine/wiki/Compiling_for_Linux) from the official wiki.
 
 ### Export templates
 

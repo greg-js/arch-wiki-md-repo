@@ -77,7 +77,7 @@ You could also put the configuration in its own config file in `/etc/httpd/conf/
 
 #### Apache 2.4
 
-For Apache 2.4 you need to install [mod_perl](https://aur.archlinux.org/packages/mod_perl/)<sup><small>AUR</small></sup> along with [git](https://www.archlinux.org/packages/?name=git) and [apache](https://www.archlinux.org/packages/?name=apache).
+For Apache 2.4 you need to install [mod_perl](https://aur.archlinux.org/packages/mod_perl/) along with [git](https://www.archlinux.org/packages/?name=git) and [apache](https://www.archlinux.org/packages/?name=apache).
 
 Create `/etc/httpd/conf/extra/httpd-gitweb.conf`
 

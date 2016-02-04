@@ -61,8 +61,8 @@ This list is by no means complete. If you know of a community that is not listed
 
 ### Czech Republic
 
-*   Homepage: [http://archlinux.cz/](http://archlinux.cz/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-12-08]</sup>
-*   Forum: [http://www.archlinux.cz/forum/](http://www.archlinux.cz/forum/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-12-08]</sup>
+*   Homepage: [http://archlinux.cz/](http://archlinux.cz/) 
+*   Forum: [http://www.archlinux.cz/forum/](http://www.archlinux.cz/forum/) 
 *   Wiki: [Main page (Česky)](/index.php/Main_page_(%C4%8Cesky) "Main page (Česky)")
 
 ### Denmark

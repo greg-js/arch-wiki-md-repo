@@ -18,7 +18,7 @@
 | **Device** | **Status** | **Modules** |
 | Ati Radeon Xpress | **Working** | fglrx (cataylst), radeon |
 | Ethernet | **Working** | b44 |
-| Wireless | **Working** | [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, b43, ndiswrapper |
+| Wireless | **Working** | [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), b43, ndiswrapper |
 | Audio | **Working** | snd_hda_intel |
 | Modem | **Untested** |
 | PCMCIA Slot | **Untested** |

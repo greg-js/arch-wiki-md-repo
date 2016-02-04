@@ -1,6 +1,6 @@
 # H2status
 
-[h2status](https://aur.archlinux.org/packages/h2status/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/h2status)]</sup> is a trivial (about 60 LOC) bash wrapper to i3status that nevertheless allows to conveniently:
+[h2status](https://aur.archlinux.org/packages/h2status/) is a trivial (about 60 LOC) bash wrapper to i3status that nevertheless allows to conveniently:
 
 *   Write custom modules in bash to add full-fledged json entries to the status bar.
 *   Write mouse event handlers in bash with access to the full set of event parameters as bash variables.
@@ -122,7 +122,7 @@ This will check gmail folders `MAIL_INBOXES` for unread messages every `MAIL_INT
 
 ### Switch keyboard layout
 
-The following makes for a nice solution to keyboard layout switching between multiple languages. Left-button clicking on the keyboard status entry switches to the default (first) layout. Right-button clicking iterates over all configured layouts. The layouts are configured in ~/.xinitrc using setxkbmap, v.g. `setxkbmap "us,es,fr"`. You must install [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xkblayout-state)]</sup> from the AUR.
+The following makes for a nice solution to keyboard layout switching between multiple languages. Left-button clicking on the keyboard status entry switches to the default (first) layout. Right-button clicking iterates over all configured layouts. The layouts are configured in ~/.xinitrc using setxkbmap, v.g. `setxkbmap "us,es,fr"`. You must install [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/) from the AUR.
 
 ```
  function status {

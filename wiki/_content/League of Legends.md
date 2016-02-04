@@ -269,7 +269,7 @@ To test if the game is working, create a custom Summoner's Rift match with one b
 
 *   On certain intel cards, enabling vertical sync can lead to a big boost in performance.
 
-*   If the launcher is all black, make sure you have a lib32 version of libgl installed [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)<sup><small>AUR</small></sup>/[lib32-catalyst-libgl](/index.php/AMD_Catalyst#Installing_from_the_unofficial_repository "AMD Catalyst")
+*   If the launcher is all black, make sure you have a lib32 version of libgl installed [lib32-mesa-libgl](https://www.archlinux.org/packages/?name=lib32-mesa-libgl) [lib32-nvidia-libgl](https://www.archlinux.org/packages/?name=lib32-nvidia-libgl) [lib32-catalyst-utils](https://aur.archlinux.org/packages/lib32-catalyst-utils/)/[lib32-catalyst-libgl](/index.php/AMD_Catalyst#Installing_from_the_unofficial_repository "AMD Catalyst")
 
 *   If the terrain is too dark, one solution would be to install the proprietary drivers of your graphics card.
 

@@ -13,7 +13,7 @@ FVWM is a stable, powerful, efficient, and ICCCM-compliant multiple virtual desk
 
 [Install](/index.php/Install "Install") the package [fvwm](https://www.archlinux.org/packages/?name=fvwm).
 
-You can also install [fvwm-patched](https://aur.archlinux.org/packages/fvwm-patched/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fvwm-patched)]</sup>, or if you have archlinuxfr (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")) added to your `/etc/pacman.conf` it can be installed with [pacman](/index.php/Pacman "Pacman") like a regular package.
+You can also install [fvwm-patched](https://aur.archlinux.org/packages/fvwm-patched/), or if you have archlinuxfr (see [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories")) added to your `/etc/pacman.conf` it can be installed with [pacman](/index.php/Pacman "Pacman") like a regular package.
 
 ## Starting FVWM
 

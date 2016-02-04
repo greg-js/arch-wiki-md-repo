@@ -67,15 +67,15 @@ Finally, [restart](/index.php/Daemons#Restarting "Daemons") Apache (`httpd.servi
 
 ### Drush
 
-[Drush](http://www.drush.org/) is a command line shell and Unix scripting interface for Drupal. Drush core ships with lots of useful commands for interacting with code like modules/themes/profiles. Similarly, it runs update.php, executes sql queries and DB migrations, and misc utilities like run cron or clear cache. Drush can be extended by 3rd party commandfiles. It can be installed with the [drush](https://aur.archlinux.org/packages/drush/)<sup><small>AUR</small></sup> package.
+[Drush](http://www.drush.org/) is a command line shell and Unix scripting interface for Drupal. Drush core ships with lots of useful commands for interacting with code like modules/themes/profiles. Similarly, it runs update.php, executes sql queries and DB migrations, and misc utilities like run cron or clear cache. Drush can be extended by 3rd party commandfiles. It can be installed with the [drush](https://aur.archlinux.org/packages/drush/) package.
 
 ### Drupalconsole
 
-[Drupalconsole](https://drupalconsole.com/) is a CLI tool to generate boilerplate code, interact and debug Drupal 8. It can be installed with the [drupalconsole](https://aur.archlinux.org/packages/drupalconsole/)<sup><small>AUR</small></sup> package.
+[Drupalconsole](https://drupalconsole.com/) is a CLI tool to generate boilerplate code, interact and debug Drupal 8. It can be installed with the [drupalconsole](https://aur.archlinux.org/packages/drupalconsole/) package.
 
 ### PHP-Codesniffer-Drupal
 
-[PHP-Codesniffer-Drupal](https://www.drupal.org/project/coder) checks your Drupal code against coding standards and other best practices. It can be installed with the [php-codesniffer-drupal](https://aur.archlinux.org/packages/php-codesniffer-drupal/)<sup><small>AUR</small></sup> package.
+[PHP-Codesniffer-Drupal](https://www.drupal.org/project/coder) checks your Drupal code against coding standards and other best practices. It can be installed with the [php-codesniffer-drupal](https://aur.archlinux.org/packages/php-codesniffer-drupal/) package.
 
 ## Tips and tricks
 
@@ -93,7 +93,7 @@ Upon successful installation you may see the following message in the Status Rep
 
  `Your server is capable of displaying file upload progress, but does not have the required libraries. It is recommended to install the PECL uploadprogress library (preferred) or to install APC.` 
 
-First, install the [php-pear](https://aur.archlinux.org/packages/php-pear/)<sup><small>AUR</small></sup> package. Next, use the **pecl** command to automatically download, compile and install the library:
+First, install the [php-pear](https://aur.archlinux.org/packages/php-pear/) package. Next, use the **pecl** command to automatically download, compile and install the library:
 
 ```
 # pecl install uploadprogress

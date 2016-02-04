@@ -32,8 +32,8 @@ Hostfs means use the host's file system in read-only mode.
 
 #### Required packages
 
-*   [linux-usermode](https://aur.archlinux.org/packages/linux-usermode/)<sup><small>AUR</small></sup>
-*   Utility packages: [vde2](https://www.archlinux.org/packages/?name=vde2) [screen](https://www.archlinux.org/packages/?name=screen) [start-stop-daemon](https://aur.archlinux.org/packages/start-stop-daemon/)<sup><small>AUR</small></sup> [rsyslog](https://www.archlinux.org/packages/?name=rsyslog)
+*   [linux-usermode](https://aur.archlinux.org/packages/linux-usermode/)
+*   Utility packages: [vde2](https://www.archlinux.org/packages/?name=vde2) [screen](https://www.archlinux.org/packages/?name=screen) [start-stop-daemon](https://aur.archlinux.org/packages/start-stop-daemon/) [rsyslog](https://www.archlinux.org/packages/?name=rsyslog)
 
 #### Launch script
 
@@ -45,8 +45,8 @@ Hostfs means use the host's file system in read-only mode.
 
 #### Required packages
 
-*   [linux-usermode](https://aur.archlinux.org/packages/linux-usermode/)<sup><small>AUR</small></sup>
-*   Utility packages: [vde2](https://www.archlinux.org/packages/?name=vde2) [uml_utilities_tunpatch](https://aur.archlinux.org/packages/uml_utilities_tunpatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/uml_utilities_tunpatch)]</sup>
+*   [linux-usermode](https://aur.archlinux.org/packages/linux-usermode/)
+*   Utility packages: [vde2](https://www.archlinux.org/packages/?name=vde2) [uml_utilities_tunpatch](https://aur.archlinux.org/packages/uml_utilities_tunpatch/)
 
 #### Build rootfs image
 

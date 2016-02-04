@@ -21,7 +21,7 @@ Control groups can be used in multiple ways:
 
 ## Installing
 
-First, install the utilities for managing cgroups; you need to install the [libcgroup](https://aur.archlinux.org/packages/libcgroup/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR") and [cgmanager](https://www.archlinux.org/packages/?name=cgmanager).
+First, install the utilities for managing cgroups; you need to install the [libcgroup](https://aur.archlinux.org/packages/libcgroup/) package from the [AUR](/index.php/AUR "AUR") and [cgmanager](https://www.archlinux.org/packages/?name=cgmanager).
 
 If you wish to use the client script `cgm`, you will need to start the `cgmanager` daemon.
 

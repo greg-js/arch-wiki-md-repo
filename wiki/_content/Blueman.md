@@ -20,7 +20,7 @@
 
 ## Installation
 
-Install either [blueman](https://www.archlinux.org/packages/?name=blueman) or [blueman-git](https://aur.archlinux.org/packages/blueman-git/)<sup><small>AUR</small></sup> (the development version).
+Install either [blueman](https://www.archlinux.org/packages/?name=blueman) or [blueman-git](https://aur.archlinux.org/packages/blueman-git/) (the development version).
 
 Be sure to enable the [Bluetooth](/index.php/Bluetooth "Bluetooth") daemon and start Blueman with `blueman-applet`. A graphical settings panel can be launched with `blueman-manager`.
 

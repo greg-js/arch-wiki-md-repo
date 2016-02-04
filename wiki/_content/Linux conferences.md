@@ -35,7 +35,7 @@ The idea behind this page is to make a list of big Linux conferences at which we
 ## Linux Bier Wanderung
 
 | Site: | [http://www.linuxbierwanderung.com/](http://www.linuxbierwanderung.com/)
-[http://lbw2008.palfreman.com/](http://lbw2008.palfreman.com/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-03-16]</sup>
+[http://lbw2008.palfreman.com/](http://lbw2008.palfreman.com/)
 [http://compsoc.dur.ac.uk/mediawiki/index.php/Mini_LBW_2008](http://compsoc.dur.ac.uk/mediawiki/index.php/Mini_LBW_2008) |
 | Wikipedia: | [Wikipedia:Linux Bier Wanderung](https://en.wikipedia.org/wiki/Linux_Bier_Wanderung "wikipedia:Linux Bier Wanderung") |
 | Where: | different European country each summer,
@@ -78,7 +78,7 @@ September, 26th-28th (2008, mini-LBW) |
 
 Boston, MA
 April 3-5, 2006
-[http://www.linuxworldexpo.com/](http://www.linuxworldexpo.com/) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-03-16]</sup>
+[http://www.linuxworldexpo.com/](http://www.linuxworldexpo.com/) 
 
 ## More
 

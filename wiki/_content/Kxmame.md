@@ -4,7 +4,7 @@ Kxmame is a KDE port of the GXmame frontend for xmame and sdlmame emulators.
 
 ## How to obtain
 
-Download, build and install the [kxmame-svn](https://aur.archlinux.org/packages/kxmame-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kxmame-svn)]</sup> AUR package.
+Download, build and install the [kxmame-svn](https://aur.archlinux.org/packages/kxmame-svn/) AUR package.
 
 ## Steps to follow after installation
 

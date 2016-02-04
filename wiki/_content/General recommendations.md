@@ -326,7 +326,7 @@ A list of miscellaneous Bash settings, including completion enhancements, histor
 
 ### Colored output
 
-Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/)<sup><small>AUR</small></sup> package. The [acoc](https://aur.archlinux.org/packages/acoc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/acoc)]</sup> package provides a similar application.
+Even though a number of applications have built-in color capabilities, using a general-purpose colorizing wrapper, such as `cope`, is another route. Install the [cope-git](https://aur.archlinux.org/packages/cope-git/) package. The [acoc](https://aur.archlinux.org/packages/acoc/) package provides a similar application.
 
 Colorizing the output of specific core utilities such as `grep` and `ls` is covered in the [Core utilities](/index.php/Core_utilities "Core utilities") article.
 

@@ -294,11 +294,11 @@ Using this flag in one's `/etc/fstab` halts the logging of read accesses to the 
 
 One can _easily_ mount browser profile(s) such as chromium, firefox, opera, etc. into RAM via tmpfs and also use rsync to keep them synced with HDD-based backups. In addition to the obvious speed enhancements, users will also save read/write cycles on their SSD by doing so.
 
-The AUR contains several packages to automate this process, for example [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)<sup><small>AUR</small></sup>.
+The AUR contains several packages to automate this process, for example [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/).
 
 #### Others
 
-For the same reasons a browser's profile can be relocated to RAM, so can highly used directories such as `/srv/http` (if running a web server). A sister project to [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/)<sup><small>AUR</small></sup> is [anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/)<sup><small>AUR</small></sup>, which allows users to define **any** directory to sync to RAM using the same underlying logic and safe guards.
+For the same reasons a browser's profile can be relocated to RAM, so can highly used directories such as `/srv/http` (if running a web server). A sister project to [profile-sync-daemon](https://aur.archlinux.org/packages/profile-sync-daemon/) is [anything-sync-daemon](https://aur.archlinux.org/packages/anything-sync-daemon/), which allows users to define **any** directory to sync to RAM using the same underlying logic and safe guards.
 
 ### Compiling in tmpfs
 
@@ -360,7 +360,7 @@ OCZ has a command line utility available for Linux (i686 and x86_64) on their fo
 
 ### Samsung
 
-Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](http://www.samsung.com/global/business/semiconductor/samsungssd/downloads.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician](https://aur.archlinux.org/packages/samsung_magician/)<sup><small>AUR</small></sup>, which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
+Samsung notes that update methods other than using their Magician Software are "not supported," but it is possible. The Magician Software can be used to make a USB drive bootable with the firmware update. Samsung provides pre-made [bootable ISO images](http://www.samsung.com/global/business/semiconductor/samsungssd/downloads.html) that can be used to update the firmware. Another option is to use Samsung's [samsung_magician](https://aur.archlinux.org/packages/samsung_magician/), which is available in the AUR. Magician only supports Samsung-branded SSDs; those manufactured by Samsung for OEMs (e.g., Lenovo) are not supported.
 
 **Note:** Samsung does not make it obvious at all that they actually provide these. They seem to have 4 different firmware update pages, and each references different ways of doing things.
 

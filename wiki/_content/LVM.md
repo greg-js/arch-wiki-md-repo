@@ -720,7 +720,7 @@ If you fail to do so, you'll end up in a rescue shell early in the boot process.
 
 ## Graphical Configuration
 
-There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/)<sup><small>AUR</small></sup> covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
+There is no "official" GUI tool for managing LVM volumes, but [system-config-lvm](https://aur.archlinux.org/packages/system-config-lvm/) covers most of the common operations, and provides simple visualizations of volume state. It can automatically resize many file systems when resizing logical volumes.
 
 system-config-lvm requires root access, so the .desktop launcher will not work, and you must launch it with sudo. It does not support thin provisioning pools, and will crash on start-up if you have any.
 

@@ -6,7 +6,7 @@
 
 ## Installation
 
-A development version of Mir is available in the [AUR](/index.php/AUR "AUR") package [mir-bzr](https://aur.archlinux.org/packages/mir-bzr/)<sup><small>AUR</small></sup>.
+A development version of Mir is available in the [AUR](/index.php/AUR "AUR") package [mir-bzr](https://aur.archlinux.org/packages/mir-bzr/).
 
 ## See also
 

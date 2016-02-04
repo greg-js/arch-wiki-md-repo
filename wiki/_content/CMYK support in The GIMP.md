@@ -101,7 +101,7 @@ Gimp itself offers a smaller set of CMYK-related functions:
 
 #### Installing using AUR
 
-Install [gimp-plugin-separate](https://aur.archlinux.org/packages/gimp-plugin-separate/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gimp-plugin-separate)]</sup>.
+Install [gimp-plugin-separate](https://aur.archlinux.org/packages/gimp-plugin-separate/).
 
 #### Installing Separate manually
 
@@ -146,7 +146,7 @@ pacman -S gimp-plugin-separate+
 
 #### Installing using AUR
 
-Install the [gimp-plugin-separate+](https://aur.archlinux.org/packages/gimp-plugin-separate%2B/)<sup><small>AUR</small></sup> package.
+Install the [gimp-plugin-separate+](https://aur.archlinux.org/packages/gimp-plugin-separate%2B/) package.
 
 #### Installing manually
 
@@ -176,7 +176,7 @@ If you are using the Separate plug-in package from AUR, you already have the pro
 
 #### Installing from AUR
 
-To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinux.org/packages/eci-icc/)<sup><small>AUR</small></sup> and/or [adobe-icc](https://aur.archlinux.org/packages/adobe-icc/)<sup><small>AUR</small></sup> packages (and optionally [srgb-icc](https://aur.archlinux.org/packages/srgb-icc/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/srgb-icc)]</sup> package) and install them with [makepkg](/index.php/Makepkg "Makepkg").
+To install ICC profiles from AUR, you need to get [eci-icc](https://aur.archlinux.org/packages/eci-icc/) and/or [adobe-icc](https://aur.archlinux.org/packages/adobe-icc/) packages (and optionally [srgb-icc](https://aur.archlinux.org/packages/srgb-icc/) package) and install them with [makepkg](/index.php/Makepkg "Makepkg").
 
 #### Install manually
 

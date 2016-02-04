@@ -14,7 +14,7 @@
 
 ## Installing
 
-Install [nmh](https://aur.archlinux.org/packages/nmh/)<sup><small>AUR</small></sup> or [nmh-git](https://aur.archlinux.org/packages/nmh-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [nmh](https://aur.archlinux.org/packages/nmh/) or [nmh-git](https://aur.archlinux.org/packages/nmh-git/) from the [AUR](/index.php/AUR "AUR").
 
 Optionally install a utility to handle IMAP or POP, for example [fdm](https://www.archlinux.org/packages/?name=fdm), [offlineimap](https://www.archlinux.org/packages/?name=offlineimap) or [getmail](https://www.archlinux.org/packages/?name=getmail).
 

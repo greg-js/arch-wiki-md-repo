@@ -11,7 +11,7 @@
 
 ## Installation
 
-[proftpd](https://aur.archlinux.org/packages/proftpd/)<sup><small>AUR</small></sup> is available in the AUR. [Enable](/index.php/Enable "Enable") and start `proftpd.service`.
+[proftpd](https://aur.archlinux.org/packages/proftpd/) is available in the AUR. [Enable](/index.php/Enable "Enable") and start `proftpd.service`.
 
 ## Troubleshooting
 

@@ -6,7 +6,7 @@ From [Linux UMTS/GPRS command-line tool](http://comgt.sourceforge.net/):
 
 ## Installation
 
-Install [comgt](https://aur.archlinux.org/packages/comgt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/comgt)]</sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [comgt](https://aur.archlinux.org/packages/comgt/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Usage
 

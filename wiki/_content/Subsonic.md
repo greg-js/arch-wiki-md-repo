@@ -1,6 +1,6 @@
 # Subsonic
 
-**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/)<sup><small>AUR</small></sup> package on [AUR](/index.php/AUR "AUR").
+**Subsonic** is a music server that lets you store your music on one machine and play it from other machines, cell phones, via a web interface, or various other applications. It can be installed using the [subsonic](https://aur.archlinux.org/packages/subsonic/) package on [AUR](/index.php/AUR "AUR").
 
 ## Contents
 

@@ -28,14 +28,14 @@
 
 The open-source project, **Chromium**, can be [installed](/index.php/Install "Install") with the [chromium](https://www.archlinux.org/packages/?name=chromium) package. You can also find:
 
-*   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/)<sup><small>AUR</small></sup> - the development version
-*   [chromium-continuous-bin](https://aur.archlinux.org/packages/chromium-continuous-bin/)<sup><small>AUR</small></sup> - the automatically tested nightly version
-*   [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/)<sup><small>AUR</small></sup> - the untested nightly version
+*   [chromium-dev](https://aur.archlinux.org/packages/chromium-dev/) - the development version
+*   [chromium-continuous-bin](https://aur.archlinux.org/packages/chromium-continuous-bin/) - the automatically tested nightly version
+*   [chromium-snapshot-bin](https://aur.archlinux.org/packages/chromium-snapshot-bin/) - the untested nightly version
 
-The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/)<sup><small>AUR</small></sup> package. You can also find:
+The derived browser, **Google Chrome**, bundled with Flash Player and Widevine [EME](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions "wikipedia:Encrypted Media Extensions") (for e.g. Netflix), can be [installed](/index.php/Install "Install") with the [google-chrome](https://aur.archlinux.org/packages/google-chrome/) package. You can also find:
 
-*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/)<sup><small>AUR</small></sup> - the beta version
-*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/)<sup><small>AUR</small></sup> - the development version
+*   [google-chrome-beta](https://aur.archlinux.org/packages/google-chrome-beta/) - the beta version
+*   [google-chrome-dev](https://aur.archlinux.org/packages/google-chrome-dev/) - the development version
 
 **Tip:** See these [two](https://chromium.googlesource.com/chromium/src/+/master/docs/chromium_browser_vs_google_chrome.md) [articles](http://news.softpedia.com/news/Google-Chrome-vs-Chromium-Understanding-Stable-Beta-Dev-Releases-and-Version-No-140060.shtml) for an explanation of the differences between Stable/Beta/Dev, as well as Chromium vs. Chrome and an explanation of the version numbering.
 
@@ -55,7 +55,7 @@ This behaviour is related to [xdg-open](/index.php/Xdg-open "Xdg-open"): see [xd
 
 _Pepper Flash_ is the Flash Player plugin, using the new Pepper plugin API. It is co-developed by Google and Adobe, and distributed bundled with Google Chrome.
 
-To install Pepper Flash for Chromium, install the [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)<sup><small>AUR</small></sup> package. If you want the development version, install the [chromium-pepper-flash-dev](https://aur.archlinux.org/packages/chromium-pepper-flash-dev/)<sup><small>AUR</small></sup> package instead.
+To install Pepper Flash for Chromium, install the [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) package. If you want the development version, install the [chromium-pepper-flash-dev](https://aur.archlinux.org/packages/chromium-pepper-flash-dev/) package instead.
 
 Make sure the plugin is enabled in `chrome://plugins` and restart chromium via its menu.
 
@@ -63,7 +63,7 @@ Make sure the plugin is enabled in `chrome://plugins` and restart chromium via i
 
 Widevine is Google's Encrypted Media Extensions (EME) Content Decryption Module (CDM). It is used to watch premium video content such as Netflix. It comes bundled with Chrome.
 
-To install the Widevine CDM for Chromium, install the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/)<sup><small>AUR</small></sup> package.
+To install the Widevine CDM for Chromium, install the [chromium-widevine](https://aur.archlinux.org/packages/chromium-widevine/) package.
 
 Make sure the plugin is enabled in `chrome://plugins`.
 

@@ -18,7 +18,7 @@ HSOconnect is an easy to use connection manager that is designed to work with Op
 
 ## Installing
 
-HSOconnect can be [installed](/index.php/AUR#Installing_packages "AUR") with the package [hsoconnect](https://aur.archlinux.org/packages/hsoconnect/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hsoconnect)]</sup>, available in the [AUR](/index.php/AUR "AUR").
+HSOconnect can be [installed](/index.php/AUR#Installing_packages "AUR") with the package [hsoconnect](https://aur.archlinux.org/packages/hsoconnect/), available in the [AUR](/index.php/AUR "AUR").
 
 Add your user to the 'network' group:
 

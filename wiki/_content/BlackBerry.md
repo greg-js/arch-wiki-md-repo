@@ -13,9 +13,9 @@ Barry is an application that provides backup and sync support for BlackBerry dev
 **Note:** _osynctool_ is only required if you wish to sync through the command line.
 
 *   [evolution](https://www.archlinux.org/packages/?name=evolution)
-*   [osynctool](https://aur.archlinux.org/packages/osynctool/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/osynctool)]</sup>
+*   [osynctool](https://aur.archlinux.org/packages/osynctool/)
 *   _libopensync-plugin-evolution3_
-*   [barry](https://aur.archlinux.org/packages/barry/)<sup><small>AUR</small></sup>
+*   [barry](https://aur.archlinux.org/packages/barry/)
 
 ### Syncing using the command line
 

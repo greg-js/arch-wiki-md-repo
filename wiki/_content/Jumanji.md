@@ -21,7 +21,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)<sup><small>AUR</small></sup> package to get a development release.
+[Install](/index.php/Install "Install") the [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/) package to get a development release.
 
 ## Configuration
 

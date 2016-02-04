@@ -72,7 +72,7 @@ Again installing the default settings will be fine.
 
 PyLotRO will be needed to send login infomation to the Turbine servers because the .NET login application does not work properly in Wine.
 
-Install [pylotro](https://aur.archlinux.org/packages/pylotro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pylotro)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install [pylotro](https://aur.archlinux.org/packages/pylotro/) from the [AUR](/index.php/AUR "AUR").
 
 PyLotRO will need the game library from LotRO to get login information. You can get this by:
 

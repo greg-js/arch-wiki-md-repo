@@ -17,7 +17,7 @@ This guide shows you how to install Prey.
 
 ## Installation
 
-Install [prey-node-client](https://aur.archlinux.org/packages/prey-node-client/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [prey-node-client](https://aur.archlinux.org/packages/prey-node-client/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

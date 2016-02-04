@@ -4,6 +4,6 @@
 
 ## Installation
 
-There is no official package for that, but you could installing via [AUR](/index.php/AUR "AUR") package [darcs-bin](https://aur.archlinux.org/packages/darcs-bin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/darcs-bin)]</sup>.
+There is no official package for that, but you could installing via [AUR](/index.php/AUR "AUR") package [darcs-bin](https://aur.archlinux.org/packages/darcs-bin/).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Darcs&oldid=392048](https://wiki.archlinux.org/index.php?title=Darcs&oldid=392048)"

@@ -17,7 +17,7 @@
 
 **Warning:** You may experience crashes if using the Mach 64 DRM module. Direct rendering on Mach 64 is not very reliable because it never got much support.
 
-On Linux, the Mach 64 chip uses the DRI/DRM system for direct rendering. The DRI part is available in the official repositories, but the DRM module is not included in the mainline kernel. So we have to build it separately. A package in the [AUR](/index.php/AUR "AUR") simplifies this task: [mach64drm](https://aur.archlinux.org/packages/mach64drm/)<sup><small>AUR</small></sup>.
+On Linux, the Mach 64 chip uses the DRI/DRM system for direct rendering. The DRI part is available in the official repositories, but the DRM module is not included in the mainline kernel. So we have to build it separately. A package in the [AUR](/index.php/AUR "AUR") simplifies this task: [mach64drm](https://aur.archlinux.org/packages/mach64drm/).
 
 As soon as the DRM module is built and installed, make sure you installed the DRI part [mach64-dri](https://www.archlinux.org/packages/?name=mach64-dri).
 

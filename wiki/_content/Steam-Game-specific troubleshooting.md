@@ -254,7 +254,7 @@ Air Brawl seems to require some fonts that are missing, installing the package [
 
 ### Dependencies
 
-*   [lib32-freealut](https://aur.archlinux.org/packages/lib32-freealut/)<sup><small>AUR</small></sup>
+*   [lib32-freealut](https://aur.archlinux.org/packages/lib32-freealut/)
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 *   [lib32-libxmu](https://www.archlinux.org/packages/?name=lib32-libxmu)
 *   [lib32-sdl_ttf](https://www.archlinux.org/packages/?name=lib32-sdl_ttf)
@@ -264,9 +264,9 @@ Air Brawl seems to require some fonts that are missing, installing the package [
 ### Dependencies
 
 *   [lib32-libtheora](https://www.archlinux.org/packages/?name=lib32-libtheora)
-*   [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libjpeg6)]</sup>
-*   [lib32-libtiff4](https://aur.archlinux.org/packages/lib32-libtiff4/)<sup><small>AUR</small></sup>
-*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)<sup><small>AUR</small></sup>
+*   [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)
+*   [lib32-libtiff4](https://aur.archlinux.org/packages/lib32-libtiff4/)
+*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
 
 ### Compatibility
 
@@ -299,7 +299,7 @@ ayim_dir="$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")"
 
 ### Dependencies
 
-*   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/)<sup><small>AUR</small></sup>
+*   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/)
 *   [xterm](https://www.archlinux.org/packages/?name=xterm) (probably not actually required)
 
 ### Compatibility
@@ -519,7 +519,7 @@ Enable full screen mode as the default. In `~/.paradoxinteractive/Crusader Kings
 
 ### Dependencies
 
-*   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/)<sup><small>AUR</small></sup>
+*   [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/)
 *   [xterm](https://www.archlinux.org/packages/?name=xterm)
 *   [lib32-libcanberra](https://www.archlinux.org/packages/?name=lib32-libcanberra)
 
@@ -527,7 +527,7 @@ Enable full screen mode as the default. In `~/.paradoxinteractive/Crusader Kings
 
 #### Game does not start
 
-*   Package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/)<sup><small>AUR</small></sup> installs Adobe Air not in the place where the game expects it to be, fix this by creating a symlink (requires root permissions):
+*   Package [adobe-air-sdk](https://aur.archlinux.org/packages/adobe-air-sdk/) installs Adobe Air not in the place where the game expects it to be, fix this by creating a symlink (requires root permissions):
 
  `$ ln -s /opt/adobe-air-sdk/runtimes/air/linux/Adobe\ AIR /opt/Adobe\ AIR` 
 
@@ -546,7 +546,7 @@ $ echo 2 > ~/.appdata/Adobe/AIR/eulaAccepted
 
 *   [lib32-flashplugin](https://www.archlinux.org/packages/?name=lib32-flashplugin)
 *   [lib32-alsa-plugins](https://www.archlinux.org/packages/?name=lib32-alsa-plugins) (Looks like it fixes sound in some cases. See [this github issue](https://github.com/ValveSoftware/steam-for-linux/issues/2968) for details)
-*   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/)<sup><small>AUR</small></sup> (Requires further commands after installation as described [here](http://steamcommunity.com/app/219740/discussions/2/620700960796078576/#c611704730329482542))
+*   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/) (Requires further commands after installation as described [here](http://steamcommunity.com/app/219740/discussions/2/620700960796078576/#c611704730329482542))
 
 ### Troubleshooting
 
@@ -571,7 +571,7 @@ On the game, go to the option and set all audio to the proper volume.
 
 ### Dependencies (Dota 2 reborn)
 
-*   [libudev0](https://aur.archlinux.org/packages/libudev0/)<sup><small>AUR</small></sup> or [libudev.so.0](https://aur.archlinux.org/packages/libudev.so.0/)<sup><small>AUR</small></sup>
+*   [libudev0](https://aur.archlinux.org/packages/libudev0/) or [libudev.so.0](https://aur.archlinux.org/packages/libudev.so.0/)
 
 ### Troubleshooting
 
@@ -653,7 +653,7 @@ Compile the `libSDL` with fcitx or ibus support, then replace `Game Folder/dota 
 
 ### Dependencies
 
-*   [lib32-libgdiplus](https://aur.archlinux.org/packages/lib32-libgdiplus/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libgdiplus)]</sup>
+*   [lib32-libgdiplus](https://aur.archlinux.org/packages/lib32-libgdiplus/)
 
 ### Troubleshooting
 
@@ -788,7 +788,7 @@ The Problem seems to correlate with a weak GPU and the game is timing out from t
 
 ### Dependencies
 
-*   [lib32-sdl2_mixer](https://aur.archlinux.org/packages/lib32-sdl2_mixer/)<sup><small>AUR</small></sup>
+*   [lib32-sdl2_mixer](https://aur.archlinux.org/packages/lib32-sdl2_mixer/)
 
 ## Half-Life 2 & episodes
 
@@ -830,8 +830,8 @@ This way, Hammerwatch will use ALSA. This solution was found [here](https://stac
 *   [lib32-libvorbis](https://www.archlinux.org/packages/?name=lib32-libvorbis)
 *   [lib32-openal](https://www.archlinux.org/packages/?name=lib32-openal)
 *   [lib32-nvidia-cg-toolkit](https://www.archlinux.org/packages/?name=lib32-nvidia-cg-toolkit)
-*   [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libjpeg6)]</sup>
-*   [lib32-sfml](https://aur.archlinux.org/packages/lib32-sfml/)<sup><small>AUR</small></sup>
+*   [lib32-libjpeg6](https://aur.archlinux.org/packages/lib32-libjpeg6/)
+*   [lib32-sfml](https://aur.archlinux.org/packages/lib32-sfml/)
 
 ### Compatibility
 
@@ -938,7 +938,7 @@ LC_ALL=C
 
 ### No text display
 
-The game requires Arial and Arial Black fonts, provided by the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> package.
+The game requires Arial and Arial Black fonts, provided by the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package.
 
 Another alternative is to try to install the [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) package. This worked using KSP 0.90.0 on x86_64 Arch Linux.
 
@@ -1046,7 +1046,7 @@ KillingFloor comes with its own libopenal.so (called openal.so). To use system l
 
 ### Dependencies
 
-*   [lib32-glew1.10](https://aur.archlinux.org/packages/lib32-glew1.10/)<sup><small>AUR</small></sup>
+*   [lib32-glew1.10](https://aur.archlinux.org/packages/lib32-glew1.10/)
 
 ## Metro: Last Light
 
@@ -1102,7 +1102,7 @@ LD_LIBRARY_PATH="/usr/lib32:$LD_LIBRARY_PATH" %command%
 
 ### Dependencies
 
-(Taken from [penumbra-collection](https://aur.archlinux.org/packages/penumbra-collection/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/penumbra-collection)]</sup> and [penumbra-overture-ep1-demo](https://aur.archlinux.org/packages/penumbra-overture-ep1-demo/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/penumbra-overture-ep1-demo)]</sup>)
+(Taken from [penumbra-collection](https://aur.archlinux.org/packages/penumbra-collection/) and [penumbra-overture-ep1-demo](https://aur.archlinux.org/packages/penumbra-overture-ep1-demo/))
 
 *   [lib32-glu](https://www.archlinux.org/packages/?name=lib32-glu)
 *   [lib32-libxft](https://www.archlinux.org/packages/?name=lib32-libxft)
@@ -1176,7 +1176,7 @@ In the game, go to the options and set all audio to the proper volume.
 
 ### Dependencies
 
-*   [lib32-libcaca](https://aur.archlinux.org/packages/lib32-libcaca/)<sup><small>AUR</small></sup>
+*   [lib32-libcaca](https://aur.archlinux.org/packages/lib32-libcaca/)
 
 ## Serious Sam 3: BFE
 
@@ -1222,7 +1222,7 @@ mmap = true
 
 *   [lib32-sqlite](https://www.archlinux.org/packages/?name=lib32-sqlite)
 *   [lib32-sdl_image](https://www.archlinux.org/packages/?name=lib32-sdl_image)
-*   [lib32-sdl_mixer](https://aur.archlinux.org/packages/lib32-sdl_mixer/)<sup><small>AUR</small></sup>
+*   [lib32-sdl_mixer](https://aur.archlinux.org/packages/lib32-sdl_mixer/)
 
 ### Troubleshooting
 
@@ -1307,7 +1307,7 @@ If you use Intel video card, just disable S3TC in DriConf.
 
 ### Dependencies
 
-*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)<sup><small>AUR</small></sup>
+*   [lib32-libpng12](https://aur.archlinux.org/packages/lib32-libpng12/)
 
 ### Making HRTF work
 
@@ -1355,12 +1355,12 @@ This is not specific to arch, but remember to opt in for mac-and-linux-open-beta
 
 If the game does not start, uncheck: _Properties > Enable Steam Community In-Game_.
 
-The game may segfault upon clicking the Setting menu and possibly during or before gameplay. This is a known problem and you will unfortunately have to wait for a fix from the developer. A workaround (taken from the [Steam forums](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2)) is to replace the game's RenderSystem_GL.so with one from Debian's repositories. To do that download this [deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), extract it (with `[dpkg](https://aur.archlinux.org/packages/dpkg/)<sup><small>AUR</small></sup> -x libogre-*.deb outdir`) and replace `~/.local/share/Steam/SteamApps/common/The Book of Unwritten Tales/lib/32/RenderSystem_GL.so` with the one that comes with the `.deb` package.
+The game may segfault upon clicking the Setting menu and possibly during or before gameplay. This is a known problem and you will unfortunately have to wait for a fix from the developer. A workaround (taken from the [Steam forums](http://steamcommunity.com/app/221410/discussions/3/846939071081758230/#p2)) is to replace the game's RenderSystem_GL.so with one from Debian's repositories. To do that download this [deb file](https://launchpad.net/ubuntu/+archive/primary/+files/libogre-1.7.4_1.7.4-3_i386.deb), extract it (with `[dpkg](https://aur.archlinux.org/packages/dpkg/) -x libogre-*.deb outdir`) and replace `~/.local/share/Steam/SteamApps/common/The Book of Unwritten Tales/lib/32/RenderSystem_GL.so` with the one that comes with the `.deb` package.
 
 ### Dependencies
 
-*   [lib32-libxaw](https://aur.archlinux.org/packages/lib32-libxaw/)<sup><small>AUR</small></sup>
-*   [lib32-jasper](https://aur.archlinux.org/packages/lib32-jasper/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-jasper)]</sup>
+*   [lib32-libxaw](https://aur.archlinux.org/packages/lib32-libxaw/)
+*   [lib32-jasper](https://aur.archlinux.org/packages/lib32-jasper/)
 
 ## The Book of Unwritten Tales: The Critter Chronicles
 
@@ -1378,8 +1378,8 @@ To prevent the game from crashing at the very end when the credits are shown, ch
 
 ### Dependencies
 
-*   [ilmbase102-libs](https://aur.archlinux.org/packages/ilmbase102-libs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ilmbase102-libs)]</sup>
-*   [openexr170-libs](https://aur.archlinux.org/packages/openexr170-libs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openexr170-libs)]</sup>
+*   [ilmbase102-libs](https://aur.archlinux.org/packages/ilmbase102-libs/)
+*   [openexr170-libs](https://aur.archlinux.org/packages/openexr170-libs/)
 
 [Steam for Linux issue #2721](https://github.com/ValveSoftware/steam-for-linux/issues/2721)
 
@@ -1517,12 +1517,12 @@ If having a green or blank screen at game start, set the `MESA_GL_VERSION_OVERRI
 ### Dependencies
 
 *   [lib32-freetype2](https://www.archlinux.org/packages/?name=lib32-freetype2)
-*   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/)<sup><small>AUR</small></sup>
+*   [lib32-libcurl-compat](https://aur.archlinux.org/packages/lib32-libcurl-compat/)
 *   [lib32-gnutls](https://www.archlinux.org/packages/?name=lib32-gnutls)
 
 *   [lib32-sdl2](https://www.archlinux.org/packages/?name=lib32-sdl2)
-*   [lib32-sdl2_image](https://aur.archlinux.org/packages/lib32-sdl2_image/)<sup><small>AUR</small></sup>
-*   [lib32-libcurl-gnutls](https://aur.archlinux.org/packages/lib32-libcurl-gnutls/)<sup><small>AUR</small></sup>
+*   [lib32-sdl2_image](https://aur.archlinux.org/packages/lib32-sdl2_image/)
+*   [lib32-libcurl-gnutls](https://aur.archlinux.org/packages/lib32-libcurl-gnutls/)
 
 ### Troubleshooting
 

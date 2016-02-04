@@ -86,11 +86,11 @@ A number of graphical tools are available for this task:
 
 *   **XAME** — GUI tool written in Gambas designed specifically for editing menu entries in Xfce, it will not work in other environments.
 
-	[http://www.redsquirrel87.com/XAME.html](http://www.redsquirrel87.com/XAME.html) || [xame](https://aur.archlinux.org/packages/xame/)<sup><small>AUR</small></sup>
+	[http://www.redsquirrel87.com/XAME.html](http://www.redsquirrel87.com/XAME.html) || [xame](https://aur.archlinux.org/packages/xame/)
 
 *   **MenuLibre** — An advanced menu editor that provides modern features in a clean, easy-to-use interface.
 
-	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/)<sup><small>AUR</small></sup>.
+	[https://launchpad.net/menulibre](https://launchpad.net/menulibre) || [menulibre](https://aur.archlinux.org/packages/menulibre/).
 
 *   **Alacarte** — Menu editor for GNOME
 
@@ -310,15 +310,15 @@ If you did need to change the default soundcard, logout to ensure that the chang
 
 ##### Change default sound card in Xfce4 Mixer
 
-In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)<sup><small>AUR</small></sup> for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
+In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
 
 To change the default sound card, open _xfce4-settings-editor_ and navigate to **xfce4-mixer** and check the entries under **sound-cards**. Locate the correct entry for the card you are using and then replace the values of **sound-card** and **active-card** with the entry. If you are using PulseAudio then the entry will likely be similar to the following: **PlaybackInternalAudioAnalogStereoPulseAudioMixer**. Then logout for the changes to take effect.
 
 #### Keyboard volume buttons
 
-If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/)<sup><small>AUR</small></sup> maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. When using [PulseAudio](/index.php/PulseAudio "PulseAudio"), use [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/)<sup><small>AUR</small></sup> instead.
+If the [xfce4-mixer](https://www.archlinux.org/packages/?name=xfce4-mixer) package is version `4.10.0-3` or greater, then the mixer panel applet provides the ability to control the volume using the keyboard. However, volume notifications will not be shown. Alternatively, [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) maps volume keys to Xfce4 mixer, and displays notifications through Xfce4-notifyd. When using [PulseAudio](/index.php/PulseAudio "PulseAudio"), use [xfce4-volumed-pulse](https://aur.archlinux.org/packages/xfce4-volumed-pulse/) instead.
 
-If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/)<sup><small>AUR</small></sup>. This provides a panel applet which has support for keyboard volume control and volume notifications.
+If you are using PulseAudio and you do not wish to use Xfce4 Mixer at all, install [xfce4-pulseaudio-plugin](https://aur.archlinux.org/packages/xfce4-pulseaudio-plugin/). This provides a panel applet which has support for keyboard volume control and volume notifications.
 
 For non desktop environment specific alternatives, see [List of applications#Volume managers](/index.php/List_of_applications#Volume_managers "List of applications").
 
@@ -338,7 +338,7 @@ Keyboard shortcuts are defined in two places: _Settings > Window Manager > Keybo
 
 The [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome) agent will be installed along with [xfce4-session](https://www.archlinux.org/packages/?name=xfce4-session) and autostarted automatically; no user intervention is required. For more information, see [Polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit").
 
-A third party polkit authentication agent for Xfce is also available, see [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/)<sup><small>AUR</small></sup>.
+A third party polkit authentication agent for Xfce is also available, see [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/).
 
 ### Display blanking
 
@@ -512,7 +512,7 @@ $ icontheme=/usr/share/icons/_theme-name_
 
 where _theme-name_ is the name of the current icon theme.
 
-Then create symbolic links from the current icon theme into the icon theme providing the icons (this example assumes the icons are being provided by the [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/)<sup><small>AUR</small></sup> theme.)
+Then create symbolic links from the current icon theme into the icon theme providing the icons (this example assumes the icons are being provided by the [elementary-xfce-icons](https://aur.archlinux.org/packages/elementary-xfce-icons/) theme.)
 
 ```
 ln -s /usr/share/icons/elementary-xfce/apps/16/system-suspend.svg           ${icontheme}/16x16/actions/system-suspend.svg
@@ -565,7 +565,7 @@ There is a bug in [xfce4-xkb-plugin](https://www.archlinux.org/packages/?name=xf
 
 ### NVIDIA and xfce4-sensors-plugin
 
-To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https://www.archlinux.org/packages/?name=libxnvctrl) and then rebuild [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) with [ABS](/index.php/ABS "ABS"). You also have the option of using [xfce4-sensors-plugin-nvidia](https://aur.archlinux.org/packages/xfce4-sensors-plugin-nvidia/)<sup><small>AUR</small></sup> which replaces [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin).
+To detect and use sensors of nvidia gpu you need to install [libxnvctrl](https://www.archlinux.org/packages/?name=libxnvctrl) and then rebuild [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin) with [ABS](/index.php/ABS "ABS"). You also have the option of using [xfce4-sensors-plugin-nvidia](https://aur.archlinux.org/packages/xfce4-sensors-plugin-nvidia/) which replaces [xfce4-sensors-plugin](https://www.archlinux.org/packages/?name=xfce4-sensors-plugin).
 
 ### Preferred Applications preferences have no effect
 

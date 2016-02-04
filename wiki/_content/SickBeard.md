@@ -11,7 +11,7 @@
 
 ## Installation
 
-Install [sickbeard](https://aur.archlinux.org/packages/sickbeard/)<sup><small>AUR</small></sup>, available in the [AUR](/index.php/AUR "AUR"). It contains the application and a systemd service file.
+Install [sickbeard](https://aur.archlinux.org/packages/sickbeard/), available in the [AUR](/index.php/AUR "AUR"). It contains the application and a systemd service file.
 
 ### Running as a systemd service
 

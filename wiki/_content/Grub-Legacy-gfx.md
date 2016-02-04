@@ -2,7 +2,7 @@
 
 **Note:** [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") has been deprecated and replaced by [GRUB](/index.php/GRUB "GRUB") in Arch Linux. See the news [here](https://www.archlinux.org/news/grub-legacy-no-longer-supported/). GRUB also offers enhanced graphical capabilities, such as background images and bitmap fonts. Users are recommended to switch to [GRUB](/index.php/GRUB "GRUB") or [Syslinux](/index.php/Syslinux "Syslinux") instead.
 
-[grub-gfx](https://aur.archlinux.org/packages/grub-gfx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub-gfx)]</sup> is a version of GRUB Legacy patched to enable background images on your bootloader screen.
+[grub-gfx](https://aur.archlinux.org/packages/grub-gfx/) is a version of GRUB Legacy patched to enable background images on your bootloader screen.
 
 ## Contents
 
@@ -15,7 +15,7 @@
 
 ## Installation
 
-The [grub-gfx](https://aur.archlinux.org/packages/grub-gfx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub-gfx)]</sup> package is in the [AUR](/index.php/AUR "AUR"). Note that the package can be compiled on x86_64 architecture only with gcc-multilib.
+The [grub-gfx](https://aur.archlinux.org/packages/grub-gfx/) package is in the [AUR](/index.php/AUR "AUR"). Note that the package can be compiled on x86_64 architecture only with gcc-multilib.
 
 Backup your current [GRUB Legacy](/index.php/GRUB_Legacy "GRUB Legacy") configuration. (During the package installation, this should happen automatically; this is a precautionary step.)
 

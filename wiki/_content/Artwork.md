@@ -57,7 +57,7 @@ From [screenfetch](https://www.archlinux.org/packages/?name=screenfetch) 3.6.5-1
 
 ```
 
-From [alsi](https://aur.archlinux.org/packages/alsi/)<sup><small>AUR</small></sup> 0.4.7-1:
+From [alsi](https://aur.archlinux.org/packages/alsi/) 0.4.7-1:
 
 ```
                  ##

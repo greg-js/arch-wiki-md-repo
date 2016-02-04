@@ -41,7 +41,7 @@ Two versions of GTK+ are currently available in the [official repositories](/ind
 
 *   **GTK+ 3.x** is available with the [gtk3](https://www.archlinux.org/packages/?name=gtk3) package.
 *   **GTK+ 2.x** is available with the [gtk2](https://www.archlinux.org/packages/?name=gtk2) package.
-*   **GTK+ 1.x** is available with the [gtk](https://aur.archlinux.org/packages/gtk/)<sup><small>AUR</small></sup> package.
+*   **GTK+ 1.x** is available with the [gtk](https://aur.archlinux.org/packages/gtk/) package.
 
 ## Themes
 
@@ -93,35 +93,35 @@ More themes can be installed from the official repositories or the [AUR](/index.
 
 *   **Arc** — A flat theme with a modern look and transparent elements.
 
-	[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)<sup><small>AUR</small></sup>
+	[https://github.com/horst3180/Arc-theme](https://github.com/horst3180/Arc-theme) || [gtk-theme-arc-git](https://aur.archlinux.org/packages/gtk-theme-arc-git/)
 
 *   **Ceti-2** — Theme for GTK 3, GTK 2 and Gnome-Shell.
 
-	[http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140](http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)<sup><small>AUR</small></sup>
+	[http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140](http://horst3180.deviantart.com/art/Ceti-2-Theme-489193140) || [ceti-2-themes](https://aur.archlinux.org/packages/ceti-2-themes/)
 
 *   **Clearlooks-Phénix** — GTK3 theme visually close to Clearlooks.
 
-	[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)<sup><small>AUR</small></sup>
+	[https://github.com/jpfleury/clearlooks-phenix](https://github.com/jpfleury/clearlooks-phenix) || [clearlooks-phenix-gtk-theme](https://aur.archlinux.org/packages/clearlooks-phenix-gtk-theme/)
 
 *   **Gnome-breeze** — A GTK theme created to match with the new Plasma 5 Breeze.
 
-	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)<sup><small>AUR</small></sup>
+	[https://github.com/dirruk1/gnome-breeze](https://github.com/dirruk1/gnome-breeze) || [gnome-breeze-git](https://aur.archlinux.org/packages/gnome-breeze-git/)
 
 *   **Greybird** — A grey and blue Xfce theme, used by default in Xubuntu 12.04.
 
-	[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)<sup><small>AUR</small></sup>
+	[http://shimmerproject.org/our-projects/greybird/](http://shimmerproject.org/our-projects/greybird/) || [xfce-theme-greybird](https://aur.archlinux.org/packages/xfce-theme-greybird/)
 
 *   **Orion** — A modern and light GTK theme.
 
-	[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)<sup><small>AUR</small></sup>
+	[http://deviantart.com/view/281431756](http://deviantart.com/view/281431756) || [gtk-theme-orion](https://aur.archlinux.org/packages/gtk-theme-orion/)
 
 *   **Vertex** — Theme for GTK 3, GTK 2, Gnome-Shell and Cinnamon.
 
-	[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)<sup><small>AUR</small></sup>
+	[http://horst3180.deviantart.com/art/Vertex-Theme-470663601](http://horst3180.deviantart.com/art/Vertex-Theme-470663601) || [vertex-themes](https://aur.archlinux.org/packages/vertex-themes/)
 
 *   **Zukitwo** — Themes for GTK, gnome-shell and more.
 
-	[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)<sup><small>AUR</small></sup>
+	[http://gnome-look.org/content/show.php/Zukitwo?content=140562](http://gnome-look.org/content/show.php/Zukitwo?content=140562) || [zukitwo-themes](https://aur.archlinux.org/packages/zukitwo-themes/)
 
 **Only GTK+ 2 is supported:**
 
@@ -189,7 +189,7 @@ Other GUI tools generally overwrite the [configuration files](#Configuration).
 
 *   **GTK-KDE4** — Application that allows you to change style and font of GTK+2 applications in KDE4.
 
-	[http://kde-look.org/content/show.php?content=74689](http://kde-look.org/content/show.php?content=74689) || [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/)<sup><small>AUR</small></sup>
+	[http://kde-look.org/content/show.php?content=74689](http://kde-look.org/content/show.php?content=74689) || [gtk-kde4](https://aur.archlinux.org/packages/gtk-kde4/)
 
 	After installation, `gtk-kde4` can also be found in _System Settings > Lost and Found > GTK style_.
 
@@ -435,7 +435,7 @@ As user theme files (`$XDG_CONFIG_HOME/gtk-3.0/settings.ini`, `~/.gtkrc-2.0`) ar
 
 ```
 
-*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/)<sup><small>AUR</small></sup>.
+*   Use a settings daemon (this is what most desktop environments do). A desktop-agnostic variant using [XSettings](http://standards.freedesktop.org/xsettings-spec/xsettings-spec-0.5.html) is available in the [AUR](/index.php/AUR "AUR") under [xsettingsd-git](https://aur.archlinux.org/packages/xsettingsd-git/).
 
 ### Client-side decorations
 
@@ -535,7 +535,7 @@ NautilusWindow {
 
 ### Thumbnail support for GTK+ 2 file dialog
 
-Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/)<sup><small>AUR</small></sup> to have the option to view files as thumbnails instead of list in the GTK+ file chooser.
+Install [gtk2-patched-filechooser-icon-view](https://aur.archlinux.org/packages/gtk2-patched-filechooser-icon-view/) to have the option to view files as thumbnails instead of list in the GTK+ file chooser.
 
 ## Examples
 

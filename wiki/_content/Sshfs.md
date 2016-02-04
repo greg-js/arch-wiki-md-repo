@@ -132,8 +132,8 @@ The important mount options here are _noauto,x-systemd.automount,_netdev_.
 
 There are two other ways to do this. Both do not require editing /etc/fstab to add a new mountpoint. Instead, regular users can create one by simply attempting to access it (with e. g. something like `ls ~/mnt/ssh/[user@]yourremotehost[:port]`):
 
-*   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/)<sup><small>AUR</small></sup> uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
-*   [afuse](https://aur.archlinux.org/packages/afuse/)<sup><small>AUR</small></sup> is a general-purpose userspace automounter for FUSE filesystems. It works well with sshfs. No user-activation is necessary. Example invocation: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
+*   [autosshfs-git](https://aur.archlinux.org/packages/autosshfs-git/) uses AutoFS. Users need to be enabled to use it with `autosshfs-user`.
+*   [afuse](https://aur.archlinux.org/packages/afuse/) is a general-purpose userspace automounter for FUSE filesystems. It works well with sshfs. No user-activation is necessary. Example invocation: `afuse -o mount_template='sshfs -o ServerAliveInterval=10 -o reconnect %r:/ %m' -o unmount_template='fusermount -u -z %m' ~/mnt/ssh`
 
 ### On boot
 

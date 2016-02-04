@@ -4,7 +4,7 @@ Apache Cassandra is a NoSQL database with linear scalability. For more informati
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [cassandra](https://aur.archlinux.org/packages/cassandra/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [cassandra](https://aur.archlinux.org/packages/cassandra/) package.
 
 ## Python API
 

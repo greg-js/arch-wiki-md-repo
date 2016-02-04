@@ -11,7 +11,7 @@ This document describes a method to configure halevt and traydevice in order to 
 
 ## Installation
 
-First you need to [install](/index.php/Install "Install") [halevt](https://aur.archlinux.org/packages/halevt/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/halevt)]</sup> and [traydevice](https://aur.archlinux.org/packages/traydevice/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/traydevice)]</sup> from [AUR](/index.php/AUR "AUR").
+First you need to [install](/index.php/Install "Install") [halevt](https://aur.archlinux.org/packages/halevt/) and [traydevice](https://aur.archlinux.org/packages/traydevice/) from [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

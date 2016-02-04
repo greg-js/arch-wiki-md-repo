@@ -37,7 +37,7 @@
 
 ### AUR
 
-[dropbox](https://aur.archlinux.org/packages/dropbox/)<sup><small>AUR</small></sup> can be [installed](/index.php/Install "Install"). Alternatively, [dropbox-experimental](https://aur.archlinux.org/packages/dropbox-experimental/)<sup><small>AUR</small></sup> is also available. As a last resort, the Dropbox website has instructions for a [headless install via command line](https://www.dropbox.com/install?os=lnx).
+[dropbox](https://aur.archlinux.org/packages/dropbox/) can be [installed](/index.php/Install "Install"). Alternatively, [dropbox-experimental](https://aur.archlinux.org/packages/dropbox-experimental/) is also available. As a last resort, the Dropbox website has instructions for a [headless install via command line](https://www.dropbox.com/install?os=lnx).
 
 1.  After installing the package, you can start Dropbox from your application menu or run `dropbox` from the command-line. The client icon will appear in the system tray.
 2.  A pop-up will notify you that Dropbox is running from an unsupported location. Click on _Don't ask again_ since you know that you have installed it from AUR rather than from the official homepage.
@@ -47,12 +47,12 @@
 
 ### Optional packages
 
-*   For a command-line interface, install [dropbox-cli](https://aur.archlinux.org/packages/dropbox-cli/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
-*   For integration with GNOME Files, install [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/)<sup><small>AUR</small></sup> from the AUR. The Files plugin will start Dropbox automatically.
-*   For integration with Nemo, install [nemo-dropbox](https://aur.archlinux.org/packages/nemo-dropbox/)<sup><small>AUR</small></sup> from the AUR.
-*   For integration with [Thunar](/index.php/Thunar "Thunar"), install [thunar-dropbox](https://aur.archlinux.org/packages/thunar-dropbox/)<sup><small>AUR</small></sup> from the AUR.
-*   For [KDE](/index.php/KDE "KDE") users, there is a KDE client available: [kfilebox](https://aur.archlinux.org/packages/kfilebox/)<sup><small>AUR</small></sup> from the AUR.
-*   For integration with Caja, install [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/)<sup><small>AUR</small></sup> from the AUR.
+*   For a command-line interface, install [dropbox-cli](https://aur.archlinux.org/packages/dropbox-cli/) from the [AUR](/index.php/AUR "AUR").
+*   For integration with GNOME Files, install [nautilus-dropbox](https://aur.archlinux.org/packages/nautilus-dropbox/) from the AUR. The Files plugin will start Dropbox automatically.
+*   For integration with Nemo, install [nemo-dropbox](https://aur.archlinux.org/packages/nemo-dropbox/) from the AUR.
+*   For integration with [Thunar](/index.php/Thunar "Thunar"), install [thunar-dropbox](https://aur.archlinux.org/packages/thunar-dropbox/) from the AUR.
+*   For [KDE](/index.php/KDE "KDE") users, there is a KDE client available: [kfilebox](https://aur.archlinux.org/packages/kfilebox/) from the AUR.
+*   For integration with Caja, install [caja-dropbox](https://aur.archlinux.org/packages/caja-dropbox/) from the AUR.
 
 ## Automatically starting Dropbox
 
@@ -102,7 +102,7 @@ Environment=DISPLAY=:0
 
 If all you need is basic access to the files in your Dropbox, you can use the web interface at [https://www.dropbox.com/](https://www.dropbox.com/) to upload and download files to your Dropbox. This can be a viable alternative to running a Dropbox daemon and mirroring all the files on your own machine.
 
-Alternatively, the [AUR](/index.php/AUR "AUR") package [droxi](https://aur.archlinux.org/packages/droxi/)<sup><small>AUR</small></sup> provides a command-line interface to Dropbox similar to the GNU `ftp` client.
+Alternatively, the [AUR](/index.php/AUR "AUR") package [droxi](https://aur.archlinux.org/packages/droxi/) provides a command-line interface to Dropbox similar to the GNU `ftp` client.
 
 ## Securing your Dropbox
 
@@ -182,7 +182,7 @@ Obviously, `_your_user_` has to be edited and `_any other code_;` can be omitted
 
 ### Using NetworkManager
 
-If you have connectivity problem with [NetworkManager](/index.php/NetworkManager "NetworkManager"), try using a [dispatcher script](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"): [networkmanager-dispatcher-dropbox](https://aur.archlinux.org/packages/networkmanager-dispatcher-dropbox/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/networkmanager-dispatcher-dropbox)]</sup> or [networkmanager-dispatcher-dropbox-systemd](https://aur.archlinux.org/packages/networkmanager-dispatcher-dropbox-systemd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/networkmanager-dispatcher-dropbox-systemd)]</sup>.
+If you have connectivity problem with [NetworkManager](/index.php/NetworkManager "NetworkManager"), try using a [dispatcher script](/index.php/NetworkManager#Network_services_with_NetworkManager_dispatcher "NetworkManager"): [networkmanager-dispatcher-dropbox](https://aur.archlinux.org/packages/networkmanager-dispatcher-dropbox/) or [networkmanager-dispatcher-dropbox-systemd](https://aur.archlinux.org/packages/networkmanager-dispatcher-dropbox-systemd/).
 
 ### Using wicd
 

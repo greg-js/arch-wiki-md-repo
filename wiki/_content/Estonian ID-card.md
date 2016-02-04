@@ -4,13 +4,13 @@ Packages to enable Estonian ID-card support are available from the [Arch User Re
 
 ## Quick install
 
-Install [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) from the [official repositories](/index.php/Official_repositories "Official repositories") and [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/)<sup><small>AUR</small></sup>, [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/)<sup><small>AUR</small></sup> and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) from the [official repositories](/index.php/Official_repositories "Official repositories") and [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/), [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/) and [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) from the [AUR](/index.php/AUR "AUR").
 
 Enable `pcscd.socket` [using systemd](/index.php/Systemd#Using_units "Systemd").
 
 ## Browser plugin (web authentication & digital signatures)
 
-The browser plugin AUR package is called [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/)<sup><small>AUR</small></sup>, which also requires dependencies [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/)<sup><small>AUR</small></sup> and [esteidcerts](https://aur.archlinux.org/packages/esteidcerts/)<sup><small>AUR</small></sup>.
+The browser plugin AUR package is called [esteidfirefoxplugin](https://aur.archlinux.org/packages/esteidfirefoxplugin/), which also requires dependencies [esteidpkcs11loader](https://aur.archlinux.org/packages/esteidpkcs11loader/) and [esteidcerts](https://aur.archlinux.org/packages/esteidcerts/).
 
 It also requires you to run the PCSC daemon, which can be installed with [pcsclite](https://www.archlinux.org/packages/?name=pcsclite) from the [official repositories](/index.php/Official_repositories "Official repositories").
 
@@ -20,7 +20,7 @@ Don't forget to restart Firefox after finishing.
 
 ## ID-card and Digidoc utilities
 
-The ID-card utility packages are [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/)<sup><small>AUR</small></sup> and [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/)<sup><small>AUR</small></sup>, with dependencies [esteidcerts](https://aur.archlinux.org/packages/esteidcerts/)<sup><small>AUR</small></sup>, [libdigidoc](https://aur.archlinux.org/packages/libdigidoc/)<sup><small>AUR</small></sup> and [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/)<sup><small>AUR</small></sup>.
+The ID-card utility packages are [qesteidutil](https://aur.archlinux.org/packages/qesteidutil/) and [qdigidoc](https://aur.archlinux.org/packages/qdigidoc/), with dependencies [esteidcerts](https://aur.archlinux.org/packages/esteidcerts/), [libdigidoc](https://aur.archlinux.org/packages/libdigidoc/) and [libdigidocpp](https://aur.archlinux.org/packages/libdigidocpp/).
 
 These applications will automatically appear in your application menus. You can also start from command line with <tt>qdigidocclient</tt> and <tt>qesteidutil</tt>.
 

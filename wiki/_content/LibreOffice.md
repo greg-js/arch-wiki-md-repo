@@ -49,7 +49,7 @@ Official support for [OpenOffice.org](/index.php/OpenOffice.org "OpenOffice.org"
 *   For SDK install [libreoffice-fresh-sdk](https://www.archlinux.org/packages/?name=libreoffice-fresh-sdk).
 *   For Qt and GTK+ visual integration, see [#Theme](#Theme).
 
-Check the optional dependencies pacman displays. If you want to use LibreOffice Base, you must install a Java Runtime Environment: see [Java](/index.php/Java "Java"). You may need [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/)<sup><small>AUR</small></sup> to use [some modules](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) in LibreOffice Base.
+Check the optional dependencies pacman displays. If you want to use LibreOffice Base, you must install a Java Runtime Environment: see [Java](/index.php/Java "Java"). You may need [hsqldb2-java](https://aur.archlinux.org/packages/hsqldb2-java/) to use [some modules](https://wiki.documentfoundation.org/Base#Java_and_HSQLDB) in LibreOffice Base.
 
 ## Theme
 
@@ -99,7 +99,7 @@ For spell checking, please make sure [hunspell](https://www.archlinux.org/packag
 
 	Finnish
 
-Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/)<sup><small>AUR</small></sup>, [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/suomi-malaga-voikko)]</sup>, [hfstospell](https://aur.archlinux.org/packages/hfstospell/)<sup><small>AUR</small></sup>, [libvoikko](https://www.archlinux.org/packages/?name=libvoikko) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/)<sup><small>AUR</small></sup>.
+Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/), [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/), [hfstospell](https://aur.archlinux.org/packages/hfstospell/), [libvoikko](https://www.archlinux.org/packages/?name=libvoikko) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/).
 
 ### Hyphenation rules
 
@@ -111,7 +111,7 @@ For the thesaurus option, you will need [libmythes](https://www.archlinux.org/pa
 
 ### Grammar checking
 
-For grammar checking, several tools are available. The most common is [LanguageTool](https://www.languagetool.org/). While the [languagetool](https://www.archlinux.org/packages/?name=languagetool) is available in the [official repositories](/index.php/Official_repositories "Official repositories"), the later is not packaged as a LibreOffice extension. It is thus recommended to install it with via the [AUR](/index.php/AUR "AUR") package [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/)<sup><small>AUR</small></sup> instead. Even if this AUR package comes bundled with LanguageTool, this does not conflict with the one in the official repositories. In the future, it could even be possible to make that AUR package depend on the official [languagetool](https://www.archlinux.org/packages/?name=languagetool) package.
+For grammar checking, several tools are available. The most common is [LanguageTool](https://www.languagetool.org/). While the [languagetool](https://www.archlinux.org/packages/?name=languagetool) is available in the [official repositories](/index.php/Official_repositories "Official repositories"), the later is not packaged as a LibreOffice extension. It is thus recommended to install it with via the [AUR](/index.php/AUR "AUR") package [libreoffice-extension-languagetool](https://aur.archlinux.org/packages/libreoffice-extension-languagetool/) instead. Even if this AUR package comes bundled with LanguageTool, this does not conflict with the one in the official repositories. In the future, it could even be possible to make that AUR package depend on the official [languagetool](https://www.archlinux.org/packages/?name=languagetool) package.
 
 After this package has been installed, please make sure you have a [Java](/index.php/Java "Java") runtime installed. Indeed, Languagetool uses Java and may slow down or briefly hang LibreOffice, particularly while opening documents. Fortunately this is usually only when initially opening a document and is usually not apparent otherwise.
 
@@ -119,7 +119,7 @@ Other grammar tools can also be found on the [LibrePlanet extension page](http:/
 
 	French
 
-French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](http://www.dicollecte.org/grammalecte/telecharger.php) or via this [AUR](/index.php/AUR "AUR") package: [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/)<sup><small>AUR</small></sup>. In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
+French-speaking users are advantaged here: they do not need to install LanguageTool nor Java. Dicollecte provides a nice Python extension, specifically designed for Frenchs. You can install it [from the website](http://www.dicollecte.org/grammalecte/telecharger.php) or via this [AUR](/index.php/AUR "AUR") package: [libreoffice-extension-grammalecte-fr](https://aur.archlinux.org/packages/libreoffice-extension-grammalecte-fr/). In any case, this extensions also comes with the French dictionaries otherwise provided by [hunspell-fr](https://www.archlinux.org/packages/?name=hunspell-fr).
 
 ### Offline help for en-US
 

@@ -73,9 +73,9 @@ There are 3 steps that need to be performed before you can develop Android appli
 
 Before developing Android applications, you need to install the Android SDK, which is made of 3 distinct packages, all installable from [AUR](/index.php/AUR "AUR"):
 
-1.  [android-sdk](https://aur.archlinux.org/packages/android-sdk/)<sup><small>AUR</small></sup>
-2.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)<sup><small>AUR</small></sup>
-3.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)<sup><small>AUR</small></sup>
+1.  [android-sdk](https://aur.archlinux.org/packages/android-sdk/)
+2.  [android-sdk-platform-tools](https://aur.archlinux.org/packages/android-sdk-platform-tools/)
+3.  [android-sdk-build-tools](https://aur.archlinux.org/packages/android-sdk-build-tools/)
 
 Android-sdk will be installed on `/opt/android-sdk`. This folder has root permissions, so keep in mind to run sdk manager as root, otherwise you will not be able to modify anything in this directory. If you intend to use it as a regular user, create the Android sdk users group:
 
@@ -118,29 +118,29 @@ $ newgrp sdkusers
 
 Install the desired Android SDK Platform package from the [AUR](/index.php/AUR "AUR"):
 
-*   [android-platform](https://aur.archlinux.org/packages/android-platform/)<sup><small>AUR</small></sup> (latest)
-*   [android-platform-23](https://aur.archlinux.org/packages/android-platform-23/)<sup><small>AUR</small></sup>
-*   [android-platform-22](https://aur.archlinux.org/packages/android-platform-22/)<sup><small>AUR</small></sup>
-*   [android-platform-21](https://aur.archlinux.org/packages/android-platform-21/)<sup><small>AUR</small></sup>
-*   [android-platform-20](https://aur.archlinux.org/packages/android-platform-20/)<sup><small>AUR</small></sup>
-*   [android-platform-19](https://aur.archlinux.org/packages/android-platform-19/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-19)]</sup>
-*   [android-platform-18](https://aur.archlinux.org/packages/android-platform-18/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-18)]</sup>
-*   [android-platform-17](https://aur.archlinux.org/packages/android-platform-17/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-17)]</sup>
-*   [android-platform-16](https://aur.archlinux.org/packages/android-platform-16/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-16)]</sup>
-*   [android-platform-15](https://aur.archlinux.org/packages/android-platform-15/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-15)]</sup>
-*   [android-platform-14](https://aur.archlinux.org/packages/android-platform-14/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-14)]</sup>
-*   [android-platform-13](https://aur.archlinux.org/packages/android-platform-13/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-13)]</sup>
-*   [android-platform-12](https://aur.archlinux.org/packages/android-platform-12/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-12)]</sup>
-*   [android-platform-11](https://aur.archlinux.org/packages/android-platform-11/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-11)]</sup>
-*   [android-platform-10](https://aur.archlinux.org/packages/android-platform-10/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-10)]</sup>
-*   [android-platform-9](https://aur.archlinux.org/packages/android-platform-9/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-9)]</sup>
-*   [android-platform-8](https://aur.archlinux.org/packages/android-platform-8/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-8)]</sup>
-*   [android-platform-7](https://aur.archlinux.org/packages/android-platform-7/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-7)]</sup>
-*   [android-platform-6](https://aur.archlinux.org/packages/android-platform-6/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-6)]</sup>
-*   [android-platform-5](https://aur.archlinux.org/packages/android-platform-5/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-5)]</sup>
-*   [android-platform-4](https://aur.archlinux.org/packages/android-platform-4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-4)]</sup>
-*   [android-platform-3](https://aur.archlinux.org/packages/android-platform-3/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-3)]</sup>
-*   [android-platform-2](https://aur.archlinux.org/packages/android-platform-2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/android-platform-2)]</sup>
+*   [android-platform](https://aur.archlinux.org/packages/android-platform/) (latest)
+*   [android-platform-23](https://aur.archlinux.org/packages/android-platform-23/)
+*   [android-platform-22](https://aur.archlinux.org/packages/android-platform-22/)
+*   [android-platform-21](https://aur.archlinux.org/packages/android-platform-21/)
+*   [android-platform-20](https://aur.archlinux.org/packages/android-platform-20/)
+*   [android-platform-19](https://aur.archlinux.org/packages/android-platform-19/)
+*   [android-platform-18](https://aur.archlinux.org/packages/android-platform-18/)
+*   [android-platform-17](https://aur.archlinux.org/packages/android-platform-17/)
+*   [android-platform-16](https://aur.archlinux.org/packages/android-platform-16/)
+*   [android-platform-15](https://aur.archlinux.org/packages/android-platform-15/)
+*   [android-platform-14](https://aur.archlinux.org/packages/android-platform-14/)
+*   [android-platform-13](https://aur.archlinux.org/packages/android-platform-13/)
+*   [android-platform-12](https://aur.archlinux.org/packages/android-platform-12/)
+*   [android-platform-11](https://aur.archlinux.org/packages/android-platform-11/)
+*   [android-platform-10](https://aur.archlinux.org/packages/android-platform-10/)
+*   [android-platform-9](https://aur.archlinux.org/packages/android-platform-9/)
+*   [android-platform-8](https://aur.archlinux.org/packages/android-platform-8/)
+*   [android-platform-7](https://aur.archlinux.org/packages/android-platform-7/)
+*   [android-platform-6](https://aur.archlinux.org/packages/android-platform-6/)
+*   [android-platform-5](https://aur.archlinux.org/packages/android-platform-5/)
+*   [android-platform-4](https://aur.archlinux.org/packages/android-platform-4/)
+*   [android-platform-3](https://aur.archlinux.org/packages/android-platform-3/)
+*   [android-platform-2](https://aur.archlinux.org/packages/android-platform-2/)
 
 ### Development environment
 
@@ -150,13 +150,13 @@ Android Studio is the new official Android development environment based on Inte
 
 [Android Studio](https://developer.android.com/sdk/index.html) is the official Android development environment based on [IntelliJ Idea](https://www.jetbrains.com/idea/). Android Studio replaces the older [Eclipse Android Developer Tools](https://developer.android.com/tools/help/adt.html) and provides integrated Android developer tools for development and debugging.
 
-You can download and install it with the [android-studio](https://aur.archlinux.org/packages/android-studio/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"). If you get an error about a missing SDK, refer to the section Getting Android SDK platform API above.
+You can download and install it with the [android-studio](https://aur.archlinux.org/packages/android-studio/) package from the [AUR](/index.php/AUR "AUR"). If you get an error about a missing SDK, refer to the section Getting Android SDK platform API above.
 
 **Note:** If you are using a tiling window manager other than i3wm, you may need to apply one of the fixes mentioned in [this](https://code.google.com/p/android/issues/detail?id=57675) issue page.
 
 **Note:** Make sure you properly [set the Java environment](/index.php/Java#Change_default_Java_environment "Java") otherwise android-studio will not start.
 
-**Note:** Bad font rendering in Android Studio can be fixed by installing the [infinality-bundle](/index.php/Infinality#Installation_2 "Infinality") and using infinality patched openJDK 7 ([jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/)<sup><small>AUR</small></sup>) or openJDK 8 ([jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)<sup><small>AUR</small></sup>) from the AUR as mentioned in [this](https://youtrack.jetbrains.com/issue/IDEA-57233#comment=27-876236) issue page. Patched OpenJDK8 is also available from [Infinality unofficial repository](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories").
+**Note:** Bad font rendering in Android Studio can be fixed by installing the [infinality-bundle](/index.php/Infinality#Installation_2 "Infinality") and using infinality patched openJDK 7 ([jdk7-openjdk-infinality](https://aur.archlinux.org/packages/jdk7-openjdk-infinality/)) or openJDK 8 ([jdk8-openjdk-infinality](https://aur.archlinux.org/packages/jdk8-openjdk-infinality/)) from the AUR as mentioned in [this](https://youtrack.jetbrains.com/issue/IDEA-57233#comment=27-876236) issue page. Patched OpenJDK8 is also available from [Infinality unofficial repository](/index.php/Unofficial_user_repositories#infinality-bundle "Unofficial user repositories").
 
 Normally, apps are built through the Android Studio GUI. To build apps from the commandline (using e.g. `./gradlew assembleDebug`), add the following to your `~/.bashrc`:
 
@@ -173,13 +173,13 @@ Most stuff required for Android development in Eclipse is already packaged in AU
 
 Official plugin by Google – [Eclipse ADT](http://developer.android.com/sdk/eclipse-adt.html):
 
-1.  [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/)<sup><small>AUR</small></sup>
+1.  [eclipse-android](https://aur.archlinux.org/packages/eclipse-android/)
 
 Dependencies:
 
-1.  [eclipse-emf](https://aur.archlinux.org/packages/eclipse-emf/)<sup><small>AUR</small></sup>
-2.  [eclipse-gef](https://aur.archlinux.org/packages/eclipse-gef/)<sup><small>AUR</small></sup>
-3.  [eclipse-wtp](https://aur.archlinux.org/packages/eclipse-wtp/)<sup><small>AUR</small></sup>
+1.  [eclipse-emf](https://aur.archlinux.org/packages/eclipse-emf/)
+2.  [eclipse-gef](https://aur.archlinux.org/packages/eclipse-gef/)
+3.  [eclipse-wtp](https://aur.archlinux.org/packages/eclipse-wtp/)
 
 **Note:**
 
@@ -369,13 +369,13 @@ To build any version of Android, you need to install these packages:
 
 *   64-bit systems only: [gcc-multilib](https://www.archlinux.org/packages/?name=gcc-multilib) [lib32-zlib](https://www.archlinux.org/packages/?name=lib32-zlib) [lib32-ncurses](https://www.archlinux.org/packages/?name=lib32-ncurses) [lib32-readline](https://www.archlinux.org/packages/?name=lib32-readline)
 
-*   AUR Packages: [libtinfo](https://aur.archlinux.org/packages/libtinfo/)<sup><small>AUR</small></sup> [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup>
+*   AUR Packages: [libtinfo](https://aur.archlinux.org/packages/libtinfo/) [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)
 
 To build Android 6+, you need to install these additional packages:
 
 *   32-bit and 64-bit systems: [rsync](https://www.archlinux.org/packages/?name=rsync)
 
-**Note:** You must now also install [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/)<sup><small>AUR</small></sup> & [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/)<sup><small>AUR</small></sup> since ncurses was updated to ncurses6 and android's prebuilt clang still depends on ncurses5\. You can check what libs are still needed: `ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 
+**Note:** You must now also install [lib32-ncurses5-compat-libs](https://aur.archlinux.org/packages/lib32-ncurses5-compat-libs/) & [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) since ncurses was updated to ncurses6 and android's prebuilt clang still depends on ncurses5\. You can check what libs are still needed: `ldd prebuilts/clang/linux-x86/host/3.6/bin/clang` 
 
 ### Java Development Kit
 
@@ -383,7 +383,7 @@ Android 5 (Lollipop) can be built with [jdk7-openjdk](https://www.archlinux.org/
 
 Older versions [require](http://source.android.com/source/initializing.html) a working **Oracle JDK** installed on your build system. It **will not** work with OpenJDK.
 
-*   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/)<sup><small>AUR</small></sup> from the AUR. See [Java](/index.php/Java "Java") if you want to use it besides another (newer) JDK version.
+*   For Gingerbread through KitKat (2.3 - 4.4), Java 6 is required, which is available as [jdk6](https://aur.archlinux.org/packages/jdk6/) from the AUR. See [Java](/index.php/Java "Java") if you want to use it besides another (newer) JDK version.
 *   For Cupcake through Froyo (1.5 - 2.2), Java 5 is required, which is no longer available for Arch Linux.
 
 ### Setting up the build environment
@@ -533,7 +533,7 @@ Samsung devices can't be flashed using **Fastboot** tool. Alternatives are only 
 
 #### Heimdall
 
-[Heimdall](http://glassechidna.com.au/heimdall/) is a cross-platform open-source tool suite used to flash firmware (also known as ROMs) onto Samsung mobile devices and is also known as an alternative to [Odin](http://odindownload.com/). It can be installed as [heimdall](https://www.archlinux.org/packages/?name=heimdall) or [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/)<sup><small>AUR</small></sup>.
+[Heimdall](http://glassechidna.com.au/heimdall/) is a cross-platform open-source tool suite used to flash firmware (also known as ROMs) onto Samsung mobile devices and is also known as an alternative to [Odin](http://odindownload.com/). It can be installed as [heimdall](https://www.archlinux.org/packages/?name=heimdall) or [heimdall-git](https://aur.archlinux.org/packages/heimdall-git/).
 
 The flashing instructions can be found on Heimdall's [GitHub page](https://github.com/Benjamin-Dobell/Heimdall/tree/master/Linux) or on [XDA forums](http://forum.xda-developers.com/showthread.php?t=1922461).
 
@@ -569,7 +569,7 @@ which means that your device is visible to Odin and is ready to be flashed.
 
 ### adb-sync
 
-[adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)<sup><small>AUR</small></sup>) is a tool to synchronize files between a PC and an Android device using the ADB
+[adb-sync](https://github.com/google/adb-sync) (available in [adb-sync-git](https://aur.archlinux.org/packages/adb-sync-git/)) is a tool to synchronize files between a PC and an Android device using the ADB
 
 ### AirDroid
 

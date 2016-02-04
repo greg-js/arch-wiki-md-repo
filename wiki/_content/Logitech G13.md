@@ -7,7 +7,7 @@ There are a couple options for drivers, but only one that appears to work well t
 *   Running the official [Logitech Gaming Software](http://support.logitech.com/software/gaming-software) under [Wine](/index.php/Wine "Wine"). Despite working fine, the software [has a Garbage rating](https://appdb.winehq.org/objectManager.php?sClass=application&iId=14748) on WineHQ, as it can't actually communicate with USB devices. (However, the reports available are quite old, and you may have better luck)
 *   [g15daemon](https://www.archlinux.org/packages/?name=g15daemon), despite it's backend (libg15) claiming to support the G13, does not actually support the G13.
 *   [linux-g13-driver](https://code.google.com/p/linux-g13-driver/), which can compile if you edit the Makefile (see [issue #16](https://code.google.com/p/linux-g13-driver/issues/detail?id=16)), and may work for you.
-*   [g13](https://github.com/ecraven/g13) [g13-git](https://aur.archlinux.org/packages/g13-git/)<sup><small>AUR</small></sup> is a user-space driver, which seems to work the best out of these.
+*   [g13](https://github.com/ecraven/g13) [g13-git](https://aur.archlinux.org/packages/g13-git/) is a user-space driver, which seems to work the best out of these.
 
 ## Contents
 
@@ -22,7 +22,7 @@ There are a couple options for drivers, but only one that appears to work well t
 
 ### Installation
 
-Install [g13-git](https://aur.archlinux.org/packages/g13-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [g13-git](https://aur.archlinux.org/packages/g13-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 In order to run g13d as your user instead of root, download [91-g13.rules](https://github.com/ecraven/g13/blob/master/91-g13.rules), and put it in `/etc/udev/rules.d/`.
 

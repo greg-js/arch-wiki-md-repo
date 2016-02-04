@@ -45,7 +45,7 @@ This laptop can use the i8k kernel module to control fan, but will need some adj
 
 First of all, this laptop only has one fan and by default it is controlled by the BIOS. This setting is not bad but the only thing BIOS does is to turn on the fan at maximum speed, that can be unnecessary and annoying in loudness.
 
-Install the [i8kutils](https://aur.archlinux.org/packages/i8kutils/)<sup><small>AUR</small></sup> package from the [official repositories](/index.php/Official_repositories "Official repositories") and [i8kmonitor](https://aur.archlinux.org/packages/i8kmonitor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/i8kmonitor)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install the [i8kutils](https://aur.archlinux.org/packages/i8kutils/) package from the [official repositories](/index.php/Official_repositories "Official repositories") and [i8kmonitor](https://aur.archlinux.org/packages/i8kmonitor/) from the [AUR](/index.php/AUR "AUR").
 
 You need to load the i8k module
 
@@ -111,11 +111,11 @@ $ lspci -d 14e4:4727
 
 ```
 
-You will need the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> proprietary driver for it to work properly. Current new kernels support basic functionality but freezes the system when hot-plugging the device and causes hibernation/suspend issues.
+You will need the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) proprietary driver for it to work properly. Current new kernels support basic functionality but freezes the system when hot-plugging the device and causes hibernation/suspend issues.
 
 A dirty way to make the wireless work is described in what follows.
 
-First, compile the the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> driver from AUR, using the instructions in [AUR#Installing packages](/index.php/AUR#Installing_packages "AUR"), in order to obtain the wl module.
+First, compile the the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) driver from AUR, using the instructions in [AUR#Installing packages](/index.php/AUR#Installing_packages "AUR"), in order to obtain the wl module.
 
 Second, add `blacklist bcma` to `/etc/modprobe.d/modprobe.conf` and restart the computer. Finally, do
 

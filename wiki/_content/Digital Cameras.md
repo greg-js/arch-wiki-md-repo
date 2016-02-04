@@ -26,7 +26,7 @@ Once you have `gvfs-mtp` installed, the device should just show up in Files' sid
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [libgphoto2](https://www.archlinux.org/packages/?name=libgphoto2) package, and optionally [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) for GNOME Files integration and [gphoto2](https://www.archlinux.org/packages/?name=gphoto2) to have a command line interface.
+[Install](/index.php/Install "Install") the [libgphoto2](https://www.archlinux.org/packages/?name=libgphoto2) package, and optionally [gvfs-gphoto2](https://www.archlinux.org/packages/?name=gvfs-gphoto2) for [GNOME Files](/index.php/GNOME_Files "GNOME Files") integration and [gphoto2](https://www.archlinux.org/packages/?name=gphoto2) to have a command line interface. Actually, any package that lists [gvfs](https://www.archlinux.org/packages/?name=gvfs) as a dependency can use gvfs-gphoto2, such as [Nemo](/index.php/Nemo "Nemo"), [PCManFM](/index.php/PCManFM "PCManFM"), and [Thunar](/index.php/Thunar "Thunar").
 
 ### Permission issues
 
@@ -72,16 +72,18 @@ For advanced file manipulation, use
 
 #### Other frontend applications for libgphoto2
 
-*   [gphotofs](http://www.gphoto.org/proj/gphotofs/) - allow using cameras with any tool able to read from a mounted filesystem.
-*   [darktable](http://darktable.org/)
-*   [Digikam](/index.php/Digikam "Digikam")
-*   [F-Spot](http://f-spot.org/)
-*   [Gthumb](http://live.gnome.org/gthumb)
-*   [GTKam](http://www.gphoto.org/proj/gtkam/)
+*   [gphotofs](http://www.gphoto.org/proj/gphotofs/) - [gphotofs](https://aur.archlinux.org/packages/gphotofs/) - FUSE ([fuse](https://www.archlinux.org/packages/?name=fuse)) module to mount camera as a filesystem
+*   [darktable](http://darktable.org/) - [darktable](https://www.archlinux.org/packages/?name=darktable) - utility to organize and develop raw images
+*   [Digikam](/index.php/Digikam "Digikam") - [digikam](https://www.archlinux.org/packages/?name=digikam) - digital photo management application for [KDE](/index.php/KDE "KDE")
+*   [F-Spot](http://f-spot.org/) - photo management [Mono](/index.php/Mono "Mono") application for [GNOME](/index.php/GNOME "GNOME")
+*   [Gthumb](http://live.gnome.org/gthumb) - [gthumb](https://www.archlinux.org/packages/?name=gthumb) - image browser and viewer for [GNOME](/index.php/GNOME "GNOME")
+*   [GTKam](http://www.gphoto.org/proj/gtkam/) - [gtkam](https://aur.archlinux.org/packages/gtkam/) - graphical [GTK](/index.php/GTK "GTK") front-end to gphoto2
+*   [Pantheon Photos](https://launchpad.net/pantheon-photos) - [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) - "continuation" of Shotwell for [Pantheon](/index.php/Pantheon "Pantheon")
+*   [Shotwell](http://wiki.gnome.org/Apps/Shotwell) - [shotwell](https://www.archlinux.org/packages/?name=shotwell) - digital photo organizer designed for [GNOME](/index.php/GNOME "GNOME")
 
 ## See also
 
 *   [A list of cameras supported by gPhoto](http://www.gphoto.org/proj/libgphoto2/support.php)
 *   [another more detailed list](http://www.teaser.fr/~hfiguiere/linux/digicam.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Digital_Cameras&oldid=382719](https://wiki.archlinux.org/index.php?title=Digital_Cameras&oldid=382719)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Digital_Cameras&oldid=418941](https://wiki.archlinux.org/index.php?title=Digital_Cameras&oldid=418941)"

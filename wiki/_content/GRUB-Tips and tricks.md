@@ -33,19 +33,19 @@ Following package may be installed:
 
 *   **grub-customizer** — GTK+ customizer for GRUB or BURG
 
-	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/grub-customizer](https://launchpad.net/grub-customizer) || [grub-customizer](https://aur.archlinux.org/packages/grub-customizer/)
 
 *   **grub2-editor** — KDE4 control module for configuring the GRUB bootloader
 
-	[http://kde-apps.org/content/show.php?content=139643](http://kde-apps.org/content/show.php?content=139643) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/grub2-editor)]</sup>
+	[http://kde-apps.org/content/show.php?content=139643](http://kde-apps.org/content/show.php?content=139643) || [grub2-editor](https://aur.archlinux.org/packages/grub2-editor/)
 
 *   **grub2-editor-frameworks** — Unofficial KF5 port of grub2-editor
 
-	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)<sup><small>AUR</small></sup>
+	[https://github.com/maz-1/grub2-editor](https://github.com/maz-1/grub2-editor) || [grub2-editor-frameworks](https://aur.archlinux.org/packages/grub2-editor-frameworks/)
 
 *   **startupmanager** — GUI app for changing the settings of GRUB Legacy, GRUB, Usplash and Splashy ([abandonned](https://launchpad.net/startup-manager/+announcement/8300))
 
-	[http://sourceforge.net/projects/startup-manager/](http://sourceforge.net/projects/startup-manager/) || [startupmanager](https://aur.archlinux.org/packages/startupmanager/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/startup-manager/](http://sourceforge.net/projects/startup-manager/) || [startupmanager](https://aur.archlinux.org/packages/startupmanager/)
 
 ## Visual configuration
 
@@ -71,7 +71,7 @@ If this method does not work for you, the deprecated `vga=` method will still wo
 
 ### 915resolution hack
 
-Some times for Intel graphic adapters neither `# hwinfo --framebuffer` nor `vbeinfo` will show you the desired resolution. In this case you can use `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)<sup><small>AUR</small></sup>
+Some times for Intel graphic adapters neither `# hwinfo --framebuffer` nor `vbeinfo` will show you the desired resolution. In this case you can use `915resolution` hack. This hack will temporarily modify video BIOS and add needed resolution. See [915resolution's home page](http://915resolution.mango-lang.org/). The package can be found here: [915resolution](https://aur.archlinux.org/packages/915resolution/)
 
 First you need to find a video mode which will be modified later. For that we need the GRUB command shell:
 

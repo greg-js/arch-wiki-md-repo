@@ -79,8 +79,8 @@ Recommended Japanese fonts are as follows.
 
 If you want to show [2channel Shift JIS art](http://en.wikipedia.org/wiki/2channel_Shift_JIS_art) properly, use one of the following fonts:
 
-*   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-ipa-mona)]</sup>)
-*   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/)<sup><small>AUR</small></sup>)
+*   ipamona font (AUR: [ttf-ipa-mona](https://aur.archlinux.org/packages/ttf-ipa-mona/))
+*   Monapo font (AUR: [ttf-monapo](https://aur.archlinux.org/packages/ttf-monapo/))
 
 ### uim
 
@@ -141,7 +141,7 @@ Modified Anthy consists two different upstreams:
 
 ##### Compiling modified Anthy using PKGBUILD
 
-Modified Anthy is available on AUR named [anthy-ut](https://aur.archlinux.org/packages/anthy-ut/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/anthy-ut)]</sup>.
+Modified Anthy is available on AUR named [anthy-ut](https://aur.archlinux.org/packages/anthy-ut/).
 
 Get anthy-ut tarball and makepkg to make and install package:
 
@@ -167,7 +167,7 @@ $ anthy-agent --update-base-record
 
 #### Anthy Kaomoji
 
-[Anthy Kaomoji](http://sourceforge.jp/projects/anthy/) is a modified version of Anthy that converts Hiragana text to Kana Kanji mixed text and has emoticon (顔文字) and 2ch dictionaries. It can be found in the AUR ([anthy-kaomoji](https://aur.archlinux.org/packages/anthy-kaomoji/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/anthy-kaomoji)]</sup>).
+[Anthy Kaomoji](http://sourceforge.jp/projects/anthy/) is a modified version of Anthy that converts Hiragana text to Kana Kanji mixed text and has emoticon (顔文字) and 2ch dictionaries. It can be found in the AUR ([anthy-kaomoji](https://aur.archlinux.org/packages/anthy-kaomoji/)).
 
 #### Mozc
 
@@ -175,11 +175,11 @@ _See [Mozc](/index.php/Mozc "Mozc")._
 
 [Mozc](http://code.google.com/p/mozc/) is a Japanese Input Method Editor (IME) designed for multi-platform such as Chromium OS, Windows, Mac and Linux which originates from [Google Japanese Input](http://www.google.com/intl/ja/ime/).
 
-Though [Mozc](https://aur.archlinux.org/packages/Mozc/)<sup><small>AUR</small></sup> adapts to only ibus input method framework, [macuim](http://code.google.com/p/macuim/) provides uim-mozc plugin.
+Though [Mozc](https://aur.archlinux.org/packages/Mozc/) adapts to only ibus input method framework, [macuim](http://code.google.com/p/macuim/) provides uim-mozc plugin.
 
 ##### Mozc (Vanilla)
 
-[uim-mozc](https://aur.archlinux.org/packages/uim-mozc/)<sup><small>AUR</small></sup> is available on AUR.
+[uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) is available on AUR.
 
 **Note:** This does not support kill_line feature of uim-mozc.
 
@@ -217,9 +217,9 @@ Or, specify package names directly. For example:
 
 ##### mozc-ut and mozc-svn
 
-[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/)<sup><small>AUR</small></sup> and [mozc-svn](https://aur.archlinux.org/packages/mozc-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mozc-svn)]</sup> can be built uim-mozc.
+[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) and [mozc-svn](https://aur.archlinux.org/packages/mozc-svn/) can be built uim-mozc.
 
-**Note:** mozc-ut can work with [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/)<sup><small>AUR</small></sup>.
+**Note:** mozc-ut can work with [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/).
 
 To build uim-mozc, edit PKGBUILD like follow, i,e. uncomment `_uim_mozc=` line:
 

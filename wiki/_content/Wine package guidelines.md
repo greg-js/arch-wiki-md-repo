@@ -133,7 +133,7 @@ As example, [Î¼Torrent](https://en.wikipedia.org/wiki/%CE%BCTorrent "wikipedia:Î
 
 You can consider using the [UnionFsFuse](http://podgorny.cz/moin/UnionFsFuse) program available in the [official repositories](/index.php/Official_repositories "Official repositories") as [unionfs-fuse](https://www.archlinux.org/packages/?name=unionfs-fuse)). UnionFsFuse allows to keep the base directory in `/usr/share` and put a copy of the files the application needed to write inside `$HOME/.programname` almost automatically.
 
-Using UnionFsFuse means an additional dependency and it requires the fuse module that not all users might load. Yet, it might be worthwhile if the application would need lots of symlinking or if it is unclear exactly what it needs to be written. Just ensure to mount and unmount the UnionFs correctly. Among others, the [GeneRally](https://aur.archlinux.org/packages/GeneRally/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/generally)]</sup> package uses this approach.
+Using UnionFsFuse means an additional dependency and it requires the fuse module that not all users might load. Yet, it might be worthwhile if the application would need lots of symlinking or if it is unclear exactly what it needs to be written. Just ensure to mount and unmount the UnionFs correctly. Among others, the [GeneRally](https://aur.archlinux.org/packages/GeneRally/) package uses this approach.
 
 ## One example
 

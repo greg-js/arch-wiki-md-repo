@@ -93,7 +93,7 @@ If you wish to use Jinzora's streaming functionality, simply go back to your web
 
 ## Troubleshooting
 
-*   If you cannot get any sound despite all of the above, try testing mpd with another GUI client (Glurp is a nice simple one located in the [glurp](https://www.archlinux.org/packages/?name=glurp)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> package. Add a track to its playlist and try to play it). If you have no sound in this either, you need to further edit `/etc/mpd.conf`. Try uncommenting some of the ALSA settings in this file (assuming you use ALSA).
+*   If you cannot get any sound despite all of the above, try testing mpd with another GUI client (Glurp is a nice simple one located in the [glurp](https://www.archlinux.org/packages/?name=glurp) package. Add a track to its playlist and try to play it). If you have no sound in this either, you need to further edit `/etc/mpd.conf`. Try uncommenting some of the ALSA settings in this file (assuming you use ALSA).
 
 *   If you know that MPD _is_ working, then try to match up the settings in Jinzora as closely to those in `/etc/mpd.conf` as possible (the settings in Jinzora are accessed from the 4th small green button on the upper left of the 'Slick' interface).
 

@@ -24,10 +24,10 @@ The IP/Hostnames/DNS we will be using are as follows:
 
 ## Installation
 
-*   [ha-glue](https://aur.archlinux.org/packages/ha-glue/)<sup><small>AUR</small></sup>
-*   [ha-heartbeat](https://aur.archlinux.org/packages/ha-heartbeat/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ha-heartbeat)]</sup>
-*   [ha-pacemaker](https://aur.archlinux.org/packages/ha-pacemaker/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ha-pacemaker)]</sup>
-*   [ha-resourceagent](https://aur.archlinux.org/packages/ha-resourceagent/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ha-resourceagent)]</sup>
+*   [ha-glue](https://aur.archlinux.org/packages/ha-glue/)
+*   [ha-heartbeat](https://aur.archlinux.org/packages/ha-heartbeat/)
+*   [ha-pacemaker](https://aur.archlinux.org/packages/ha-pacemaker/)
+*   [ha-resourceagent](https://aur.archlinux.org/packages/ha-resourceagent/)
 *   [inetutils](https://www.archlinux.org/packages/?name=inetutils)
 *   [net-tools](https://www.archlinux.org/packages/?name=net-tools)
 

@@ -216,7 +216,7 @@ and then run `xmodmap ~/.Xmodmap`. Place that command in the `~/.bashrc` file to
 
 ## PrintScreen and SysRq
 
-Apple Keyboards have an `F13` key instead of a `PrintScreen`/`SysRq` key. This means that [Alt+SysRq sequences](/index.php/Keyboard_shortcuts#Kernel "Keyboard shortcuts") do not work, and application actions associated with `PrintScreen` (such as taking screenshots in many games that work under [Wine](/index.php/Wine "Wine")) do not work. Both issues can be addressed by installing [keyfuzz](https://aur.archlinux.org/packages/keyfuzz/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Apple Keyboards have an `F13` key instead of a `PrintScreen`/`SysRq` key. This means that [Alt+SysRq sequences](/index.php/Keyboard_shortcuts#Kernel "Keyboard shortcuts") do not work, and application actions associated with `PrintScreen` (such as taking screenshots in many games that work under [Wine](/index.php/Wine "Wine")) do not work. Both issues can be addressed by installing [keyfuzz](https://aur.archlinux.org/packages/keyfuzz/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 With keyfuzz installed, run the following command:
 
@@ -225,13 +225,13 @@ echo "458856 99" | /usr/sbin/keyfuzz -s -d /dev/input/by-id/usb-Apple__Inc_Apple
 
 ```
 
-458856 (0x070068) is the scancode of `F13`, and 99 is the keycode of `PrintScreen`/`SysRq`. You can determine the scancode of a particular key with [getscancodes](https://aur.archlinux.org/packages/getscancodes/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/getscancodes)]</sup> from the [AUR](/index.php/AUR "AUR"), and the keycode from `/usr/include/linux/input.h`.
+458856 (0x070068) is the scancode of `F13`, and 99 is the keycode of `PrintScreen`/`SysRq`. You can determine the scancode of a particular key with [getscancodes](https://aur.archlinux.org/packages/getscancodes/) from the [AUR](/index.php/AUR "AUR"), and the keycode from `/usr/include/linux/input.h`.
 
 Other versions of the Apple Aluminum Keyboard may require a slightly different device path, so adjust it as needed. You can make this change permanent by putting the command in `/etc/rc.local`.
 
 ## Treating Apple Keyboards Like Regular Keyboards
 
-If you want to use your Apple keyboard like a regular US-layout keyboard, with `Alt` on the left side of `Meta`, you can use the [AUR](/index.php/AUR "AUR") package [un-apple-keyboard](https://aur.archlinux.org/packages/un-apple-keyboard/)<sup><small>AUR</small></sup>. Currently it only works for the aluminium USB model. The package does the following things:
+If you want to use your Apple keyboard like a regular US-layout keyboard, with `Alt` on the left side of `Meta`, you can use the [AUR](/index.php/AUR "AUR") package [un-apple-keyboard](https://aur.archlinux.org/packages/un-apple-keyboard/). Currently it only works for the aluminium USB model. The package does the following things:
 
 *   Adds a `/etc/modprobe.d/hid_apple.conf` file which enables the `F` keys by default, as above.
 *   Uses keyfuzz to remap `F13-15` to `PrintScreen`/`SysRq`, `Scroll Lock`, and `Pause`, respectively
@@ -266,7 +266,7 @@ Then reboot.
 
 While the original hid-apple module doesn't have an option to swap the fn and left ctrl keys, there is a patch adding this functionality to the module: [https://github.com/free5lot/hid-apple-patched](https://github.com/free5lot/hid-apple-patched).
 
-You could install this module from aur: [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/)<sup><small>AUR</small></sup>
+You could install this module from aur: [hid-apple-patched-git](https://aur.archlinux.org/packages/hid-apple-patched-git/)
 
 Once installed you can either to temporarily or permanently swap fn and left ctrl key.
 

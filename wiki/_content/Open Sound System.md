@@ -81,7 +81,7 @@ Some advantages and disadvantages compared to using the Advanced Linux Sound Arc
 
 ## Install
 
-[Install](/index.php/Install "Install") the [oss](https://aur.archlinux.org/packages/oss/)<sup><small>AUR</small></sup> package. There is also a development version of OSS available with the [oss-git](https://aur.archlinux.org/packages/oss-git/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [oss](https://aur.archlinux.org/packages/oss/) package. There is also a development version of OSS available with the [oss-git](https://aur.archlinux.org/packages/oss-git/) package.
 
 This will install the OSS, run the OSS install script (temporarily disabling the ALSA modules) and install the OSS kernel modules. Since ALSA is enabled by default in the boot scripts, you need to disable it so it does not conflict with OSS. You can do this by blacklisting the module:
 
@@ -248,7 +248,7 @@ Other mixers that have support for OSS:
 
 If you have problems with applications that use Gstreamer for audio, you can try removing [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) and installing the [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) package which is needed by `oss4sink` and `oss4src`.
 
-Then you have to change the GStreamer settings to output the sound to OSS instead of the default ALSA with `gstreamer-properties` (part of the [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/)<sup><small>AUR</small></sup> package). After starting `gstreamer-properties`, you have to modify the fields as follows:
+Then you have to change the GStreamer settings to output the sound to OSS instead of the default ALSA with `gstreamer-properties` (part of the [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/) package). After starting `gstreamer-properties`, you have to modify the fields as follows:
 
 *   in the _Default Output_ section: if OSS is not available as a plugin, change _Plugin_ to **Custom** and _Pipeline_ to **oss4sink**.
 *   in the _Default Input_ section: if OSS is not available, change _Plugin_ to **Custom** and _Pipeline_ to **oss4src**.
@@ -399,7 +399,7 @@ See also: [MPlayer#Configuration](/index.php/MPlayer#Configuration "MPlayer").
 
 The official [skype](https://www.archlinux.org/packages/?name=skype) package includes support for PulseAudio only, since OSS and ALSA support has been dropped with version 4.3\. Due to community efforts, being able to use Skype with OSS (and without PulseAudio) is still possible though:
 
-You can install [skype_oss_wrapper-git](https://aur.archlinux.org/packages/skype_oss_wrapper-git/)<sup><small>AUR</small></sup> from AUR, which utilizes a fake libpulse.so library that mimics PulseAudio behaviour for Skype. After installing you will need to start Skype with the command: `skype_oss` - or simply start it through the created application shortcut: "Skype (OSSv4)". It does pretty well for a wrapper, although it can only work with 48KHz input and output . Should you find any misbehaviours or missing features, bug reports and patches are greatly appreciated.
+You can install [skype_oss_wrapper-git](https://aur.archlinux.org/packages/skype_oss_wrapper-git/) from AUR, which utilizes a fake libpulse.so library that mimics PulseAudio behaviour for Skype. After installing you will need to start Skype with the command: `skype_oss` - or simply start it through the created application shortcut: "Skype (OSSv4)". It does pretty well for a wrapper, although it can only work with 48KHz input and output . Should you find any misbehaviours or missing features, bug reports and patches are greatly appreciated.
 
 However it is also possible to use [pulseaudio](https://www.archlinux.org/packages/?name=pulseaudio) with module-oss:
 
@@ -433,7 +433,7 @@ See also: [ossapps](http://www.opensound.com/ossapps.html).
 
 ### Using multimedia keys with OSS
 
-An easy way to mute/unmute and increase/decrease the volume is to use the [ossvol](https://aur.archlinux.org/packages/ossvol/)<sup><small>AUR</small></sup> script, available in the [AUR](/index.php/AUR "AUR"). For more information about the script see [this article](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#ossvol) on the OSS wiki.
+An easy way to mute/unmute and increase/decrease the volume is to use the [ossvol](https://aur.archlinux.org/packages/ossvol/) script, available in the [AUR](/index.php/AUR "AUR"). For more information about the script see [this article](http://www.opensound.com/wiki/index.php/Tips_And_Tricks#ossvol) on the OSS wiki.
 
 Once you installed it, type:
 

@@ -37,7 +37,7 @@ glxgears can be installed via the [mesa-demos](https://www.archlinux.org/package
 
 ### UnixBench
 
-A unixbench package is available in the [AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux.org/packages/unixbench/)<sup><small>AUR</small></sup>. To run benchmark run _ubench_ in terminal.
+A unixbench package is available in the [AUR](/index.php/AUR "AUR"): [unixbench](https://aur.archlinux.org/packages/unixbench/). To run benchmark run _ubench_ in terminal.
 
 See also:
 
@@ -50,7 +50,7 @@ interbench is an application designed to benchmark interactivity in Linux. It is
 
 **Tip:** With careful benchmarking, different hardware can be compared.
 
-interbench is available in the [AUR](/index.php/AUR "AUR"): [interbench](https://aur.archlinux.org/packages/interbench/)<sup><small>AUR</small></sup>.
+interbench is available in the [AUR](/index.php/AUR "AUR"): [interbench](https://aur.archlinux.org/packages/interbench/).
 
 See also:
 
@@ -67,9 +67,9 @@ Various flavors of ttcp can be found in the [AUR](/index.php/AUR "AUR") (see lin
 
 See also:
 
-*   [ttcp](https://aur.archlinux.org/packages/ttcp/)<sup><small>AUR</small></sup>
-*   [nttcp](https://aur.archlinux.org/packages/nttcp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nttcp)]</sup>
-*   [nuttcp](https://aur.archlinux.org/packages/nuttcp/)<sup><small>AUR</small></sup>
+*   [ttcp](https://aur.archlinux.org/packages/ttcp/)
+*   [nttcp](https://aur.archlinux.org/packages/nttcp/)
+*   [nuttcp](https://aur.archlinux.org/packages/nuttcp/)
 
 ### iperf
 
@@ -110,10 +110,10 @@ These benchmarks can be found in the [AUR](/index.php/AUR "AUR") (see links belo
 
 See also:
 
-*   [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)<sup><small>AUR</small></sup>
-*   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)<sup><small>AUR</small></sup>
-*   [unigine-sanctuary](https://aur.archlinux.org/packages/unigine-sanctuary/)<sup><small>AUR</small></sup>
-*   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/)<sup><small>AUR</small></sup>
+*   [unigine-heaven](https://aur.archlinux.org/packages/unigine-heaven/)
+*   [unigine-tropics](https://aur.archlinux.org/packages/unigine-tropics/)
+*   [unigine-sanctuary](https://aur.archlinux.org/packages/unigine-sanctuary/)
+*   [unigine-valley](https://aur.archlinux.org/packages/unigine-valley/)
 
 ## Software suites
 
@@ -132,7 +132,7 @@ See also:
 
 IOzone is useful for performing a broad filesystem analysis of a vendor’s computer platform.
 
-This program is available in the [AUR](/index.php/AUR "AUR"): [iozone](https://aur.archlinux.org/packages/iozone/)<sup><small>AUR</small></sup>.
+This program is available in the [AUR](/index.php/AUR "AUR"): [iozone](https://aur.archlinux.org/packages/iozone/).
 
 See also BBS Article: [iozone to evaluate I/O schedulers... results NOT what you'd expect!](https://bbs.archlinux.org/viewtopic.php?pid=969463).
 
@@ -152,7 +152,7 @@ _Originally developed for automated Linux testing, support to the Phoronix Test 
 
 _The Phoronix Test Suite interfaces with OpenBenchmarking.org as a collaborative web platform for the centralized storage of test results, sharing of test profiles and results, advanced analytical features, and other functionality. Phoromatic is an enterprise component to orchestrate test execution across multiple systems with remote management capabilities._
 
-This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/)<sup><small>AUR</small></sup>.
+This suite can be [installed](/index.php/Pacman "Pacman") with the package [phoronix-test-suite](https://www.archlinux.org/packages/?name=phoronix-test-suite). There is also a developmental version available with [phoronix-test-suite-git](https://aur.archlinux.org/packages/phoronix-test-suite-git/).
 
 ### PTS Desktop Live
 
@@ -167,7 +167,7 @@ See also:
 
 ## Flash media
 
-Performance characteristics can be measured quantitatively using [iozone](https://aur.archlinux.org/packages/iozone/)<sup><small>AUR</small></sup>. _Sustained_ read and write values can, but often do not, correlate to real-world use cases of I/O heavy operations, such as unpacking and writing a number of files on a system update. A relevant metric to consider in these cases is the **random write** speed for small files.
+Performance characteristics can be measured quantitatively using [iozone](https://aur.archlinux.org/packages/iozone/). _Sustained_ read and write values can, but often do not, correlate to real-world use cases of I/O heavy operations, such as unpacking and writing a number of files on a system update. A relevant metric to consider in these cases is the **random write** speed for small files.
 
 The example invocation tests a 10M file using a 4k record size:
 

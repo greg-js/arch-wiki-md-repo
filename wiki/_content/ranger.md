@@ -29,7 +29,7 @@ Features include: vi-style key bindings, bookmarks, selections, tagging, tabs, c
 
 ## Installation
 
-[ranger](https://www.archlinux.org/packages/?name=ranger) can be [installed](/index.php/Install "Install") from the [official repositories](/index.php/Official_repositories "Official repositories"). Use [ranger-git](https://aur.archlinux.org/packages/ranger-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR") for the development version. Optional dependencies, e.g for use with file previews in `scope.sh`, are described in the ranger-git [PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=ranger-git).
+[ranger](https://www.archlinux.org/packages/?name=ranger) can be [installed](/index.php/Install "Install") from the [official repositories](/index.php/Official_repositories "Official repositories"). Use [ranger-git](https://aur.archlinux.org/packages/ranger-git/) in the [AUR](/index.php/AUR "AUR") for the development version. Optional dependencies, e.g for use with file previews in `scope.sh`, are described in the ranger-git [PKGBUILD](https://aur.archlinux.org/cgit/aur.git/tree/PKGBUILD?h=ranger-git).
 
 ## Usage
 

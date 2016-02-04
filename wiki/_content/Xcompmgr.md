@@ -43,11 +43,11 @@ There are some forks available, with various bugfixes:
 
 *   **xcompmgr-dana** — One of the first forks of Xcompmgr.
 
-	[http://oliwer.net/xcompmgr-dana/](http://oliwer.net/xcompmgr-dana/) || [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcompmgr-dana)]</sup>
+	[http://oliwer.net/xcompmgr-dana/](http://oliwer.net/xcompmgr-dana/) || [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)
 
 *   **[Compton](/index.php/Compton "Compton")** — A fork of Xcompmgr that contains most of the previous fixes as well as many others.
 
-	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton-git](https://aur.archlinux.org/packages/compton-git/)<sup><small>AUR</small></sup>
+	[https://github.com/chjj/compton](https://github.com/chjj/compton) || [compton-git](https://aur.archlinux.org/packages/compton-git/)
 
 ## Configuration
 
@@ -177,7 +177,7 @@ export XLIB_SKIP_ARGB_VISUALS=1
 
 ### Background turns light gray briefly after logging in (e.g. in Openbox)
 
-This is fixed by installing [hsetroot](https://aur.archlinux.org/packages/hsetroot/)<sup><small>AUR</small></sup> and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of _#000000_) before `xcompmgr`.
+This is fixed by installing [hsetroot](https://aur.archlinux.org/packages/hsetroot/) and setting the background color by executing `hsetroot -solid "#000000"` (just type the code of the color you want instead of _#000000_) before `xcompmgr`.
 
 ### BadPicture request in awesome
 
@@ -196,7 +196,7 @@ just install [feh](/index.php/Feh "Feh") and restart [awesome](/index.php/Awesom
 
 When using an external monitor, you may encounter problems when automatically changing display resolutions: a part of the screen becomes "stuck" and no longer updates itself. This problem occurs because of the initial resolution change (happening before Xcompmgr starts) as well as [awesome](/index.php/Awesome "Awesome") setting the background via [feh](/index.php/Feh "Feh").
 
-To fix it, you need to install [hsetroot](https://aur.archlinux.org/packages/hsetroot/)<sup><small>AUR</small></sup>, from the [official repositories](/index.php/Official_repositories "Official repositories"), and put the following line in `.xinitrc`, just before `xcompmgr`:
+To fix it, you need to install [hsetroot](https://aur.archlinux.org/packages/hsetroot/), from the [official repositories](/index.php/Official_repositories "Official repositories"), and put the following line in `.xinitrc`, just before `xcompmgr`:
 
 ```
 hsetroot -solid "#000066"

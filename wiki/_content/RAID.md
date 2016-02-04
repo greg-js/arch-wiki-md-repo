@@ -421,7 +421,7 @@ When the scrub is complete, admins may check how many blocks (if any) have been 
 
 **Note:** Users may alternatively echo **repair** to /sys/block/md0/md/sync_action but this is ill-advised since if a mismatch in the data is encountered, it would be automatically updated to be consistent. The danger is that we really don't know whether it's the parity or the data block that's correct (or which data block in case of RAID1). It's luck-of-the-draw whether or not the operation gets the right data instead of the bad data.
 
-It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/)<sup><small>AUR</small></sup> which can assist with this.
+It is a good idea to set up a cron job as root to schedule a periodic scrub. See [raid-check](https://aur.archlinux.org/packages/raid-check/) which can assist with this.
 
 #### RAID1 and RAID10 Notes on Scrubbing
 
@@ -604,7 +604,7 @@ The _iostat_ utility from [sysstat](https://www.archlinux.org/packages/?name=sys
 
 ### Mailing on events
 
-A smtp mail server (sendmail) or at least an email forwarder (ssmtp/msmtp) is required to accomplish this. Perhaps the most simplistic solution is to use [dma](https://aur.archlinux.org/packages/dma/)<sup><small>AUR</small></sup> which is very tiny (installs to 0.08 MiB) and requires no setup.
+A smtp mail server (sendmail) or at least an email forwarder (ssmtp/msmtp) is required to accomplish this. Perhaps the most simplistic solution is to use [dma](https://aur.archlinux.org/packages/dma/) which is very tiny (installs to 0.08 MiB) and requires no setup.
 
 Edit `/etc/mdadm.conf` defining the email address to which notifications will be received.
 
@@ -710,7 +710,7 @@ You also might want to update your configuration (see: [#Update configuration fi
 
 There are several tools for benchmarking a RAID. The most notable improvement is the speed increase when multiple threads are reading from the same RAID volume.
 
-[tiobench](https://aur.archlinux.org/packages/tiobench/)<sup><small>AUR</small></sup> specifically benchmarks these performance improvements by measuring fully-threaded I/O on the disk.
+[tiobench](https://aur.archlinux.org/packages/tiobench/) specifically benchmarks these performance improvements by measuring fully-threaded I/O on the disk.
 
 [bonnie++](https://www.archlinux.org/packages/?name=bonnie%2B%2B) tests database type access to one or more files, and creation, reading, and deleting of small files which can simulate the usage of programs such as Squid, INN, or Maildir format e-mail. The enclosed [ZCAV](http://www.coker.com.au/bonnie++/zcav/) program tests the performance of different zones of a hard drive without writing any data to the disk.
 

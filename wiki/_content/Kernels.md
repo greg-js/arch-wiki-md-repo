@@ -51,23 +51,23 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 ### AUR packages
 
-	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)<sup><small>AUR</small></sup>
+	[linux-aufs_friendly](https://aur.archlinux.org/packages/linux-aufs_friendly/)
 
 	The aufs-compatible linux kernel and modules, useful when using [docker](/index.php/Docker "Docker").
 
-	[linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-apparmor)]</sup>
+	[linux-apparmor](https://aur.archlinux.org/packages/linux-apparmor/)
 
 	Linux kernel with [AppArmor](/index.php/AppArmor "AppArmor") capabilities enabled.
 
-	[linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-bfs)]</sup>
+	[linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)
 
 	Linux kernel and modules with the [Brain Fuck Scheduler](https://en.wikipedia.org/wiki/Brain_Fuck_Scheduler "wikipedia:Brain Fuck Scheduler") (BFS) - created by Con Kolivas for desktop computers with fewer than 4096 cores, with BFQ I/O scheduler as optional.
 
-	[linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-chromebook)]</sup>
+	[linux-chromebook](https://aur.archlinux.org/packages/linux-chromebook/)
 
 	The Linux kernel with patches added to support chromebook hardware.
 
-	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup>
+	[linux-ck](https://aur.archlinux.org/packages/linux-ck/)
 
 	Linux Kernel built with Con Kolivas' ck1 patchset.
 
@@ -77,67 +77,67 @@ There are various alternative kernels available for Arch Linux in addition to th
 
 	For further information and installation instructions, please read the [linux-ck](/index.php/Linux-ck "Linux-ck") main article.
 
-	[linux-eee-ck](https://aur.archlinux.org/packages/linux-eee-ck/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-eee-ck)]</sup>
+	[linux-eee-ck](https://aur.archlinux.org/packages/linux-eee-ck/)
 
 	The Linux Kernel and modules for the Asus Eee PC 701, built with Con Kolivas' ck1 patchset.
 
-	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)<sup><small>AUR</small></sup>
+	[linux-fbcondecor](https://aur.archlinux.org/packages/linux-fbcondecor/)
 
 	The Linux Kernel and modules with [fbcondecor support](/index.php/Fbsplash "Fbsplash").
 
-	[linux-git](https://aur.archlinux.org/packages/linux-git/)<sup><small>AUR</small></sup>
+	[linux-git](https://aur.archlinux.org/packages/linux-git/)
 
 	Linux kernel and modules built using sources from [Linus Torvalds' Git repository](https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git).
 
-	[linux-ice](https://aur.archlinux.org/packages/linux-ice/)<sup><small>AUR</small></sup>
+	[linux-ice](https://aur.archlinux.org/packages/linux-ice/)
 
 	The Linux Kernel and modules with gentoo-sources patchset and [TuxOnIce](/index.php/TuxOnIce "TuxOnIce") support.
 
-	[linux-libre](https://aur.archlinux.org/packages/linux-libre/)<sup><small>AUR</small></sup>, [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/)<sup><small>AUR</small></sup>, [linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/)<sup><small>AUR</small></sup>, [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/)<sup><small>AUR</small></sup>, [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)<sup><small>AUR</small></sup>
+	[linux-libre](https://aur.archlinux.org/packages/linux-libre/), [linux-libre-lts](https://aur.archlinux.org/packages/linux-libre-lts/), [linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/), [linux-libre-rt](https://aur.archlinux.org/packages/linux-libre-rt/), [linux-libre-xen](https://aur.archlinux.org/packages/linux-libre-xen/)
 
 	The Linux Kernels without "binary blobs".
 
-	[linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)<sup><small>AUR</small></sup>
+	[linux-lqx](https://aur.archlinux.org/packages/linux-lqx/)
 
 	[Liquorix](http://liquorix.net) is a distro kernel replacement built using a Debian-targeted configuration and the ZEN kernel sources. Designed for desktop, multimedia, and gaming workloads, it is often used as a Debian Linux performance replacement kernel. Damentz, the maintainer of the Liquorix patchset, is a developer for the ZEN patchset as well.
 
-	[linux-lts34](https://aur.archlinux.org/packages/linux-lts34/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-lts34)]</sup>
+	[linux-lts34](https://aur.archlinux.org/packages/linux-lts34/)
 
 	The Linux 3.4 Long-Term Support Kernel and modules.
 
-	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)<sup><small>AUR</small></sup>
+	[linux-lts310](https://aur.archlinux.org/packages/linux-lts310/)
 
 	The Linux 3.10 Long-Term Support Kernel and modules.
 
-	[linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)<sup><small>AUR</small></sup>
+	[linux-lts312](https://aur.archlinux.org/packages/linux-lts312/)
 
 	The Linux 3.12 Long-Term Support Kernel and modules.
 
-	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)<sup><small>AUR</small></sup>
+	[linux-mainline](https://aur.archlinux.org/packages/linux-mainline/)
 
 	The Mainline Linux Kernel and modules.
 
-	[linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)<sup><small>AUR</small></sup>
+	[linux-mptcp](https://aur.archlinux.org/packages/linux-mptcp/)
 
 	The Linux Kernel and modules with [Multipath TCP](http://multipath-tcp.org/) support.
 
-	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kernel-netbook)]</sup>
+	[kernel-netbook](https://aur.archlinux.org/packages/kernel-netbook/)
 
-	Static kernel for netbooks with Intel Atom N270/N280/N450/N550 such as the Eee PC with the add-on of external firmware ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>) and patchset (BFS + TuxOnIce + BFQ optional) - Only Intel GPU
+	Static kernel for netbooks with Intel Atom N270/N280/N450/N550 such as the Eee PC with the add-on of external firmware ([broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)) and patchset (BFS + TuxOnIce + BFQ optional) - Only Intel GPU
 
-	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)<sup><small>AUR</small></sup>
+	[linux-pax](https://aur.archlinux.org/packages/linux-pax/)
 
 	The Linux Kernel and modules with [PaX](/index.php/PaX "PaX") patches for increased security.
 
-	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup>
+	[linux-pf](https://aur.archlinux.org/packages/linux-pf/)
 
 	Linux kernel and modules with the pf-kernel patch [-ck patchset (BFS included), TuxOnIce, BFQ] and aufs3.
 
-	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)<sup><small>AUR</small></sup>/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)<sup><small>AUR</small></sup>
+	[linux-tresor](https://aur.archlinux.org/packages/linux-tresor/)/[linux-lts-tresor](https://aur.archlinux.org/packages/linux-lts-tresor/)
 
 	The current/LTS Linux Kernel and modules with integrated [TRESOR](https://www1.informatik.uni-erlangen.de/tresor)
 
-	[linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup>/[linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>
+	[linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)/[linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)
 
 	The Linux kernel and a few patches written by Alex Williamson (acs override and i915) to enable the ability to do PCI Passthrough with KVM on some machines.
 
@@ -207,7 +207,7 @@ Patch releases against the mainstream Linux kernel have been discontinued. The d
 
 #### -pf
 
-[linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> is yet another Linux kernel fork which provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are TuxOnIce, the CK patchset (most notably BFS), AUFS3, LinuxIMQ, l7 filter and BFQ.
+[linux-pf](https://aur.archlinux.org/packages/linux-pf/) is yet another Linux kernel fork which provides you with a handful of awesome features not merged into mainline. It is based on neither existing Linux fork nor patchset, although some unofficial ports may be used if required patches have not been released officially. The most prominent patches of linux-pf are TuxOnIce, the CK patchset (most notably BFS), AUFS3, LinuxIMQ, l7 filter and BFQ.
 
 See [linux-pf](/index.php/Linux-pf "Linux-pf") for more information.
 

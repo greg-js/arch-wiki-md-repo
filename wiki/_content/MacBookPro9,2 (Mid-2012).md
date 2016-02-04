@@ -155,13 +155,13 @@ $ sudo make install
 
 Create `/etc/modules-load.d/b43.conf` and write `b43` to load wireless at startup.
 
-Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") and reboot. From here on in, wifi configuration should proceed normally - once it's working the wired connection may be disconnected.
+Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) from [AUR](/index.php/AUR "AUR") and reboot. From here on in, wifi configuration should proceed normally - once it's working the wired connection may be disconnected.
 
 #### wl
 
 _more to come._
 
-Download, extract, and install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR") and reboot.
+Download, extract, and install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) from [AUR](/index.php/AUR "AUR") and reboot.
 
 ### Xorg
 
@@ -193,7 +193,7 @@ To make settings permanent, just modify `/etc/X11/xorg.conf.d/10-synaptics.conf`
 
 #### Using Touchegg
 
-[touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") is an application which can recognize additional gestures. To use this you'll need to replace the synaptics driver with [xf86-input-synaptics-mtpatch](https://aur.archlinux.org/packages/xf86-input-synaptics-mtpatch/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-synaptics-mtpatch)]</sup>. See however [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1502743#p1502743).
+[touchegg](https://aur.archlinux.org/packages/touchegg/) from the [AUR](/index.php/AUR "AUR") is an application which can recognize additional gestures. To use this you'll need to replace the synaptics driver with [xf86-input-synaptics-mtpatch](https://aur.archlinux.org/packages/xf86-input-synaptics-mtpatch/). See however [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1502743#p1502743).
 
  `$(HOME)/.config/touchegg/touchegg.conf` 
 

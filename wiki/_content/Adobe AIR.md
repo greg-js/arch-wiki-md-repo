@@ -82,7 +82,7 @@ After this, you should clear the check and the binary should run normally.
 
 The app doesn't start out of the box if you are not using [GNOME](/index.php/GNOME "GNOME") or [KDE](/index.php/KDE "KDE") on a 32 bit installation.
 
-Required packages: [libgnome](https://www.archlinux.org/packages/?name=libgnome), [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring), [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) and [lib32-libgnome-keyring](https://aur.archlinux.org/packages/lib32-libgnome-keyring/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libgnome-keyring)]</sup> (only on x86_64)
+Required packages: [libgnome](https://www.archlinux.org/packages/?name=libgnome), [libgnome-keyring](https://www.archlinux.org/packages/?name=libgnome-keyring), [gnome-keyring](https://www.archlinux.org/packages/?name=gnome-keyring) and [lib32-libgnome-keyring](https://aur.archlinux.org/packages/lib32-libgnome-keyring/) (only on x86_64)
 
 Run with the command:
 

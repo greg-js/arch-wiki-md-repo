@@ -260,7 +260,7 @@ This should avoid the error: 426 - Upgrade Required when using the CUPS web inte
 
 *   **gtklp** — GTK+ interface to CUPS.
 
-	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)<sup><small>AUR</small></sup>
+	[http://gtklp.sirtobi.com/index.shtml](http://gtklp.sirtobi.com/index.shtml) || [gtklp](https://aur.archlinux.org/packages/gtklp/)
 
 If your user does not have sufficient privileges to administer the cups scheduler, system-config-printer will request the root password when it starts. To give users administrative privileges without needing root access, see [#Configuration](#Configuration).
 

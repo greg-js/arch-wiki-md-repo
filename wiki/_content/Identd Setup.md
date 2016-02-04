@@ -19,7 +19,7 @@ So you have two choices:
 
 Like most people, I prefer to run identd from from inetd instead of as a stand-alone service. For this to work you will need to install two packages: xinetd and pidentd. I tried this with oidentd but it does not seem to work with the latest xinetd.
 
-**1.** Install the [xinetd](https://www.archlinux.org/packages/?name=xinetd) and [pidentd](https://aur.archlinux.org/packages/pidentd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pidentd)]</sup> packages.
+**1.** Install the [xinetd](https://www.archlinux.org/packages/?name=xinetd) and [pidentd](https://aur.archlinux.org/packages/pidentd/) packages.
 
 **2.** Next, you will need to paste the following into a new file and save it as `/etc/xinetd.d/auth`
 
@@ -49,7 +49,7 @@ $ nmap localhost
 
 ## nullIdentdMod
 
-**1.** [Install](/index.php/Install "Install") the [nullidentdmod-git](https://aur.archlinux.org/packages/nullidentdmod-git/)<sup><small>AUR</small></sup> package.
+**1.** [Install](/index.php/Install "Install") the [nullidentdmod-git](https://aur.archlinux.org/packages/nullidentdmod-git/) package.
 
 **2.** [Enable](/index.php/Enable "Enable") `nullidentdmod.socket` on systemd.
 

@@ -38,15 +38,15 @@ Other versions include:
 
 *   **Thunderbird Beta** — Cutting edge features with relatively-good stability.
 
-	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)<sup><small>AUR</small></sup>
+	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-beta-bin](https://aur.archlinux.org/packages/thunderbird-beta-bin/)
 
 *   **Thunderbird Earlybird** — Experience the newest innovations as they're developed (equivalent to an alpha and Firefox Aurora releases).
 
-	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)<sup><small>AUR</small></sup>
+	[http://www.mozilla.org/en-US/thunderbird/channel/](http://www.mozilla.org/en-US/thunderbird/channel/) || [thunderbird-earlybird](https://aur.archlinux.org/packages/thunderbird-earlybird/)
 
 *   **Thunderbird Nightly** — Experience the newest innovations with nightly releases (for those that want to work with breakages).
 
-	[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)<sup><small>AUR</small></sup>
+	[https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/](https://ftp.mozilla.org/pub/mozilla.org/thunderbird/nightly/latest-comm-central/) || [thunderbird-nightly](https://aur.archlinux.org/packages/thunderbird-nightly/)
 
 A version overview, both past and future, can be read on the [Mozilla wiki](https://wiki.mozilla.org/Releases).
 
@@ -74,7 +74,7 @@ JavaScript is disabled for message content but not RSS news feeds. To disable Ja
 
 [EnigMail](https://www.enigmail.net) is an [extension](https://addons.mozilla.org/thunderbird/addon/enigmail/) that allows writing and receiving email signed and/or encrypted with the OpenPGP standard. It relies on the [GnuPG](/index.php/GnuPG "GnuPG").
 
-Common packages include: [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/)<sup><small>AUR</small></sup> and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/)<sup><small>AUR</small></sup>.
+Common packages include: [thunderbird-enigmail](https://aur.archlinux.org/packages/thunderbird-enigmail/) and [thunderbird-enigmail-bin](https://aur.archlinux.org/packages/thunderbird-enigmail-bin/).
 
 #### Sharing the public key
 
@@ -115,13 +115,13 @@ TorBirdy is an [extension](https://addons.mozilla.org/en-us/thunderbird/addon/to
 
 ### FireTray - Tray icon
 
-FireTray is an [extension](https://addons.mozilla.org/thunderbird/addon/firetray/) that adds a customizable system tray icon for Thunderbird. It is available in the AUR as [thunderbird-firetray](https://aur.archlinux.org/packages/thunderbird-firetray/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/thunderbird-firetray)]</sup>.
+FireTray is an [extension](https://addons.mozilla.org/thunderbird/addon/firetray/) that adds a customizable system tray icon for Thunderbird. It is available in the AUR as [thunderbird-firetray](https://aur.archlinux.org/packages/thunderbird-firetray/).
 
 ### Lightning - Calendar
 
 [Lightning](https://www.mozilla.org/projects/calendar/lightning/) is a calendar [extension](https://addons.mozilla.org/thunderbird/addon/lightning/) that brings [Sunbird](https://en.wikipedia.org/wiki/Mozilla_Sunbird "wikipedia:Mozilla Sunbird")'s functionality to Thunderbird, including CalDAV support.
 
-It is available in the AUR as [thunderbird-lightning-bin](https://aur.archlinux.org/packages/thunderbird-lightning-bin/)<sup><small>AUR</small></sup>.
+It is available in the AUR as [thunderbird-lightning-bin](https://aur.archlinux.org/packages/thunderbird-lightning-bin/).
 
 In case you are migrating a user profile (with Lightning installed there) from another platform (e.g. Windows), you may have to reinstall the Lightning addon from the mozilla addon page because Lightning is platform-dependent.
 
@@ -129,7 +129,7 @@ In case you are migrating a user profile (with Lightning installed there) from a
 
 [SOGo Connector](http://www.sogo.nu/english/downloads/frontends.html) allows to sync addressbooks via CardDAV.
 
-It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archlinux.org/packages/thunderbird-sogo-connector-bin/)<sup><small>AUR</small></sup>.
+It is available in the AUR as [thunderbird-sogo-connector-bin](https://aur.archlinux.org/packages/thunderbird-sogo-connector-bin/).
 
 ### Cardbook (CardDAV)
 

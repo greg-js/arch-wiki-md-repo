@@ -1,10 +1,10 @@
 # TrueCrypt
 
-**Warning:** As of May 2014, development on TrueCrypt is discontinued and [will no longer receive updates and fixes](http://truecrypt.sourceforge.net/). Consider alternatives such as [dm-crypt](/index.php/Dm-crypt "Dm-crypt") or [tcplay](/index.php/Tcplay "Tcplay"). However, a [Truecrypt fork](http://truecrypt.ch/) seems to be in the works. See also [[1]](https://www.grc.com/misc/truecrypt/truecrypt.htm) for an overview of the situation. Another TrueCrypt fork, [VeraCrypt](http://veracrypt.codeplex.com/), is in active development: it is available as [veracrypt](https://aur.archlinux.org/packages/veracrypt/)<sup><small>AUR</small></sup>; note that VeraCrypt storage format is now compatible with TrueCrypt storage format since version 1.0f.
+**Warning:** As of May 2014, development on TrueCrypt is discontinued and [will no longer receive updates and fixes](http://truecrypt.sourceforge.net/). Consider alternatives such as [dm-crypt](/index.php/Dm-crypt "Dm-crypt") or [tcplay](/index.php/Tcplay "Tcplay"). However, a [Truecrypt fork](http://truecrypt.ch/) seems to be in the works. See also [[1]](https://www.grc.com/misc/truecrypt/truecrypt.htm) for an overview of the situation. Another TrueCrypt fork, [VeraCrypt](http://veracrypt.codeplex.com/), is in active development: it is available as [veracrypt](https://aur.archlinux.org/packages/veracrypt/); note that VeraCrypt storage format is now compatible with TrueCrypt storage format since version 1.0f.
 
 **Warning:** On 2015/09/26 two critical security issues has been found in **Windows** version of TrueCrypt: CVE-2015-7358 and CVE-2015-7359\. Take this into account if you're planning to use this software to share encrypted volumes between Windows and ArchLinux. More information: [1](https://veracrypt.codeplex.com/SourceControl/changeset/cf4794372e5dea753b6310f1ca6912c6bfa86d45)[2](http://www.theregister.co.uk/2015/09/29/google_flaks_find_admin_elevation_holes_that_gave_truecrypt_audit_the_slip/)
 
-**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://aur.archlinux.org/packages/veracrypt/)<sup><small>AUR</small></sup> 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to _truecrypt_ 1:7.1a-2 works around the problem.
+**Note:** [truecrypt](https://www.archlinux.org/packages/?name=truecrypt) 1:7.1a-3 and [veracrypt](https://aur.archlinux.org/packages/veracrypt/) 1.16-5 cannot mount volumes since the [C++ ABI change](https://www.archlinux.org/news/c-abi-change/) on 2015-12-10, see [FS#47325](https://bugs.archlinux.org/task/47325) and the [forum thread](https://bbs.archlinux.org/viewtopic.php?id=206047). [Downgrading](/index.php/Downgrading "Downgrading") to _truecrypt_ 1:7.1a-2 works around the problem.
 
 TrueCrypt is a free open source on-the-fly encryption (OTFE) program. Some of its features are:
 
@@ -404,7 +404,7 @@ Finally, add the device to fstab somewhat like this:
 
 ```
 
-**Tip:** This script is also provided by the [truecrypt-mount](https://aur.archlinux.org/packages/truecrypt-mount/)<sup><small>AUR</small></sup> package.
+**Tip:** This script is also provided by the [truecrypt-mount](https://aur.archlinux.org/packages/truecrypt-mount/) package.
 
 ## Mount volumes as a normal user
 

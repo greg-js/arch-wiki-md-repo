@@ -26,7 +26,7 @@ For more information, see other pages:
 
 ## Wireless
 
-The card is a RaLink RT2860\. The driver is not in kernel yet (current is 2.6.28), so you need to compile it yourself from AUR: [rt2860](https://aur.archlinux.org/packages/rt2860/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rt2860)]</sup>.
+The card is a RaLink RT2860\. The driver is not in kernel yet (current is 2.6.28), so you need to compile it yourself from AUR: [rt2860](https://aur.archlinux.org/packages/rt2860/).
 
 Wireless connection has been tested by me (big_gie) and works with netcfg (2.1.2-1), wicd (1.5.6-1) and [Networkmanager 0.7](/index.php/Networkmanager_0.7 "Networkmanager 0.7")(0.7.0-1) with unencrypted and WPA. Note that with my router (Dlink DIR-615) I had to disable completely WPA2 and AES. So I need to use exclusively WPA with TKIP.
 
@@ -92,7 +92,7 @@ See [Touchpad Synaptics](/index.php/Touchpad_Synaptics "Touchpad Synaptics").
 
 Be sure to load the kernel module "eeepc_laptop" to get acpi events. The 1000 does not send the same events as the 901.
 
-I (big_gie) created a new acpi package to support the 1000 acpi events: [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup>.
+I (big_gie) created a new acpi package to support the 1000 acpi events: [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/).
 
 If you look up "eee" on AUR, you will find a dozen or so packages. I inspired myself from them to create a generic one. It only support the 1000 for the moment, but it should only be a matter of copying the file "acpi-eeepc-1000-events.conf" to "acpi-eeepc-901-events.conf" for example to support a new model.
 

@@ -4,7 +4,7 @@
 
 ## Installation
 
-You can install [chruby](https://aur.archlinux.org/packages/chruby/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+You can install [chruby](https://aur.archlinux.org/packages/chruby/) from the [AUR](/index.php/AUR "AUR").
 
 ## External links
 

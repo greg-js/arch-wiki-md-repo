@@ -60,7 +60,7 @@ If your NUC has become bricked, it might be possible to restore it by momentaril
 
 ### TPM
 
-NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a bug [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181) in `tpm_crb`. A fix should be available in the 4.4.x kernel.
+NUC devices have [TPM](/index.php/TPM "TPM") capabilites that are currently blocked due to a bug [[4]](https://bugzilla.kernel.org/show_bug.cgi?id=98181) in `tpm_crb`. Patches are expected to land in 4.5.x Linux kernel.
 
 ### Poweroff
 
@@ -72,4 +72,4 @@ The workaround for this issue is to disable all wake-on-CIR (infrared sensor) op
 
 *   [Official Intel NUC Support Community](https://communities.intel.com/community/tech/nuc)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418651](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418651)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418886](https://wiki.archlinux.org/index.php?title=Intel_NUC&oldid=418886)"

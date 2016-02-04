@@ -77,7 +77,7 @@ I also added a few options which can improve speed, but commented it out. You ma
 
 ### Installation
 
-A framebuffer driver called tridentfb is included in the kernel source, but not include in the default Arch Linux kernel package. You could recompile the kernel with tridentfb enabled, but much easier is installing the [tridentfb](https://aur.archlinux.org/packages/tridentfb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tridentfb)]</sup> package from the [AUR](/index.php/AUR "AUR").
+A framebuffer driver called tridentfb is included in the kernel source, but not include in the default Arch Linux kernel package. You could recompile the kernel with tridentfb enabled, but much easier is installing the [tridentfb](https://aur.archlinux.org/packages/tridentfb/) package from the [AUR](/index.php/AUR "AUR").
 
 ### Configuration
 

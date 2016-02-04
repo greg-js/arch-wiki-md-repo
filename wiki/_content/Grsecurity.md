@@ -30,9 +30,9 @@
 
 The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package in the [official repositories](/index.php/Official_repositories "Official repositories") provides the grsecurity hardened kernel. In most cases, grsecurity is a drop-in replacement for the vanilla kernel and will not cause any issues. By default, many of the user-facing features are disabled, but there is significant hardening of the kernel itself against exploitation.
 
-**Note:** The [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-grsec-lts)]</sup> package used to provide the 3.14 stable branch but it is [no longer available](https://grsecurity.net/announce.php).
+**Note:** The [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts) package used to provide the 3.14 stable branch but it is [no longer available](https://grsecurity.net/announce.php).
 
-After installing the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) or [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-grsec-lts)]</sup> package, you need to edit your [bootloader](/index.php/Bootloader "Bootloader") settings to load `vmlinuz-linux-grsec` and `initramfs-linux-grsec.img`.
+After installing the [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) or [linux-grsec-lts](https://www.archlinux.org/packages/?name=linux-grsec-lts) package, you need to edit your [bootloader](/index.php/Bootloader "Bootloader") settings to load `vmlinuz-linux-grsec` and `initramfs-linux-grsec.img`.
 
 Installing the optional [paxd](https://www.archlinux.org/packages/?name=paxd) package causes the PaX exploit mitigations to be enabled, protecting userspace processes. It automatically applies the necessary exceptions for packages in the repositories. See [PaX#PaX exceptions](/index.php/PaX#PaX_exceptions "PaX") for more details.
 
@@ -48,7 +48,7 @@ The /proc and /sys restrictions are unacceptable for a general purpose package d
 
 Some features like the RANDSTRUCT plugin and hiding symbol addresses are only truly useful with a custom kernel, since the pre-built kernel is available for analysis by any attacker. The [linux-grsec](https://www.archlinux.org/packages/?name=linux-grsec) package enables `CONFIG_RANDOMIZE_BASE`, but a custom build can provide unique symbol offsets in addition to the randomized base, making `CONFIG_GRKERNSEC_HIDESYM` valuable.
 
-[linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/)<sup><small>AUR</small></sup> and [linux-zen-grsec](https://aur.archlinux.org/packages/linux-zen-grsec/)<sup><small>AUR</small></sup> are also available.
+[linux-libre-grsec](https://aur.archlinux.org/packages/linux-libre-grsec/) and [linux-zen-grsec](https://aur.archlinux.org/packages/linux-zen-grsec/) are also available.
 
 ## Compatibility
 
@@ -63,11 +63,11 @@ The following incompatibilities require building a custom kernel with fewer feat
 Known incompatibilities with other packages:
 
 *   [pkgstats](https://www.archlinux.org/packages/?name=pkgstats) - tries to list the loaded modules as non-root and treats it as a fatal error when it fails
-*   [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> - fails to be compiled with [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers) due to illegal memory access
+*   [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) - fails to be compiled with [linux-grsec-headers](https://www.archlinux.org/packages/?name=linux-grsec-headers) due to illegal memory access
 
 Out-of-tree modules may require patches for compatibility with kernel hardening features like `CONFIG_PAX_SIZE_OVERFLOW`:
 
-*   the [nvidia-grsec](https://aur.archlinux.org/packages/nvidia-grsec/)<sup><small>AUR</small></sup> package in the [AUR](/index.php/AUR "AUR") patches the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver for compatibility with the `CONFIG_PAX_USERCOPY` and `CONFIG_PAX_CONSTIFY_PLUGIN` features
+*   the [nvidia-grsec](https://aur.archlinux.org/packages/nvidia-grsec/) package in the [AUR](/index.php/AUR "AUR") patches the proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") driver for compatibility with the `CONFIG_PAX_USERCOPY` and `CONFIG_PAX_CONSTIFY_PLUGIN` features
 
 ## PaX
 

@@ -44,7 +44,7 @@ For a GTK+ front-end, install [wicd-gtk](https://www.archlinux.org/packages/?nam
 
 ### KDE client
 
-For a KDE front-end, install [wicd-kde](https://aur.archlinux.org/packages/wicd-kde/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wicd-kde)]</sup>, available in the [AUR](/index.php/AUR "AUR").
+For a KDE front-end, install [wicd-kde](https://aur.archlinux.org/packages/wicd-kde/), available in the [AUR](/index.php/AUR "AUR").
 
 ### Notifications
 
@@ -54,7 +54,7 @@ If you are not using [GNOME](/index.php/GNOME "GNOME"), you may want to install 
 
 ### Alternative
 
-The [wicd-bzr](https://aur.archlinux.org/packages/wicd-bzr/)<sup><small>AUR</small></sup> buildscript is available in the [AUR](/index.php/AUR "AUR"), which should build the latest development branch. If you need an alternative version or you just want to roll your own package, you can easily build it using [ABS](/index.php/ABS "ABS").
+The [wicd-bzr](https://aur.archlinux.org/packages/wicd-bzr/) buildscript is available in the [AUR](/index.php/AUR "AUR"), which should build the latest development branch. If you need an alternative version or you just want to roll your own package, you can easily build it using [ABS](/index.php/ABS "ABS").
 
 ## Getting started
 
@@ -286,7 +286,7 @@ A solution is to remove the config files in the `/etc/wicd/` directory.
 
 ### Note about graphical sudo programs
 
-If you are receiving an error about wicd failing to find a graphical sudo program, install one of [gksu](https://www.archlinux.org/packages/?name=gksu), [ktsuss](https://aur.archlinux.org/packages/ktsuss/)<sup><small>AUR</small></sup>, or [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime), then use the relative command:
+If you are receiving an error about wicd failing to find a graphical sudo program, install one of [gksu](https://www.archlinux.org/packages/?name=gksu), [ktsuss](https://aur.archlinux.org/packages/ktsuss/), or [kdebase-runtime](https://www.archlinux.org/packages/?name=kdebase-runtime), then use the relative command:
 
 ```
 $ ktsuss wicd-client -n

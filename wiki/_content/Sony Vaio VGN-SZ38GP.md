@@ -57,7 +57,7 @@ fi
 
 For each graphic card there is a specific program that handle it, for the Intel card it is xbacklight and for Nvidia card it is smartdimmer.
 
-xbacklight is installed by default with the Intel driver so you have nothing to do, but for Nvidia you will have to install [smartdimmer](https://aur.archlinux.org/packages/smartdimmer/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/smartdimmer)]</sup> from the [AUR](/index.php/AUR "AUR"). Know we will have to configure acpi to configure the fn keys.
+xbacklight is installed by default with the Intel driver so you have nothing to do, but for Nvidia you will have to install [smartdimmer](https://aur.archlinux.org/packages/smartdimmer/) from the [AUR](/index.php/AUR "AUR"). Know we will have to configure acpi to configure the fn keys.
 
 *   Go to /etc/acpi/events and create two files sonybright-down sonybright-up.
 *   in the first one add the following line :

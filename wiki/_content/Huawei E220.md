@@ -93,7 +93,7 @@ Modem Type = Analog Modem
 
 ```
 
-For providers that do require a specific Init string and user/password combination, [mkwvconf-git](https://aur.archlinux.org/packages/mkwvconf-git/)<sup><small>AUR</small></sup> in AUR can help generate a wvdial configuration (based on the [mobile-broadband-provider-info-git](https://aur.archlinux.org/packages/mobile-broadband-provider-info-git/)<sup><small>AUR</small></sup> package).
+For providers that do require a specific Init string and user/password combination, [mkwvconf-git](https://aur.archlinux.org/packages/mkwvconf-git/) in AUR can help generate a wvdial configuration (based on the [mobile-broadband-provider-info-git](https://aur.archlinux.org/packages/mobile-broadband-provider-info-git/) package).
 
 ### If using PIN code add this before Init2
 

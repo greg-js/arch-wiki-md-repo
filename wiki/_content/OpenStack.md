@@ -24,19 +24,19 @@ OpenStack is a global collaboration of developers and cloud computing technologi
 
 ### Compute (Nova)
 
-[nova](https://aur.archlinux.org/packages/nova/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nova)]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[nova](https://aur.archlinux.org/packages/nova/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Networking (Neutron)
 
-[neutron-server](https://aur.archlinux.org/packages/neutron-server/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[neutron-server](https://aur.archlinux.org/packages/neutron-server/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Image Service (Glance)
 
-[glance](https://aur.archlinux.org/packages/glance/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/glance)]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[glance](https://aur.archlinux.org/packages/glance/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Block Storage (Cinder)
 
-[cinder-icehouse](https://aur.archlinux.org/packages/cinder-icehouse/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+[cinder-icehouse](https://aur.archlinux.org/packages/cinder-icehouse/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Object Storage (Swift)
 
@@ -44,17 +44,17 @@ Swift is not available in Arch, yet.
 
 ### Identity (Keystone)
 
-[keystone](https://aur.archlinux.org/packages/keystone/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/keystone)]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[keystone](https://aur.archlinux.org/packages/keystone/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Dashboard (Horizon)
 
-[horizon-deb](https://aur.archlinux.org/packages/horizon-deb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/horizon-deb)]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[horizon-deb](https://aur.archlinux.org/packages/horizon-deb/) is available in the [AUR](/index.php/AUR "AUR").
 
 ### Telemetry (Ceilometer)
 
 ### Orchestration (Heat)
 
-[heat-engine](https://aur.archlinux.org/packages/heat-engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> is available in the [AUR](/index.php/AUR "AUR").
+[heat-engine](https://aur.archlinux.org/packages/heat-engine/) is available in the [AUR](/index.php/AUR "AUR").
 
 ## Deploy OpenStack
 
@@ -85,7 +85,7 @@ For manual creation, the _essential_ steps are:
 *   Installing [SSH](/index.php/SSH "SSH") server
 *   Adjusting [initramfs](/index.php/Initramfs "Initramfs") creation and regenerating initramfs images
     *   Disabling the `autodetect` hook (since autodetection works differently from a chroot)
-    *   Either activating hook `growfs` from [mkinitcpio-growrootfs](https://aur.archlinux.org/packages/mkinitcpio-growrootfs/)<sup><small>AUR</small></sup> or installing `growpart` from [cloud-utils](https://aur.archlinux.org/packages/cloud-utils/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cloud-utils)]</sup> and have [cloud-init](/index.php/Cloud-init "Cloud-init") do resizing by itself
+    *   Either activating hook `growfs` from [mkinitcpio-growrootfs](https://aur.archlinux.org/packages/mkinitcpio-growrootfs/) or installing `growpart` from [cloud-utils](https://aur.archlinux.org/packages/cloud-utils/) and have [cloud-init](/index.php/Cloud-init "Cloud-init") do resizing by itself
 *   Making services start automatically (e.g. using `systemctl enable ...`)
 *   Deleting generated keys (i.e. those of the SSH server and pacman); optionally generating new ones during first boot
 *   Delete machine IDs (`/etc/machine-id` and `/var/lib/dbus/machine-id`) so that two systems are not mistaken for the same thing

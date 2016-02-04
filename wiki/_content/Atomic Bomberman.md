@@ -14,7 +14,7 @@ Atomic Bomberman is a PC game developed by Interplay and released in 1997\. It c
 
 Tested with Wine 1.3.7 successfully
 
-For network play, you need to install IPX. It can be found in aur: [ipx](https://aur.archlinux.org/packages/ipx/)<sup><small>AUR</small></sup>
+For network play, you need to install IPX. It can be found in aur: [ipx](https://aur.archlinux.org/packages/ipx/)
 
 *   After this, ipx can be added to your network card like this:
 
@@ -72,7 +72,7 @@ See also this forum thread: [wine forum: IPX works via wired network, not via wi
 
 ## References and Resources
 
-*   [AUR](/index.php/AUR "AUR") package: [ipx](https://aur.archlinux.org/packages/ipx/)<sup><small>AUR</small></sup>
+*   [AUR](/index.php/AUR "AUR") package: [ipx](https://aur.archlinux.org/packages/ipx/)
 *   [WineHQ - Atomic Bomberman 1.0](http://appdb.winehq.org/objectManager.php?sClass=version&iId=4774&iTestingId=9967)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Atomic_Bomberman&oldid=277254](https://wiki.archlinux.org/index.php?title=Atomic_Bomberman&oldid=277254)"

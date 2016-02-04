@@ -1,6 +1,6 @@
 # Compton
 
-Compton is a lightweight, standalone composite manager, suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not natively provide compositing functionality. Compton itself is a fork of [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xcompmgr-dana)]</sup>, which in turn is a fork of [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). See the [compton github page](https://github.com/chjj/compton) for further information.
+Compton is a lightweight, standalone composite manager, suitable for use with [window managers](/index.php/Window_managers "Window managers") that do not natively provide compositing functionality. Compton itself is a fork of [xcompmgr-dana](https://aur.archlinux.org/packages/xcompmgr-dana/), which in turn is a fork of [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr). See the [compton github page](https://github.com/chjj/compton) for further information.
 
 Compton in particular is notable for fixing numerous bugs found in its predecessors, and as such, is popular due to its reliability and stability. Numerous additional improvements and configuration options have also been implemented, including a faster GLX (OpenGL) backend (disabled by default), default inactive/active window opacity, window frame transparency, window background blur, window color inversion, painting rate throttling, VSync, condition-based fine-tune control, configuration file reading, and D-Bus control.
 
@@ -24,7 +24,7 @@ Compton in particular is notable for fixing numerous bugs found in its predecess
 
 ## Installation
 
-Install [compton](https://aur.archlinux.org/packages/compton/)<sup><small>AUR</small></sup> or its [git](/index.php/Git "Git") version, [compton-git](https://aur.archlinux.org/packages/compton-git/)<sup><small>AUR</small></sup>.
+Install [compton](https://aur.archlinux.org/packages/compton/) or its [git](/index.php/Git "Git") version, [compton-git](https://aur.archlinux.org/packages/compton-git/).
 
 ## Use
 
@@ -204,7 +204,7 @@ or run `compton` with the following arguments: `--shadow-exclude 'argb && _NET_W
 
 ### Unable to change the background color with xsetroot
 
-Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/)<sup><small>AUR</small></sup> to set the background color:
+Currently, compton is incompatible with `xsetroot`'s `-solid` option, a workaround is to use [hsetroot](https://aur.archlinux.org/packages/hsetroot/) to set the background color:
 
 ```
 $ hsetroot -solid '#000000'

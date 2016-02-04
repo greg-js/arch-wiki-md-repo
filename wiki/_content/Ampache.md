@@ -20,9 +20,9 @@ You need three things to run Ampache. A webserver, [PHP](/index.php/PHP "PHP") a
 
 [Install](/index.php/Install "Install") one Ampache package:
 
-*   [ampache](https://aur.archlinux.org/packages/ampache/)<sup><small>AUR</small></sup> - Stable release
+*   [ampache](https://aur.archlinux.org/packages/ampache/) - Stable release
 
-*   [ampache-git](https://aur.archlinux.org/packages/ampache-git/)<sup><small>AUR</small></sup> - Development version
+*   [ampache-git](https://aur.archlinux.org/packages/ampache-git/) - Development version
 
 ## Configuration
 

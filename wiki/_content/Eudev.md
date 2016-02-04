@@ -18,18 +18,18 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [eudev](https://aur.archlinux.org/packages/eudev/)<sup><small>AUR</small></sup> package. Alternatively, install [eudev-git](https://aur.archlinux.org/packages/eudev-git/)<sup><small>AUR</small></sup> for the development version.
+[Install](/index.php/Install "Install") the [eudev](https://aur.archlinux.org/packages/eudev/) package. Alternatively, install [eudev-git](https://aur.archlinux.org/packages/eudev-git/) for the development version.
 
-**Note:** One may not be able to install the eudev packages directly from the AUR due to conflicts when installing; to circumvent it, [eudev](https://aur.archlinux.org/packages/eudev/)<sup><small>AUR</small></sup> can be built and added to a [local repository](/index.php/Local_repository "Local repository"), and then [eudev-systemdcompat](https://aur.archlinux.org/packages/eudev-systemdcompat/)<sup><small>AUR</small></sup> can be built and installed from the AUR with `makepkg -di` (**-d** to ignore build dependencies), which pulls in eudev as package dependency.
+**Note:** One may not be able to install the eudev packages directly from the AUR due to conflicts when installing; to circumvent it, [eudev](https://aur.archlinux.org/packages/eudev/) can be built and added to a [local repository](/index.php/Local_repository "Local repository"), and then [eudev-systemdcompat](https://aur.archlinux.org/packages/eudev-systemdcompat/) can be built and installed from the AUR with `makepkg -di` (**-d** to ignore build dependencies), which pulls in eudev as package dependency.
 
 ### libsystemd
 
 This package will also remove [libsystemd](https://www.archlinux.org/packages/?name=libsystemd) as it replaces a part of it. The missing libraries are available from:
 
-*   [libsystemd-standalone](https://aur.archlinux.org/packages/libsystemd-standalone/)<sup><small>AUR</small></sup> — a package group with libraries separated into a package each.
-*   [eudev-systemdcompat](https://aur.archlinux.org/packages/eudev-systemdcompat/)<sup><small>AUR</small></sup> — a package that guts the official libsystemd package and installs the missing libraries.
+*   [libsystemd-standalone](https://aur.archlinux.org/packages/libsystemd-standalone/) — a package group with libraries separated into a package each.
+*   [eudev-systemdcompat](https://aur.archlinux.org/packages/eudev-systemdcompat/) — a package that guts the official libsystemd package and installs the missing libraries.
 
-You also probably want [systemd-dummy](https://aur.archlinux.org/packages/systemd-dummy/)<sup><small>AUR</small></sup> to satisfy the missing systemd dependency.
+You also probably want [systemd-dummy](https://aur.archlinux.org/packages/systemd-dummy/) to satisfy the missing systemd dependency.
 
 Alternatively, you may rebuild packages linked to libsystemd using [ABS](/index.php/ABS "ABS"), or install `nosystemd` variants from the [AUR](/index.php/AUR "AUR").
 
@@ -64,7 +64,7 @@ Check the init script for eudev (aliased to udev, so /etc/openrc/init.d/udev on 
 
 ### netctl
 
-netctl is not compatible due to dependency on systemd libs, instead, use [netcfg](https://aur.archlinux.org/packages/netcfg/)<sup><small>AUR</small></sup>, avaliable in the AUR.
+netctl is not compatible due to dependency on systemd libs, instead, use [netcfg](https://aur.archlinux.org/packages/netcfg/), avaliable in the AUR.
 
 ### Device naming
 

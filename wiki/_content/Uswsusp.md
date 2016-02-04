@@ -29,7 +29,7 @@
 
 ## Installation
 
-uswsusp is available in the [AUR](/index.php/AUR "AUR") under the name [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)<sup><small>AUR</small></sup>.
+uswsusp is available in the [AUR](/index.php/AUR "AUR") under the name [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
 
 ## Configuration
 

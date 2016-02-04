@@ -42,7 +42,7 @@ Some plugins are available in the [gedit-plugins](https://www.archlinux.org/pack
 
 ### Adding and making custom plugins
 
-A plugin that shows errors while you type for languages like C, C++, etc, available in the [AUR](/index.php/AUR "AUR"): [gedit-code-assistance-git](https://aur.archlinux.org/packages/gedit-code-assistance-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gedit-code-assistance-git)]</sup>.
+A plugin that shows errors while you type for languages like C, C++, etc, available in the [AUR](/index.php/AUR "AUR"): [gedit-code-assistance-git](https://aur.archlinux.org/packages/gedit-code-assistance-git/).
 
 ## See also
 

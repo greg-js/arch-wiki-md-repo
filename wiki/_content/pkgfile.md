@@ -14,7 +14,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) from the official repositories, or [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [pkgfile](https://www.archlinux.org/packages/?name=pkgfile) from the official repositories, or [pkgfile-git](https://aur.archlinux.org/packages/pkgfile-git/) from the [AUR](/index.php/AUR "AUR").
 
 The _pkgfile_ database can then be synced with:
 

@@ -43,7 +43,7 @@ In early December 2014, Opera version 26 was released, but only for 64-bit syste
 
 [Installing](/index.php/Install "Install") the [opera](https://www.archlinux.org/packages/?name=opera) package will provide the new Blink version on x86_64 systems, and the old Presto version on i686 systems.
 
-The 12.16 Presto version is also available from the [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/)<sup><small>AUR</small></sup> package for both x86_64 and i686 architectures.
+The 12.16 Presto version is also available from the [opera-legacy](https://aur.archlinux.org/packages/opera-legacy/) package for both x86_64 and i686 architectures.
 
 ## Plugins
 
@@ -51,13 +51,13 @@ For details about different plugins and installation instructions see [Browser p
 
 ### Adobe Flash
 
-Opera no longer supports the Netscape plugin API (NPAPI), so [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/)<sup><small>AUR</small></sup> should be used instead of [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). Make sure the plugin is enabled in `opera://plugins`.
+Opera no longer supports the Netscape plugin API (NPAPI), so [chromium-pepper-flash](https://aur.archlinux.org/packages/chromium-pepper-flash/) should be used instead of [flashplugin](https://www.archlinux.org/packages/?name=flashplugin). Make sure the plugin is enabled in `opera://plugins`.
 
 See [Browser plugins#Flash Player](/index.php/Browser_plugins#Flash_Player "Browser plugins") for details.
 
 ### Adblock
 
-Install Adblock support using the [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/)<sup><small>AUR</small></sup> package.
+Install Adblock support using the [opera-adblock-complete](https://aur.archlinux.org/packages/opera-adblock-complete/) package.
 
 ## Performance tweaks
 
@@ -163,11 +163,11 @@ Although Opera is cross-platform, it can be made to integrate very well into var
 
 	KDE
 
-	To make Opera use [KDE](/index.php/KDE "KDE") icons, you can install a theme such as [this one](http://my.opera.com/community/customize/skins/info/?id=8141)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-04-05]</sup>.
+	To make Opera use [KDE](/index.php/KDE "KDE") icons, you can install a theme such as [this one](http://my.opera.com/community/customize/skins/info/?id=8141).
 
 	GTK+
 
-	A nice GTK+ skin that uses the Tango icon theme can be found [here](http://my.opera.com/community/customize/skins/info/?id=3465)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-04-05]</sup>.
+	A nice GTK+ skin that uses the Tango icon theme can be found [here](http://my.opera.com/community/customize/skins/info/?id=3465).
 
 ### Title bar
 
@@ -181,14 +181,14 @@ Opera has native support for tab cascading and tiling mode. Appropriate buttons 
 
 Fonts can be configured under _Settings > Preferences... > Advanced > Fonts_.
 
-If the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> package has been installed before running Opera for the first time, Opera will use those fonts by default, regardless of what is specified by local GTK+ options, [GNOME](/index.php/GNOME "GNOME") or KDE font management. To force existing installations of Opera to use the options set by your system:
+If the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package has been installed before running Opera for the first time, Opera will use those fonts by default, regardless of what is specified by local GTK+ options, [GNOME](/index.php/GNOME "GNOME") or KDE font management. To force existing installations of Opera to use the options set by your system:
 
 *   Close all running instances of Opera.
-*   Un-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> package.
+*   Un-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package.
 *   Move the existing profile folder: `mv -i ~/.opera ~/.opera.bak`
 *   Run an instance of Opera and verify that your font manager settings have been applied.
 *   Restore bookmarks and desired filter files from `~/.opera.bak` to `~/.opera` except for the `operaprefs.ini` file.
-*   Re-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> package, if desired.
+*   Re-install the [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) package, if desired.
 
 **Note:** If no text except numbers is showing on some of the webpages that might be a problem with the fonts. A known issue that causes this problem is the _helvetica_ pfb postscript fonts.
 

@@ -32,7 +32,7 @@ Depending on your chipset, you might also need to load one of the following:
 
 ## Usage
 
-TPM is managed by `tcsd`, a userspace daemon that manages Trusted Computing resources and should be (according to the TSS spec) the only portal to the TPM device driver. `tcsd` is part of the [trousers](https://aur.archlinux.org/packages/trousers/)<sup><small>AUR</small></sup> AUR package, which was created and released by IBM, and can be configured via `/etc/tcsd.conf`.
+TPM is managed by `tcsd`, a userspace daemon that manages Trusted Computing resources and should be (according to the TSS spec) the only portal to the TPM device driver. `tcsd` is part of the [trousers](https://aur.archlinux.org/packages/trousers/) AUR package, which was created and released by IBM, and can be configured via `/etc/tcsd.conf`.
 
 To start tcsd and watch the output, run:
 
@@ -43,25 +43,25 @@ To start tcsd and watch the output, run:
 
 or simply start and enable `tcsd.service`.
 
-Once `tcsd` is running you might also want to install [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/)<sup><small>AUR</small></sup> which provides many of the command line tools for managing the TPM.
+Once `tcsd` is running you might also want to install [tpm-tools](https://aur.archlinux.org/packages/tpm-tools/) which provides many of the command line tools for managing the TPM.
 
 Some other tools of interest:
 
 *   **tpmmanager** — A Qt front-end to tpm-tools
 
-	[http://sourceforge.net/projects/tpmmanager](http://sourceforge.net/projects/tpmmanager) || [tpmmanager](https://aur.archlinux.org/packages/tpmmanager/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/tpmmanager](http://sourceforge.net/projects/tpmmanager) || [tpmmanager](https://aur.archlinux.org/packages/tpmmanager/)
 
 *   **openssl_tpm_engine** — OpenSSL engine which interfaces with the TSS API
 
-	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [openssl_tpm_engine](https://aur.archlinux.org/packages/openssl_tpm_engine/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/openssl_tpm_engine)]</sup>
+	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [openssl_tpm_engine](https://aur.archlinux.org/packages/openssl_tpm_engine/)
 
 *   **tpm_keyring2** — A key manager for TPM based eCryptfs keys
 
-	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [tpm_keyring2](https://aur.archlinux.org/packages/tpm_keyring2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpm_keyring2)]</sup>
+	[http://sourceforge.net/projects/trousers](http://sourceforge.net/projects/trousers) || [tpm_keyring2](https://aur.archlinux.org/packages/tpm_keyring2/)
 
 *   **opencryptoki** — A PKCS#11 implementation for Linux. It includes drivers and libraries to enable IBM cryptographic hardware as well as a software token for testing.
 
-	[http://sourceforge.net/projects/opencryptoki](http://sourceforge.net/projects/opencryptoki) || [opencryptoki](https://aur.archlinux.org/packages/opencryptoki/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/opencryptoki](http://sourceforge.net/projects/opencryptoki) || [opencryptoki](https://aur.archlinux.org/packages/opencryptoki/)
 
 ### Basics
 
@@ -83,7 +83,7 @@ $ tpm_selftest -l info
 
 ### Securing SSH Keys
 
-There are several methods to use TPM to secure keys, but here we show a simple method based on [simple-tpm-pk11-git](https://aur.archlinux.org/packages/simple-tpm-pk11-git/)<sup><small>AUR</small></sup>.
+There are several methods to use TPM to secure keys, but here we show a simple method based on [simple-tpm-pk11-git](https://aur.archlinux.org/packages/simple-tpm-pk11-git/).
 
 First, create a new directory and generate the key:
 

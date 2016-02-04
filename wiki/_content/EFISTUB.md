@@ -73,7 +73,7 @@ ExecStart=/usr/bin/cp -f /boot/initramfs-linux-fallback.img $esp/EFI/arch/initra
 
 ```
 
-**Tip:** For secure boot (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)<sup><small>AUR</small></sup>): `ExecStart=/usr/bin/sbsign --key <PATH TO DB.key> --cert <PATH TO DB.crt> --output $esp/EFI/arch/vmlinuz-linux $esp/EFI/arch/vmlinuz_linux` 
+**Tip:** For secure boot (with your own keys), you can set up the service to also sign the image (using [sbsigntools](https://aur.archlinux.org/packages/sbsigntools/)): `ExecStart=/usr/bin/sbsign --key <PATH TO DB.key> --cert <PATH TO DB.crt> --output $esp/EFI/arch/vmlinuz-linux $esp/EFI/arch/vmlinuz_linux` 
 
 Then [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") `efistub-update.path`.
 

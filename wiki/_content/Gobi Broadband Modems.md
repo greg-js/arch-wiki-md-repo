@@ -45,7 +45,7 @@ note that this has to be repeated when you reload the qcserial module or reboot/
 
 "gobi_loader is a firmware loader for Qualcomm Gobi USB chipsets. These devices appear in an uninitialised state when power is applied and require firmware to be loaded before they can be used as modems. gobi_loader adds a udev rule that will trigger loading of the firmware and make the modem usable." ([http://www.codon.org.uk/~mjg59/gobi_loader/](http://www.codon.org.uk/~mjg59/gobi_loader/))
 
-Install [gobi-loader](https://aur.archlinux.org/packages/gobi-loader/)<sup><small>AUR</small></sup> and [gobi-firmware](https://aur.archlinux.org/packages/gobi-firmware/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+Install [gobi-loader](https://aur.archlinux.org/packages/gobi-loader/) and [gobi-firmware](https://aur.archlinux.org/packages/gobi-firmware/) from [AUR](/index.php/AUR "AUR").
 
 After installation, you should enter your product and vendor id in the `/lib/udev/rules.d/60-gobi.rules`
 

@@ -448,7 +448,7 @@ Server = http://arch.miffe.org/$arch/
 #### nullptr_t
 
 *   **Maintainers:** Sebastian Lau (nullptr_t),
-*   **Description:** AUR packages that have a longer build time on some machines (e.g. [veracrypt](https://aur.archlinux.org/packages/veracrypt/)<sup><small>AUR</small></sup> or [plymouth](/index.php/Plymouth "Plymouth"))
+*   **Description:** AUR packages that have a longer build time on some machines (e.g. [veracrypt](https://aur.archlinux.org/packages/veracrypt/) or [plymouth](/index.php/Plymouth "Plymouth"))
 *   **Key-ID:** B4767A17CEC5B4E9
 
 ```
@@ -928,7 +928,7 @@ Server = http://studioidefix.googlecode.com/hg/repo/i686
 
 *   **Maintainer:** Ivan Koryabkin ([apathism](https://aur.archlinux.org/account/apathism/))
 *   **Upstream page:** [https://apathism.net/](https://apathism.net/)
-*   **Description:** Some AUR packages like [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)<sup><small>AUR</small></sup> (with qt5 enabled).
+*   **Description:** Some AUR packages like [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/) (with qt5 enabled).
 *   **Key-ID:** 3E37398D
 *   **Keyfile:** [http://apathism.net/archlinux/apathism.key](http://apathism.net/archlinux/apathism.key)
 
@@ -1092,7 +1092,7 @@ Server = https://repo.holocm.org/archlinux/x86_64
 #### Linux-pf
 
 *   **Maintainer:** [Thaodan](/index.php?title=User:Thaodan&action=edit&redlink=1 "User:Thaodan (page does not exist)")
-*   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf, just like [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") but additionally optimized for intel CPUs Sandy Bridge, Ivy Bridge, Haswell and generic of course, and some extra packages
+*   **Description:** Generic and optimized binaries of the ARCH kernel patched with BFS, TuxOnIce, BFQ, Aufs3; i.e. linux-pf, just like [linux-pf](https://aur.archlinux.org/packages/linux-pf/) from the [AUR](/index.php/AUR "AUR") but additionally optimized for intel CPUs Sandy Bridge, Ivy Bridge, Haswell and generic of course, and some extra packages
 *   **Note:** To browse through the repository, one needs to append `index.html` after the server URL (this is an intentional quirk of Dropbox).
 
 ```
@@ -1195,7 +1195,7 @@ Server = http://dl.dropbox.com/u/298301785/arch/linux-tresor/$arch
 #### markzz
 
 *   **Maintainer:** [Mark Weiman (markzz)](/index.php/User:Markzz "User:Markzz")
-*   **Description:** Packages that markzz maintains or uses on the AUR; this includes Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>), and packages to maintain a Debian package repository.
+*   **Description:** Packages that markzz maintains or uses on the AUR; this includes Linux with the vfio patchset ([linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) and [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)), and packages to maintain a Debian package repository.
 *   **Sources:** [http://git.markzz.net/markzz/repositories/markzz.git/tree](http://git.markzz.net/markzz/repositories/markzz.git/tree)
 *   **Key ID:** 3CADDFDD
 
@@ -1344,7 +1344,7 @@ Server = http://pkgbuild.com/~alucryd/$repo/x86_64
 
 *   **Maintainer:** Andrwe Lord Weber
 *   **Description:** contains programs I'm using on many systems
-*   **Upstream page:** [http://andrwe.dyndns.org/doku.php/blog/repository](http://andrwe.dyndns.org/doku.php/blog/repository) <sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-11-30]</sup>
+*   **Upstream page:** [http://andrwe.dyndns.org/doku.php/blog/repository](http://andrwe.dyndns.org/doku.php/blog/repository) 
 
 ```
 [andrwe]

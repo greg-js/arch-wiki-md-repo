@@ -4,7 +4,7 @@
 
 ## Installation
 
-Install the [apache_spark](https://aur.archlinux.org/packages/apache_spark/)<sup><small>AUR</small></sup> package.
+Install the [apache_spark](https://aur.archlinux.org/packages/apache_spark/) package.
 
 ## Configuration
 

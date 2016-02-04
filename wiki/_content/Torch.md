@@ -4,7 +4,7 @@
 
 ## Installation
 
-Install [torch7](https://aur.archlinux.org/packages/torch7/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/torch7)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install [torch7](https://aur.archlinux.org/packages/torch7/) from the [AUR](/index.php/AUR "AUR").
 
 I recommend you then follow through with the tutorial available here [[1]](http://code.madbits.com/wiki/doku.php?id=tutorial_basics).
 

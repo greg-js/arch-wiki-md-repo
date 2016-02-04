@@ -173,7 +173,7 @@ iwpriv ra0 set PSMode=MAX_PSP
 
 ### acpi-eeepc-generic
 
-Install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR"). You must install version 0.9 or greater, as previous versions do not have support for the 1000HE.
+Install the [acpi-eeepc-generic](https://aur.archlinux.org/packages/acpi-eeepc-generic/) package from [AUR](/index.php/AUR "AUR"). You must install version 0.9 or greater, as previous versions do not have support for the 1000HE.
 
 #### Sleep
 
@@ -224,7 +224,7 @@ Note: lspci for another user produced "Network controller: RaLink RT2860" rather
 
 ### WiFi
 
-WiFi should work out of the box with the stock kernel. However, if you do have trouble, you can try switching to the rt2860sta module provided by the [rt2860](https://aur.archlinux.org/packages/rt2860/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rt2860)]</sup> package. If you use the AUR package, you may need to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the rt2800lib and rt2800pci modules.
+WiFi should work out of the box with the stock kernel. However, if you do have trouble, you can try switching to the rt2860sta module provided by the [rt2860](https://aur.archlinux.org/packages/rt2860/) package. If you use the AUR package, you may need to [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the rt2800lib and rt2800pci modules.
 
 ### Bluetooth
 

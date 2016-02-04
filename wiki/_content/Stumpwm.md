@@ -27,7 +27,7 @@ Want to see it in action? A StumpWM user created a [video](http://www.archive.or
 
 ## Installation
 
-[Install](/index.php/Install "Install") [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>. It supports multiple common-lisp implementations.
+[Install](/index.php/Install "Install") [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/). It supports multiple common-lisp implementations.
 
 SBCL is recommended for maximum performance.
 
@@ -36,18 +36,18 @@ SBCL is recommended for maximum performance.
 Install these packages in the following order:
 
 *   [sbcl](https://www.archlinux.org/packages/?name=sbcl)
-*   [clx-git](https://aur.archlinux.org/packages/clx-git/)<sup><small>AUR</small></sup>
-*   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)<sup><small>AUR</small></sup>
-*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>
+*   [clx-git](https://aur.archlinux.org/packages/clx-git/)
+*   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
+*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
 
 ### With Clisp
 
 Install these packages from AUR in the following order:
 
-*   [clisp-new-clx](https://aur.archlinux.org/packages/clisp-new-clx/)<sup><small>AUR</small></sup>
-*   [cl-asdf](https://aur.archlinux.org/packages/cl-asdf/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cl-asdf)]</sup>
-*   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)<sup><small>AUR</small></sup>
-*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>
+*   [clisp-new-clx](https://aur.archlinux.org/packages/clisp-new-clx/)
+*   [cl-asdf](https://aur.archlinux.org/packages/cl-asdf/)
+*   [cl-ppcre](https://aur.archlinux.org/packages/cl-ppcre/)
+*   [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
 
 Also, look at [this post](https://bbs.archlinux.org/viewtopic.php?pid=543537#p543537) if you run into troubles.
 

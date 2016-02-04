@@ -233,7 +233,7 @@ As already mentioned in the introduction, the functionality of VDR can be extend
 *   [vdr-live](http://live.vdr-developer.org/en/index.php), a web interface that can be used to control VDR, view and search the EPG, schedule recordings and stream live TV.
 *   [vdr-xineliboutput](http://www.linuxtv.org/vdrwiki/index.php/Xineliboutput-plugin), which provides a frontend for VDR and can be used with cards without a hardware MPEG decoder.
 
-VDR does not support MHEG-5 teletext ("The Red Button" in the UK), so the [vdr-rssreader](https://aur.archlinux.org/packages/vdr-rssreader/)<sup><small>AUR</small></sup> plugin can make a useful alternative.
+VDR does not support MHEG-5 teletext ("The Red Button" in the UK), so the [vdr-rssreader](https://aur.archlinux.org/packages/vdr-rssreader/) plugin can make a useful alternative.
 
 #### How to Setup a Plugin
 

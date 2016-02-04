@@ -21,13 +21,13 @@ Sugar has a special [Taxonomy](http://wiki.sugarlabs.org/go/Taxonomy) to name th
 
 ### From [city] repository
 
-*   For the core system (_Glucose_), install [sugar](https://aur.archlinux.org/packages/sugar/)<sup><small>AUR</small></sup>, available in the [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). It provides the graphical interface and a desktop session, but not very useful on its own.
+*   For the core system (_Glucose_), install [sugar](https://aur.archlinux.org/packages/sugar/), available in the [[city] repository](http://pkgbuild.com/~bgyorgy/city.html). It provides the graphical interface and a desktop session, but not very useful on its own.
 *   The _sugar-fructose_ group contains the base activities (_Fructose_) including a web browser, a text editor, a media player and a terminal emulator.
-*   The [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/)<sup><small>AUR</small></sup> package provides a helper script that makes it possible to launch Sugar within another desktop environment, or from the command line directly.
+*   The [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/) package provides a helper script that makes it possible to launch Sugar within another desktop environment, or from the command line directly.
 
 ### From AUR
 
-Install [sugar](https://aur.archlinux.org/packages/sugar/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [sugar](https://aur.archlinux.org/packages/sugar/) from the [AUR](/index.php/AUR "AUR").
 
 **Activities**
 
@@ -35,14 +35,14 @@ Activities are available under name `sugar-activity-**activity**` from AUR.
 
 **Etoys**
 
-`etoys` is provided separately as it is part of glucose but also include the fructose activity. It is available as [etoys](https://aur.archlinux.org/packages/etoys/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/etoys)]</sup> in AUR.
+`etoys` is provided separately as it is part of glucose but also include the fructose activity. It is available as [etoys](https://aur.archlinux.org/packages/etoys/) in AUR.
 
 ### From Activity Library
 
 The [Sugar Activity Library](http://wiki.sugarlabs.org/go/Activity_Library) provides many [Activity Bundles](http://wiki.sugarlabs.org/go/Development_Team/Almanac/Activity_Bundles) packaged as zip files with the ".xo" extension. These bundles can be downloaded and installed to the user's directory from Sugar, but the installation does not ensure that the dependencies are satisfied. Therefore it's not the recommended way to install activities, because they likely fail to start due missing dependencies. Commonly used dependencies:
 
 *   For web activities, install [webkit2gtk](https://www.archlinux.org/packages/?name=webkit2gtk) from the official repositories.
-*   For GTK+ 2 based activities, install [sugar-toolkit](https://aur.archlinux.org/packages/sugar-toolkit/)<sup><small>AUR</small></sup> from AUR.
+*   For GTK+ 2 based activities, install [sugar-toolkit](https://aur.archlinux.org/packages/sugar-toolkit/) from AUR.
 
 In order to check why the activity fails to start, look at the log file located at `~/.sugar/default/logs/[app_id]-1.log`.
 
@@ -56,7 +56,7 @@ Select the session _Sugar_ from the display manager's session menu.
 
 **Manually**
 
-If [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/)<sup><small>AUR</small></sup> installed, Sugar can be launched with the `sugar-runner` command.
+If [sugar-runner](https://aur.archlinux.org/packages/sugar-runner/) installed, Sugar can be launched with the `sugar-runner` command.
 
 Alternative method is to add `exec sugar` to the `~/.xinitrc` file. After that, Sugar can be launched with the `startx` command (see [xinitrc](/index.php/Xinitrc "Xinitrc") for additional details). After setting up the `~/.xinitrc` file, it can also be arranged to [Start X at login](/index.php/Start_X_at_login "Start X at login").
 

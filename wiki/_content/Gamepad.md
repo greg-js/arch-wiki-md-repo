@@ -82,7 +82,7 @@ Both interfaces are also supported in wine and reported as separate devices. You
 
 ### Joystick API
 
-There are a lot of applications that can test this old API, `jstest` from the [joyutils](https://www.archlinux.org/packages/?name=joyutils) package is the simplest one. If the output is unreadable because the line printed is too long you can also use graphical tools. KDE4 has a built in one in Input Devices panel in System Settings or [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/)<sup><small>AUR</small></sup> is an alternative.
+There are a lot of applications that can test this old API, `jstest` from the [joyutils](https://www.archlinux.org/packages/?name=joyutils) package is the simplest one. If the output is unreadable because the line printed is too long you can also use graphical tools. KDE4 has a built in one in Input Devices panel in System Settings or [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/) is an alternative.
 
 Use of `jstest` is fairly simple, you just run `jstest /dev/input/js0` and it will print a line with state of all the axes (normalised to {-32767,32767}) and buttons.
 
@@ -90,7 +90,7 @@ After you start `jstest-gtk`, it will just show you a list of joysticks availabl
 
 ### evdev API
 
-The new 'evdev' API can be tested using the SDL2 joystick test application or using `evtest` from community repository. Install [sdl2-jstest-git](https://aur.archlinux.org/packages/sdl2-jstest-git/)<sup><small>AUR</small></sup> and then run `sdl2-jstest --test 0`. Use `sdl2-jstest --list` to get IDs of other controllers if you have multiple ones connected.
+The new 'evdev' API can be tested using the SDL2 joystick test application or using `evtest` from community repository. Install [sdl2-jstest-git](https://aur.archlinux.org/packages/sdl2-jstest-git/) and then run `sdl2-jstest --test 0`. Use `sdl2-jstest --list` to get IDs of other controllers if you have multiple ones connected.
 
 To test force feedback on the device, use `fftest` from `linuxconsole` package:
 
@@ -127,7 +127,7 @@ Option "MapAxis1" "deadzone=1000"
 
 ### Joystick API deadzones
 
-The easiest way is using `jstest-gtk` from [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/)<sup><small>AUR</small></sup>. Select the controller you want to edit, then click the Calibration button at the bottom of the dialog (**don't** click Start Calibration there). You can then set the CenterMin and CenterMax values (which control the center deadzone), RangeMin and RangeMax which control the end of throw deadzones. Note that the calibration settings are applied when the application opens the device, so you need to restart your game or test application to see updated calibration settings.
+The easiest way is using `jstest-gtk` from [jstest-gtk-git](https://aur.archlinux.org/packages/jstest-gtk-git/). Select the controller you want to edit, then click the Calibration button at the bottom of the dialog (**don't** click Start Calibration there). You can then set the CenterMin and CenterMax values (which control the center deadzone), RangeMin and RangeMax which control the end of throw deadzones. Note that the calibration settings are applied when the application opens the device, so you need to restart your game or test application to see updated calibration settings.
 
 After you set the deadzones use `jscal` to dump the new values into a shell script:
 
@@ -250,7 +250,7 @@ EndSection
 
 ## Using Joystick to send keystrokes
 
-A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rejoystick)]</sup>, [qjoypad](https://aur.archlinux.org/packages/qjoypad/)<sup><small>AUR</small></sup> or [antimicro-qt4](https://aur.archlinux.org/packages/antimicro-qt4/)<sup><small>AUR</small></sup>, all work well without the need for X.org configuration.
+A couple joystick to keystroke programs exist like [rejoystick](https://aur.archlinux.org/packages/rejoystick/), [qjoypad](https://aur.archlinux.org/packages/qjoypad/) or [antimicro-qt4](https://aur.archlinux.org/packages/antimicro-qt4/), all work well without the need for X.org configuration.
 
 ### via X.org
 
@@ -326,11 +326,11 @@ The [steam](https://www.archlinux.org/packages/?name=steam) package (starting fr
 
 If you can't get the Steam Controller to work, see [#Steam Controller Not Pairing](#Steam_Controller_Not_Pairing).
 
-Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> to have controller and mouse emulation without Steam.
+Alternatively you can install [python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) to have controller and mouse emulation without Steam.
 
 #### Wine
 
-[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/)<sup><small>AUR</small></sup> can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
+[python-steamcontroller-git](https://aur.archlinux.org/packages/python-steamcontroller-git/) can also be used to make the Steam Controller work for games running under Wine. You need to find and download the file `xbox360cemu.v.3.0.rar` (e.g. from here: [Download Link from 2shared](http://www.2shared.com/file/wcq8xuPf/xbox360cemuv30.html)). Then copy the files `dinput8.dll`, `xbox360cemu.ini`, `xinput1_3.dll` and `xinput_9_1_0.dll` to the directory that contains your game executable. Edit `xbox360cemu.ini` and only change the following values under `[PAD1]` to remap the Steam Controller correctly to a XBox Controller.
 
  `xbox360cemu.ini` 
 
@@ -370,7 +370,7 @@ If you wish to use the controller for controlling the mouse, or mapping buttons 
 
 If you have issues with the default `xpad` kernel module, you can install the SteamOS version. There is still a known issue with compatibility between wireless Xbox360 controllers and games made in GameMaker Studio. If you encounter this problem, the only known workaround is to use xboxdrv. YoYo Games has refused to acknowledge this as a bug with their product and it is unlikely to ever be fixed.
 
-First make sure you have [DKMS](/index.php/DKMS "DKMS") installed and running, then install the modified kernel module [steamos-xpad-dkms](https://aur.archlinux.org/packages/steamos-xpad-dkms/)<sup><small>AUR</small></sup>. During the installation you'll see that new xpad kernel module is strapped to your current kernel:
+First make sure you have [DKMS](/index.php/DKMS "DKMS") installed and running, then install the modified kernel module [steamos-xpad-dkms](https://aur.archlinux.org/packages/steamos-xpad-dkms/). During the installation you'll see that new xpad kernel module is strapped to your current kernel:
 
 ```
 Creating symlink /var/lib/dkms/steamos-xpad-dkms/0.1/source ->
@@ -401,7 +401,7 @@ Or just restart your computer.
 
 xboxdrv is an alternative to `xpad` which provides more functionality and might work better with certain controllers. It works in userspace and can be launched as system service.
 
-Install it with the [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/)<sup><small>AUR</small></sup> package. Then [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `xboxdrv.service`.
+Install it with the [xboxdrv](https://aur.archlinux.org/packages/xboxdrv/) package. Then [start](/index.php/Start "Start")/[enable](/index.php/Enable "Enable") `xboxdrv.service`.
 
 ##### Multiple controllers
 
@@ -555,7 +555,7 @@ More gentle solution is to [Disable Joystick From Controlling Mouse](#Disable_Jo
 
 If you are using a generic non-widely used gamepad you may encounter issues getting the gamepad recognized in games based on SDL. Since [May the 14th 2015](https://github.com/flibitijibibo/FNA/commit/e55742cfe7e38b778a21ed8a12cb2f2081490d8d), FNA supports dropping a `gamecontrollerdb.txt` into the executable folder of the game, for example the [SDL_GameControllerDB](https://github.com/gabomdq/SDL_GameControllerDB).
 
-As an alternative and for older versions of FNA or for SDL you can generate a mapping yourself by downloading the SDL source code via [http://libsdl.org/](http://libsdl.org/), navigating to `/test/`, compile the `controllermap.c` program (alternatively install [controllermap](https://aur.archlinux.org/packages/controllermap/)<sup><small>AUR</small></sup>) and run the test. After completing the controllermap test, a guid will be generated that you can put in the `SDL_GAMECONTROLLERCONFIG` environment variable which will then be picked up by SDL/FNA games. For example:
+As an alternative and for older versions of FNA or for SDL you can generate a mapping yourself by downloading the SDL source code via [http://libsdl.org/](http://libsdl.org/), navigating to `/test/`, compile the `controllermap.c` program (alternatively install [controllermap](https://aur.archlinux.org/packages/controllermap/)) and run the test. After completing the controllermap test, a guid will be generated that you can put in the `SDL_GAMECONTROLLERCONFIG` environment variable which will then be picked up by SDL/FNA games. For example:
 
 ```
  $ export SDL_GAMECONTROLLERCONFIG="030000008f0e00000300000010010000,GreenAsia Inc. USB Joystick ,platform:Linux,x:b3,a:b2,b:b1,y:b0,back:b8,start:b9,dpleft:h0.8,dpdown:h0.0,dpdown:h0.4,dpright:h0.0,dpright:h0.2,dpup:h0.0,dpup:h0.1,leftshoulder:h0.0,leftshoulder:b6,lefttrigger:b4,rightshoulder:b7,righttrigger:b5,leftstick:b10,rightstick:b11,leftx:a0,lefty:a1,rightx:a3,righty:a2,"
@@ -619,4 +619,4 @@ And add your user to that group.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418482](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418482)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418881](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418881)"

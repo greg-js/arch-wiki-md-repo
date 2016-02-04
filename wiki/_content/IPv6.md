@@ -209,7 +209,7 @@ Prefix delegation is a common IPv6 deployment technique used by many ISPs. It is
 
 ### With dibbler
 
-[Dibbler](http://klub.com.pl/dhcpv6/) is a portable DHCPv6 client a server which can be used for Prefix delegation. It is available in the [AUR](/index.php/AUR "AUR") as [dibbler](https://aur.archlinux.org/packages/dibbler/)<sup><small>AUR</small></sup>.
+[Dibbler](http://klub.com.pl/dhcpv6/) is a portable DHCPv6 client a server which can be used for Prefix delegation. It is available in the [AUR](/index.php/AUR "AUR") as [dibbler](https://aur.archlinux.org/packages/dibbler/).
 
 If you are using `dibbler` edit `/etc/dibbler/client.conf`
 
@@ -253,7 +253,7 @@ This configuration will ask for a prefix from WAN interface (`WAN`) and delegate
 
 ### With WIDE-DHCPv6
 
-[WIDE-DHCPv6](http://wide-dhcpv6.sourceforge.net/) is an open-source implementation of Dynamic Host Configuration Protocol for IPv6 (DHCPv6) originally developed by the KAME project. It is available in the [AUR](/index.php/AUR "AUR") as [wide-dhcpv6](https://aur.archlinux.org/packages/wide-dhcpv6/)<sup><small>AUR</small></sup>.
+[WIDE-DHCPv6](http://wide-dhcpv6.sourceforge.net/) is an open-source implementation of Dynamic Host Configuration Protocol for IPv6 (DHCPv6) originally developed by the KAME project. It is available in the [AUR](/index.php/AUR "AUR") as [wide-dhcpv6](https://aur.archlinux.org/packages/wide-dhcpv6/).
 
 If you are using `wide-dhcpv6` edit `/etc/wide-dhcpv6/dhcp6c.conf`
 

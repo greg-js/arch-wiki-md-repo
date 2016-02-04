@@ -227,7 +227,7 @@ $ ./build-packages
 
 #### kdesupport
 
-Sometimes kdesupport-phonon-{gstreamer,vlc} won't compile, unless an older version of the package is already installed. You can work around this by installing kdesupport-phonon from your previous snapshot, or [phonon-git](https://aur.archlinux.org/packages/phonon-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/phonon-git)]</sup> from the [AUR](/index.php/AUR "AUR") if you are building snapshot for the very first time.
+Sometimes kdesupport-phonon-{gstreamer,vlc} won't compile, unless an older version of the package is already installed. You can work around this by installing kdesupport-phonon from your previous snapshot, or [phonon-git](https://aur.archlinux.org/packages/phonon-git/) from the [AUR](/index.php/AUR "AUR") if you are building snapshot for the very first time.
 
 Possible fix: split the kdesupport-phonon to a separate PKGBUILD so that it would be installed before the backends will be compiled.
 

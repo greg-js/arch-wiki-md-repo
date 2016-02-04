@@ -105,7 +105,7 @@ Usually the post-[MBR](/index.php/MBR "MBR") gap (after the 512 byte MBR region 
 
 ### Installation
 
-[Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/)<sup><small>AUR</small></sup>, where already installed.
+[Install](/index.php/Install "Install") the [grub](https://www.archlinux.org/packages/?name=grub) package. It will replace [grub-legacy](https://aur.archlinux.org/packages/grub-legacy/), where already installed.
 
 **Note:** Simply installing the package will not update the `/boot/grub/i386-pc/core.img` file and the GRUB modules in `/boot/grub/i386-pc`. You need to update them manually using `grub-install` as explained below.
 
@@ -133,7 +133,7 @@ The following commands will:
 *   In the case of a GPT partitioned disk it will embed it in the BIOS Boot Partition , denoted by `bios_grub` flag in parted and EF02 type code in gdisk
 
 ```
-# grub-install --recheck --target=i386-pc /dev/sd_x_
+# grub-install --target=i386-pc /dev/sd_x_
 # grub-mkconfig -o /boot/grub/grub.cfg
 
 ```
@@ -146,7 +146,7 @@ Assume your USB stick's first partition is FAT32 and its partition is /dev/sdy1
 
 ```
 # mkdir -p /mnt/usb ; mount /dev/sdy1 /mnt/usb
-# grub-install --target=i386-pc --recheck --debug --boot-directory=/mnt/usb/boot /dev/sdy
+# grub-install --target=i386-pc --debug --boot-directory=/mnt/usb/boot /dev/sdy
 # grub-mkconfig -o /mnt/usb/boot/grub/grub.cfg
 
 ```
@@ -172,7 +172,7 @@ To set up grub to a partition boot sector, to a partitionless disk (also called 
 
 ```
 # chattr -i /boot/grub/i386-pc/core.img
-# grub-install --target=i386-pc --recheck --debug --force /dev/sdaX
+# grub-install --target=i386-pc --debug --force /dev/sdaX
 # chattr +i /boot/grub/i386-pc/core.img
 
 ```
@@ -227,7 +227,7 @@ Unfortunately, the `grub.cfg` file that is created will not contain the proper U
 To populate the `/boot/grub` directory and generate a `/boot/grub/i386-pc/core.img` file **without** embedding any GRUB bootsector code in the MBR, post-MBR region, or the partition bootsector, add `--grub-setup=/bin/true` to `grub-install`:
 
 ```
-# grub-install --target=i386-pc --grub-setup=/bin/true --recheck --debug /dev/sda
+# grub-install --target=i386-pc --grub-setup=/bin/true --debug /dev/sda
 
 ```
 
@@ -280,7 +280,7 @@ The following steps install the GRUB UEFI application to `**$esp**/EFI/grub`, in
 First, tell GRUB to use UEFI, set the boot directory and set the bootloader ID. Change `$esp` to your efi partition (usually `/boot`):
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=**$esp** --bootloader-id=**grub** --recheck
+# grub-install --target=x86_64-efi --efi-directory=**$esp** --bootloader-id=**grub**
 
 ```
 
@@ -309,7 +309,7 @@ Usually, GRUB keeps all files, including configuration files, in `/boot`, regard
 If you want to keep these files inside the EFI System Partition itself, add `--boot-directory=$esp` to the grub-install command:
 
 ```
-# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --boot-directory=$esp --recheck --debug
+# grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --boot-directory=$esp --debug
 
 ```
 
@@ -710,8 +710,8 @@ set root=(md/0,1)
 To install grub when using RAID1 as the `/boot` partition (or using `/boot` housed on a RAID1 root partition), on devices with GPT ef02/'BIOS boot partition', simply run _grub-install_ on both of the drives, such as:
 
 ```
-# grub-install --target=i386-pc --recheck --debug /dev/sda
-# grub-install --target=i386-pc --recheck --debug /dev/sdb
+# grub-install --target=i386-pc --debug /dev/sda
+# grub-install --target=i386-pc --debug /dev/sdb
 
 ```
 
@@ -765,7 +765,7 @@ Depending on the system's setup, note the following:
 *   If you experience issues getting the prompt for a password to display (errors regarding cryptouuid, cryptodisk, or "device not found"), try reinstalling grub as below appending the following to the end of your installation command:
 
 ```
- grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub --recheck **--modules="part_gpt part_msdos"**
+ grub-install --target=x86_64-efi --efi-directory=$esp --bootloader-id=grub **--modules="part_gpt part_msdos"**
 
 ```
 
@@ -1125,4 +1125,4 @@ You can zero the drive, but the easy solution that leaves your data alone is to 
 *   Wikipedia's page on [BIOS Boot partition](https://en.wikipedia.org/wiki/BIOS_Boot_partition "wikipedia:BIOS Boot partition")
 *   [http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html](http://members.iinet.net/~herman546/p20/GRUB2%20Configuration%20File%20Commands.html) - quite complete description of how to configure GRUB
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=418595](https://wiki.archlinux.org/index.php?title=GRUB&oldid=418595)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB&oldid=418943](https://wiki.archlinux.org/index.php?title=GRUB&oldid=418943)"

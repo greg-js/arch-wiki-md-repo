@@ -21,7 +21,7 @@ Quoting flpsed’s author: “**[flpsed](http://www.ecademix.com/JohannesHofmann
 
 And quoting the aforementioned [thread](https://bbs.archlinux.org/viewtopic.php?pid=556501#p556501): “flpsed, in the AUR, will place text on top of a plain pdf (without the special form fields). (Note: it took me a while to figure out how to move or edit text that has already been placed, but all you have to do is click on the first letter in the field. If you click on the middle of the field, nothing will happen)”
 
-[flpsed](https://aur.archlinux.org/packages/flpsed/)<sup><small>AUR</small></sup> is available from the [AUR](/index.php/AUR "AUR").
+[flpsed](https://aur.archlinux.org/packages/flpsed/) is available from the [AUR](/index.php/AUR "AUR").
 
 ### Inkscape
 

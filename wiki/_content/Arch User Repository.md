@@ -324,7 +324,7 @@ The packages on the AUR are merely "build scripts", i.e. recipes to build binari
 
 ### How can I vote for packages in the AUR?
 
-Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/)<sup><small>AUR</small></sup>.
+Sign up on the [AUR website](https://aur.archlinux.org/) to get a "Vote for this package" option while browsing packages. After signing up it is also possible to vote from the commandline with [aurvote-git](https://aur.archlinux.org/packages/aurvote-git/).
 
 ### What is a Trusted User / TU?
 

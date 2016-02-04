@@ -63,7 +63,7 @@ The official kernels [linux](https://www.archlinux.org/packages/?name=linux) and
 ### Additional packages
 
 *   [btrfs-progs](https://www.archlinux.org/packages/?name=btrfs-progs) includes _btrfsck_, a tool that can fix errors on Btrfs filesystems.
-*   [btrfs-progs-git](https://aur.archlinux.org/packages/btrfs-progs-git/)<sup><small>AUR</small></sup> for nightly
+*   [btrfs-progs-git](https://aur.archlinux.org/packages/btrfs-progs-git/) for nightly
 
 **Tip:** See [Btrfs Wiki Getting Started](https://btrfs.wiki.kernel.org/index.php/Getting_started) for suggestions regarding running Btrfs effectively.
 

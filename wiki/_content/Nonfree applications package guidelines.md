@@ -72,7 +72,7 @@ If the packaging of some program requires more effort and hacks than buying and 
 
 ## Package naming
 
-Before choosing a name on your own, search in AUR for existing versions of the software you want to package. Try to use established naming conversion (e.g. do not create something like [gish-hb](https://aur.archlinux.org/packages/gish-hb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gish-hb)]</sup> when there are already [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/)<sup><small>AUR</small></sup>, [penumbra-overture-hib](https://aur.archlinux.org/packages/penumbra-overture-hib/)<sup><small>AUR</small></sup> and [uplink-hib](https://aur.archlinux.org/packages/uplink-hib/)<sup><small>AUR</small></sup>). Use suffix `-bin` **always** unless you are sure there will never be a source-based package—its creator would have to ask you (or in worst case TUs) to orphan existing package for him and you both will end up with PKGBUILDs cluttered with additional `replaces` and `conflicts`.
+Before choosing a name on your own, search in AUR for existing versions of the software you want to package. Try to use established naming conversion (e.g. do not create something like [gish-hb](https://aur.archlinux.org/packages/gish-hb/) when there are already [aquaria-hib](https://aur.archlinux.org/packages/aquaria-hib/), [penumbra-overture-hib](https://aur.archlinux.org/packages/penumbra-overture-hib/) and [uplink-hib](https://aur.archlinux.org/packages/uplink-hib/)). Use suffix `-bin` **always** unless you are sure there will never be a source-based package—its creator would have to ask you (or in worst case TUs) to orphan existing package for him and you both will end up with PKGBUILDs cluttered with additional `replaces` and `conflicts`.
 
 ## File placement
 
@@ -100,7 +100,7 @@ For most commercial games there is no way to (legally) download game files, whic
 
 *   Software is distributed on compact-disk
 
-	Add installer script and `.install` file to package contents, like in package [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tsukihime-en)]</sup>.
+	Add installer script and `.install` file to package contents, like in package [tsukihime-en](https://aur.archlinux.org/packages/tsukihime-en/).
 
 *   **There are several ways to obtain files**
 
@@ -108,10 +108,10 @@ Copying files from disk / downloading from Net / getting from archive during `bu
 
 Few examples of various strategies for obtaining files required for package:
 
-*   [worldofgoo](https://aur.archlinux.org/packages/worldofgoo/)<sup><small>AUR</small></sup> – dependency on user-provided file
-*   [umineko-en](https://aur.archlinux.org/packages/umineko-en/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/umineko-en)]</sup> – combining files from freely available patch and user-provided compact-disk
-*   [worldofgoo-demo](https://aur.archlinux.org/packages/worldofgoo-demo/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/worldofgoo-demo)]</sup> – autonomic fetching installer during build phase
-*   [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ut2004-anthology)]</sup> – searching for disk via mountpoints
+*   [worldofgoo](https://aur.archlinux.org/packages/worldofgoo/) – dependency on user-provided file
+*   [umineko-en](https://aur.archlinux.org/packages/umineko-en/) – combining files from freely available patch and user-provided compact-disk
+*   [worldofgoo-demo](https://aur.archlinux.org/packages/worldofgoo-demo/) – autonomic fetching installer during build phase
+*   [ut2004-anthology](https://aur.archlinux.org/packages/ut2004-anthology/) – searching for disk via mountpoints
 
 ## Advanced topics
 
@@ -143,12 +143,12 @@ Many proprietary programs are shipped in nasty installers which sometimes do not
 *   [p7zip](https://www.archlinux.org/packages/?name=p7zip) unpacks not only many archive formats but also [NSIS](https://en.wikipedia.org/wiki/NSIS "wikipedia:NSIS")-based `.exe` installers
     *   it even can extract single sections from common PE (`.exe` & `.dll`) files!
 *   [upx](https://www.archlinux.org/packages/?name=upx) is sometimes used to encrypt above-listed executables and can be used for decryption as well
-*   [innoextract](https://aur.archlinux.org/packages/innoextract/)<sup><small>AUR</small></sup> can unpack `.exe` installers created with [Inno Setup](https://en.wikipedia.org/wiki/Inno_Setup "wikipedia:Inno Setup") (used for example by GOG.com games)
+*   [innoextract](https://aur.archlinux.org/packages/innoextract/) can unpack `.exe` installers created with [Inno Setup](https://en.wikipedia.org/wiki/Inno_Setup "wikipedia:Inno Setup") (used for example by GOG.com games)
 
 In order to determine exact type of file run `file _file_of_unknown_type_`.
 
 ### Getting icons for .desktop files
 
-Proprietary software often have no separate icon files, so there is nothing to use in [.desktop](/index.php/.desktop ".desktop") file creation. Happily `.ico` files can be easily extracted from executables with programs from [icoutils](https://www.archlinux.org/packages/?name=icoutils) package. You can even do it on fly during `build` phase (example can be found in [sugarsdelight](https://aur.archlinux.org/packages/sugarsdelight/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sugarsdelight)]</sup>).
+Proprietary software often have no separate icon files, so there is nothing to use in [.desktop](/index.php/.desktop ".desktop") file creation. Happily `.ico` files can be easily extracted from executables with programs from [icoutils](https://www.archlinux.org/packages/?name=icoutils) package. You can even do it on fly during `build` phase (example can be found in [sugarsdelight](https://aur.archlinux.org/packages/sugarsdelight/)).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&oldid=392501](https://wiki.archlinux.org/index.php?title=Nonfree_applications_package_guidelines&oldid=392501)"

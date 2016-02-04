@@ -11,7 +11,7 @@ Radicale is a server designed to support the CalDav and CardDav protocols. It is
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [radicale](https://aur.archlinux.org/packages/radicale/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [radicale](https://aur.archlinux.org/packages/radicale/) package.
 
 ## Configuration
 

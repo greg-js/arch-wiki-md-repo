@@ -28,7 +28,7 @@ You can access your files with the _sftp_ program or [sshfs](/index.php/Sshfs "S
 
 [Install](/index.php/Install "Install"), configure and [start](/index.php/Start "Start") [openssh](https://www.archlinux.org/packages/?name=openssh). It contains a _scp_ command to transfer files. See [Secure Shell](/index.php/Secure_Shell "Secure Shell") for more information.
 
-More features are available by installing additional packages, for example [rssh](https://aur.archlinux.org/packages/rssh/)<sup><small>AUR</small></sup> or [scponly](https://www.archlinux.org/packages/?name=scponly) described below.
+More features are available by installing additional packages, for example [rssh](https://aur.archlinux.org/packages/rssh/) or [scponly](https://www.archlinux.org/packages/?name=scponly) described below.
 
 ### Scponly
 

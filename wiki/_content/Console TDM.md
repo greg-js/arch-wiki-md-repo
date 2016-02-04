@@ -4,7 +4,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/)<sup><small>AUR</small></sup> package ([console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/)<sup><small>AUR</small></sup> package for the development version).
+[Install](/index.php/Install "Install") the [console-tdm](https://aur.archlinux.org/packages/console-tdm/) package ([console-tdm-git](https://aur.archlinux.org/packages/console-tdm-git/) package for the development version).
 
 Now ensure no other display managers get started by [disabling](/index.php/Disabling "Disabling") their systemd services.
 

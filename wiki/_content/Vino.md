@@ -21,7 +21,7 @@ You need to restart GNOME so that `vino-server` is started automatically when en
 
 As of version 3.9.2, Vino no longer includes a standalone preferences dialog (see [bug 700070](https://bugzilla.gnome.org/show_bug.cgi?id=700070)), thus making configuration difficult without the GNOME Control Center.
 
-The easiest solution is to install [vino38](https://aur.archlinux.org/packages/vino38/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"), which provides the latest version with the preferences dialog, accessible via the `vino-preferences` command.
+The easiest solution is to install [vino38](https://aur.archlinux.org/packages/vino38/) from the [AUR](/index.php/AUR "AUR"), which provides the latest version with the preferences dialog, accessible via the `vino-preferences` command.
 
 ## Configuration
 

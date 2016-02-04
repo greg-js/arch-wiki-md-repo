@@ -87,7 +87,7 @@ The next few steps will begin the process of configuring the Host. You will need
 [Install](/index.php/Install "Install") the following packages:
 
 *   [samba](https://www.archlinux.org/packages/?name=samba), see also [Samba](/index.php/Samba "Samba")
-*   [pam-krb5](https://aur.archlinux.org/packages/pam-krb5/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR")
+*   [pam-krb5](https://aur.archlinux.org/packages/pam-krb5/) from the [AUR](/index.php/AUR "AUR")
 *   [ntp](https://www.archlinux.org/packages/?name=ntp) or [openntpd](https://www.archlinux.org/packages/?name=openntpd), see also [NTPd](/index.php/NTPd "NTPd") or [OpenNTPD](/index.php/OpenNTPD "OpenNTPD")
 
 ### Updating DNS

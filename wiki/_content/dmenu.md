@@ -17,15 +17,15 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want the development build from git, install the [dmenu-git](https://aur.archlinux.org/packages/dmenu-git/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [dmenu](https://www.archlinux.org/packages/?name=dmenu) package from the [official repositories](/index.php/Official_repositories "Official repositories"). If you want the development build from git, install the [dmenu-git](https://aur.archlinux.org/packages/dmenu-git/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 Various patched variants exist which extend dmenu's default functionality. Consider installing one of the following packages from the [AUR](/index.php/AUR "AUR"):
 
-*   [dmenu-xft](https://aur.archlinux.org/packages/dmenu-xft/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-xft)]</sup>: XFT font support
-*   [dmenu-xft-height](https://aur.archlinux.org/packages/dmenu-xft-height/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-xft-height)]</sup>: XFT font support and custom height support
-*   [dmenu-xft-transparency](https://aur.archlinux.org/packages/dmenu-xft-transparency/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-xft-transparency)]</sup>: XFT font support and transparency
-*   [dmenu-xft-mouse-height](https://aur.archlinux.org/packages/dmenu-xft-mouse-height/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-xft-mouse-height)]</sup>: XFT font support, custom height, and mouse support
-*   [dmenu2](https://aur.archlinux.org/packages/dmenu2/)<sup><small>AUR</small></sup>: dmenu fork with many useful patches applied and additional capabilities added including dimming, specifying a custom opacity, and underlining.
+*   [dmenu-xft](https://aur.archlinux.org/packages/dmenu-xft/): XFT font support
+*   [dmenu-xft-height](https://aur.archlinux.org/packages/dmenu-xft-height/): XFT font support and custom height support
+*   [dmenu-xft-transparency](https://aur.archlinux.org/packages/dmenu-xft-transparency/): XFT font support and transparency
+*   [dmenu-xft-mouse-height](https://aur.archlinux.org/packages/dmenu-xft-mouse-height/): XFT font support, custom height, and mouse support
+*   [dmenu2](https://aur.archlinux.org/packages/dmenu2/): dmenu fork with many useful patches applied and additional capabilities added including dimming, specifying a custom opacity, and underlining.
 
 You may run _dmenu_ with:
 
@@ -69,7 +69,7 @@ $ dmenu_run -fn 'Droid Sans Mono-9'
 
 ### Support for shell aliases
 
-_dmenu_ does not support [shell aliases](/index.php/Bash#Aliases "Bash"). To have _dmenu_ recognize your aliases, [install](/index.php/Install "Install") the [dmenu-recent-aliases](https://aur.archlinux.org/packages/dmenu-recent-aliases/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dmenu-recent-aliases)]</sup> package from the [AUR](/index.php/AUR "AUR") and run `dmenu_run_aliases`. Your aliases must be in either `~/.bash_aliases` or `~/.zsh_aliases` to be recognized by _dmenu_run_aliases_.
+_dmenu_ does not support [shell aliases](/index.php/Bash#Aliases "Bash"). To have _dmenu_ recognize your aliases, [install](/index.php/Install "Install") the [dmenu-recent-aliases](https://aur.archlinux.org/packages/dmenu-recent-aliases/) package from the [AUR](/index.php/AUR "AUR") and run `dmenu_run_aliases`. Your aliases must be in either `~/.bash_aliases` or `~/.zsh_aliases` to be recognized by _dmenu_run_aliases_.
 
 ## Troubleshooting
 

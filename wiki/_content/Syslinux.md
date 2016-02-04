@@ -972,6 +972,6 @@ invalid or corrupt kernel image.
 
 *   [Official website](http://www.syslinux.org)
 *   [PXELinux configuration](http://www.josephn.net/scrapbook/pxelinux_stuff)
-*   [Multiboot USB using Syslinux](http://blog.jak.me/2013/01/03/creating-a-multiboot-usb-stick-using-syslinux/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-05-15]</sup>
+*   [Multiboot USB using Syslinux](http://blog.jak.me/2013/01/03/creating-a-multiboot-usb-stick-using-syslinux/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Syslinux&oldid=416566](https://wiki.archlinux.org/index.php?title=Syslinux&oldid=416566)"

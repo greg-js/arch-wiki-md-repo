@@ -30,7 +30,7 @@ Linuxsampler is a software [audio sampler](http://en.wikipedia.org/wiki/Sampler_
 
 All packages are available from the [AUR](/index.php/AUR "AUR").
 
-*   [qsampler](https://aur.archlinux.org/packages/qsampler/)<sup><small>AUR</small></sup>, a Qt interface
+*   [qsampler](https://aur.archlinux.org/packages/qsampler/), a Qt interface
 *   [jsampler](https://www.archlinux.org/packages/?name=jsampler), a Java interface
 *   [gigedit](https://www.archlinux.org/packages/?name=gigedit), a gig file editor
 
@@ -46,9 +46,9 @@ You can now run qsampler which will automatically start linuxsampler. If you use
 
 It is the "engine" of the sampler, which performs all the heavy and time critical computational tasks of handling MIDI events, calculating the audio data and sending the final audio data to your sound card(s). LinuxSampler itself usually runs as own process in the background of the computer and usually does not show up anything on the screen, or at most it can be launched to show status information and debug messages in a console window. Usually you will also need a frontend to control it.
 
-*   Build and install [libgig-svn](https://aur.archlinux.org/packages/libgig-svn/)<sup><small>AUR</small></sup>
+*   Build and install [libgig-svn](https://aur.archlinux.org/packages/libgig-svn/)
 
-*   Build and install [linuxsampler-svn](https://aur.archlinux.org/packages/linuxsampler-svn/)<sup><small>AUR</small></sup>
+*   Build and install [linuxsampler-svn](https://aur.archlinux.org/packages/linuxsampler-svn/)
 
 and check that the backend is ok :
 
@@ -63,7 +63,7 @@ then `Ctrl+c` to quit.
 
 Gigedit allows you to edit and create instruments for the Gigasampler format, which can be used with LinuxSampler as well as with Tascam's Gigastudio. You can use gigedit as stand-alone application without Linuxsampler running or in live-mode, started from any frontend ("edit" button).In this case, all your modifications are audible in realtime.
 
-*   Build and install (optional, you can skip this step if you do not need the editor): [gigedit-svn](https://aur.archlinux.org/packages/gigedit-svn/)<sup><small>AUR</small></sup>
+*   Build and install (optional, you can skip this step if you do not need the editor): [gigedit-svn](https://aur.archlinux.org/packages/gigedit-svn/)
 
 and check that everything is ok :
 
@@ -78,13 +78,13 @@ The editor should pop-up in "stand-alone" mode as indicated in the down-right co
 
 This frontend provides the user a set of menus, buttons, sliders, dials, etc. to allow the user to control the sampler in a convenient way. It does not perform any signal processing tasks, so you can see it as a "face" of the sampler. From Qsampler you can load/unload .gig files into Linuxsampler and set their midi channel number, volume, jack output etc...and finally store all this setup in a file for a speedy re-opening of your "sampling orchestra".
 
-*   Build and install : [liblscp](https://aur.archlinux.org/packages/liblscp/)<sup><small>AUR</small></sup>
+*   Build and install : [liblscp](https://aur.archlinux.org/packages/liblscp/)
 
-*   Build and install : [qsampler](https://aur.archlinux.org/packages/qsampler/)<sup><small>AUR</small></sup> **or** [qsampler-svn](https://aur.archlinux.org/packages/qsampler-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qsampler-svn)]</sup>
+*   Build and install : [qsampler](https://aur.archlinux.org/packages/qsampler/) **or** [qsampler-svn](https://aur.archlinux.org/packages/qsampler-svn/)
 
 ### Building a default template in qsampler
 
-Here, I will use [jack-keyboard](https://aur.archlinux.org/packages/jack-keyboard/)<sup><small>AUR</small></sup> as a MIDI controller, but everything below applies as well with a master keyboard or MIDI interface providing midi output.
+Here, I will use [jack-keyboard](https://aur.archlinux.org/packages/jack-keyboard/) as a MIDI controller, but everything below applies as well with a master keyboard or MIDI interface providing midi output.
 
 *   Start jack then jack-keyboard then qsampler
 
@@ -155,7 +155,7 @@ Sometimes sample libraries do not agree with how a composer/arranger expects the
 
 *   Transpose the MIDI part one octave lower. In an orchestral score, this is very wrong to see notes on staff sounding one octave lower, especially when you already deal with transposing instruments...Also you would have to transpose back before printing.
 *   Redo the mapping inside the gig file. That would be the best solution as it definitely cures the problem. However this can be a lot of hassle if there is multiple instruments inside the file. Also some non-sounding notes are often reserved before the sounding ones to trigger some cc (keyswitches), making the remapping one octave lower more complex or even impossible.
-*   The quick and non-destructive way here is to put a MIDI filter between the score editor and LS, that lowers the notes by one octave for the piano channel only. [Qmidiroute](https://aur.archlinux.org/packages/Qmidiroute/)<sup><small>AUR</small></sup> can do that and it also monitors all midi messages along the way. You could for example check that the cc sent by the score are really what they should be (right midi ch, pan, velocity curves etc...)
+*   The quick and non-destructive way here is to put a MIDI filter between the score editor and LS, that lowers the notes by one octave for the piano channel only. [Qmidiroute](https://aur.archlinux.org/packages/Qmidiroute/) can do that and it also monitors all midi messages along the way. You could for example check that the cc sent by the score are really what they should be (right midi ch, pan, velocity curves etc...)
 
 If you use this setup, you will have to change the piano part MIDI output in your score editor to go to qmidiroute instead of LS, and the piano "channel" in LS to use the qmidiroute output instead of your score editor. This also could be done at the orchestra level if you want to monitor every instrument in your score or if using multiple midi outputs in your score editor is not possible.
 

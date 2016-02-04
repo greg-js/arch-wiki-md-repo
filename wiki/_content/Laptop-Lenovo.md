@@ -244,7 +244,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 
 *   ClickPad: the whole trackpad clicks, and disabling the trackpad using older versions of synclient makes the trackpoint essentially unusable. This has been resolved in newer versions of [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics).
     *   See [this article](http://who-t.blogspot.com.au/2014/03/xorg-synaptics-support-for-lenovo-t440.html) and [previous version](http://who-t.blogspot.com.au/2013/12/lenovo-t440-touchpad-button.html).
-    *   Install [xf86-input-synlx40](https://aur.archlinux.org/packages/xf86-input-synlx40/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xf86-input-synlx40)]</sup> and [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/)<sup><small>AUR</small></sup> for alternative drivers.
+    *   Install [xf86-input-synlx40](https://aur.archlinux.org/packages/xf86-input-synlx40/) and [xf86-input-mtrack](https://aur.archlinux.org/packages/xf86-input-mtrack/) for alternative drivers.
 *   Audio:
     *   HDMI audio is the default audio output device. Consult the [ALSA](/index.php/ALSA "ALSA") page for details on changing the default.
     *   As the X100e/Mini10, it's possible to mute the headset and speaker outputs separately to the master. Muting the speaker output improves bass output on the headset port.
@@ -263,7 +263,7 @@ After installing Arch Linux and booting, a single beep may be heard. To disable 
 
 ### Lenovo S21e-20
 
-*   Tested with [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> 802.11 wireless driver
+*   Tested with [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) 802.11 wireless driver
 *   Synaptics touchpad required 3 patches to [linux](https://www.archlinux.org/packages/?name=linux):drivers/hid/hid-rmi.c on 2015-07-26 ([bug report](https://bugs.freedesktop.org/show_bug.cgi?id=91102), [kernel recipe patch](https://github.com/harisokanovic/archlinux-packages/commit/f4550c211ca7809ecf926f8074c7b7250a74bd92)). The current 4.3 kernel includes these patches. You will also need to install the xf86_64-input-synaptics package([[2]](https://www.archlinux.org/packages/?name=xf86-input-synaptics))
 
 #### tpacpi-bat

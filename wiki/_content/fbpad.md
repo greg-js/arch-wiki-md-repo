@@ -17,7 +17,7 @@
 
 ## Installation
 
-[fbpad-git](https://aur.archlinux.org/packages/fbpad-git/)<sup><small>AUR</small></sup> can be installed from the [AUR](/index.php/AUR "AUR"), which by default imports the "bold" and "scrsnap" branches of fbpad, which add in 256-colors and bold fonts, and saving the contents of the framebuffer, respectively. fbpad is customized via a `config.h` file, and edits to the `config.h` file are incorporated into fbpad after recompiling fbpad, using the command `makepkg --skipinteg -i`.
+[fbpad-git](https://aur.archlinux.org/packages/fbpad-git/) can be installed from the [AUR](/index.php/AUR "AUR"), which by default imports the "bold" and "scrsnap" branches of fbpad, which add in 256-colors and bold fonts, and saving the contents of the framebuffer, respectively. fbpad is customized via a `config.h` file, and edits to the `config.h` file are incorporated into fbpad after recompiling fbpad, using the command `makepkg --skipinteg -i`.
 
 ## Configuration
 
@@ -78,7 +78,7 @@ patch -p1 -i "${srcdir}/${_gitname}-tagcolor.diff" || return 1
 
 ### Fonts
 
-The font format for fbpad is the "tinyfont", and there exists a utility, [ft2tf](https://aur.archlinux.org/packages/ft2tf/)<sup><small>AUR</small></sup>, which converts TTF files to the tinyfont format. You will need to edit the `config.h` file in the ft2tf build directory to point to the TTF file of your desired font. For instance, if the font file `MonteCarloFixed.ttf` was located in `$HOME/.fonts` directory, you would edit line 10 of the `config.h` to look like the following:
+The font format for fbpad is the "tinyfont", and there exists a utility, [ft2tf](https://aur.archlinux.org/packages/ft2tf/), which converts TTF files to the tinyfont format. You will need to edit the `config.h` file in the ft2tf build directory to point to the TTF file of your desired font. For instance, if the font file `MonteCarloFixed.ttf` was located in `$HOME/.fonts` directory, you would edit line 10 of the `config.h` to look like the following:
 
 ```
 {"/home/archie/.fonts/MonteCarloFixed12.ttf", 6},
@@ -137,7 +137,7 @@ As everything is done mouselessly in fbpad, to copy text, users can make a "scre
 
 ### Watching YouTube
 
-If one is using [MPlayer](/index.php/MPlayer "MPlayer") with the video output driver set to `fbdev2`, [youtube-viewer](https://www.archlinux.org/packages/?name=youtube-viewer) can be used for searching YouTube and watching with MPlayer from the commandline in fbpad. Alternatively, one can add the following script as an external browser in the commandline web browser [w3m](https://www.archlinux.org/packages/?name=w3m), and launch playback of videos from YouTube websites with one's media player of choice. The script below employs [fbff-git](https://aur.archlinux.org/packages/fbff-git/)<sup><small>AUR</small></sup>, a lightweight media player also written by the author of fbpad, and [yturl](https://aur.archlinux.org/packages/yturl/)<sup><small>AUR</small></sup>, a simple program, that, rather UNIX-like, functions solely to convert YouTube URLs into directly watchable URLs.
+If one is using [MPlayer](/index.php/MPlayer "MPlayer") with the video output driver set to `fbdev2`, [youtube-viewer](https://www.archlinux.org/packages/?name=youtube-viewer) can be used for searching YouTube and watching with MPlayer from the commandline in fbpad. Alternatively, one can add the following script as an external browser in the commandline web browser [w3m](https://www.archlinux.org/packages/?name=w3m), and launch playback of videos from YouTube websites with one's media player of choice. The script below employs [fbff-git](https://aur.archlinux.org/packages/fbff-git/), a lightweight media player also written by the author of fbpad, and [yturl](https://aur.archlinux.org/packages/yturl/), a simple program, that, rather UNIX-like, functions solely to convert YouTube URLs into directly watchable URLs.
 
 ```
 #!/bin/sh
@@ -152,9 +152,9 @@ Save the file in your `PATH` as `youtube.sh`, and add it as an external browser 
 Here are a few recommendations for programs that enhance the usability of a framebuffer-based desktop:
 
 *   [dvtm](https://www.archlinux.org/packages/?name=dvtm) - a dynamic virtual terminal manager (think dwm, but for the console)
-*   [fbcat](https://aur.archlinux.org/packages/fbcat/)<sup><small>AUR</small></sup> - a framebuffer screenshot grabber
-*   [fbff-git](https://aur.archlinux.org/packages/fbff-git/)<sup><small>AUR</small></sup> - an ffmpeg-based media player
-*   [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/)<sup><small>AUR</small></sup> - a MuPDF-based PDF viewer, optionally supports DjVu or rendering via poppler
+*   [fbcat](https://aur.archlinux.org/packages/fbcat/) - a framebuffer screenshot grabber
+*   [fbff-git](https://aur.archlinux.org/packages/fbff-git/) - an ffmpeg-based media player
+*   [fbpdf-git](https://aur.archlinux.org/packages/fbpdf-git/) - a MuPDF-based PDF viewer, optionally supports DjVu or rendering via poppler
 *   [fbv](https://www.archlinux.org/packages/?name=fbv) - an image viewer
 *   [screen](/index.php/Screen "Screen") - a terminal multiplexer
 *   [w3m](https://www.archlinux.org/packages/?name=w3m) - a commandline web browser

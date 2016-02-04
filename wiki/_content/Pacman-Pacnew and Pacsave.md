@@ -101,31 +101,31 @@ You can use one of the following tools:
 
 *   **diffpac** — Standalone pacdiffviewer replacement
 
-	[https://github.com/bruenig/diffpac](https://github.com/bruenig/diffpac) || [diffpac](https://aur.archlinux.org/packages/diffpac/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/diffpac)]</sup>
+	[https://github.com/bruenig/diffpac](https://github.com/bruenig/diffpac) || [diffpac](https://aur.archlinux.org/packages/diffpac/)
 
 *   **[Dotpac](/index.php/Dotpac "Dotpac")** — Basic interactive script with ncurses-based text interface and helpful walkthrough. No merging or auto-merging features.
 
-	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)<sup><small>AUR</small></sup>
+	[https://github.com/AladW/dotpac](https://github.com/AladW/dotpac) || [dotpac](https://aur.archlinux.org/packages/dotpac/)
 
 *   **etc-update** — Arch port of Gentoo's _etc-update_ utility, providing a simple CLI to view, merge and interactively edit changes. Trivial changes (such as comments) can be merged automatically.
 
-	[http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2](http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2) || [etc-update](https://aur.archlinux.org/packages/etc-update/)<sup><small>AUR</small></sup>
+	[http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2](http://www.gentoo.org/doc/en/handbook/handbook-amd64.xml?part=3&chap=4#doc_chap2) || [etc-update](https://aur.archlinux.org/packages/etc-update/)
 
 *   **pacdiffviewer** — Fully-featured interactive CLI script with automatic merging. Part of [Yaourt](/index.php/Yaourt "Yaourt").
 
-	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)<sup><small>AUR</small></sup>
+	[http://archlinux.fr/yaourt-en](http://archlinux.fr/yaourt-en) || [yaourt](https://aur.archlinux.org/packages/yaourt/)
 
 *   **pacmerge-git** — Interactive CLI merge program.
 
-	[https://gitorious.org/pacmerge](https://gitorious.org/pacmerge) || [pacmerge-git](https://aur.archlinux.org/packages/pacmerge-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pacmerge-git)]</sup>
+	[https://gitorious.org/pacmerge](https://gitorious.org/pacmerge) || [pacmerge-git](https://aur.archlinux.org/packages/pacmerge-git/)
 
 *   **pacnew-auto** — Automatic `pacnew` merging using [git](https://www.archlinux.org/packages/?name=git) rebase.
 
-	[https://github.com/joanrieu/pacnew-auto](https://github.com/joanrieu/pacnew-auto) || [pacnew-auto-git](https://aur.archlinux.org/packages/pacnew-auto-git/)<sup><small>AUR</small></sup>
+	[https://github.com/joanrieu/pacnew-auto](https://github.com/joanrieu/pacnew-auto) || [pacnew-auto-git](https://aur.archlinux.org/packages/pacnew-auto-git/)
 
 *   **pacnews-git** — A simple script aimed at finding all _.pacnew_ files, then editing them with [vimdiff](/index.php/Vim#Merging_files "Vim").
 
-	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)<sup><small>AUR</small></sup>
+	[https://github.com/pbrisbin/scripts/blob/master/pacnews](https://github.com/pbrisbin/scripts/blob/master/pacnews) || [pacnews-git](https://aur.archlinux.org/packages/pacnews-git/)
 
 ## See also
 

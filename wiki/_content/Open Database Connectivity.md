@@ -144,7 +144,7 @@ MariaDB ODBC driver connection strings and [configuration guide](https://www.dev
 
 #### Create A Test Database
 
-Create a new database "test". You can use one of the MySQL front-ends [mysql-gui-tools](https://aur.archlinux.org/packages/mysql-gui-tools/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mysql-gui-tools)]</sup> [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) or the commandline.
+Create a new database "test". You can use one of the MySQL front-ends [mysql-gui-tools](https://aur.archlinux.org/packages/mysql-gui-tools/) [mysql-workbench](https://www.archlinux.org/packages/?name=mysql-workbench) or the commandline.
 
 ```
 mysqladmin -h localhost -u root -p create test

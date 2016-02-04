@@ -227,7 +227,7 @@ Putting together all of the above gives the following example configuration:
 
 *   **Gsmartcontrol** — A GNOME frontend for the smartctl hard disk drive health inspection tool
 
-	[http://gsmartcontrol.sourceforge.net](http://gsmartcontrol.sourceforge.net) || [gsmartcontrol](https://www.archlinux.org/packages/?name=gsmartcontrol) or [gsmartcontrol-svn](https://aur.archlinux.org/packages/gsmartcontrol-svn/)<sup><small>AUR</small></sup>
+	[http://gsmartcontrol.sourceforge.net](http://gsmartcontrol.sourceforge.net) || [gsmartcontrol](https://www.archlinux.org/packages/?name=gsmartcontrol) or [gsmartcontrol-svn](https://aur.archlinux.org/packages/gsmartcontrol-svn/)
 
 ## Resources
 

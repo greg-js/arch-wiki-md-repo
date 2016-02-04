@@ -40,11 +40,11 @@ New scripts and applets can be found either directly from within Amarok (_Tools 
 
 The moodbar is a feature which turn your standard progress slider bar into a progress slider bar coloured depending on the mood of your track.
 
-Install [moodbar](https://aur.archlinux.org/packages/moodbar/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [moodbar](https://aur.archlinux.org/packages/moodbar/) from the [AUR](/index.php/AUR "AUR").
 
 Then go to _Settings > Configure Amarok_ and check "Show moodbar in progress slider".
 
-**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[2]](http://amarok.kde.org/wiki/Moodbar)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-04-23]</sup> to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to _Settings > Configure Amarok_, and in the general tab check the "use moods" and "store moods data files with music" boxes.
+**Note:** As of February 19th Amarok 2 does **not** generate moodfiles, you can either try to follow this tutorial [[2]](http://amarok.kde.org/wiki/Moodbar) to create them yourself or get Amarok1 from AUR and let it generate all the .mood files for you. For the Amarok1 solution go to _Settings > Configure Amarok_, and in the general tab check the "use moods" and "store moods data files with music" boxes.
 
 ## SHOUTcast
 
@@ -54,7 +54,7 @@ You can get back SHOUTcast by using the "SHOUTcast service" script. Start Amarok
 
 [Amarok 1.4](/index.php/Amarok_1.4 "Amarok 1.4") and [VLC](/index.php/VLC "VLC") continue to support the SHOUTcast Internet radio station index and streaming as before.
 
-See also: [How can I use Amarok to stream to my own radio station?](http://amarok.kde.org/wiki/FAQ#How_can_I_use_Amarok_to_stream_to_my_own_radio_station.3F)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-07-5]</sup>, which recommends [Internet DJ Console](http://giss.tv/sahabuntu/doc/idjc.html), available in the AUR ([idjc](https://aur.archlinux.org/packages/idjc/)<sup><small>AUR</small></sup>).
+See also: [How can I use Amarok to stream to my own radio station?](http://amarok.kde.org/wiki/FAQ#How_can_I_use_Amarok_to_stream_to_my_own_radio_station.3F), which recommends [Internet DJ Console](http://giss.tv/sahabuntu/doc/idjc.html), available in the AUR ([idjc](https://aur.archlinux.org/packages/idjc/)).
 
 ## Ampache/MP3 Streaming
 
@@ -91,7 +91,7 @@ To configure amarok to use MySQL, enter the Configure Amarok screen, choose Data
 
 ### PostgreSQL
 
-Not yet supported, [see more](http://amarok.kde.org/blog/archives/812-MySQL-in-Amarok-2-The-Reality.html)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-04-23]</sup>
+Not yet supported, [see more](http://amarok.kde.org/blog/archives/812-MySQL-in-Amarok-2-The-Reality.html)
 
 ## Audio CD Playback
 

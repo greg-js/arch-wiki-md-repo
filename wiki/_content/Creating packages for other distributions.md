@@ -24,9 +24,9 @@
 ## General
 
 *   [Virtualization](/index.php/Category:Virtualization "Category:Virtualization") is an obvious way, but requires maintaining additional system(s).
-*   Use distribution-specific packaging tools. Examples: [dh-make](https://aur.archlinux.org/packages/dh-make/)<sup><small>AUR</small></sup>, [dpkg](https://aur.archlinux.org/packages/dpkg/)<sup><small>AUR</small></sup> (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/)<sup><small>AUR</small></sup> (Fedora). Shortcuts such as [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) or [checkinstall](https://aur.archlinux.org/packages/checkinstall/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/checkinstall)]</sup> may be suited for less complex tasks.
-*   [Chroot](/index.php/Chroot "Chroot") to create a base system inside (yet separate from) Arch. Examples: [debootstrap](https://aur.archlinux.org/packages/debootstrap/)<sup><small>AUR</small></sup> (Debian), [febootstrap](https://aur.archlinux.org/packages/febootstrap/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/febootstrap)]</sup> (Fedora). This has the added benefit of building in a minimal, clean environment.
-*   Use chroot with packaging tools in an an automated fashion. Examples: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)<sup><small>AUR</small></sup> (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mock-git)]</sup> (Fedora).
+*   Use distribution-specific packaging tools. Examples: [dh-make](https://aur.archlinux.org/packages/dh-make/), [dpkg](https://aur.archlinux.org/packages/dpkg/) (Debian), [rpm-org](https://aur.archlinux.org/packages/rpm-org/) (Fedora). Shortcuts such as [dpkg-deb](http://tldp.org/HOWTO/html_single/Debian-Binary-Package-Building-HOWTO/) or [checkinstall](https://aur.archlinux.org/packages/checkinstall/) may be suited for less complex tasks.
+*   [Chroot](/index.php/Chroot "Chroot") to create a base system inside (yet separate from) Arch. Examples: [debootstrap](https://aur.archlinux.org/packages/debootstrap/) (Debian), [febootstrap](https://aur.archlinux.org/packages/febootstrap/) (Fedora). This has the added benefit of building in a minimal, clean environment.
+*   Use chroot with packaging tools in an an automated fashion. Examples: [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/) (Debian), [mock-git](https://aur.archlinux.org/packages/mock-git/) (Fedora).
 *   A different way to handle (possibly incompatible) depends is [static linking](http://jurjenbokma.com/ApprenticesNotes/getting_statlinked_binaries_on_debian.html). Please note that most distributions frown on this practice.
 *   Common practice applies regardless of distribution used. For example, do [not build packages as root](https://bbs.archlinux.org/viewtopic.php?id=67561).
 
@@ -36,39 +36,39 @@ The [Debian Packaging Tutorial](https://www.debian.org/doc/manuals/packaging-tut
 
 **cowdancer** — Copy-on-write wrapper for pbuilder
 
-	[https://packages.debian.org/sid/cowdancer](https://packages.debian.org/sid/cowdancer) || [cowdancer](https://aur.archlinux.org/packages/cowdancer/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/cowdancer](https://packages.debian.org/sid/cowdancer) || [cowdancer](https://aur.archlinux.org/packages/cowdancer/)
 
 **debootstrap** — A tool used to create a Debian base system from scratch, without requiring the availability of dpkg or apt.
 
-	[https://packages.debian.org/sid/debootstrap](https://packages.debian.org/sid/debootstrap) || [debootstrap](https://aur.archlinux.org/packages/debootstrap/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/debootstrap](https://packages.debian.org/sid/debootstrap) || [debootstrap](https://aur.archlinux.org/packages/debootstrap/)
 
 **devscripts** — Scripts to make the life of a Debian Package maintainer easier
 
-	[https://packages.debian.org/sid/devscripts](https://packages.debian.org/sid/devscripts) || [devscripts](https://aur.archlinux.org/packages/devscripts/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/devscripts](https://packages.debian.org/sid/devscripts) || [devscripts](https://aur.archlinux.org/packages/devscripts/)
 
 **dh-autoreconf** — Debhelper add-on to call autoreconf and clean up after the build
 
-	[https://packages.debian.org/sid/dh-autoreconf](https://packages.debian.org/sid/dh-autoreconf) || [dh-autoreconf](https://aur.archlinux.org/packages/dh-autoreconf/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/dh-autoreconf](https://packages.debian.org/sid/dh-autoreconf) || [dh-autoreconf](https://aur.archlinux.org/packages/dh-autoreconf/)
 
 **dh-make** — Tool that converts source archives into Debian package source
 
-	[https://packages.debian.org/sid/dh-make](https://packages.debian.org/sid/dh-make) || [dh-make](https://aur.archlinux.org/packages/dh-make/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/dh-make](https://packages.debian.org/sid/dh-make) || [dh-make](https://aur.archlinux.org/packages/dh-make/)
 
 **[dpkg](https://en.wikipedia.org/wiki/dpkg "wikipedia:dpkg")** — The Debian Package Manager
 
-	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/dpkg](https://packages.debian.org/sid/dpkg) || [dpkg](https://aur.archlinux.org/packages/dpkg/)
 
 **dput** — Debian package upload tool
 
-	[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)<sup><small>AUR</small></sup>
+	[https://packages.debian.org/sid/dput](https://packages.debian.org/sid/dput) || [dput](https://aur.archlinux.org/packages/dput/)
 
 **git-buildpackage** — Tools from Debian to integrate the package build system with Git
 
-	[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)<sup><small>AUR</small></sup>
+	[https://honk.sigxcpu.org/piki/projects/git-buildpackage/](https://honk.sigxcpu.org/piki/projects/git-buildpackage/) || [git-buildpackage](https://aur.archlinux.org/packages/git-buildpackage/)
 
 **pbuilder-ubuntu** — Chroot environment for building Debian packages
 
-	[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/ubuntu/+source/pbuilder](https://launchpad.net/ubuntu/+source/pbuilder) || [pbuilder-ubuntu](https://aur.archlinux.org/packages/pbuilder-ubuntu/)
 
 **[quilt](https://en.wikipedia.org/wiki/Quilt "wikipedia:Quilt")** — Manage a series of patches by keeping track of the changes each patch makes
 
@@ -111,8 +111,8 @@ override_dh_shlibdeps:
 
 See the [Pbuilder How-To](https://wiki.ubuntu.com/PbuilderHowto) for an introduction to _pbuilder-ubuntu_. Using _cowdancer_ in addition is recommended as [copy-on-write](http://en.wikipedia.org/wiki/Copy-on-write) offers a significant performance benefit.
 
-*   [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/)<sup><small>AUR</small></sup>, [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/)<sup><small>AUR</small></sup> and [gnupg1](https://aur.archlinux.org/packages/gnupg1/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") are required.
-*   _eatmydata_ is available as [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/)<sup><small>AUR</small></sup> and [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lib32-libeatmydata)]</sup> in the [AUR](/index.php/AUR "AUR"). To prevent `LD_PRELOAD` errors, it must be installed both inside and outside the chroot. As the paths are different in Arch and Debian, create the following symbolic links:
+*   [debian-archive-keyring](https://aur.archlinux.org/packages/debian-archive-keyring/), [ubuntu-keyring](https://aur.archlinux.org/packages/ubuntu-keyring/) and [gnupg1](https://aur.archlinux.org/packages/gnupg1/) from the [AUR](/index.php/AUR "AUR") are required.
+*   _eatmydata_ is available as [libeatmydata](https://aur.archlinux.org/packages/libeatmydata/) and [lib32-libeatmydata](https://aur.archlinux.org/packages/lib32-libeatmydata/) in the [AUR](/index.php/AUR "AUR"). To prevent `LD_PRELOAD` errors, it must be installed both inside and outside the chroot. As the paths are different in Arch and Debian, create the following symbolic links:
 
 ```
 # ln -s /usr/lib/libeatmydata.so.1.1.1 /usr/lib/libeatmydata/libeatmydata.so
@@ -140,11 +140,11 @@ $ dpkg-buildpackage -d -us -uc -S
 
 **rpm-org** — RPM.org fork, used in major RPM distros
 
-	[http://www.rpm.org/](http://www.rpm.org/) || [rpm-org](https://aur.archlinux.org/packages/rpm-org/)<sup><small>AUR</small></sup>
+	[http://www.rpm.org/](http://www.rpm.org/) || [rpm-org](https://aur.archlinux.org/packages/rpm-org/)
 
 **mock** — Takes Source RPMs and builds RPMs from them in a chroot
 
-	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock-git](https://aur.archlinux.org/packages/mock-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mock-git)]</sup>
+	[http://fedoraproject.org/wiki/Projects/Mock](http://fedoraproject.org/wiki/Projects/Mock) || [mock-git](https://aur.archlinux.org/packages/mock-git/)
 
 ### See also
 
@@ -162,7 +162,7 @@ The [Open Build Service (OBS)](http://openbuildservice.org/) is a generic system
 #### Creating a Package
 
 1.  Create an account in [[1]](https://build.opensuse.org/)
-2.  [Install](/index.php/Install "Install") the [osc](https://aur.archlinux.org/packages/osc/)<sup><small>AUR</small></sup> package. Upstream documentation is available [here](http://en.opensuse.org/openSUSE:OSC).
+2.  [Install](/index.php/Install "Install") the [osc](https://aur.archlinux.org/packages/osc/) package. Upstream documentation is available [here](http://en.opensuse.org/openSUSE:OSC).
 3.  Create an example `home:foo` project.
 4.  Create an example `home:foo:bar` subproject (optional, but recommended).
 5.  Create a new `ham` example package with `osc meta pkg -e home:foo:bar ham`. Save the created XML then exit.
@@ -197,7 +197,7 @@ The first version is more flexible and dynamic. To proceed:
 </services>
 ```
 
-Here is an example for [gimp-git](https://aur.archlinux.org/packages/gimp-git/)<sup><small>AUR</small></sup>:
+Here is an example for [gimp-git](https://aur.archlinux.org/packages/gimp-git/):
 
 ```
 <services>

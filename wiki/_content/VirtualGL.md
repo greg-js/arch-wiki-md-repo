@@ -112,7 +112,7 @@ VirtualGL can provide 3D rendering for _any_ general-purpose [vncserver](/index.
 
 However, if you want to really get good performance out of it _(e.g. to make it viable to watch videos or play OpenGL games over VNC)_, you might want to use one of the VNC implementations that are specifically optimized for this use-case:
 
-*   [turbovnc](https://aur.archlinux.org/packages/turbovnc/)<sup><small>AUR</small></sup>: Developed by the same team as VirtualGL, with the explicit goal of providing the best performance in combination with it. However, its vncserver implementation does not support all features a normal Xorg server provides, thus _some_ applications will run unusually slow or not at all in it.
+*   [turbovnc](https://aur.archlinux.org/packages/turbovnc/): Developed by the same team as VirtualGL, with the explicit goal of providing the best performance in combination with it. However, its vncserver implementation does not support all features a normal Xorg server provides, thus _some_ applications will run unusually slow or not at all in it.
 *   [TigerVNC](/index.php/TigerVNC "TigerVNC"): Also developed with VirtualGL in mind and achieves good performance with it, while providing better Xorg compatibility than TurboVNC.
 
 ## Running applications

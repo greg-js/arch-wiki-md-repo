@@ -157,10 +157,10 @@ Double click the clip to hide and unhide the application icons that are attached
 
 Dockapps are small applications that run in the dock. They can be useful for showing system information. Some useful dockapps that are in the [AUR](/index.php/AUR "AUR") include:
 
-*   [wmclockmon](https://aur.archlinux.org/packages/wmclockmon/)<sup><small>AUR</small></sup> - Show time and date.
-*   [wmcpuload](https://aur.archlinux.org/packages/wmcpuload/)<sup><small>AUR</small></sup> - Show CPU status and usage.
-*   [wmnetload](https://aur.archlinux.org/packages/wmnetload/)<sup><small>AUR</small></sup> - Show network status. Usage: `wmnetload -i eth0`
-*   [wmdiskmon](https://aur.archlinux.org/packages/wmdiskmon/)<sup><small>AUR</small></sup> - Show disk usage. Usage: `wmdiskmon -p /dev/sda1 -p /dev/sda2`
+*   [wmclockmon](https://aur.archlinux.org/packages/wmclockmon/) - Show time and date.
+*   [wmcpuload](https://aur.archlinux.org/packages/wmcpuload/) - Show CPU status and usage.
+*   [wmnetload](https://aur.archlinux.org/packages/wmnetload/) - Show network status. Usage: `wmnetload -i eth0`
+*   [wmdiskmon](https://aur.archlinux.org/packages/wmdiskmon/) - Show disk usage. Usage: `wmdiskmon -p /dev/sda1 -p /dev/sda2`
 
 See the Window Maker website for more information about dockapps.
 
@@ -174,9 +174,9 @@ Starting from version 0.8, there is very basic support for WindowMaker dockapp m
 
 But also there are some easy ways, too:
 
-*   [wmsystray](https://aur.archlinux.org/packages/wmsystray/)<sup><small>AUR</small></sup> : which practically do the job for you.
-*   [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/)<sup><small>AUR</small></sup> : The same but with no border and it suppose to work nicely on other desktops too.
-*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/)<sup><small>AUR</small></sup> : which is a small system tray (also called notification tray) designed for all the light window managers _supporting docking_.
+*   [wmsystray](https://aur.archlinux.org/packages/wmsystray/) : which practically do the job for you.
+*   [wmsystemtray](https://aur.archlinux.org/packages/wmsystemtray/) : The same but with no border and it suppose to work nicely on other desktops too.
+*   [Peksystray](https://aur.archlinux.org/packages/Peksystray/) : which is a small system tray (also called notification tray) designed for all the light window managers _supporting docking_.
 
 Peksystray provides a window where icons will automatically add up depending on the requests from the applications. Both the size of the window and the size of the icons can be selected by the user. If the window is full, it can automatically display another window in order to display more icons.
 

@@ -26,11 +26,11 @@ If you have neither KMS nor a framebuffer, Plymouth will fall back to text-mode.
 
 ## Installation
 
-Plymouth is available from the [AUR](/index.php/AUR "AUR"): the stable package is [plymouth](https://aur.archlinux.org/packages/plymouth/)<sup><small>AUR</small></sup> and the development version is [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/)<sup><small>AUR</small></sup>.
+Plymouth is available from the [AUR](/index.php/AUR "AUR"): the stable package is [plymouth](https://aur.archlinux.org/packages/plymouth/) and the development version is [plymouth-git](https://aur.archlinux.org/packages/plymouth-git/).
 
-If you also use [KDM](/index.php/KDM "KDM"), you need to install the [kdebase-workspace-plymouth](https://aur.archlinux.org/packages/kdebase-workspace-plymouth/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdebase-workspace-plymouth)]</sup>, otherwise kdm may not start correctly.
+If you also use [KDM](/index.php/KDM "KDM"), you need to install the [kdebase-workspace-plymouth](https://aur.archlinux.org/packages/kdebase-workspace-plymouth/), otherwise kdm may not start correctly.
 
-If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/)<sup><small>AUR</small></sup>, which compiles gdm with plymouth support.
+If you also use [GDM](/index.php/GDM "GDM"), you should install the [gdm-plymouth](https://aur.archlinux.org/packages/gdm-plymouth/), which compiles gdm with plymouth support.
 
 Both packages are also available in the unofficial [nullptr_t](/index.php/Unofficial_user_repositories#nullptr_t "Unofficial user repositories") repository.
 
@@ -103,7 +103,7 @@ Plymouth comes with a selection of themes:
 7.  _(**Text**: "Text mode theme with tricolor progress bar")_
 8.  _(**Details**: "Verbose fallback theme")_
 
-In addition you can install other themes from [AUR](/index.php/AUR "AUR"), just have a look at the "Required by"-Array on [plymouth](https://aur.archlinux.org/packages/plymouth/)<sup><small>AUR</small></sup>.
+In addition you can install other themes from [AUR](/index.php/AUR "AUR"), just have a look at the "Required by"-Array on [plymouth](https://aur.archlinux.org/packages/plymouth/).
 
 By default, **spinner** theme is selected. You can change the theme by editing `/etc/plymouth/plymouthd.conf`, for example:
 

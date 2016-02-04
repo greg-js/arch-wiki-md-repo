@@ -14,7 +14,7 @@ seq24 is a MIDI sequencer. It has a simple user interface. MIDI ".mid" files are
 
 ## How to setup seq24
 
-seq24 can be found in the [AUR](/index.php/AUR "AUR"): [seq24](https://aur.archlinux.org/packages/seq24/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/seq24)]</sup>.
+seq24 can be found in the [AUR](/index.php/AUR "AUR"): [seq24](https://aur.archlinux.org/packages/seq24/).
 
 seq24 is a sequencer only. To be able to listen to your music as you create it, you will need a MIDI device installed on your computer. Follow the instructions on the [timidity](/index.php/Timidity "Timidity") wiki page to easily setup a software MIDI device. Then, when using seq24, (you will learn more about this in external documentation) select one of the "TiMidity ports" in the track editor to connect to a MIDI device. For example, on my computer, one of the devices is "[1] 128:0 (TiMidity port 0)".
 

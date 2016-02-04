@@ -26,7 +26,7 @@ freshclamd.service | Anti-virus toolkit for Unix. |
 | [Connman](/index.php/Connman "Connman") | connmand | connman.service | Wireless LAN network manager. |
 | [Cpupower](/index.php/Cpupower "Cpupower") | cpupower | cpupower.service | Sets [cpufreq](/index.php/Cpufreq "Cpufreq") governor and other parameters on startup. |
  craftbukkit | craftbukkit.service | CraftBukkit Minecraft server. |
-| [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)<sup><small>AUR</small></sup>) | Daemon to schedule and time events. The daemon name _crond_ is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/)<sup><small>AUR</small></sup>. |
+| [Cron](/index.php/Cron "Cron") | crond | cronie.service (if using [cronie](https://www.archlinux.org/packages/?name=cronie)) or dcron.service (if using [dcron](https://aur.archlinux.org/packages/dcron/)) | Daemon to schedule and time events. The daemon name _crond_ is used by at least two packages, [cronie](https://www.archlinux.org/packages/?name=cronie) and [dcron](https://aur.archlinux.org/packages/dcron/). |
 | [CUPS](/index.php/CUPS "CUPS") | cupsd | org.cups.cupsd.service | The CUPS Printing System daemon. |
 | [D-Bus](/index.php/D-Bus "D-Bus") | dbus | _always on_ – dbus.service | Freedesktop.org message bus system. |
 | [dante](https://www.archlinux.org/packages/?name=dante) | sockd | sockd.service | A circuit-level SOCKS client/server. |

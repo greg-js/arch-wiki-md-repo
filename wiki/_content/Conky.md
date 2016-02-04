@@ -69,19 +69,19 @@ In addition to the basic _conky_ package, there are various [AUR](/index.php/AUR
 
 *   **conky-cli** — _Conky_ without X11 dependencies
 
-	|| [conky-cli](https://aur.archlinux.org/packages/conky-cli/)<sup><small>AUR</small></sup>
+	|| [conky-cli](https://aur.archlinux.org/packages/conky-cli/)
 
 *   **conky-lua** — _Conky_ with Lua support
 
-	|| [conky-lua](https://aur.archlinux.org/packages/conky-lua/)<sup><small>AUR</small></sup>
+	|| [conky-lua](https://aur.archlinux.org/packages/conky-lua/)
 
 *   **conky-lua-nv** — _Conky_ with both Lua and Nvidia support
 
-	|| [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)<sup><small>AUR</small></sup>
+	|| [conky-lua-nv](https://aur.archlinux.org/packages/conky-lua-nv/)
 
 *   **conky-nvidia** — _Conky_ with Nvidia support
 
-	|| [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)<sup><small>AUR</small></sup>
+	|| [conky-nvidia](https://aur.archlinux.org/packages/conky-nvidia/)
 
 ## Tips and tricks
 
@@ -451,7 +451,7 @@ Here I used `*` as the password for _conky_ to ask for it at start, but you do *
 
 #### IMAP + SSL using Perl
 
-_Conky_ has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/)<sup><small>AUR</small></sup> and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
+_Conky_ has built in support for IMAP accounts but does not support SSL. This can be provided using this script from [this forum post](http://www.unix.com/shell-programming-scripting/115322-perl-conky-gmail-imap-unread-message-count.html). This requires the Perl/CPAN Modules Mail::IMAPClient and IO::Socket::SSL which are in the [perl-mail-imapclient](https://aur.archlinux.org/packages/perl-mail-imapclient/) and [perl-io-socket-ssl](https://www.archlinux.org/packages/?name=perl-io-socket-ssl) packages
 
 Create a file named `imap.pl` in a location to be read by _conky_. In this file, add (with the appropriate changes):
 
@@ -576,7 +576,7 @@ This is the expected result :
 
 ### Fix scrolling with UTF-8 multibyte characters
 
-The current version of _conky_ (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)<sup><small>AUR</small></sup>
+The current version of _conky_ (1.9.0) suffers from a [bug](https://github.com/brndnmtthws/conky/issues/129) where scrolling text increments by byte, not by character, resulting in text containing multibyte characters to disappear and reappear while scrolling. A package with a patch fixing this bug can be found in the AUR: [conky-utfscroll](https://aur.archlinux.org/packages/conky-utfscroll/)
 
 ## User-contributed configuration examples
 
@@ -586,7 +586,7 @@ See [[2]](https://gist.github.com/anonymous/85d052c0c23e58bc3666).
 
 ## A note about symbolic fonts
 
-Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/)<sup><small>AUR</small></sup> and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ttf-piechartsformaps)]</sup> respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
+Many of the more decorated `conky.conf`'s use the fonts PizzaDude Bullets and Pie Charts for Maps. They are available from the AUR as [ttf-pizzadude-bullets](https://aur.archlinux.org/packages/ttf-pizzadude-bullets/) and [ttf-piechartsformaps](https://aur.archlinux.org/packages/ttf-piechartsformaps/) respectively, or they can be found and downloaded with a quick search and manually installed using the instructions in [Fonts](/index.php/Fonts "Fonts").
 
 ## Fonts appear smaller than they should with Infinality
 

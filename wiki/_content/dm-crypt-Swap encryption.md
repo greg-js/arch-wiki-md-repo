@@ -155,7 +155,7 @@ Create a swap filesystem inside the mapped partition:
 
 ```
 
-Now you have to create a hook to open the swap at boot time. You can either [install](/index.php/Install "Install") and configure [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/)<sup><small>AUR</small></sup>, or follow the following instructions. Create a hook file containing the open command:
+Now you have to create a hook to open the swap at boot time. You can either [install](/index.php/Install "Install") and configure [mkinitcpio-openswap](https://aur.archlinux.org/packages/mkinitcpio-openswap/), or follow the following instructions. Create a hook file containing the open command:
 
  `/lib/initcpio/hooks/openswap` 
 

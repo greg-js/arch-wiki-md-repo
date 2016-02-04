@@ -6,8 +6,8 @@ The 15.6" Lenovo G580 laptop PC combines top notch essentials – such as cuttin
 
 A basic Arch Linux installation will do just fine for about everything except network cards. No custom kernel needed. However, for network cards you need to install following packages:
 
-*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> and [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) for wireless
-*   (This backport driver is not need anymore in newer kernel 3.10) [backports-patched](https://aur.archlinux.org/packages/backports-patched/)<sup><small>AUR</small></sup> for Atheros Network driver (Choose Alx) (find more information at [linuxfoundation.org](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx))
+*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) and [wireless_tools](https://www.archlinux.org/packages/?name=wireless_tools) for wireless
+*   (This backport driver is not need anymore in newer kernel 3.10) [backports-patched](https://aur.archlinux.org/packages/backports-patched/) for Atheros Network driver (Choose Alx) (find more information at [linuxfoundation.org](http://www.linuxfoundation.org/collaborate/workgroups/networking/alx))
 
 ## Graphic
 

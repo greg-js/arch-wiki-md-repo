@@ -12,7 +12,7 @@
 
 ## Installation
 
-Install [sickrage](https://aur.archlinux.org/packages/sickrage/)<sup><small>AUR</small></sup> or [sickrage-git](https://aur.archlinux.org/packages/sickrage-git/)<sup><small>AUR</small></sup>. Or install [sickrage2-git](https://aur.archlinux.org/packages/sickrage2-git/)<sup><small>AUR</small></sup>, a fork of sickrage. It contains the application and a systemd service file.
+Install [sickrage](https://aur.archlinux.org/packages/sickrage/) or [sickrage-git](https://aur.archlinux.org/packages/sickrage-git/). Or install [sickrage2-git](https://aur.archlinux.org/packages/sickrage2-git/), a fork of sickrage. It contains the application and a systemd service file.
 
 ### Running as a systemd service
 
@@ -45,7 +45,7 @@ By default, the SickRage webui running on port 8081 is not protected by a passwo
 *   [Deluge](/index.php/Deluge "Deluge")
 *   Synologie DS
 *   [rtorrent](https://www.archlinux.org/packages/?name=rtorrent)
-*   [qBittorent](https://aur.archlinux.org/packages/qBittorent/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup>
+*   [qBittorent](https://aur.archlinux.org/packages/qBittorent/)
 
 ### First time usage
 

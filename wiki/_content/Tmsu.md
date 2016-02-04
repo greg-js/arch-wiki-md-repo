@@ -11,7 +11,7 @@
 
 ## Installation
 
-tmsu can be installed with the [tmsu](https://aur.archlinux.org/packages/tmsu/)<sup><small>AUR</small></sup> or [tmsu-bin](https://aur.archlinux.org/packages/tmsu-bin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tmsu-bin)]</sup> packages.
+tmsu can be installed with the [tmsu](https://aur.archlinux.org/packages/tmsu/) or [tmsu-bin](https://aur.archlinux.org/packages/tmsu-bin/) packages.
 
 ## Usage
 
@@ -25,6 +25,6 @@ tmsu creates symlinks between files, folders and the related tags. That is, it c
 
 *   [Reddit discussion](http://en.reddit.com/r/linux/comments/woear/tmsu_is_a_program_that_allows_you_to_organise/)
 *   [tmsu extensions](https://github.com/Dieterbe/tmsu-helpers)
-*   [tagsistant](https://aur.archlinux.org/packages/tagsistant/)<sup><small>AUR</small></sup> (alternative semantic filesystem)
+*   [tagsistant](https://aur.archlinux.org/packages/tagsistant/) (alternative semantic filesystem)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmsu&oldid=399131](https://wiki.archlinux.org/index.php?title=Tmsu&oldid=399131)"

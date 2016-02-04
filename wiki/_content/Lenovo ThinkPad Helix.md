@@ -43,7 +43,7 @@ To fully support all hardware in X, one needs to ensure that the following drive
 *   [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) (for the clickpad)
 *   [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) (for the digitizers)
 *   [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (for the GPU)
-*   [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> (accelerometer/gyroscope, ambient light sensor, digital campass)
+*   [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) (accelerometer/gyroscope, ambient light sensor, digital campass)
 
 ### Bluetooth
 
@@ -78,9 +78,9 @@ The **Wacom ISDv4 EC Pen stylus** xinput device is recognized by the [xf86-input
 With an up-to-date Arch install, install the following packages:
 
 *   [libwacom](https://www.archlinux.org/packages/?name=libwacom)
-*   [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup>
+*   [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)
 
-The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/)<sup><small>AUR</small></sup> package installs the additional [Udev](/index.php/Udev "Udev") rules. The [libwacom](https://www.archlinux.org/packages/?name=libwacom) package is suggested by some graphics applications to see the additional inputs.
+The [wacom-udev](https://aur.archlinux.org/packages/wacom-udev/) package installs the additional [Udev](/index.php/Udev "Udev") rules. The [libwacom](https://www.archlinux.org/packages/?name=libwacom) package is suggested by some graphics applications to see the additional inputs.
 
 [Udev](/index.php/Udev "Udev") should automatically detect the changes if already running. But, you may want to reboot your system to verify the changes stick.
 
@@ -122,7 +122,7 @@ If you find yourself frustrated by the capacitive digitizer while trying to use 
 
 ##### thinkpad-helix-utils: Toggle Touch
 
-The [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup> package contains a script located at `/usr/bin/helix-toggle-touch` that will toggle the capacitive digitizer on and off with a simple command using Xorg's **xinput** function. It also installs a `desktop` file called **Toggle Touch** that can be used to toggle xinput on and off with the pen.
+The [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/) package contains a script located at `/usr/bin/helix-toggle-touch` that will toggle the capacitive digitizer on and off with a simple command using Xorg's **xinput** function. It also installs a `desktop` file called **Toggle Touch** that can be used to toggle xinput on and off with the pen.
 
 Once activated, it disables the touchscreen xinput device until it is ran again to re-activate it.
 
@@ -143,20 +143,20 @@ Please note that you can have both the thinkpad-helix-utils **Toggle Touch** and
 
 ### Sensors
 
-For X11 to utilize, install the AUR package [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> to expose the dbus events. For example, [Gnome](https://www.archlinux.org/packages/?name=Gnome) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> package to:
+For X11 to utilize, install the AUR package [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) to expose the dbus events. For example, [Gnome](https://www.archlinux.org/packages/?name=Gnome) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package to:
 
 *   Adjust the display brightness when moving from dark to bright lighting
 *   Automatically rotate the display based on orientation.
 
-See the upstream source for more information about [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> and how to configure/test its functionality.
+See the upstream source for more information about [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) and how to configure/test its functionality.
 
 ### Screen Rotation
 
-If you have both digitizers configured through the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver and the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/)<sup><small>AUR</small></sup> package, they will automatically rotate with the display.
+If you have both digitizers configured through the [xf86-input-wacom](https://www.archlinux.org/packages/?name=xf86-input-wacom) driver and the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package, they will automatically rotate with the display.
 
 Alternatively, you can use a simple command like `xrandr --output eDP1 --rotate left` to rotate the screen with ease.
 
-If you want to use the bezel buttons (or some other hotkey) to cycle through orientations (or toggle between two specific ones), `helix-rotate`, also from from [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/)<sup><small>AUR</small></sup>, provides an easy-to-bind command that may serve your needs well.
+If you want to use the bezel buttons (or some other hotkey) to cycle through orientations (or toggle between two specific ones), `helix-rotate`, also from from [thinkpad-helix-utils](https://aur.archlinux.org/packages/thinkpad-helix-utils/), provides an easy-to-bind command that may serve your needs well.
 
 There is also [Magick Rotation](https://launchpad.net/magick-rotation/), which is supposed to automatically rotate the screen based on input events, but it only seems to respond to docking/undocking the tablet.
 

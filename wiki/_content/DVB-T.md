@@ -63,7 +63,7 @@ Various DVB utilities can be found in the [linuxtv-dvb-apps](https://www.archlin
 
 ### Scanning
 
-[w_scan](https://aur.archlinux.org/packages/w_scan/)<sup><small>AUR</small></sup> allows for automatic scanning of channels without configuration. Install it then issue:
+[w_scan](https://aur.archlinux.org/packages/w_scan/) allows for automatic scanning of channels without configuration. Install it then issue:
 
 ```
 # w_scan -ft -c [country_code] > ~/channels.conf
@@ -125,7 +125,7 @@ with a valid `STREAM NAME` from the channels configuration file.
 
 #### Channel selector
 
-Here is a [lstv](https://aur.archlinux.org/packages/lstv/)<sup><small>AUR</small></sup> script that will show a numbered list of channels by reading data from a `~/.mplayer/channels.conf` file. You will be able to watch a channel by using a number associated to it by the script instead of having to type the whole channel name on the command line, e.g. `lstv 3`. The channel number associated by the script equals to the line number with tuning configuration for it. The script disables display power saving and a screen saver before starting _mplayer_ and enables both again after you close it to disable screensaver management in this script remove `xset ...;` before and after [MPlayer](/index.php/MPlayer "MPlayer").
+Here is a [lstv](https://aur.archlinux.org/packages/lstv/) script that will show a numbered list of channels by reading data from a `~/.mplayer/channels.conf` file. You will be able to watch a channel by using a number associated to it by the script instead of having to type the whole channel name on the command line, e.g. `lstv 3`. The channel number associated by the script equals to the line number with tuning configuration for it. The script disables display power saving and a screen saver before starting _mplayer_ and enables both again after you close it to disable screensaver management in this script remove `xset ...;` before and after [MPlayer](/index.php/MPlayer "MPlayer").
 
  `/usr/local/bin/lstv` 
 
@@ -150,7 +150,7 @@ fi;
 **Note:**
 
 *   It is assumed that the `channels.conf` file has been created with: `w_scan -ft -c _country_code_ -C UTF-8 -M -E 0 -O 0 > ~/.mplayer/channels.conf`
-*   If the list of channels is too long then you can use something like `lstv | less` and search for channels name by pressing `/` and writing its name. When found press `q` for exiting of [less](http://unixhelp.ed.ac.uk/CGI/man-cgi?less) and use the channel associated number with [lstv](https://aur.archlinux.org/packages/lstv/)<sup><small>AUR</small></sup>.
+*   If the list of channels is too long then you can use something like `lstv | less` and search for channels name by pressing `/` and writing its name. When found press `q` for exiting of [less](http://unixhelp.ed.ac.uk/CGI/man-cgi?less) and use the channel associated number with [lstv](https://aur.archlinux.org/packages/lstv/).
 *   If you have a problem with playing of video see [Arch Linux Forum](https://bbs.archlinux.org/viewtopic.php?id=57650).
 
 **Warning:** If there is more than one channel with the same name, _mplayer_ will play only the closest one in the list.
@@ -208,7 +208,7 @@ $ ffmpeg -f mpegts -i /dev/dvb/adapter0/dvr0 out.mp4
 
 If you bump into problems, try these tools to help debug:
 
-*   [dvbsnoop](https://aur.archlinux.org/packages/dvbsnoop/)<sup><small>AUR</small></sup> is an advanced tool that can show all the necessary data regarding the bandwidth, signal, frontend, etc.
+*   [dvbsnoop](https://aur.archlinux.org/packages/dvbsnoop/) is an advanced tool that can show all the necessary data regarding the bandwidth, signal, frontend, etc.
 *   `femon -H` shows signal statistics
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=DVB-T&oldid=418466](https://wiki.archlinux.org/index.php?title=DVB-T&oldid=418466)"

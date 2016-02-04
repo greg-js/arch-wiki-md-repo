@@ -33,7 +33,7 @@ See the main article: [keytouch](/index.php/Keytouch "Keytouch").
 
 From [actkbd home page](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/):
 
-	[actkbd](https://aur.archlinux.org/packages/actkbd/)<sup><small>AUR</small></sup> (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
+	[actkbd](https://aur.archlinux.org/packages/actkbd/) (available in [AUR](/index.php/AUR "AUR")) is a simple daemon that binds actions to keyboard events. It recognises key combinations and can handle press, repeat and release events. Currently it only supports the linux-2.6 evdev interface. It uses a plain-text configuration file which contains all the bindings.
 
 A sample configuration and guide is available [here](http://users.softlab.ece.ntua.gr/~thkala/projects/actkbd/latest/README).
 
@@ -41,6 +41,6 @@ A sample configuration and guide is available [here](http://users.softlab.ece.nt
 
 [xbindkeys](/index.php/Xbindkeys "Xbindkeys") allows advanced mapping of keysyms to actions independently of the Desktop Environment.
 
-**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xbindkeys_config)]</sup> from the [AUR](/index.php/AUR "AUR").
+**Tip:** If you find `xbindkeys` difficult to use, try the graphical manager [xbindkeys_config](https://aur.archlinux.org/packages/xbindkeys_config/) from the [AUR](/index.php/AUR "AUR").
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_Xorg&oldid=392110](https://wiki.archlinux.org/index.php?title=Extra_keyboard_keys_in_Xorg&oldid=392110)"

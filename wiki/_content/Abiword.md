@@ -16,7 +16,7 @@
 
 [Install](/index.php/Install "Install") the [abiword](https://www.archlinux.org/packages/?name=abiword) package. You may want to install dictionaries if you want spell check, which can be provided by the [aspell-en](https://www.archlinux.org/packages/?name=aspell-en) package for English.
 
-To fix tiny cursor and misaligned text issues, install either [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) from the official repositories or [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) from the official repositories.
+To fix tiny cursor and misaligned text issues, install either [ttf-liberation](https://www.archlinux.org/packages/?name=ttf-liberation) from the official repositories or [ttf-ms-fonts](https://aur.archlinux.org/packages/ttf-ms-fonts/) from the [AUR](/index.php/AUR "AUR") and [ttf-freefont](https://www.archlinux.org/packages/?name=ttf-freefont) from the official repositories.
 
 ## Templates
 
@@ -32,7 +32,7 @@ Other styles in /usr/share/abiword-3.0/templates/ can be modified as well.
 
 ## Grammar Checking
 
-Install the [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [abiword](https://www.archlinux.org/packages/?name=abiword)]</sup> package and enable grammar checking from _Edit>Preferences>Spell Checking>Automatic grammar checking_.
+Install the [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) package and enable grammar checking from _Edit>Preferences>Spell Checking>Automatic grammar checking_.
 
 ## Change keybindings
 
@@ -42,7 +42,7 @@ If such method does not work, add `KeyBindings="viEdit"` to `/usr/share/abiword-
 
 ## LaTeX fonts
 
-The package [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [abiword](https://www.archlinux.org/packages/?name=abiword)]</sup> comes with a function which allows user to insert LaTeX codes in a document. To display mathematics symbols properly, one needs to download [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz) and save it to the directory `/usr/share/fonts`. To install the font, extract the tarball and then run the following:
+The package [abiword-plugins](https://www.archlinux.org/packages/?name=abiword-plugins) comes with a function which allows user to insert LaTeX codes in a document. To display mathematics symbols properly, one needs to download [latex-xft-fonts](http://movementarian.org/latex-xft-fonts-0.1.tar.gz) and save it to the directory `/usr/share/fonts`. To install the font, extract the tarball and then run the following:
 
 ```
 # fc-cache -fv

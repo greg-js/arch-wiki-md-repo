@@ -94,7 +94,7 @@ Next, replace the default route with the tunnel
 
 ### Helper script
 
-[pvpn](https://github.com/halhen/pvpn) (available in [AUR](/index.php/AUR "AUR") package [pvpn](https://aur.archlinux.org/packages/pvpn/)<sup><small>AUR</small></sup>) is a wrapper script around `pppd` over SSH.
+[pvpn](https://github.com/halhen/pvpn) (available in [AUR](/index.php/AUR "AUR") package [pvpn](https://aur.archlinux.org/packages/pvpn/)) is a wrapper script around `pppd` over SSH.
 
 ## See also
 

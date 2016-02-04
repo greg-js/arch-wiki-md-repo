@@ -300,7 +300,7 @@ Largest console font (although ugly) achieved by adding `FONT=sun12x22` to `/etc
 ###### MacBook Pro 11,5
 
 *   The [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau) package seems to be stable. Switching to VTs and back works fine from MATE and GNOME. SOmetimes Chromium causes a "kernele rejected pixbuf" error which freezes the desktop.
-*   The [nvidia-dkms](https://aur.archlinux.org/packages/nvidia-dkms/)<sup><small>AUR</small></sup> driver has been crashing a lot.
+*   The [nvidia-dkms](https://aur.archlinux.org/packages/nvidia-dkms/) driver has been crashing a lot.
 *   The [nvidia](https://www.archlinux.org/packages/?name=nvidia) driver seems to be super stable, but GNOME desktop won't like to start, showing you a "Oh no! Something has gone wrong" message. Cinnamon Desktop is buttery smooth with the nvidia driver, and if you want your GNOME desktop, you can run `gnome-shell --relace &` while in cinnamon desktop to switch to Gnome Shell as a workaround.
 
 ###### Microcode
@@ -344,7 +344,7 @@ It all works great out of the box with the nouveau driver.
 
 #### Getting the integrated intel card to work on 11,3
 
-By default the integrated card is powered off. To fix this we need a grub function called "apple_set_os". This function has not officially been merged yet, so we need to build grub ourselves. Download the [grub-git](https://aur.archlinux.org/packages/grub-git/)<sup><small>AUR</small></sup> package from the AUR. Using something like:
+By default the integrated card is powered off. To fix this we need a grub function called "apple_set_os". This function has not officially been merged yet, so we need to build grub ourselves. Download the [grub-git](https://aur.archlinux.org/packages/grub-git/) package from the AUR. Using something like:
 
 ```
 $ packer -G grub-git
@@ -501,7 +501,7 @@ After=upower.service
 
 *   Intel, works on Linux 3.13
 *   Framebuffer, works for MacBook Pro 11,1 and 11,3 via `/sys/class/backlight/gmux_backlight/brightness`.
-*   Brightness in `/sys/class/backlight/gmux_backlight/brightness` can be modified comfortably via the [gmux_backlight](https://aur.archlinux.org/packages/gmux_backlight/)<sup><small>AUR</small></sup> utility without root privileges. Requires the `setpci` setting below.
+*   Brightness in `/sys/class/backlight/gmux_backlight/brightness` can be modified comfortably via the [gmux_backlight](https://aur.archlinux.org/packages/gmux_backlight/) utility without root privileges. Requires the `setpci` setting below.
 *   Nvidia, does not work using default settings. Try adding `setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0` to `/etc/rc.local`.
 
 **Note:** If the screen does not show the prompt or the login manager (i.e. a black screen), append `i915.invert_brightness=1` to the kernel.
@@ -566,7 +566,7 @@ Updated 2015-04-08
 
 ### Wi-Fi
 
-*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") works
+*   [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) from the [AUR](/index.php/AUR "AUR") works
     *   Stability is an issue for some, look at [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for possible fixes (e.g. downgrading kernel works if your card is BCM4360)
 
 ### Web cam

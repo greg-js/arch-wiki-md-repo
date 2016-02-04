@@ -22,7 +22,7 @@
 
 ## Installation
 
-Kolab server is available in the [AUR](/index.php/AUR "AUR") via the [kolab](https://aur.archlinux.org/packages/kolab/)<sup><small>AUR</small></sup> meta-package. This package will install all Kolab components, as well as the neccesary external services: [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/)<sup><small>AUR</small></sup>, [Postfix](/index.php/Postfix "Postfix"), [389-ds-base](https://aur.archlinux.org/packages/389-ds-base/)<sup><small>AUR</small></sup>, [MySQL](/index.php/MySQL "MySQL"), [Amavis](/index.php/Amavis "Amavis"), [ClamAV](/index.php/ClamAV "ClamAV"), [SpamAssassin](/index.php/Postfix#SpamAssassin "Postfix") and [Apache](/index.php/Apache "Apache") with [PHP](/index.php/PHP "PHP") support.
+Kolab server is available in the [AUR](/index.php/AUR "AUR") via the [kolab](https://aur.archlinux.org/packages/kolab/) meta-package. This package will install all Kolab components, as well as the neccesary external services: [cyrus-imapd](https://aur.archlinux.org/packages/cyrus-imapd/), [Postfix](/index.php/Postfix "Postfix"), [389-ds-base](https://aur.archlinux.org/packages/389-ds-base/), [MySQL](/index.php/MySQL "MySQL"), [Amavis](/index.php/Amavis "Amavis"), [ClamAV](/index.php/ClamAV "ClamAV"), [SpamAssassin](/index.php/Postfix#SpamAssassin "Postfix") and [Apache](/index.php/Apache "Apache") with [PHP](/index.php/PHP "PHP") support.
 
 ## Configuration
 
@@ -36,7 +36,7 @@ Write the same domain name into _/etc/hostname_. You should also check your DNS 
 
 ### Arch-specific configuration
 
-Kolab makes many assumptions about the system it is installing on. The [kolab](https://aur.archlinux.org/packages/kolab/)<sup><small>AUR</small></sup> packages ships with an script that brings the system to a state where the Kolab setup script is useful. Run it as root:
+Kolab makes many assumptions about the system it is installing on. The [kolab](https://aur.archlinux.org/packages/kolab/) packages ships with an script that brings the system to a state where the Kolab setup script is useful. Run it as root:
 
 ```
 # arch-setup-kolab
@@ -59,7 +59,7 @@ This will:
 
 ### Kolab configuration
 
-Kolab ships with its own configuration script (contained in [pykolab](https://aur.archlinux.org/packages/pykolab/)<sup><small>AUR</small></sup>. Run it as root:
+Kolab ships with its own configuration script (contained in [pykolab](https://aur.archlinux.org/packages/pykolab/). Run it as root:
 
 ```
 # setup-kolab
@@ -143,7 +143,7 @@ If you notice slow performance in roundcube, specially if you are using a big ke
 
 ### Roundcubemail Plugin
 
-Besides the basic [Roundcubemail](/index.php/Roundcubemail "Roundcubemail") installation and configuration, this [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/)<sup><small>AUR</small></sup> plugin package is needed for advanced groupware functionality.
+Besides the basic [Roundcubemail](/index.php/Roundcubemail "Roundcubemail") installation and configuration, this [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/) plugin package is needed for advanced groupware functionality.
 
 ## Start/stop the services
 

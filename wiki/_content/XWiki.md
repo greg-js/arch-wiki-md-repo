@@ -33,7 +33,7 @@ Feel free to follow along on the [XWiki Installation Guide](http://platform.xwik
         *   Uncomment the section entitled "PostgreSQL Configuration".
         *   Modify the database name (in `connection.url`), username, and password as desired.
 *   Create a role and database in PostgreSQL to match the hibernate configuration.
-*   Install [postgresql-jdbc](https://aur.archlinux.org/packages/postgresql-jdbc/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   Install [postgresql-jdbc](https://aur.archlinux.org/packages/postgresql-jdbc/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 *   As root:
 
 ```

@@ -4,7 +4,7 @@ From [[1]](http://agendav.org/): "AgenDAV is an open source multilanguage CalDAV
 
 ## Installation
 
-Install the AgenDAV package [agendav](https://aur.archlinux.org/packages/agendav/)<sup><small>AUR</small></sup> (AUR).
+Install the AgenDAV package [agendav](https://aur.archlinux.org/packages/agendav/) (AUR).
 
 ### Database
 

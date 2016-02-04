@@ -78,7 +78,7 @@ The standard [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-vi
 
 **Note:** Multitouch in Touchegg has broken since writing this. It doesn't work now
 
-The touchpad works well with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), and with [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> for advanced multitouch gestures.
+The touchpad works well with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics), and with [touchegg](https://aur.archlinux.org/packages/touchegg/) for advanced multitouch gestures.
 
 **Note:** Contrary to what most of the internet says, you don't seem to need [xf86-input-evdev](https://www.archlinux.org/packages/?name=xf86-input-evdev) to make Touchegg work.
 

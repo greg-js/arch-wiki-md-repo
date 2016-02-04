@@ -16,7 +16,7 @@
 
 ## Installation
 
-Install [etherpad-lite](https://aur.archlinux.org/packages/etherpad-lite/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [etherpad-lite](https://aur.archlinux.org/packages/etherpad-lite/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

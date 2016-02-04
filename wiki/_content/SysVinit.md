@@ -2,7 +2,7 @@
 
 **Warning:** SysVinit is not officially supported in Arch Linux [[1]](https://www.archlinux.org/news/end-of-initscripts-support/).
 
-On systems based on SysVinit, **init** is the first process that is executed once the Linux kernel loads. The default init program used by the kernel is `/sbin/init` provided by [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (by default on new installs, see [systemd](/index.php/Systemd "Systemd")) or [sysvinit](https://aur.archlinux.org/packages/sysvinit/)<sup><small>AUR</small></sup>. The word **init** will always refer to sysvinit in this article.
+On systems based on SysVinit, **init** is the first process that is executed once the Linux kernel loads. The default init program used by the kernel is `/sbin/init` provided by [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) (by default on new installs, see [systemd](/index.php/Systemd "Systemd")) or [sysvinit](https://aur.archlinux.org/packages/sysvinit/). The word **init** will always refer to sysvinit in this article.
 
 **inittab** is the startup configuration file for init located in `/etc`. It contains directions for init on what programs and scripts to run when entering a specific runlevel.
 
@@ -36,7 +36,7 @@ Although a SysVinit-based Arch system does use init, most of the work is delegat
 
 ## Installation
 
-Install [sysvinit](https://aur.archlinux.org/packages/sysvinit/)<sup><small>AUR</small></sup> [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). This step will remove [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat), and you will use sysvinit on reboot. To restore [systemd](/index.php/Systemd "Systemd"), append `init=/usr/lib/systemd/systemd` to the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
+Install [sysvinit](https://aur.archlinux.org/packages/sysvinit/) [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/) from the [AUR](/index.php/AUR "AUR"). This step will remove [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat), and you will use sysvinit on reboot. To restore [systemd](/index.php/Systemd "Systemd"), append `init=/usr/lib/systemd/systemd` to the [kernel command line](/index.php/Kernel_command_line "Kernel command line").
 
 Additional init scripts are available at [arch-rcscripts](https://bitbucket.org/TZ86/arch-rcscripts/src/3e83aeed6c68c6252b8db1428c10a717bc9e05ff/community/?at=master). See [Init#Configuration](/index.php/Init#Configuration "Init") for generic configuration steps.
 

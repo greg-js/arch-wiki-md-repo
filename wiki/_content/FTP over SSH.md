@@ -2,11 +2,11 @@
 
 [FTP over SSH](https://en.wikipedia.org/wiki/File_Transfer_Protocol#FTP_over_SSH "wikipedia:File Transfer Protocol") encrypts passwords unlike plain FTP. FTP over SSH is not really a true protocol, it is just SSH + FTP.
 
-This setup in particular (using [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)<sup><small>AUR</small></sup> + TLS) encrypts usernames, passwords, commands and server replies, but does NOT encrypt the data channel. This also means that there is reduced performance cost on data transfer.
+This setup in particular (using [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/) + TLS) encrypts usernames, passwords, commands and server replies, but does NOT encrypt the data channel. This also means that there is reduced performance cost on data transfer.
 
 ## Setting up FTP with pure-ftpd
 
-Install [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+Install [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/) from [AUR](/index.php/AUR "AUR").
 
 The configuration file is `/etc/pure-ftpd.conf`.
 

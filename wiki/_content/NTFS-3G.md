@@ -143,7 +143,7 @@ You also need access to the mountpoint you want to use. Since we're going to mou
 
 ```
 
-Second, you need a NTFS-3G driver compiled with integrated FUSE support. The ntfs-3g package from the official repositories does not have this support, but [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/)<sup><small>AUR</small></sup> does.
+Second, you need a NTFS-3G driver compiled with integrated FUSE support. The ntfs-3g package from the official repositories does not have this support, but [ntfs-3g-fuse](https://aur.archlinux.org/packages/ntfs-3g-fuse/) does.
 
 You should now be able to mount your NTFS partition without root rights.
 
@@ -151,7 +151,7 @@ You should now be able to mount your NTFS partition without root rights.
 
 ### ntfs-config
 
-[ntfs-config](https://aur.archlinux.org/packages/ntfs-config/)<sup><small>AUR</small></sup> is a program that may be able to help configure your NTFS partition(s) if other methods do not work.
+[ntfs-config](https://aur.archlinux.org/packages/ntfs-config/) is a program that may be able to help configure your NTFS partition(s) if other methods do not work.
 
 ## Resizing NTFS partition
 

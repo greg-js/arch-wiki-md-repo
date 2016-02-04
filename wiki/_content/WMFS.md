@@ -24,7 +24,7 @@ Rest of this page can be applied only to older version of WMFS.
 
 ## Installation
 
-WMFS is in [AUR](/index.php/AUR "AUR"). Due the high development rate it is recommended to use the git version, [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/)<sup><small>AUR</small></sup>. Please note that the package [wmfs-git](https://aur.archlinux.org/packages/wmfs-git/)<sup><small>AUR</small></sup> is now not being actively developed.
+WMFS is in [AUR](/index.php/AUR "AUR"). Due the high development rate it is recommended to use the git version, [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/). Please note that the package [wmfs-git](https://aur.archlinux.org/packages/wmfs-git/) is now not being actively developed.
 
 WMFS will look for a configuration file in `$XDG_CONFIG_HOME/wmfs`. To configure WMFS to your liking, you will need to create a configuration file; for most users this will be `~/.config/wmfs/wmfsrc`. If `~/.config/wmfs` does not exist, create it:
 

@@ -116,7 +116,7 @@ File size of /swapfile is 4294967296 (1048576 blocks of 4096 bytes)
 
 In the example the value of `_swap_file_offset_` is `38912`.
 
-**Tip:** The value of `_swap_file_offset_` can also be obtained by running `swap-offset _swap_file_`. The _swap-offset_ binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/)<sup><small>AUR</small></sup>.
+**Tip:** The value of `_swap_file_offset_` can also be obtained by running `swap-offset _swap_file_`. The _swap-offset_ binary is provided by package [uswsusp-git](https://aur.archlinux.org/packages/uswsusp-git/).
 
 **Note:**
 

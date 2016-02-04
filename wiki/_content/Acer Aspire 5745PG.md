@@ -139,7 +139,7 @@ B: ABS=1000003
 
 ```
 
-You can donwload the drivers [here](http://home.eeti.com.tw/web20/eGalaxTouchDriver/linuxDriver.htm). However, there is an AUR package that does all the hard work for you: [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/)<sup><small>AUR</small></sup>
+You can donwload the drivers [here](http://home.eeti.com.tw/web20/eGalaxTouchDriver/linuxDriver.htm). However, there is an AUR package that does all the hard work for you: [xf86-input-egalax](https://aur.archlinux.org/packages/xf86-input-egalax/)
 
 If you have trouble making it work, take a look at this thread: [[2]](https://bbs.archlinux.org/viewtopic.php?id=133851)
 

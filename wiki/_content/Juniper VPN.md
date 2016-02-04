@@ -30,7 +30,7 @@
 
 1) Go to your companys' VPN site, log in and download / install the juniper client.
 
-2) install [jnc](https://aur.archlinux.org/packages/jnc/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). For 64-bit Arch, you will need to install 32-bit packages ([Multilib](/index.php/Multilib "Multilib")), see [upstream website](http://www.scc.kit.edu/scc/net/juniper-vpn/linux/).
+2) install [jnc](https://aur.archlinux.org/packages/jnc/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). For 64-bit Arch, you will need to install 32-bit packages ([Multilib](/index.php/Multilib "Multilib")), see [upstream website](http://www.scc.kit.edu/scc/net/juniper-vpn/linux/).
 
 3) Make a directory for the .config file:
 
@@ -73,9 +73,9 @@ for use without GUI. To stop the client, execute
 
 This was the final fix after veritable hours of trying to make it work more properly, and it is very simple:
 
-1) Install [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/)<sup><small>AUR</small></sup> from the AUR - make sure the PKGBUILD installs it to `/opt/bin32-jre`, rather than `/opt/java`, where it will conflict with the 64-bit JRE.
+1) Install [bin32-jre](https://aur.archlinux.org/packages/bin32-jre/) from the AUR - make sure the PKGBUILD installs it to `/opt/bin32-jre`, rather than `/opt/java`, where it will conflict with the 64-bit JRE.
 
-2) Install [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup> from the AUR.
+2) Install [jre](https://aur.archlinux.org/packages/jre/) from the AUR.
 
 3) Move the java binary to java.orig:
 

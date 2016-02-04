@@ -14,7 +14,7 @@ Back In Time provides a Qt4 GUI which will run on Gnome, KDE and all other DE's.
 
 ## Installation
 
-Stable releases of Back In Time can be installed as [backintime](https://aur.archlinux.org/packages/backintime/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). An unstable branch exists with [backintime-git](https://aur.archlinux.org/packages/backintime-git/)<sup><small>AUR</small></sup>.
+Stable releases of Back In Time can be installed as [backintime](https://aur.archlinux.org/packages/backintime/) from the [AUR](/index.php/AUR "AUR"). An unstable branch exists with [backintime-git](https://aur.archlinux.org/packages/backintime-git/).
 
 Alternatively, pre-compiled binary packages can be installed from [coderkun’s repo](http://arch.coderkun.de/).
 

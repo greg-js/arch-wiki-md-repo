@@ -112,7 +112,7 @@ Follow [Power management#Power management with systemd](/index.php/Power_managem
 
 ### ACPI / Fan control
 
-[Acpid](/index.php/Acpid "Acpid") works, just follow general guidelines. For Fan control use [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tpfanco-svn)]</sup> (**tpfan-admin** for GUI interface). Follow instructions on [Thinkpad Fan Control](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control").
+[Acpid](/index.php/Acpid "Acpid") works, just follow general guidelines. For Fan control use [tpfanco-svn](https://aur.archlinux.org/packages/tpfanco-svn/) (**tpfan-admin** for GUI interface). Follow instructions on [Thinkpad Fan Control](/index.php/Thinkpad_Fan_Control "Thinkpad Fan Control").
 
 ### Kernel Mode Setting (KMS)
 

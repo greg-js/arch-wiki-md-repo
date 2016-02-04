@@ -4,9 +4,9 @@ Some Logitech Gaming Keyboards can work on Linux through Unofficial drivers. The
 
 ## Install
 
-[g15daemon](https://www.archlinux.org/packages/?name=g15daemon) and its dependencies are available in the community repository. G15daemon drivers still work for the keyboards they supported, but their development was mostly dropped in 2008, the source is still available for anyone to pick up and continue their development, there are a few bugs in them that were never solved. These drivers use the [g15macro](https://aur.archlinux.org/packages/g15macro/)<sup><small>AUR</small></sup> to interact with the G keys. There is also a [g15stats](https://aur.archlinux.org/packages/g15stats/)<sup><small>AUR</small></sup> plugin to show system information on the LCD display.
+[g15daemon](https://www.archlinux.org/packages/?name=g15daemon) and its dependencies are available in the community repository. G15daemon drivers still work for the keyboards they supported, but their development was mostly dropped in 2008, the source is still available for anyone to pick up and continue their development, there are a few bugs in them that were never solved. These drivers use the [g15macro](https://aur.archlinux.org/packages/g15macro/) to interact with the G keys. There is also a [g15stats](https://aur.archlinux.org/packages/g15stats/) plugin to show system information on the LCD display.
 
-[gnome15](https://aur.archlinux.org/packages/gnome15/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnome15)]</sup> is available in AUR.
+[gnome15](https://aur.archlinux.org/packages/gnome15/) is available in AUR.
 
 **Note:** The source site has been down since mid November 2014\. The AUR package cannot be built. The new Maintainer is actively working on providing all existing packages.
 

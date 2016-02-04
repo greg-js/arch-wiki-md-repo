@@ -77,7 +77,7 @@ See the [netctl](/index.php/Netctl "Netctl") article for more information.
 
 ### sakis3g
 
-There may be the chance that the modem stick is supported by [sakis3g](http://www.sakis3g.com/) which is an all in one command line script and automates all the steps above. Install [sakis3g](https://aur.archlinux.org/packages/sakis3g/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+There may be the chance that the modem stick is supported by [sakis3g](http://www.sakis3g.com/) which is an all in one command line script and automates all the steps above. Install [sakis3g](https://aur.archlinux.org/packages/sakis3g/) from the [AUR](/index.php/AUR "AUR").
 
 ### Low connection speed
 

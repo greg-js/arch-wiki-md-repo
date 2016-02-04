@@ -80,11 +80,11 @@ To receive update notifications, go to _Window > Preferences > Install/Update > 
 
 *   **AVR** — AVR microcontroller plugin.
 
-	[http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin](http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin) || [eclipse-avr](https://aur.archlinux.org/packages/eclipse-avr/)<sup><small>AUR</small></sup>
+	[http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin](http://avr-eclipse.sourceforge.net/wiki/index.php/The_AVR_Eclipse_Plugin) || [eclipse-avr](https://aur.archlinux.org/packages/eclipse-avr/)
 
 *   **Aptana** — HTML5/CSS3/JavaScript/Ruby/Rails/PHP/Pydev/Django support. Also available as standalone application.
 
-	[http://www.aptana.com/](http://www.aptana.com/) || [eclipse-aptana](https://aur.archlinux.org/packages/eclipse-aptana/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eclipse-aptana)]</sup> [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)<sup><small>AUR</small></sup>
+	[http://www.aptana.com/](http://www.aptana.com/) || [eclipse-aptana](https://aur.archlinux.org/packages/eclipse-aptana/) [aptana-studio](https://aur.archlinux.org/packages/aptana-studio/)
 
 *   **Eclipse CDT** — C/C++ support.
 
@@ -92,67 +92,67 @@ To receive update notifications, go to _Window > Preferences > Install/Update > 
 
 *   **Eclipse PDT** — [PHP](/index.php/PHP "PHP") support.
 
-	[https://www.eclipse.org/pdt/](https://www.eclipse.org/pdt/) || [eclipse-pdt](https://aur.archlinux.org/packages/eclipse-pdt/)<sup><small>AUR</small></sup>
+	[https://www.eclipse.org/pdt/](https://www.eclipse.org/pdt/) || [eclipse-pdt](https://aur.archlinux.org/packages/eclipse-pdt/)
 
 *   **EclipseFP** — [Haskell](/index.php/Haskell "Haskell") support.
 
-	[https://eclipsefp.github.io/](https://eclipsefp.github.io/) || [eclipse-eclipsefp](https://aur.archlinux.org/packages/eclipse-eclipsefp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eclipse-eclipsefp)]</sup>
+	[https://eclipsefp.github.io/](https://eclipsefp.github.io/) || [eclipse-eclipsefp](https://aur.archlinux.org/packages/eclipse-eclipsefp/)
 
 *   **EGit** — [Git](/index.php/Git "Git") support.
 
-	[https://www.eclipse.org/egit](https://www.eclipse.org/egit) || [eclipse-egit](https://aur.archlinux.org/packages/eclipse-egit/)<sup><small>AUR</small></sup>
+	[https://www.eclipse.org/egit](https://www.eclipse.org/egit) || [eclipse-egit](https://aur.archlinux.org/packages/eclipse-egit/)
 
 *   **EPIC** — Perl support.
 
-	[http://www.epic-ide.org/](http://www.epic-ide.org/) || [eclipse-epic](https://aur.archlinux.org/packages/eclipse-epic/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/eclipse-epic)]</sup>
+	[http://www.epic-ide.org/](http://www.epic-ide.org/) || [eclipse-epic](https://aur.archlinux.org/packages/eclipse-epic/)
 
 *   **IvyDE** — IvyDE dependency Manager.
 
-	[https://ant.apache.org/ivy/ivyde/](https://ant.apache.org/ivy/ivyde/) || [eclipse-ivyde](https://aur.archlinux.org/packages/eclipse-ivyde/)<sup><small>AUR</small></sup>
+	[https://ant.apache.org/ivy/ivyde/](https://ant.apache.org/ivy/ivyde/) || [eclipse-ivyde](https://aur.archlinux.org/packages/eclipse-ivyde/)
 
 *   **Markdown** — Markdown editor plugin for Eclipse.
 
-	[http://www.winterwell.com/software/markdown-editor.php](http://www.winterwell.com/software/markdown-editor.php) || [eclipse-markdown](https://aur.archlinux.org/packages/eclipse-markdown/)<sup><small>AUR</small></sup>
+	[http://www.winterwell.com/software/markdown-editor.php](http://www.winterwell.com/software/markdown-editor.php) || [eclipse-markdown](https://aur.archlinux.org/packages/eclipse-markdown/)
 
 *   **MercurialEclipse** — [Mercurial](/index.php/Mercurial "Mercurial") support.
 
-	[https://bitbucket.org/mercurialeclipse/main/wiki/Home](https://bitbucket.org/mercurialeclipse/main/wiki/Home) || [eclipse-mercurial](https://aur.archlinux.org/packages/eclipse-mercurial/)<sup><small>AUR</small></sup>
+	[https://bitbucket.org/mercurialeclipse/main/wiki/Home](https://bitbucket.org/mercurialeclipse/main/wiki/Home) || [eclipse-mercurial](https://aur.archlinux.org/packages/eclipse-mercurial/)
 
 *   **Mylyn** — Task lists support.
 
-	[https://www.eclipse.org/mylyn/](https://www.eclipse.org/mylyn/) || [eclipse-mylyn](https://aur.archlinux.org/packages/eclipse-mylyn/)<sup><small>AUR</small></sup>
+	[https://www.eclipse.org/mylyn/](https://www.eclipse.org/mylyn/) || [eclipse-mylyn](https://aur.archlinux.org/packages/eclipse-mylyn/)
 
 *   **PHPEclipse** — Alternative PHP support.
 
-	[http://www.phpeclipse.com/](http://www.phpeclipse.com/) || [eclipse-phpeclipse](https://aur.archlinux.org/packages/eclipse-phpeclipse/)<sup><small>AUR</small></sup>
+	[http://www.phpeclipse.com/](http://www.phpeclipse.com/) || [eclipse-phpeclipse](https://aur.archlinux.org/packages/eclipse-phpeclipse/)
 
 *   **PyDev** — [Python](/index.php/Python "Python") support.
 
-	[http://pydev.org/](http://pydev.org/) || [eclipse-pydev](https://aur.archlinux.org/packages/eclipse-pydev/)<sup><small>AUR</small></sup>
+	[http://pydev.org/](http://pydev.org/) || [eclipse-pydev](https://aur.archlinux.org/packages/eclipse-pydev/)
 
 *   **Subclipse** — [Subversion](/index.php/Subversion "Subversion") support.
 
-	[http://subclipse.tigris.org/](http://subclipse.tigris.org/) || [eclipse-subclipse](https://aur.archlinux.org/packages/eclipse-subclipse/)<sup><small>AUR</small></sup>
+	[http://subclipse.tigris.org/](http://subclipse.tigris.org/) || [eclipse-subclipse](https://aur.archlinux.org/packages/eclipse-subclipse/)
 
 *   **Subversive** — Alternative Subversion support.
 
-	[https://www.eclipse.org/subversive/](https://www.eclipse.org/subversive/) || [eclipse-subversive](https://aur.archlinux.org/packages/eclipse-subversive/)<sup><small>AUR</small></sup>
+	[https://www.eclipse.org/subversive/](https://www.eclipse.org/subversive/) || [eclipse-subversive](https://aur.archlinux.org/packages/eclipse-subversive/)
 
 *   **TestNG** — TestNG support.
 
-	[http://testng.org/doc/eclipse.html](http://testng.org/doc/eclipse.html) || [eclipse-testng](https://aur.archlinux.org/packages/eclipse-testng/)<sup><small>AUR</small></sup>
+	[http://testng.org/doc/eclipse.html](http://testng.org/doc/eclipse.html) || [eclipse-testng](https://aur.archlinux.org/packages/eclipse-testng/)
 
 *   **TeXlipse** — [LaTeX](/index.php/LaTeX "LaTeX") support.
 
-	[http://texlipse.sourceforge.net/](http://texlipse.sourceforge.net/) || [eclipse-texlipse](https://aur.archlinux.org/packages/eclipse-texlipse/)<sup><small>AUR</small></sup>
+	[http://texlipse.sourceforge.net/](http://texlipse.sourceforge.net/) || [eclipse-texlipse](https://aur.archlinux.org/packages/eclipse-texlipse/)
 
 *   **Eclipse PTP** — Parallel Programming C/C++ support.
 
-	[https://www.eclipse.org/ptp/](https://www.eclipse.org/ptp/) || [eclipse-ptp](https://aur.archlinux.org/packages/eclipse-ptp/)<sup><small>AUR</small></sup>
+	[https://www.eclipse.org/ptp/](https://www.eclipse.org/ptp/) || [eclipse-ptp](https://aur.archlinux.org/packages/eclipse-ptp/)
 
 *   **Checkstyle** — Eclipse Checkstyle support.
 
-	[http://eclipse-cs.sourceforge.net/](http://eclipse-cs.sourceforge.net/) || [eclipse-checkstyle](https://aur.archlinux.org/packages/eclipse-checkstyle/)<sup><small>AUR</small></sup>
+	[http://eclipse-cs.sourceforge.net/](http://eclipse-cs.sourceforge.net/) || [eclipse-checkstyle](https://aur.archlinux.org/packages/eclipse-checkstyle/)
 
 ## Enable javadoc integration
 

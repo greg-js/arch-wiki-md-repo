@@ -63,7 +63,7 @@ See [Fprint#Setup fingerprint-gui](/index.php/Fprint#Setup_fingerprint-gui "Fpri
 
 Unfortunately, [tp_smapi](/index.php/Tp_smapi "Tp smapi") is only partially supported on the Thinkpad T420\. A number of features work since version 0.41\. For example, the hard drive protection mechanism [HDAPS](/index.php/HDAPS "HDAPS") now works well. See the linked wiki entry.
 
-Some features like setting the starting threshold for charging the battery do not yet work. To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Some features like setting the starting threshold for charging the battery do not yet work. To control the battery charging thresholds, install the Perl script [tpacpi-bat](https://aur.archlinux.org/packages/tpacpi-bat/) from the [AUR](/index.php/AUR "AUR").
 
 Insert the `acpi_call` kernel module by running
 
@@ -106,7 +106,7 @@ When using systemd, you may want to blacklist the tp_smapi module if your system
 
 ### Fans
 
-Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/)<sup><small>AUR</small></sup> from the AUR. It will automatically create the necessary acpi configuration file in "/usr/lib/modprobe.d/thinkpad_acpi.conf".
+Install [thinkfan](https://aur.archlinux.org/packages/thinkfan/) from the AUR. It will automatically create the necessary acpi configuration file in "/usr/lib/modprobe.d/thinkpad_acpi.conf".
 
 Copy the example sensor settings file from "/usr/share/doc/thinkfan/examples/thinkfan.conf.simple" to "/etc/thinkfan.conf".
 
@@ -144,7 +144,7 @@ No significant issues were found using [Laptop Mode Tools](/index.php/Laptop_Mod
 
 Possible bug with [#Shutdown on battery](#Shutdown_on_battery)
 
-[tlp](https://www.archlinux.org/packages/?name=tlp) From the [AUR](/index.php/AUR "AUR") is an alternative tool that can replace [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup>.
+[tlp](https://www.archlinux.org/packages/?name=tlp) From the [AUR](/index.php/AUR "AUR") is an alternative tool that can replace [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/).
 
 ### Synaptics
 
@@ -206,7 +206,7 @@ Media Keys that Do Not work out of the box:
 
 You must find a workaround and bind the keys yourself for the rest of them.
 
-[xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/)<sup><small>AUR</small></sup> can be a solution for media keys that are not working. This solution also allows you to rebind the ThinkVantage button and certain FN layer shortcuts (the blue logos on the keyboard).
+[xbindkeys](/index.php/Xbindkeys "Xbindkeys") and [xbindkeys_config-gtk2](https://aur.archlinux.org/packages/xbindkeys_config-gtk2/) can be a solution for media keys that are not working. This solution also allows you to rebind the ThinkVantage button and certain FN layer shortcuts (the blue logos on the keyboard).
 
 ### Rebind Forward and Back keys
 

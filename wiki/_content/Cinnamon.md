@@ -107,7 +107,7 @@ This is the default behaviour. To change the setting open the `cinnamon-settings
 **Note:** The language module was removed from the Cinnamon Control Panel with the release of Cinnamon 2.2\. [[1]](http://segfault.linuxmint.com/2014/04/cinnamon-2-2/)
 
 *   To add/remove languages: see [Locale](/index.php/Locale "Locale").
-*   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/)<sup><small>AUR</small></sup> package.
+*   To change between enabled languages: install the [mintlocale](https://aur.archlinux.org/packages/mintlocale/) package.
 
 ## Tips and tricks
 
@@ -153,9 +153,9 @@ $ gsettings set org.nemo.desktop show-desktop-icons false
 
 ### Themes and icons
 
-Linux Mint styled themes and icons can be installed from AUR using packages [mint-themes](https://aur.archlinux.org/packages/mint-themes/)<sup><small>AUR</small></sup> and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/)<sup><small>AUR</small></sup>. The themes can be edited in `Settings → Themes → Other settings`.
+Linux Mint styled themes and icons can be installed from AUR using packages [mint-themes](https://aur.archlinux.org/packages/mint-themes/) and [mint-x-icons](https://aur.archlinux.org/packages/mint-x-icons/). The themes can be edited in `Settings → Themes → Other settings`.
 
-Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/)<sup><small>AUR</small></sup> package.
+Official Linux Mint Cinnamon themes can be installed using the [mint-cinnamon-themes](https://aur.archlinux.org/packages/mint-cinnamon-themes/) package.
 
 ### Resize windows by mouse
 

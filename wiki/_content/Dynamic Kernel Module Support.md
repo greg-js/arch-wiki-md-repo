@@ -40,12 +40,12 @@ The _negative effect_ of using DKMS is that DKMS breaks the Pacman database. The
 
 A good number of modules that lie outside the kernel source tree have a DKMS variant; a few are hosted in the [official repositories](https://www.archlinux.org/packages/?&q=dkms), most are found in the [AUR](https://aur.archlinux.org/packages/?SeB=n&K=dkms). Listed below are a few of the software packages that have a DKMS variant with additional links to dedicated sections where available:
 
-*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/catalyst-dkms)]</sup>
+*   [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst"): [catalyst-dkms](https://aur.archlinux.org/packages/catalyst-dkms/)
 *   [NVIDIA](/index.php/NVIDIA "NVIDIA"):
     *   [nvidia-dkms](https://www.archlinux.org/packages/?name=nvidia-dkms)
     *   [nvidia-304xx-dkms](https://www.archlinux.org/packages/?name=nvidia-304xx-dkms)
-    *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)<sup><small>AUR</small></sup>
-    *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)<sup><small>AUR</small></sup>
+    *   [nvidia-173xx-dkms](https://aur.archlinux.org/packages/nvidia-173xx-dkms/)
+    *   [nvidia-96xx-dkms](https://aur.archlinux.org/packages/nvidia-96xx-dkms/)
 *   [VirtualBox](/index.php/VirtualBox "VirtualBox"), section [VirtualBox#Hosts running a custom kernel](/index.php/VirtualBox#Hosts_running_a_custom_kernel "VirtualBox")
 *   [VMware](/index.php/VMware "VMware"), section [VMware#Using DKMS to manage the modules](/index.php/VMware#Using_DKMS_to_manage_the_modules "VMware")
 

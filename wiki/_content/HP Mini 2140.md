@@ -28,7 +28,7 @@ Works, you need to add "synaptics" support to your xorg.conf
 
 ### Wireless
 
-This netbook uses the Broadcom BCM4312 wireless modem. This modem is not supported by either the b43 or STA drivers included as part of the Linux kernel. In order to be able to use wifi, the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") needs to be installed. Instructions for using [makepkg](/index.php/Makepkg "Makepkg") and [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") can be found on their respective wiki pages. Further information about [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") modem issues is covered in it's own wiki page.
+This netbook uses the Broadcom BCM4312 wireless modem. This modem is not supported by either the b43 or STA drivers included as part of the Linux kernel. In order to be able to use wifi, the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") needs to be installed. Instructions for using [makepkg](/index.php/Makepkg "Makepkg") and [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") can be found on their respective wiki pages. Further information about [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") modem issues is covered in it's own wiki page.
 
 After installing the driver, you need to have it loaded during boot, usually achieved by making the following edits to [/etc/rc.conf](/index.php//etc/rc.conf "/etc/rc.conf"):
 

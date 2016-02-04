@@ -17,7 +17,7 @@ Unlike dwm, echinus does not need to be re-compiled after changes have been made
 
 ## Installing
 
-[Install](/index.php/Install "Install") [echinus](https://aur.archlinux.org/packages/echinus/)<sup><small>AUR</small></sup>. You might also want to install [ourico](https://aur.archlinux.org/packages/ourico/)<sup><small>AUR</small></sup>, a lightweight EWMH taskbar, originally designed for echinus (also in AUR), and [dmenu](http://tools.suckless.org/dmenu/).
+[Install](/index.php/Install "Install") [echinus](https://aur.archlinux.org/packages/echinus/). You might also want to install [ourico](https://aur.archlinux.org/packages/ourico/), a lightweight EWMH taskbar, originally designed for echinus (also in AUR), and [dmenu](http://tools.suckless.org/dmenu/).
 
 After successfully installing, copy all files from `/etc/xdg/echinus` to `~/.echinus`(for user).
 
@@ -78,7 +78,7 @@ echinus supports some parts of EWMH - the following are known to work:
 *   [tint2](/index.php/Tint2 "Tint2")
 *   [fbpanel](http://fbpanel.sourceforge.net/)
 *   [ipager](http://useperl.ru/ipager/index.en.html)
-*   [ourico](https://aur.archlinux.org/packages/ourico/)<sup><small>AUR</small></sup>
+*   [ourico](https://aur.archlinux.org/packages/ourico/)
 
 ## Resources
 

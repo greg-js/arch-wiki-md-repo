@@ -28,7 +28,7 @@ RAR (and UNRAR) is the Linux port of the commandline-only version of [WinRAR](ht
 
 ### RAR
 
-Obtain [rar](https://aur.archlinux.org/packages/rar/)<sup><small>AUR</small></sup> (full package minus UNRAR) available in the [AUR](/index.php/AUR "AUR").
+Obtain [rar](https://aur.archlinux.org/packages/rar/) (full package minus UNRAR) available in the [AUR](/index.php/AUR "AUR").
 
 ### UNRAR
 

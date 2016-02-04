@@ -69,7 +69,7 @@ EndSection
 
 ```
 
-In gnome-shell, after the 3.16 version, this solution is not working, because gnome does not check the X11.conf. For solving this problem, the best way is using the [gnome-settings-daemon-backlight-toshiba](https://aur.archlinux.org/packages/gnome-settings-daemon-backlight-toshiba/)<sup><small>AUR</small></sup> package.
+In gnome-shell, after the 3.16 version, this solution is not working, because gnome does not check the X11.conf. For solving this problem, the best way is using the [gnome-settings-daemon-backlight-toshiba](https://aur.archlinux.org/packages/gnome-settings-daemon-backlight-toshiba/) package.
 
 ### Keyboard Backlight control
 

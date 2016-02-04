@@ -18,7 +18,7 @@ First note that this laptop is available with two different processors.
 
 *   Core Duo
 
-	This processor requires the i686 (32-bit) version of Arch Linux. The two RAM slots physically support 2x2GB=4GB RAM. However with a 32-bit kernel only up to ~3GB will be accessible. Unfortunately due to a chipset limitation, even compiling a kernel with the Physical Address Extension (PAE) option (CONFIG_HIGHMEM64G) [[1]](https://aur.archlinux.org/packages.php?ID=24469)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2014-12-30]</sup> will not allow access to more than 3GB.
+	This processor requires the i686 (32-bit) version of Arch Linux. The two RAM slots physically support 2x2GB=4GB RAM. However with a 32-bit kernel only up to ~3GB will be accessible. Unfortunately due to a chipset limitation, even compiling a kernel with the Physical Address Extension (PAE) option (CONFIG_HIGHMEM64G) [[1]](https://aur.archlinux.org/packages.php?ID=24469) will not allow access to more than 3GB.
 
 *   Core **2** Duo
 

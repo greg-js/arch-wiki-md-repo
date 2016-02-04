@@ -31,7 +31,7 @@
 
 ## General package details
 
-[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/)<sup><small>AUR</small></sup> is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#2_._Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck1 patchset, including the Brain Fuck Scheduler (BFS). Many Archers elect to use this package for the BFS' excellent desktop interactivity and responsiveness under any load situation. Additionally, the bfs imparts performance gains beyond interactivity. For example, see: [CPU_Schedulers_Compared.pdf](http://repo-ck.com/bench/cpu_schedulers_compared.pdf).
+[Linux-ck](https://aur.archlinux.org/packages/Linux-ck/) is a package available in the [AUR](/index.php/AUR "AUR") and in the [unofficial linux-ck repo](#2_._Use_pre-compiled_packages) that allows users to run a kernel/headers setup patched with Con Kolivas' ck1 patchset, including the Brain Fuck Scheduler (BFS). Many Archers elect to use this package for the BFS' excellent desktop interactivity and responsiveness under any load situation. Additionally, the bfs imparts performance gains beyond interactivity. For example, see: [CPU_Schedulers_Compared.pdf](http://repo-ck.com/bench/cpu_schedulers_compared.pdf).
 
 ### Release cycle
 
@@ -56,9 +56,9 @@ There are **three** modifications to the config files:
 
 In addition to the linux-ck package, there are the following LTS kernel releases patched with the above patchsets, with the previously mentioned modifications to the config files:
 
-*   [linux-lts-ck](https://aur.archlinux.org/packages/linux-lts-ck/)<sup><small>AUR</small></sup> - The current ArchLinux LTS kernel patched with the CK patchset
-*   [linux-lts310-ck](https://aur.archlinux.org/packages/linux-lts310-ck/)<sup><small>AUR</small></sup> - The 3.10 LTS kernel patched with the CK patchset
-*   [linux-lts312-ck](https://aur.archlinux.org/packages/linux-lts312-ck/)<sup><small>AUR</small></sup> - The 3.12 LTS kernel patched with the CK patchset
+*   [linux-lts-ck](https://aur.archlinux.org/packages/linux-lts-ck/) - The current ArchLinux LTS kernel patched with the CK patchset
+*   [linux-lts310-ck](https://aur.archlinux.org/packages/linux-lts310-ck/) - The 3.10 LTS kernel patched with the CK patchset
+*   [linux-lts312-ck](https://aur.archlinux.org/packages/linux-lts312-ck/) - The 3.12 LTS kernel patched with the CK patchset
 
 **These three packages are maintained by clfarron4\. Pre-packaged versions will not be found in the unofficial ck repo.**
 
@@ -81,7 +81,7 @@ Users can customize the linux-ck package via tweaks in the PKGBUILD:
 
 More details about these options are provided in the PKGBUILD itself via line comments. Be sure to read them if compiling from the AUR!
 
-**Note:** There are related PKGBUILDs in the AUR for other common modules unique to linux-ck. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/)<sup><small>AUR</small></sup>, [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/)<sup><small>AUR</small></sup>,[nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/)<sup><small>AUR</small></sup>, and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/)<sup><small>AUR</small></sup> to name a few.
+**Note:** There are related PKGBUILDs in the AUR for other common modules unique to linux-ck. For example [nvidia-ck](https://aur.archlinux.org/packages/nvidia-ck/), [nvidia-304xx-ck](https://aur.archlinux.org/packages/nvidia-304xx-ck/),[nvidia-340xx-ck](https://aur.archlinux.org/packages/nvidia-340xx-ck/), and [broadcom-wl-ck](https://aur.archlinux.org/packages/broadcom-wl-ck/) to name a few.
 
 ### 2 . Use pre-compiled packages
 
@@ -172,7 +172,7 @@ See the [Repo-ck](/index.php/Repo-ck "Repo-ck") article to set up [http://repo-c
 
 #### The virtualbox-ck-host-modules package (recommended if linux-ck is built by you from the AUR)
 
-Install the [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/)<sup><small>AUR</small></sup> package and then install **virtualbox** package.
+Install the [virtualbox-ck-host-modules](https://aur.archlinux.org/packages/virtualbox-ck-host-modules/) package and then install **virtualbox** package.
 
 #### Use DKMS (more complicated, recommended with LTS releases)
 

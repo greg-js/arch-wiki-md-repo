@@ -20,7 +20,7 @@ LXDM is a lightweight [display manager](/index.php/Display_manager "Display mana
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [lxdm](https://www.archlinux.org/packages/?name=lxdm) package. The development package is [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the [lxdm](https://www.archlinux.org/packages/?name=lxdm) package. The development package is [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/).
 
 [lxdm](https://www.archlinux.org/packages/?name=lxdm) provides the `lxdm` [systemd](/index.php/Systemd "Systemd") service. [Enable](/index.php/Enable "Enable") it to start LXDM at boot.
 
@@ -158,7 +158,7 @@ The LXDM themes are located in `/usr/share/lxdm/themes`.
 
 There is only one theme provided with LXDM, namely Industrial. To display the background file `wave.svg` which is part of this theme, make sure you have [librsvg](https://www.archlinux.org/packages/?name=librsvg) installed.
 
-[lxdm-themes](https://aur.archlinux.org/packages/lxdm-themes/)<sup><small>AUR</small></sup> provides 6 extra themes. Archlinux, ArchlinuxFull, ArchlinuxTop, Arch-Dark, Arch-Stripes and IndustrialArch. The ArchStripes and ArchDark themes are also provided with [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/)<sup><small>AUR</small></sup> (with different names to avoid file conflicts).
+[lxdm-themes](https://aur.archlinux.org/packages/lxdm-themes/) provides 6 extra themes. Archlinux, ArchlinuxFull, ArchlinuxTop, Arch-Dark, Arch-Stripes and IndustrialArch. The ArchStripes and ArchDark themes are also provided with [lxdm-git](https://aur.archlinux.org/packages/lxdm-git/) (with different names to avoid file conflicts).
 
 You can configure them on `/etc/lxdm/lxdm.conf`:
 

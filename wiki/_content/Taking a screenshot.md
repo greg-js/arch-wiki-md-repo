@@ -37,7 +37,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 *   **Escrotum** — Screen capture using pygtk, inspired by scrot.
 
-	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)<sup><small>AUR</small></sup>
+	[https://github.com/Roger/escrotum](https://github.com/Roger/escrotum) || [escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)
 
 *   **gnome-screenshot** — Take pictures of your screen. Even if its used Gnome in their name, its dependencies only dconf, gtk3, and libcanberra.
 
@@ -45,11 +45,11 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 *   **imgur-screenshot** — Take screenshot selection, upload to [imgur](http://imgur.com). + more cool things
 
-	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)<sup><small>AUR</small></sup>
+	[https://github.com/jomo/imgur-screenshot](https://github.com/jomo/imgur-screenshot) || [imgur-screenshot-git](https://aur.archlinux.org/packages/imgur-screenshot-git/)
 
 *   **Lightscreen** — Lightscreen is a simple tool to automate the tedious process of saving and cataloging screenshots, it operates as a hidden background process that is invoked with one (or multiple) hotkeys and then saves a screenshot file to disk according to the user's preferences.
 
-	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)<sup><small>AUR</small></sup>
+	[http://lightscreen.com.ar](http://lightscreen.com.ar) || [lightscreen](https://aur.archlinux.org/packages/lightscreen/)
 
 *   **maim** — A simple command line utility that takes screenshots using imlib2\. It's meant to replace scrot and performs better than scrot in many ways.
 
@@ -57,19 +57,19 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 *   **maimclip** — Simple bash wrapper for maim screenshot taking tool with OSD notification support
 
-	[https://github.com/orschiro/scriptlets/tree/master/Maimclip](https://github.com/orschiro/scriptlets/tree/master/Maimclip) || [maimclip-git](https://aur.archlinux.org/packages/maimclip-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/maimclip-git)]</sup>
+	[https://github.com/orschiro/scriptlets/tree/master/Maimclip](https://github.com/orschiro/scriptlets/tree/master/Maimclip) || [maimclip-git](https://aur.archlinux.org/packages/maimclip-git/)
 
 *   **qscreenshot** — Simple creation and editing of screenshots (Qt).
 
-	[https://code.google.com/p/qscreenshot/](https://code.google.com/p/qscreenshot/) || [qscreenshot-git](https://aur.archlinux.org/packages/qscreenshot-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qscreenshot-git)]</sup>
+	[https://code.google.com/p/qscreenshot/](https://code.google.com/p/qscreenshot/) || [qscreenshot-git](https://aur.archlinux.org/packages/qscreenshot-git/)
 
 *   **screencloud** — allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot to [imgur](http://imgur.com)+auth. has plugins and system tray.
 
-	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)<sup><small>AUR</small></sup>
+	[http://screencloud.net/](http://screencloud.net/) || [screencloud](https://aur.archlinux.org/packages/screencloud/)
 
 *   **screengrab** — Cross-platform application designed to quickly get screenshots (Qt).
 
-	[http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)<sup><small>AUR</small></sup>
+	[http://screengrab.doomer.org/](http://screengrab.doomer.org/) || [screengrab](https://aur.archlinux.org/packages/screengrab/)
 
 *   **[Scrot](https://en.wikipedia.org/wiki/Scrot "wikipedia:Scrot")** — Simple command-line screenshot utility for X.
 
@@ -93,7 +93,7 @@ This article explain different methods to take [screenshots](https://en.wikipedi
 
 *   **zscreen** — Lightweight GUI which allows you to take a screenshot of the entire screen or to select an area and then uploading the screenshot automatically to [imgur](http://imgur.com). For taking the screenshot it uses scrot and zenity for the GUI.
 
-	[https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI) || [zscreen](https://aur.archlinux.org/packages/zscreen/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zscreen)]</sup>
+	[https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI](https://github.com/ChrisZeta/Scrot-and-imgur-zenity-GUI) || [zscreen](https://aur.archlinux.org/packages/zscreen/)
 
 ## Packages including a screenshot utility
 
@@ -217,7 +217,7 @@ See `man scrot` for more information. You can simply automate the file to upload
 
 ### escrotum
 
-[escrotum-git](https://aur.archlinux.org/packages/escrotum-git/)<sup><small>AUR</small></sup> screen capture using pygtk, inspired by scrot
+[escrotum-git](https://aur.archlinux.org/packages/escrotum-git/) screen capture using pygtk, inspired by scrot
 
 Created because scrot has glitches when selection mode is used with refreshing windows.
 
@@ -236,7 +236,7 @@ Note that [scrot](https://www.archlinux.org/packages/?name=scrot) actually uses 
 
 ### maim
 
-[maim-git](https://aur.archlinux.org/packages/maim-git/)<sup><small>AUR</small></sup> is aimed to be an improved scrot.
+[maim-git](https://aur.archlinux.org/packages/maim-git/) is aimed to be an improved scrot.
 
 Takes screenshots of your desktop using imlib2 and [slop](https://github.com/naelstrof/slop) for regions. It's meant to overcome shortcomings of scrot and performs better in [several ways](https://github.com/naelstrof/maim#why-use-maim-over-import-or-scrot).
 
@@ -321,7 +321,7 @@ If the `Print` above does not work, see [Extra keyboard keys](/index.php/Extra_k
 
 You can use the `script` command, part of the [util-linux](https://www.archlinux.org/packages/?name=util-linux) package. Just enter `$ script` and from that moment, all the output is going to be saved to the `typescript` file, including the ansi codes.
 
-Once you are done, just type `exit` and the `typescript` would ready. The resulting file can be converted to html using the package [ansi2html](https://aur.archlinux.org/packages/ansi2html/)<sup><small>AUR</small></sup>, from the [AUR](/index.php/AUR "AUR").
+Once you are done, just type `exit` and the `typescript` would ready. The resulting file can be converted to html using the package [ansi2html](https://aur.archlinux.org/packages/ansi2html/), from the [AUR](/index.php/AUR "AUR").
 
 To convert the `typescript` file to `typescript.html`, do the following:
 

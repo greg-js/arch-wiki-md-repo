@@ -27,7 +27,7 @@
 
 ## Installation
 
-Install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR"). For an alternative manual way of installing YouCompleteMe see [upstream instructions](https://github.com/Valloric/YouCompleteMe#full-installation-guide).
+Install [vim-youcompleteme-git](https://aur.archlinux.org/packages/vim-youcompleteme-git/) package from [AUR](/index.php/AUR "AUR"). For an alternative manual way of installing YouCompleteMe see [upstream instructions](https://github.com/Valloric/YouCompleteMe#full-installation-guide).
 
 ## Configuration
 
@@ -68,7 +68,7 @@ any file in `~/dev` will be whitelisted, any in `~/` will be blacklisted, and du
 
 For Java completion, a project file should be present and Eclim headless server must be running.
 
-1.  Install [eclim](https://aur.archlinux.org/packages/eclim/)<sup><small>AUR</small></sup> or [eclim-git](https://aur.archlinux.org/packages/eclim-git/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+1.  Install [eclim](https://aur.archlinux.org/packages/eclim/) or [eclim-git](https://aur.archlinux.org/packages/eclim-git/) from [AUR](/index.php/AUR "AUR").
 2.  Put this in your [.vimrc](/index.php/Vim/.vimrc "Vim/.vimrc"): `~/.vimrc`  `let g:EclimCompletionMethod = 'omnifunc'` 
 3.  Start `eclimd` script in a separate terminal: `$ /usr/share/eclipse/eclimd` 
 4.  Create a file named `.project` in the same directory as your Java files: `.project` 

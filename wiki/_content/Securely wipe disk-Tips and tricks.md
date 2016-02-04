@@ -139,7 +139,7 @@ You can wipe free space by several ways:
 
 *   Use an utility that creates encrypted files with random password and file names.
 
-*   Use a specialized program for the free space wiping such as [wipefreespace](https://aur.archlinux.org/packages/wipefreespace/)<sup><small>AUR</small></sup>.
+*   Use a specialized program for the free space wiping such as [wipefreespace](https://aur.archlinux.org/packages/wipefreespace/).
 
 Some of the file compression utilities use to have many types of the compression methods, file types and can even split file into volumes of the preset size upon creation. By using all options at random and into the loop you will be able to fill the whole free space up with a useless encrypted data that will overwrite everything else that was deleted. Just do not forget to remove created files and run it many times to ensure that even forensic specialists will get harder to restore very sensitive data on it.
 

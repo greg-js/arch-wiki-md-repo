@@ -20,11 +20,11 @@ There are currently two versions of Gambas: Gambas 3 and the older Gambas 2.
 
 Gambas 3 is the latest version of the language, and is distinct from earlier versions of Gambas although most projects can be converted and ran on the latest version.
 
-To install the latest stable version of Gambas 3, [install](/index.php/Install "Install") the [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Development versions can be grabbed by installing the [gambas3-svn](https://aur.archlinux.org/packages/gambas3-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gambas3-svn)]</sup> package from the [AUR](/index.php/AUR "AUR").
+To install the latest stable version of Gambas 3, [install](/index.php/Install "Install") the [gambas3](https://www.archlinux.org/groups/x86_64/gambas3/) package from the [official repositories](/index.php/Official_repositories "Official repositories"). Development versions can be grabbed by installing the [gambas3-svn](https://aur.archlinux.org/packages/gambas3-svn/) package from the [AUR](/index.php/AUR "AUR").
 
 ### Gambas 2
 
-To install the latest version of Gambas 2, [install](/index.php/Install "Install") the [gambas2](https://www.archlinux.org/packages/?name=gambas2)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> package from the [official repositories](/index.php/Official_repositories "Official repositories").
+To install the latest version of Gambas 2, [install](/index.php/Install "Install") the [gambas2](https://www.archlinux.org/packages/?name=gambas2) package from the [official repositories](/index.php/Official_repositories "Official repositories").
 
 Gambas 2 will happily run alongside Gambas 3.
 

@@ -31,7 +31,7 @@ There are also alternatives to scanbd, eg. [scanbuttond](http://scanbuttond.sour
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [scanbd](https://aur.archlinux.org/packages/scanbd/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [scanbd](https://aur.archlinux.org/packages/scanbd/) package.
 
 As of version 1.3, scanbd is fully compatible with [systemd](/index.php/Systemd "Systemd") service activation and does not require **inet** neither **xinetd** to start scanbm (manager mode of scanbd), though these remain as an alternative (not described here).
 

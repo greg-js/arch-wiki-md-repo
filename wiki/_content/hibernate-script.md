@@ -29,7 +29,7 @@ This guide focuses on hibernate-script (see the [pm-utils](/index.php/Pm-utils "
 
 ## Installation
 
-You can install [hibernate-script](https://aur.archlinux.org/packages/hibernate-script/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hibernate-script)]</sup> from the [AUR](/index.php/AUR "AUR").
+You can install [hibernate-script](https://aur.archlinux.org/packages/hibernate-script/) from the [AUR](/index.php/AUR "AUR").
 
 ## Backend setup
 
@@ -283,7 +283,7 @@ event=button/lid
 
 ```
 
-You can also install [lidsleep](https://aur.archlinux.org/packages/lidsleep/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lidsleep)]</sup> which includes the file altered to use pm-utils and suspend to RAM.
+You can also install [lidsleep](https://aur.archlinux.org/packages/lidsleep/) which includes the file altered to use pm-utils and suspend to RAM.
 
 Alternatively you can edit `/etc/acpi/actions/lm_lid.sh` this is the file that is executed when the lid state is changed
 

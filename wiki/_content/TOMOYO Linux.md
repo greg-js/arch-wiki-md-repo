@@ -144,7 +144,7 @@ CONFIG_SECURITY_TOMOYO=y
 
 **Note:** [FS#42910](https://bugs.archlinux.org/task/42910) has been opened requesting that TOMOYO be enabled in the [linux](https://www.archlinux.org/packages/?name=linux) package again, and the [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package would follow that lead. It is already available in the [grsecurity](/index.php/Grsecurity "Grsecurity") kernel package as of version 3.19.1.201503092204-1.
 
-If the kernel supports TOMOYO Linux 2.x, then only the userspace tools (from AUR [tomoyo-tools](https://aur.archlinux.org/packages/tomoyo-tools/)<sup><small>AUR</small></sup>) need to be installed.
+If the kernel supports TOMOYO Linux 2.x, then only the userspace tools (from AUR [tomoyo-tools](https://aur.archlinux.org/packages/tomoyo-tools/)) need to be installed.
 
 For kernel versions between 2.6.30 and 2.6.35, tomoyo-tools 2.2.x should be installed. A package is available on the [AUR](https://aur.archlinux.org/packages.php?ID=42272)
 

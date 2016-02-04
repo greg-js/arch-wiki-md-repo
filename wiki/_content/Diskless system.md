@@ -175,7 +175,7 @@ Next, we [chroot](/index.php/Chroot "Chroot") our installation and run _mkinitcp
 
 #### NBD
 
-The [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/)<sup><small>AUR</small></sup> package needs to be installed on the client. Build it with _makepkg_ and install it:
+The [mkinitcpio-nbd](https://aur.archlinux.org/packages/mkinitcpio-nbd/) package needs to be installed on the client. Build it with _makepkg_ and install it:
 
 ```
 # pacman --root "$root" --dbpath "$root/var/lib/pacman" -U mkinitcpio-nbd-0.4-1-any.pkg.tar.xz

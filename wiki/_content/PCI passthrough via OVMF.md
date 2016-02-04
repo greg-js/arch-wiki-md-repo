@@ -26,9 +26,9 @@ This is a guide on how to do PCI VGA Passthrough on QEMU. Since kernel 3.9 and a
 
 ## Installation
 
-**Warning:** Kernel 4.2.2-1 seems to have temporarily broken this. Consider going with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) or [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/)<sup><small>AUR</small></sup>. [[1]](https://bbs.archlinux.org/viewtopic.php?id=203240)
+**Warning:** Kernel 4.2.2-1 seems to have temporarily broken this. Consider going with [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) or [linux-vfio-lts](https://aur.archlinux.org/packages/linux-vfio-lts/). [[1]](https://bbs.archlinux.org/viewtopic.php?id=203240)
 
-[Install](/index.php/Install "Install") [qemu](https://www.archlinux.org/packages/?name=qemu) and [rpmextract](https://www.archlinux.org/packages/?name=rpmextract). Consider installing [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> if you need the kernel with the patches.
+[Install](/index.php/Install "Install") [qemu](https://www.archlinux.org/packages/?name=qemu) and [rpmextract](https://www.archlinux.org/packages/?name=rpmextract). Consider installing [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) if you need the kernel with the patches.
 
 Install edk2.git-ovmf-x64 from [Gerd Hoffman's repository](https://www.kraxel.org/repos/jenkins/edk2/).
 
@@ -283,7 +283,7 @@ Only complete IOMMU groups can be attached to the guest VM. To see which groups 
 
 If you find your PCI devices grouped among others that you don't wish to pass through, you may be able to seperate them using Alex Williamson's ACS override patch. Make sure you understand [the potential risk](http://vfio.blogspot.com/2014/08/iommu-groups-inside-and-out.html) of doing so.
 
-You'll need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/)<sup><small>AUR</small></sup> package.
+You'll need a kernel with the patch applied. The easiest method to acquiring this is through the [linux-vfio](https://aur.archlinux.org/packages/linux-vfio/) package.
 
 In addition, the ACS override patch needs to be enabled with kernel command line options. The patch file adds the following documentation:
 

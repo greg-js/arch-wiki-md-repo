@@ -117,7 +117,7 @@ The following GUIs are unofficial.
 
 *   **QtOctave** — A Qt frontend for Octave.
 
-	[https://forja.rediris.es/projects/csl-qtoctave/](https://forja.rediris.es/projects/csl-qtoctave/) || [qtoctave](https://aur.archlinux.org/packages/qtoctave/)<sup><small>AUR</small></sup>
+	[https://forja.rediris.es/projects/csl-qtoctave/](https://forja.rediris.es/projects/csl-qtoctave/) || [qtoctave](https://aur.archlinux.org/packages/qtoctave/)
 
 ### Bug in Documentation tab
 
@@ -147,14 +147,14 @@ octave:1> csvread('myfile.csv');
 
 ```
 
-For `.ods` files the [octave-io](https://aur.archlinux.org/packages/octave-io/)<sup><small>AUR</small></sup> package is necessary which contains the `odsread` function:
+For `.ods` files the [octave-io](https://aur.archlinux.org/packages/octave-io/) package is necessary which contains the `odsread` function:
 
 ```
 octave:1> odsread('myfile.ods');
 
 ```
 
-For `.xlsx` files you can use the [xlsx2csv](https://aur.archlinux.org/packages/xlsx2csv/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xlsx2csv)]</sup> package from [AUR](/index.php/AUR "AUR"):
+For `.xlsx` files you can use the [xlsx2csv](https://aur.archlinux.org/packages/xlsx2csv/) package from [AUR](/index.php/AUR "AUR"):
 
 ```
  xlsx2csv -t /path/to/save/location -x /path/to/myfile.xlsx 
@@ -163,9 +163,9 @@ For `.xlsx` files you can use the [xlsx2csv](https://aur.archlinux.org/packages/
 
 #### Reading xls files directly from Octave
 
-If you must work with XLS files and you cannot convert them to CSV or ODS, for whatever reason, you can use the `xlsread` function from the [octave-io](https://aur.archlinux.org/packages/octave-io/)<sup><small>AUR</small></sup> package.
+If you must work with XLS files and you cannot convert them to CSV or ODS, for whatever reason, you can use the `xlsread` function from the [octave-io](https://aur.archlinux.org/packages/octave-io/) package.
 
-Since [octave-io](https://aur.archlinux.org/packages/octave-io/)<sup><small>AUR</small></sup> version 1.2.5., an interface called 'OCT' was added, which perform reading .xlsx (not .xls!), ods and .gnumeric without any dependencies. However, the Java-based interface still exist (special for reading .xls files and writing those file formats).
+Since [octave-io](https://aur.archlinux.org/packages/octave-io/) version 1.2.5., an interface called 'OCT' was added, which perform reading .xlsx (not .xls!), ods and .gnumeric without any dependencies. However, the Java-based interface still exist (special for reading .xls files and writing those file formats).
 
 ##### Steps necessary to make Java Interface available
 
@@ -182,7 +182,7 @@ $ export JAVA_HOME=/usr/lib/jvm/java-7-openjdk
 
 You may also want to add this to your `~/.bashrc` and append it to your `PATH`.
 
-	2\. Install a Java XLS library for `xlsread`. There are more such libraries available, a comparison can be found at [here](http://octave.org/wiki/index.php?title=IO_package#Comparison_of_interfaces_.26_usage). The recommended library is [apache-poi](https://aur.archlinux.org/packages/apache-poi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/apache-poi)]</sup>, available in the [AUR](/index.php/AUR "AUR").
+	2\. Install a Java XLS library for `xlsread`. There are more such libraries available, a comparison can be found at [here](http://octave.org/wiki/index.php?title=IO_package#Comparison_of_interfaces_.26_usage). The recommended library is [apache-poi](https://aur.archlinux.org/packages/apache-poi/), available in the [AUR](/index.php/AUR "AUR").
 
 To check if Java is working correctly in Octave, see the output of:
 
@@ -202,7 +202,7 @@ To load the selected library in Octave, check if it is in the Java path. If not:
 
 ```
 
-In the case you chose [apache-poi](https://aur.archlinux.org/packages/apache-poi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/apache-poi)]</sup>, the relevant JAR files can be found in `/usr/share/java/apache-poi/poi-3.x.jar` and `/usr/share/java/apache-poi/poi-ooxml-3.x.jar`.
+In the case you chose [apache-poi](https://aur.archlinux.org/packages/apache-poi/), the relevant JAR files can be found in `/usr/share/java/apache-poi/poi-3.x.jar` and `/usr/share/java/apache-poi/poi-ooxml-3.x.jar`.
 
 To check if it works
 

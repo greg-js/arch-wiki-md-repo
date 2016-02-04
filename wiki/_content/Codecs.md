@@ -33,7 +33,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[ALAC](https://en.wikipedia.org/wiki/ALAC "wikipedia:ALAC")** — Data compression method which reduces the size of audio files with no loss of information.
 
-	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-svn](https://aur.archlinux.org/packages/alac-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/alac-svn)]</sup>
+	[https://alac.macosforge.org/](https://alac.macosforge.org/) || [alac-svn](https://aur.archlinux.org/packages/alac-svn/)
 
 *   **[CELT](https://en.wikipedia.org/wiki/CELT "wikipedia:CELT")** — Compression algorithm for audio. Like MP3, Vorbis, and AAC it is suitable for transmitting music with high quality. Unlike these formats CELT imposes very little delay on the signal, even less than is typical for speech centric formats like Speex, GSM, or G.729\.
 
@@ -41,7 +41,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[Daala](https://en.wikipedia.org/wiki/Daala "wikipedia:Daala")** — New video compression technology. The effort is a collaboration between Mozilla Foundation, Xiph.Org Foundation and other contributors. The goal of the project is to provide a free to implement, use and distribute digital media format and reference implementation with technical performance superior to h.265.
 
-	[https://www.xiph.org/daala/](https://www.xiph.org/daala/) || [libdaala-git](https://aur.archlinux.org/packages/libdaala-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libdaala-git)]</sup>
+	[https://www.xiph.org/daala/](https://www.xiph.org/daala/) || [libdaala-git](https://aur.archlinux.org/packages/libdaala-git/)
 
 *   **[FAAC](https://en.wikipedia.org/wiki/FAAC "wikipedia:FAAC")** — Proprietary AAC audio encoder.
 
@@ -57,7 +57,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[Fraunhofer FDK AAC](https://en.wikipedia.org/wiki/FAAD2 "wikipedia:FAAD2")** — Complete, high-quality audio solution to Android (and Linux) users.
 
-	[http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html](http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html) || [libfdk-aac-git](https://aur.archlinux.org/packages/libfdk-aac-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libfdk-aac-git)]</sup>
+	[http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html](http://www.iis.fraunhofer.de/en/bf/amm/implementierungen/fdkaaccodec.html) || [libfdk-aac-git](https://aur.archlinux.org/packages/libfdk-aac-git/)
 
 *   **[JasPer](https://en.wikipedia.org/wiki/JasPer "wikipedia:JasPer")** — Software-based implementation of the codec specified in the emerging JPEG-2000 Part-1 standard.
 
@@ -77,7 +77,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **libde265** — Open source implementation of the h.265 video codec.
 
-	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://aur.archlinux.org/packages/libde265/)<sup><small>AUR</small></sup> [libde265-git](https://aur.archlinux.org/packages/libde265-git/)<sup><small>AUR</small></sup>
+	[https://github.com/strukturag/libde265](https://github.com/strukturag/libde265) || [libde265](https://aur.archlinux.org/packages/libde265/) [libde265-git](https://aur.archlinux.org/packages/libde265-git/)
 
 *   **[libdv](https://en.wikipedia.org/wiki/DV "wikipedia:DV")** — The Quasar DV codec (libdv) is a software codec for DV video.
 
@@ -97,7 +97,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[Nero AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding "wikipedia:Advanced Audio Coding")** — AAC audio codec (decode/encode/tag) all-in-one.
 
-	[http://www.nero.com/eng/company/about-nero/nero-aac-codec.php](http://www.nero.com/eng/company/about-nero/nero-aac-codec.php) || [neroaac](https://aur.archlinux.org/packages/neroaac/)<sup><small>AUR</small></sup>
+	[http://www.nero.com/eng/company/about-nero/nero-aac-codec.php](http://www.nero.com/eng/company/about-nero/nero-aac-codec.php) || [neroaac](https://aur.archlinux.org/packages/neroaac/)
 
 *   **[opencore-amr](https://en.wikipedia.org/wiki/Adaptive_Multi-Rate_audio_codec "wikipedia:Adaptive Multi-Rate audio codec")** — Open source implementation of the Adaptive Multi Rate (AMR) speech codec.
 
@@ -105,7 +105,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[Opus](https://en.wikipedia.org/wiki/Opus_(audio_codec) "wikipedia:Opus (audio codec)")** — Totally open, royalty-free, highly versatile audio codec. Opus is unmatched for interactive speech and music transmission over the Internet, but is also intended for storage and streaming applications. It is standardized by the Internet Engineering Task Force (IETF) as [RFC 6716](//tools.ietf.org/html/rfc6716) which incorporated technology from Skype's SILK codec and Xiph.Org's CELT codec.
 
-	[http://www.opus-codec.org/](http://www.opus-codec.org/) || [opus](https://www.archlinux.org/packages/?name=opus) [opus-git](https://aur.archlinux.org/packages/opus-git/)<sup><small>AUR</small></sup>
+	[http://www.opus-codec.org/](http://www.opus-codec.org/) || [opus](https://www.archlinux.org/packages/?name=opus) [opus-git](https://aur.archlinux.org/packages/opus-git/)
 
 *   **[Schrödinger](https://en.wikipedia.org/wiki/Dirac_(video_compression_format) "wikipedia:Dirac (video compression format)")** — Advanced royalty-free video compression format designed for a wide range of uses, from delivering low-resolution web content to broadcasting HD and beyond, to near-lossless studio editing.
 
@@ -125,7 +125,7 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[VP8](https://en.wikipedia.org/wiki/VP8 "wikipedia:VP8")** — High-quality, open video format for the web that's freely available to everyone.
 
-	[http://www.webmproject.org](http://www.webmproject.org) || [libvpx](https://www.archlinux.org/packages/?name=libvpx) [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/)<sup><small>AUR</small></sup>
+	[http://www.webmproject.org](http://www.webmproject.org) || [libvpx](https://www.archlinux.org/packages/?name=libvpx) [libvpx-git](https://aur.archlinux.org/packages/libvpx-git/)
 
 *   **[WavPack](https://en.wikipedia.org/wiki/WavPack "wikipedia:WavPack")** — Audio compression format with lossless, lossy, and hybrid compression modes.
 
@@ -133,11 +133,11 @@ It is not always necessary to explicitly install codecs if you have installed a 
 
 *   **[x264](https://en.wikipedia.org/wiki/x264 "wikipedia:x264")** — Free library for encoding H264/AVC video streams.
 
-	[https://www.videolan.org/developers/x264.html](https://www.videolan.org/developers/x264.html) || [x264](https://www.archlinux.org/packages/?name=x264) [x264-git](https://aur.archlinux.org/packages/x264-git/)<sup><small>AUR</small></sup>
+	[https://www.videolan.org/developers/x264.html](https://www.videolan.org/developers/x264.html) || [x264](https://www.archlinux.org/packages/?name=x264) [x264-git](https://aur.archlinux.org/packages/x264-git/)
 
 *   **[x265](https://en.wikipedia.org/wiki/x265 "wikipedia:x265")** — Open-source project and free application library for encoding video streams into the H.265/High Efficiency Video Coding (HEVC) format.
 
-	[http://x265.org/](http://x265.org/) || [x265](https://www.archlinux.org/packages/?name=x265) [x265-hg](https://aur.archlinux.org/packages/x265-hg/)<sup><small>AUR</small></sup>
+	[http://x265.org/](http://x265.org/) || [x265](https://www.archlinux.org/packages/?name=x265) [x265-hg](https://aur.archlinux.org/packages/x265-hg/)
 
 *   **[Xvid](https://en.wikipedia.org/wiki/Xvid "wikipedia:Xvid")** — Open source MPEG-4 video codec.
 
@@ -175,7 +175,7 @@ As an ultimate solution, you can try to install MPlayer binary codecs.
 
 If you are not able to play some files go to [http://www.mplayerhq.hu/design7/dload.html](http://www.mplayerhq.hu/design7/dload.html), read the instructions and install the codec you need to play your files.
 
-They can also be found in AUR with the name [codecs](https://aur.archlinux.org/packages/codecs/)<sup><small>AUR</small></sup> and [codecs64](https://aur.archlinux.org/packages/codecs64/)<sup><small>AUR</small></sup>.
+They can also be found in AUR with the name [codecs](https://aur.archlinux.org/packages/codecs/) and [codecs64](https://aur.archlinux.org/packages/codecs64/).
 
 ### No H264, mpg4 or Musepack (.mpc) in Totem Player
 

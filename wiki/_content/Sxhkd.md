@@ -13,7 +13,7 @@ From [sxhkd's Github page](https://github.com/baskerville/sxhkd):
 
 ## Installation
 
-[Install](/index.php/Install "Install") [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) or [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [sxhkd](https://www.archlinux.org/packages/?name=sxhkd) or [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/).
 
 ## Configuration
 

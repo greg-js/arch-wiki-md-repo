@@ -20,7 +20,7 @@ Forked from [PCManFM](/index.php/PCManFM "PCManFM"), SpaceFM is a lightweight, h
 
 [Install](/index.php/Install "Install") [spacefm](https://www.archlinux.org/packages/?name=spacefm) package.
 
-Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/)<sup><small>AUR</small></sup> package if you need a GTK+ 2 version.
+Or you can use [spacefm-gtk2](https://aur.archlinux.org/packages/spacefm-gtk2/) package if you need a GTK+ 2 version.
 
 ## Usage
 

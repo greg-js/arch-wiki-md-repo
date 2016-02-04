@@ -4,7 +4,7 @@ Guitar Pro is great to transcribe and compose for stringed instruments, organize
 
 This article covers how to start using the outdated Guitar Pro 5.2 with Linux. Native binaries do not exist for Guitar Pro 5, opposed to the case of Guitar Pro 6, so this requires [Wine](/index.php/Wine "Wine") running the windows version and [Timidity](/index.php/Timidity "Timidity") as a MIDI backend.
 
-**Tip:** If you want to use Guitar Pro 6, as it runs natively in Linux, you can use the [guitar-pro](https://aur.archlinux.org/packages/guitar-pro/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR") instead. Guitar Pro 6 can also use timidity instead of RSE, so this guide maybe still be useful to Guitar Pro 6 users as well.
+**Tip:** If you want to use Guitar Pro 6, as it runs natively in Linux, you can use the [guitar-pro](https://aur.archlinux.org/packages/guitar-pro/) package from the [AUR](/index.php/AUR "AUR") instead. Guitar Pro 6 can also use timidity instead of RSE, so this guide maybe still be useful to Guitar Pro 6 users as well.
 
 ## Contents
 

@@ -1,6 +1,6 @@
 # Oracle
 
-This document will help you install Oracle Database 11gR1 on Arch Linux. If you only want to connect to Oracle databases running elsewhere, see the instructions for installing the [Oracle client](/index.php/Oracle_client "Oracle client"). For installation of Oracle Express Edition, see [oracle-xe](https://aur.archlinux.org/packages/oracle-xe/)<sup><small>AUR</small></sup> and get back to method 2 for after-install configurations.
+This document will help you install Oracle Database 11gR1 on Arch Linux. If you only want to connect to Oracle databases running elsewhere, see the instructions for installing the [Oracle client](/index.php/Oracle_client "Oracle client"). For installation of Oracle Express Edition, see [oracle-xe](https://aur.archlinux.org/packages/oracle-xe/) and get back to method 2 for after-install configurations.
 
 By using the install method 2 you will be able to finalize the long installation process with only a few steps.
 
@@ -48,7 +48,7 @@ To ease the installation process you may find useful to install an AUR helper:
 
 Install a [Java](/index.php/Java "Java") runtime environment, like [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) and [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk).
 
-From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/)<sup><small>AUR</small></sup> (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/)<sup><small>AUR</small></sup>, [rpm](https://aur.archlinux.org/packages/rpm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rpm)]</sup> and [libaio](https://www.archlinux.org/packages/?name=libaio).
+From the [AUR](/index.php/AUR "AUR"), install [ksh](https://aur.archlinux.org/packages/ksh/) (other implementations like [these](/index.php/Ksh "Ksh") may work), [beecrypt](https://aur.archlinux.org/packages/beecrypt/), [rpm](https://aur.archlinux.org/packages/rpm/) and [libaio](https://www.archlinux.org/packages/?name=libaio).
 
 Oracle database 32-bit requires [unixodbc](https://www.archlinux.org/packages/?name=unixodbc).
 
@@ -294,7 +294,7 @@ emctl start dbconsole
 
 **Note:** This installation method creates a database automatically. The Oracle database will therefore be ready to be used after the installation.
 
-**Step 1.** Download the Arch Linux package [oracle](https://aur.archlinux.org/packages/oracle/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/oracle)]</sup> from AUR. Download the Oracle database 11gR1: [http://www.oracle.com/technology/software/products/database/index.html](http://www.oracle.com/technology/software/products/database/index.html)
+**Step 1.** Download the Arch Linux package [oracle](https://aur.archlinux.org/packages/oracle/) from AUR. Download the Oracle database 11gR1: [http://www.oracle.com/technology/software/products/database/index.html](http://www.oracle.com/technology/software/products/database/index.html)
 
 **Step 2.** Extract the Arch Linux package into a directory. Copy the Oracle database 11gR1 into that directory as well.
 

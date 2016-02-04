@@ -15,7 +15,7 @@ Instructions for installing OTPW and configuring SSH to allow OTPW logins are be
 
 ## Installation
 
-Install the [otpw](https://aur.archlinux.org/packages/otpw/)<sup><small>AUR</small></sup> package from the AUR.
+Install the [otpw](https://aur.archlinux.org/packages/otpw/) package from the AUR.
 
 ## Configuration for SSH Logins
 

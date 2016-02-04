@@ -28,9 +28,9 @@
 
 OpenRC and accompanying packages are available in the [AUR](/index.php/AUR "AUR"). For details on init components, see [Init](/index.php/Init "Init").
 
-Install either the [openrc](https://aur.archlinux.org/packages/openrc/)<sup><small>AUR</small></sup> or [openrc-git](https://aur.archlinux.org/packages/openrc-git/)<sup><small>AUR</small></sup> package. [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/)<sup><small>AUR</small></sup> or [busybox](https://www.archlinux.org/packages/?name=busybox) are used as the init process. Service files are available from the [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/)<sup><small>AUR</small></sup> package.
+Install either the [openrc](https://aur.archlinux.org/packages/openrc/) or [openrc-git](https://aur.archlinux.org/packages/openrc-git/) package. [openrc-sysvinit](https://aur.archlinux.org/packages/openrc-sysvinit/) or [busybox](https://www.archlinux.org/packages/?name=busybox) are used as the init process. Service files are available from the [openrc-arch-services-git](https://aur.archlinux.org/packages/openrc-arch-services-git/) package.
 
-To maintain compability with [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/)<sup><small>AUR</small></sup>, configuration files are installed to `**/etc/openrc/**`. The sysvinit init binary is installed to `/usr/bin/init-openrc` for compability with [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) or similar packages.
+To maintain compability with [initscripts-fork](https://aur.archlinux.org/packages/initscripts-fork/), configuration files are installed to `**/etc/openrc/**`. The sysvinit init binary is installed to `/usr/bin/init-openrc` for compability with [systemd-sysvcompat](https://www.archlinux.org/packages/?name=systemd-sysvcompat) or similar packages.
 
 ### Booting
 
@@ -77,7 +77,7 @@ ifup_eth0="ip link set \$int mtu 1500"
 
 The network service is added to the boot runlevel by default, so no further action is required. See [Network configuration](/index.php/Network_configuration "Network configuration") for general networking information.
 
-**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/)<sup><small>AUR</small></sup> by enabling the respective services. _netcfg_ mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). You could consult the [official documentation](https://www.archlinux.org/netcfg/features.html) or [old wiki documentation](https://wiki.archlinux.org/index.php?title=Netcfg&oldid=243178) (be aware of consulting version later than [2012-05-13](https://www.archlinux.org/news/netcfg-282-release/))
+**Note:** You may also use [NetworkManager](/index.php/NetworkManager "NetworkManager"), [dhcpcd](/index.php/Dhcpcd "Dhcpcd") or [netcfg](https://aur.archlinux.org/packages/netcfg/) by enabling the respective services. _netcfg_ mimics the [netctl](/index.php/Netctl "Netctl") behaviour (see [[2]](https://bbs.archlinux.org/viewtopic.php?pid=1489283#p1489283) if you want to enable profiles connection on booting - requires `wpa_actiond`). You could consult the [official documentation](https://www.archlinux.org/netcfg/features.html) or [old wiki documentation](https://wiki.archlinux.org/index.php?title=Netcfg&oldid=243178) (be aware of consulting version later than [2012-05-13](https://www.archlinux.org/news/netcfg-282-release/))
 
 ### Boot logs
 
@@ -192,4 +192,4 @@ See [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") for more information.
 *   [Blog: OpenRC on Arch Linux](http://blog.notfoss.com/posts/openrc-on-arch-linux/)
 *   [Manjaro wiki](https://wiki.manjaro.org/index.php?title=OpenRC,_an_alternative_to_systemd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=418899](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=418899)"

@@ -20,7 +20,7 @@ _bspwm_ is a tiling window manager that represents windows as the leaves of a fu
 
 ## Installation
 
-[Install](/index.php/Install "Install") [bspwm](https://www.archlinux.org/packages/?name=bspwm) and [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), or the development versions: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/)<sup><small>AUR</small></sup> and [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/)<sup><small>AUR</small></sup>. Sxhkd is a simple X hotkey daemon used to communicate with bspwm through `bspc` as well as launch your applications of choice.
+[Install](/index.php/Install "Install") [bspwm](https://www.archlinux.org/packages/?name=bspwm) and [sxhkd](https://www.archlinux.org/packages/?name=sxhkd), or the development versions: [bspwm-git](https://aur.archlinux.org/packages/bspwm-git/) and [sxhkd-git](https://aur.archlinux.org/packages/sxhkd-git/). Sxhkd is a simple X hotkey daemon used to communicate with bspwm through `bspc` as well as launch your applications of choice.
 
 To start bspwm on login, add the following to `~/.xinitrc` or `~/.xprofile` (depending on how you launch X/your display manager):
 
@@ -139,7 +139,7 @@ See also [[1]](https://bbs.archlinux.org/viewtopic.php?pid=1338582#p1338582) and
 
 For a scratch-pad which can use any window type without pre-defined rules, see: [[3]](https://www.reddit.com/r/bspwm/comments/3xnwdf/i3_like_scratch_for_any_window_possible/cy6i585)
 
-For a more sophisticated scratchpad script that supports many terminals out of the box and has flags for doing things like optionally starting a tmuxinator/tmux session, turning any window into a scratchpad on the fly, and automatically resizing a scratchpad to fit the current monitor see [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/)<sup><small>AUR</small></sup>.
+For a more sophisticated scratchpad script that supports many terminals out of the box and has flags for doing things like optionally starting a tmuxinator/tmux session, turning any window into a scratchpad on the fly, and automatically resizing a scratchpad to fit the current monitor see [tdrop-git](https://aur.archlinux.org/packages/tdrop-git/).
 
 ### Different monitor conifgurations for different machines
 

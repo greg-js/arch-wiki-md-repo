@@ -120,7 +120,7 @@ And then just [start](/index.php/Start "Start") the `reflector.timer`.
 
 #### AUR package
 
-Install the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/)<sup><small>AUR</small></sup> package.
+Install the [reflector-timer](https://aur.archlinux.org/packages/reflector-timer/) package.
 
 The default configuration is:
 

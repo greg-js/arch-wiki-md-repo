@@ -10,8 +10,8 @@ Packages in the official repositories:
 
 Packages are available in [AUR](/index.php/AUR "AUR"):
 
-*   [ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/)<sup><small>AUR</small></sup> - Includes Carlito (matches Microsoft Calibri)
-*   [ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/)<sup><small>AUR</small></sup> - Includes Caladea (matches Microsoft Cambria)
+*   [ttf-carlito](https://aur.archlinux.org/packages/ttf-carlito/) - Includes Carlito (matches Microsoft Calibri)
+*   [ttf-caladea](https://aur.archlinux.org/packages/ttf-caladea/) - Includes Caladea (matches Microsoft Cambria)
 
 ## System-wide Usage
 

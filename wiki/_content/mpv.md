@@ -25,7 +25,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [mpv](https://www.archlinux.org/packages/?name=mpv) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [mpv-git](https://aur.archlinux.org/packages/mpv-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [mpv](https://www.archlinux.org/packages/?name=mpv) package from the [official repositories](/index.php/Official_repositories "Official repositories") or [mpv-git](https://aur.archlinux.org/packages/mpv-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### Front ends
 
@@ -33,15 +33,15 @@ _mpv_ provides an elegant User Interface called OSC which appears when moving th
 
 *   **Baka MPlayer** — Free and open source, cross-platform, _libmpv_ based multimedia player (Qt 5).
 
-	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)<sup><small>AUR</small></sup>
+	[https://github.com/u8sand/Baka-MPlayer/](https://github.com/u8sand/Baka-MPlayer/) || [baka-mplayer](https://www.archlinux.org/packages/?name=baka-mplayer), [baka-mplayer-git](https://aur.archlinux.org/packages/baka-mplayer-git/)
 
 *   **bomi** — Powerful and easy to use multimedia player (Qt 5).
 
-	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/)<sup><small>AUR</small></sup>, [bomi-git](https://aur.archlinux.org/packages/bomi-git/)<sup><small>AUR</small></sup>
+	[https://bomi-player.github.io/](https://bomi-player.github.io/) || [bomi](https://aur.archlinux.org/packages/bomi/), [bomi-git](https://aur.archlinux.org/packages/bomi-git/)
 
 *   **GNOME MPV** — A simple frontend for _mpv_ (GTK+ 3).
 
-	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/)<sup><small>AUR</small></sup>, [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)<sup><small>AUR</small></sup>
+	[https://github.com/gnome-mpv/gnome-mpv/](https://github.com/gnome-mpv/gnome-mpv/) || [gnome-mpv-git](https://aur.archlinux.org/packages/gnome-mpv-git/), [gnome-mpv](https://aur.archlinux.org/packages/gnome-mpv/)
 
 *   **[SMPlayer](https://en.wikipedia.org/wiki/SMPlayer "wikipedia:SMPlayer")** — Qt multimedia player with extra features (CSS themes, YouTube integration, etc.) (Qt 5).
 
@@ -49,7 +49,7 @@ _mpv_ provides an elegant User Interface called OSC which appears when moving th
 
 *   **xt7-player-mpv** — Qt/Gambas gui to mpv with a rich set of configurable options including filters and drivers, ladspa plugins support as well as library/playlist managment, youtube, online radios, podcasts, dvb-t and more.
 
-	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)<sup><small>AUR</small></sup>
+	[https://github.com/kokoko3k/xt7-player-mpv](https://github.com/kokoko3k/xt7-player-mpv) || [xt7-player-mpv-git](https://aur.archlinux.org/packages/xt7-player-mpv-git/)
 
 **Note:** CMPlayer/_bomi_ packages provide _mpv_ internally.
 
@@ -115,7 +115,7 @@ It may be useful to always show the GUI window, even for audio files, especially
 
 ### Use as a browser plugin
 
-With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/)<sup><small>AUR</small></sup>, _mpv_ can be used in a supported browser to play video. See [Browser plugins#MozPlugger](/index.php/Browser_plugins#MozPlugger "Browser plugins") for configuration details. This coupled with a user script such as [ViewTube](http://isebaro.com/viewtube/?ln=en), allows you to use _mpv_ in place of a site's integrated video player.
+With the help of [mozplugger](https://aur.archlinux.org/packages/mozplugger/), _mpv_ can be used in a supported browser to play video. See [Browser plugins#MozPlugger](/index.php/Browser_plugins#MozPlugger "Browser plugins") for configuration details. This coupled with a user script such as [ViewTube](http://isebaro.com/viewtube/?ln=en), allows you to use _mpv_ in place of a site's integrated video player.
 
 [Browser plugins#Video players workarounds](/index.php/Browser_plugins#Video_players_workarounds "Browser plugins") page shows other easy ways to watch videos.
 
@@ -157,7 +157,7 @@ To use vapoursynth filters you have to install the `vapoursynth` package and com
 
 ### Debanding (flash3kyuu)
 
-To use the f3k_db debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/)<sup><small>AUR</small></sup> and write a python script that uses the _vapoursynth_ extension.
+To use the f3k_db debanding filter install [vapoursynth-plugin-flash3kyuu_deband-git](https://aur.archlinux.org/packages/vapoursynth-plugin-flash3kyuu_deband-git/) and write a python script that uses the _vapoursynth_ extension.
 
 The following sample script can be used to enable debanding in _mpv_.
 

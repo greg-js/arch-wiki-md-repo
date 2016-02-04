@@ -32,39 +32,39 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 *   **cmst** — Qt GUI for ConnMan.
 
-	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)<sup><small>AUR</small></sup>
+	[https://github.com/andrew-bibb/cmst](https://github.com/andrew-bibb/cmst) || [cmst](https://aur.archlinux.org/packages/cmst/)
 
 *   **connman-ncurses** — Simple ncurses UI for ConnMan
 
-	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)<sup><small>AUR</small></sup>
+	[https://github.com/eurogiciel-oss/connman-json-client](https://github.com/eurogiciel-oss/connman-json-client) || [connman-ncurses-git](https://aur.archlinux.org/packages/connman-ncurses-git/)
 
 *   **connman-notify** — Connman event notification client
 
-	[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/connman-notify)]</sup>
+	[https://github.com/wavexx/connman-notify](https://github.com/wavexx/connman-notify) || [connman-notify](https://aur.archlinux.org/packages/connman-notify/)
 
 *   **ConnMan-UI** — GTK3 client applet.
 
-	[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)<sup><small>AUR</small></sup>
+	[https://github.com/tbursztyka/connman-ui](https://github.com/tbursztyka/connman-ui) || [connman-ui-git](https://aur.archlinux.org/packages/connman-ui-git/)
 
 *   **connman_dmenu** — Client/frontend for dmenu.
 
-	[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)<sup><small>AUR</small></sup>
+	[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)
 
 *   **EConnman** — Enlightenment desktop panel applet.
 
-	[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)<sup><small>AUR</small></sup>
+	[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)
 
 *   **LXQt-Connman-Applet** — LXQt desktop panel applet.
 
-	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
+	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
 
 *   **qconnman-ui** — Qt management interface used on O.S. Systems products
 
-	[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qconnman-ui-git)]</sup>
+	[https://github.com/OSSystems/qconnman-ui](https://github.com/OSSystems/qconnman-ui) || [qconnman-ui-git](https://aur.archlinux.org/packages/qconnman-ui-git/)
 
 *   **connman-gtk** — GTK client.
 
-	[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)<sup><small>AUR</small></sup>
+	[https://github.com/jgke/connman-gtk](https://github.com/jgke/connman-gtk) || [connman-gtk](https://aur.archlinux.org/packages/connman-gtk/)
 
 *   **gnome-extension-connman** — Gnome3 extension for connman.
 

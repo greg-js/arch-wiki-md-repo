@@ -24,7 +24,7 @@ Cairo-Dock is a highly customizable dock written in C.
 
 Install [cairo-dock](https://www.archlinux.org/packages/?name=cairo-dock) from the [official repositories](/index.php/Official_repositories "Official repositories"). The core package provides only the strict minimum to run Cairo-Dock - to use applets, animations, views, effects and dialogs you will also need [cairo-dock-plug-ins](https://www.archlinux.org/packages/?name=cairo-dock-plug-ins).
 
-You can also try the development branch with [cairo-dock-git](https://aur.archlinux.org/packages/cairo-dock-git/)<sup><small>AUR</small></sup> and [cairo-dock-plug-ins-git](https://aur.archlinux.org/packages/cairo-dock-plug-ins-git/)<sup><small>AUR</small></sup>.
+You can also try the development branch with [cairo-dock-git](https://aur.archlinux.org/packages/cairo-dock-git/) and [cairo-dock-plug-ins-git](https://aur.archlinux.org/packages/cairo-dock-plug-ins-git/).
 
 ### Plugin dependencies
 

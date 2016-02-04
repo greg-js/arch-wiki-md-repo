@@ -18,7 +18,7 @@ From [AWStats - Free log file analyzer for advanced statistics](http://awstats.s
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [awstats](https://www.archlinux.org/packages/?name=awstats) package. When [Apache](/index.php/Apache "Apache") is used as a web server, the [mod_perl](https://aur.archlinux.org/packages/mod_perl/)<sup><small>AUR</small></sup> package is required as well.
+[Install](/index.php/Install "Install") the [awstats](https://www.archlinux.org/packages/?name=awstats) package. When [Apache](/index.php/Apache "Apache") is used as a web server, the [mod_perl](https://aur.archlinux.org/packages/mod_perl/) package is required as well.
 
 ## Configuration
 
@@ -221,7 +221,7 @@ With this you can access your awstats page simply by typing **"http://your_domai
 
 ## GeoIP (optional)
 
-To add geo ip support, install [perl-geoip](https://aur.archlinux.org/packages/perl-geoip/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR"). Add the following line to each of the awstats site configuration files located in /etc/awstats/:
+To add geo ip support, install [perl-geoip](https://aur.archlinux.org/packages/perl-geoip/) from [AUR](/index.php/AUR "AUR"). Add the following line to each of the awstats site configuration files located in /etc/awstats/:
 
 ```
 LoadPlugin="geoip GEOIP_STANDARD /usr/share/GeoIP/GeoIP.dat"

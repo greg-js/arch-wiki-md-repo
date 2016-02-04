@@ -19,11 +19,11 @@ This is a quick start guide for installing [TuxOnIce](http://www.tuxonice.net) (
 
 TuxOnIce consists of a kernel patch, plus an optional user interface. Only the kernel patch is necessary, the user interface merely provides a graphical interface displayed during the hibernation/resume cycle.
 
-You can use the [linux-ice](https://aur.archlinux.org/packages/linux-ice/)<sup><small>AUR</small></sup> or the [linux-pf](/index.php/Linux-pf "Linux-pf") packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). They automate all the patch routines, the compilation and installation of the kernel, and the regeneration of the initramfs with an appropriate hook. You maintain control over the install process, and its easy to make changes if you want to repeat the process. More detailed information at installing [linux-pf](/index.php/Linux-pf "Linux-pf") and configuring it with TuxOnIce can be found at its wiki page.
+You can use the [linux-ice](https://aur.archlinux.org/packages/linux-ice/) or the [linux-pf](/index.php/Linux-pf "Linux-pf") packages available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). They automate all the patch routines, the compilation and installation of the kernel, and the regeneration of the initramfs with an appropriate hook. You maintain control over the install process, and its easy to make changes if you want to repeat the process. More detailed information at installing [linux-pf](/index.php/Linux-pf "Linux-pf") and configuring it with TuxOnIce can be found at its wiki page.
 
 Otherwise, you need to patch, configure and compile your own kernel, visit [Kernel Compilation From Source](/index.php/Kernel_Compilation_From_Source "Kernel Compilation From Source") and [Kernel Compilation with ABS](/index.php/Kernel_Compilation_with_ABS "Kernel Compilation with ABS") for instructions. The required patch can be obtained from the TuxOnIce website mentioned above.
 
-Next, install the [hibernate-script](https://aur.archlinux.org/packages/hibernate-script/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hibernate-script)]</sup> package from the [AUR](/index.php/AUR "AUR") which we will use to call TuxOnIce. Hibernate-script is the default script developed by the TuxOnIce development team.
+Next, install the [hibernate-script](https://aur.archlinux.org/packages/hibernate-script/) package from the [AUR](/index.php/AUR "AUR") which we will use to call TuxOnIce. Hibernate-script is the default script developed by the TuxOnIce development team.
 
 The configuration files for hibernate-script are in `/etc/hibernate`, we will get back to them shortly.
 
@@ -148,7 +148,7 @@ Additional lines can be used to change other options, such as the default loggin
 
 ## userui - user interface for TuxOnIce (optional)
 
-Optionally, you can use a text or graphical ([Fbsplash](/index.php/Fbsplash "Fbsplash")) interface with a progress bar with TuxOnIce. To do this, install the [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/)<sup><small>AUR</small></sup> package from the AUR.
+Optionally, you can use a text or graphical ([Fbsplash](/index.php/Fbsplash "Fbsplash")) interface with a progress bar with TuxOnIce. To do this, install the [tuxonice-userui](https://aur.archlinux.org/packages/tuxonice-userui/) package from the AUR.
 
 In `/etc/hibernate/tuxonice.conf`, set the desired user interface:
 
@@ -202,7 +202,7 @@ For the graphical interface run:
 
 ## References
 
-*   The [TuxOnIce website](http://www.tuxonice.net) and [TuxOnIce wiki](http://wiki.tuxonice.net/)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-11-15]</sup> are excellent sources of documentation.
+*   The [TuxOnIce website](http://www.tuxonice.net) and [TuxOnIce wiki](http://wiki.tuxonice.net/) are excellent sources of documentation.
 *   More general information about suspend/hibernate with hibernate-script can be found on the [Suspend to Disk](/index.php/Suspend_to_Disk "Suspend to Disk") page of this wiki. This also covers some advanced topics like problems with specific hardware and configurations.
 *   Another good source of information is the [Gentoo wiki](http://en.gentoo-wiki.com/wiki/TuxOnIce)
 

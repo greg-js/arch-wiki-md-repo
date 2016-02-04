@@ -223,7 +223,7 @@ A complete list of PHP SSL configuration options [can be found here](http://php.
 
 ### PDF and OpenDocument file preview
 
-Following Roundcube extensions enables you to preview PDF or OpenDocument file attachements. Install [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") and adjust following configuration file to enable the extensions:
+Following Roundcube extensions enables you to preview PDF or OpenDocument file attachements. Install [roundcubemail-plugins-kolab](https://aur.archlinux.org/packages/roundcubemail-plugins-kolab/) from the [AUR](/index.php/AUR "AUR") and adjust following configuration file to enable the extensions:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
 
@@ -241,7 +241,7 @@ If you encounter any file permission issues, than try this command:
 
 ### Synchronize address book with CardDav contacts
 
-It's useful to use the Roundcube address book to have auto-completion features for address fields etc. If you have your contacts stored somewhere else and the remote application offers a CardDav server for synchronization, then you can use the [roundcube-rcmcarddav](https://aur.archlinux.org/packages/roundcube-rcmcarddav/)<sup><small>AUR</small></sup> extension from the [AUR](/index.php/AUR "AUR") to access your remote address book in Roundcube. To enable it, adjust following lines in your config file:
+It's useful to use the Roundcube address book to have auto-completion features for address fields etc. If you have your contacts stored somewhere else and the remote application offers a CardDav server for synchronization, then you can use the [roundcube-rcmcarddav](https://aur.archlinux.org/packages/roundcube-rcmcarddav/) extension from the [AUR](/index.php/AUR "AUR") to access your remote address book in Roundcube. To enable it, adjust following lines in your config file:
 
  `/etc/webapps/roundcubemail/config/config.inc.php` 
 

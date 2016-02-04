@@ -31,7 +31,7 @@ Before you install the package create the user `icinga:icinga` with these comman
 
 ```
 
-Install [icinga](https://aur.archlinux.org/packages/icinga/)<sup><small>AUR</small></sup> or [icinga2](https://aur.archlinux.org/packages/icinga2/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [icinga](https://aur.archlinux.org/packages/icinga/) or [icinga2](https://aur.archlinux.org/packages/icinga2/) from the [AUR](/index.php/AUR "AUR").
 
 Users may also want to install [monitoring-plugins](https://www.archlinux.org/packages/?name=monitoring-plugins) from the Community repositories.
 
@@ -130,7 +130,7 @@ Configure CGI:
 
 Follow [Install Web Application Package](/index.php/Web_application_package_guidelines#Install_web_application_package "Web application package guidelines")
 
-Install [icinga-web](https://aur.archlinux.org/packages/icinga-web/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [icinga-web](https://aur.archlinux.org/packages/icinga-web/) from the [AUR](/index.php/AUR "AUR").
 
 ### Configure IDOUtils
 

@@ -292,7 +292,7 @@ To run a SDL application on Wayland, set `SDL_VIDEODRIVER=wayland`.
 
 ### GLFW
 
-Experimental wayland support is now in GLFW 3.1 and can be enabled with the `-DGLFW_USE_WAYLAND=ON` CMake option at compile time. You can also install the package [glfw-wayland-git](https://aur.archlinux.org/packages/glfw-wayland-git/)<sup><small>AUR</small></sup> from the AUR.
+Experimental wayland support is now in GLFW 3.1 and can be enabled with the `-DGLFW_USE_WAYLAND=ON` CMake option at compile time. You can also install the package [glfw-wayland-git](https://aur.archlinux.org/packages/glfw-wayland-git/) from the AUR.
 
 ### EFL
 

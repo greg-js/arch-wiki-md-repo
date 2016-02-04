@@ -92,7 +92,7 @@ It might be possible to create Urban Terror maps with other level editors, such 
 
 #### ZeroRadiant (gtkradiant-svn)
 
-Build and install both [gtkradiant-svn](https://aur.archlinux.org/packages.php?ID=31795) and [gtkradiant-gamepack-urt-svn](https://aur.archlinux.org/packages/gtkradiant-gamepack-urt-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gtkradiant-gamepack-urt-svn)]</sup> from the AUR.
+Build and install both [gtkradiant-svn](https://aur.archlinux.org/packages.php?ID=31795) and [gtkradiant-gamepack-urt-svn](https://aur.archlinux.org/packages/gtkradiant-gamepack-urt-svn/) from the AUR.
 
 Start gtkradiant by either typing its name in a terminal or clicking the new menu entry. You will see a dialog, choose _Urban Terror (standalone)_ in the drop-down list and `/home/you/urtmapping` as engine directory (_not_ q3ut4). Click OK in the next window and the editor should pop up.
 

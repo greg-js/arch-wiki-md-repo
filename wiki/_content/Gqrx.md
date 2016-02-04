@@ -4,7 +4,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [gqrx](https://www.archlinux.org/packages/?name=gqrx) or [gqrx-git](https://aur.archlinux.org/packages/gqrx-git/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [gqrx](https://www.archlinux.org/packages/?name=gqrx) or [gqrx-git](https://aur.archlinux.org/packages/gqrx-git/).
 
 ## Usage
 

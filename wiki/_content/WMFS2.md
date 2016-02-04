@@ -2,7 +2,7 @@
 
 From the [project home page](http://wmfs.info/):
 
-	_WMFS<sup>2</sup> is a lightweight and highly configurable tiling window manager for X written in C. WMFS<sup>2</sup> is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable._
+	_WMFS is a lightweight and highly configurable tiling window manager for X written in C. WMFS is a free software distributed under the BSD license. it can be drive from keyboard or mouse and it's configuration stands in one text file easily understandable._
 
 ## Contents
 
@@ -26,7 +26,7 @@ For those moving from the original WMFS, there are a few differences to be aware
 *   The syntax of `~/.config/wmfs/wmfsrc` (the default configuration file) has changed slightly; those wishing to merge config files should do so carefully
 *   There is no longer an application menu
 *   Xft is no longer supported
-*   Aesthetically, WMFS<sup>2</sup> is more minimalistic than its predecessor
+*   Aesthetically, WMFS is more minimalistic than its predecessor
 
 And of course, the new, fun stuff:
 
@@ -37,17 +37,17 @@ And of course, the new, fun stuff:
 
 ## Installation
 
-WMFS<sup>2</sup> can be [installed](/index.php/Installed "Installed") via the [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/)<sup><small>AUR</small></sup> package.
+WMFS can be [installed](/index.php/Installed "Installed") via the [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/) package.
 
 ## Basic usage
 
-WMFS<sup>2</sup> primarily differs from the original WMFS in the way windows are managed. While in the previous version windows were arranged according to predefined layouts - as they are in window managers such as DWM and Awesome - WMFS<sup>2</sup> features key and mouse bindings allowing the user to manually configure layouts on each tag - as is the case with wmii, i3 and others.
+WMFS primarily differs from the original WMFS in the way windows are managed. While in the previous version windows were arranged according to predefined layouts - as they are in window managers such as DWM and Awesome - WMFS features key and mouse bindings allowing the user to manually configure layouts on each tag - as is the case with wmii, i3 and others.
 
 If one opens, say, multiple instances of a terminal (by default, **Super+Enter** opens [urxvt](/index.php/Urxvt "Urxvt")), they will be arranged in a diminishing "spiral" on the screen, with each one opening on the left side in smaller and smaller sizes. These can then be rotated, changing the orientation of the _master window_ (the one that takes up have the screen on its own) and _slave windows_ (the ones that shrink as you open more). Also, windows may be "tabbed" together, maximizing all clients and placing independent tabs in a single titlebar at the top of the window. This keeps the focused window maximized while placing the others "behind" it, and allowing the user to cycle through them using a key binding, thus preventing the need to click on a taskbar or dock to repeatedly minimize/maximize individual windows.
 
 Individual clients can be rearranged using keyboard shortcuts; alternatively, a window can be clicked-and-dragged by its titlebar, or may be clicked-and-dragged from any point in the client while holding down a mod key such as **Alt** or **Super** (the "Windows" key). Finally, they may also be toggled into "free" or "floating" mode, and moved around like stacked windows on a traditional desktop.
 
-Both key and mouse bindings are specified under the **[keys]** section of `wmfsrc`, and the [keybindings](https://github.com/xorg62/wmfs/wiki/Configuration-wmfsrc) and possible [functions](https://github.com/xorg62/wmfs/wiki/functions) are explained on the WMFS<sup>2</sup> wiki.
+Both key and mouse bindings are specified under the **[keys]** section of `wmfsrc`, and the [keybindings](https://github.com/xorg62/wmfs/wiki/Configuration-wmfsrc) and possible [functions](https://github.com/xorg62/wmfs/wiki/functions) are explained on the WMFS wiki.
 
 ## Configuration
 
@@ -125,7 +125,7 @@ The first several options are essentially all the potential names a running prog
 
 ### Statusbar
 
-The "statusbar" is a panel at the edge of the screen that displays pertinent information about tags and clients. System data can also be called by external scripts and then passed to wmfs via the **wmfs -c status** command, which displays the information in the specified statusbar. Those wishing to take advantage of multiple statusbars in WMFS<sup>2</sup> will need to specify distinct names in **wmfsrc** in order to print different data in each bar. Something as simple as "top" and "bottom" will suffice.
+The "statusbar" is a panel at the edge of the screen that displays pertinent information about tags and clients. System data can also be called by external scripts and then passed to wmfs via the **wmfs -c status** command, which displays the information in the specified statusbar. Those wishing to take advantage of multiple statusbars in WMFS will need to specify distinct names in **wmfsrc** in order to print different data in each bar. Something as simple as "top" and "bottom" will suffice.
 
 ```
 # Position:
@@ -168,11 +168,11 @@ If only one statusbar/panel is desired, the _name_ entry is not required.
 *   **Systray:** A simple system tray displaying icons for programs that are minimized/running in the background
 *   **Launcher:** Refers to the text-based, dmenu-like process launcher
 
-The options for each element use relatively similar syntax, which can be found on the [WMFS<sup>2</sup> wiki.](https://github.com/xorg62/wmfs/wiki/statusbar) Additionally, each element features specialized status options, discussed below.
+The options for each element use relatively similar syntax, which can be found on the [WMFS wiki.](https://github.com/xorg62/wmfs/wiki/statusbar) Additionally, each element features specialized status options, discussed below.
 
 ##### Tags
 
-As with most tiling window managers, WMFS<sup>2</sup> utilizes "tags" to help organize windows. Tags are similar to virtual desktops or workspaces, but with a few important differences: For example, multiple tags can be displayed on one screen, or clients can be assigned to more than one tag.
+As with most tiling window managers, WMFS utilizes "tags" to help organize windows. Tags are similar to virtual desktops or workspaces, but with a few important differences: For example, multiple tags can be displayed on one screen, or clients can be assigned to more than one tag.
 
 Tags are displayed on the left end of the statusbar, and can be assigned either numbers (the default) or names in **[tags]** section of `wmfsrc.`
 
@@ -224,7 +224,7 @@ The first option will place a small red box next to the currently active tag; th
 
 ##### Launchers
 
-Unlike its predecessor, WMFS<sup>2</sup> does not have a drop-down application menu. Instead, it features a text-based application launcher, which can be called by pressing **Alt+p**.
+Unlike its predecessor, WMFS does not have a drop-down application menu. Instead, it features a text-based application launcher, which can be called by pressing **Alt+p**.
 
 Custom launchers using either text or icons can be created as well. The following string places a launcher for Firefox on the left end of the statusbar (next to the tags display), and opens firefox when clicked:
 

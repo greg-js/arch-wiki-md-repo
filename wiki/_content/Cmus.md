@@ -25,7 +25,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [cmus](https://www.archlinux.org/packages/?name=cmus) package, or [cmus-git](https://aur.archlinux.org/packages/cmus-git/)<sup><small>AUR</small></sup> for the development version.
+[Install](/index.php/Install "Install") the [cmus](https://www.archlinux.org/packages/?name=cmus) package, or [cmus-git](https://aur.archlinux.org/packages/cmus-git/) for the development version.
 
 ### Using cmus with alsa
 

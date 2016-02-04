@@ -22,7 +22,7 @@ X server works with the standard [nvidia](https://www.archlinux.org/packages/?na
 
 To resolve the blank screen issue you need to use [vesafb](https://wiki.archlinux.org/index.php/Uvesafb).
 
-Install [v86d](https://aur.archlinux.org/packages/v86d/)<sup><small>AUR</small></sup> and remove any vga=<foo> kernel boot parameters.
+Install [v86d](https://aur.archlinux.org/packages/v86d/) and remove any vga=<foo> kernel boot parameters.
 
 Next ensure that `/etc/modprobe.d/uvesafb.conf` contains:
 
@@ -60,15 +60,15 @@ Option    "RegistryDwords"    "EnableBrightnessControl=1;PowerMizerEnable=0x1;Pe
 
 Plus I use module **sony_laptop** .. MODULES=(sony_laptop) in /etc/rc.conf
 
-The patched kernel is available in the AUR: [linux-sony](https://aur.archlinux.org/packages/linux-sony/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-sony)]</sup>
+The patched kernel is available in the AUR: [linux-sony](https://aur.archlinux.org/packages/linux-sony/)
 
-The sony-acpid daemon is also available in the AUR: [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sony-acpid-git)]</sup>
+The sony-acpid daemon is also available in the AUR: [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/)
 
-Keep in mind that you will need a custom **nvidia** package for each custom kernel. Alternatively, you can install [nvidia-all](https://aur.archlinux.org/packages/nvidia-all/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/nvidia-all)]</sup>
+Keep in mind that you will need a custom **nvidia** package for each custom kernel. Alternatively, you can install [nvidia-all](https://aur.archlinux.org/packages/nvidia-all/)
 
 ## Automatic Backlight Regulation
 
-This requires the [linux-sony](https://aur.archlinux.org/packages/linux-sony/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-sony)]</sup> and [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sony-acpid-git)]</sup> packages.
+This requires the [linux-sony](https://aur.archlinux.org/packages/linux-sony/) and [sony-acpid-git](https://aur.archlinux.org/packages/sony-acpid-git/) packages.
 
 Once those two packages are installed, add sony-acpid to the DAEMONS array in rc.conf:
 
@@ -129,7 +129,7 @@ _See the detailed article: [setkeycodes](/index.php/Setkeycodes "Setkeycodes")._
 
 ## Hardware Controls
 
-Many VAIO specific hardware controls can be adjusted using the VAIO control centre, which is in the [vaio-control-center-git](https://aur.archlinux.org/packages/vaio-control-center-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vaio-control-center-git)]</sup> package.
+Many VAIO specific hardware controls can be adjusted using the VAIO control centre, which is in the [vaio-control-center-git](https://aur.archlinux.org/packages/vaio-control-center-git/) package.
 
 ## Suspend to RAM
 

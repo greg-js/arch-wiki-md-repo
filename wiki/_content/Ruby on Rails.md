@@ -72,7 +72,7 @@ $ gem update
 
 ### Pacman
 
-[Install](/index.php/Install "Install") the [ruby-rails](https://aur.archlinux.org/packages/ruby-rails/)<sup><small>AUR</small></sup> package. Alternatively, see [Ruby#Managing RubyGems using pacman](/index.php/Ruby#Managing_RubyGems_using_pacman "Ruby").
+[Install](/index.php/Install "Install") the [ruby-rails](https://aur.archlinux.org/packages/ruby-rails/) package. Alternatively, see [Ruby#Managing RubyGems using pacman](/index.php/Ruby#Managing_RubyGems_using_pacman "Ruby").
 
 ### Quarry binary repository
 

@@ -15,7 +15,7 @@
 
 ## Installation
 
-[pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)<sup><small>AUR</small></sup> can be installed from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/) can be installed from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 The server can be started using `# systemctl start pure-ftpd`.
 

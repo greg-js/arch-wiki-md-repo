@@ -66,11 +66,11 @@ xkb_keymap {
 
 There are some "unofficial" utilities which allow to print specific information about the currently used keyboard layout.
 
-*   [xkb-switch-git](https://aur.archlinux.org/packages/xkb-switch-git/)<sup><small>AUR</small></sup>:
+*   [xkb-switch-git](https://aur.archlinux.org/packages/xkb-switch-git/):
 
  `$ xkb-switch`  `us` 
 
-*   [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xkblayout-state)]</sup>:
+*   [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/):
 
  `$ xkblayout-state print "%s"`  `de` 
 

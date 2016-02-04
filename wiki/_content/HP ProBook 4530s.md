@@ -104,7 +104,7 @@ Controlling screen brightness with the keystrokes `Fn+F2` and `Fn+F3` works in G
 
 ### Touchpad
 
-Touchpad function works with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package. Disabling touchpad using the top-left corner double tap works with [xf86-input-synaptics-led](https://aur.archlinux.org/packages/xf86-input-synaptics-led/)<sup><small>AUR</small></sup> and [synaptics-led](https://aur.archlinux.org/packages/synaptics-led/)<sup><small>AUR</small></sup> packages.
+Touchpad function works with [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) package. Disabling touchpad using the top-left corner double tap works with [xf86-input-synaptics-led](https://aur.archlinux.org/packages/xf86-input-synaptics-led/) and [synaptics-led](https://aur.archlinux.org/packages/synaptics-led/) packages.
 
 ### Miscellaneous hardware
 
@@ -129,7 +129,7 @@ Works with **uvcvideo** module.
 
 #### HP DriveGuard
 
-Works with [hpfall-git](https://aur.archlinux.org/packages/hpfall-git/)<sup><small>AUR</small></sup> package.
+Works with [hpfall-git](https://aur.archlinux.org/packages/hpfall-git/) package.
 
 ### Power
 

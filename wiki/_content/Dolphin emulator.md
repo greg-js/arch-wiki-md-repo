@@ -27,12 +27,12 @@ Install one of the following:
 
 *   **Dolphin emu (git)** — A Gamecube / Wii / Triforce emulator (development version)
 
-	[https://github.com/dolphin-emu/dolphin](https://github.com/dolphin-emu/dolphin) || [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)<sup><small>AUR</small></sup>
+	[https://github.com/dolphin-emu/dolphin](https://github.com/dolphin-emu/dolphin) || [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)
 
 **Tip:**
 
-*   Stable releases of Dolphin tend to grow old between releases, and are potentially outclassed by the development versions, which feature many speed improvements and bug fixes in comparison. If low performance or glitches are encountered, consider installing the [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)<sup><small>AUR</small></sup> package.
-*   Reinstalling the [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/)<sup><small>AUR</small></sup> package will upgrade Dolphin to the latest development version at any time.
+*   Stable releases of Dolphin tend to grow old between releases, and are potentially outclassed by the development versions, which feature many speed improvements and bug fixes in comparison. If low performance or glitches are encountered, consider installing the [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/) package.
+*   Reinstalling the [dolphin-emu-git](https://aur.archlinux.org/packages/dolphin-emu-git/) package will upgrade Dolphin to the latest development version at any time.
 
 ## Configuration
 

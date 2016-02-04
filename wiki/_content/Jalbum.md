@@ -23,7 +23,7 @@ Jalbum was created by Swedish programmer David Ekholm in 2002.
 
 ## Installation
 
-You can install Jalbum with the package [jalbum](https://aur.archlinux.org/packages/jalbum/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jalbum)]</sup> from the [AUR](/index.php/AUR "AUR").
+You can install Jalbum with the package [jalbum](https://aur.archlinux.org/packages/jalbum/) from the [AUR](/index.php/AUR "AUR").
 
 Jalbum should now be available from your Applications>Graphics menu (Gnome).
 

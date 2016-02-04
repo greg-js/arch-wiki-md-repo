@@ -17,7 +17,7 @@ Groove Basin works with your personal music library; not an external music servi
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [nodejs-groovebasin](https://aur.archlinux.org/packages/nodejs-groovebasin/)<sup><small>AUR</small></sup> package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+[Install](/index.php/Install "Install") the [nodejs-groovebasin](https://aur.archlinux.org/packages/nodejs-groovebasin/) package from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 

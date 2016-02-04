@@ -18,7 +18,7 @@
 
 ## SystemTap
 
-Simply install SystemTap from [AUR](/index.php/AUR "AUR"): [systemtap](https://aur.archlinux.org/packages/systemtap/)<sup><small>AUR</small></sup>, all done. Compare it to the most recent upstream release at [[1]](https://sourceware.org/systemtap/wiki/SystemTapReleases).
+Simply install SystemTap from [AUR](/index.php/AUR "AUR"): [systemtap](https://aur.archlinux.org/packages/systemtap/), all done. Compare it to the most recent upstream release at [[1]](https://sourceware.org/systemtap/wiki/SystemTapReleases).
 
 Consider also building it from sources at [[2]](https://sourceware.org/git/?p=systemtap.git;a=summary), where support for newer kernels or distros makes first appearance.
 

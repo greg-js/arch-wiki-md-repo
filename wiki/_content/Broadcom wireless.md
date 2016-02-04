@@ -55,18 +55,18 @@ The kernel contains two built-in open-source drivers: **brcmsmac** for PCI backe
 
 Two reverse-engineered open-source drivers are built-in to the kernel: **b43** and **b43legacy**. b43 supports most newer Broadcom chipsets, while the b43legacy driver only supports the early BCM4301 and BCM4306 rev.2 chipsets. To avoid erroneous detection of your WiFi card's chipset, [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") the unused driver.
 
-Both of these drivers require non-free firmware to function. Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup>, [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/)<sup><small>AUR</small></sup> or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Both of these drivers require non-free firmware to function. Install [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/), [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) or [b43-firmware-legacy](https://aur.archlinux.org/packages/b43-firmware-legacy/) from the [AUR](/index.php/AUR "AUR").
 
 **Note:**
 
-*   BCM4306 rev.3, BCM4311, BCM4312 noticed to have problems with **b43-firmware**. Use [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/)<sup><small>AUR</small></sup> for these cards instead.
-*   BCM4331 noticed to have problems with **b43-firmware-classic**. Use [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup> for this card instead.
+*   BCM4306 rev.3, BCM4311, BCM4312 noticed to have problems with **b43-firmware**. Use [b43-firmware-classic](https://aur.archlinux.org/packages/b43-firmware-classic/) for these cards instead.
+*   BCM4331 noticed to have problems with **b43-firmware-classic**. Use [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) for this card instead.
 
 ### broadcom-wl
 
-Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or its [DKMS](/index.php/DKMS "DKMS") variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the restrictively licensed driver.
+Install [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or its [DKMS](/index.php/DKMS "DKMS") variant [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) from the [AUR](/index.php/AUR "AUR") for the restrictively licensed driver.
 
-**Tip:** If you use [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, kernel upgrades may break wireless from time to time, and you may need to uninstall & reinstall the package. Using [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> helps avoid this.
+**Tip:** If you use [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), kernel upgrades may break wireless from time to time, and you may need to uninstall & reinstall the package. Using [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) helps avoid this.
 
 #### Offline installation
 
@@ -102,7 +102,7 @@ To make the module load at boot, refer to [Kernel modules](/index.php/Kernel_mod
 
 Since the 3.3.1 kernel the **bcma** module was introduced. If using a **brcm80211** driver be sure it has not been [blacklisted](/index.php/Kernel_modules#Blacklisting "Kernel modules"). It should be blackisted if using a **b43** driver.
 
-If you are using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup>, uninstall and reinstall it after upgrading your kernel.
+If you are using [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/), uninstall and reinstall it after upgrading your kernel.
 
 ### Device with broadcom-wl driver not working/showing
 

@@ -86,7 +86,7 @@ Another option is to install a separate [mount application](/index.php/List_of_a
 *   [obexfs](https://www.archlinux.org/packages/?name=obexfs): Bluetooth device mounting and file transfers (see [Bluetooth](/index.php/Bluetooth "Bluetooth"))
 *   [gvfs-smb](https://www.archlinux.org/packages/?name=gvfs-smb): Windows File and printer sharing for **Non-KDE** desktops (see [Samba](/index.php/Samba "Samba"))
 *   [kdenetwork-filesharing](https://www.archlinux.org/packages/?name=kdenetwork-filesharing): Windows File and printer sharing for [KDE](/index.php/KDE "KDE") (see [Samba#KDE](/index.php/Samba#KDE "Samba"))
-*   [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): replaced by [gvfs](https://www.archlinux.org/packages/?name=gvfs)]</sup>: Apple file and printer sharing
+*   [gvfs-afp](https://www.archlinux.org/packages/?name=gvfs-afp): Apple file and printer sharing
 *   [sshfs](https://www.archlinux.org/packages/?name=sshfs): FUSE client based on the SSH File Transfer Protocol
 
 #### Windows access

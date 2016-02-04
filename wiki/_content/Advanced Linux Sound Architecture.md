@@ -417,7 +417,7 @@ Now you can select the sound card when starting programs by just changing the en
 
 #### Alternative method
 
-**Tip:** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/)<sup><small>AUR</small></sup>.
+**Tip:** This process can be partly automated using [asoundconf](https://aur.archlinux.org/packages/asoundconf/).
 
 First you will have to find out the card and device id that you want to set as the default:
 
@@ -579,7 +579,7 @@ $ amixer scontrols
 
 #### Using ALSAEqual (provides UI)
 
-Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/)<sup><small>AUR</small></sup> package.
+Install the [alsaequal](https://aur.archlinux.org/packages/alsaequal/) package.
 
 **Note:** If you have a x86_64-system and are using a 32bit-flashplugin the sound in flash will not work. You have to disable alsaequal or build alsaequal for 32bit.
 
@@ -631,7 +631,7 @@ or for example, you can make a symlink to your `.alsaequal.bin` in his home...
 
 ##### Managing ALSAEqual states
 
-Install the [alsaequal-mgr](https://aur.archlinux.org/packages/alsaequal-mgr/)<sup><small>AUR</small></sup> package.
+Install the [alsaequal-mgr](https://aur.archlinux.org/packages/alsaequal-mgr/) package.
 
 Configure the equalizer as usual with
 

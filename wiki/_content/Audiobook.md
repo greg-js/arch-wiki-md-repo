@@ -29,12 +29,12 @@ Multiple tools are available to help create audiobook files.
 
 ### Tools
 
-*   [m4baker](https://aur.archlinux.org/packages/m4baker/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/m4baker)]</sup> — GUI program to combine numerous AAC-encoded audio files into a single m4b file with a chapter index
+*   [m4baker](https://aur.archlinux.org/packages/m4baker/) — GUI program to combine numerous AAC-encoded audio files into a single m4b file with a chapter index
 
 	m4baker usage is straightforward and detailed on the [project wiki](http://code.google.com/p/m4baker/w/list) — its usage will not be covered here.
 
 *   [faac](https://www.archlinux.org/packages/?name=faac) — open source AAC encoder
-*   [neroaacenc](https://aur.archlinux.org/packages/neroaacenc/)<sup><small>AUR</small></sup> — proprietary AAC encoder
+*   [neroaacenc](https://aur.archlinux.org/packages/neroaacenc/) — proprietary AAC encoder
 *   [gpac](https://www.archlinux.org/packages/?name=gpac) — multimedia framework for manipulating MPEG-4 media
 *   [lame](https://www.archlinux.org/packages/?name=lame) — MP3 encoder and decoder
 
@@ -77,7 +77,7 @@ MP4Box -cat track-01.aac -cat track-02.aac… disc-1.aac
 
 ```
 
-Split a wav file ([wavsplit](https://aur.archlinux.org/packages/wavsplit/)<sup><small>AUR</small></sup> can do this (untested)).
+Split a wav file ([wavsplit](https://aur.archlinux.org/packages/wavsplit/) can do this (untested)).
 
 Split a _MP3_ files into 10 minute intervals:
 
@@ -265,6 +265,6 @@ The resulting file will have chapter headers intact.
 ## See also
 
 *   [Wikipedia:.m4b](https://en.wikipedia.org/wiki/.m4b "wikipedia:.m4b")
-*   [RipIT](https://aur.archlinux.org/packages/RipIT/)<sup><small>AUR</small></sup> — thorough DAE with the ability to create chapter indexes with the `--book` option.
+*   [RipIT](https://aur.archlinux.org/packages/RipIT/) — thorough DAE with the ability to create chapter indexes with the `--book` option.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Audiobook&oldid=417071](https://wiki.archlinux.org/index.php?title=Audiobook&oldid=417071)"

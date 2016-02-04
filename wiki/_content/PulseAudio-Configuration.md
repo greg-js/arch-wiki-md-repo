@@ -33,11 +33,11 @@ PulseAudio only requires the [pulseaudio](https://www.archlinux.org/packages/?na
 | [pulseaudio-alsa](https://www.archlinux.org/packages/?name=pulseaudio-alsa) | Provides an `/etc/asound.conf` configuration file that sets the [ALSA](/index.php/ALSA "ALSA") default plugin to pulse, thus redirecting playback and capture to PulseAudio. Highly recommended to avoid conflicts between ALSA applications and PulseAudio if you intend to run PulseAudio all the time and use the default configuration. |<caption></caption>
 | [paprefs](https://www.archlinux.org/packages/?name=paprefs) | A GUI for general daemon configuration. |<caption></caption>
 | [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) | An advanced volume control GUI: allows to change the volume of individual streams and configure the ports of all sound cards. |<caption></caption>
-| [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/)<sup><small>AUR</small></sup> | CLI mixers similar to pavucontrol. |<caption></caption>
+| [ponymix](https://www.archlinux.org/packages/?name=ponymix) and [pamixer-git](https://aur.archlinux.org/packages/pamixer-git/) | CLI mixers similar to pavucontrol. |<caption></caption>
 | [PaWebControl](https://github.com/Siot/PaWebControl) | A web GUI similar to [pavucontrol](https://www.archlinux.org/packages/?name=pavucontrol) to remotely control volumes (like from a mobile device). |<caption></caption>
-| [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/)<sup><small>AUR</small></sup> | A system tray for volume adjustment as well as a few basic operations like switching sinks and sources. |<caption></caption>
+| [pasystray-git](https://aur.archlinux.org/packages/pasystray-git/) | A system tray for volume adjustment as well as a few basic operations like switching sinks and sources. |<caption></caption>
 | [kdemultimedia-kmix](https://www.archlinux.org/packages/?name=kdemultimedia-kmix) | KDE's default volume control applet with similar functions to pavucontrol. |<caption></caption>
-| [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kdeplasma-applets-veromix)]</sup> | An advanced PulseAudio applet for KDE. |
+| [kdeplasma-applets-veromix](https://aur.archlinux.org/packages/kdeplasma-applets-veromix/) | An advanced PulseAudio applet for KDE. |
 
 ## Easy configuration
 

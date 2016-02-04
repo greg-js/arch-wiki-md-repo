@@ -115,7 +115,7 @@ See also [Wikipedia:Comparison of web browsers](https://en.wikipedia.org/wiki/Co
 
 *   **retawq** — Interactive, multi-threaded network client (web browser) for text terminals.
 
-	[http://retawq.sourceforge.net/](http://retawq.sourceforge.net/) || [retawq](https://aur.archlinux.org/packages/retawq/)<sup><small>AUR</small></sup>
+	[http://retawq.sourceforge.net/](http://retawq.sourceforge.net/) || [retawq](https://aur.archlinux.org/packages/retawq/)
 
 *   **[w3m](https://en.wikipedia.org/wiki/W3m "wikipedia:W3m")** — Pager/text-based web browser. It has vim-like keybindings, and is able to display images. It has javascript support too.
 
@@ -129,7 +129,7 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 *   **[Conkeror](https://en.wikipedia.org/wiki/Conkeror "wikipedia:Conkeror")** — Keyboard-based browser modeled after [Emacs](/index.php/Emacs "Emacs") using [XULRunner](https://en.wikipedia.org/wiki/XULRunner "wikipedia:XULRunner"). Customizable via JavaScript.
 
-	[http://repo.or.cz/w/conkeror.git/](http://repo.or.cz/w/conkeror.git/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)<sup><small>AUR</small></sup>
+	[http://repo.or.cz/w/conkeror.git/](http://repo.or.cz/w/conkeror.git/) || [conkeror-git](https://aur.archlinux.org/packages/conkeror-git/)
 
 *   **[Firefox](/index.php/Firefox "Firefox")** — Extensible browser from Mozilla based on Gecko with fast rendering.
 
@@ -145,15 +145,15 @@ See also [Wikipedia:Gecko (software)](https://en.wikipedia.org/wiki/Gecko_(softw
 
 *   **[GNU IceCat](https://en.wikipedia.org/wiki/GNU_IceCat "wikipedia:GNU IceCat")** — Web browser distributed by the GNU Project, stripped of non-free components and with additional privacy extensions. Release cycle may be delayed compared to Mozilla Firefox.
 
-	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)<sup><small>AUR</small></sup>
+	[https://www.gnu.org/software/gnuzilla/](https://www.gnu.org/software/gnuzilla/) || [icecat](https://aur.archlinux.org/packages/icecat/)
 
 *   **[Iceweasel](https://en.wikipedia.org/wiki/Mozilla_Corporation_software_rebranded_by_the_Debian_project#Iceweasel "wikipedia:Mozilla Corporation software rebranded by the Debian project")** — Fork of Firefox developed by Debian Linux. The main difference is that it does not include any trademarked Mozilla artwork. See [glandium](http://web.glandium.org/blog/?p=97) for more information on Iceweasel's existence.
 
-	[https://wiki.debian.org/Iceweasel](https://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)<sup><small>AUR</small></sup>
+	[https://wiki.debian.org/Iceweasel](https://wiki.debian.org/Iceweasel) || [iceweasel](https://aur.archlinux.org/packages/iceweasel/)
 
 *   **[Pale Moon](https://en.wikipedia.org/wiki/Pale_Moon_(web_browser) "wikipedia:Pale Moon (web browser)")** — Fork based on Firefox, using a Firefox 3+ interface through selective use of add-ons. Firefox add-ons may not be compatible. [[1]](https://addons.palemoon.org/firefox/incompatible/) Compiled for SSE2, with disabled optional code and no support for newer Firefox features such as cache2, e10s, and OTMC.
 
-	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)<sup><small>AUR</small></sup>
+	[http://www.palemoon.org/](http://www.palemoon.org/) || [palemoon-bin](https://aur.archlinux.org/packages/palemoon-bin/)
 
 ##### Blink-based
 
@@ -173,11 +173,11 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **[Arora](https://en.wikipedia.org/wiki/Arora_(browser) "wikipedia:Arora (browser)")** — Cross-platform web browser built using QtWebKit. Development stopped in January 2012.
 
-	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)<sup><small>AUR</small></sup>
+	[https://github.com/arora/arora](https://github.com/arora/arora) || [arora-git](https://aur.archlinux.org/packages/arora-git/)
 
 *   **Brave** — Web browser that blocks ads and trackers by default.
 
-	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)<sup><small>AUR</small></sup>
+	[https://www.brave.com/](https://www.brave.com/) || [brave](https://aur.archlinux.org/packages/brave/)
 
 *   **[dwb](/index.php/Dwb "Dwb")** — Lightweight, highly customizable web browser based on the WebKit engine with _vi_-like shortcuts and tiling layouts. As of October 2014 _dwb_ is [unmaintained](https://bitbucket.org/portix/dwb/pull-request/22/several-cleanups-to-increase-portability/diff#comment-3217936).
 
@@ -189,7 +189,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **[Jumanji](/index.php/Jumanji "Jumanji")** — Highly customizable and functional web browser.
 
-	[http://pwmt.org/projects/jumanji](http://pwmt.org/projects/jumanji) || [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)<sup><small>AUR</small></sup>
+	[http://pwmt.org/projects/jumanji](http://pwmt.org/projects/jumanji) || [jumanji-git](https://aur.archlinux.org/packages/jumanji-git/)
 
 *   **[Luakit](/index.php/Luakit "Luakit")** — Highly configurable, micro-browser framework based on the WebKit engine and the GTK+ toolkit. It is very fast, extensible by Lua and licensed under the GNU GPLv3 license.
 
@@ -197,7 +197,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **Maxthon** — A browser that combines a minimal design with sophisticated technology to make the web faster, safer, and easier.
 
-	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)<sup><small>AUR</small></sup>
+	[http://www.maxthon.cn/](http://www.maxthon.cn/) || [maxthon-browser](https://aur.archlinux.org/packages/maxthon-browser/)
 
 *   **[Midori](https://en.wikipedia.org/wiki/Midori_(web_browser) "wikipedia:Midori (web browser)")** — Lightweight web browser based on GTK+ and WebKit.
 
@@ -205,7 +205,7 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **Otter-browser** — Browser aiming to recreate classic Opera (12.x) UI using Qt5.
 
-	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)<sup><small>AUR</small></sup>
+	[http://otter-browser.org/](http://otter-browser.org/) || [otter-browser](https://aur.archlinux.org/packages/otter-browser/)
 
 *   **[QupZilla](https://en.wikipedia.org/wiki/QupZilla "wikipedia:QupZilla")** — New and very fast open source browser based on WebKit core, written in Qt framework.
 
@@ -221,11 +221,11 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **Sb** — Very lightweight WebKit-based browser that uses keybindings to perform most things the URL bar would usually do.
 
-	[https://github.com/mutantturkey/sb/](https://github.com/mutantturkey/sb/) || [sb-git](https://aur.archlinux.org/packages/sb-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sb-git)]</sup>
+	[https://github.com/mutantturkey/sb/](https://github.com/mutantturkey/sb/) || [sb-git](https://aur.archlinux.org/packages/sb-git/)
 
 *   **SlimBoat** — Fast, free secure and powerful web browser based on QtWebkit.
 
-	[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/slimboat)]</sup>
+	[http://www.slimboat.com/](http://www.slimboat.com/) || [slimboat](https://aur.archlinux.org/packages/slimboat/)
 
 *   **Surf** — Lightweight WebKit-based browser, which follows the [suckless ideology](http://suckless.org/philosophy) (basically, the browser itself is a single C source file).
 
@@ -237,21 +237,21 @@ See also [Wikipedia:Webkit](https://en.wikipedia.org/wiki/Webkit "wikipedia:Webk
 
 *   **vimb** — Fast and lightweight vim like web browser based on the webkit web browser engine and the GTK toolkit.
 
-	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)<sup><small>AUR</small></sup>
+	[https://fanglingsu.github.io/vimb/](https://fanglingsu.github.io/vimb/) || [vimb](https://aur.archlinux.org/packages/vimb/)
 
 *   **[Vimprobable](/index.php/Vimprobable "Vimprobable")** — Browser that behaves like the Vimperator plugin available for Mozilla Firefox. It is based on the WebKit engine and uses the GTK+ bindings.
 
-	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/apps/trac/vimprobable/](http://sourceforge.net/apps/trac/vimprobable/) || [vimprobable-git](https://aur.archlinux.org/packages/vimprobable-git/)
 
 *   **[Xombrero](https://en.wikipedia.org/wiki/Xombrero "wikipedia:Xombrero") (formerly known as _xxxterm_)** — Webkit minimalist web browser with sophisticated security features designed-in, BSD style.
 
-	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)<sup><small>AUR</small></sup>
+	[https://opensource.conformal.com/wiki/xombrero](https://opensource.conformal.com/wiki/xombrero) || [xombrero-git](https://aur.archlinux.org/packages/xombrero-git/)
 
 ##### Other
 
 *   **[Abaco](https://en.wikipedia.org/wiki/Abaco_(web_browser) "wikipedia:Abaco (web browser)")** — Multi-page graphical web browser for the Plan 9 OS.
 
-	[http://lab-fgb.com/abaco/](http://lab-fgb.com/abaco/) || [abaco](https://aur.archlinux.org/packages/abaco/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/abaco)]</sup>
+	[http://lab-fgb.com/abaco/](http://lab-fgb.com/abaco/) || [abaco](https://aur.archlinux.org/packages/abaco/)
 
 *   **[Dillo](https://en.wikipedia.org/wiki/Dillo "wikipedia:Dillo")** — Small, fast graphical web browser built on [FLTK](https://en.wikipedia.org/wiki/Fltk "wikipedia:Fltk").
 
@@ -279,7 +279,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 *   **FatRat** — Download manager with support for HTTP, FTP, SFTP, BitTorrent, RapidShare and more.
 
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)<sup><small>AUR</small></sup>
+	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
 *   **[FileZilla](https://en.wikipedia.org/wiki/FileZilla "wikipedia:FileZilla")** — Fast and reliable FTP, FTPS and SFTP client.
 
@@ -287,7 +287,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 *   **[fuseftp](/index.php/FtpFs#Fuseftp "FtpFs")** — FTP filesystem written in Perl, using [FUSE](https://en.wikipedia.org/wiki/Filesystem_in_Userspace "wikipedia:Filesystem in Userspace").
 
-	[http://freshmeat.net/projects/fuseftp/](http://freshmeat.net/projects/fuseftp/) || [fuseftp](https://aur.archlinux.org/packages/fuseftp/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fuseftp)]</sup>
+	[http://freshmeat.net/projects/fuseftp/](http://freshmeat.net/projects/fuseftp/) || [fuseftp](https://aur.archlinux.org/packages/fuseftp/)
 
 *   **[gFTP](https://en.wikipedia.org/wiki/gFTP "wikipedia:gFTP")** — Multithreaded FTP client for Linux.
 
@@ -299,7 +299,7 @@ See also [Wikipedia:Comparison of FTP client software](https://en.wikipedia.org/
 
 *   **LftpFS** — Read-only filesystem based on lftp (also supports HTTP, FISH, SFTP, HTTPS, FTPS and proxies).
 
-	[http://lftpfs.sourceforge.net/](http://lftpfs.sourceforge.net/) || [lftpfs](https://aur.archlinux.org/packages/lftpfs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/lftpfs)]</sup>
+	[http://lftpfs.sourceforge.net/](http://lftpfs.sourceforge.net/) || [lftpfs](https://aur.archlinux.org/packages/lftpfs/)
 
 *   **ncftp** — A set of free application programs implementing FTP.
 
@@ -319,11 +319,11 @@ Some file managers like Dolphin, [GNOME Files](/index.php/GNOME_Files "GNOME Fil
 
 *   **[proFTPd](/index.php/Proftpd "Proftpd")** — A secure and configurable FTP server
 
-	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)<sup><small>AUR</small></sup>
+	[http://www.proftpd.org/](http://www.proftpd.org/) || [proftpd](https://aur.archlinux.org/packages/proftpd/)
 
 *   **[Pure-FTPd](/index.php/Pure-FTPd "Pure-FTPd")** — Free (BSD-licensed), secure, production-quality and standard-compliant FTP server.
 
-	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)<sup><small>AUR</small></sup>
+	[http://www.pureftpd.org/project/pure-ftpd](http://www.pureftpd.org/project/pure-ftpd) || [pure-ftpd](https://aur.archlinux.org/packages/pure-ftpd/)
 
 *   **[vsftpd](/index.php/Vsftpd "Vsftpd")** — Lightweight, stable and secure FTP server for UNIX-like systems.
 
@@ -345,7 +345,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **Ctorrent** — CTorrent is a BitTorrent client implemented in C++ to be lightweight and quick.
 
-	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)<sup><small>AUR</small></sup>
+	[http://www.rahul.net/dholmes/ctorrent/](http://www.rahul.net/dholmes/ctorrent/) || [enhanced-ctorrent](https://aur.archlinux.org/packages/enhanced-ctorrent/)
 
 *   **[MLDonkey](https://en.wikipedia.org/wiki/MLDonkey "wikipedia:MLDonkey")** — Multi-protocol P2P client that supports BitTorrent, HTTP, FTP, eDonkey and Direct Connect.
 
@@ -375,7 +375,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **FatRat** — Qt4 based download manager with support for HTTP, FTP, SFTP, BitTorrent, rapidshare and more. Written in C++.
 
-	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)<sup><small>AUR</small></sup>
+	[http://fatrat.dolezel.info/](http://fatrat.dolezel.info/) || [fatrat-git](https://aur.archlinux.org/packages/fatrat-git/)
 
 *   **[qBittorrent](https://en.wikipedia.org/wiki/qBittorrent "wikipedia:qBittorrent")** — Open source (GPLv2) BitTorrent client that strongly resembles µtorrent.
 
@@ -383,7 +383,7 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **[Tribler](https://en.wikipedia.org/wiki/Tribler "wikipedia:Tribler")** — 4th generation file sharing system bittorrent client.
 
-	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)<sup><small>AUR</small></sup>
+	[http://www.tribler.org](http://www.tribler.org) || [tribler](https://aur.archlinux.org/packages/tribler/)
 
 ###### libktorrent backend
 
@@ -399,19 +399,19 @@ Can be used as-is via command line, but all have a choice of front-end options a
 
 *   **Tixati** — P2P client that uses the BitTorrent protocol.
 
-	[http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)<sup><small>AUR</small></sup>
+	[http://www.tixati.com](http://www.tixati.com) || [tixati](https://aur.archlinux.org/packages/tixati/)
 
 *   **[Transmission](/index.php/Transmission "Transmission")** — Simple and easy-to-use BitTorrent client with daemon version, GTK+, Qt GUI, web and CLI front-ends.
 
-	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/)<sup><small>AUR</small></sup> (remote clients work with the daemon in the -cli package)
+	[http://transmissionbt.com/](http://transmissionbt.com/) || [transmission-gtk](https://www.archlinux.org/packages/?name=transmission-gtk) [transmission-qt](https://www.archlinux.org/packages/?name=transmission-qt) [transmission-remote-gtk](https://aur.archlinux.org/packages/transmission-remote-gtk/) (remote clients work with the daemon in the -cli package)
 
 *   **[Vuze](https://en.wikipedia.org/wiki/Vuze "wikipedia:Vuze")** — Feature-rich BitTorrent client written in Java (formerly Azureus).
 
-	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)<sup><small>AUR</small></sup>
+	[https://www.vuze.com/](https://www.vuze.com/) || [vuze](https://aur.archlinux.org/packages/vuze/)
 
 *   **Vuze Plus Extreme Mod** — A modded version of the Vuze BitTorrent client with multiple spoofing capabilities.
 
-	[http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/](http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/) || [vuze-extreme-mod](https://aur.archlinux.org/packages/vuze-extreme-mod/)<sup><small>AUR</small></sup>
+	[http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/](http://www.sb-innovation.de/f41/vuze-extreme-mod-sb-innovation-5-6-1-3-a-32315/) || [vuze-extreme-mod](https://aur.archlinux.org/packages/vuze-extreme-mod/)
 
 #### Other P2P networks
 
@@ -423,7 +423,7 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 *   **KaMule** — KDE graphical front-end for aMule.
 
-	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kamule)]</sup>
+	[http://kde-apps.org/content/show.php?content=150270](http://kde-apps.org/content/show.php?content=150270) || [kamule](https://aur.archlinux.org/packages/kamule/)
 
 *   **MlDonkey** — A multi-network P2P client.
 
@@ -431,11 +431,11 @@ See also [Wikipedia:Comparison of eDonkey software](https://en.wikipedia.org/wik
 
 *   **Sendanywhere** — GTK2 client for the cross platform P2P file sharing service, Sendanywhere. Allow users to send files of any type and size to other Android, iOS, and Desktop devices.
 
-	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)<sup><small>AUR</small></sup>
+	[https://www.send-anywhere.com](https://www.send-anywhere.com) || [sendanywhere](https://aur.archlinux.org/packages/sendanywhere/)
 
 *   **[Sharelin](https://en.wikipedia.org/wiki/Sharelin "wikipedia:Sharelin")** — Gnutella2 only client with a web UI.
 
-	[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sharelin)]</sup>
+	[http://sourceforge.net/apps/mediawiki/sharelin](http://sourceforge.net/apps/mediawiki/sharelin) || [sharelin](https://aur.archlinux.org/packages/sharelin/)
 
 #### Video downloaders
 
@@ -457,15 +457,15 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **alot** — An experimental terminal MUA based on [notmuch mail](http://notmuchmail.org/). It is written in python using the [urwid](http://urwid.org/) toolkit.
 
-	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/)<sup><small>AUR</small></sup>
+	[https://github.com/pazz/alot](https://github.com/pazz/alot) || [alot](https://aur.archlinux.org/packages/alot/)
 
 *   **[Alpine](/index.php/Alpine "Alpine")** — Fast, easy-to-use and Apache-licensed email client based on [Pine](https://en.wikipedia.org/wiki/Pine_(email_client) "wikipedia:Pine (email client)").
 
-	[http://patches.freeiz.com/alpine/](http://patches.freeiz.com/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)<sup><small>AUR</small></sup>
+	[http://patches.freeiz.com/alpine/](http://patches.freeiz.com/alpine/) || [alpine](https://aur.archlinux.org/packages/alpine/)
 
 *   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
 
-	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)<sup><small>AUR</small></sup>
+	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
 *   **[S-nail](/index.php/S-nail "S-nail")** — a mail processing system with a command syntax reminiscent of _ed_ with lines replaced by messages. Provides the functionality of [mailx](https://en.wikipedia.org/wiki/mailx "wikipedia:mailx").
 
@@ -473,7 +473,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **mu/mu4e** — Email indexer (mu) and client for emacs (mu4e). Xapian based for fast searches.
 
-	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)<sup><small>AUR</small></sup>
+	[http://www.djcbsoftware.nl/code/mu/mu4e.html](http://www.djcbsoftware.nl/code/mu/mu4e.html) || [mu](https://aur.archlinux.org/packages/mu/)
 
 *   **[Mutt](/index.php/Mutt "Mutt")** — Small but very powerful text-based mail client.
 
@@ -481,7 +481,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[nmh](/index.php/Nmh "Nmh")** — A modular mail handling system.
 
-	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/)<sup><small>AUR</small></sup> [nmh-git](https://aur.archlinux.org/packages/nmh-git/)<sup><small>AUR</small></sup>
+	[http://www.nongnu.org/nmh/](http://www.nongnu.org/nmh/) || [nmh](https://aur.archlinux.org/packages/nmh/) [nmh-git](https://aur.archlinux.org/packages/nmh-git/)
 
 *   **[notmuch](/index.php/Notmuch "Notmuch")** — A fast mail indexer built on top of _xapian_.
 
@@ -489,7 +489,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **[Sup](/index.php/Sup "Sup")** — CLI mail client with very fast searching, tagging, threading and GMail like operation.
 
-	[http://supmua.org/](http://supmua.org/) || [sup](https://aur.archlinux.org/packages/sup/)<sup><small>AUR</small></sup>
+	[http://supmua.org/](http://supmua.org/) || [sup](https://aur.archlinux.org/packages/sup/)
 
 *   **Wanderlust** — Email client and news reader for Emacs.
 
@@ -511,7 +511,7 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **FossaMail** — FossaMail is a Mozilla Thunderbird-based mail, news and chat client by the Pale Moon developers.
 
-	[http://www.fossamail.org](http://www.fossamail.org) || [fossamail-bin](https://aur.archlinux.org/packages/fossamail-bin/)<sup><small>AUR</small></sup>
+	[http://www.fossamail.org](http://www.fossamail.org) || [fossamail-bin](https://aur.archlinux.org/packages/fossamail-bin/)
 
 *   **Geary** — Simple desktop mail client built in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)").
 
@@ -523,11 +523,11 @@ See also [Wikipedia:Comparison of e-mail clients](https://en.wikipedia.org/wiki/
 
 *   **Manitou Mail** — Database-driven email system.
 
-	[http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manitou-mdx)]</sup> [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/manitou-ui)]</sup>
+	[http://www.manitou-mail.org/](http://www.manitou-mail.org/) || [manitou-mdx](https://aur.archlinux.org/packages/manitou-mdx/) [manitou-ui](https://aur.archlinux.org/packages/manitou-ui/)
 
 *   **N1** — A new mail client, built on the modern web and designed to be extended.
 
-	[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1](https://aur.archlinux.org/packages/n1/)<sup><small>AUR</small></sup>
+	[https://www.nylas.com/N1/](https://www.nylas.com/N1/) || [n1](https://aur.archlinux.org/packages/n1/)
 
 *   **Roundcubemail** — Browser-based multilingual IMAP client with a native application-like user interface.
 
@@ -561,7 +561,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[BitchX](https://en.wikipedia.org/wiki/BitchX "wikipedia:BitchX")** — Console-based IRC client developed from the popular [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 
-	[http://www.bitchx.org/](http://www.bitchx.org/) || [bitchx-git](https://aur.archlinux.org/packages/bitchx-git/)<sup><small>AUR</small></sup>
+	[http://www.bitchx.org/](http://www.bitchx.org/) || [bitchx-git](https://aur.archlinux.org/packages/bitchx-git/)
 
 *   **ERC** — Powerful, modular, and extensible IRC client for [Emacs](/index.php/Emacs "Emacs").
 
@@ -569,7 +569,7 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **[ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)")** — Featherweight IRC client, literally `tail -f` the conversation and `echo` back your replies to a file.
 
-	[http://tools.suckless.org/ii](http://tools.suckless.org/ii) || [ii](https://aur.archlinux.org/packages/ii/)<sup><small>AUR</small></sup>
+	[http://tools.suckless.org/ii](http://tools.suckless.org/ii) || [ii](https://aur.archlinux.org/packages/ii/)
 
 *   **Ircfs** — File system interface to IRC written in [Limbo](http://limbo.cat-v.org).
 
@@ -581,11 +581,11 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **ScrollZ** — Advanced IRC client based on [ircII](https://en.wikipedia.org/wiki/ircII "wikipedia:ircII").
 
-	[http://www.scrollz.info/](http://www.scrollz.info/) || [scrollz](https://aur.archlinux.org/packages/scrollz/)<sup><small>AUR</small></sup>
+	[http://www.scrollz.info/](http://www.scrollz.info/) || [scrollz](https://aur.archlinux.org/packages/scrollz/)
 
 *   **sic** — Extremely simple IRC client, similar to [ii](https://en.wikipedia.org/wiki/Ii_(IRC_client) "wikipedia:Ii (IRC client)").
 
-	[http://tools.suckless.org/sic](http://tools.suckless.org/sic) || [sic](https://aur.archlinux.org/packages/sic/)<sup><small>AUR</small></sup>
+	[http://tools.suckless.org/sic](http://tools.suckless.org/sic) || [sic](https://aur.archlinux.org/packages/sic/)
 
 *   **[WeeChat](https://en.wikipedia.org/wiki/WeeChat "wikipedia:WeeChat")** — Modular, lightweight ncurses-based IRC client.
 
@@ -607,15 +607,15 @@ See also [Wikipedia:Comparison of Internet Relay Chat clients](https://en.wikipe
 
 *   **Loqui** — GTK+ IRC client with only one dependency: [GNet](https://wiki.gnome.org/Projects/GNetLibrary).
 
-	[https://launchpad.net/loqui](https://launchpad.net/loqui) || [loqui](https://aur.archlinux.org/packages/loqui/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/loqui](https://launchpad.net/loqui) || [loqui](https://aur.archlinux.org/packages/loqui/)
 
 *   **LostIRC** — Simple GTK+ IRC client with tab-autocompletion, multiple server support, logging and others.
 
-	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)<sup><small>AUR</small></sup>
+	[http://lostirc.sourceforge.net](http://lostirc.sourceforge.net) || [lostirc](https://aur.archlinux.org/packages/lostirc/)
 
 *   **pcw** — Frontend for [ii](http://tools.suckless.org/ii) that opens a new terminal for each channel.
 
-	[https://bitbucket.org/emg/pcw](https://bitbucket.org/emg/pcw) || [pcw-hg](https://aur.archlinux.org/packages/pcw-hg/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pcw-hg)]</sup>
+	[https://bitbucket.org/emg/pcw](https://bitbucket.org/emg/pcw) || [pcw-hg](https://aur.archlinux.org/packages/pcw-hg/)
 
 *   **Polari** — Simple IRC client by the GNOME project.
 
@@ -645,7 +645,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **jabber.el** — Minimal Jabber client for [Emacs](/index.php/Emacs "Emacs").
 
-	[http://emacs-jabber.sourceforge.net/](http://emacs-jabber.sourceforge.net/) || [emacs-jabber](https://aur.archlinux.org/packages/emacs-jabber/)<sup><small>AUR</small></sup>
+	[http://emacs-jabber.sourceforge.net/](http://emacs-jabber.sourceforge.net/) || [emacs-jabber](https://aur.archlinux.org/packages/emacs-jabber/)
 
 *   **[MCabber](https://en.wikipedia.org/wiki/MCabber "wikipedia:MCabber")** — Small Jabber console client, includes features: SSL, PGP, MUC, OTR, and UTF8.
 
@@ -657,7 +657,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Poezio** — XMPP client with IRC feeling
 
-	[https://poez.io/](https://poez.io/) || [poezio](https://aur.archlinux.org/packages/poezio/)<sup><small>AUR</small></sup>
+	[https://poez.io/](https://poez.io/) || [poezio](https://aur.archlinux.org/packages/poezio/)
 
 ###### Graphical clients
 
@@ -667,7 +667,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Jabbim** — Jabber client written in PyQt.
 
-	[http://www.jabbim.com/](http://www.jabbim.com/) || [jabbim-svn](https://aur.archlinux.org/packages/jabbim-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jabbim-svn)]</sup>
+	[http://www.jabbim.com/](http://www.jabbim.com/) || [jabbim-svn](https://aur.archlinux.org/packages/jabbim-svn/)
 
 *   **[Psi](https://en.wikipedia.org/wiki/Psi_(instant_messaging_client) "wikipedia:Psi (instant messaging client)")** — Qt-based Jabber client which supports video conferencing (since version 0.13).
 
@@ -675,7 +675,7 @@ See also [Wikipedia:XMPP](https://en.wikipedia.org/wiki/XMPP "wikipedia:XMPP") a
 
 *   **Psi+** — Enhanced version of the Psi Jabber client with many new [features](http://psi-plus.com/wiki/en:features#differences_between_psi_beta_version_and_the_official_psi_015-dev_version).
 
-	[http://psi-plus.com/](http://psi-plus.com/) || [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)<sup><small>AUR</small></sup>
+	[http://psi-plus.com/](http://psi-plus.com/) || [psi-plus-git](https://aur.archlinux.org/packages/psi-plus-git/)
 
 *   **[Tkabber](https://en.wikipedia.org/wiki/Tkabber "wikipedia:Tkabber")** — Easy to hack feature-rich XMPP client by the author of the ejabberd XMPP server.
 
@@ -695,7 +695,7 @@ See also [Wikipedia:Comparison of XMPP server software](https://en.wikipedia.org
 
 *   **[Jabberd2](/index.php/Jabberd2 "Jabberd2")** — An XMPP server written in the C language and licensed under the GNU General Public License. It was inspired by jabberd14.
 
-	[http://jabberd2.org](http://jabberd2.org) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jabberd2)]</sup>
+	[http://jabberd2.org](http://jabberd2.org) || [jabberd2](https://aur.archlinux.org/packages/jabberd2/)
 
 *   **Openfire** — An XMPP IM multiplatform server written in Java
 
@@ -713,7 +713,7 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **BarnOwl** — Ncurses-based chat client with support for the Zephyr, AIM, Jabber, IRC, and Twitter protocols.
 
-	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)<sup><small>AUR</small></sup>
+	[http://barnowl.mit.edu/](http://barnowl.mit.edu/) || [barnowl](https://aur.archlinux.org/packages/barnowl/)
 
 *   **[Bitlbee](/index.php/Bitlbee "Bitlbee")** — IRC client that provides a gateway to popular chat networks (XMPP, MSN, Yahoo, AIM, ICQ and Twitter).
 
@@ -743,11 +743,11 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **Carrier** — Pidgin fork providing minor GUI enhancements (formerly FunPidgin).
 
-	[http://funpidgin.sourceforge.net/](http://funpidgin.sourceforge.net/) || [carrier](https://aur.archlinux.org/packages/carrier/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/carrier)]</sup>
+	[http://funpidgin.sourceforge.net/](http://funpidgin.sourceforge.net/) || [carrier](https://aur.archlinux.org/packages/carrier/)
 
 *   **[Emesene](https://en.wikipedia.org/wiki/Emesene "wikipedia:Emesene")** — PyGTK instant messenger for the Windows Live Messenger network, also compatible with Jabber, Facebook and Google Talk.
 
-	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/emesene)]</sup>
+	[http://emesene.org/](http://emesene.org/) || [emesene](https://aur.archlinux.org/packages/emesene/)
 
 *   **[Empathy](https://en.wikipedia.org/wiki/Empathy_(software) "wikipedia:Empathy (software)")** — GNOME instant messaging client using the [Telepathy](https://en.wikipedia.org/wiki/Telepathy_(software) "wikipedia:Telepathy (software)") framework.
 
@@ -755,11 +755,11 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **Galaxium Messenger** — Messenger application designed for the GNOME desktop.
 
-	[https://code.google.com/p/galaxium/](https://code.google.com/p/galaxium/) || [galaxium](https://aur.archlinux.org/packages/galaxium/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/galaxium)]</sup>
+	[https://code.google.com/p/galaxium/](https://code.google.com/p/galaxium/) || [galaxium](https://aur.archlinux.org/packages/galaxium/)
 
 *   **[Instantbird](https://en.wikipedia.org/wiki/Instantbird "wikipedia:Instantbird")** — Multi-protocol chat client using Mozilla's XUL and libpurple.
 
-	[http://instantbird.com/](http://instantbird.com/) || [instantbird](https://aur.archlinux.org/packages/instantbird/)<sup><small>AUR</small></sup>
+	[http://instantbird.com/](http://instantbird.com/) || [instantbird](https://aur.archlinux.org/packages/instantbird/)
 
 *   **[Kopete](https://en.wikipedia.org/wiki/Kopete "wikipedia:Kopete")** — User-friendly IM supporting AIM, ICQ, Windows Live Messenger, Yahoo, Jabber, Gadu-Gadu, Novell GroupWise Messenger, and other IM networks. Part of [kdenetwork](https://www.archlinux.org/groups/x86_64/kdenetwork/).
 
@@ -775,15 +775,15 @@ Many clients listed here (including Pidgin and all its forks) support multiple I
 
 *   **Mikutter** — An open-source Twitter client using [GTK+](/index.php/GTK%2B "GTK+") and Ruby.
 
-	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/)<sup><small>AUR</small></sup> [mikutter-git](https://aur.archlinux.org/packages/mikutter-git/)<sup><small>AUR</small></sup>
+	[http://mikutter.hachune.net/](http://mikutter.hachune.net/) || [mikutter](https://aur.archlinux.org/packages/mikutter/) [mikutter-git](https://aur.archlinux.org/packages/mikutter-git/)
 
 *   **[Pidgin](/index.php/Pidgin "Pidgin")** — Multi-protocol instant messaging client.
 
-	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin) [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)<sup><small>AUR</small></sup>
+	[http://pidgin.im/](http://pidgin.im/) || [pidgin](https://www.archlinux.org/packages/?name=pidgin) [pidgin-light](https://aur.archlinux.org/packages/pidgin-light/)
 
 *   **qutIM** — Simple and user-friendly IM supporting ICQ, Jabber, Mail.Ru, IRC and VKontakte messaging.
 
-	[http://qutim.org/](http://qutim.org/) || [qutim-stable](https://aur.archlinux.org/packages/qutim-stable/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qutim-stable)]</sup>
+	[http://qutim.org/](http://qutim.org/) || [qutim-stable](https://aur.archlinux.org/packages/qutim-stable/)
 
 ##### Lan messengers
 
@@ -791,7 +791,7 @@ See also: [Comparison of LAN messengers](https://en.wikipedia.org/wiki/Compariso
 
 *   **iptux** — Lan communication software, compatible with IP Messenger.
 
-	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)<sup><small>AUR</small></sup>
+	[https://github.com/iptux-src/iptux](https://github.com/iptux-src/iptux) || [iptux](https://aur.archlinux.org/packages/iptux/)
 
 #### VoIP / Softphone
 
@@ -805,7 +805,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Blink](https://en.wikipedia.org/wiki/Blink_(software) "wikipedia:Blink (software)")** — State of the art, easy to use SIP client.
 
-	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink-darcs](https://aur.archlinux.org/packages/blink-darcs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/blink-darcs)]</sup>
+	[http://www.icanblink.com/](http://www.icanblink.com/) || [blink-darcs](https://aur.archlinux.org/packages/blink-darcs/)
 
 *   **[Ekiga](https://en.wikipedia.org/wiki/Ekiga "wikipedia:Ekiga")** — VoIP and video conferencing application with full SIP and H.323 support (formerly known as GNOME Meeting).
 
@@ -817,7 +817,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Jitsi](https://en.wikipedia.org/wiki/Jitsi "wikipedia:Jitsi")** — Audio/video SIP VoIP phone and instant messenger written in Java (formerly SIP-Communicator).
 
-	[https://jitsi.org/](https://jitsi.org/) || [jitsi](https://aur.archlinux.org/packages/jitsi/)<sup><small>AUR</small></sup>
+	[https://jitsi.org/](https://jitsi.org/) || [jitsi](https://aur.archlinux.org/packages/jitsi/)
 
 *   **[KPhone](https://en.wikipedia.org/wiki/KPhone "wikipedia:KPhone")** — Qt SIP User Agent with voice, video and text messaging support.
 
@@ -833,25 +833,25 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[QuteCom](https://en.wikipedia.org/wiki/QuteCom "wikipedia:QuteCom")** — Softphone which allows you to make free PC to PC video and voice calls, and to integrate all your IM contacts in one place (formerly Wengo Phone).
 
-	[http://trac.qutecom.org/](http://trac.qutecom.org/) || [qutecom](https://aur.archlinux.org/packages/qutecom/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qutecom)]</sup>
+	[http://trac.qutecom.org/](http://trac.qutecom.org/) || [qutecom](https://aur.archlinux.org/packages/qutecom/)
 
 *   **[Twinkle](https://en.wikipedia.org/wiki/Twinkle_(software) "wikipedia:Twinkle (software)")** — Qt softphone for VoIP and IM communication using SIP.
 
-	[http://www.twinklephone.com/](http://www.twinklephone.com/) || [twinkle](https://aur.archlinux.org/packages/twinkle/)<sup><small>AUR</small></sup>
+	[http://www.twinklephone.com/](http://www.twinklephone.com/) || [twinkle](https://aur.archlinux.org/packages/twinkle/)
 
 *   **[X-Lite](https://en.wikipedia.org/wiki/X-Lite "wikipedia:X-Lite")** — Proprietary freeware VoIP soft phone that uses SIP.
 
-	[http://www.counterpath.net/x-lite](http://www.counterpath.net/x-lite) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)<sup><small>AUR</small></sup>
+	[http://www.counterpath.net/x-lite](http://www.counterpath.net/x-lite) || [xlite_bin](https://aur.archlinux.org/packages/xlite_bin/)
 
 *   **[Zfone](https://en.wikipedia.org/wiki/Zfone "wikipedia:Zfone")** — Softphone application for secure voice communication over the Internet (VoIP), using the ZRTP protocol.
 
-	[http://zfoneproject.com/](http://zfoneproject.com/) || [zfone](https://aur.archlinux.org/packages/zfone/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfone)]</sup>
+	[http://zfoneproject.com/](http://zfoneproject.com/) || [zfone](https://aur.archlinux.org/packages/zfone/)
 
 ###### IAX2
 
 *   **Kiax** — Qt-based IAX/2 Softphone.
 
-	[http://www.forschung-direkt.eu/projects/kiax2/](http://www.forschung-direkt.eu/projects/kiax2/) || [kiax](https://aur.archlinux.org/packages/kiax/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/kiax)]</sup>
+	[http://www.forschung-direkt.eu/projects/kiax2/](http://www.forschung-direkt.eu/projects/kiax2/) || [kiax](https://aur.archlinux.org/packages/kiax/)
 
 ###### Skype
 
@@ -863,7 +863,7 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **Hangups** — A third-party instant messaging client for Google Hangouts
 
-	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)<sup><small>AUR</small></sup>
+	[https://github.com/tdryer/hangups](https://github.com/tdryer/hangups) || [hangups-git](https://aur.archlinux.org/packages/hangups-git/)
 
 *   **[Mumble](https://en.wikipedia.org/wiki/Mumble_(software) "wikipedia:Mumble (software)")** — Voice chat application similar to TeamSpeak.
 
@@ -877,21 +877,21 @@ See also [Wikipedia:Comparison of VoIP software](https://en.wikipedia.org/wiki/C
 
 *   **[Ring](https://en.wikipedia.org/wiki/Ring_(software) "wikipedia:Ring (software)")** — Open-source SIP/IAX2 compatible softphone with PulseAudio support (formerly known as SFLphone).
 
-	[http://ring.cx/](http://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)<sup><small>AUR</small></sup>
+	[http://ring.cx/](http://ring.cx/) || [ring-daemon](https://aur.archlinux.org/packages/ring-daemon/)
 
 ##### Utilities
 
 *   **Gladstone** — Educational ITU-T G.729 compliant codec with a GStreamer plugin.
 
-	[https://gitorious.org/gladstone](https://gitorious.org/gladstone) || [gladstone-drizztbsd-git](https://aur.archlinux.org/packages/gladstone-drizztbsd-git/)<sup><small>AUR</small></sup>
+	[https://gitorious.org/gladstone](https://gitorious.org/gladstone) || [gladstone-drizztbsd-git](https://aur.archlinux.org/packages/gladstone-drizztbsd-git/)
 
 *   **SIPp** — Open source test tool and traffic generator for the SIP protocol.
 
-	[http://sipp.sourceforge.net/](http://sipp.sourceforge.net/) || [sipp](https://aur.archlinux.org/packages/sipp/)<sup><small>AUR</small></sup>
+	[http://sipp.sourceforge.net/](http://sipp.sourceforge.net/) || [sipp](https://aur.archlinux.org/packages/sipp/)
 
 *   **Sipsak** — Small command-line tool for developers and administrators of SIP applications.
 
-	[http://sipsak.org/](http://sipsak.org/) || [sipsak](https://aur.archlinux.org/packages/sipsak/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/sipsak)]</sup>
+	[http://sipsak.org/](http://sipsak.org/) || [sipsak](https://aur.archlinux.org/packages/sipsak/)
 
 #### Speech recognition
 
@@ -907,11 +907,11 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **[Canto](https://en.wikipedia.org/wiki/Canto_(news_aggregator) "wikipedia:Canto (news aggregator)")** — Ncurses RSS aggregator.
 
-	[http://codezen.org/canto/](http://codezen.org/canto/) || [canto-next-git](https://aur.archlinux.org/packages/canto-next-git/)<sup><small>AUR</small></sup>
+	[http://codezen.org/canto/](http://codezen.org/canto/) || [canto-next-git](https://aur.archlinux.org/packages/canto-next-git/)
 
 *   **[Gnus](https://en.wikipedia.org/wiki/Gnus "wikipedia:Gnus")** — Email, NNTP and RSS client for Emacs.
 
-	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)<sup><small>AUR</small></sup>
+	[http://gnus.org/](http://gnus.org/) || [emacs-gnus-git](https://aur.archlinux.org/packages/emacs-gnus-git/)
 
 *   **Newsbeuter** — Ncurses RSS aggregator with layout and keybinding similar to the [Mutt](/index.php/Mutt "Mutt") email client.
 
@@ -941,11 +941,11 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **RSS Guard** — Very tiny RSS and ATOM news reader developed using Qt framework.
 
-	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)<sup><small>AUR</small></sup>
+	[https://bitbucket.org/skunkos/rssguard](https://bitbucket.org/skunkos/rssguard) || [rssguard](https://aur.archlinux.org/packages/rssguard/)
 
 *   **[RSSOwl](https://en.wikipedia.org/wiki/RSSOwl "wikipedia:RSSOwl")** — Powerful aggregator for RSS and Atom feeds, written in Java using Eclipse Rich Client Platform and SWT as a widget toolkit.
 
-	[http://boreal.rssowl.org](http://boreal.rssowl.org) || [rssowl](https://aur.archlinux.org/packages/rssowl/)<sup><small>AUR</small></sup>
+	[http://boreal.rssowl.org](http://boreal.rssowl.org) || [rssowl](https://aur.archlinux.org/packages/rssowl/)
 
 *   **[Thunderbird](/index.php/Thunderbird "Thunderbird")** — Email client from Mozilla which also functions as a pretty nice news aggregator.
 
@@ -953,37 +953,37 @@ See also [Wikipedia:Comparison of feed aggregators](https://en.wikipedia.org/wik
 
 *   **Tickr (formerly News)** — GTK-based RSS Reader that displays feeds as a smooth scrolling line on your Desktop, as known from TV stations.
 
-	[http://newsrssticker.com/](http://newsrssticker.com/) || [tickr](https://aur.archlinux.org/packages/tickr/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tickr)]</sup>
+	[http://newsrssticker.com/](http://newsrssticker.com/) || [tickr](https://aur.archlinux.org/packages/tickr/)
 
 *   **Urssus** — Cross platform GUI news aggregator.
 
-	[https://code.google.com/p/urssus/](https://code.google.com/p/urssus/) || [urssus](https://aur.archlinux.org/packages/urssus/)<sup><small>AUR</small></sup>
+	[https://code.google.com/p/urssus/](https://code.google.com/p/urssus/) || [urssus](https://aur.archlinux.org/packages/urssus/)
 
 *   **QuiteRSS** — RSS/Atom feed reader written on Qt/С++.
 
-	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)<sup><small>AUR</small></sup>
+	[http://quiterss.org/](http://quiterss.org/) || [quiterss](https://aur.archlinux.org/packages/quiterss/)
 
 #### Podcast clients
 
 *   **gPodder** — A podcast client and feed aggregator (GTK+ and CLI interface).
 
-	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)<sup><small>AUR</small></sup>
+	[http://gpodder.org/](http://gpodder.org/) || [gpodder3](https://aur.archlinux.org/packages/gpodder3/)
 
 *   **Greg** — A command-line podcast aggregator.
 
-	[https://github.com/manolomartinez/greg](https://github.com/manolomartinez/greg) || [greg-git](https://aur.archlinux.org/packages/greg-git/)<sup><small>AUR</small></sup>
+	[https://github.com/manolomartinez/greg](https://github.com/manolomartinez/greg) || [greg-git](https://aur.archlinux.org/packages/greg-git/)
 
 *   **Marrie** — A simple podcast client that runs on the Command Line Interface.
 
-	[https://github.com/rafaelmartins/marrie/](https://github.com/rafaelmartins/marrie/) || [marrie-git](https://aur.archlinux.org/packages/marrie-git/)<sup><small>AUR</small></sup>
+	[https://github.com/rafaelmartins/marrie/](https://github.com/rafaelmartins/marrie/) || [marrie-git](https://aur.archlinux.org/packages/marrie-git/)
 
 *   **PodCastXDL** — A simple podcast Downloader for the terminal.
 
-	[https://github.com/levi0x0/PodCastXDL](https://github.com/levi0x0/PodCastXDL) || [podcastxdl-git](https://aur.archlinux.org/packages/podcastxdl-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/podcastxdl-git)]</sup>
+	[https://github.com/levi0x0/PodCastXDL](https://github.com/levi0x0/PodCastXDL) || [podcastxdl-git](https://aur.archlinux.org/packages/podcastxdl-git/)
 
 *   **Vocal** — Simple Podcast Client for the Modern Desktop (GTK+).
 
-	[https://launchpad.net/vocal](https://launchpad.net/vocal) || [vocal-bzr](https://aur.archlinux.org/packages/vocal-bzr/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/vocal](https://launchpad.net/vocal) || [vocal-bzr](https://aur.archlinux.org/packages/vocal-bzr/)
 
 #### Usenet newsreaders & newsgrabbers
 
@@ -993,11 +993,11 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **lottanzb** — A _SABnzbd+_ (Usenet binary downloader) GUI front-end written in PyGTK
 
-	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)<sup><small>AUR</small></sup>
+	[http://www.lottanzb.org/](http://www.lottanzb.org/) || [lottanzb](https://aur.archlinux.org/packages/lottanzb/)
 
 *   **nn** — Alternative more user-friendly(curses-based) Usenet newsreader for UNIX.
 
-	[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)<sup><small>AUR</small></sup>
+	[http://www.nndev.org/](http://www.nndev.org/) || [nn](https://aur.archlinux.org/packages/nn/)
 
 *   **[NZBGet](/index.php/NZBGet "NZBGet")** — CLI Utility to grab Usenet binary file using .nzb files.
 
@@ -1005,7 +1005,7 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **[pan](https://en.wikipedia.org/wiki/Pan_(newsreader) "wikipedia:Pan (newsreader)")** — A GTK2 Usenet newsreader that's good at both text and binaries.
 
-	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://aur.archlinux.org/packages/pan/)<sup><small>AUR</small></sup>
+	[http://pan.rebelbase.com/](http://pan.rebelbase.com/) || [pan](https://aur.archlinux.org/packages/pan/)
 
 *   **[slrn](https://en.wikipedia.org/wiki/slrn "wikipedia:slrn")** — An open source text-based news client.
 
@@ -1013,19 +1013,19 @@ See also: [Wikipedia:List of Usenet newsreaders](https://en.wikipedia.org/wiki/L
 
 *   **[tin](https://en.wikipedia.org/wiki/Tin_(newsreader) "wikipedia:Tin (newsreader)")** — A cross-platform threaded NNTP and spool based UseNet newsreader.
 
-	[http://tin.org/](http://tin.org/) || [tin](https://aur.archlinux.org/packages/tin/)<sup><small>AUR</small></sup>
+	[http://tin.org/](http://tin.org/) || [tin](https://aur.archlinux.org/packages/tin/)
 
 *   **trn** — A text-based Threaded Usenet newsreader.
 
-	[http://trn.sourceforge.net/](http://trn.sourceforge.net/) || [trn](https://aur.archlinux.org/packages/trn/)<sup><small>AUR</small></sup>
+	[http://trn.sourceforge.net/](http://trn.sourceforge.net/) || [trn](https://aur.archlinux.org/packages/trn/)
 
 *   **[XPN](https://en.wikipedia.org/wiki/XPN_(newsreader) "wikipedia:XPN (newsreader)")** — A graphical newsreader use PyGTK.
 
-	[http://xpn.altervista.org/index-en.html](http://xpn.altervista.org/index-en.html) || [xpn](https://aur.archlinux.org/packages/xpn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xpn)]</sup>
+	[http://xpn.altervista.org/index-en.html](http://xpn.altervista.org/index-en.html) || [xpn](https://aur.archlinux.org/packages/xpn/)
 
 *   **xrn** — Usenet newsreader for X Window System.
 
-	[http://www.mit.edu/people/jik/software/xrn.html](http://www.mit.edu/people/jik/software/xrn.html) || [xrn](https://aur.archlinux.org/packages/xrn/)<sup><small>AUR</small></sup>
+	[http://www.mit.edu/people/jik/software/xrn.html](http://www.mit.edu/people/jik/software/xrn.html) || [xrn](https://aur.archlinux.org/packages/xrn/)
 
 #### Blog software
 
@@ -1037,15 +1037,15 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **[Ghost](/index.php/Ghost "Ghost")** — Blogging platform written in JavaScript and distributed under the MIT License, designed to simplify the process of online publishing for individual bloggers as well as online publications.
 
-	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)<sup><small>AUR</small></sup>
+	[https://ghost.org/](https://ghost.org/) || [ghost](https://aur.archlinux.org/packages/ghost/)
 
 *   **Hexo** — A fast, simple & powerful blog framework, powered by Node.js.
 
-	[http://hexo.io](http://hexo.io) || [nodejs-hexo](https://aur.archlinux.org/packages/nodejs-hexo/)<sup><small>AUR</small></sup>
+	[http://hexo.io](http://hexo.io) || [nodejs-hexo](https://aur.archlinux.org/packages/nodejs-hexo/)
 
 *   **[Jekyll](/index.php/Jekyll "Jekyll")** — A static blog engine, written in Ruby, which supports Markdown, textile and other formats.
 
-	[http://jekyllrb.com/](http://jekyllrb.com/) || [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/)<sup><small>AUR</small></sup>
+	[http://jekyllrb.com/](http://jekyllrb.com/) || [ruby-jekyll](https://aur.archlinux.org/packages/ruby-jekyll/)
 
 *   **Nanoblogger** — A small weblog engine written in Bash for the command line. It uses common UNIX tools such as cat, grep, and sed to create static HTML content. It is not mantained anymore.
 
@@ -1053,7 +1053,7 @@ See also [Wikipedia:Blog software](https://en.wikipedia.org/wiki/Blog_software "
 
 *   **Nikola** — A static site generator written in Python, with incremental rebuilds and multiple markup formats.
 
-	[https://getnikola.com/](https://getnikola.com/) || [python-nikola](https://aur.archlinux.org/packages/python-nikola/)<sup><small>AUR</small></sup>
+	[https://getnikola.com/](https://getnikola.com/) || [python-nikola](https://aur.archlinux.org/packages/python-nikola/)
 
 *   **Pelican** — A static site generator, powered by Python.
 
@@ -1069,7 +1069,7 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Birdie** — A beautiful Twitter client for GNU/Linux, currently [under active development](http://www.birdieapp.eu/2014/10/26/birdie-2-status.html).
 
-	[http://birdieapp.github.io/](http://birdieapp.github.io/) || [birdie](https://aur.archlinux.org/packages/birdie/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/birdie)]</sup>
+	[http://birdieapp.github.io/](http://birdieapp.github.io/) || [birdie](https://aur.archlinux.org/packages/birdie/)
 
 *   **Choqok** — Microblogging client for KDE that supports Twitter.com, Pump.io, GNU social and opendesktop.org services.
 
@@ -1077,31 +1077,31 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Corebird** — Native Gtk+ Twitter client for the Linux desktop.
 
-	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird-git](https://aur.archlinux.org/packages/corebird-git/)<sup><small>AUR</small></sup>
+	[http://corebird.baedert.org/](http://corebird.baedert.org/) || [corebird-git](https://aur.archlinux.org/packages/corebird-git/)
 
 *   **[Gwibber](https://en.wikipedia.org/wiki/Gwibber "wikipedia:Gwibber")** — GTK-based microblogging client with support for Facebook, Identi.ca, Twitter, Flickr, Foursquare, Sina and Sohu.
 
-	[http://gwibber.com/](http://gwibber.com/) || [gwibber](https://aur.archlinux.org/packages/gwibber/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gwibber)]</sup>
+	[http://gwibber.com/](http://gwibber.com/) || [gwibber](https://aur.archlinux.org/packages/gwibber/)
 
 *   **[Hotot](https://en.wikipedia.org/wiki/Hotot_(program) "wikipedia:Hotot (program)")** — Lightweight and open source microblogging client with support for Twitter and Identi.ca and integration with various image sharing services and URL shorteners [(discontinued)](http://hotot.org/).
 
-	[http://hotot.org](http://hotot.org) || [hotot](https://aur.archlinux.org/packages/hotot/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hotot)]</sup>
+	[http://hotot.org](http://hotot.org) || [hotot](https://aur.archlinux.org/packages/hotot/)
 
 *   **Pino** — Simple and fast client for Twitter and Identi.ca written in [Vala](https://en.wikipedia.org/wiki/Vala_(programming_language) "wikipedia:Vala (programming language)").
 
-	[http://pino-app.appspot.com/](http://pino-app.appspot.com/) || [pino](https://aur.archlinux.org/packages/pino/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pino)]</sup>
+	[http://pino-app.appspot.com/](http://pino-app.appspot.com/) || [pino](https://aur.archlinux.org/packages/pino/)
 
 *   **Polly** — Linux Twitter client designed for multiple columns of multiple accounts.
 
-	[https://launchpad.net/polly/](https://launchpad.net/polly/) || [polly](https://aur.archlinux.org/packages/polly/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/polly/](https://launchpad.net/polly/) || [polly](https://aur.archlinux.org/packages/polly/)
 
 *   **Pumpa** — Pump.io client written in C++ and Qt.
 
-	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa-git](https://aur.archlinux.org/packages/pumpa-git/)<sup><small>AUR</small></sup>
+	[https://pumpa.branchable.com/](https://pumpa.branchable.com/) || [pumpa-git](https://aur.archlinux.org/packages/pumpa-git/)
 
 *   **Qwit** — Cross-platform client for Twitter using the Qt toolkit.
 
-	[http://code.google.com/p/qwit/](http://code.google.com/p/qwit/) || [qwit](https://aur.archlinux.org/packages/qwit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/qwit)]</sup>
+	[http://code.google.com/p/qwit/](http://code.google.com/p/qwit/) || [qwit](https://aur.archlinux.org/packages/qwit/)
 
 *   **ttytter** — Easily scriptable twitter client written in Perl.
 
@@ -1109,11 +1109,11 @@ See also [Wikipedia:List of Twitter services and applications](https://en.wikipe
 
 *   **Turpial** — Multi-interface Twitter client written in Python.
 
-	[http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)<sup><small>AUR</small></sup>
+	[http://turpial.org.ve/](http://turpial.org.ve/) || [turpial-git](https://aur.archlinux.org/packages/turpial-git/)
 
-*   **turses** — Twitter client for the console based off [tyrs](https://aur.archlinux.org/packages/tyrs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tyrs)]</sup> with major improvements.
+*   **turses** — Twitter client for the console based off [tyrs](https://aur.archlinux.org/packages/tyrs/) with major improvements.
 
-	[http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)<sup><small>AUR</small></sup>
+	[http://turses.rtfd.org/](http://turses.rtfd.org/) || [turses](https://aur.archlinux.org/packages/turses/)
 
 ### Pastebin clients
 
@@ -1127,11 +1127,11 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **codepad-git** — A [codepad.org](http://www.codepad.org) pastebin client written in python.
 
-	[https://github.com/kevr/codepad](https://github.com/kevr/codepad) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/codepad-git)]</sup>
+	[https://github.com/kevr/codepad](https://github.com/kevr/codepad) || [codepad-git](https://aur.archlinux.org/packages/codepad-git/)
 
 *   **Elmer** — Pastebin client similar to wgetpaste and curlpaste, except written in Perl and usable with wget or curl. Servers: [codepad.org](http://codepad.org/), [rafb.me](http://rafb.me/), [sprunge.us](http://sprunge.us/).
 
-	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)<sup><small>AUR</small></sup>
+	[https://github.com/sudokode/elmer](https://github.com/sudokode/elmer) || [elmer](https://aur.archlinux.org/packages/elmer/)
 
 *   **Fb-client** — Client for the [paste.xinu.at](http://paste.xinu.at/) pastebin.
 
@@ -1143,23 +1143,23 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **Haste** — Universal pastebin tool, written in Haskell. Servers: [hpaste.org](http://hpaste.org/), [paste2.org](http://paste2.org/), [pastebin.com](http://pastebin.com/) and others.
 
-	[http://hackage.haskell.org/package/haste](http://hackage.haskell.org/package/haste) || [haste](https://aur.archlinux.org/packages/haste/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haste)]</sup>
+	[http://hackage.haskell.org/package/haste](http://hackage.haskell.org/package/haste) || [haste](https://aur.archlinux.org/packages/haste/)
 
 *   **Hg-paste** — Pastebin extension for Mercurial which can send diffs to various pastebin websites for easy sharing. Servers: [dpaste.com](http://dpaste.com/) and [dpaste.org](http://dpaste.org/).
 
-	[http://bitbucket.org/sjl/hg-paste](http://bitbucket.org/sjl/hg-paste) || [hg-paste](https://aur.archlinux.org/packages/hg-paste/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/hg-paste)]</sup>
+	[http://bitbucket.org/sjl/hg-paste](http://bitbucket.org/sjl/hg-paste) || [hg-paste](https://aur.archlinux.org/packages/hg-paste/)
 
 *   **imgur** — A CLI client which can upload image to [imgur.com](http://imgur.com) image sharing service.
 
-	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)<sup><small>AUR</small></sup>
+	[http://imgur.com/apps](http://imgur.com/apps) || [imgur](https://aur.archlinux.org/packages/imgur/)
 
 *   **Ix** — Client for the ix.io pastebin.
 
-	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)<sup><small>AUR</small></sup>
+	[http://ix.io](http://ix.io) || [ix](https://aur.archlinux.org/packages/ix/)
 
 *   **Npaste-client** — Client for the [npaste.de](http://npaste.de/) pastebin.
 
-	[http://npaste.de](http://npaste.de) || [npaste-client](https://aur.archlinux.org/packages/npaste-client/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/npaste-client)]</sup>
+	[http://npaste.de](http://npaste.de) || [npaste-client](https://aur.archlinux.org/packages/npaste-client/)
 
 *   **Pastebinit** — Really small Python script that acts as a Pastebin client. Servers: [pastie.org](http://pastie.org/), [paste.kde.org](http://paste.kde.org/), [paste.debian.net](http://paste.debian.net/), [paste.ubuntu.com](http://paste.ubuntu.com/) and others (for a full list see `pastebinit -l`).
 
@@ -1167,27 +1167,27 @@ Pastebin services are often used to quote text or images while collaborating and
 
 *   **paste-binouse** — C++ standalone pastebin web server
 
-	[https://github.com/abique/paste-binouse](https://github.com/abique/paste-binouse) || [paste-binouse](https://aur.archlinux.org/packages/paste-binouse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/paste-binouse)]</sup>
+	[https://github.com/abique/paste-binouse](https://github.com/abique/paste-binouse) || [paste-binouse](https://aur.archlinux.org/packages/paste-binouse/)
 
 *   **pb** — A very fast, lightweight pastebin and general file uploader written in python with a ton of features.
 
-	[https://ptpb.pw](https://ptpb.pw) || [ptpb](https://aur.archlinux.org/packages/ptpb/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ptpb)]</sup>
+	[https://ptpb.pw](https://ptpb.pw) || [ptpb](https://aur.archlinux.org/packages/ptpb/)
 
 *   **ruby-haste** — Client for [hastebin.com](http://hastebin.com/).
 
-	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/)<sup><small>AUR</small></sup> [ruby-haste-git](https://aur.archlinux.org/packages/ruby-haste-git/)<sup><small>AUR</small></sup>
+	[https://github.com/seejohnrun/haste-client](https://github.com/seejohnrun/haste-client) || [ruby-haste](https://aur.archlinux.org/packages/ruby-haste/) [ruby-haste-git](https://aur.archlinux.org/packages/ruby-haste-git/)
 
 *   **Uppity** — The pastebin client with an attitude.
 
-	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)<sup><small>AUR</small></sup>
+	[https://github.com/Kiwi/Uppity](https://github.com/Kiwi/Uppity) || [uppity-git](https://aur.archlinux.org/packages/uppity-git/)
 
 *   **Vim-gist** — Vim script for [gist.github.com](https://gist.github.com/).
 
-	[http://www.vim.org/scripts/script.php?script_id=2423](http://www.vim.org/scripts/script.php?script_id=2423) || [vim-gist](https://aur.archlinux.org/packages/vim-gist/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vim-gist)]</sup>
+	[http://www.vim.org/scripts/script.php?script_id=2423](http://www.vim.org/scripts/script.php?script_id=2423) || [vim-gist](https://aur.archlinux.org/packages/vim-gist/)
 
 *   **Vim-paster** — Vim plugin to paste to any pastebin service using curl.
 
-	[http://eugeneciurana.com/site.php?page=tools](http://eugeneciurana.com/site.php?page=tools) || [vim-paster](https://aur.archlinux.org/packages/vim-paster/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vim-paster)]</sup>
+	[http://eugeneciurana.com/site.php?page=tools](http://eugeneciurana.com/site.php?page=tools) || [vim-paster](https://aur.archlinux.org/packages/vim-paster/)
 
 *   **Wgetpaste** — Bash script that automates pasting to a number of pastebin services. Servers: [pastebin.ca](http://pastebin.ca/), [codepad.org](http://codepad.org/), [dpaste.com](http://dpaste.com/) and [pastebin.osuosl.org](http://pastebin.osuosl.org/).
 
@@ -1199,7 +1199,7 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 *   **Armory** — Bitcoin client with features such as support for multiple wallets, importing keys and backups.
 
-	[https://github.com/etotheipi/BitcoinArmory](https://github.com/etotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)<sup><small>AUR</small></sup>
+	[https://github.com/etotheipi/BitcoinArmory](https://github.com/etotheipi/BitcoinArmory) || [armory-git](https://aur.archlinux.org/packages/armory-git/)
 
 *   **[Bitcoin](/index.php/Bitcoin "Bitcoin")** — Official tool to manage Bitcoins, a P2P currency.
 
@@ -1217,6 +1217,6 @@ See the main article: [Bitcoin](/index.php/Bitcoin "Bitcoin").
 
 *   **[LimeSurvey](https://en.wikipedia.org/wiki/LimeSurvey "wikipedia:LimeSurvey")** — An open source on-line survey application. As a web server-based software it enables users to develop and publish on-line surveys, and collect responses, with no programming.
 
-	[https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)<sup><small>AUR</small></sup>
+	[https://www.limesurvey.org/](https://www.limesurvey.org/) || [limesurvey](https://aur.archlinux.org/packages/limesurvey/)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418508](https://wiki.archlinux.org/index.php?title=List_of_applications/Internet&oldid=418508)"

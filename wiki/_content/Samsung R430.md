@@ -38,7 +38,7 @@ Works out of the box
 
 ## Screen brightness
 
-To enable screen brightness, you need to install and activate the kernel module [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/)<sup><small>AUR</small></sup> from the AUR. It needs some options tweaked however, so edit **/etc/modprobe.d/modprobe.conf** to contain:
+To enable screen brightness, you need to install and activate the kernel module [nvidia-bl](https://aur.archlinux.org/packages/nvidia-bl/) from the AUR. It needs some options tweaked however, so edit **/etc/modprobe.d/modprobe.conf** to contain:
 
 ```
 options nvidia-bl max_level=131071 shift=9
@@ -76,10 +76,10 @@ The brightness level can then be set by writing the desired value to **/sys/clas
 
 ## Enable and disable featues
 
-To be able to activate and deactivate features such as the touchpad or the wireless card, you need to install the kernel module [easy-slow-down-manager](https://aur.archlinux.org/packages/easy-slow-down-manager/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/easy-slow-down-manager)]</sup>. It's very simple to use and the usage is described in **/usr/share/doc/easy-slow-down-manager/README**.
+To be able to activate and deactivate features such as the touchpad or the wireless card, you need to install the kernel module [easy-slow-down-manager](https://aur.archlinux.org/packages/easy-slow-down-manager/). It's very simple to use and the usage is described in **/usr/share/doc/easy-slow-down-manager/README**.
 
 Obviously, like before, you need to load the module for it to work, either by using modprobe, like **modprobe easy-slow-down-manager** (might need a reboot to work for the first time), or adding a `easy-slow-down-manager.conf` file to `/etc/modules-load.d`.
 
-To make managing the features of the notebook easier, you can install [samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)<sup><small>AUR</small></sup>. Just install it and follow the instructions given by the install script.
+To make managing the features of the notebook easier, you can install [samsung-tools](https://aur.archlinux.org/packages/samsung-tools/). Just install it and follow the instructions given by the install script.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Samsung_R430&oldid=392651](https://wiki.archlinux.org/index.php?title=Samsung_R430&oldid=392651)"

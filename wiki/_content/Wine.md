@@ -304,7 +304,7 @@ Then navigate to the directory and run the _.exe_ file from there.
 
 [Winetricks](http://wiki.winehq.org/winetricks) is a script to allow one to install base requirements needed to run Windows programs. Installable components include DirectX 9.x, MSXML (required by Microsoft Office 2007 and Internet Explorer), Visual Runtime libraries and many more.
 
-[Install](/index.php/Install "Install") the [winetricks](https://www.archlinux.org/packages/?name=winetricks) package (or alternatively [winetricks-git](https://aur.archlinux.org/packages/winetricks-git/)<sup><small>AUR</small></sup>). Then run it with:
+[Install](/index.php/Install "Install") the [winetricks](https://www.archlinux.org/packages/?name=winetricks) package (or alternatively [winetricks-git](https://aur.archlinux.org/packages/winetricks-git/)). Then run it with:
 
 ```
 $ winetricks
@@ -389,7 +389,7 @@ If you have issues with dual-head setups and different display resolutions you a
 
 ### exe-thumbnailer
 
-This is a small piece of UI code meant to be installed with (or even before) Wine. It provides thumbnails for executable files that show the embedded icons when available, and also gives the user a hint that Wine will be used to open it. Details can be found at [Wine wiki](http://wiki.winehq.org/exe-thumbnailer). Install it with the [gnome-exe-thumbnailer](https://aur.archlinux.org/packages/gnome-exe-thumbnailer/)<sup><small>AUR</small></sup> package.
+This is a small piece of UI code meant to be installed with (or even before) Wine. It provides thumbnails for executable files that show the embedded icons when available, and also gives the user a hint that Wine will be used to open it. Details can be found at [Wine wiki](http://wiki.winehq.org/exe-thumbnailer). Install it with the [gnome-exe-thumbnailer](https://aur.archlinux.org/packages/gnome-exe-thumbnailer/) package.
 
 ### Changing the language
 
@@ -562,7 +562,7 @@ These have their own sites, and are _not supported_ in the official Wine forums/
 
 ### PyWinery
 
-[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, _winecfg_, application uninstaller and wineDOS. You can install You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/)<sup><small>AUR</small></sup> package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
+[PyWinery](https://github.com/ergoithz/pywinery) is a graphical and simple wine-prefix manager which allows you to launch apps and manage configuration of separate prefixes, also have a button to open winetricks in the same prefix, to open prefix dir, _winecfg_, application uninstaller and wineDOS. You can install You can install PyWinery with the [pywinery](https://aur.archlinux.org/packages/pywinery/) package. It is especially useful for having differents settings like DirectX games, office, programming, etc, and choose which prefix to use before you open an application or file.
 
 It is recommended using winetricks by default to open _.exe_ files, so you can choose between any Wine configuration you have.
 

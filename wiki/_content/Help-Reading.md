@@ -115,9 +115,9 @@ The [pacman](/index.php/Pacman "Pacman") article contains detailed explanations 
 
 For packages from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository") you will read something like:
 
-	Install the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> package.
+	Install the [foobar](https://aur.archlinux.org/packages/foobar/) package.
 
-This means that in general you have to follow the [foobar](https://aur.archlinux.org/packages/foobar/)<sup><small>AUR</small></sup> link, download the PKGBUILD archive, extract it, **verify the content** and finally run, in the same folder:
+This means that in general you have to follow the [foobar](https://aur.archlinux.org/packages/foobar/) link, download the PKGBUILD archive, extract it, **verify the content** and finally run, in the same folder:
 
 ```
 $ makepkg -sri

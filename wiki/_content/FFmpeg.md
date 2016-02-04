@@ -41,7 +41,7 @@ From the project [home page](http://www.ffmpeg.org/):
 
 [Install](/index.php/Install "Install") the [ffmpeg](https://www.archlinux.org/packages/?name=ffmpeg) package.
 
-For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/)<sup><small>AUR</small></sup> package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/)<sup><small>AUR</small></sup>, which is built with as much optional features enabled as possible
+For the development version, install the [ffmpeg-git](https://aur.archlinux.org/packages/ffmpeg-git/) package. There is also [ffmpeg-full](https://aur.archlinux.org/packages/ffmpeg-full/), which is built with as much optional features enabled as possible
 
 ## Encoding examples
 
@@ -476,7 +476,7 @@ $ ffmpeg -i _video_.mpg -acodec libvorbis -aq 8 -ar 48000 -vcodec mpeg4 \
 *   `-aq 7` = 224 kb/s
 *   `-aq 8` = 256 kb/s
 
-*   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages/libvorbis-aotuv/)<sup><small>AUR</small></sup>.
+*   [aoTuV](http://www.geocities.jp/aoyoume/aotuv/) is generally preferred over [libvorbis](http://vorbis.com/) provided by [Xiph.Org](http://www.xiph.org/) and is provided by [libvorbis-aotuv](https://aur.archlinux.org/packages/libvorbis-aotuv/).
 
 ## Package removal
 

@@ -71,7 +71,7 @@ Theme settings can be changed in the `[Theme]` section.
 
 Set to `breeze` for the default Plasma theme.
 
-Some themes are available in the [AUR](/index.php/AUR "AUR"), for example [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/)<sup><small>AUR</small></sup>.
+Some themes are available in the [AUR](/index.php/AUR "AUR"), for example [archlinux-themes-sddm](https://aur.archlinux.org/packages/archlinux-themes-sddm/).
 
 #### Main theme
 
@@ -109,7 +109,7 @@ If you want to enforce Numlock to be enabled, set `Numlock=on` in the `[General]
 ### Configuration GUI
 
 *   KDE Frameworks' System Settings contains an SDDM configuration module. Install [sddm-kcm](https://www.archlinux.org/packages/?name=sddm-kcm) package to use it.
-*   There is a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/)<sup><small>AUR</small></sup> in the AUR.
+*   There is a Qt-based [sddm-config-editor-git](https://aur.archlinux.org/packages/sddm-config-editor-git/) in the AUR.
 
 ## Troubleshooting
 

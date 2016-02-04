@@ -15,7 +15,7 @@
 
 Before you can use Splashy, you should enable [Kernel mode setting](/index.php/Kernel_mode_setting "Kernel mode setting"). Please refer to the specific instructions for [ATI cards](/index.php/ATI#Kernel_mode-setting_.28KMS.29 "ATI"), [Intel cards](/index.php/Intel#Enable_early_KMS "Intel") or [Nvidia cards](/index.php/Nouveau#KMS "Nouveau").
 
-Install [splashy-full](https://aur.archlinux.org/packages/splashy-full/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [splashy-full](https://aur.archlinux.org/packages/splashy-full/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 You may also check out [this topic](https://bbs.archlinux.org/viewtopic.php?id=48978) on the [Arch Linux forum](https://bbs.archlinux.org/) for a repository you can add with working splashy packages.
 
@@ -55,7 +55,7 @@ You now need to set `quiet splash` as you kernel command line parameters in your
 
 ### Themes
 
-You can install [splashy-themes](https://aur.archlinux.org/packages/splashy-themes/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/splashy-themes)]</sup> from the AUR. After installing, look at the available themes like so:
+You can install [splashy-themes](https://aur.archlinux.org/packages/splashy-themes/) from the AUR. After installing, look at the available themes like so:
 
  `ls /usr/share/splashy/themes` 
 

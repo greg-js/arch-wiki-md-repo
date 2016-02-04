@@ -51,9 +51,9 @@ The _$IfDamaged_ variable contains an exit status code returned by [feh](https:/
 *   The [feh](https://www.archlinux.org/packages/?name=feh) program ignores some of errors, pixel data errors, in an image if it contains enough of a readable visual data to be shown.
 *   A pixel error makes that a part of an image or a whole image can't be shown correctly, it causes wrong colors or blank/empty spaces that often makes the image more or less useless, mostly depends on the amount of a corrupted data in it.
 
-You can also install [pngcheck](https://aur.archlinux.org/packages/pngcheck/)<sup><small>AUR</small></sup> to check integrity of "PNG, JNG or MNG" and/or [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/)<sup><small>AUR</small></sup> and use output of errors in the _$IfDamaged_ variable or modify script to skip adding of damaged files into a `collect-info-about-images.txt` file.
+You can also install [pngcheck](https://aur.archlinux.org/packages/pngcheck/) to check integrity of "PNG, JNG or MNG" and/or [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/) and use output of errors in the _$IfDamaged_ variable or modify script to skip adding of damaged files into a `collect-info-about-images.txt` file.
 
-Example of [pngcheck](https://aur.archlinux.org/packages/pngcheck/)<sup><small>AUR</small></sup> check resuslt:
+Example of [pngcheck](https://aur.archlinux.org/packages/pngcheck/) check resuslt:
 
 ```
 ./f939799496.png  invalid IDAT row-filter type (11)
@@ -66,7 +66,7 @@ OK: ./f218842888.png (532x552, 32-bit RGB+alpha, non-interlaced, 95.8%).
 
 ```
 
-Example of [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/)<sup><small>AUR</small></sup> check result:
+Example of [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/) check result:
 
 ```
 f62152912.jpg 5678 x 2829 24bit Exif  N 11625509  Corrupt JPEG data: 1074 extraneous bytes before marker 0xd9  [WARNING]
@@ -74,7 +74,7 @@ f124619744.jpg  144 x 119  24bit JFIF  N    5813  [OK]
 
 ```
 
-**Note:** The [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/)<sup><small>AUR</small></sup> utility can't scan directories recursively but can read filenames from a file created by `find -type f -name "*.jpg">>FileWithPathTo-images.txt`, calculate their md5sums and has an option that makes it able to remove damaged image files.
+**Note:** The [jpeginfo](https://aur.archlinux.org/packages/jpeginfo/) utility can't scan directories recursively but can read filenames from a file created by `find -type f -name "*.jpg">>FileWithPathTo-images.txt`, calculate their md5sums and has an option that makes it able to remove damaged image files.
 
 To extract necessary data from a string in a script is better to use an [expression](http://tldp.org/LDP/abs/html/string-manipulation.html) instead of an extern program as [sed](https://www.archlinux.org/packages/?name=sed) or [gawk](https://www.archlinux.org/packages/?name=gawk) to make a script work a little faster, e.g.
 

@@ -22,7 +22,7 @@ Catwm is a small, light weight window manager created by pyknite. It was first a
 
 ### Method 1
 
-[Install](/index.php/Install "Install") [catwm-git](https://aur.archlinux.org/packages/catwm-git/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") [catwm-git](https://aur.archlinux.org/packages/catwm-git/).
 
 ### Method 2
 

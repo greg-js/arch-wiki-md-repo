@@ -37,7 +37,7 @@ Combined with [acpid](/index.php/Acpid "Acpid") and [CPU frequency scaling](/ind
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [laptop-mode-tools](https://aur.archlinux.org/packages/laptop-mode-tools/) package.
 
 ## Configuration
 

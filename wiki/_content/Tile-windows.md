@@ -4,7 +4,7 @@ The **Tile-windows** application is a tool which allows for the tiling of window
 
 ## Installation
 
-[tile-windows](https://aur.archlinux.org/packages/tile-windows/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tile-windows)]</sup> can be installed from from the [AUR](/index.php/AUR "AUR").
+[tile-windows](https://aur.archlinux.org/packages/tile-windows/) can be installed from from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 

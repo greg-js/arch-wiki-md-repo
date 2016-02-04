@@ -11,7 +11,7 @@ tp-battery-mode is a module to easily switch your Thinkpad's battery charging mo
 
 ## Installation
 
-Install the [tp-battery-mode](https://aur.archlinux.org/packages/tp-battery-mode/)<sup><small>AUR</small></sup> package available from the [AUR](/index.php/AUR "AUR").
+Install the [tp-battery-mode](https://aur.archlinux.org/packages/tp-battery-mode/) package available from the [AUR](/index.php/AUR "AUR").
 
 ## Features
 

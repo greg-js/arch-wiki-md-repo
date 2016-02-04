@@ -186,7 +186,7 @@ _pacman_ is a powerful package management tool, but it does not attempt to handl
 **Tip:**
 
 *   Remember that _pacman'_s output is logged in `/var/log/pacman.log`.
-*   You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/)<sup><small>AUR</small></sup> to search the pacman logs.
+*   You can use a log viewer such as [wat-git](https://aur.archlinux.org/packages/wat-git/) to search the pacman logs.
 
 If one encounters problems that cannot be solved by these instructions, make sure to search the forum. It is likely that others have encountered the same problem and have posted instructions for solving it.
 
@@ -287,7 +287,7 @@ $ pactree _package_name_
 
 ```
 
-To list all the packages recursively depending on an _installed_ package, use _whoneeds_ from [pkgtools](https://aur.archlinux.org/packages/pkgtools/)<sup><small>AUR</small></sup>:
+To list all the packages recursively depending on an _installed_ package, use _whoneeds_ from [pkgtools](https://aur.archlinux.org/packages/pkgtools/):
 
 ```
 $ whoneeds _package_name_
@@ -351,7 +351,7 @@ Used this way, it will _not_ check whether a package is still installed or not, 
 
 See `paccache -h` for more options.
 
-[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/)<sup><small>AUR</small></sup> and [pacleaner](https://aur.archlinux.org/packages/pacleaner/)<sup><small>AUR</small></sup> are two further alternatives.
+[pkgcacheclean](https://aur.archlinux.org/packages/pkgcacheclean/) and [pacleaner](https://aur.archlinux.org/packages/pacleaner/) are two further alternatives.
 
 ### Additional commands
 
@@ -443,7 +443,7 @@ NoExtract=usr/lib/systemd/system/*
 
 ```
 
-Or as a preemptive alternative to [localepurge](https://aur.archlinux.org/packages/localepurge/)<sup><small>AUR</small></sup>, to avoid installing non-English localizations:
+Or as a preemptive alternative to [localepurge](https://aur.archlinux.org/packages/localepurge/), to avoid installing non-English localizations:
 
 ```
 NoExtract = usr/share/help/* !usr/share/help/en*

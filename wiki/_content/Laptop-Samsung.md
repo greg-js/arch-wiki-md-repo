@@ -22,7 +22,7 @@ Web cam (uvcvideo) | N/A |
 | NC110 | 2011.08.19 | 3D with [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) 2.19, native resolution with [xorg-server](https://www.archlinux.org/packages/?name=xorg-server) 1.12 (1024x600), external screens work fine | Intel HD Audio with [ALSA](/index.php/ALSA "ALSA") | Yes | Yes; rfkill soft block also works | Recognized; not tested | Suspend to RAM: OK
 Disk: Not tested
 Dimming of display: Yes (with `acpi_backlight=vendor`)
-CPU frequency scaling: Yes | N/A | Web cam works, card reader works, two-fingered scrolling works, only half of the function buttons work out-of-the-box ([samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)<sup><small>AUR</small></sup> needed for rest) | N/A |
+CPU frequency scaling: Yes | N/A | Web cam works, card reader works, two-fingered scrolling works, only half of the function buttons work out-of-the-box ([samsung-tools](https://aur.archlinux.org/packages/samsung-tools/) needed for rest) | N/A |
 | QX411 W02UB | 2011.08.19 | Intel HD Graphics 3000 - i915 same packages as above model (1366x768) | Intel HD Audio with ALSA | Realtek Gigabit Ethernet controller (rev 06 | Centrino Wireless-N + WiMAX 6150 (rev 67) | N/A | Suspend to RAM: OK
 Disk: OK
 Dimming of display: Yes

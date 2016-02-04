@@ -101,7 +101,7 @@ $database_password = "some_password";
 
 ## Spine
 
-Optionally, install [cacti-spine](https://aur.archlinux.org/packages/cacti-spine/)<sup><small>AUR</small></sup>, a faster poller for cacti, from the [AUR](/index.php/AUR "AUR"). configure it with database access details:
+Optionally, install [cacti-spine](https://aur.archlinux.org/packages/cacti-spine/), a faster poller for cacti, from the [AUR](/index.php/AUR "AUR"). configure it with database access details:
 
  `/etc/spine.conf` 
 

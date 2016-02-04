@@ -43,7 +43,7 @@ In order for frequency scaling to work properly, you will need to load the appro
 
 ### Installation of Powernowd
 
-This package is available in the AUR: [powernowd](https://aur.archlinux.org/packages/powernowd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/powernowd)]</sup>. If you have not used the AUR before, you may want to check out [AUR User Guidelines](/index.php/AUR_User_Guidelines "AUR User Guidelines") at your leisure as there are a wealth of great software there for you, and building the package on your machine is trivial. Install 'powernowd', then start the daemon:
+This package is available in the AUR: [powernowd](https://aur.archlinux.org/packages/powernowd/). If you have not used the AUR before, you may want to check out [AUR User Guidelines](/index.php/AUR_User_Guidelines "AUR User Guidelines") at your leisure as there are a wealth of great software there for you, and building the package on your machine is trivial. Install 'powernowd', then start the daemon:
 
 ```
 # /etc/rc.d/powernowd start

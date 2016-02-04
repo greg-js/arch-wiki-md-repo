@@ -41,10 +41,10 @@ If you are using a graphical environment, make sure that a graphical authenticat
 *   [lxqt-policykit](https://www.archlinux.org/packages/?name=lxqt-policykit), which provides `/usr/bin/lxqt-policykit-agent`
 *   [lxsession](https://www.archlinux.org/packages/?name=lxsession), which provides `/usr/bin/lxpolkit`
 *   [mate-polkit](https://www.archlinux.org/packages/?name=mate-polkit), which provides `/usr/lib/mate-polkit/polkit-mate-authentication-agent-1`
-*   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/)<sup><small>AUR</small></sup>, which provides `/usr/bin/polkit-efl-authentication-agent-1`
+*   [polkit-efl-git](https://aur.archlinux.org/packages/polkit-efl-git/), which provides `/usr/bin/polkit-efl-authentication-agent-1`
 *   [polkit-gnome](https://www.archlinux.org/packages/?name=polkit-gnome), which provides `/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1`
 *   [polkit-kde-agent](https://www.archlinux.org/packages/?name=polkit-kde-agent), which provides `/usr/lib/polkit-kde/polkit-kde-authentication-agent-1`
-*   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/)<sup><small>AUR</small></sup>, which provides `/usr/lib/xfce-polkit/xfce-polkit`
+*   [xfce-polkit-git](https://aur.archlinux.org/packages/xfce-polkit-git/), which provides `/usr/lib/xfce-polkit/xfce-polkit`
 
 ## Structure
 
@@ -57,7 +57,7 @@ Polkit definitions can be divided into two kinds:
 
 ### Actions
 
-**Tip:** To display Policykit actions in a graphical interface, install the [polkit-explorer](https://aur.archlinux.org/packages/polkit-explorer/)<sup><small>AUR</small></sup> package.
+**Tip:** To display Policykit actions in a graphical interface, install the [polkit-explorer](https://aur.archlinux.org/packages/polkit-explorer/) package.
 
 The actions available to you via polkit will depend on the packages you have installed. Some are used in multiple desktop environments _(org.freedesktop.*)_, some are DE-specific _(org.gnome.*)_ and some are specific to a single program _(org.archlinux.pkexec.gparted.policy)_. The command `pkaction` lists all the actions defined in `/usr/share/polkit-1/actions` for quick reference.
 

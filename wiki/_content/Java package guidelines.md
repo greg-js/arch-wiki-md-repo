@@ -100,12 +100,12 @@ Java packages might specify `java-runtime` or `java-environment` as dependency, 
 For most packages, `java-runtime` is what is needed to simply run software written in Java. `java-runtime` is a virtual dependency provided by:
 
 *   [jre7-openjdk](https://www.archlinux.org/packages/?name=jre7-openjdk) (free)
-*   [java-gcj-compat](https://aur.archlinux.org/packages/java-gcj-compat/)<sup><small>AUR</small></sup> (free)
-*   [jre](https://aur.archlinux.org/packages/jre/)<sup><small>AUR</small></sup> (non-free)
+*   [java-gcj-compat](https://aur.archlinux.org/packages/java-gcj-compat/) (free)
+*   [jre](https://aur.archlinux.org/packages/jre/) (non-free)
 
 `java-environment` (e.g. JDK) is needed by packages that will need to compile Java source code into bytecode. `java-environment` is a virtual dependency provided by:
 
 *   [jdk7-openjdk](https://www.archlinux.org/packages/?name=jdk7-openjdk) (free)
-*   [jdk](https://aur.archlinux.org/packages/jdk/)<sup><small>AUR</small></sup> (non-free)
+*   [jdk](https://aur.archlinux.org/packages/jdk/) (non-free)
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=414092](https://wiki.archlinux.org/index.php?title=Java_package_guidelines&oldid=414092)"

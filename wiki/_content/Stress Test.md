@@ -60,9 +60,9 @@ This machine running with a vcore of +0.005 (in offset mode) remains stable in b
 | **Medium** |
 | _Cc/Gcc_ | Both cc/gcc compilation is a great method of stress testing. Both are available in the _base-devel_ group. |
 | _HandBrake-cli_ | [handbrake-cli](https://www.archlinux.org/packages/?name=handbrake-cli) can be used to encode using high quality settings. |
-| _Systester_ | [systester](https://aur.archlinux.org/packages/systester/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/systester)]</sup> Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
-| **High** | _mprime_ | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/)<sup><small>AUR</small></sup> factors large numbers and is an excellent way to stress CPU and memory. |
-| _linpack_ | [linpack](https://aur.archlinux.org/packages/linpack/)<sup><small>AUR</small></sup> - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |
+| _Systester_ | [systester](https://aur.archlinux.org/packages/systester/) Systester is a multithreaded piece of software capable of deriving values of pi out to 128,000,000 decimal places. It has built in check for system stability. |
+| **High** | _mprime_ | [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) factors large numbers and is an excellent way to stress CPU and memory. |
+| _linpack_ | [linpack](https://aur.archlinux.org/packages/linpack/) - Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. |
 
 ## Stressing CPU and Memory
 
@@ -70,7 +70,7 @@ This machine running with a vcore of +0.005 (in offset mode) remains stable in b
 
 Prime95 is recognized universally as one defacto measure of system stability. Mprime under torture test mode will preform a series of very CPU intensive calculations and compare the values it gets to known good values.
 
-Prime95 for Linux is called [mprime](https://aur.archlinux.org/packages/mprime/)<sup><small>AUR</small></sup> and is available in the AUR.
+Prime95 for Linux is called [mprime](https://aur.archlinux.org/packages/mprime/) and is available in the AUR.
 
 **Warning:** Before proceeding, it is **HIGHLY** recommended that users have some means to monitor the CPU temperature. Packages such as [Lm_sensors](/index.php/Lm_sensors "Lm sensors") can do this.
 
@@ -143,11 +143,11 @@ Self-test 560K passed!
 
 **Note:** The AUR linpack package runs only on Intel CPUs.
 
-Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. [linpack](https://aur.archlinux.org/packages/linpack/)<sup><small>AUR</small></sup> is available from the AUR. After installation, users should adjust `/etc/linpack.conf` according to the amount of memory on the target system.
+Linpack makes use of the BLAS (Basic Linear Algebra Subprograms) libraries for performing basic vector and matrix operations. and is an excellent way to stress CPUs for stability. [linpack](https://aur.archlinux.org/packages/linpack/) is available from the AUR. After installation, users should adjust `/etc/linpack.conf` according to the amount of memory on the target system.
 
 ### Systester (AKA SuperPi for Windows)
 
-[Systester](https://aur.archlinux.org/packages/Systester/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/systester)]</sup> is available in the AUR in both cli and gui version. It tests system stability by calculating up to 128 millions of Pi digits and includes error checking. Note that one can select from two different calculation algorithms: Quadratic Convergence of Borwein and Gauss-Legendre. The latter being the same method that the popular SuperPi for Windows uses.
+[Systester](https://aur.archlinux.org/packages/Systester/) is available in the AUR in both cli and gui version. It tests system stability by calculating up to 128 millions of Pi digits and includes error checking. Note that one can select from two different calculation algorithms: Quadratic Convergence of Borwein and Gauss-Legendre. The latter being the same method that the popular SuperPi for Windows uses.
 
 A cli example using 8 threads is given:
 

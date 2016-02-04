@@ -15,7 +15,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the package [monitorix](https://aur.archlinux.org/packages/monitorix/)<sup><small>AUR</small></sup>.
+[Install](/index.php/Install "Install") the package [monitorix](https://aur.archlinux.org/packages/monitorix/).
 
 **Note:** Without a compatible font already installed, the Monitorix graphs will not contain any text. If this happens, install the [terminus-font](https://www.archlinux.org/packages/?name=terminus-font).
 
@@ -90,6 +90,6 @@ Also add `url_prefix_proxy = http://your.domain.com` to `/etc/monitorix/monitori
 
 ## Using tmpfs to Store RRD databases
 
-[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/)<sup><small>AUR</small></sup> is a package which provides a pseudo-daemon that makes use of tmpfs to store RRD Databases for Monitorix. Doing so will greatly reduce hdd reads/writes.
+[Anything-sync-daemon](https://aur.archlinux.org/packages/Anything-sync-daemon/) is a package which provides a pseudo-daemon that makes use of tmpfs to store RRD Databases for Monitorix. Doing so will greatly reduce hdd reads/writes.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Monitorix&oldid=415392](https://wiki.archlinux.org/index.php?title=Monitorix&oldid=415392)"

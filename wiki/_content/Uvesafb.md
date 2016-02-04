@@ -31,7 +31,7 @@ It should support as much hardware as vesafb.
 
 ## Installation
 
-[Install](/index.php/Install "Install") [v86d](https://aur.archlinux.org/packages/v86d/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [v86d](https://aur.archlinux.org/packages/v86d/) from [AUR](/index.php/AUR "AUR").
 
 ## Prepare the system
 
@@ -151,7 +151,7 @@ In the following, we address a more complex scenario. Many intel video chipsets 
 
 ### 915resolution-static
 
-In this scenario, 915resolution needs to be compiled statically (since it is going to be in an initramfs, it can not be linked to external libraries). Thus you CAN NOT use the 915resolution package in the [community] repo. Look instead for [915resolution-static](https://aur.archlinux.org/packages/915resolution-static/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/915resolution-static)]</sup> in the AUR. It compiles 915 resolution statically and provides a 915 resolution hook, so you can run 915resolution before loading uvesafb and get the patched resolution. So install 915resolution-static via makepkg and [pacman](/index.php/Pacman "Pacman").
+In this scenario, 915resolution needs to be compiled statically (since it is going to be in an initramfs, it can not be linked to external libraries). Thus you CAN NOT use the 915resolution package in the [community] repo. Look instead for [915resolution-static](https://aur.archlinux.org/packages/915resolution-static/) in the AUR. It compiles 915 resolution statically and provides a 915 resolution hook, so you can run 915resolution before loading uvesafb and get the patched resolution. So install 915resolution-static via makepkg and [pacman](/index.php/Pacman "Pacman").
 
 ### The resolution
 

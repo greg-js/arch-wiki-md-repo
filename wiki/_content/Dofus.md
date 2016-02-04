@@ -4,7 +4,7 @@
 
 ## AUR
 
-Installation can be automated with the [AUR](/index.php/AUR "AUR") package [dofus](https://aur.archlinux.org/packages/dofus/)<sup><small>AUR</small></sup>, which depends on [ankama-transition](https://aur.archlinux.org/packages/ankama-transition/)<sup><small>AUR</small></sup>, the updater.
+Installation can be automated with the [AUR](/index.php/AUR "AUR") package [dofus](https://aur.archlinux.org/packages/dofus/), which depends on [ankama-transition](https://aur.archlinux.org/packages/ankama-transition/), the updater.
 
 Currently the game files are installed under the "games" group with group writability. You can add your user to the group (<tt>usermod -a -G games _username_</tt>) to take advantage of this. Otherwise, you may need to enter your password in order to update the game files.
 
@@ -14,7 +14,7 @@ Ankama provides official Linux packages for Dofus, but some modifications are ne
 
 There is no Adobe Air runtime on Arch Linux, so it is necessary to use this [workaround](/index.php/Adobe_AIR "Adobe AIR") involving <tt>adobe-air-sdk</tt>. <tt>transition</tt> needs to be configured to use the sdk launcher instead of binaries provided by Dofus. Additionally, <tt>transition</tt> will by default attempt to install Adobe Air, and this needs to be disabled in its configuration.
 
-The [dofus](https://aur.archlinux.org/packages/dofus/)<sup><small>AUR</small></sup> AUR package accomplishes these with the following code in <tt>transition.conf</tt>:
+The [dofus](https://aur.archlinux.org/packages/dofus/) AUR package accomplishes these with the following code in <tt>transition.conf</tt>:
 
 ```
  bypass_air_installation = true

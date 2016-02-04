@@ -31,19 +31,19 @@ For additional functionality, you may wish to install the following:
 
 *   **LXQt Connman applet** — LXQt system-tray applet for [Connman](/index.php/Connman "Connman").
 
-	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)<sup><small>AUR</small></sup>
+	[https://github.com/surlykke/lxqt-connman-applet](https://github.com/surlykke/lxqt-connman-applet) || [lxqt-connman-applet-git](https://aur.archlinux.org/packages/lxqt-connman-applet-git/)
 
 *   **LXImage-Qt** — Image viewer and screenshot tool for LXQt.
 
-	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)<sup><small>AUR</small></sup>
+	[https://github.com/lxde/lximage-qt](https://github.com/lxde/lximage-qt) || [lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)
 
 *   **ObConf-Qt** — The Qt port of ObConf, the [Openbox](/index.php/Openbox "Openbox") configuration tool.
 
-	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)<sup><small>AUR</small></sup>
+	[https://github.com/lxde/obconf-qt](https://github.com/lxde/obconf-qt) || [obconf-qt](https://aur.archlinux.org/packages/obconf-qt/)
 
 *   **QTerminal** — Lightweight Qt-based terminal emulator.
 
-	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)<sup><small>AUR</small></sup>
+	[https://github.com/qterminal/qterminal](https://github.com/qterminal/qterminal) || [qterminal](https://aur.archlinux.org/packages/qterminal/)
 
 *   **[SDDM](/index.php/SDDM "SDDM")** — The recommended display manager for LXQt.
 

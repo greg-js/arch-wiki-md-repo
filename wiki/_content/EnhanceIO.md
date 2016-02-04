@@ -17,7 +17,7 @@
 
 ## Installation
 
-Install [enhanceio-dkms-git](https://aur.archlinux.org/packages/enhanceio-dkms-git/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [enhanceio-dkms-git](https://aur.archlinux.org/packages/enhanceio-dkms-git/) from the [AUR](/index.php/AUR "AUR").
 
 **Note:** Throughout the page, `/dev/sda` will be used to indicate the slow drive and `/dev/sdb` will be used to indicate the fast drive. Be sure to change these examples to match your setup.
 
@@ -77,7 +77,7 @@ After you verify that EnhanceIO works with your system, you might want to accele
 
 **Warning:** EnhanceIO does not support the WriteBack `-m wb` strategy when accelerating rootfs, only ReadOnly `-m ro` or WriteThrough (the default). If you enable WriteBack on the root volume bad things WILL happen.
 
-First, install the [pyinstaller](https://aur.archlinux.org/packages/pyinstaller/)<sup><small>AUR</small></sup> package from the [AUR](/index.php/AUR "AUR"); we need it to compile EnhanceIO's Python `eio_cli` script into an executable for inclusion in the initcpio image.
+First, install the [pyinstaller](https://aur.archlinux.org/packages/pyinstaller/) package from the [AUR](/index.php/AUR "AUR"); we need it to compile EnhanceIO's Python `eio_cli` script into an executable for inclusion in the initcpio image.
 
 Create the file `/etc/initcpio/hooks/enhanceio`. This is the EnhanceIO hook that performs cache initialization on boot:
 

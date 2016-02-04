@@ -32,13 +32,13 @@ LPRng is mature and stable and incorporates a flexible print filtering mechanism
 
 ## Installation
 
-*   Install the [lprng](https://aur.archlinux.org/packages/lprng/)<sup><small>AUR</small></sup> package from the AUR.
+*   Install the [lprng](https://aur.archlinux.org/packages/lprng/) package from the AUR.
 *   Install optional filter packages:
     *   [poppler](https://www.archlinux.org/packages/?name=poppler)
     *   [enscript](https://www.archlinux.org/packages/?name=enscript)
     *   [ghostscript](https://www.archlinux.org/packages/?name=ghostscript)
     *   [hplip](https://www.archlinux.org/packages/?name=hplip)
-    *   [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/)<sup><small>AUR</small></sup>
+    *   [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/)
 
 ## Configuration
 
@@ -92,7 +92,7 @@ If you wish to have separate single-sided and double-sided print queues, make tw
 
 #### Foomatic system
 
-Another mechanism for print filtering is via the Foomatic system. This system used by [CUPS](/index.php/CUPS "CUPS"). Install [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/)<sup><small>AUR</small></sup> as the `foomatic-rip` program in the CUPS installation has been modified to remove LPRng support).
+Another mechanism for print filtering is via the Foomatic system. This system used by [CUPS](/index.php/CUPS "CUPS"). Install [foomatic-filters-lprng](https://aur.archlinux.org/packages/foomatic-filters-lprng/) as the `foomatic-rip` program in the CUPS installation has been modified to remove LPRng support).
 
 Use `foofilter` as described above, editing for your desired {ic|.ppd file}}. Install the `.ppd` file in conformance with the path specified in `foofilter`. (`/etc/lprng/lpd` is a good location.)
 

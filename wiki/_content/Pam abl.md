@@ -18,7 +18,7 @@
 
 ## Installation
 
-Install the [pam_abl](https://aur.archlinux.org/packages/pam_abl/)<sup><small>AUR</small></sup> PKGBUILD from the [AUR](/index.php/AUR "AUR") using [makepkg](/index.php/Makepkg "Makepkg").
+Install the [pam_abl](https://aur.archlinux.org/packages/pam_abl/) PKGBUILD from the [AUR](/index.php/AUR "AUR") using [makepkg](/index.php/Makepkg "Makepkg").
 
 ## Configuration
 

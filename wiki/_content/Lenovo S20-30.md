@@ -99,7 +99,7 @@ The BIOS and the boot menu can be accessed by using the _alternative_ power butt
 
 ### Wireless
 
-Works after installing the proprietary driver module [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup>, which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
+Works after installing the proprietary driver module [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/), which supports Broadcom BCM43142\. See the detailed [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") page for further information.
 
 ### Bluetooth
 
@@ -118,7 +118,7 @@ video.use_native_backlight=1
 
 ```
 
-Use one of the [backlight utilities](/index.php/Backlight#Backlight_utilities "Backlight") (tested with [light](https://aur.archlinux.org/packages/light/)<sup><small>AUR</small></sup>) to adjust the backlight and control it with keyboard shortcuts [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
+Use one of the [backlight utilities](/index.php/Backlight#Backlight_utilities "Backlight") (tested with [light](https://aur.archlinux.org/packages/light/)) to adjust the backlight and control it with keyboard shortcuts [by the method of your choice](/index.php/Extra_keyboard_keys_in_Xorg "Extra keyboard keys in Xorg").
 
 With kernel 4.0.x backlight can still be changed, but the keys for increasing or decreasing backlight brightness do not work anymore.
 
@@ -128,11 +128,11 @@ Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils). See [
 
 ### SD Card Reader
 
-This requires the `rtsx_usb` module [[1]](http://cateee.net/lkddb/web-lkddb/MFD_RTSX_USB.html). [Load the module](/index.php/Kernel_modules#Loading "Kernel modules") and [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `sdhci`, `sdhci_acpi` and `sdhci_pci`, or install [lenovo-s20-30](https://aur.archlinux.org/packages/lenovo-s20-30/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Then [rebuild the kernel image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") with `mkinitcpio -P linux` as root.
+This requires the `rtsx_usb` module [[1]](http://cateee.net/lkddb/web-lkddb/MFD_RTSX_USB.html). [Load the module](/index.php/Kernel_modules#Loading "Kernel modules") and [blacklist](/index.php/Kernel_modules#Blacklisting "Kernel modules") `sdhci`, `sdhci_acpi` and `sdhci_pci`, or install [lenovo-s20-30](https://aur.archlinux.org/packages/lenovo-s20-30/) from the [AUR](/index.php/AUR "AUR"). Then [rebuild the kernel image](/index.php/Mkinitcpio#Image_creation_and_activation "Mkinitcpio") with `mkinitcpio -P linux` as root.
 
 ### Webcam
 
-Works with [samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)<sup><small>AUR</small></sup> and [cheese](https://www.archlinux.org/packages/?name=cheese). Turn the device on with
+Works with [samsung-tools](https://aur.archlinux.org/packages/samsung-tools/) and [cheese](https://www.archlinux.org/packages/?name=cheese). Turn the device on with
 
 ```
 $ samsung-tools -w on

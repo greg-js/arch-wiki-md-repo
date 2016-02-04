@@ -72,7 +72,7 @@ See the [manpage](http://www.freedesktop.org/software/systemd/man/systemd-bootch
 
 ### Using bootchart2
 
-You could also use a version of bootchart to visualize the boot sequence. Since you are not able to put a second init into the kernel command line you won't be able to use any of the standard bootchart setups. However the [bootchart2-git](https://aur.archlinux.org/packages/bootchart2-git/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") comes with an undocumented **systemd** service. After you've installed bootchart2 do:
+You could also use a version of bootchart to visualize the boot sequence. Since you are not able to put a second init into the kernel command line you won't be able to use any of the standard bootchart setups. However the [bootchart2-git](https://aur.archlinux.org/packages/bootchart2-git/) package from [AUR](/index.php/AUR "AUR") comes with an undocumented **systemd** service. After you've installed bootchart2 do:
 
 ```
 # systemctl enable bootchart2
@@ -92,7 +92,7 @@ Read the [bootchart2 documentation](https://github.com/mmeeks/bootchart) for fur
 
 [systemd](/index.php/Systemd "Systemd") came until version 216 with its own readahead implementation that should in principle improve boot time. There are two services: `systemd-readahead-collect`, which collects information on which files are used during boot, and `systemd-readahead-replay`, which pulls these files into cache early in the boot process.
 
-To enable systemd readahead install the [systemd-readahead](https://aur.archlinux.org/packages/systemd-readahead/)<sup><small>AUR</small></sup> package from [AUR](/index.php/AUR "AUR") and type:
+To enable systemd readahead install the [systemd-readahead](https://aur.archlinux.org/packages/systemd-readahead/) package from [AUR](/index.php/AUR "AUR") and type:
 
 ```
 # systemctl enable systemd-readahead-collect systemd-readahead-replay

@@ -11,7 +11,7 @@ _SB Live!_ uses a wavetable synthesizer for its MIDI output. Therefore, in order
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [awesfx](https://aur.archlinux.org/packages/awesfx/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/awesfx)]</sup> package.
+[Install](/index.php/Install "Install") the [awesfx](https://aur.archlinux.org/packages/awesfx/) package.
 
 Copy the SoundFont files from your SB Live driver CD somewhere on your hdd. On the SB Live! Value CD, they are named: `2GMGSMT.SF2`, `4GMGSMT.SF2` and `8MBGMSFX.SF2`.
 

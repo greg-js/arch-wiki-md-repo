@@ -24,7 +24,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [evilwm](https://aur.archlinux.org/packages/evilwm/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [evilwm](https://aur.archlinux.org/packages/evilwm/) package.
 
 ## Configuration
 

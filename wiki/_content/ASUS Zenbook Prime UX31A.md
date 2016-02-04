@@ -104,7 +104,7 @@ echo 2 > /sys/class/leds/asus::kbd_backlight/brightness
 
 #### Using asus-kbd-backlight from AUR
 
-[asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/)<sup><small>AUR</small></sup> from the AUR is a convenient way to manage the backlight brightness, if one doesn't want to use UPower. To allow users to change the brightness, write:
+[asus-kbd-backlight](https://aur.archlinux.org/packages/asus-kbd-backlight/) from the AUR is a convenient way to manage the backlight brightness, if one doesn't want to use UPower. To allow users to change the brightness, write:
 
 ```
 # asus-kbd-backlight allowusers
@@ -224,7 +224,7 @@ Multifinger taps work out of the box.
 
 ### Multitouch gestures
 
-To enable multitouch gestures like those under Windows, one can install [touchegg](https://aur.archlinux.org/packages/touchegg/)<sup><small>AUR</small></sup> from the AUR. Using `touchegg` will require disabling some input-handling that is done by the synaptics input driver. Edit your `/etc/X11/xorg.conf.d/10-synaptics.conf`
+To enable multitouch gestures like those under Windows, one can install [touchegg](https://aur.archlinux.org/packages/touchegg/) from the AUR. Using `touchegg` will require disabling some input-handling that is done by the synaptics input driver. Edit your `/etc/X11/xorg.conf.d/10-synaptics.conf`
 
 ```
 Section "InputClass"

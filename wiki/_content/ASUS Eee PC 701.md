@@ -259,7 +259,7 @@ echo 1 > /sys/devices/platform/eeepc/camera
 
 ```
 
-If you want the webcam application that the default Xandros installation uses, install [ucview](https://aur.archlinux.org/packages/ucview/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ucview)]</sup> from the [AUR](/index.php/AUR "AUR").
+If you want the webcam application that the default Xandros installation uses, install [ucview](https://aur.archlinux.org/packages/ucview/) from the [AUR](/index.php/AUR "AUR").
 
 The webcam also works fine with the latest version of Skype.
 
@@ -274,7 +274,7 @@ I have yet to get it working with vlc or any other software such as xawtv. If yo
 
 *   **NOTE:** For anyone who has accidentally disabled Auto Exposure for their webcam in luvcview (making the image dark), and can't enable it again, do the following:
 
-Install [libwebcam](https://aur.archlinux.org/packages/libwebcam/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/libwebcam)]</sup> from the [AUR](/index.php/AUR "AUR").
+Install [libwebcam](https://aur.archlinux.org/packages/libwebcam/) from the [AUR](/index.php/AUR "AUR").
 
 Issue the following command:
 

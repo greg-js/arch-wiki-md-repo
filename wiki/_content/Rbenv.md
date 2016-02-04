@@ -33,11 +33,11 @@ In contrast with rvm, rbenv does not...
 
 ## Installation
 
-You can install [rbenv](https://aur.archlinux.org/packages/rbenv/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+You can install [rbenv](https://aur.archlinux.org/packages/rbenv/) from the [AUR](/index.php/AUR "AUR").
 
 ## Plugins
 
-rbenv can be extended via a plugin system, and the rbenv wiki includes a [list of useful plugins](https://github.com/sstephenson/rbenv/wiki/Plugins). The ruby-build plugin is especially useful, as it allows you to install Ruby versions with the `rbenv install` command. You can install [ruby-build](https://aur.archlinux.org/packages/ruby-build/)<sup><small>AUR</small></sup> from the AUR.
+rbenv can be extended via a plugin system, and the rbenv wiki includes a [list of useful plugins](https://github.com/sstephenson/rbenv/wiki/Plugins). The ruby-build plugin is especially useful, as it allows you to install Ruby versions with the `rbenv install` command. You can install [ruby-build](https://aur.archlinux.org/packages/ruby-build/) from the AUR.
 
 ## External links
 

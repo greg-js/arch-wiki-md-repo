@@ -23,13 +23,13 @@ There are many UPnP or DLNA-compliant server and you can use Mpd too. Some of th
 *   [PS3 Mediaserver](/index.php/PS3_Mediaserver "PS3 Mediaserver")
 *   [Plex](/index.php/Plex "Plex")
 *   [Emby](https://emby.media) ([emby-server](https://www.archlinux.org/packages/?name=emby-server))
-*   [Serviio](http://serviio.org/) ([serviio](https://aur.archlinux.org/packages/serviio/)<sup><small>AUR</small></sup>)
-*   [Coherence](http://coherence.beebits.net) ([coherence](https://aur.archlinux.org/packages/coherence/)<sup><small>AUR</small></sup>)
-*   [Universal Media Server](http://www.universalmediaserver.com/) ([ums](https://aur.archlinux.org/packages/ums/)<sup><small>AUR</small></sup>)
+*   [Serviio](http://serviio.org/) ([serviio](https://aur.archlinux.org/packages/serviio/))
+*   [Coherence](http://coherence.beebits.net) ([coherence](https://aur.archlinux.org/packages/coherence/))
+*   [Universal Media Server](http://www.universalmediaserver.com/) ([ums](https://aur.archlinux.org/packages/ums/))
 
 And here is a list of DLNA controller applications. These can be used to control a DLNA renderer and server:
 
-*   [Upplay](http://www.lesbonscomptes.com/upplay/) ([upplay](https://aur.archlinux.org/packages/upplay/)<sup><small>AUR</small></sup>)
+*   [Upplay](http://www.lesbonscomptes.com/upplay/) ([upplay](https://aur.archlinux.org/packages/upplay/))
 
 #### Deprecated / No Longer in Development
 

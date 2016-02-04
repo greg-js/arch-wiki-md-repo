@@ -28,11 +28,11 @@ It is a fork of VisualBoyAdvance, a now closed project. VBA-M combines features 
 
 *   **VBA-M (GTK) (development version)** — Gameboy Advance Emulator combining features of all VBA forks - GTK GUI - SVN version
 
-	[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk-svn](https://aur.archlinux.org/packages/vbam-gtk-svn/)<sup><small>AUR</small></sup>
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-gtk-svn](https://aur.archlinux.org/packages/vbam-gtk-svn/)
 
 *   **VBA-M (wx) (development version)** — Improved (Super) Game Boy Color/Advance emulator - wxWidgets GUI, SVN version
 
-	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx-svn](https://aur.archlinux.org/packages/vbam-wx-svn/)<sup><small>AUR</small></sup>
+	[http://vba-m.com/](http://vba-m.com/) || [vbam-wx-svn](https://aur.archlinux.org/packages/vbam-wx-svn/)
 
 ## Usage
 

@@ -16,7 +16,7 @@ The initial install was not smooth. The built-in Atheros Ethernet interface did 
 
 ## Wireless interface:
 
-The native kernel support is very poor. If the wifi is very strong it might connect but the connection is unreliable. When the field is weak do not bother. An alternative is to try [rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/)<sup><small>AUR</small></sup> instead. This works better. But I have experienced that the connections stops working maybe about once an hour. Everything seems fine but no data is transmitted. The connection works after disconnect - connect.
+The native kernel support is very poor. If the wifi is very strong it might connect but the connection is unreliable. When the field is weak do not bother. An alternative is to try [rt3290sta-dkms](https://aur.archlinux.org/packages/rt3290sta-dkms/) instead. This works better. But I have experienced that the connections stops working maybe about once an hour. Everything seems fine but no data is transmitted. The connection works after disconnect - connect.
 
 ## Graphics interface
 

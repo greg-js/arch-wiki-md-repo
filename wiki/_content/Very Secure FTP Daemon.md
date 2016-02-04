@@ -289,7 +289,7 @@ options nf_conntrack_ftp ports=2211
 
 ### PAM with virtual users (updated)
 
-Since PAM no longer provides pam_userdb.so another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/)<sup><small>AUR</small></sup>. For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/pam_mysql)]</sup>. This section is however limited to explain how to configure a chroot environment and authentication by pam_pwdfile.so.
+Since PAM no longer provides pam_userdb.so another easy method is to use [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/). For environments with many users another option could be [pam_mysql](https://aur.archlinux.org/packages/pam_mysql/). This section is however limited to explain how to configure a chroot environment and authentication by pam_pwdfile.so.
 
 In this example we create the directory `vsftpd`:
 
@@ -441,7 +441,7 @@ allow_writeable_chroot=YES
 
 or alternative:
 
-Install [vsftpd-ext](https://aur.archlinux.org/packages/vsftpd-ext/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/vsftpd-ext)]</sup> and set in the conf file allow_writable_root=YES
+Install [vsftpd-ext](https://aur.archlinux.org/packages/vsftpd-ext/) and set in the conf file allow_writable_root=YES
 
 ### FileZilla Client: GnuTLS error -8 when connecting via SSL
 

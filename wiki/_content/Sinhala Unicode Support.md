@@ -15,7 +15,7 @@ This page explains how to get the Sinhala unicode support and sinhala unicode in
 
 ## Sinhala Unicode Font
 
-Install [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [ttf-lklug](https://aur.archlinux.org/packages/ttf-lklug/) from the [AUR](/index.php/AUR "AUR").
 
 ## Guide to install Sinhala Unicode Font
 
@@ -58,11 +58,11 @@ Immediately you'll be able to read Sinhala Unicode in your programs (If not You 
 
 ### sayura-ibus
 
-Install [ibus-sayura](https://aur.archlinux.org/packages/ibus-sayura/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ibus-sayura)]</sup> from the AUR. For more information about see [IBus](/index.php/IBus "IBus").
+Install [ibus-sayura](https://aur.archlinux.org/packages/ibus-sayura/) from the AUR. For more information about see [IBus](/index.php/IBus "IBus").
 
 ### sayura-scim
 
-Install [scim-sayura](https://aur.archlinux.org/packages/scim-sayura/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/scim-sayura)]</sup> from the AUR.
+Install [scim-sayura](https://aur.archlinux.org/packages/scim-sayura/) from the AUR.
 
 ### scim configuration
 

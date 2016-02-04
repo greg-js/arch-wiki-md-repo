@@ -41,7 +41,7 @@ f851733136_WindowMaker_Dockapps.pdf|WindowMaker_Dockapps.pdf|./f851733136_Window
 
 ```
 
-See also [crctk-git](https://aur.archlinux.org/packages/crctk-git/)<sup><small>AUR</small></sup> for working with CRC32 checksums.
+See also [crctk-git](https://aur.archlinux.org/packages/crctk-git/) for working with CRC32 checksums.
 
 ### Clean up and sort file names
 

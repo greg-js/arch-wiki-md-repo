@@ -61,7 +61,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
 
 GitLab requires a database backend. If you plan to run it on the same machine, first install either [MySQL](/index.php/MySQL "MySQL") or [PostgreSQL](/index.php/PostgreSQL "PostgreSQL").
 
-[Install](/index.php/Install "Install") the [gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small></sup> package.
+[Install](/index.php/Install "Install") the [gitlab](https://aur.archlinux.org/packages/gitlab/) package.
 
 In order to receive mail notifications, a mail server must be installed and configured. See the following for more information: [Category:Mail server](/index.php/Category:Mail_server "Category:Mail server")
 
@@ -69,9 +69,9 @@ In order to receive mail notifications, a mail server must be installed and conf
 
 ### Notes Before Configuring
 
-The [gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small></sup> package installs GitLab's files in a manner that more closely follows standard Linux conventions:
+The [gitlab](https://aur.archlinux.org/packages/gitlab/) package installs GitLab's files in a manner that more closely follows standard Linux conventions:
 
-| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md) | [gitlab](https://aur.archlinux.org/packages/gitlab/)<sup><small>AUR</small></sup> |
+| Description | [GitLab's Official](https://github.com/gitlabhq/gitlabhq/blob/6-5-stable/doc/install/installation.md) | [gitlab](https://aur.archlinux.org/packages/gitlab/) |
 | Configuration File GitShell | `/home/git/gitlab-shell/config.yml` | `/etc/webapps/gitlab-shell/config.yml` |
 | Configuration File GitLab | `/home/git/gitlab/config/gitlab.yml` | `/etc/webapps/gitlab/gitlab.yml` |
 | User (Home Directory) | `git` (`/home/git`) | `gitlab` (`/var/lib/gitlab`) |

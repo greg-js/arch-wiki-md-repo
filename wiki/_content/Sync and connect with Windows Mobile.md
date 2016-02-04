@@ -12,7 +12,7 @@ This page is a howto for connecting your Windows Mobile device with Archlinux. A
 
 ## Installation
 
-1.  [Install](/index.php/Install "Install") [synce-odccm](https://aur.archlinux.org/packages/synce-odccm/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/synce-odccm)]</sup> package from the [AUR](/index.php/AUR "AUR")
+1.  [Install](/index.php/Install "Install") [synce-odccm](https://aur.archlinux.org/packages/synce-odccm/) package from the [AUR](/index.php/AUR "AUR")
 2.  [Install](/index.php/Install "Install") [synce-kde](https://www.archlinux.org/packages/?name=synce-kde) and [synce-sync-engine](https://www.archlinux.org/packages/?name=synce-sync-engine) packages, available in the [Official repositories](/index.php/Official_repositories "Official repositories")
 
 ## Connecting to your phone
@@ -40,7 +40,7 @@ I think this problem arises after the phone has suspended, but I'm not quite sur
 
 There is a [SynCE FS](http://www.lvivier.info/SynceFS/) project, which is aimed to provide a possibility to work with winmobile device filesystem as a remote filesystem. It ts based on [SynCE](http://synce.sourceforge.net) and [Coda](http://www.coda.cs.cmu.edu/).
 
-Install [syncefs](https://aur.archlinux.org/packages/syncefs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/syncefs)]</sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). To use SynCE FS, you need a working SynCE installation.
+Install [syncefs](https://aur.archlinux.org/packages/syncefs/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). To use SynCE FS, you need a working SynCE installation.
 
 At the first step you need to load `coda` [kernel module](/index.php/Kernel_module "Kernel module").
 

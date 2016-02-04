@@ -168,7 +168,7 @@ Initially, audio doesn't work, except for beeping. The problem may be corrected 
 
 As of kernel 3.1, the headphone jack is correctly supported.
 
-For kernel versions < 3.1, a bash script may be used to switch between the internal speakers and headphones. First, download [hda-verb](https://aur.archlinux.org/packages/hda-verb/)<sup><small>AUR</small></sup> from the AUR. The package is now out of date, so use the following PKGBUILD script:
+For kernel versions < 3.1, a bash script may be used to switch between the internal speakers and headphones. First, download [hda-verb](https://aur.archlinux.org/packages/hda-verb/) from the AUR. The package is now out of date, so use the following PKGBUILD script:
 
 ```
 pkgname='hda-verb'

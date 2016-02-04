@@ -33,9 +33,9 @@ To **execute** programs that use OpenCL, you need to install a runtime compatibl
 
 *   [opencl-nvidia](https://www.archlinux.org/packages/?name=opencl-nvidia): execute on your Nvidia GPU (official Nvidia runtime)
 *   [opencl-mesa](https://www.archlinux.org/packages/?name=opencl-mesa): execute on AMD GPU's using the mesa drivers (currently under development, your mileage may vary)
-*   [opencl-catalyst](https://aur.archlinux.org/packages/opencl-catalyst/)<sup><small>AUR</small></sup>: execute on your AMD GPU (official AMD runtime)
-*   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/)<sup><small>AUR</small></sup>: execute on your CPU (official Intel runtime, also supports non-Intel CPUs)
-*   [pocl](https://aur.archlinux.org/packages/pocl/)<sup><small>AUR</small></sup>: execute on your CPU (LLVM-based OpenCL implementation)
+*   [opencl-catalyst](https://aur.archlinux.org/packages/opencl-catalyst/): execute on your AMD GPU (official AMD runtime)
+*   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): execute on your CPU (official Intel runtime, also supports non-Intel CPUs)
+*   [pocl](https://aur.archlinux.org/packages/pocl/): execute on your CPU (LLVM-based OpenCL implementation)
 
 For OpenCL **development**, the bare minimum additional packages required, are:
 
@@ -44,8 +44,8 @@ For OpenCL **development**, the bare minimum additional packages required, are:
 
 The vendors' SDKs provide a multitude of tools and support libraries:
 
-*   [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/)<sup><small>AUR</small></sup>: Intel's OpenCL SDK (old version, new OpenCL SDKs are included in the INDE and Intel Media Server Studio)
-*   [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/)<sup><small>AUR</small></sup>: AMD's OpenCL SDK
+*   [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/): Intel's OpenCL SDK (old version, new OpenCL SDKs are included in the INDE and Intel Media Server Studio)
+*   [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/): AMD's OpenCL SDK
 *   [cuda](https://www.archlinux.org/packages/?name=cuda): Nvidia's GPU SDK which includes support for OpenCL 1.1.
 
 ### OpenCL ICD loader (libOpenCL.so)
@@ -61,8 +61,8 @@ This is necessary because all the SDKs add their runtime's lib directories to th
 The available packages containing various OpenCL ICDs are:
 
 *   [ocl-icd](https://www.archlinux.org/packages/?name=ocl-icd): recommended, most up-to-date
-*   [libopencl](https://aur.archlinux.org/packages/libopencl/)<sup><small>AUR</small></sup> by AMD. Provides version 2.0 of OpenCL. It is currently distributed by AMD under a restrictive license and therefore could not have been pushed into official repo.
-*   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/)<sup><small>AUR</small></sup>: Intel's libCL, provides OpenCL 1.2.
+*   [libopencl](https://aur.archlinux.org/packages/libopencl/) by AMD. Provides version 2.0 of OpenCL. It is currently distributed by AMD under a restrictive license and therefore could not have been pushed into official repo.
+*   [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/): Intel's libCL, provides OpenCL 1.2.
 
 **Note:** ICD Loader's vendor is mentioned only to identify each loader, it is otherwise completely irrelevant. ICD loaders are vendor-agnostic and may be used interchangeably. (as long as they are implemented correctly)
 
@@ -79,9 +79,9 @@ $ ls /etc/OpenCL/vendors
 
 OpenCL implementation from AMD is known as [AMD APP SDK](http://developer.amd.com/sdks/AMDAPPSDK/Pages/default.aspx), formerly also known as AMD Stream SDK or ATi Stream.
 
-It can be installed with the [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/)<sup><small>AUR</small></sup> package. This package is installed as `/opt/AMDAPP` and apart from SDK files it also contains a number of code samples (`/opt/AMDAPP/SDK/samples/`). It also provides the `clinfo` utility which lists OpenCL platforms and devices present in the system and displays detailed information about them.
+It can be installed with the [amdapp-sdk](https://aur.archlinux.org/packages/amdapp-sdk/) package. This package is installed as `/opt/AMDAPP` and apart from SDK files it also contains a number of code samples (`/opt/AMDAPP/SDK/samples/`). It also provides the `clinfo` utility which lists OpenCL platforms and devices present in the system and displays detailed information about them.
 
-As AMD APP SDK itself contains CPU OpenCL driver, no extra driver is needed to use execute OpenCL on CPU devices (regardless of its vendor). GPU OpenCL drivers are provided by the [catalyst](https://aur.archlinux.org/packages/catalyst/)<sup><small>AUR</small></sup> package (an optional dependency).
+As AMD APP SDK itself contains CPU OpenCL driver, no extra driver is needed to use execute OpenCL on CPU devices (regardless of its vendor). GPU OpenCL drivers are provided by the [catalyst](https://aur.archlinux.org/packages/catalyst/) package (an optional dependency).
 
 Code is compiled using [llvm](https://www.archlinux.org/packages/?name=llvm) (dependency).
 
@@ -112,11 +112,11 @@ The Nvidia implementation is available as [opencl-nvidia](https://www.archlinux.
 
 #### Intel
 
-The Intel implementation, named simply [Intel OpenCL SDK](http://software.intel.com/en-us/articles/opencl-sdk/), provides optimized OpenCL performance on Intel CPUs (mainly Core and Xeon) and CPUs only. Install it with the [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/)<sup><small>AUR</small></sup> package. The runtime can be installed with the separate [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/)<sup><small>AUR</small></sup> package. OpenCL for integrated graphics hardware is available through the [beignet](https://aur.archlinux.org/packages/beignet/)<sup><small>AUR</small></sup> package for Ivy Bridge and newer hardware.
+The Intel implementation, named simply [Intel OpenCL SDK](http://software.intel.com/en-us/articles/opencl-sdk/), provides optimized OpenCL performance on Intel CPUs (mainly Core and Xeon) and CPUs only. Install it with the [intel-opencl-sdk](https://aur.archlinux.org/packages/intel-opencl-sdk/) package. The runtime can be installed with the separate [intel-opencl-runtime](https://aur.archlinux.org/packages/intel-opencl-runtime/) package. OpenCL for integrated graphics hardware is available through the [beignet](https://aur.archlinux.org/packages/beignet/) package for Ivy Bridge and newer hardware.
 
 #### POCL
 
-CPU-only LLVM-based implementation. Available as [pocl](https://aur.archlinux.org/packages/pocl/)<sup><small>AUR</small></sup>.
+CPU-only LLVM-based implementation. Available as [pocl](https://aur.archlinux.org/packages/pocl/).
 
 ### Development
 
@@ -127,7 +127,7 @@ The required packages for OpenCL development are listed in the overview. Install
 *   **JavaScript/HTML5**: [WebCL](http://www.khronos.org/webcl/)
 *   **[Python](/index.php/Python "Python")**: [python-pyopencl](https://www.archlinux.org/packages/?name=python-pyopencl)
 *   **[D](/index.php/D "D")**: [cl4d](https://bitbucket.org/trass3r/cl4d/wiki/Home)
-*   **[Haskell](/index.php/Haskell "Haskell")**: OpenCLRaw: [haskell-openclraw-git](https://aur.archlinux.org/packages/haskell-openclraw-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/haskell-openclraw-git)]</sup>
+*   **[Haskell](/index.php/Haskell "Haskell")**: OpenCLRaw: [haskell-openclraw-git](https://aur.archlinux.org/packages/haskell-openclraw-git/)
 *   **[Java](/index.php/Java "Java")**: [JOCL](http://jogamp.org/jocl/www/) (a part of [JogAmp](http://jogamp.org/))
 *   **[Mono/.NET](/index.php/Mono "Mono")**: [Open Toolkit](http://sourceforge.net/projects/opentk/)
 *   **[Go](/index.php/Go "Go")**: [OpenCL bindings for Go](https://github.com/samuel/go-opencl)
@@ -174,8 +174,8 @@ It might be necessary to use the legacy driver [nvidia-304xx](https://www.archli
 *   [GIMP](/index.php/GIMP "GIMP") (experimental - see [[3]](http://www.h-online.com/open/news/item/GIMP-2-8-RC-1-arrives-with-GPU-acceleration-1518417.html))
 *   [pyrit](https://www.archlinux.org/packages/?name=pyrit)
 *   [aircrack-ng](https://www.archlinux.org/packages/?name=aircrack-ng)
-*   [john-opencl](https://aur.archlinux.org/packages/john-opencl/)<sup><small>AUR</small></sup>
-*   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/)<sup><small>AUR</small></sup> - a GPU memtest. Despite its name, is supports both CUDA and OpenCL
+*   [john-opencl](https://aur.archlinux.org/packages/john-opencl/)
+*   [cuda_memtest](https://aur.archlinux.org/packages/cuda_memtest/) - a GPU memtest. Despite its name, is supports both CUDA and OpenCL
 *   [blender](https://www.archlinux.org/packages/?name=blender) - CUDA support for Nvidia GPUs and OpenCL support for AMD GPUs. More information [here](http://blender.org/manual/render/cycles/features.html#features).
 
 ## Links and references

@@ -22,7 +22,7 @@ For play framework related documentation, see [playframework.org documentation](
 
 The package can be installed from the [AUR](/index.php/AUR "AUR"):
 
-*   [playframework](https://aur.archlinux.org/packages/playframework/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/playframework)]</sup>
+*   [playframework](https://aur.archlinux.org/packages/playframework/)
 
 It provides:
 

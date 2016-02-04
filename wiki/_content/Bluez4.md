@@ -26,7 +26,7 @@ Bluez4 is an older version of the Linux bluetooth stack. Information on the curr
 
 **Warning:** Bluez4 is unmaintained. It has been superseded by Bluez5\. Where possible, it is recommended that you use Bluez5 instead.
 
-Bluez4 can be installed from the [bluez4](https://aur.archlinux.org/packages/bluez4/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/bluez4)]</sup> package in the AUR. Ensure that the bluetooth daemon is started:
+Bluez4 can be installed from the [bluez4](https://aur.archlinux.org/packages/bluez4/) package in the AUR. Ensure that the bluetooth daemon is started:
 
 ```
 # systemctl start bluetooth
@@ -427,7 +427,7 @@ $ hcitool dev
 
 #### Using bluez-tools from the AUR
 
-You can use [bluez-tools](https://aur.archlinux.org/packages/bluez-tools/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") with PulseAudio to stream audio to a bluetooth headset. Find the MAC of the headset:
+You can use [bluez-tools](https://aur.archlinux.org/packages/bluez-tools/) from the [AUR](/index.php/AUR "AUR") with PulseAudio to stream audio to a bluetooth headset. Find the MAC of the headset:
 
 ```
 $ hcitool scan

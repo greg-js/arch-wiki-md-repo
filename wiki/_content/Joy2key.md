@@ -14,7 +14,7 @@ XBMC 10.0 or probably a recent Arch update (SDL?) broke the joystick hat functio
 
 ```
 
-My solution was to install [joy2key](https://aur.archlinux.org/packages/joy2key/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Here is my config which could potentially save you hours of frustration or fun, depending on how you look at it:
+My solution was to install [joy2key](https://aur.archlinux.org/packages/joy2key/) from the [AUR](/index.php/AUR "AUR"). Here is my config which could potentially save you hours of frustration or fun, depending on how you look at it:
 
 ```
 #

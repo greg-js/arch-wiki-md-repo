@@ -15,7 +15,7 @@ A more native, efficient solution to achieve the same end is to use the [ipset](
 
 ## Installation
 
-There are two [AUR](/index.php/AUR "AUR") packages to choose from: [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/)<sup><small>AUR</small></sup> includes only the daemon and CLI tools, while [pgl](https://aur.archlinux.org/packages/pgl/)<sup><small>AUR</small></sup> comes complete with a GUI (written using Qt).
+There are two [AUR](/index.php/AUR "AUR") packages to choose from: [pgl-cli](https://aur.archlinux.org/packages/pgl-cli/) includes only the daemon and CLI tools, while [pgl](https://aur.archlinux.org/packages/pgl/) comes complete with a GUI (written using Qt).
 
 ## Configuration
 

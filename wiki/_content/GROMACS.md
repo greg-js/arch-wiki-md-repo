@@ -47,11 +47,11 @@ According to the [official website](http://www.gromacs.org/), GROMACS is:
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [gromacs](https://aur.archlinux.org/packages/gromacs/)<sup><small>AUR</small></sup> or [gromacs-mpi](https://aur.archlinux.org/packages/gromacs-mpi/)<sup><small>AUR</small></sup> package. Be sure to [edit](/index.php/Edit "Edit") the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to suit your system. Some of the [cmake](https://en.wikipedia.org/wiki/cmake "wikipedia:cmake") options you may want to add/modify in the PKGBUILD are:
+[Install](/index.php/Install "Install") the [gromacs](https://aur.archlinux.org/packages/gromacs/) or [gromacs-mpi](https://aur.archlinux.org/packages/gromacs-mpi/) package. Be sure to [edit](/index.php/Edit "Edit") the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") to suit your system. Some of the [cmake](https://en.wikipedia.org/wiki/cmake "wikipedia:cmake") options you may want to add/modify in the PKGBUILD are:
 
 *   `-DGMX_DOUBLE=ON` - Add if you need [double precision](https://en.wikipedia.org/wiki/Double-precision_floating-point_format "wikipedia:Double-precision floating-point format"). According to the [GROMACS install guide](http://www.gromacs.org/Documentation/Installation_Instructions_5.0), double precision is "slower, and not normally useful." If you set this flag, the default suffix for all GROMACS programs is set to `_d`.
 *   `-DGMX_GPU=ON` - Add in order to build with [GPU](https://en.wikipedia.org/wiki/Graphics_processing_unit "wikipedia:Graphics processing unit") support.
-*   `-DGMX_MPI=ON` - Add to create a build able to run across multiple compute nodes. You will also need to have an [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface "wikipedia:Message Passing Interface") library such as [openmpi](https://www.archlinux.org/packages/?name=openmpi) or [mpich](https://aur.archlinux.org/packages/mpich/)<sup><small>AUR</small></sup>. If you do not need MPI support (_i.e._, you just run on a single computer), you do not need this flag. If you set this flag, the default suffix for all GROMACS programs is set to `_mpi`.
+*   `-DGMX_MPI=ON` - Add to create a build able to run across multiple compute nodes. You will also need to have an [MPI](https://en.wikipedia.org/wiki/Message_Passing_Interface "wikipedia:Message Passing Interface") library such as [openmpi](https://www.archlinux.org/packages/?name=openmpi) or [mpich](https://aur.archlinux.org/packages/mpich/). If you do not need MPI support (_i.e._, you just run on a single computer), you do not need this flag. If you set this flag, the default suffix for all GROMACS programs is set to `_mpi`.
 *   `-DGMX_SIMD=_xxx_` - GROMACS should detect the best [SIMD](https://en.wikipedia.org/wiki/simd "wikipedia:simd") instructions for your processor, so this flag should not be needed. But if you have some kind of compilation error, you can specify the SIMD level here. A list of available options for `_xxx_` is [here](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#simd-support).
 
 **Note:** If you are compiling on a Haswell processor, you may need to configure [makepkg](/index.php/Makepkg "Makepkg") to use `-march=native` to successfully compile with AVX2_256 instructions.
@@ -66,9 +66,9 @@ Some other packages that may increase performance are:
 *   [boost-libs](https://www.archlinux.org/packages/?name=boost-libs) - "An external [Boost library](https://en.wikipedia.org/wiki/Boost_(C%2B%2B_libraries) "wikipedia:Boost (C++ libraries)") can be used to provide better implementation support for smart pointers and exception handling." [[1]](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#optional-build-components)
 *   [lapack](https://www.archlinux.org/packages/?name=lapack) - "Hardware-optimized BLAS and LAPACK libraries are useful for a few of the GROMACS utilities focused on normal modes and matrix manipulation, but they do not provide any benefits for normal simulations." [[2]](http://www.gromacs.org/Documentation/Installation_Instructions_5.0#optional-build-components)
 
-**Tip:** An [FFTW](https://en.wikipedia.org/wiki/fftw "wikipedia:fftw") library with some GROMACS-specific enhancements is available in the [fftw-bettersimd](https://aur.archlinux.org/packages/fftw-bettersimd/)<sup><small>AUR</small></sup> package which can be used in place of the dependency [fftw](https://www.archlinux.org/packages/?name=fftw).
+**Tip:** An [FFTW](https://en.wikipedia.org/wiki/fftw "wikipedia:fftw") library with some GROMACS-specific enhancements is available in the [fftw-bettersimd](https://aur.archlinux.org/packages/fftw-bettersimd/) package which can be used in place of the dependency [fftw](https://www.archlinux.org/packages/?name=fftw).
 
-The [gromacs-git](https://aur.archlinux.org/packages/gromacs-git/)<sup><small>AUR</small></sup> package contains the latest development source, and should not be used in production.
+The [gromacs-git](https://aur.archlinux.org/packages/gromacs-git/) package contains the latest development source, and should not be used in production.
 
 ## Configuration
 
@@ -415,25 +415,25 @@ Now when you run _gmx pdb2gmx_ this solvent model should be available for the ap
 
 *   **libgmxcpp** — _a C++ toolkit used for reading in Gromacs files (.xtc and .ndx) for use in analyzing simulation results._
 
-	[https://github.com/wesbarnett/libgmxcpp](https://github.com/wesbarnett/libgmxcpp) || [libgmxcpp](https://aur.archlinux.org/packages/libgmxcpp/)<sup><small>AUR</small></sup>
+	[https://github.com/wesbarnett/libgmxcpp](https://github.com/wesbarnett/libgmxcpp) || [libgmxcpp](https://aur.archlinux.org/packages/libgmxcpp/)
 
 *   **mdanalysis** — _an object-oriented python toolkit to analyze molecular dynamics trajectories in many popular formats._
 
-	[http://www.mdanalysis.org](http://www.mdanalysis.org) || [python2-mdanalysis](https://aur.archlinux.org/packages/python2-mdanalysis/)<sup><small>AUR</small></sup>
+	[http://www.mdanalysis.org](http://www.mdanalysis.org) || [python2-mdanalysis](https://aur.archlinux.org/packages/python2-mdanalysis/)
 
 *   **MDTraj** — _a modern, open library for the analysis of molecular dynamics trajectories._
 
-	[http://mdtraj.org/latest/](http://mdtraj.org/latest/) || [python-mdtraj](https://aur.archlinux.org/packages/python-mdtraj/)<sup><small>AUR</small></sup>
+	[http://mdtraj.org/latest/](http://mdtraj.org/latest/) || [python-mdtraj](https://aur.archlinux.org/packages/python-mdtraj/)
 
 *   **xdrfile** — _allows to read GROMACS trr and xtc files and also to convert from one format to another._
 
-	[http://gromacs.org](http://gromacs.org) || [xdrfile](https://aur.archlinux.org/packages/xdrfile/)<sup><small>AUR</small></sup>
+	[http://gromacs.org](http://gromacs.org) || [xdrfile](https://aur.archlinux.org/packages/xdrfile/)
 
 #### Free energy calculations
 
 *   **alchemical_analysis** — _an open tool implementing some recommended practices for analyzing alchemical free energy calculations._
 
-	[https://github.com/MobleyLab/alchemical-analysis](https://github.com/MobleyLab/alchemical-analysis) || [python2-alchemical-analysis](https://aur.archlinux.org/packages/python2-alchemical-analysis/)<sup><small>AUR</small></sup>
+	[https://github.com/MobleyLab/alchemical-analysis](https://github.com/MobleyLab/alchemical-analysis) || [python2-alchemical-analysis](https://aur.archlinux.org/packages/python2-alchemical-analysis/)
 
 #### Structure creation
 
@@ -451,7 +451,7 @@ Now when you run _gmx pdb2gmx_ this solvent model should be available for the ap
 
 *   **vmd** — _molecular visualization program for displaying, animating, and analyzing large biomolecular systems using 3-D graphics and built-in scripting._
 
-	[http://www.ks.uiuc.edu/Research/vmd/](http://www.ks.uiuc.edu/Research/vmd/) || [vmd](https://aur.archlinux.org/packages/vmd/)<sup><small>AUR</small></sup>
+	[http://www.ks.uiuc.edu/Research/vmd/](http://www.ks.uiuc.edu/Research/vmd/) || [vmd](https://aur.archlinux.org/packages/vmd/)
 
 #### Wrappers
 

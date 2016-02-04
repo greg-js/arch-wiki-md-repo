@@ -97,7 +97,7 @@ You can use [scantailor](https://www.archlinux.org/packages/?name=scantailor) to
 
 ### Make DjVu from Images
 
-There is a useful script [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/)<sup><small>AUR</small></sup>.
+There is a useful script [img2djvu-git](https://aur.archlinux.org/packages/img2djvu-git/).
 
 ```
  img2djvu -c1 -d600 -v1 ./out

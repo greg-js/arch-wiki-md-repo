@@ -14,7 +14,7 @@
 
 ## Installation
 
-Install the [hadoop](https://aur.archlinux.org/packages/hadoop/)<sup><small>AUR</small></sup> package which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install the [hadoop](https://aur.archlinux.org/packages/hadoop/) package which is available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ## Configuration
 

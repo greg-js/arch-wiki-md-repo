@@ -55,7 +55,7 @@ Clover is a UEFI Boot Manager which provides native resolution GUI for booting E
 
 **Warning:** ELILO upstream has clarified that it is no longer in active development, meaning no new features will be added and only bug-fixes are released. See [https://sourceforge.net/mailarchive/message.php?msg_id=31524008](https://sourceforge.net/mailarchive/message.php?msg_id=31524008) for more information. ELILO is not officially supported by Arch developers.
 
-ELILO is the UEFI version of the BIOS-only [LILO](/index.php/LILO "LILO"). Its config file `elilo.conf` is similar to [LILO](/index.php/LILO "LILO")'s config file. Upstream provided compiled binaries are available at [http://sourceforge.net/projects/elilo/](http://sourceforge.net/projects/elilo/) and an AUR package at [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/)<sup><small>AUR</small></sup>.
+ELILO is the UEFI version of the BIOS-only [LILO](/index.php/LILO "LILO"). Its config file `elilo.conf` is similar to [LILO](/index.php/LILO "LILO")'s config file. Upstream provided compiled binaries are available at [http://sourceforge.net/projects/elilo/](http://sourceforge.net/projects/elilo/) and an AUR package at [elilo-efi](https://aur.archlinux.org/packages/elilo-efi/).
 
 ## BIOS-only boot loaders
 

@@ -20,7 +20,7 @@ Installation and basic usage of Intel® C++ Composer XE (formerly Intel® C++ Co
 
 ## Setup and installation
 
-[intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/intel-parallel-studio-xe)]</sup> are available in the [AUR](/index.php/AUR "AUR"). To build the package, one needs a license file which is free for personal and for non-commercial use. The requisite license file is emailed to users upon [[registration](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=)] and should be copied into the $startdir prior to running makepkg. The current PKGBUILD assembles 7 or 8 packages:
+[intel-parallel-studio-xe](https://aur.archlinux.org/packages/intel-parallel-studio-xe/) are available in the [AUR](/index.php/AUR "AUR"). To build the package, one needs a license file which is free for personal and for non-commercial use. The requisite license file is emailed to users upon [[registration](https://registrationcenter.intel.com/RegCenter/AutoGen.aspx?ProductID=1517&AccountID=&EmailID=&ProgramID=&RequestDt=&rm=NCOM&lang=)] and should be copied into the $startdir prior to running makepkg. The current PKGBUILD assembles 7 or 8 packages:
 
 *   **intel-compiler-base** - Intel C/C++ compiler and base libs
 *   **intel-fortran-compiler** - Intel fortran compiler and base libs (only Parallel Studio XE)
@@ -149,8 +149,8 @@ In the following table we report a list of packages from the officials repositor
 | **bzip2** | Unsuccessful | There is some problem with the compiler flags |
 | **mplayer** | Out of date | It do not recognize the Intel compiler |
 | **optipng** | OK | Works with the [Method 1](#Method_1). Comment out LD=xild in makepkg.conf |
-| **python-numpy** | OK | We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/)<sup><small>AUR</small></sup> |
-| **python-scipy** | OK | We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/)<sup><small>AUR</small></sup> |
+| **python-numpy** | OK | We must edit the PKGBUILD. [python-numpy-mkl](https://aur.archlinux.org/packages/python-numpy-mkl/) |
+| **python-scipy** | OK | We must edit the PKGBUILD. [python-scipy-mkl](https://aur.archlinux.org/packages/python-scipy-mkl/) |
 | **Qt** | OK | We must add the option _-platform linux-icc-64 (or 32)_ in the configure command |
 | **systemd** | Fail | undefined reference to `server_dispatch_message' |
 

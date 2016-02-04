@@ -22,8 +22,8 @@ _"Google Earth allows you to travel the world through a virtual globe and view s
 
 If on 64-bit, enable [multilib](/index.php/Multilib "Multilib"). Google Earth is available in the [AUR](/index.php/AUR "AUR"):
 
-*   [google-earth](https://aur.archlinux.org/packages/google-earth/)<sup><small>AUR</small></sup> - Latest version
-*   [google-earth6](https://aur.archlinux.org/packages/google-earth6/)<sup><small>AUR</small></sup> - Legacy version (often more stable)
+*   [google-earth](https://aur.archlinux.org/packages/google-earth/) - Latest version
+*   [google-earth6](https://aur.archlinux.org/packages/google-earth6/) - Legacy version (often more stable)
 
 ## Troubleshooting
 
@@ -81,7 +81,7 @@ $ rm -f ~/.googleearth/Cache/cookies ~/.googleearth/instance-running-lock
 
 There have been numerous reports [[1]](http://productforums.google.com/d/msg/earth/548PQIT8bKI/rbpVsbMawwIJ) [[2]](http://productforums.google.com/forum/#!msg/earth/_h4t6SpY_II/6O_DTry49pgJ) [[3]](http://productforums.google.com/d/msg/earth/tZfKSs2AaZc/r_rBDl5djIMJ) on this in the [Google Earth forums](https://productforums.google.com/forum/#!categories/earth/linux) with varying solutions.
 
-If setting the `_attempt_fix` variable on top of the [google-earth](https://aur.archlinux.org/packages/google-earth/)<sup><small>AUR</small></sup> [PKGBUILD](https://aur.archlinux.org/packages/go/google-earth/PKGBUILD) does not help, fall back to [google-earth6](https://aur.archlinux.org/packages/google-earth6/)<sup><small>AUR</small></sup>.
+If setting the `_attempt_fix` variable on top of the [google-earth](https://aur.archlinux.org/packages/google-earth/) [PKGBUILD](https://aur.archlinux.org/packages/go/google-earth/PKGBUILD) does not help, fall back to [google-earth6](https://aur.archlinux.org/packages/google-earth6/).
 
 ### Graphical corruption
 
@@ -96,7 +96,7 @@ Imagery now displays for Linux users running specific families of Intel GPUs.
 
 ```
 
-The solution is to use the legacy [google-earth6](https://aur.archlinux.org/packages/google-earth6/)<sup><small>AUR</small></sup>.
+The solution is to use the legacy [google-earth6](https://aur.archlinux.org/packages/google-earth6/).
 
 ### Excessive memory use
 

@@ -22,7 +22,7 @@ PHC is an acpi-cpufreq patch built with the purpose of enabling undervolting on 
 
 ## Alternative to PHC
 
-[cpupowerd](https://aur.archlinux.org/packages/cpupowerd/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cpupowerd)]</sup> is a userland solution to replace the in-kernel cpufreq governors and also enable undervolting, only on AMD processors. Like PHC, it requires the user to find safe voltages.
+[cpupowerd](https://aur.archlinux.org/packages/cpupowerd/) is a userland solution to replace the in-kernel cpufreq governors and also enable undervolting, only on AMD processors. Like PHC, it requires the user to find safe voltages.
 
 ## Supported CPUs
 
@@ -45,7 +45,7 @@ PHC supports the following processor families:
 
 ## Installing the necessary packages
 
-Install from the [AUR](/index.php/AUR "AUR") either [phc-intel](https://aur.archlinux.org/packages/phc-intel/)<sup><small>AUR</small></sup> if you have an Intel processor, or [phc-k8](https://aur.archlinux.org/packages/phc-k8/)<sup><small>AUR</small></sup> if you have an AMD-K8-series one.
+Install from the [AUR](/index.php/AUR "AUR") either [phc-intel](https://aur.archlinux.org/packages/phc-intel/) if you have an Intel processor, or [phc-k8](https://aur.archlinux.org/packages/phc-k8/) if you have an AMD-K8-series one.
 
 Next you need to compile the module for your kernel; this will also be necessary after a kernel update (but see the section below on using DKMS to automate this).
 
@@ -69,11 +69,11 @@ depending on processor.
 
 If the [_acpi-cpufreq_](/index.php/CPU_frequency_scaling#CPU_frequency_driver "CPU frequency scaling") module is not already being loaded at boot, create the appropriate file in `/etc/modules-load.d/`. See [this](/index.php/Kernel_modules#Loading "Kernel modules") wiki article for more information.
 
-**Note:** In the case of [phc-intel](https://aur.archlinux.org/packages/phc-intel/)<sup><small>AUR</small></sup>, the _acpi-cpufreq_ module is automatically loaded by `/usr/lib/modprobe.d/phc-intel.conf`.
+**Note:** In the case of [phc-intel](https://aur.archlinux.org/packages/phc-intel/), the _acpi-cpufreq_ module is automatically loaded by `/usr/lib/modprobe.d/phc-intel.conf`.
 
 ### Automatic module generation with DKMS
 
-The [dkms-phc-intel](https://aur.archlinux.org/packages/dkms-phc-intel/)<sup><small>AUR</small></sup> package uses DKMS to automatically update the module after a kernel update. This is done at shutdown time to ensure that the kernel and kernel-headers are in sync (which is not necessarily the case during a system upgrade, depending on the order at which updates are installed).
+The [dkms-phc-intel](https://aur.archlinux.org/packages/dkms-phc-intel/) package uses DKMS to automatically update the module after a kernel update. This is done at shutdown time to ensure that the kernel and kernel-headers are in sync (which is not necessarily the case during a system upgrade, depending on the order at which updates are installed).
 
 To enable the systemd service, type:
 
@@ -86,9 +86,9 @@ To enable the systemd service, type:
 
 ### Finding safe low voltages
 
-To automatically find the best voltages, you can use the [mprime-phc-setup](https://bbs.archlinux.org/viewtopic.php?pid=1141702#p1141702) script ([source-code](https://bitbucket.org/stqn/shell-tools/src/)). Just copy the code into a text file, chmod +x it to make it executable and run it. You need to install [mprime](https://aur.archlinux.org/packages/mprime/)<sup><small>AUR</small></sup> or [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/)<sup><small>AUR</small></sup> first (it is used to check that the CPU is stable). This script has not been tested on many systems yet, but should be safe.
+To automatically find the best voltages, you can use the [mprime-phc-setup](https://bbs.archlinux.org/viewtopic.php?pid=1141702#p1141702) script ([source-code](https://bitbucket.org/stqn/shell-tools/src/)). Just copy the code into a text file, chmod +x it to make it executable and run it. You need to install [mprime](https://aur.archlinux.org/packages/mprime/) or [mprime-bin](https://aur.archlinux.org/packages/mprime-bin/) first (it is used to check that the CPU is stable). This script has not been tested on many systems yet, but should be safe.
 
-You can also try [linux-phc-optimize](https://aur.archlinux.org/packages/linux-phc-optimize/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-phc-optimize)]</sup>, although it has produced unsafe vids on [some setups](https://bbs.archlinux.org/viewtopic.php?pid=1044323#p1044323). The script progressively lowers the values until the system crashes, and adds two to the values for stability. Because the system will crash, do not do anything else during the tests. Run it once for each value, then check `/usr/share/linux-phc-optimize/phc_tweaked_vids`.
+You can also try [linux-phc-optimize](https://aur.archlinux.org/packages/linux-phc-optimize/), although it has produced unsafe vids on [some setups](https://bbs.archlinux.org/viewtopic.php?pid=1044323#p1044323). The script progressively lowers the values until the system crashes, and adds two to the values for stability. Because the system will crash, do not do anything else during the tests. Run it once for each value, then check `/usr/share/linux-phc-optimize/phc_tweaked_vids`.
 
 ### Editing the configuration
 
@@ -138,7 +138,7 @@ You can easily check whether PHC is working or not by looking at the cpu voltage
 
 ### System stability
 
-To make sure that your undervolted CPU is stable, you can run long sessions of [mprime](https://aur.archlinux.org/packages/mprime/)<sup><small>AUR</small></sup> and/or [linpack](https://aur.archlinux.org/packages/linpack/)<sup><small>AUR</small></sup> (Intel-only).
+To make sure that your undervolted CPU is stable, you can run long sessions of [mprime](https://aur.archlinux.org/packages/mprime/) and/or [linpack](https://aur.archlinux.org/packages/linpack/) (Intel-only).
 
 ## Links
 

@@ -53,7 +53,7 @@ No special configuration is necessary to get this to work.
 
 ### Getting wireless firmware
 
-In order for the Wi-Fi chipset to work, you need to get the firmware for it. You can just copy it from another b43-enabled Arch, extract it from Broadcom's driver using [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter), or get the firmware through the [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup> package available in the [AUR](/index.php/AUR "AUR"). In the end, you should have a folder named `b43` with a lot of `.fw` files in it.
+In order for the Wi-Fi chipset to work, you need to get the firmware for it. You can just copy it from another b43-enabled Arch, extract it from Broadcom's driver using [b43-fwcutter](https://www.archlinux.org/packages/?name=b43-fwcutter), or get the firmware through the [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) package available in the [AUR](/index.php/AUR "AUR"). In the end, you should have a folder named `b43` with a lot of `.fw` files in it.
 
 ### USB Tethering
 
@@ -87,7 +87,7 @@ Run the installation wizard. When asked to partition your hard drive, create a s
 
 After the installation has completed, directly copy the Wi-Fi firmware to the installed system to `/tmp/install/usr/lib/firmware/`.
 
-Alternatively, install [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") to improve Wi-Fi.
+Alternatively, install [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) from the [AUR](/index.php/AUR "AUR") to improve Wi-Fi.
 
 ### Bootloader
 
@@ -122,9 +122,9 @@ The Macbook Pro 10,x comes with the Broadcom BCM4331 Wireless Chipset.
 
 There are two major options to get this chipset working in Arch Linux:
 
-The [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup> package contains the open-source, reverse-engineered firmware for the chipset.
+The [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) package contains the open-source, reverse-engineered firmware for the chipset.
 
-The [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> and [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup> packages ship with the propriety, restricted-license drivers for the chipset.
+The [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) and [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/) packages ship with the propriety, restricted-license drivers for the chipset.
 
 See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for more information.
 
@@ -134,7 +134,7 @@ See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for mo
 
 #### General Notes
 
-The Laptop comes with an nVidia and an Intel chip. The Nouveau [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), the intel [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (from 3.6-rc5) and proprietary nvidia (from 302.17) drivers work. You can install the nvidia driver through [nvidia](https://www.archlinux.org/packages/?name=nvidia) or the AUR package [nvidia-beta-all](https://aur.archlinux.org/packages/nvidia-beta-all/)<sup><small>AUR</small></sup>.
+The Laptop comes with an nVidia and an Intel chip. The Nouveau [xf86-video-nouveau](https://www.archlinux.org/packages/?name=xf86-video-nouveau), the intel [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-intel) (from 3.6-rc5) and proprietary nvidia (from 302.17) drivers work. You can install the nvidia driver through [nvidia](https://www.archlinux.org/packages/?name=nvidia) or the AUR package [nvidia-beta-all](https://aur.archlinux.org/packages/nvidia-beta-all/).
 
 **Note:** As of September, 2013 the current nvidia driver (325.15-5) does not work with the current 3.10 series kernels; X will die with an error about "Failed to allocate EVO core DMA push buffer" and leave you with a black screen (but able to SSH in to the machine). Your best current bet is to use a 3.9-series kernel and the older 319.32-series nvidia driver.
 
@@ -176,11 +176,11 @@ setpci -v -H1 -s 00:01.00 BRIDGE_CONTROL=0
 
 #### Switching to/from GPUs with gpu-switch
 
-You can switch the display output to and from the discrete or integrated intel GPU from _within_ Arch Linux with [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/)<sup><small>AUR</small></sup> if you are using the open-source `xf86-video-nouveau` and `xf86-video-intel` drivers.
+You can switch the display output to and from the discrete or integrated intel GPU from _within_ Arch Linux with [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/) if you are using the open-source `xf86-video-nouveau` and `xf86-video-intel` drivers.
 
 **Installation**
 
-You can install [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/)<sup><small>AUR</small></sup> from the AUR.
+You can install [gpu-switch](https://aur.archlinux.org/packages/gpu-switch/) from the AUR.
 
 Then, just run the script as root.
 
@@ -229,11 +229,11 @@ This is useful if you have opted to have an Arch Linux-only installation and can
 
 ##### Keeping the discrete GPU off at boot
 
-If you want to keep the discrete GPU off at boot, see [systemd-vgaswitcheroo-units](https://aur.archlinux.org/packages/systemd-vgaswitcheroo-units/)<sup><small>AUR</small></sup>.
+If you want to keep the discrete GPU off at boot, see [systemd-vgaswitcheroo-units](https://aur.archlinux.org/packages/systemd-vgaswitcheroo-units/).
 
 #### Graphic artifacting under b43-firmware
 
-While on integrated graphics with the b43-firmware package, you might encounter moderate to severe graphic artifacting that appears to be correlated to wireless network traffic. (disconnected->no artifacting, connected->periodic artifacting, large transfer->severe artifacting/unusuable) This can be resolved by removing/blacklisting [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/)<sup><small>AUR</small></sup> and using either [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/)<sup><small>AUR</small></sup>.
+While on integrated graphics with the b43-firmware package, you might encounter moderate to severe graphic artifacting that appears to be correlated to wireless network traffic. (disconnected->no artifacting, connected->periodic artifacting, large transfer->severe artifacting/unusuable) This can be resolved by removing/blacklisting [b43-firmware](https://aur.archlinux.org/packages/b43-firmware/) and using either [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or [broadcom-wl-dkms](https://aur.archlinux.org/packages/broadcom-wl-dkms/).
 
 ### Sound
 
@@ -243,7 +243,7 @@ On the MacBookPro10,2 you may need to use the 'snd_hda_intel' driver with the mo
 
 ### Touchpad
 
-While [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) will work, the integrated button of the touchpad may cause issues. Using the [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/)<sup><small>AUR</small></sup> driver, with a tweaked configuration should lead to a better end result:
+While [xf86-input-synaptics](https://www.archlinux.org/packages/?name=xf86-input-synaptics) will work, the integrated button of the touchpad may cause issues. Using the [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/) driver, with a tweaked configuration should lead to a better end result:
 
 The following config uses a single touch for left, two for middle, three for right:
 
@@ -276,9 +276,9 @@ To use natural scrolling, also add the following inside this section:
 
 ```
 
-For more configurations, check the document of [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/)<sup><small>AUR</small></sup>.
+For more configurations, check the document of [xf86-input-mtrack-git](https://aur.archlinux.org/packages/xf86-input-mtrack-git/).
 
-To disable the trackpad when typing, install the [dispad-git](https://aur.archlinux.org/packages/dispad-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/dispad-git)]</sup> utility.
+To disable the trackpad when typing, install the [dispad-git](https://aur.archlinux.org/packages/dispad-git/) utility.
 
 ## What does not work (early August 2013, 3.10.3-1)
 

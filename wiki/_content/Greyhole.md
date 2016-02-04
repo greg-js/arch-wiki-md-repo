@@ -13,7 +13,7 @@
 
 ### Install from AUR
 
-Install [greyhole](https://aur.archlinux.org/packages/greyhole/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/greyhole)]</sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+Install [greyhole](https://aur.archlinux.org/packages/greyhole/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
 
 ### Manual Installation
 

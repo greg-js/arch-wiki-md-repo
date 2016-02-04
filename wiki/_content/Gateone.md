@@ -26,7 +26,7 @@ This guide covers Gate One setup behind [nginx](/index.php/Nginx "Nginx") as rev
 
 ## Installation
 
-Gate One is available in the [AUR](/index.php/AUR "AUR") via [gateone-git](https://aur.archlinux.org/packages/gateone-git/)<sup><small>AUR</small></sup>.
+Gate One is available in the [AUR](/index.php/AUR "AUR") via [gateone-git](https://aur.archlinux.org/packages/gateone-git/).
 
 ### Optional dependencies
 
@@ -148,7 +148,7 @@ None is no authentication and allows anonymous access. Sessions will be tied to 
 
 #### PAM
 
-PAM authentication can be used to authenticate with local users, but PAM can do much more. For example, you can authenticate against htpasswd files. Requires [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/)<sup><small>AUR</small></sup>.
+PAM authentication can be used to authenticate with local users, but PAM can do much more. For example, you can authenticate against htpasswd files. Requires [libpam_pwdfile](https://aur.archlinux.org/packages/libpam_pwdfile/).
 
  `/etc/gateone/conf.d/20authentication.conf` 
 

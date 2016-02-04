@@ -19,10 +19,10 @@ There are different kinds of portable audio players around:
     *   All iRiver players with "Manager Mode" firmware should follow the instructions here: [IRiver iFP Audio Players](/index.php/IRiver_iFP_Audio_Players "IRiver iFP Audio Players")
 
 *   Creative
-    *   Creative players, probably all that do not support USB storage, should be supported by [gnomad2](https://aur.archlinux.org/packages/gnomad2/)<sup><small>AUR</small></sup>.
+    *   Creative players, probably all that do not support USB storage, should be supported by [gnomad2](https://aur.archlinux.org/packages/gnomad2/).
 
 *   Sony
-    *   Sony Walkman MP3 players released prior to mid-2007 require Sony's proprietary "SonicStage" software to transfer files. Unfortunately, this software is only available for Windows. However, you are better off using the [JSymphonic](http://symphonic.sourceforge.net/page.php?4) open source software anyway, as you will have more control over your player. JSymphonic is provided by [symphonic](https://aur.archlinux.org/packages/symphonic/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/symphonic)]</sup>.
+    *   Sony Walkman MP3 players released prior to mid-2007 require Sony's proprietary "SonicStage" software to transfer files. Unfortunately, this software is only available for Windows. However, you are better off using the [JSymphonic](http://symphonic.sourceforge.net/page.php?4) open source software anyway, as you will have more control over your player. JSymphonic is provided by [symphonic](https://aur.archlinux.org/packages/symphonic/).
 
 ### Players accessible as USB storage
 

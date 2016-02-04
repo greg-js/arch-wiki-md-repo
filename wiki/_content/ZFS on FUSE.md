@@ -17,7 +17,7 @@ Some of the capabilities of version 0.7.0 (as of Feb 2012) are limited compared 
 
 ## Installation
 
-[Install](/index.php/Install "Install") [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/zfs-fuse)]</sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [zfs-fuse](https://aur.archlinux.org/packages/zfs-fuse/) from the [AUR](/index.php/AUR "AUR").
 
 Read the messages after installation and be sure to edit the configuration files as per your needs.
 

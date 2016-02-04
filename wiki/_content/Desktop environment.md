@@ -70,15 +70,15 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop")** — Budgie Desktop is a lightweight Desktop Environment designed with the modern user in mind, it focuses on simplicity and elegance. Also it resembles the Chrome/Chromium OS desktop layout.
 
-	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup>
+	[https://solus-project.com/budgie/](https://solus-project.com/budgie/) || [budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)
 
 *   **[Common Desktop Environment](/index.php/Common_Desktop_Environment "Common Desktop Environment")** — The Common Desktop Environment (CDE) is a desktop environment for Unix and OpenVMS, based on the Motif widget toolkit. It was part of the UNIX98 Workstation Product Standard, and was long the "classic" Unix desktop associated with commercial Unix workstations.
 
-	[http://sourceforge.net/projects/cdesktopenv/](http://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)<sup><small>AUR</small></sup>
+	[http://sourceforge.net/projects/cdesktopenv/](http://sourceforge.net/projects/cdesktopenv/) || [cdesktopenv](https://aur.archlinux.org/packages/cdesktopenv/)
 
 *   **[EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment")** — The "Equinox Desktop Environment" is a DE designed to be simple, extremely light-weight and fast.
 
-	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)<sup><small>AUR</small></sup>
+	[http://equinox-project.org/](http://equinox-project.org/) || [ede](https://aur.archlinux.org/packages/ede/)
 
 *   **GNUstep** — GNUstep is a free, object-oriented, cross-platform development environment that strives for simplicity and elegance.
 
@@ -86,23 +86,23 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Hawaii](/index.php/Hawaii "Hawaii")** — Hawaii is a lightweight, coherent and fast desktop environment that relies on Qt 5, QtQuick and Wayland and is designed to offer the best UX for the device where it is running.
 
-	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/)<sup><small>AUR</small></sup>
+	[http://www.maui-project.org/](http://www.maui-project.org/) || [hawaii-meta-git](https://aur.archlinux.org/packages/hawaii-meta-git/)
 
 *   **[Lumina](/index.php/Lumina "Lumina")** — Lumina is a lightweight desktop environment written in Qt 5 for FreeBSD that uses Fluxbox for window management.
 
-	[http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)<sup><small>AUR</small></sup>
+	[http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/](http://blog.pcbsd.org/2014/04/quick-lumina-desktop-faq/) || [lumina-desktop-git](https://aur.archlinux.org/packages/lumina-desktop-git/)
 
 *   **[Moksha](/index.php/Moksha "Moksha")** — Fork of Enlightenment currently used as default desktop environment in Ubuntu-based Bodhi Linux.
 
-	[http://mokshadesktop.org/](http://mokshadesktop.org/) || [moksha](https://aur.archlinux.org/packages/moksha/)<sup><small>AUR</small></sup>
+	[http://mokshadesktop.org/](http://mokshadesktop.org/) || [moksha](https://aur.archlinux.org/packages/moksha/)
 
 *   **[Pantheon](/index.php/Pantheon "Pantheon")** — Pantheon is the default desktop environment originally created for the elementary OS distribution. It is written from scratch using Vala and the GTK3 toolkit. With regards to usability and appearance, the desktop has some similarities with GNOME Shell and Mac OS X.
 
-	[http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)<sup><small>AUR</small></sup>
+	[http://elementaryos.org/](http://elementaryos.org/) || [pantheon-session-bzr](https://aur.archlinux.org/packages/pantheon-session-bzr/)
 
 *   **[Papyros shell](/index.php/Papyros_shell "Papyros shell")** — Papyros shell is a modern desktop shell which adheres to Google's Material Design guidelines.
 
-	[http://papyros.io/](http://papyros.io/) || [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/)<sup><small>AUR</small></sup>
+	[http://papyros.io/](http://papyros.io/) || [papyros-shell](https://aur.archlinux.org/packages/papyros-shell/)
 
 *   **ROX** — ROX is a fast, user friendly desktop which makes extensive use of drag-and-drop. The interface revolves around the file manager, following the traditional UNIX view that 'everything is a file' rather than trying to hide the filesystem beneath start menus, wizards, or druids. The aim is to make a system that is well designed and clearly presented. The ROX style favors using several small programs together instead of creating all-in-one mega-applications.
 
@@ -110,7 +110,7 @@ Prior to installing a desktop environment, a functional X server installation is
 
 *   **[Sugar](/index.php/Sugar "Sugar")** — The Sugar Learning Platform is a computer environment composed of Activities designed to help children from 5 to 12 years of age learn together through rich-media expression. Sugar is the core component of a worldwide effort to provide every child with the opportunity for a quality education — it is currently used by nearly one-million children worldwide speaking 25 languages in over 40 countries. Sugar provides the means to help people lead fulfilling lives through access to a quality education that is currently missed by so many.
 
-	[http://wiki.sugarlabs.org/](http://wiki.sugarlabs.org/) || [sugar](https://aur.archlinux.org/packages/sugar/)<sup><small>AUR</small></sup>
+	[http://wiki.sugarlabs.org/](http://wiki.sugarlabs.org/) || [sugar](https://aur.archlinux.org/packages/sugar/)
 
 *   **[Trinity](/index.php/Trinity "Trinity")** — The Trinity Desktop Environment (TDE) project is a computer desktop environment for Unix-like operating systems with a primary goal of retaining the overall KDE 3.5 computing style.
 
@@ -130,8 +130,8 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 | Desktop environment | Widget toolkit | Window manager | Taskbar | Terminal emulator | File manager | Calculator | Text editor | Image viewer | Media player | Web browser | Display manager |
 | [Budgie Desktop](/index.php/Budgie_Desktop "Budgie Desktop") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | budgie-wm
-[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup> | budgie-panel
-[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/)<sup><small>AUR</small></sup> | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
+[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) | budgie-panel
+[budgie-desktop](https://aur.archlinux.org/packages/budgie-desktop/) | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
@@ -166,14 +166,14 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui) |
 | [EDE](/index.php/Equinox_Desktop_Environment "Equinox Desktop Environment") | [FLTK](http://www.fltk.org/)
 [fltk](https://www.archlinux.org/packages/?name=fltk) | [PekWM](/index.php/PekWM "PekWM")
-[ede](https://aur.archlinux.org/packages/ede/)<sup><small>AUR</small></sup> | EDE Panel
-[ede](https://aur.archlinux.org/packages/ede/)<sup><small>AUR</small></sup> | [XTerm](/index.php/Xterm "Xterm")
+[ede](https://aur.archlinux.org/packages/ede/) | EDE Panel
+[ede](https://aur.archlinux.org/packages/ede/) | [XTerm](/index.php/Xterm "Xterm")
 [xterm](https://www.archlinux.org/packages/?name=xterm) | Fluff
-[fluff](https://aur.archlinux.org/packages/fluff/)<sup><small>AUR</small></sup> | Calculator
-[ede](https://aur.archlinux.org/packages/ede/)<sup><small>AUR</small></sup> | Editor
-[fltk-editor](https://aur.archlinux.org/packages/fltk-editor/)<sup><small>AUR</small></sup> | Image Viewer
-[ede](https://aur.archlinux.org/packages/ede/)<sup><small>AUR</small></sup> | flmusic
-[flmusic](https://aur.archlinux.org/packages/flmusic/)<sup><small>AUR</small></sup> | [Dillo](/index.php/Dillo "Dillo")
+[fluff](https://aur.archlinux.org/packages/fluff/) | Calculator
+[ede](https://aur.archlinux.org/packages/ede/) | Editor
+[fltk-editor](https://aur.archlinux.org/packages/fltk-editor/) | Image Viewer
+[ede](https://aur.archlinux.org/packages/ede/) | flmusic
+[flmusic](https://aur.archlinux.org/packages/flmusic/) | [Dillo](/index.php/Dillo "Dillo")
 [dillo](https://www.archlinux.org/packages/?name=dillo) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [Enlightenment](/index.php/Enlightenment "Enlightenment") | [Elementary](https://www.enlightenment.org/about-efl)
@@ -182,11 +182,11 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | [Terminology](https://www.enlightenment.org/about-terminology)
 [terminology](https://www.archlinux.org/packages/?name=terminology) | Enligthenment
 [enlightenment](https://www.archlinux.org/packages/?name=enlightenment) | Equate
-[equate-git](https://aur.archlinux.org/packages/equate-git/)<sup><small>AUR</small></sup> | Ecrire
-[ecrire-git](https://aur.archlinux.org/packages/ecrire-git/)<sup><small>AUR</small></sup> | Ephoto
-[ephoto-git](https://aur.archlinux.org/packages/ephoto-git/)<sup><small>AUR</small></sup> | [Rage](https://www.enlightenment.org/about-rage)
-[rage](https://aur.archlinux.org/packages/rage/)<sup><small>AUR</small></sup> | Elbow
-[elbow-git](https://aur.archlinux.org/packages/elbow-git/)<sup><small>AUR</small></sup> | [XDM](/index.php/XDM "XDM")
+[equate-git](https://aur.archlinux.org/packages/equate-git/) | Ecrire
+[ecrire-git](https://aur.archlinux.org/packages/ecrire-git/) | Ephoto
+[ephoto-git](https://aur.archlinux.org/packages/ephoto-git/) | [Rage](https://www.enlightenment.org/about-rage)
+[rage](https://aur.archlinux.org/packages/rage/) | Elbow
+[elbow-git](https://aur.archlinux.org/packages/elbow-git/) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [GNOME](/index.php/GNOME "GNOME") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Mutter](https://en.wikipedia.org/wiki/Mutter_(window_manager) "wikipedia:Mutter (window manager)")
@@ -216,23 +216,23 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [gnustep-core](https://www.archlinux.org/groups/x86_64/gnustep-core/) | [Window Maker](/index.php/Window_Maker "Window Maker")
 [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Window Maker](/index.php/Window_Maker "Window Maker")
 [windowmaker](https://www.archlinux.org/packages/?name=windowmaker) | [Terminal](http://gap.nongnu.org/terminal/index.html)
-[gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnustep-terminal)]</sup> | [GWorkspace](http://www.gnustep.org/experience/GWorkspace.html)
-[gworkspace](https://aur.archlinux.org/packages/gworkspace/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gworkspace)]</sup> | [Calculator](http://www.gnustep.org/experience/examples.html)
-[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnustep-examples)]</sup> | [Ink](http://www.gnustep.org/experience/examples.html)
-[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gnustep-examples)]</sup> | [LaternaMagica](http://gap.nongnu.org/laternamagica/index.html)
-[laternamagica](https://aur.archlinux.org/packages/laternamagica/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/laternamagica)]</sup> | [Cynthiune](http://gap.nongnu.org/cynthiune/index.html)
-[cynthiune](https://aur.archlinux.org/packages/cynthiune/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cynthiune)]</sup> | [SWK Browser](http://wiki.gnustep.org/index.php/SimpleWebKit)
-[swkbrowser-svn](https://aur.archlinux.org/packages/swkbrowser-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/swkbrowser-svn)]</sup> | [XDM](/index.php/XDM "XDM")
+[gnustep-terminal](https://aur.archlinux.org/packages/gnustep-terminal/) | [GWorkspace](http://www.gnustep.org/experience/GWorkspace.html)
+[gworkspace](https://aur.archlinux.org/packages/gworkspace/) | [Calculator](http://www.gnustep.org/experience/examples.html)
+[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [Ink](http://www.gnustep.org/experience/examples.html)
+[gnustep-examples](https://aur.archlinux.org/packages/gnustep-examples/) | [LaternaMagica](http://gap.nongnu.org/laternamagica/index.html)
+[laternamagica](https://aur.archlinux.org/packages/laternamagica/) | [Cynthiune](http://gap.nongnu.org/cynthiune/index.html)
+[cynthiune](https://aur.archlinux.org/packages/cynthiune/) | [SWK Browser](http://wiki.gnustep.org/index.php/SimpleWebKit)
+[swkbrowser-svn](https://aur.archlinux.org/packages/swkbrowser-svn/) | [XDM](/index.php/XDM "XDM")
 [xorg-xdm](https://www.archlinux.org/packages/?name=xorg-xdm) |
 | [Hawaii](/index.php/Hawaii "Hawaii") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | Green Island
-[greenisland-git](https://aur.archlinux.org/packages/greenisland-git/)<sup><small>AUR</small></sup> | Hawaii Shell
-[hawaii-shell-git](https://aur.archlinux.org/packages/hawaii-shell-git/)<sup><small>AUR</small></sup> | Terminal
-[hawaii-terminal-git](https://aur.archlinux.org/packages/hawaii-terminal-git/)<sup><small>AUR</small></sup> | Swordfish
-[swordfish-git](https://aur.archlinux.org/packages/swordfish-git/)<sup><small>AUR</small></sup> | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/)<sup><small>AUR</small></sup> | JuffEd
-[juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/)<sup><small>AUR</small></sup> | EyeSight
-[eyesight-git](https://aur.archlinux.org/packages/eyesight-git/)<sup><small>AUR</small></sup> | SMPlayer
+[greenisland-git](https://aur.archlinux.org/packages/greenisland-git/) | Hawaii Shell
+[hawaii-shell-git](https://aur.archlinux.org/packages/hawaii-shell-git/) | Terminal
+[hawaii-terminal-git](https://aur.archlinux.org/packages/hawaii-terminal-git/) | Swordfish
+[swordfish-git](https://aur.archlinux.org/packages/swordfish-git/) | [SpeedCrunch](http://speedcrunch.org/)
+[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
+[juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | EyeSight
+[eyesight-git](https://aur.archlinux.org/packages/eyesight-git/) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
@@ -263,24 +263,24 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 | [LXDE](/index.php/LXDE "LXDE") (GTK+ 3) | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Openbox](/index.php/Openbox "Openbox")
 [openbox](https://www.archlinux.org/packages/?name=openbox) | [LXPanel](http://wiki.lxde.org/en/LXPanel)
-[lxpanel-gtk3](https://aur.archlinux.org/packages/lxpanel-gtk3/)<sup><small>AUR</small></sup> | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
-[lxterminal-gtk3](https://aur.archlinux.org/packages/lxterminal-gtk3/)<sup><small>AUR</small></sup> | [PCManFM](/index.php/PCManFM "PCManFM")
-[pcmanfm-gtk3](https://aur.archlinux.org/packages/pcmanfm-gtk3/)<sup><small>AUR</small></sup> | [Galculator](http://galculator.sourceforge.net/)
+[lxpanel-gtk3](https://aur.archlinux.org/packages/lxpanel-gtk3/) | [LXTerminal](http://wiki.lxde.org/en/LXTerminal)
+[lxterminal-gtk3](https://aur.archlinux.org/packages/lxterminal-gtk3/) | [PCManFM](/index.php/PCManFM "PCManFM")
+[pcmanfm-gtk3](https://aur.archlinux.org/packages/pcmanfm-gtk3/) | [Galculator](http://galculator.sourceforge.net/)
 [galculator](https://www.archlinux.org/packages/?name=galculator) | L3afpad
 [l3afpad](https://www.archlinux.org/packages/?name=l3afpad) | [GPicView](http://wiki.lxde.org/en/GPicView)
-[gpicview-gtk3](https://aur.archlinux.org/packages/gpicview-gtk3/)<sup><small>AUR</small></sup> | [LXMusic](http://wiki.lxde.org/en/LXMusic)
-[lxmusic-gtk3](https://aur.archlinux.org/packages/lxmusic-gtk3/)<sup><small>AUR</small></sup> | [Firefox](/index.php/Firefox "Firefox")
+[gpicview-gtk3](https://aur.archlinux.org/packages/gpicview-gtk3/) | [LXMusic](http://wiki.lxde.org/en/LXMusic)
+[lxmusic-gtk3](https://aur.archlinux.org/packages/lxmusic-gtk3/) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LXDM](/index.php/LXDM "LXDM")
-[lxdm-gtk3](https://aur.archlinux.org/packages/lxdm-gtk3/)<sup><small>AUR</small></sup> |
+[lxdm-gtk3](https://aur.archlinux.org/packages/lxdm-gtk3/) |
 | [LXQt](/index.php/LXQt "LXQt") | [Qt](/index.php/Qt "Qt") 5
 [qt5-base](https://www.archlinux.org/packages/?name=qt5-base) | [Openbox](/index.php/Openbox "Openbox")
 [openbox](https://www.archlinux.org/packages/?name=openbox) | LXQt Panel
 [lxqt-panel](https://www.archlinux.org/packages/?name=lxqt-panel) | QTerminal
-[qterminal](https://aur.archlinux.org/packages/qterminal/)<sup><small>AUR</small></sup> | PCManFM-Qt
+[qterminal](https://aur.archlinux.org/packages/qterminal/) | PCManFM-Qt
 [pcmanfm-qt](https://www.archlinux.org/packages/?name=pcmanfm-qt) | [SpeedCrunch](http://speedcrunch.org/)
-[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/)<sup><small>AUR</small></sup> | JuffEd
-[juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/)<sup><small>AUR</small></sup> | LxImage-Qt
-[lximage-qt](https://aur.archlinux.org/packages/lximage-qt/)<sup><small>AUR</small></sup> | SMPlayer
+[speedcrunch-git](https://aur.archlinux.org/packages/speedcrunch-git/) | JuffEd
+[juffed-qt5-git](https://aur.archlinux.org/packages/juffed-qt5-git/) | LxImage-Qt
+[lximage-qt](https://aur.archlinux.org/packages/lximage-qt/) | SMPlayer
 [smplayer](https://www.archlinux.org/packages/?name=smplayer) | QupZilla
 [qupzilla](https://www.archlinux.org/packages/?name=qupzilla) | SDDM
 [sddm](https://www.archlinux.org/packages/?name=sddm) |
@@ -310,24 +310,24 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Pantheon](/index.php/Pantheon "Pantheon") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Gala](https://launchpad.net/gala)
-[gala-bzr](https://aur.archlinux.org/packages/gala-bzr/)<sup><small>AUR</small></sup> | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
-[plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/)<sup><small>AUR</small></sup> | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
+[gala-bzr](https://aur.archlinux.org/packages/gala-bzr/) | [Plank](https://launchpad.net/plank)/[Wingpanel](https://launchpad.net/wingpanel)
+[plank](https://www.archlinux.org/packages/?name=plank) [wingpanel](https://aur.archlinux.org/packages/wingpanel/) | [Pantheon Terminal](https://launchpad.net/pantheon-terminal)
 [pantheon-terminal](https://www.archlinux.org/packages/?name=pantheon-terminal) | [Pantheon Files](https://launchpad.net/pantheon-files)
 [pantheon-files](https://www.archlinux.org/packages/?name=pantheon-files) | [Pantheon Calculator](https://launchpad.net/pantheon-calculator)
-[pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/)<sup><small>AUR</small></sup> | [Scratch](https://launchpad.net/scratch)
+[pantheon-calculator](https://aur.archlinux.org/packages/pantheon-calculator/) | [Scratch](https://launchpad.net/scratch)
 [scratch-text-editor](https://www.archlinux.org/packages/?name=scratch-text-editor) | [Pantheon Photos](https://launchpad.net/pantheon-photos)
 [pantheon-photos](https://www.archlinux.org/packages/?name=pantheon-photos) | [Audience](https://launchpad.net/audience)
 [audience](https://www.archlinux.org/packages/?name=audience) | [Midori](/index.php/Midori "Midori")
 [midori](https://www.archlinux.org/packages/?name=midori) | [LightDM](/index.php/LightDM "LightDM") Pantheon Greeter
-[lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/)<sup><small>AUR</small></sup> |
+[lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/) |
 | ROX | [GTK+](/index.php/GTK%2B "GTK+") 2
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) | [OroboROX](http://rox.sourceforge.net/desktop/OroboROX.html)
-[oroborox](https://aur.archlinux.org/packages/oroborox/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/oroborox)]</sup> | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
+[oroborox](https://aur.archlinux.org/packages/oroborox/) | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
 [rox](https://www.archlinux.org/packages/?name=rox) | [ROXTerm](http://roxterm.sourceforge.net/)
-[roxterm-gtk2](https://aur.archlinux.org/packages/roxterm-gtk2/)<sup><small>AUR</small></sup> | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
+[roxterm-gtk2](https://aur.archlinux.org/packages/roxterm-gtk2/) | [ROX-Filer](http://rox.sourceforge.net/desktop/ROX-Filer.html)
 [rox](https://www.archlinux.org/packages/?name=rox) | [Galculator](http://galculator.sourceforge.net/)
 [galculator-gtk2](https://www.archlinux.org/packages/?name=galculator-gtk2) | [Edit](http://rox.sourceforge.net/desktop/Edit.html)
-[rox-edit](https://aur.archlinux.org/packages/rox-edit/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rox-edit)]</sup> | [Picky](http://rox.sourceforge.net/desktop/picky.html)
+[rox-edit](https://aur.archlinux.org/packages/rox-edit/) | [Picky](http://rox.sourceforge.net/desktop/picky.html)
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=picky)</small> | [MusicBox](http://rox.sourceforge.net/desktop/Software/Audio_Video/MusicBox.html)
 <small>not packaged? [search in AUR](https://aur.archlinux.org/packages/?K=musicbox)</small> | [Midori](/index.php/Midori "Midori")
 [midori-gtk2](https://www.archlinux.org/packages/?name=midori-gtk2) | [XDM](/index.php/XDM "XDM")
@@ -335,19 +335,19 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 | [Sugar](/index.php/Sugar "Sugar") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Metacity](https://en.wikipedia.org/wiki/Metacity "wikipedia:Metacity")
 [metacity](https://www.archlinux.org/packages/?name=metacity) | Sugar
-[sugar](https://aur.archlinux.org/packages/sugar/)<sup><small>AUR</small></sup> | Terminal
-[sugar-activity-terminal](https://aur.archlinux.org/packages/sugar-activity-terminal/)<sup><small>AUR</small></sup> | Sugar Journal
-[sugar](https://aur.archlinux.org/packages/sugar/)<sup><small>AUR</small></sup> | Calculate
-[sugar-activity-calculate](https://aur.archlinux.org/packages/sugar-activity-calculate/)<sup><small>AUR</small></sup> | Write
-[sugar-activity-write](https://aur.archlinux.org/packages/sugar-activity-write/)<sup><small>AUR</small></sup> | ImageViewer
-[sugar-activity-imageviewer](https://aur.archlinux.org/packages/sugar-activity-imageviewer/)<sup><small>AUR</small></sup> | Jukebox
-[sugar-activity-jukebox](https://aur.archlinux.org/packages/sugar-activity-jukebox/)<sup><small>AUR</small></sup> | Browse
-[sugar-activity-browse](https://aur.archlinux.org/packages/sugar-activity-browse/)<sup><small>AUR</small></sup> | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
+[sugar](https://aur.archlinux.org/packages/sugar/) | Terminal
+[sugar-activity-terminal](https://aur.archlinux.org/packages/sugar-activity-terminal/) | Sugar Journal
+[sugar](https://aur.archlinux.org/packages/sugar/) | Calculate
+[sugar-activity-calculate](https://aur.archlinux.org/packages/sugar-activity-calculate/) | Write
+[sugar-activity-write](https://aur.archlinux.org/packages/sugar-activity-write/) | ImageViewer
+[sugar-activity-imageviewer](https://aur.archlinux.org/packages/sugar-activity-imageviewer/) | Jukebox
+[sugar-activity-jukebox](https://aur.archlinux.org/packages/sugar-activity-jukebox/) | Browse
+[sugar-activity-browse](https://aur.archlinux.org/packages/sugar-activity-browse/) | [LightDM](/index.php/LightDM "LightDM") GTK+ Greeter
 [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter) |
 | [Trinity](/index.php/Trinity "Trinity") | TQt | TWin | Kicker | Konsole | Konqueror | KCalc | Kwrite / Kate | Kuickshow | Kaffeine | Konqueror | TDM |
 | [Unity](/index.php/Unity "Unity") | [GTK+](/index.php/GTK%2B "GTK+") 3
 [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Compiz](/index.php/Compiz "Compiz")
-[compiz-ubuntu](https://aur.archlinux.org/packages/compiz-ubuntu/)<sup><small>AUR</small></sup> | [Unity](/index.php/Unity "Unity") | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
+[compiz-ubuntu](https://aur.archlinux.org/packages/compiz-ubuntu/) | [Unity](/index.php/Unity "Unity") | [GNOME Terminal](https://en.wikipedia.org/wiki/GNOME_Terminal "wikipedia:GNOME Terminal")
 [gnome-terminal](https://www.archlinux.org/packages/?name=gnome-terminal) | [GNOME Files](/index.php/GNOME_Files "GNOME Files")
 [nautilus](https://www.archlinux.org/packages/?name=nautilus) | [GNOME Calculator](https://en.wikipedia.org/wiki/GNOME_Calculator "wikipedia:GNOME Calculator")
 [gnome-calculator](https://www.archlinux.org/packages/?name=gnome-calculator) | [gedit](/index.php/Gedit "Gedit")
@@ -355,7 +355,7 @@ See also [Wikipedia:Comparison of X Window System desktop environments](https://
 [eog](https://www.archlinux.org/packages/?name=eog) | [GNOME Videos](https://en.wikipedia.org/wiki/GNOME_Videos "wikipedia:GNOME Videos")
 [totem](https://www.archlinux.org/packages/?name=totem) | [Firefox](/index.php/Firefox "Firefox")
 [firefox](https://www.archlinux.org/packages/?name=firefox) | [LightDM](/index.php/LightDM "LightDM") Unity Greeter
-[lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/)<sup><small>AUR</small></sup> |
+[lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) |
 | [Xfce](/index.php/Xfce "Xfce") | [GTK+](/index.php/GTK%2B "GTK+") 2/3
 [gtk2](https://www.archlinux.org/packages/?name=gtk2) [gtk3](https://www.archlinux.org/packages/?name=gtk3) | [Xfwm4](http://docs.xfce.org/xfce/xfwm4/start)
 [xfwm4](https://www.archlinux.org/packages/?name=xfwm4) | [Xfce Panel](http://docs.xfce.org/xfce/xfce4-panel/start)

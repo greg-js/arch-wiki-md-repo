@@ -28,15 +28,15 @@ You can also install the following packages which provide some additional applet
 
 *   **Byzanz Applet** — Record what's happening on your desktop
 
-	[https://git.gnome.org/browse/byzanz/](https://git.gnome.org/browse/byzanz/) || [byzanz](https://aur.archlinux.org/packages/byzanz/)<sup><small>AUR</small></sup>
+	[https://git.gnome.org/browse/byzanz/](https://git.gnome.org/browse/byzanz/) || [byzanz](https://aur.archlinux.org/packages/byzanz/)
 
 *   **Command Runner Applet** — Applet for GNOME Flashback panel which periodically displays a command output
 
-	[https://github.com/porridge/command-runner-applet](https://github.com/porridge/command-runner-applet) || [command-runner-applet](https://aur.archlinux.org/packages/command-runner-applet/)<sup><small>AUR</small></sup>
+	[https://github.com/porridge/command-runner-applet](https://github.com/porridge/command-runner-applet) || [command-runner-applet](https://aur.archlinux.org/packages/command-runner-applet/)
 
 *   **Pomodoro Applet** — GNOME Panel applet for timing the intervals used in the Pomodoro Techinique(tm)
 
-	[https://github.com/stump/pomodoro-applet](https://github.com/stump/pomodoro-applet) || [pomodoro-applet](https://aur.archlinux.org/packages/pomodoro-applet/)<sup><small>AUR</small></sup>
+	[https://github.com/stump/pomodoro-applet](https://github.com/stump/pomodoro-applet) || [pomodoro-applet](https://aur.archlinux.org/packages/pomodoro-applet/)
 
 *   **Sensors Applet** — Applet for GNOME Flashback panel to display readings from hardware sensors, including CPU temperature, fan speeds and voltage readings
 

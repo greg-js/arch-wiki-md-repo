@@ -49,6 +49,6 @@ This may be an issue with Amazon running different versions of Xen on different 
 
 ## Building Arch AMIs
 
-[linux-ec2](https://aur.archlinux.org/packages/linux-ec2/)<sup><small>AUR</small></sup> in [AUR](/index.php/AUR "AUR") compiles the Arch linux kernel for AWS with Xen modules enabled and the XSAVE patch applied.
+[linux-ec2](https://aur.archlinux.org/packages/linux-ec2/) in [AUR](/index.php/AUR "AUR") compiles the Arch linux kernel for AWS with Xen modules enabled and the XSAVE patch applied.
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&oldid=393507](https://wiki.archlinux.org/index.php?title=Arch_Linux_AMIs_for_Amazon_Web_Services&oldid=393507)"

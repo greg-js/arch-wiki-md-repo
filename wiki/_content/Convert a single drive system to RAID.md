@@ -2,7 +2,7 @@
 
 This guide shows how to convert a functional single-drive system to a [RAID](/index.php/RAID "RAID") 1 setup after adding a second drive, without the need to temporarily store the data on a third drive. The procedure can also be adapted, simplifying it, to the conversion of simple non-root partitions, and to other RAID levels.
 
-**Tip:** You may consider using [Raider](https://aur.archlinux.org/packages/Raider/)<sup><small>AUR</small></sup>, which can convert a single disk into a RAID system with a two-pass command.
+**Tip:** You may consider using [Raider](https://aur.archlinux.org/packages/Raider/), which can convert a single disk into a RAID system with a two-pass command.
 
 ## Contents
 
@@ -54,7 +54,7 @@ Next, create the RAID array in a degraded state, using only the new disk. Note h
 
 Note: If the above command causes mdadm to say "no such device /dev/sdb2", then reboot, and run the command again.
 
-If you want to use Syslinux, you need to specify --metadata=1.0 (for the boot partition) [as of Sept. 2011](http://www.zytor.com/pipermail/syslinux/2011-September/016911.html)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2015-09-27]</sup>
+If you want to use Syslinux, you need to specify --metadata=1.0 (for the boot partition) [as of Sept. 2011](http://www.zytor.com/pipermail/syslinux/2011-September/016911.html)
 
 Make sure the array has been created correctly by checking `/proc/mdstat`:
 

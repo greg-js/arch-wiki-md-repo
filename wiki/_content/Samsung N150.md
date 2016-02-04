@@ -143,7 +143,7 @@ The [RTL8192E](/index.php/Wireless_network_configuration#rtl8192e "Wireless netw
 
 #### Broadcom BCM4313 (Samsung N150-Plus)
 
-Samsung N150-Plus has a newer Broadcom BCM4313 adapter with built-in bluetooth. As of kernel v2.6.37, this card works out of the box thanks to the open-source brcm80211 driver. However, on older kernels you'll need a proprietary driver (AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> or if you want to compile manually: [http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php)). Bluetooth also works fine with either driver.
+Samsung N150-Plus has a newer Broadcom BCM4313 adapter with built-in bluetooth. As of kernel v2.6.37, this card works out of the box thanks to the open-source brcm80211 driver. However, on older kernels you'll need a proprietary driver (AUR: [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) or if you want to compile manually: [http://www.broadcom.com/support/802.11/linux_sta.php](http://www.broadcom.com/support/802.11/linux_sta.php)). Bluetooth also works fine with either driver.
 
 For more information: [Broadcom wireless](https://wiki.archlinux.org/index.php/Broadcom_wireless#Wi-Fi_card_does_not_work_or_show_up_since_kernel_upgrade_.28brcmsmac.29)
 
@@ -351,7 +351,7 @@ w /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor - - - - ondemand
 
 ## Fn keys
 
-[Samsung Tools](https://launchpad.net/samsung-tools) can be installed to quickly get the `Fn` key combinations work. It is available in AUR ([samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)<sup><small>AUR</small></sup>).
+[Samsung Tools](https://launchpad.net/samsung-tools) can be installed to quickly get the `Fn` key combinations work. It is available in AUR ([samsung-tools](https://aur.archlinux.org/packages/samsung-tools/)).
 
 Several of the special `Fn` key combinations work out of the box with the N150, but most do not. Unusual scancodes are reported to the kernel, which does not know how to convert these codes to keycodes natively. Worse, many of the scancodes produce a key press event without a corresponding key release event. Appending the following lines to /etc/rc.local will enable all `Fn` keys and map them properly:
 

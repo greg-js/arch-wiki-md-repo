@@ -34,7 +34,7 @@ To make GStreamer useful, install the plugins packages you require.
 *   [gst-plugins-base](https://www.archlinux.org/packages/?name=gst-plugins-base) - Essential exemplary set of elements.
 *   [gst-plugins-good](https://www.archlinux.org/packages/?name=gst-plugins-good) - Good-quality plugins under LGPL license.
 *   [gst-plugins-ugly](https://www.archlinux.org/packages/?name=gst-plugins-ugly) - Good-quality plugins that might pose distribution problems.
-*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/)<sup><small>AUR</small></sup> - [libde265](https://aur.archlinux.org/packages/libde265/)<sup><small>AUR</small></sup> plugin (an open h.265 video codec implementation) for gstreamer.
+*   [gst-plugin-libde265](https://aur.archlinux.org/packages/gst-plugin-libde265/) - [libde265](https://aur.archlinux.org/packages/libde265/) plugin (an open h.265 video codec implementation) for gstreamer.
 
 ### Legacy version plugins
 
@@ -44,9 +44,9 @@ To make GStreamer useful, install the plugins packages you require.
 *   [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) - Essential exemplary set of elements.
 *   [gstreamer0.10-ffmpeg](https://www.archlinux.org/packages/?name=gstreamer0.10-ffmpeg) - Libav-based plugin containing many decoders and encoders.
 *   [gstreamer0.10-good-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-good-plugins) - Good-quality plugins under LGPL license.
-*   [gstreamer0.10-good-plugins-slim](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins-slim/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gstreamer0.10-good-plugins-slim)]</sup> - Good-quality plugins under LGPL license. GNOME and ASCII-art dependency removed.
+*   [gstreamer0.10-good-plugins-slim](https://aur.archlinux.org/packages/gstreamer0.10-good-plugins-slim/) - Good-quality plugins under LGPL license. GNOME and ASCII-art dependency removed.
 *   [gstreamer0.10-ugly-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-ugly-plugins) - Good-quality plugins that might pose distribution problems.
-*   [gstreamer0.10-plugin-libde265](https://aur.archlinux.org/packages/gstreamer0.10-plugin-libde265/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/gstreamer0.10-plugin-libde265)]</sup> - [libde265](https://aur.archlinux.org/packages/libde265/)<sup><small>AUR</small></sup> plugin (an open h.265 video codec implementation) for gstreamer0.10.
+*   [gstreamer0.10-plugin-libde265](https://aur.archlinux.org/packages/gstreamer0.10-plugin-libde265/) - [libde265](https://aur.archlinux.org/packages/libde265/) plugin (an open h.265 video codec implementation) for gstreamer0.10.
 
 ## Integration
 
@@ -56,7 +56,7 @@ To make GStreamer useful, install the plugins packages you require.
 
 ### Lightweight desktops
 
-To configure GStreamer, for example to change the audio output device, use _gstreamer-properties_ from package [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/)<sup><small>AUR</small></sup>. This can be run by each user or as root for all users. Per-user configuration files are under `$HOME/.gconf/system/gstreamer` and the global files are in `/etc/gconf/gconf.xml.defaults`.
+To configure GStreamer, for example to change the audio output device, use _gstreamer-properties_ from package [gstreamer-properties](https://aur.archlinux.org/packages/gstreamer-properties/). This can be run by each user or as root for all users. Per-user configuration files are under `$HOME/.gconf/system/gstreamer` and the global files are in `/etc/gconf/gconf.xml.defaults`.
 
 ### KDE / Phonon integration
 

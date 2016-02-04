@@ -259,17 +259,17 @@ See also [sysctl#Virtual memory](/index.php/Sysctl#Virtual_memory "Sysctl"), [[3
 
 The only way to directly improve CPU speed is overclocking. As it is a complicated and risky task, it is not recommended for anyone except experts. The best way to overclock is through the BIOS. When purchasing your system, keep in mind that most Intel motherboards are notorious for disabling the capability to overclock.
 
-Many Intel i5 and i7 chips, even when overclocked properly through the BIOS or UEFI interface, will not report the correct clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg about delays unless the module acpi_cpufreq is unloaded and blacklisted. The only tool known to correctly read the clock speed of these overclocked chips under Linux is i7z. The [i7z](https://www.archlinux.org/packages/?name=i7z) package is available in the community repo and [i7z-git](https://aur.archlinux.org/packages/i7z-git/)<sup><small>AUR</small></sup> is available in the [AUR](/index.php/AUR "AUR").
+Many Intel i5 and i7 chips, even when overclocked properly through the BIOS or UEFI interface, will not report the correct clock frequency to acpi_cpufreq and most other utilities. This will result in excessive messages in dmesg about delays unless the module acpi_cpufreq is unloaded and blacklisted. The only tool known to correctly read the clock speed of these overclocked chips under Linux is i7z. The [i7z](https://www.archlinux.org/packages/?name=i7z) package is available in the community repo and [i7z-git](https://aur.archlinux.org/packages/i7z-git/) is available in the [AUR](/index.php/AUR "AUR").
 
 A way to modify performance ([ref](http://lkml.org/lkml/2009/9/6/136)) is to use Con Kolivas' desktop-centric kernel patchset, which, among other things, replaces the Completely Fair Scheduler (CFS) with the Brain Fuck Scheduler (BFS).
 
-Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/index.php/AUR "AUR") or [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). See the respective pages for [linux-ck](https://aur.archlinux.org/packages/linux-ck/)<sup><small>AUR</small></sup> and [Linux-ck](/index.php/Linux-ck "Linux-ck") wiki page, [linux-pf](https://aur.archlinux.org/packages/linux-pf/)<sup><small>AUR</small></sup> and [Linux-pf](/index.php/Linux-pf "Linux-pf") wiki page or [linux-bfs](https://aur.archlinux.org/packages/linux-bfs/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/linux-bfs)]</sup> for more information on their additional patches.
+Kernel PKGBUILDs that include the BFS patch can be installed from the [AUR](/index.php/AUR "AUR") or [Unofficial user repositories](/index.php/Unofficial_user_repositories "Unofficial user repositories"). See the respective pages for [linux-ck](https://aur.archlinux.org/packages/linux-ck/) and [Linux-ck](/index.php/Linux-ck "Linux-ck") wiki page, [linux-pf](https://aur.archlinux.org/packages/linux-pf/) and [Linux-pf](/index.php/Linux-pf "Linux-pf") wiki page or [linux-bfs](https://aur.archlinux.org/packages/linux-bfs/) for more information on their additional patches.
 
 **Note:** BFS/CK are designed for desktop/laptop use and not servers. They provide low latency and work well for 16 CPUs or less. Also, Con Kolivas suggests setting HZ to 1000\. For more information, see the [BFS FAQ](http://ck.kolivas.org/patches/bfs/bfs-faq.txt) and [Kernel patch homepage of Con Kolivas](http://users.on.net/~ckolivas/kernel/).
 
 ### Verynice
 
-[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [AUR](/index.php/AUR "AUR") as [verynice](https://aur.archlinux.org/packages/verynice/)<sup><small>AUR</small></sup>, for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as _goodexe_ in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as _badexe_. This prioritization greatly improves system responsiveness under heavy load.
+[VeryNice](/index.php/VeryNice "VeryNice") is a daemon, available in the [AUR](/index.php/AUR "AUR") as [verynice](https://aur.archlinux.org/packages/verynice/), for dynamically adjusting the nice levels of executables. The nice level represents the priority of the executable when allocating CPU resources. Simply define executables for which responsiveness is important, like X or multimedia applications, as _goodexe_ in `/etc/verynice.conf`. Similarly, CPU-hungry executables running in the background, like make, can be defined as _badexe_. This prioritization greatly improves system responsiveness under heavy load.
 
 ### cgroups
 
@@ -281,7 +281,7 @@ The purpose of [irqbalance](https://www.archlinux.org/packages/?name=irqbalance)
 
 ## Graphics
 
-As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [rovclock](https://aur.archlinux.org/packages/rovclock/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rovclock)]</sup>, [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/)<sup><small>AUR</small></sup> (ATI), and [nvclock](https://aur.archlinux.org/packages/nvclock/)<sup><small>AUR</small></sup> (NVIDIA).
+As with CPUs, overclocking can directly improve performance, but is generally recommended against. There are several packages in the [AUR](/index.php/AUR "AUR"), such as [rovclock](https://aur.archlinux.org/packages/rovclock/), [amdoverdrivectrl](https://aur.archlinux.org/packages/amdoverdrivectrl/) (ATI), and [nvclock](https://aur.archlinux.org/packages/nvclock/) (NVIDIA).
 
 ### Xorg.conf configuration
 
@@ -303,7 +303,7 @@ Relocate files, such as your browser profile, to a [tmpfs](https://en.wikipedia.
 
 ### Root on RAM overlay
 
-If running off a slow writing medium (USB, spinning HDDs) and storage requirements are low, the root may be run on a RAM overlay ontop of read only root (on disk). This can vastly improve performance at the cost of a limited writable space to root. See [liveroot](https://aur.archlinux.org/packages/liveroot/)<sup><small>AUR</small></sup>.
+If running off a slow writing medium (USB, spinning HDDs) and storage requirements are low, the root may be run on a RAM overlay ontop of read only root (on disk). This can vastly improve performance at the cost of a limited writable space to root. See [liveroot](https://aur.archlinux.org/packages/liveroot/).
 
 ### Zram or zswap
 
@@ -332,7 +332,7 @@ If you want to automatically initialize zram on every boot, consider writing a [
 
 A detailed explanation of all steps, options and potential problems is provided in the official documentation of the module [here](https://www.kernel.org/doc/Documentation/blockdev/zram.txt).
 
-The AUR package [zramswap](https://aur.archlinux.org/packages/zramswap/)<sup><small>AUR</small></sup> provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
+The AUR package [zramswap](https://aur.archlinux.org/packages/zramswap/) provides an automated script for setting up such swap devices with optimal settings for your system (such as RAM size and CPU core number). The script creates one zram device per CPU core with a total space equivalent to the RAM available. To do this automatically on every boot, [enable](/index.php/Enable "Enable") `zramswap.service`.
 
 You will have a compressed swap with higher priority than your regular swap which will utilize multiple CPU cores for compessing data.
 
@@ -388,7 +388,7 @@ In the unlikely case that you have very little RAM and a surplus of video RAM, y
 
 ## Network
 
-Every time a connections is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be done. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached-git](https://aur.archlinux.org/packages/rescached-git/)<sup><small>AUR</small></sup>.
+Every time a connections is made, the system must first resolve a fully qualified domain name to an IP address before the actual connection can be done. Response times of network requests can be improved by caching DNS queries locally. Common tools for this purpose include [pdnsd](/index.php/Pdnsd "Pdnsd"), [dnsmasq](/index.php/Dnsmasq "Dnsmasq"), [unbound](/index.php/Unbound "Unbound") and [rescached-git](https://aur.archlinux.org/packages/rescached-git/).
 
 ## Application-specific tips
 

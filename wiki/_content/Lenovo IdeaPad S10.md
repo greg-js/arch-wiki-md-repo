@@ -46,7 +46,7 @@
 
 ## Wireless
 
-The Broadcom BCM4312 card requires the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/)<sup><small>AUR</small></sup> module which is available in the [AUR](/index.php/AUR "AUR"). See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
+The Broadcom BCM4312 card requires the [broadcom-wl](https://aur.archlinux.org/packages/broadcom-wl/) module which is available in the [AUR](/index.php/AUR "AUR"). See [Broadcom wireless](/index.php/Broadcom_wireless "Broadcom wireless") for details.
 
 ## Sound
 

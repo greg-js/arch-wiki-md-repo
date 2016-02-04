@@ -25,11 +25,11 @@ pyLoad is divided into core and clients, to make it easily remote accessible. Cu
 
 ## Installation
 
-[Install](/index.php/Install "Install") [pyload](https://aur.archlinux.org/packages/pyload/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/)<sup><small>AUR</small></sup> for a development build of the new pyload 0.5 version.
+[Install](/index.php/Install "Install") [pyload](https://aur.archlinux.org/packages/pyload/) from the [AUR](/index.php/AUR "AUR") for the stable version or [pyload-nightly](https://aur.archlinux.org/packages/pyload-nightly/) for a development build of the new pyload 0.5 version.
 
 ### Headless servers
 
-On headless servers, you will want to use [giflib-nox11](https://aur.archlinux.org/packages/giflib-nox11/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/giflib-nox11)]</sup> instead of giflib, before you install pyload. Otherwise this package will pull X11 dependencies.
+On headless servers, you will want to use [giflib-nox11](https://aur.archlinux.org/packages/giflib-nox11/) instead of giflib, before you install pyload. Otherwise this package will pull X11 dependencies.
 
 ### Requirements
 
@@ -164,16 +164,16 @@ To have it started automatically on boot, enable _pyload_ service.
 
 ## Alternatives
 
-[Tucan Manager](http://tucaneando.com/index.html) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [tucan](https://aur.archlinux.org/packages/tucan/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tucan)]</sup> package.
+[Tucan Manager](http://tucaneando.com/index.html) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [tucan](https://aur.archlinux.org/packages/tucan/) package.
 
 [uGet](http://ugetdm.com/) available in the [official repositories](/index.php/Official_repositories "Official repositories") through the [uget](https://www.archlinux.org/packages/?name=uget) package (GTK).
 
-[JDownloader](/index.php/JDownloader "JDownloader") through [jdownloader](https://aur.archlinux.org/packages/jdownloader/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/jdownloader)]</sup> package.
+[JDownloader](/index.php/JDownloader "JDownloader") through [jdownloader](https://aur.archlinux.org/packages/jdownloader/) package.
 
-[plowshare](http://code.google.com/p/plowshare/) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/)<sup><small>AUR</small></sup> (CLI).
+[plowshare](http://code.google.com/p/plowshare/) available in AUR: [plowshare-git](https://aur.archlinux.org/packages/plowshare-git/) (CLI).
 
-[TuxLoad](http://tuxload.wikispaces.com/) available in AUR: [tuxload](https://aur.archlinux.org/packages/tuxload/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/tuxload)]</sup> (CLI).
+[TuxLoad](http://tuxload.wikispaces.com/) available in AUR: [tuxload](https://aur.archlinux.org/packages/tuxload/) (CLI).
 
-[FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/)<sup><small>AUR</small></sup> (Java).
+[FreeRapid Downloader](http://wordrider.net/freerapid/) available in AUR: [freerapid](https://aur.archlinux.org/packages/freerapid/) (Java).
 
 Retrieved from "[https://wiki.archlinux.org/index.php?title=PyLoad&oldid=412161](https://wiki.archlinux.org/index.php?title=PyLoad&oldid=412161)"

@@ -130,7 +130,7 @@ $ scan -x0 -t1 -s1 /usr/share/dvb/dvb-s/[your satellite] | tee channels.conf
 
 ### Using w_scan
 
-[w_scan](https://aur.archlinux.org/packages/w_scan/)<sup><small>AUR</small></sup> allows for automatic scanning of channels without configuration. Install it then issue:
+[w_scan](https://aur.archlinux.org/packages/w_scan/) allows for automatic scanning of channels without configuration. Install it then issue:
 
 ```
 # w_scan -c [your country] > ~/someChannels.conf
@@ -236,11 +236,11 @@ Install it with [kaffeine](https://www.archlinux.org/packages/?name=kaffeine) fr
 
 Me-tv is a simple but powerfull dvb-viewer, supporting EPG, recording and channel-searching with a light-weight gui.
 
-It is available in the [AUR](/index.php/AUR "AUR"): [me-tv](https://aur.archlinux.org/packages/me-tv/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/me-tv)]</sup> is the stable version, [me-tv-bzr](https://aur.archlinux.org/packages/me-tv-bzr/)<sup><small>AUR</small></sup> is the development branch.
+It is available in the [AUR](/index.php/AUR "AUR"): [me-tv](https://aur.archlinux.org/packages/me-tv/) is the stable version, [me-tv-bzr](https://aur.archlinux.org/packages/me-tv-bzr/) is the development branch.
 
 ### Klear
 
-[Klear](http://klear.org) is also a really nice player, but more than 4 years old (last release 2006). It supports EPG, time-shifting, and recording, videotext. Channel-searching is still missing. Install it from AUR: [klear](https://aur.archlinux.org/packages/klear/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/klear)]</sup>.
+[Klear](http://klear.org) is also a really nice player, but more than 4 years old (last release 2006). It supports EPG, time-shifting, and recording, videotext. Channel-searching is still missing. Install it from AUR: [klear](https://aur.archlinux.org/packages/klear/).
 
 ### Xine
 

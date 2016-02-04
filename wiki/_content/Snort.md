@@ -37,7 +37,7 @@ You can use Snort to sniff wireless traffic with two routers. For simplicity the
 
 ## Installation
 
-Install [snort](https://aur.archlinux.org/packages/snort/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [snort](https://aur.archlinux.org/packages/snort/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -106,7 +106,7 @@ systemctl start snort@ens1
 
 ## Updating the rules with Pulledpork
 
-Install [pulledpork](https://aur.archlinux.org/packages/pulledpork/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [pulledpork](https://aur.archlinux.org/packages/pulledpork/) from the [AUR](/index.php/AUR "AUR").
 
 ### Configuration
 
@@ -183,7 +183,7 @@ pulledpork.pl -c /etc/pulledpork/pulledpork.conf  -P
 
 If you want to be able to download Snort's latest rules, you will need a subscription. This costs money. If you are happy enough with 5 days old rules, you just need to register for free. If you do not, the only updates you will get are the new rules distributed with a new Snort release. Go ahead and register at [Snort](https://www.snort.org/signup). If you really do not want to register, you can use the rules from [BleedingSnort.com](http://www.bleedingsnort.com/). They are bleeding edge, meaning they have not been tested thoroughly.
 
-[oinkmaster](https://aur.archlinux.org/packages/oinkmaster/)<sup><small>AUR</small></sup> is available as [AUR](/index.php/AUR "AUR") package.
+[oinkmaster](https://aur.archlinux.org/packages/oinkmaster/) is available as [AUR](/index.php/AUR "AUR") package.
 
 ### Oinkmaster setup
 

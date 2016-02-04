@@ -16,7 +16,7 @@
 
 ## Global Push to Talk Hotkey
 
-One problem that Wine Ventrilo users face is that the push to talk hotkey only being detected when a Wine window (such as Ventrilo itself) is in focus. The solution to this is using [ventriloctrl](https://aur.archlinux.org/packages/ventriloctrl/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ventriloctrl)]</sup>, a simple program that sends X input to Ventrilo.
+One problem that Wine Ventrilo users face is that the push to talk hotkey only being detected when a Wine window (such as Ventrilo itself) is in focus. The solution to this is using [ventriloctrl](https://aur.archlinux.org/packages/ventriloctrl/), a simple program that sends X input to Ventrilo.
 
 ### Finding the input device
 

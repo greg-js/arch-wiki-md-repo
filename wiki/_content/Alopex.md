@@ -1,6 +1,6 @@
 # Alopex
 
-[Alopex](https://github.com/TrilbyWhite/alopex) (formerly, TTWM) is a minimal tiling window manager combining concepts or elements from [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup>, [dwm](/index.php/Dwm "Dwm"), and [i3wm](/index.php/I3wm "I3wm"). Inspiration has also been drawn from other great tilers like [monsterwm](/index.php/Monsterwm "Monsterwm"). It manages windows using tiling, horizontal or vertical stacking layouts with transient floating and fullscreen modes.
+[Alopex](https://github.com/TrilbyWhite/alopex) (formerly, TTWM) is a minimal tiling window manager combining concepts or elements from [tinywm](https://aur.archlinux.org/packages/tinywm/), [dwm](/index.php/Dwm "Dwm"), and [i3wm](/index.php/I3wm "I3wm"). Inspiration has also been drawn from other great tilers like [monsterwm](/index.php/Monsterwm "Monsterwm"). It manages windows using tiling, horizontal or vertical stacking layouts with transient floating and fullscreen modes.
 
 **Note:** This page will remain focused on Alopex 2.x until 3.x moves to a usable/testable state. From then on, this page will be edited to reflect documentation of the most recent version.
 
@@ -26,7 +26,7 @@
 
 ## Installation
 
-Installing [alopex-git](https://aur.archlinux.org/packages/alopex-git/)<sup><small>AUR</small></sup>, from the [AUR](/index.php/AUR "AUR"), is as simple as fetching the PKGBUILD and running the following:
+Installing [alopex-git](https://aur.archlinux.org/packages/alopex-git/), from the [AUR](/index.php/AUR "AUR"), is as simple as fetching the PKGBUILD and running the following:
 
 ```
 $ makepkg -si
@@ -55,7 +55,7 @@ By Default, Alopex tracks the following four modifier masks:
 
 [Dmenu](/index.php/Dmenu "Dmenu") is a useful addon to Alopex. As opposed to list-style or drop-down menus, dmenu is a type-to-complete program launcher. It is the recommended launcher for Alopex, and the default configuration maps running dmenu to `KEY1` + `p`.
 
-**Note:** The creator of Alopex has also made a very small, light-weight alternative to [dmenu](/index.php/Dmenu "Dmenu") called [interrobang](https://bbs.archlinux.org/viewtopic.php?id=160182). It can be installed easily using [interrobang-git](https://aur.archlinux.org/packages/interrobang-git/)<sup><small>AUR</small></sup>. To replace dmenu with interrobang, read on how to customize keybindings in [#Custom Configuration](#Custom_Configuration).
+**Note:** The creator of Alopex has also made a very small, light-weight alternative to [dmenu](/index.php/Dmenu "Dmenu") called [interrobang](https://bbs.archlinux.org/viewtopic.php?id=160182). It can be installed easily using [interrobang-git](https://aur.archlinux.org/packages/interrobang-git/). To replace dmenu with interrobang, read on how to customize keybindings in [#Custom Configuration](#Custom_Configuration).
 
 ### Using tags
 
@@ -94,7 +94,7 @@ Cleanly killing a window can be done by pressing `KEY2` + `F4`. Cleanly exiting 
 
 As mentioned previously, Alopex is almost entirely configured at compile-time via the editing of its source files, primarily `config.h` and `icons.h`. The upstream configuration provides sane defaults, but configuration per user-preference is easy to achieve.
 
-As mentioned in [#Installation](#Installation), [alopex-git](https://aur.archlinux.org/packages/alopex-git/)<sup><small>AUR</small></sup> will check for `$HOME/.alopex_config.h` and `$XDG_CONFIG_HOME/alopex/config.h`, and, if either exists, use them to replace the default `config.h` before commencing the build. After using [makepkg](/index.php/Makepkg "Makepkg") to grab the source, simply copy the `config.h` to either `$HOME/.alopex_config.h` or `$XDG_CONFIG_HOME/alopex/config.h` and make your modifications.
+As mentioned in [#Installation](#Installation), [alopex-git](https://aur.archlinux.org/packages/alopex-git/) will check for `$HOME/.alopex_config.h` and `$XDG_CONFIG_HOME/alopex/config.h`, and, if either exists, use them to replace the default `config.h` before commencing the build. After using [makepkg](/index.php/Makepkg "Makepkg") to grab the source, simply copy the `config.h` to either `$HOME/.alopex_config.h` or `$XDG_CONFIG_HOME/alopex/config.h` and make your modifications.
 
 Once the desired modifications have been made, return to the package directory and compile/install:
 

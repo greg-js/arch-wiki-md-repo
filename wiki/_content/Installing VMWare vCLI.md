@@ -12,7 +12,7 @@ The vCLI utilities make it possible to manage VMWare ESX servers (with the possi
 
 ## Installation from AUR
 
-Install [vmware-vcli](https://aur.archlinux.org/packages/vmware-vcli/)<sup><small>AUR</small></sup> from [AUR](/index.php/AUR "AUR").
+Install [vmware-vcli](https://aur.archlinux.org/packages/vmware-vcli/) from [AUR](/index.php/AUR "AUR").
 
 ## Manually installation
 

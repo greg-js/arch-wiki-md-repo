@@ -57,7 +57,7 @@ The [kodi](https://www.archlinux.org/packages/?name=kodi) package supplies a sta
 
 #### Kodi-standalone-service
 
-The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/)<sup><small>AUR</small></sup> package provides `kodi.service` and creates the needed user to run Kodi in standalone mode. This is a drop-in replacement of the package-legacy systemd service and post install script which Arch developers have removed from the package when the Xorg package updated to 1.16-1 (see [this commit](https://projects.archlinux.org/svntogit/community.git/commit/trunk?h=packages/xbmc&id=9763c6d32678f3a3f45c195bfae92eee209d504f)). Functionally, there is no difference.
+The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) package provides `kodi.service` and creates the needed user to run Kodi in standalone mode. This is a drop-in replacement of the package-legacy systemd service and post install script which Arch developers have removed from the package when the Xorg package updated to 1.16-1 (see [this commit](https://projects.archlinux.org/svntogit/community.git/commit/trunk?h=packages/xbmc&id=9763c6d32678f3a3f45c195bfae92eee209d504f)). Functionally, there is no difference.
 
 [Start](/index.php/Start "Start") `kodi.service` and [enable](/index.php/Enable "Enable") it to run at boot time.
 
@@ -71,7 +71,7 @@ The [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone
 
 **Note:** This assumes that the user has created an kodi user named kodiuser on the system and that the following file is present as described.
 
-**Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/)<sup><small>AUR</small></sup> creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
+**Note:** [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) creates a user named kodi, which is not permitted to login, thus autologin will fail with this user.
 
  `/etc/X11/Xwrapper.config`  `needs_root_rights = yes` 
 
@@ -96,7 +96,7 @@ user-session=kodi
 
 Socket activation can be used to start Kodi when the user starts a remote control app or on a connection to Kodi's html control port. Start listening with _systemctl start kodi@user.socket_ (replace _user_ with the user running Kodi to be started as).
 
-The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/)<sup><small>AUR</small></sup> package provides `kodi@.service` and `kodi@.socket` which can be used to run Kodi in standalone mode listening on port 8082. Depending on the setup, one may want to change the port in _kodi@.socket_. This can be done by manually using the following systemd files.
+The [kodi-standalone-socket-activation](https://aur.archlinux.org/packages/kodi-standalone-socket-activation/) package provides `kodi@.service` and `kodi@.socket` which can be used to run Kodi in standalone mode listening on port 8082. Depending on the setup, one may want to change the port in _kodi@.socket_. This can be done by manually using the following systemd files.
 
  `/etc/systemd/system/kodi@.service` 
 
@@ -134,9 +134,9 @@ WantedBy=sockets.target
 
 #### Start from remote control with LIRC / irexec
 
-With the help of the packages [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/)<sup><small>AUR</small></sup> and [lirc](https://www.archlinux.org/packages/?name=lirc) you can setup a configuration where you can start Kodi by pressing a key on your remote. This can be useful on a Raspberry Pi if you want to have it running 24/7 but do not want Kodi to be open 24/7, for instance if you use the Pi as Wifi-Access Point and PVR-Client. This way you can close Kodi and allow your PVR-Server to suspend/hibernate but still have your Wifi accessible - and start Kodi again without the need of a keyboard.
+With the help of the packages [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) and [lirc](https://www.archlinux.org/packages/?name=lirc) you can setup a configuration where you can start Kodi by pressing a key on your remote. This can be useful on a Raspberry Pi if you want to have it running 24/7 but do not want Kodi to be open 24/7, for instance if you use the Pi as Wifi-Access Point and PVR-Client. This way you can close Kodi and allow your PVR-Server to suspend/hibernate but still have your Wifi accessible - and start Kodi again without the need of a keyboard.
 
-You need to have a working setup of [LIRC](/index.php/LIRC "LIRC"), the package [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/)<sup><small>AUR</small></sup> has to be installed.
+You need to have a working setup of [LIRC](/index.php/LIRC "LIRC"), the package [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/) has to be installed.
 
 Generate the file `/var/lib/kodi/.lircrc` with the following content:
 
@@ -331,7 +331,7 @@ To tell Kodi to use the common database, insure that Kodi is not running, then c
 
 ```
 
-**Tip:** If using [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/)<sup><small>AUR</small></sup>, the default for the profile is /var/lib/kodi/.kodi and be sure to chown the newly created file to the kodi user and group, i.e. `# chown -R kodi:kodi /var/lib/kodi`
+**Tip:** If using [kodi-standalone-service](https://aur.archlinux.org/packages/kodi-standalone-service/), the default for the profile is /var/lib/kodi/.kodi and be sure to chown the newly created file to the kodi user and group, i.e. `# chown -R kodi:kodi /var/lib/kodi`
 
 ##### Setup network shares
 

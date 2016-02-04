@@ -36,7 +36,7 @@
 
 [Install](/index.php/Install "Install") the [rtorrent](https://www.archlinux.org/packages/?name=rtorrent) package that is available in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-Alternatively, install [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/)<sup><small>AUR</small></sup> or [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rtorrent-extended)]</sup> from the [AUR](/index.php/AUR "AUR").
+Alternatively, install [rtorrent-git](https://aur.archlinux.org/packages/rtorrent-git/) or [rtorrent-extended](https://aur.archlinux.org/packages/rtorrent-extended/) from the [AUR](/index.php/AUR "AUR").
 
 ## Configuration
 
@@ -702,7 +702,7 @@ $ xdg-mime default rtorrent-magnet.desktop x-scheme-handler/magnet
 
 ## Magnet to Torrent
 
-You could also use the [magnet2torrent-git](https://aur.archlinux.org/packages/magnet2torrent-git/)<sup><small>AUR</small></sup> package which downloads the metadata and creates a torrent file.
+You could also use the [magnet2torrent-git](https://aur.archlinux.org/packages/magnet2torrent-git/) package which downloads the metadata and creates a torrent file.
 
 How to use:
 
@@ -713,7 +713,7 @@ $ magnet2torrent <magnet link> [torrent file]
 
 ## rtorrent-pyro
 
-[rtorrent-pyro](https://aur.archlinux.org/packages/rtorrent-pyro/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/rtorrent-pyro)]</sup> from the [AUR](/index.php/AUR "AUR") comes with an extended rtorrent console interface. It does not contain the pyroscope tools yet though. If you also need the pyroscope tools see [#PyroScope](#PyroScope) .
+[rtorrent-pyro](https://aur.archlinux.org/packages/rtorrent-pyro/) from the [AUR](/index.php/AUR "AUR") comes with an extended rtorrent console interface. It does not contain the pyroscope tools yet though. If you also need the pyroscope tools see [#PyroScope](#PyroScope) .
 
 Make sure you add following command to ~/.rtorrent.rc, which makes the asterisk key * to a shortcut for toggling between extended and collapsed view within rtorrent's interface:
 
@@ -791,7 +791,7 @@ Deletes all torrents older than 48 hours:
 *   [mktorrent](http://mktorrent.sourceforge.net/) - Command line application used to generate torrent files, which is available as [mktorrent](https://www.archlinux.org/packages/?name=mktorrent) in the [official repositories](/index.php/Official_repositories "Official repositories").
 *   [docktorrent](https://github.com/kfei/docktorrent) - Using Docker, rTorrent and ruTorrent to run a full-featured BitTorrent box.
 *   [reptyr](https://github.com/nelhage/reptyr) - another tool to take over a program's TTY (it is in the standard repos). The process may have started being attached to a terminal or to a socket in tmux, screen or dtach.
-*   [neercs](http://caca.zoy.org/wiki/neercs) - a more screen/tmux like tool than reptyr, but, like reptyr, neercs can also "steal" a process that may have started slaved to a terminal or to a socket in tmux, screen or dtach. [neercs-git](https://aur.archlinux.org/packages/neercs-git/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/neercs-git)]</sup>
+*   [neercs](http://caca.zoy.org/wiki/neercs) - a more screen/tmux like tool than reptyr, but, like reptyr, neercs can also "steal" a process that may have started slaved to a terminal or to a socket in tmux, screen or dtach. [neercs-git](https://aur.archlinux.org/packages/neercs-git/)
 
 **Forum threads**
 

@@ -42,7 +42,7 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) package. For the development version, install [git-git](https://aur.archlinux.org/packages/git-git/)<sup><small>AUR</small></sup> from the AUR. Check the optional dependencies when using tools such as _git svn_, _git gui_ and _gitk_.
+[Install](/index.php/Install "Install") the [git](https://www.archlinux.org/packages/?name=git) package. For the development version, install [git-git](https://aur.archlinux.org/packages/git-git/) from the AUR. Check the optional dependencies when using tools such as _git svn_, _git gui_ and _gitk_.
 
 **Note:** To enable spell checking in _git-gui_, [aspell](https://www.archlinux.org/packages/?name=aspell) is required, along with the dictionary corresponding to the `LC_MESSAGES` [environment variable](/index.php/Environment_variable "Environment variable"). See [FS#28181](https://bugs.archlinux.org/task/28181).
 
@@ -738,7 +738,7 @@ $ git clone git://_location_/_repository_.git
 
 ### Setting access rights
 
-To restrict read and/or write access, use standard Unix permissions. Refer to [http://sitaramc.github.com/gitolite/doc/overkill.html](http://sitaramc.github.com/gitolite/doc/overkill.html)<sup>[[dead link](https://en.wikipedia.org/wiki/Wikipedia:Link_rot "wikipedia:Wikipedia:Link rot") 2013-11-06]</sup> ([archive.org mirror](https://web.archive.org/web/20111004134500/http://sitaramc.github.com/gitolite/doc/overkill.html)) for more information.
+To restrict read and/or write access, use standard Unix permissions. Refer to [http://sitaramc.github.com/gitolite/doc/overkill.html](http://sitaramc.github.com/gitolite/doc/overkill.html) ([archive.org mirror](https://web.archive.org/web/20111004134500/http://sitaramc.github.com/gitolite/doc/overkill.html)) for more information.
 
 For fine-grained access management, refer to [gitolite](/index.php/Gitolite "Gitolite") and [gitosis](/index.php/Gitosis "Gitosis").
 

@@ -60,7 +60,7 @@ Now all you need to do is [start](/index.php/Start "Start") `x2goserver.service`
 
 ## Desktop Shadowing
 
-To gain access to the "local desktop" (as opposed to a unique session/desktop environment) you need to install [x2godesktopsharing](https://aur.archlinux.org/packages/x2godesktopsharing/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR"). Then, launch `x2godesktopsharing`.
+To gain access to the "local desktop" (as opposed to a unique session/desktop environment) you need to install [x2godesktopsharing](https://aur.archlinux.org/packages/x2godesktopsharing/) from the [AUR](/index.php/AUR "AUR"). Then, launch `x2godesktopsharing`.
 
 Note, you do not need x2godesktopsharing to access "local desktop" of user "foo" by user "foo". x2godesktopsharing is for accessing "foo"'s desktop by "foo2" user. Just choose "Connection to local desktop" in "session type" in x2goclient.
 

@@ -109,11 +109,11 @@ The followings are also available via the AUR and integrate with MATE but the pa
 
 *   **MATE Menu** — Advanced menu for MATE Panel, a fork of MintMenu.
 
-	[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://aur.archlinux.org/packages/mate-menu/)<sup><small>AUR</small></sup>
+	[https://bitbucket.org/ubuntu-mate/mate-menu](https://bitbucket.org/ubuntu-mate/mate-menu) || [mate-menu](https://aur.archlinux.org/packages/mate-menu/)
 
 *   **MATE Tweak** — Tweak tool for MATE, a fork of mintDesktop.
 
-	[https://bitbucket.org/ubuntu-mate/mate-tweak](https://bitbucket.org/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)<sup><small>AUR</small></sup>
+	[https://bitbucket.org/ubuntu-mate/mate-tweak](https://bitbucket.org/ubuntu-mate/mate-tweak) || [mate-tweak](https://aur.archlinux.org/packages/mate-tweak/)
 
 Additional packages need to be installed to take advantage of some of Caja's advanced features - see [File manager functionality](/index.php/File_manager_functionality "File manager functionality").
 

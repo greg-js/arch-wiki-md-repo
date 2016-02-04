@@ -17,7 +17,7 @@
 
 [Install](/index.php/Install "Install") the [dzen2](https://www.archlinux.org/packages/?name=dzen2) package which is available in the [official repositories](/index.php/Official_repositories "Official repositories") which includes Xft, XPM, and Xinerama support.
 
-**Note:** Xft doesn't seem to work with the official package. Alternatively, you can install the [dzen2-xft-xpm-xinerama-git](https://aur.archlinux.org/packages/dzen2-xft-xpm-xinerama-git/)<sup><small>AUR</small></sup> package located in the [AUR](/index.php/AUR "AUR") with Xft, XPM and Xinerama support.
+**Note:** Xft doesn't seem to work with the official package. Alternatively, you can install the [dzen2-xft-xpm-xinerama-git](https://aur.archlinux.org/packages/dzen2-xft-xpm-xinerama-git/) package located in the [AUR](/index.php/AUR "AUR") with Xft, XPM and Xinerama support.
 
 ## Configuration
 
@@ -38,7 +38,7 @@ Dzen follows the [X Logical Font Description](/index.php/X_Logical_Font_Descript
 
 ### Dzen and Conky
 
-[Conky](/index.php/Conky "Conky") can be used to pipe information directly to dzen for output in a status bar. This can be done with Conky in the official repositories and also with [conky-cli](https://aur.archlinux.org/packages/conky-cli/)<sup><small>AUR</small></sup>, a stripped-down version of the Conky status utility from the [AUR](/index.php/AUR "AUR").
+[Conky](/index.php/Conky "Conky") can be used to pipe information directly to dzen for output in a status bar. This can be done with Conky in the official repositories and also with [conky-cli](https://aur.archlinux.org/packages/conky-cli/), a stripped-down version of the Conky status utility from the [AUR](/index.php/AUR "AUR").
 
 The following example displays the average load values in red and the current time in the default dzen foreground colour:
 

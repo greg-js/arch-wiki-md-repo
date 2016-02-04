@@ -30,7 +30,7 @@ Please note that wmii does not appear to be in active development, so any bugs e
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [wmii](https://www.archlinux.org/packages/?name=wmii) package or alternatively install [wmii-hg](https://aur.archlinux.org/packages/wmii-hg/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/wmii-hg)]</sup> for the latest development version.
+[Install](/index.php/Install "Install") the [wmii](https://www.archlinux.org/packages/?name=wmii) package or alternatively install [wmii-hg](https://aur.archlinux.org/packages/wmii-hg/) for the latest development version.
 
 The source can be found on [the project's Google Code page](https://code.google.com/p/wmii/) and is also [mirrored on GitHub](https://github.com/sunaku/wmii).
 
@@ -417,7 +417,7 @@ xxkb &
 
 ```
 
-into your wmiirc and it just works. [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/xkblayout-state)]</sup> can be used to put layout indicator into the status line:
+into your wmiirc and it just works. [xkblayout-state](https://aur.archlinux.org/packages/xkblayout-state/) can be used to put layout indicator into the status line:
 
 ```
 status() {

@@ -17,13 +17,13 @@
 
 ## Installation
 
-[Install](/index.php/Install "Install") [exaile](https://aur.archlinux.org/packages/exaile/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+[Install](/index.php/Install "Install") [exaile](https://aur.archlinux.org/packages/exaile/) from the [AUR](/index.php/AUR "AUR").
 
 If you use [ALSA](/index.php/ALSA "ALSA") and want to use alsasink instead of the default one, [install](/index.php/Install "Install") [gstreamer0.10-base-plugins](https://www.archlinux.org/packages/?name=gstreamer0.10-base-plugins) available in the [Official repositories](/index.php/Official_repositories "Official repositories"). This may solve problem if no sound is heard after installation and also when trying to play several sources simultaneously.
 
 ### Enabling cover art, lyrics, and guitar tablature
 
-[gnome-python-extras](https://www.archlinux.org/packages/?name=gnome-python-extras) and [libgtkhtml](https://aur.archlinux.org/packages/libgtkhtml/)<sup><small>AUR</small></sup> are needed to enable the cover art, lyrics, guitar tablature, and wiki features of Exaile.
+[gnome-python-extras](https://www.archlinux.org/packages/?name=gnome-python-extras) and [libgtkhtml](https://aur.archlinux.org/packages/libgtkhtml/) are needed to enable the cover art, lyrics, guitar tablature, and wiki features of Exaile.
 
 ### Playing audio CDs
 

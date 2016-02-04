@@ -25,7 +25,7 @@ This wiki page contains a guide on how to set up [hdup](http://www.miek.nl/proje
 
 ### Installing and setting hdup up
 
-*   [Install](/index.php/Install "Install") the [hdup](https://aur.archlinux.org/packages/hdup/)<sup><small>AUR</small></sup> package.
+*   [Install](/index.php/Install "Install") the [hdup](https://aur.archlinux.org/packages/hdup/) package.
 
 *   We need to edit the configuration file **/etc/hdup/hdup.conf**. There's one supplied, so you can just edit that one; or you can use the minimal one listed here:
 

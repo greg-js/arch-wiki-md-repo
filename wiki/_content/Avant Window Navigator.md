@@ -16,8 +16,8 @@
 
 ## Installation
 
-*   **Avant Window Navigator** can be installed with the package [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/)<sup><small>AUR</small></sup>, available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
-*   To get additional applets to use with AWN you will need to install [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)<sup><small>AUR</small></sup>.
+*   **Avant Window Navigator** can be installed with the package [avant-window-navigator](https://aur.archlinux.org/packages/avant-window-navigator/), available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository").
+*   To get additional applets to use with AWN you will need to install [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/).
 
 ### Additional dependencies
 
@@ -28,9 +28,9 @@ The most of the applets require some additional packages, which are listed in op
 | battery | [upower](https://www.archlinux.org/packages/?name=upower) |
 | comics | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) |
 | cairo-clock | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) |
-| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/)<sup><small>AUR</small></sup> |
+| calendar | [python2-dateutil](https://www.archlinux.org/packages/?name=python2-dateutil) [python2-gdata](https://www.archlinux.org/packages/?name=python2-gdata) [python2-vobject](https://aur.archlinux.org/packages/python2-vobject/) |
 | cpufreq | [gnome-applets](https://www.archlinux.org/packages/?name=gnome-applets) |
-| dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/python-xklavier)]</sup> |
+| dialect | [python-xklavier](https://aur.archlinux.org/packages/python-xklavier/) |
 | feeds | [python2-feedparser](https://www.archlinux.org/packages/?name=python2-feedparser) |
 | hardware-sensors | [python2-rsvg](https://www.archlinux.org/packages/?name=python2-rsvg) | [hddtemp](https://www.archlinux.org/packages/?name=hddtemp) [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) |
 | media-control | [banshee](https://www.archlinux.org/packages/?name=banshee) |
@@ -68,7 +68,7 @@ or right-click the dock and go to **Dock Preferences**.
 
 #### DockbarX
 
-You may want to try [DockbarX](https://launchpad.net/dockbar), a task manager applet with advanced behaviour configuration and support for window previews. It is available from the [AUR](/index.php/AUR "AUR"): [dockbarx](https://aur.archlinux.org/packages/dockbarx/)<sup><small>AUR</small></sup>.
+You may want to try [DockbarX](https://launchpad.net/dockbar), a task manager applet with advanced behaviour configuration and support for window previews. It is available from the [AUR](/index.php/AUR "AUR"): [dockbarx](https://aur.archlinux.org/packages/dockbarx/).
 
 ## See also
 

@@ -4,7 +4,7 @@
 
 ## Install and configure
 
-Install [cjdns](https://www.archlinux.org/packages/?name=cjdns) from community or [cjdns-git](https://aur.archlinux.org/packages/cjdns-git/)<sup><small>AUR</small></sup> from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). The package includes a systemd service file, but sysvinit scripts are available too in [cjdns-git-sysvinit](https://aur.archlinux.org/packages/cjdns-git-sysvinit/)<sup><small>AUR</small></sup>.
+Install [cjdns](https://www.archlinux.org/packages/?name=cjdns) from community or [cjdns-git](https://aur.archlinux.org/packages/cjdns-git/) from the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"). The package includes a systemd service file, but sysvinit scripts are available too in [cjdns-git-sysvinit](https://aur.archlinux.org/packages/cjdns-git-sysvinit/).
 
 _If you do not already have one_, generate a new `cjdroute.conf` in the `/etc` directory by becoming root and running:
 

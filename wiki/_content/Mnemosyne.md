@@ -22,8 +22,8 @@ Mnemosyne is written in Python 2 and uses the [Qt](/index.php/Qt "Qt") toolkit.
 
 Unofficial Mnemosyne packages are available in the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"):
 
-*   [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/)<sup><small>AUR</small></sup> (latest stable version)
-*   [mnemosyne-bzr](https://aur.archlinux.org/packages/mnemosyne-bzr/)<sup><small>AUR</small></sup> (latest development snapshot from trunk)
+*   [mnemosyne](https://aur.archlinux.org/packages/mnemosyne/) (latest stable version)
+*   [mnemosyne-bzr](https://aur.archlinux.org/packages/mnemosyne-bzr/) (latest development snapshot from trunk)
 
 ### Manual Installation
 

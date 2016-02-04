@@ -46,7 +46,7 @@ Bash is considered an **interactive shell** when its standard input and error ar
 
 See [6.2 Bash Startup Files](http://www.gnu.org/software/bash/manual/bash.html#Bash-Startup-Files) and [DotFiles](http://mywiki.wooledge.org/DotFiles) for a complete description.
 
-| File | Description | Login shells <sup>(see note)</sup> | Interactive, _non-login_ shells |
+| File | Description | Login shells  | Interactive, _non-login_ shells |
 | `/etc/profile` | [Sources](/index.php/Source "Source") application settings in `/etc/profile.d/*.sh` and `/etc/bash.bashrc`. | Yes | No |
 | `~/.bash_profile` | Per-user, after `/etc/profile`. If this file does not exist, `~/.bash_login` and `~/.profile` are checked in that order. The skeleton file `/etc/skel/.bash_profile` also sources `~/.bashrc`. | Yes | No |
 | `~/.bash_logout` | After exit of a login shell. | Yes | No |
@@ -224,7 +224,7 @@ export PROMPT_COMMAND='history -a;echo -en "\e]2;";history 1|sed "s/^[ \t]*[0-9]
 
 ### Command-not-found (AUR)
 
-[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/)<sup><small>AUR</small></sup>. Usage example:
+[pkgfile](/index.php/Pkgfile "Pkgfile") includes a "command not found" hook that will automatically search the official repositories, when entering an unrecognized command. An alternative "command not found" hook is provided by [command-not-found](https://aur.archlinux.org/packages/command-not-found/). Usage example:
 
  `$ abiword` 
 
@@ -259,7 +259,7 @@ _adom_
 
 ```
 
-Now when you accidentally press `Ctrl+z` in [adom](https://aur.archlinux.org/packages/adom/)<sup><small>AUR</small></sup> instead of `Shift+z` nothing will happen because `Ctrl+z` will be ignored.
+Now when you accidentally press `Ctrl+z` in [adom](https://aur.archlinux.org/packages/adom/) instead of `Shift+z` nothing will happen because `Ctrl+z` will be ignored.
 
 ### Clear the screen after logging out
 

@@ -1600,7 +1600,7 @@ The latest upstream tarballs can be found in official GNU [mirrors](http://ftp.s
 
 ### uemacs
 
-**uemacs** is a "Micro-emacs" version customized by Linus Torvalds . Available as [uemacs-git](https://aur.archlinux.org/packages/uemacs-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+**uemacs** is a "Micro-emacs" version customized by Linus Torvalds . Available as [uemacs-git](https://aur.archlinux.org/packages/uemacs-git/) in the [AUR](/index.php/AUR "AUR").
 
 The latest (2005) tarball can be found [here](ftp://ftp.cs.helsinki.fi/pub/Software/Local/uEmacs-PK/).
 

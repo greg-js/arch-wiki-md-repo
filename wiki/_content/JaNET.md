@@ -24,13 +24,13 @@ jaNET provides a built in framework to fulfil most of our daily information mann
 
 ## Installation
 
-Install [janet](https://aur.archlinux.org/packages/janet/)<sup><small>AUR</small></sup> from the [AUR](/index.php/AUR "AUR").
+Install [janet](https://aur.archlinux.org/packages/janet/) from the [AUR](/index.php/AUR "AUR").
 
-**Note:** jaNET requires heavy-weight dependencies like [festival](/index.php/Festival "Festival"), [simon](https://aur.archlinux.org/packages/simon/)<sup><small>AUR</small></sup> and [Mono](/index.php/Mono "Mono").
+**Note:** jaNET requires heavy-weight dependencies like [festival](/index.php/Festival "Festival"), [simon](https://aur.archlinux.org/packages/simon/) and [Mono](/index.php/Mono "Mono").
 
 ### Manual installation
 
-If you prefer manual installation, first install: [monodevelop](https://www.archlinux.org/packages/?name=monodevelop) [festival](https://www.archlinux.org/packages/?name=festival) [simon](https://aur.archlinux.org/packages/simon/)<sup><small>AUR</small></sup>.
+If you prefer manual installation, first install: [monodevelop](https://www.archlinux.org/packages/?name=monodevelop) [festival](https://www.archlinux.org/packages/?name=festival) [simon](https://aur.archlinux.org/packages/simon/).
 
 You can grab the source [here](https://sourceforge.net/projects/project-janet/files/Project_jaNET-v0.1.3-src/Project_jaNET-v0.1.3-src.tar.gz) if you wish to develop; however, we are going to use the latest binary.
 

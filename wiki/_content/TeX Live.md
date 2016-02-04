@@ -77,7 +77,7 @@ The essential package [texlive-core](https://www.archlinux.org/packages/?name=te
 
 ### Manual installation
 
-See the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) and [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003). For programs that require TeX Live to be installed (e.g. kile) you can use the [texlive-dummy](https://aur.archlinux.org/packages/texlive-dummy/)<sup><small>AUR</small></sup> package.
+See the [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX/Installation#Custom_installation_with_TeX_Live) and [TeX Live Guide](https://tug.org/texlive/doc/texlive-en/texlive-en.html#x1-140003). For programs that require TeX Live to be installed (e.g. kile) you can use the [texlive-dummy](https://aur.archlinux.org/packages/texlive-dummy/) package.
 
 ## Usage
 
@@ -187,7 +187,7 @@ And then update fontconfig:
 
 ## TeXLive Local Manager
 
-The TeXLive Local Manager is a utility provided by Firmicus which allows to conveniently manage a TeX Live installation on Arch Linux. See [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/)<sup><small>AUR</small></sup> in the [AUR](/index.php/AUR "AUR").
+The TeXLive Local Manager is a utility provided by Firmicus which allows to conveniently manage a TeX Live installation on Arch Linux. See [texlive-localmanager-git](https://aur.archlinux.org/packages/texlive-localmanager-git/) in the [AUR](/index.php/AUR "AUR").
 
 ```
 Usage: tllocalmgr  
@@ -249,7 +249,7 @@ Can't get object for collection-langukenglish at /usr/bin/tllocalmgr line 103
 
 ```
 
-See ary0's solution at the AUR: [texlive-localmanager](https://aur.archlinux.org/packages/texlive-localmanager/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/texlive-localmanager)]</sup>. In summary, edit `/usr/share/texmf-var/arch/tlpkg/TeXLive/Arch.pm` and remove "langukenglish" from the section of the file shown here:
+See ary0's solution at the AUR: [texlive-localmanager](https://aur.archlinux.org/packages/texlive-localmanager/). In summary, edit `/usr/share/texmf-var/arch/tlpkg/TeXLive/Arch.pm` and remove "langukenglish" from the section of the file shown here:
 
 ```
 my @core_colls =
@@ -298,7 +298,7 @@ Normally, new .sty files go in `/usr/share/texmf-dist/tex/latex/<package name>/*
 
 ### Using PKGBUILDs
 
-To install a LaTeX package on a global level, you should use a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for the sake of simplifying maintenance. Examples can be found in the [AUR](/index.php/AUR "AUR"), e.g. [texlive-gantt](https://aur.archlinux.org/packages/texlive-gantt/)<sup><small>AUR</small></sup>.
+To install a LaTeX package on a global level, you should use a [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") for the sake of simplifying maintenance. Examples can be found in the [AUR](/index.php/AUR "AUR"), e.g. [texlive-gantt](https://aur.archlinux.org/packages/texlive-gantt/).
 
 ## Updating babelbib language definitions
 

@@ -36,7 +36,7 @@ You can choose one of the following implementations:
 
 *   **[Avant Window Navigator](/index.php/Avant_Window_Navigator "Avant Window Navigator")** — A notification-daemon applet is available for AWN.
 
-	[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)<sup><small>AUR</small></sup>
+	[https://github.com/p12tic/awn-extras](https://github.com/p12tic/awn-extras) || [awn-extras-applets](https://aur.archlinux.org/packages/awn-extras-applets/)
 
 *   **Deepin Notifications** — Notification server for [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment").
 
@@ -66,11 +66,11 @@ You can choose one of the following implementations:
 
 *   **statnot** — Small, lightweight notification daemon that can output notifications to the root window's title, stdout or FIFO pipes, making it integrate very well with tiling window managers.
 
-	[https://github.com/halhen/statnot](https://github.com/halhen/statnot) || [statnot](https://aur.archlinux.org/packages/statnot/)<sup><small>AUR</small></sup>
+	[https://github.com/halhen/statnot](https://github.com/halhen/statnot) || [statnot](https://aur.archlinux.org/packages/statnot/)
 
 *   **twmn** — Notification system for tiling window managers.
 
-	[https://github.com/sboli/twmn](https://github.com/sboli/twmn) || [twmn-git](https://aur.archlinux.org/packages/twmn-git/)<sup><small>AUR</small></sup>
+	[https://github.com/sboli/twmn](https://github.com/sboli/twmn) || [twmn-git](https://aur.archlinux.org/packages/twmn-git/)
 
 *   **Xfce Notification Daemon** — Notification server for [Xfce](/index.php/Xfce "Xfce").
 
@@ -138,7 +138,7 @@ void main () {
 
 **C++**
 
-*   Dependency: [libnotifymm](https://aur.archlinux.org/packages/libnotifymm/)<sup><small>AUR</small></sup>
+*   Dependency: [libnotifymm](https://aur.archlinux.org/packages/libnotifymm/)
 *   Build with: `g++ -o hello_world `pkg-config --cflags --libs libnotifymm-1.0` hello_world.cc`
 
  `hello_world.cc` 
@@ -176,7 +176,7 @@ public class HelloWorld {
 **Cobra**
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
-*   Makedependency: [cobra](https://aur.archlinux.org/packages/cobra/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/cobra)]</sup>
+*   Makedependency: [cobra](https://aur.archlinux.org/packages/cobra/)
 *   Build with: `cobra -c hello_world`
 *   Run with: `mono hello_world.exe`
 
@@ -197,7 +197,7 @@ class HelloWorld
 **F#**
 
 *   Dependency: [notify-sharp-3](https://www.archlinux.org/packages/?name=notify-sharp-3)
-*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)<sup><small>AUR</small></sup>
+*   Makedependency: [fsharp](https://aur.archlinux.org/packages/fsharp/)
 *   Build with: `fsharpc -r:notify-sharp.dll -I:/usr/lib/mono/notify-sharp-3.0/ -I:/usr/lib/mono/gtk-sharp-3.0/ hello_world.fs`
 *   Run with: `mono hello_world.exe`
 
@@ -232,7 +232,7 @@ init
 
 **Groovy**
 
-*   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)<sup><small>AUR</small></sup>
+*   Dependencies: [groovy](https://www.archlinux.org/packages/?name=groovy), [java-gnome](https://aur.archlinux.org/packages/java-gnome/)
 *   Build with: `groovyc -cp /usr/share/java/gtk.jar HelloWorld.groovy && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
 *   Run with: `java -cp /usr/share/groovy/embeddable/groovy-all.jar:/usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `groovy -cp /usr/share/java/gtk.jar HelloWorld.groovy`)
 
@@ -250,7 +250,7 @@ Hello.show()
 
 **Java**
 
-*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/)<sup><small>AUR</small></sup>
+*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/)
 *   Makedependency: java-environment
 *   Build with: `javac -cp /usr/share/java/gtk.jar HelloWorld.java && jar cfe HelloWorld.jar HelloWorld HelloWorld.class`
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld`
@@ -306,7 +306,7 @@ Hello:show()
 
 **Perl**
 
-*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)<sup><small>AUR</small></sup>
+*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [perl-glib-object-introspection](https://aur.archlinux.org/packages/perl-glib-object-introspection/)
 
  `hello_world.pl` 
 
@@ -338,7 +338,7 @@ Hello.show()
 
 **Ruby**
 
-*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [ruby-gir_ffi](https://aur.archlinux.org/packages/ruby-gir_ffi/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ruby-gir_ffi)]</sup>
+*   Dependencies: [libnotify](https://www.archlinux.org/packages/?name=libnotify), [ruby-gir_ffi](https://aur.archlinux.org/packages/ruby-gir_ffi/)
 
  `hello_world.rb` 
 
@@ -353,7 +353,7 @@ Hello.show
 
 **Rust**
 
-*   Dependencies: [rust](https://www.archlinux.org/packages/?name=rust) and [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/)<sup><small>AUR</small></sup> (or just [multirust](https://aur.archlinux.org/packages/multirust/)<sup><small>AUR</small></sup>)
+*   Dependencies: [rust](https://www.archlinux.org/packages/?name=rust) and [cargo-bin](https://aur.archlinux.org/packages/cargo-bin/) (or just [multirust](https://aur.archlinux.org/packages/multirust/))
 *   notification crate: [notify-rust](https://crates.io/crates/notify-rust)
 
  `hello_world.rs` 
@@ -372,7 +372,7 @@ fn main(){
 
 **Scala**
 
-*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/)<sup><small>AUR</small></sup> (and [scala](https://www.archlinux.org/packages/?name=scala))
+*   Dependency: [java-gnome](https://aur.archlinux.org/packages/java-gnome/) (and [scala](https://www.archlinux.org/packages/?name=scala))
 *   Makedependency: [scala](https://www.archlinux.org/packages/?name=scala)
 *   Build with: `scalac -cp /usr/share/java/gtk.jar -d HelloWorld.jar HelloWorld.scala`
 *   Run with: `java -cp /usr/share/java/gtk.jar:HelloWorld.jar HelloWorld` (or `scala -cp /usr/share/java/gtk.jar HelloWorld.scala`)

@@ -41,7 +41,7 @@ You will need at least one input method, corresponding to the language you wish 
 *   [ibus-unikey](https://www.archlinux.org/packages/?name=ibus-unikey) - IME for typing Vietnamese characters.
 *   [ibus-table](https://www.archlinux.org/packages/?name=ibus-table) - IME that accommodates table-based IMs.
 *   [ibus-m17n](https://www.archlinux.org/packages/?name=ibus-m17n) - M17n IME which allows input of many languages using the input methods from [m17n-db](https://www.archlinux.org/packages/?name=m17n-db).
-*   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/)<sup><small>AUR</small></sup> - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
+*   [ibus-mozc](https://aur.archlinux.org/packages/ibus-mozc/) - Japanese IME, based on [Mozc](/index.php/Mozc "Mozc").
 *   [ibus-kkc](https://www.archlinux.org/packages/?name=ibus-kkc) - Japanese IME, based on [libkkc](https://www.archlinux.org/packages/?name=libkkc).
 
 To see all available input methods:
@@ -101,7 +101,7 @@ If you have decided to use the great _ibus-rime_ IME, check out [Rime IME](/inde
 
 ### Entering Special Characters—The Compose Input Method
 
-To type special characters, XKB supports compose key sequences. To fulfil this function, IBus supports an input method that is permanently in Compose mode. Instead of hitting a compose key, then typing out the compose sequence, the user switches to the Compose input method (by default using super-space (a.k.a. win-space)), types the compose sequence, then switches back to the previous method. In Archlinux, the Compose input method is not installed by default. To use it, install [ibus-table-others](https://aur.archlinux.org/packages/ibus-table-others/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/ibus-table-others)]</sup> from the AUR, restart IBus, then look for it in the list of input methods under 'other' at the bottom.
+To type special characters, XKB supports compose key sequences. To fulfil this function, IBus supports an input method that is permanently in Compose mode. Instead of hitting a compose key, then typing out the compose sequence, the user switches to the Compose input method (by default using super-space (a.k.a. win-space)), types the compose sequence, then switches back to the previous method. In Archlinux, the Compose input method is not installed by default. To use it, install [ibus-table-others](https://aur.archlinux.org/packages/ibus-table-others/) from the AUR, restart IBus, then look for it in the list of input methods under 'other' at the bottom.
 
 ## Tips and tricks
 
@@ -130,7 +130,7 @@ to `~/.xprofile` and restart your X user session.
 
 ### Kimpanel
 
-IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. The package [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> is compiled to support IBus, but IBus needs to be launched as following to be able to communicate with the panel:
+IBus main interface is currently only available in GTK+, but Kimpanel provides a native Qt/KDE input interface. The package [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) is compiled to support IBus, but IBus needs to be launched as following to be able to communicate with the panel:
 
 ```
 $ ibus-daemon --xim --panel=/usr/lib/kde4/libexec/kimpanel-ibus-panel

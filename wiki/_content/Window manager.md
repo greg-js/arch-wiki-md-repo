@@ -40,15 +40,15 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[2bwm](/index.php/2bwm "2bwm")** — Fast floating WM, with the particularity of having 2 borders, written over the XCB library and derived from mcwm written by Michael Cardell. In 2bwm everything is accessible from the keyboard but a pointing device can be used for move, resize and raise/lower. The name has recently changed from mcwm-beast to 2bwm.
 
-	[https://github.com/venam/2bwm](https://github.com/venam/2bwm) || [2bwm](https://aur.archlinux.org/packages/2bwm/)<sup><small>AUR</small></sup>
+	[https://github.com/venam/2bwm](https://github.com/venam/2bwm) || [2bwm](https://aur.archlinux.org/packages/2bwm/)
 
 *   **aewm** — Modern, minimal window manager for X11\. It is controlled entirely with the mouse, but contains no visible UI apart from window frames. The command set is sort of like vi: designed back in the dawn of time (1997) to squeeze speed out of low-memory machines, completely unintuitive and new-user-hostile, but quick and elegant in its own way.
 
-	[http://www.red-bean.com/decklin/aewm/](http://www.red-bean.com/decklin/aewm/) || [aewm](https://aur.archlinux.org/packages/aewm/)<sup><small>AUR</small></sup>
+	[http://www.red-bean.com/decklin/aewm/](http://www.red-bean.com/decklin/aewm/) || [aewm](https://aur.archlinux.org/packages/aewm/)
 
 *   **[AfterStep](https://en.wikipedia.org/wiki/AfterStep "wikipedia:AfterStep")** — Window manager for the Unix X Window System. Originally based on the look and feel of the NeXTStep interface, it provides end users with a consistent, clean, and elegant desktop. The goal of AfterStep development is to provide for flexibility of desktop configuration, improving aesthetics, and efficient use of system resources.
 
-	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep](https://aur.archlinux.org/packages/afterstep/)<sup><small>AUR</small></sup>
+	[http://www.afterstep.org/](http://www.afterstep.org/) || [afterstep](https://aur.archlinux.org/packages/afterstep/)
 
 *   **[Blackbox](https://en.wikipedia.org/wiki/Blackbox "wikipedia:Blackbox")** — Fast, lightweight window manager for the X Window System, without all those annoying library dependencies. Blackbox is built with C++ and contains completely original code (even though the graphics implementation is similar to that of WindowMaker).
 
@@ -56,15 +56,15 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Compiz](/index.php/Compiz "Compiz")** — OpenGL compositing manager that uses GLX_EXT_texture_from_pixmap for binding redirected top-level windows to texture objects. It has a flexible plug-in system and it is designed to run well on most graphics hardware.
 
-	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/compiz](https://launchpad.net/compiz) || [compiz](https://aur.archlinux.org/packages/compiz/)
 
 *   **cwm** — Originally deriving from evilwm, but later re-written from scratch. cwm aims to be simple, and offers helpful features such as searching for windows.
 
-	[http://monkey.org/~marius/cwm/cwm.1.a](http://monkey.org/~marius/cwm/cwm.1.a) || [cwm](https://aur.archlinux.org/packages/cwm/)<sup><small>AUR</small></sup>
+	[http://monkey.org/~marius/cwm/cwm.1.a](http://monkey.org/~marius/cwm/cwm.1.a) || [cwm](https://aur.archlinux.org/packages/cwm/)
 
 *   **eggwm** — A lightweight QT4/QT5 window manager
 
-	[eggwm-qt5](https://aur.archlinux.org/packages/eggwm-qt5/)<sup><small>AUR</small></sup> || [eggwm](https://aur.archlinux.org/packages/eggwm/)<sup><small>AUR</small></sup>
+	[eggwm-qt5](https://aur.archlinux.org/packages/eggwm-qt5/) || [eggwm](https://aur.archlinux.org/packages/eggwm/)
 
 *   **[Enlightenment](/index.php/Enlightenment "Enlightenment")** — Enlightenment is not just a window manager for Linux/X11 and others, but also a whole suite of libraries to help you create beautiful user interfaces with much less work than doing it the old fashioned way and fighting with traditional toolkits, not to mention a traditional window manager.
 
@@ -72,7 +72,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[evilwm](/index.php/Evilwm "Evilwm")** — Minimalist window manager for the X Window System. 'Minimalist' here does not mean it is too bare to be usable - it just means it omits a lot of the stuff that make other window managers _un_usable.
 
-	[http://www.6809.org.uk/evilwm/](http://www.6809.org.uk/evilwm/) || [evilwm](https://aur.archlinux.org/packages/evilwm/)<sup><small>AUR</small></sup>
+	[http://www.6809.org.uk/evilwm/](http://www.6809.org.uk/evilwm/) || [evilwm](https://aur.archlinux.org/packages/evilwm/)
 
 *   **[Fluxbox](/index.php/Fluxbox "Fluxbox")** — Window manager for X that was based on the Blackbox 0.61.1 code. It is very light on resources and easy to handle but yet full of features to make an easy and extremely fast desktop experience. It is built using C++ and licensed under the MIT License.
 
@@ -80,7 +80,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Flwm](https://en.wikipedia.org/wiki/FLWM "wikipedia:FLWM")** — Attempt to combine the best ideas I have seen in several window managers. The primary influence and code base is from wm2 by Chris Cannam.
 
-	[http://flwm.sourceforge.net/](http://flwm.sourceforge.net/) || [flwm](https://aur.archlinux.org/packages/flwm/)<sup><small>AUR</small></sup>
+	[http://flwm.sourceforge.net/](http://flwm.sourceforge.net/) || [flwm](https://aur.archlinux.org/packages/flwm/)
 
 *   **[FVWM](/index.php/FVWM "FVWM")** — Extremely powerful ICCCM-compliant multiple virtual desktop window manager for the X Window system. Development is active, and support is excellent.
 
@@ -88,11 +88,11 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Gala](http://elementaryos.org/journal/meet-gala-window-manager)** — A beautiful Window Manager from elementaryos, part of [Pantheon](/index.php/Pantheon "Pantheon"). Also as a compositing manager, based on libmutter.
 
-	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/)<sup><small>AUR</small></sup>
+	[https://launchpad.net/gala](https://launchpad.net/gala) || [gala-bzr](https://aur.archlinux.org/packages/gala-bzr/)
 
 *   **Goomwwm** — X11 window manager implemented in C as a cleanroom software project. It manages windows in a minimal floating layout, while providing flexible keyboard-driven controls for window switching, sizing, moving, tagging, and tiling. It is also fast, lightweight, modeless, Xinerama-aware, and EWMH compatible wherever possible.
 
-	[http://aerosuidae.net/goomwwm/](http://aerosuidae.net/goomwwm/) || [goomwwm](https://aur.archlinux.org/packages/goomwwm/)<sup><small>AUR</small></sup>
+	[http://aerosuidae.net/goomwwm/](http://aerosuidae.net/goomwwm/) || [goomwwm](https://aur.archlinux.org/packages/goomwwm/)
 
 *   **[IceWM](/index.php/IceWM "IceWM")** — Window manager for the X Window System. The goal of IceWM is speed, simplicity, and not getting in the user's way.
 
@@ -100,7 +100,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[jbwm](/index.php?title=Jbwm&action=edit&redlink=1 "Jbwm (page does not exist)")** — jbwm is a window manager based on evilwm, with a minimal configuration size of approximately 16kb, focused on small binary size and usability, incorporating optional title-bars and XFT title-bar font rendering as compile-time options. jbwm also features easier to use keybindings than evilwm.
 
-	[https://github.com/jefbed/jbwm](https://github.com/jefbed/jbwm) || [jbwm](https://aur.archlinux.org/packages/jbwm/)<sup><small>AUR</small></sup>
+	[https://github.com/jefbed/jbwm](https://github.com/jefbed/jbwm) || [jbwm](https://aur.archlinux.org/packages/jbwm/)
 
 *   **[JWM](/index.php/JWM "JWM")** — Window manager for the X11 Window System. JWM is written in C and uses only Xlib at a minimum.
 
@@ -108,7 +108,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **Karmen** — Window manager for X, written by Johan Veenhuizen. It is designed to "just work." There is no configuration file and no library dependencies other than Xlib. The input focus model is click-to-focus. Karmen aims at ICCCM and EWMH compliance.
 
-	[http://karmen.sourceforge.net/](http://karmen.sourceforge.net/) || [karmen](https://aur.archlinux.org/packages/karmen/)<sup><small>AUR</small></sup>
+	[http://karmen.sourceforge.net/](http://karmen.sourceforge.net/) || [karmen](https://aur.archlinux.org/packages/karmen/)
 
 *   **[KWin](https://en.wikipedia.org/wiki/KWin "wikipedia:KWin")** — The standard KDE window manager in KDE 4.0, ships with the first version of built-in support for compositing, making it also a compositing manager. This allows KWin to provide advanced graphical effects, similar to Compiz, while also providing all the features from previous KDE releases (such as very good integration with the rest of KDE, advanced configurability, focus stealing prevention, a well-tested window manager, robust handling of misbehaving applications/toolkits, etc.).
 
@@ -152,11 +152,11 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Sawfish](/index.php/Sawfish "Sawfish")** — Extensible window manager using a Lisp-based scripting language. Its policy is very minimal compared to most window managers. Its aim is simply to manage windows in the most flexible and attractive manner possible. All high-level WM functions are implemented in Lisp for future extensibility or redefinition.
 
-	[http://sawfish.wikia.com/wiki/Main_Page](http://sawfish.wikia.com/wiki/Main_Page) || [sawfish](https://aur.archlinux.org/packages/sawfish/)<sup><small>AUR</small></sup>
+	[http://sawfish.wikia.com/wiki/Main_Page](http://sawfish.wikia.com/wiki/Main_Page) || [sawfish](https://aur.archlinux.org/packages/sawfish/)
 
 *   **TinyWM** — Tiny window manager created as an exercise in minimalism. It may be helpful in learning some of the very basics of creating a window manager. It is comprised of approximately 50 lines of C. There is also a Python version using python-xlib.
 
-	[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/)<sup><small>AUR</small></sup> [tinywm-git](https://aur.archlinux.org/packages/tinywm-git/)<sup><small>AUR</small></sup>
+	[http://incise.org/tinywm.html](http://incise.org/tinywm.html) || [tinywm](https://aur.archlinux.org/packages/tinywm/) [tinywm-git](https://aur.archlinux.org/packages/tinywm-git/)
 
 *   **[twm](/index.php/Twm "Twm")** — Window manager for the X Window System. It provides titlebars, shaped windows, several forms of icon management, user-defined macro functions, click-to-type and pointer-driven keyboard focus, and user-specified key and pointer button bindings.
 
@@ -176,7 +176,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **WM2** — Window manager for X. It provides an unusual style of window decoration and as little functionality as its author feels comfortable with in a window manager. wm2 is not configurable, except by editing the source and recompiling the code, and is really intended for people who do not particularly want their window manager to be too friendly.
 
-	[http://www.all-day-breakfast.com/wm2/](http://www.all-day-breakfast.com/wm2/) || [wm2](https://aur.archlinux.org/packages/wm2/)<sup><small>AUR</small></sup>
+	[http://www.all-day-breakfast.com/wm2/](http://www.all-day-breakfast.com/wm2/) || [wm2](https://aur.archlinux.org/packages/wm2/)
 
 *   **[Xfwm](/index.php/Xfwm "Xfwm")** — The [Xfce](/index.php/Xfce "Xfce") window manager manages the placement of application windows on the screen, provides beautiful window decorations, manages workspaces or virtual desktops and natively supports multiscreen mode. It provides its own compositing manager (from the X.Org Composite extension) for true transparency and shadows. The Xfce window manager also includes a keyboard shortcuts editor for user specific commands and basic windows manipulations and provides a preferences dialog for advanced tweaks.
 
@@ -194,11 +194,11 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **howm** — A lightweight, tiling X11 window manager that mimics vi by offering operators, motions and modes. Configuration is done through the included `config.h` file.
 
-	[https://github.com/HarveyHunt/howm](https://github.com/HarveyHunt/howm) || [howm-x11](https://aur.archlinux.org/packages/howm-x11/)<sup><small>AUR</small></sup>
+	[https://github.com/HarveyHunt/howm](https://github.com/HarveyHunt/howm) || [howm-x11](https://aur.archlinux.org/packages/howm-x11/)
 
 *   **[Ion3](/index.php/Ion3 "Ion3")** — Tiling tabbed X11 window manager designed with keyboard users in mind. It was one of the first of the “new wave" of tiling windowing environments (the other being LarsWM, with quite a different approach) and has since spawned an entire category of tiling window managers for X11 – none of which really manage to reproduce the feel and functionality of Ion. It uses Lua as an embedded interpreter which handles all of the configuration.
 
-	[http://tuomov.iki.fi/software](http://tuomov.iki.fi/software) || [ion3](https://aur.archlinux.org/packages/ion3/)<sup><small>AUR</small></sup>
+	[http://tuomov.iki.fi/software](http://tuomov.iki.fi/software) || [ion3](https://aur.archlinux.org/packages/ion3/)
 
 *   **[Notion](/index.php/Notion "Notion")** — Tiling, tabbed window manager for the X window system that utilizes 'tiles' and 'tabbed' windows.
     *   Tiling: you divide the screen into non-overlapping 'tiles'. Every window occupies one tile, and is maximized to it
@@ -215,19 +215,19 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Stumpwm](/index.php/Stumpwm "Stumpwm")** — Tiling, keyboard driven X11 Window Manager written entirely in Common Lisp. Stumpwm attempts to be customizable yet visually minimal. It does have various hooks to attach your personal customizations, and variables to tweak, and can be reconfigured and reloaded while running. There are no window decorations, no icons, no buttons, and no system tray. Its information bar can be set to show constantly or only when needed.
 
-	[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)<sup><small>AUR</small></sup>
+	[http://www.nongnu.org/stumpwm/](http://www.nongnu.org/stumpwm/) || [stumpwm-git](https://aur.archlinux.org/packages/stumpwm-git/)
 
 *   **[subtle](/index.php/Subtle "Subtle")** — Manual tiling window manager with a rather uncommon approach of tiling: Per default there is no typical layout enforcement, windows are placed on a position (gravity) in a custom grid. The user can change the gravity of each window either directly per grabs or with rules defined by tags in the config. It has workspace tags and automatic client tagging, mouse and keyboard control as well as an extendable statusbar.
 
-	[http://subforge.org/projects/subtle](http://subforge.org/projects/subtle) || [subtle-git](https://aur.archlinux.org/packages/subtle-git/)<sup><small>AUR</small></sup>
+	[http://subforge.org/projects/subtle](http://subforge.org/projects/subtle) || [subtle-git](https://aur.archlinux.org/packages/subtle-git/)
 
 *   **[WMFS](/index.php/WMFS "WMFS")** — Window Manager From Scratch is a lightweight and highly configurable tiling window manager for X. It can be configured with a configuration file, supports Xft (FreeType) fonts and is compliant with the Extended Window Manager Hints (EWMH) specifications, Xinerama and Xrandr. WMFS can be driven with Vi based commands (ViWMFS).
 
-	[https://github.com/xorg62/wmfs](https://github.com/xorg62/wmfs) || [wmfs](https://aur.archlinux.org/packages/wmfs/)<sup><small>AUR</small></sup>
+	[https://github.com/xorg62/wmfs](https://github.com/xorg62/wmfs) || [wmfs](https://aur.archlinux.org/packages/wmfs/)
 
 *   **[WMFS2](/index.php/WMFS2 "WMFS2")** — Incompatible successor of WMFS. It's even more minimalistic and brings some new stuff.
 
-	[https://github.com/xorg62/wmfs](https://github.com/xorg62/wmfs) || [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/)<sup><small>AUR</small></sup>
+	[https://github.com/xorg62/wmfs](https://github.com/xorg62/wmfs) || [wmfs2-git](https://aur.archlinux.org/packages/wmfs2-git/)
 
 ### Dynamic window managers
 
@@ -237,15 +237,15 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[catwm](/index.php/Catwm "Catwm")** — Small window manager, even simpler than dwm, written in C. Configuration is done by modifying the config.h file and recompiling.
 
-	[https://github.com/pyknite/catwm](https://github.com/pyknite/catwm) || [catwm-git](https://aur.archlinux.org/packages/catwm-git/)<sup><small>AUR</small></sup>
+	[https://github.com/pyknite/catwm](https://github.com/pyknite/catwm) || [catwm-git](https://aur.archlinux.org/packages/catwm-git/)
 
 *   **[dwm](/index.php/Dwm "Dwm")** — Dynamic window manager for X. It manages windows in tiled, monocle and floating layouts. All of the layouts can be applied dynamically, optimising the environment for the application in use and the task performed. does not include a tray app or automatic launcher, although dmenu integrates well with it, as they are from the same author. It has no text configuration file. Configuration is done entirely by modifying the C source code, and it must be recompiled and restarted each time it is changed.
 
 	[http://dwm.suckless.org/](http://dwm.suckless.org/) || [dwm](https://www.archlinux.org/packages/?name=dwm)
 
-*   **[echinus](/index.php/Echinus "Echinus")** — Simple and lightweight tiling and floating window manager for X11\. Started as a dwm fork with easier configuration, echinus became full-featured re-parenting window manager with EWMH support. It has an EWMH-compatible panel/taskbar, called [ourico](https://aur.archlinux.org/packages/ourico/)<sup><small>AUR</small></sup>.
+*   **[echinus](/index.php/Echinus "Echinus")** — Simple and lightweight tiling and floating window manager for X11\. Started as a dwm fork with easier configuration, echinus became full-featured re-parenting window manager with EWMH support. It has an EWMH-compatible panel/taskbar, called [ourico](https://aur.archlinux.org/packages/ourico/).
 
-	[http://plhk.ru](http://plhk.ru) || [echinus](https://aur.archlinux.org/packages/echinus/)<sup><small>AUR</small></sup>
+	[http://plhk.ru](http://plhk.ru) || [echinus](https://aur.archlinux.org/packages/echinus/)
 
 *   **[i3](/index.php/I3 "I3")** — Tiling window manager, completely written from scratch. i3 was created because wmii, our favorite window manager at the time, did not provide some features we wanted (multi-monitor done right, for example), had some bugs, did not progress for quite some time, and was not easy to hack at all (source code comments/documentation completely lacking). Notable differences are in the areas of multi-monitor support and the tree metaphor. For speed the Plan 9 interface of wmii is not implemented.
 
@@ -253,7 +253,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[FrankenWM](/index.php/FrankenWM "FrankenWM")** — Basically monsterwm with floating done right. Features that are added on top of basic mwm include: more layouts (fibonacci, equal stack, dual stack), gaps (and borders) are adjustable on the fly, minimize/maximize single windows, hide/show all windows, resizing master and stack individually, invert stack.
 
-	[https://github.com/sulami/FrankenWM](https://github.com/sulami/FrankenWM) || [frankenwm-git](https://aur.archlinux.org/packages/frankenwm-git/)<sup><small>AUR</small></sup>
+	[https://github.com/sulami/FrankenWM](https://github.com/sulami/FrankenWM) || [frankenwm-git](https://aur.archlinux.org/packages/frankenwm-git/)
 
 *   **[spectrwm](/index.php/Spectrwm "Spectrwm")** — Small dynamic tiling window manager for X11, largely inspired by xmonad and dwm. It tries to stay out of the way so that valuable screen real estate can be used for much more important stuff. It has sane defaults and is configured with a text file. It was written by hackers for hackers and it strives to be small, compact and fast. It has a built-in status bar fed from a user-defined script.
 
@@ -261,7 +261,7 @@ See [Comparison of tiling window managers](/index.php/Comparison_of_tiling_windo
 
 *   **[Qtile](/index.php/Qtile "Qtile")** — Full-featured, hackable tiling window manager written in Python. Qtile is simple, small, and extensible. It's easy to write your own layouts, widgets, and built-in commands.It is written and configured entirely in Python, which means you can leverage the full power and flexibility of the language to make it fit your needs.
 
-	[https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile](https://aur.archlinux.org/packages/qtile/)<sup><small>AUR</small></sup>
+	[https://github.com/qtile/qtile](https://github.com/qtile/qtile) || [qtile](https://aur.archlinux.org/packages/qtile/)
 
 *   **[wmii](/index.php/Wmii "Wmii")** — Small, dynamic window manager for X11\. It is scriptable, has a 9P filesystem interface and supports classic and tiling (Acme-like) window management. It aims to maintain a small and clean (read hackable and beautiful) codebase. The default configuration is in bash and [rc (the Plan 9 shell)](http://rc.cat-v.org), but programs exist written in ruby, and any program that can work with text can configure it. It has a status bar and launcher built in, and also an optional system tray (`witray`).
 

@@ -47,7 +47,7 @@ Depending on the language you wish to type, other input method engines are avail
 *   [fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin), based on [sunpinyin](https://www.archlinux.org/packages/?name=sunpinyin). It strikes a good balance between speed and accuracy.
 *   [fcitx-libpinyin](https://www.archlinux.org/packages/?name=fcitx-libpinyin), based on [libpinyin](https://www.archlinux.org/packages/?name=libpinyin). It has a better algorithm than [fcitx-sunpinyin](https://www.archlinux.org/packages/?name=fcitx-sunpinyin), but still has bugs and lacks a good dictionary.
 *   [fcitx-googlepinyin](https://www.archlinux.org/packages/?name=fcitx-googlepinyin), based on [libgooglepinyin](https://www.archlinux.org/packages/?name=libgooglepinyin), the Google pinyin IME for Android.
-*   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/)<sup><small>AUR</small></sup>, Sogou input method for linux—Supports, Jianpin, fuzzy sound, cloud input, English input, mixed skin.[Official website](http://pinyin.sogou.com/linux/)
+*   [fcitx-sogoupinyin](https://aur.archlinux.org/packages/fcitx-sogoupinyin/), Sogou input method for linux—Supports, Jianpin, fuzzy sound, cloud input, English input, mixed skin.[Official website](http://pinyin.sogou.com/linux/)
 *   [fcitx-cloudpinyin](https://www.archlinux.org/packages/?name=fcitx-cloudpinyin) uses internet sources to provide input candidates.
 *   [fcitx-chewing](https://www.archlinux.org/packages/?name=fcitx-chewing) is a popular Zhuyin input engine for Traditional Chinese based on [libchewing](https://www.archlinux.org/packages/?name=libchewing).
 *   [fcitx-table-extra](https://www.archlinux.org/packages/?name=fcitx-table-extra) adds [Cangjie](http://en.wikipedia.org/wiki/Cangjie_input_method), [Zhengma](http://en.wikipedia.org/wiki/Zhengma_method), [Boshiamy](http://en.wikipedia.org/wiki/Boshiamy_method) support.
@@ -79,7 +79,7 @@ Others packages (including git version) are also available in the [AUR](/index.p
 
 **Note:** You need to have [east Asian fonts](/index.php/Fonts_FAQ#Chinese.2C_Japanese.2C_Korean.2C_Vietnamese "Fonts FAQ") installed if you want to enter Chinese, Japanese, Korean or Vietnamese characters.
 
-Fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) (based on kcm), [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (based on gtk3), or [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/fcitx-configtool-gtk2)]</sup> (based on gtk2, unsupported) from the [AUR](/index.php/AUR "AUR").
+Fcitx provides GUI configure tools. You can install either [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) (based on kcm), [fcitx-configtool](https://www.archlinux.org/packages/?name=fcitx-configtool) (based on gtk3), or [fcitx-configtool-gtk2](https://aur.archlinux.org/packages/fcitx-configtool-gtk2/) (based on gtk2, unsupported) from the [AUR](/index.php/AUR "AUR").
 
 Note that Fcitx does not supports manual configuration while its GUI is active.
 
@@ -155,7 +155,7 @@ In order to enable spell checking, press ctrl + alt + h when fcitx is on a input
 
 ### Gnome-Shell
 
-You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/)<sup><small>AUR</small></sup> package in [AUR](/index.php/AUR "AUR"), which provides a similar user experience as ibus-gjs.
+You can install kimpanel from extensions.gnome.org or [gnome-shell-extension-kimpanel-git](https://aur.archlinux.org/packages/gnome-shell-extension-kimpanel-git/) package in [AUR](/index.php/AUR "AUR"), which provides a similar user experience as ibus-gjs.
 
 Since GNOME is trying its best to break every single input method, in order to use Fcitx, you will need to remove all input sources from gnome-control-center, clear all the hotkeys for input methods and issue the following command to disable iBus integration:
 
@@ -170,7 +170,7 @@ Install these packages:
 
 *   [kcm-fcitx](https://www.archlinux.org/packages/?name=kcm-fcitx) - a kcontrol module for fcitx.
 
-*   [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel)<sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): package not found]</sup> - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
+*   [kdeplasma-addons-applets-kimpanel](https://www.archlinux.org/packages/?name=kdeplasma-addons-applets-kimpanel) - a plasmoids providing native feeling under kde. Simply add kimpanel to plasma and fcitx will automatically switch to it without extra configuration.
 
 ## Clipboard Access
 

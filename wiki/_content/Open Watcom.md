@@ -29,7 +29,7 @@
 
 ## Installation
 
-Binary packages for the official 1.9 release did not migrate to AUR4\. A binary package for the unofficial 2.0 release ([openwatcom-v2](https://aur.archlinux.org/packages/openwatcom-v2/)<sup><small>AUR</small></sup>) can be found in the [AUR](/index.php/AUR "AUR"). A source-based package for the v2 fork is also available ([openwatcom-v2-git](https://aur.archlinux.org/packages/openwatcom-v2-git/)<sup><small>AUR</small></sup>) - warning: compilation takes a very long time. For now, bootstrapping with GCC is disabled (works in a stand-alone build but somehow fails under makepkg) and the source release needs to be built with a previous open watcom install.
+Binary packages for the official 1.9 release did not migrate to AUR4\. A binary package for the unofficial 2.0 release ([openwatcom-v2](https://aur.archlinux.org/packages/openwatcom-v2/)) can be found in the [AUR](/index.php/AUR "AUR"). A source-based package for the v2 fork is also available ([openwatcom-v2-git](https://aur.archlinux.org/packages/openwatcom-v2-git/)) - warning: compilation takes a very long time. For now, bootstrapping with GCC is disabled (works in a stand-alone build but somehow fails under makepkg) and the source release needs to be built with a previous open watcom install.
 
 ## Wmake
 
@@ -37,7 +37,7 @@ Open Watcom comes with its own make utility (wmake). On Windows hosts, [CMake](h
 
 ## Using the Open Watcom package in Wine
 
-The [openwatcom-v2-git](https://aur.archlinux.org/packages/openwatcom-v2-git/)<sup><small>AUR</small></sup> package builds executables for all supported host platforms by default. This can be quite handy sometimes if one for example wants to debug a cross-compiled binary using the watcom debugger **wd**. In principle, the same could be done also with DOS emulators for example. Steps to set up a WINEPREFIX to use the already existing Watcom install:
+The [openwatcom-v2-git](https://aur.archlinux.org/packages/openwatcom-v2-git/) package builds executables for all supported host platforms by default. This can be quite handy sometimes if one for example wants to debug a cross-compiled binary using the watcom debugger **wd**. In principle, the same could be done also with DOS emulators for example. Steps to set up a WINEPREFIX to use the already existing Watcom install:
 
 *   create a fresh WINEPREFIX (for example $HOME/.watcom) by WINEPREFIX=$HOME/.watcom winecfg
 *   cd to $WINEPREFIX/drive_c and make a symlink to /opt/watcom named watcom (ln -s /opt/watcom watcom)
@@ -76,7 +76,7 @@ The 32-bit x86 compilers finds its OS-independent libraries in the **$WATCOM/lib
 
 ### Comparisons to other (cross-) compilers
 
-A striking difference compared to the [binutils](https://www.archlinux.org/packages/?name=binutils)-based compilers ([gcc](https://www.archlinux.org/packages/?name=gcc), [clang](https://www.archlinux.org/packages/?name=clang), [pcc](https://aur.archlinux.org/packages/pcc/)<sup><small>AUR</small></sup>) when used as a cross compiler is that Open watcom only uses a single compiler (one for each target CPU architecture) and the target OS is determined by a compilation flag (see "cross compiling" below). Further, many OS-independent libraries lives in a generic architecture-specific location ($WATCOM/lib286 and $WATCOM/lib386) and only libraries with OS-specific features are put into OS-specific sub-directories - this is thanks to the Open Watcom C runtime that is distributed together with the compiler. This means that it is very easy to use a single install of Open Watcom as a cross compiler for a wide range of OSes. In contrast, a cross-compile toolchain based on binutils typically requires building a target-specific ["trinity" of binutils, compiler and libc](http://wiki.osdev.org/GCC_Cross-Compiler). Another advantage of Open Watcom as a Win32 cross compiler is that the resulting binaries and libraries integrate nicely with the target OS. For example, [Python compiled with Open Watcom](http://be.org/) can load plugins compiled with [MSVC](https://en.wikipedia.org/wiki/Visual_C%2B%2B "wikipedia:Visual C++"). This is similar to how the different binutils-based compilers (often) can use libraries built with another binutils-based compiler. At this moment, the resulting binaries are not as optimized as those made by GCC.
+A striking difference compared to the [binutils](https://www.archlinux.org/packages/?name=binutils)-based compilers ([gcc](https://www.archlinux.org/packages/?name=gcc), [clang](https://www.archlinux.org/packages/?name=clang), [pcc](https://aur.archlinux.org/packages/pcc/)) when used as a cross compiler is that Open watcom only uses a single compiler (one for each target CPU architecture) and the target OS is determined by a compilation flag (see "cross compiling" below). Further, many OS-independent libraries lives in a generic architecture-specific location ($WATCOM/lib286 and $WATCOM/lib386) and only libraries with OS-specific features are put into OS-specific sub-directories - this is thanks to the Open Watcom C runtime that is distributed together with the compiler. This means that it is very easy to use a single install of Open Watcom as a cross compiler for a wide range of OSes. In contrast, a cross-compile toolchain based on binutils typically requires building a target-specific ["trinity" of binutils, compiler and libc](http://wiki.osdev.org/GCC_Cross-Compiler). Another advantage of Open Watcom as a Win32 cross compiler is that the resulting binaries and libraries integrate nicely with the target OS. For example, [Python compiled with Open Watcom](http://be.org/) can load plugins compiled with [MSVC](https://en.wikipedia.org/wiki/Visual_C%2B%2B "wikipedia:Visual C++"). This is similar to how the different binutils-based compilers (often) can use libraries built with another binutils-based compiler. At this moment, the resulting binaries are not as optimized as those made by GCC.
 
 ### Compiler optimization flags and other options
 
@@ -140,7 +140,7 @@ add **-bt=netware** for wcc386 or **-bcl=netware** for wcl386 or **-bnetware** f
 
  `export INCLUDE=$WATCOM/h:$WATCOM/novh`  `export LIBPATH=$WATCOM/nlm:$LIBPATH` 
 
-Some packages may need a [| proprietary set of libraries and headers from Novell](http://www.novell.com/coolsolutions/trench/411.html), which have been packaged in AUR: [ow-netware_ndk](https://aur.archlinux.org/packages/ow-netware_ndk/) <sup><small>AUR</small></sup>
+Some packages may need a [| proprietary set of libraries and headers from Novell](http://www.novell.com/coolsolutions/trench/411.html), which have been packaged in AUR: [ow-netware_ndk](https://aur.archlinux.org/packages/ow-netware_ndk/) 
 
 ### QNX
 
@@ -152,15 +152,15 @@ There are many [3rd party libraries and resources](http://openwatcom.org/index.p
 
 ### Libraries
 
-*   [ow-zlib](https://aur.archlinux.org/packages/ow-zlib/)<sup><small>AUR</small></sup> || **targets** : **32-bit :** linux, Win32, DOS(4GW), OS/2, Netware **16-bit:** DOS, Win16, OS/2
-*   [ow-libbz2](https://aur.archlinux.org/packages/ow-libbz2/)<sup><small>AUR</small></sup>
-*   Curses: [ow-curses-win32a](https://aur.archlinux.org/packages/ow-curses-win32a/)<sup><small>AUR</small></sup> : **32-bit:** Win32, DOS(4GW) **16-bit:** DOS, (Win16 a work-in-progress)
+*   [ow-zlib](https://aur.archlinux.org/packages/ow-zlib/) || **targets** : **32-bit :** linux, Win32, DOS(4GW), OS/2, Netware **16-bit:** DOS, Win16, OS/2
+*   [ow-libbz2](https://aur.archlinux.org/packages/ow-libbz2/)
+*   Curses: [ow-curses-win32a](https://aur.archlinux.org/packages/ow-curses-win32a/) : **32-bit:** Win32, DOS(4GW) **16-bit:** DOS, (Win16 a work-in-progress)
 
 ### Extra languages
 
 One area where GCC is stronger than Open Watcom is language support. To mitigate this, some [source-to-source compilers](https://en.wikipedia.org/wiki/Source-to-source_compiler "wikipedia:Source-to-source compiler") can be built on/for Watcom.
 
-*   Pascal: [watcom-p2c](https://aur.archlinux.org/packages/watcom-p2c/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/watcom-p2c)]</sup> || supports all targets
+*   Pascal: [watcom-p2c](https://aur.archlinux.org/packages/watcom-p2c/) || supports all targets
 
 ## See also
 

@@ -30,7 +30,7 @@ From the project [home page](http://code.google.com/p/mozc/):
 
 ## Installation
 
-You can install [mozc](https://aur.archlinux.org/packages/mozc/)<sup><small>AUR</small></sup> (vanilla) using [unofficial user repository](#Unofficial_user_repository) or build yourself from [AUR](/index.php/AUR "AUR").
+You can install [mozc](https://aur.archlinux.org/packages/mozc/) (vanilla) using [unofficial user repository](#Unofficial_user_repository) or build yourself from [AUR](/index.php/AUR "AUR").
 
 **Note:** Mozc works with [ibus](https://www.archlinux.org/packages/?name=ibus). Please see also [IBus](/index.php/IBus "IBus") for installation and configuration.
 
@@ -75,7 +75,7 @@ Or, specify package names directly. For example:
 
 You can install from AUR as follows.
 
-First, get [mozc](https://aur.archlinux.org/packages/mozc/)<sup><small>AUR</small></sup> tarball from AUR and edit the PKGBUILD if necessary.
+First, get [mozc](https://aur.archlinux.org/packages/mozc/) tarball from AUR and edit the PKGBUILD if necessary.
 
 ```
 $ wget [https://aur.archlinux.org/packages/mo/mozc/mozc.tar.gz](https://aur.archlinux.org/packages/mo/mozc/mozc.tar.gz)
@@ -114,11 +114,11 @@ Each packages consist as follows:
 
 #### uim-mozc
 
-Though [mozc](https://aur.archlinux.org/packages/mozc/)<sup><small>AUR</small></sup> adapts to only IBus input method framework, [macuim](http://code.google.com/p/macuim/) provides _uim-mozc_ plugin. [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/)<sup><small>AUR</small></sup> is for vanilla _mozc_ and [mozc-ut](https://aur.archlinux.org/packages/mozc-ut/)<sup><small>AUR</small></sup>, [mozc-svn](https://aur.archlinux.org/packages/mozc-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mozc-svn)]</sup> can build _uim-mozc_ itself (see [Input Japanese using uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")). You can install _uim-mozc_ from [unofficial user repository](#Unofficial_user_repository) as well as vanilla _mozc_.
+Though [mozc](https://aur.archlinux.org/packages/mozc/) adapts to only IBus input method framework, [macuim](http://code.google.com/p/macuim/) provides _uim-mozc_ plugin. [uim-mozc](https://aur.archlinux.org/packages/uim-mozc/) is for vanilla _mozc_ and [mozc-ut](https://aur.archlinux.org/packages/mozc-ut/), [mozc-svn](https://aur.archlinux.org/packages/mozc-svn/) can build _uim-mozc_ itself (see [Input Japanese using uim](/index.php/Input_Japanese_using_uim "Input Japanese using uim")). You can install _uim-mozc_ from [unofficial user repository](#Unofficial_user_repository) as well as vanilla _mozc_.
 
 #### mozc-ut
 
-[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/)<sup><small>AUR</small></sup> comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html) and can build _uim-mozc_. The dictionary adds over 350,000 words into original.
+[mozc-ut](https://aur.archlinux.org/packages/mozc-ut/) comes with [Mozc UT dictionary](http://www.geocities.jp/ep3797/mozc_01.html) and can build _uim-mozc_. The dictionary adds over 350,000 words into original.
 
 **Note:**
 
@@ -142,7 +142,7 @@ _uim_mozc="yes"
 
 #### mozc-svn
 
-[mozc-svn](https://aur.archlinux.org/packages/mozc-svn/)<sup><small>AUR</small></sup><sup>[[broken link](/index.php/ArchWiki:Requests#Broken_package_links "ArchWiki:Requests"): archived in [aur-mirror](http://pkgbuild.com/git/aur-mirror.git/tree/mozc-svn)]</sup> builds using the head of published svn repository and can build _uim-mozc_ and _fcitx-mozc_ plugin. You should not use _mozc-svn_ unless you have any reason (e.g. for test).
+[mozc-svn](https://aur.archlinux.org/packages/mozc-svn/) builds using the head of published svn repository and can build _uim-mozc_ and _fcitx-mozc_ plugin. You should not use _mozc-svn_ unless you have any reason (e.g. for test).
 
 ## Configuration
 
