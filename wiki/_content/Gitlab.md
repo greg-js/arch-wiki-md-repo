@@ -23,7 +23,6 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
         *   [2.3.6 Initialize Gitlab database](#Initialize_Gitlab_database)
         *   [2.3.7 Configure Git User](#Configure_Git_User)
         *   [2.3.8 Adjust modifier bits](#Adjust_modifier_bits)
-        *   [2.3.9 Redis Over Unix Socket](#Redis_Over_Unix_Socket)
 *   [3 Start and test GitLab](#Start_and_test_GitLab)
 *   [4 Advanced Configuration](#Advanced_Configuration)
     *   [4.1 Custom SSH Connection](#Custom_SSH_Connection)
@@ -39,6 +38,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
             *   [4.3.3.2 Create a virtual host for Gitlab](#Create_a_virtual_host_for_Gitlab)
             *   [4.3.3.3 Enable host and start unicorn](#Enable_host_and_start_unicorn)
     *   [4.4 Redis](#Redis)
+        *   [4.4.1 Redis Over Unix Socket](#Redis_Over_Unix_Socket)
 *   [5 Useful Tips](#Useful_Tips)
     *   [5.1 Fix Rake Warning](#Fix_Rake_Warning)
     *   [5.2 Hook into /var](#Hook_into_.2Fvar)
@@ -345,83 +345,6 @@ Finally, check that `/etc/webapps/gitlab/secret` contains a random hex string.
 # find /var/lib/gitlab/repositories/ -type d -print0 | xargs -0 chmod g+s
 
 ```
-
-#### Redis Over Unix Socket
-
-If Redis is set to listen on socket, you may want to adjust the default configuration:
-
- `/etc/redis.conf` 
-
-```
-...
-# Accept connections on the specified port, default is 6379.
-# If port 0 is specified Redis will not listen on a TCP socket.
-port 0
-...
-# By default Redis listens for connections from all the network interfaces
-# available on the server. It is possible to listen to just one or multiple
-# interfaces using the "bind" configuration directive, followed by one or
-# more IP addresses.
-#
-# Examples:
-#
-# bind 192.168.1.100 10.0.0.1
-bind 127.0.0.1
-
-# Specify the path for the Unix socket that will be used to listen for
-# incoming connections. There is no default, so Redis will not listen
-# on a unix socket when not specified.
-#
-unixsocket /var/run/redis/redis.sock
-unixsocketperm 770
-```
-
-Create the directory `/var/run/redis` and set the correct permissions:
-
-```
-# mkdir /var/run/redis
-# chown redis:redis /var/run/redis
-# chmod 755 /var/run/redis
-
-```
-
-Add the user `git` and `gitlab` to the `redis` group:
-
-```
-# usermod -a -G redis git
-# usermod -a -G redis gitlab
-
-```
-
-Update `/etc/webapps/gitlab-shell/config.yml` and `/etc/webapps/gitlab/resque.yml` files:
-
- `/etc/webapps/gitlab/resque.yml` 
-
-```
-development: unix:/var/run/redis/redis.sock
-test: unix:/run/redis/redis.sock
-production: unix:/run/redis/redis.sock
-```
-
- `/etc/webapps/gitlab-shell/config.yml` 
-
-```
-...
-# Redis settings used for pushing commit notices to gitlab
-redis:
-  bin: /usr/bin/redis-cli
-  host: 127.0.0.1
-  port: 6379
-  # pass: redispass # Allows you to specify the password for Redis
-  database: 5 # Use different database, default up to 16
-  socket: /var/run/redis/redis.sock # uncomment this line
-  namespace: resque:gitlab
-...
-```
-
-Finally restart the `redis`, `gitlab-sidekiq` and `gitlab-unicorn` services.
-
-For more information, please see issue [#6100](https://github.com/gitlabhq/gitlabhq/issues/6100).
 
 ## Start and test GitLab
 
@@ -783,6 +706,83 @@ Environment=REDIS_URL=unix:///run/gitlab/redis.sock
 
 ```
 
+#### Redis Over Unix Socket
+
+If Redis is set to listen on socket, you may want to adjust the default configuration:
+
+ `/etc/redis.conf` 
+
+```
+...
+# Accept connections on the specified port, default is 6379.
+# If port 0 is specified Redis will not listen on a TCP socket.
+port 0
+...
+# By default Redis listens for connections from all the network interfaces
+# available on the server. It is possible to listen to just one or multiple
+# interfaces using the "bind" configuration directive, followed by one or
+# more IP addresses.
+#
+# Examples:
+#
+# bind 192.168.1.100 10.0.0.1
+bind 127.0.0.1
+
+# Specify the path for the Unix socket that will be used to listen for
+# incoming connections. There is no default, so Redis will not listen
+# on a unix socket when not specified.
+#
+unixsocket /var/run/redis/redis.sock
+unixsocketperm 770
+```
+
+Create the directory `/var/run/redis` and set the correct permissions:
+
+```
+# mkdir /var/run/redis
+# chown redis:redis /var/run/redis
+# chmod 755 /var/run/redis
+
+```
+
+Add the user `git` and `gitlab` to the `redis` group:
+
+```
+# usermod -a -G redis git
+# usermod -a -G redis gitlab
+
+```
+
+Update `/etc/webapps/gitlab-shell/config.yml` and `/etc/webapps/gitlab/resque.yml` files:
+
+ `/etc/webapps/gitlab/resque.yml` 
+
+```
+development: unix:/var/run/redis/redis.sock
+test: unix:/run/redis/redis.sock
+production: unix:/run/redis/redis.sock
+```
+
+ `/etc/webapps/gitlab-shell/config.yml` 
+
+```
+...
+# Redis settings used for pushing commit notices to gitlab
+redis:
+  bin: /usr/bin/redis-cli
+  host: 127.0.0.1
+  port: 6379
+  # pass: redispass # Allows you to specify the password for Redis
+  database: 5 # Use different database, default up to 16
+  socket: /var/run/redis/redis.sock # uncomment this line
+  namespace: resque:gitlab
+...
+```
+
+Finally restart the `redis`, `gitlab-sidekiq` and `gitlab-unicorn` services.
+
+For more information, please see issue [#6100](https://github.com/gitlabhq/gitlabhq/issues/6100).
+
 ## Useful Tips
 
 ### Fix Rake Warning
@@ -1055,4 +1055,4 @@ Finally, restart the gitlab services and test your site.
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=415425](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=415425)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=419016](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=419016)"

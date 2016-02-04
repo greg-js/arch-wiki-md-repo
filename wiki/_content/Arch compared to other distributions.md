@@ -8,7 +8,6 @@ This page attempts to draw a comparison between Arch Linux and other popular GNU
     *   [1.1 CRUX](#CRUX)
     *   [1.2 LFS](#LFS)
     *   [1.3 Gentoo/Funtoo Linux](#Gentoo.2FFuntoo_Linux)
-    *   [1.4 Sorcerer/Lunar-Linux/Source Mage](#Sorcerer.2FLunar-Linux.2FSource_Mage)
 *   [2 General](#General)
     *   [2.1 Debian GNU/Linux](#Debian_GNU.2FLinux)
     *   [2.2 Fedora](#Fedora)
@@ -18,7 +17,6 @@ This page attempts to draw a comparison between Arch Linux and other popular GNU
     *   [3.2 Linux Mint](#Linux_Mint)
     *   [3.3 openSUSE](#openSUSE)
     *   [3.4 Mandriva/Mageia](#Mandriva.2FMageia)
-    *   [3.5 PCLinuxOS](#PCLinuxOS)
 *   [4 The *BSDs](#The_.2ABSDs)
 *   [5 See also](#See_also)
 
@@ -49,13 +47,6 @@ Source-based distributions are highly portable, giving the advantage of controll
 *   Arch supports i686 and x86_64 while Gentoo officially supports x86 (i486/i686), x86_64, PPC/PPC64, SPARC, Alpha, ARM, MIPS, HPPA, S/390 and Itanium architectures.
 *   Gentoo's official package and system management tools tend to be rather more complex and "powerful" than those provided by Arch, and certain features which are at the very heart of Gentoo _([USE flags](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=2), [SLOTs](http://www.gentoo.org/doc/en/handbook/handbook-x86.xml?part=2&chap=1#doc_chap5), etc.)_ do not have any direct Arch Linux equivalent. Some of that is due to the fact that Arch is primarily a binary distro, but differences in [design philosophy](/index.php/The_Arch_Way "The Arch Way") also play a big role, with Arch taking a more principled stance in favor of architectural simplicity and avoiding over-engineering.
 *   Because both the Gentoo and Arch installations only include a base system, both are considered to be highly customizable. Gentoo users will generally feel quite comfortable with most aspects of Arch.
-
-### Sorcerer/Lunar-Linux/Source Mage
-
-*   Sorcerer/Lunar-Linux/Source Mage (SLS) are all source-based distributions originally related to one another.
-*   SLS distributions use a rather simple set of script files to create package descriptions, and use a global configuration file to configure the compilation process, much like the [Arch Build System](/index.php/Arch_Build_System "Arch Build System"). The SLS tools do full dependency checking, including handling optional features, package tracking, removal and upgrading. There are no binary packages for any of the SLS family, although they all provide the ability to roll back to earlier installed packages easily.
-*   The installation process involves configuring a simple base system from the shell and ncurses menus, then optionally recompiling the base system afterward.
-*   Like Arch, there is no default WM/DE/DM, and Xorg is not included in the base installation. Several X server alternatives are available (X.Org 6.8 or 7, XFree86).
 
 ## General
 
@@ -127,7 +118,7 @@ Sometimes called "newbie distros", the beginner-friendly distributions share a l
 
 *   Arch development is not biased towards any one particular user interface beyond what its community provide support for. Furthermore, Canonical's commercial nature has led them to some controversial decisions, such as the inclusion of advertisements in Unity's _Dash_ menu and user data collection. Arch is an independent, community-driven project with no commercial agenda.
 
-*   Ubuntu moves between discrete releases every 6 months, whereas Arch is a rolling-release system with a new snapshot issued every month.
+*   Ubuntu moves between discrete releases every 6 months, whereas Arch is a rolling-release system.
 
 *   Arch offers a ports-like package build system and the [Arch User Repository](/index.php/Arch_User_Repository "Arch User Repository"), where users can share source packages for the [pacman](/index.php/Pacman "Pacman") package manager. Ubuntu uses the more complex [apt](https://en.wikipedia.org/wiki/Advanced_Packaging_Tool "wikipedia:Advanced Packaging Tool"), and allows redistribution of binary packages via [Personal Package Archives](https://launchpad.net/ubuntu/+ppas).
 
@@ -148,12 +139,6 @@ openSUSE is centered around the RPM package format and its well-regarded YaST2 G
 
 Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of making GNU/Linux easy to use for everyone; it is RPM-based and uses the urpmi package manager. Mageia is a Mandriva fork created by former Mandriva employees which opposes its parent distribution's commercial position, being a non-profit and community-driven project. Again, Arch takes a simpler approach than Mandriva or Mageia, being text-based and relying on more manual configuration, and is aimed at intermediate to advanced users.
 
-### PCLinuxOS
-
-*   PCLinuxOS is a distribution originally based on Mandriva providing a [Desktop environment](/index.php/Desktop_environment "Desktop environment"), and is described as "simple", though its definition of simple is quite different than the Arch definition. PCLOS is GUI-driven, with GUI hardware configuration tools and the _Synaptic_ package management front-end, and claims to have little or no reliance on the shell. Arch is command-line oriented and designed for more simple approaches to system configuration, management and maintenance.
-
-*   PCLOS uses the apt package manager as a wrapper for RPM packages. Arch uses its own independently-developed [pacman](/index.php/Pacman "Pacman") package manager with _.pkg.tar.xz_ packages.
-
 ## The *BSDs
 
 *   The *BSDs share a common origin and descend directly from the work done at UC Berkeley to produce a freely redistributable, free of cost, UNIX system. They are not GNU/Linux distributions, but rather, UNIX-like operating systems, and derived from the original AT&T UNIX code.
@@ -168,4 +153,4 @@ Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of ma
 
 *   [DistroWatch](http://distrowatch.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419012](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419012)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419017](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419017)"
