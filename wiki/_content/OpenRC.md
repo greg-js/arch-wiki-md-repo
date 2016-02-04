@@ -192,4 +192,4 @@ See [ConsoleKit](/index.php/ConsoleKit "ConsoleKit") for more information.
 *   [Blog: OpenRC on Arch Linux](http://blog.notfoss.com/posts/openrc-on-arch-linux/)
 *   [Manjaro wiki](https://wiki.manjaro.org/index.php?title=OpenRC,_an_alternative_to_systemd)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=411467)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenRC&oldid=418899](https://wiki.archlinux.org/index.php?title=OpenRC&oldid=418899)"

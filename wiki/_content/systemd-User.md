@@ -309,7 +309,6 @@ WantedBy=wm.target
 
 *   [KaiSforza's Bitbucket wiki](https://bitbucket.org/KaiSforza/systemd-user-units/wiki/Home)
 *   [Zoqaeski's units on GitHub](https://github.com/zoqaeski/systemd-user-units)
-*   [Collection of useful systemd user units](https://github.com/grawity/systemd-user-units)
 *   [Arch forum thread about changes in systemd 206 user instances](https://bbs.archlinux.org/viewtopic.php?id=167115)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418531](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418531)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418872](https://wiki.archlinux.org/index.php?title=Systemd/User&oldid=418872)"

@@ -620,6 +620,17 @@ WantedBy=suspend.target
 
 To [enable](/index.php/Enable "Enable") this service for your wireless card, for example, enable `netctl-auto-resume@wlan0.service` as root. Change `wlan0` to the required network interface.
 
+If the device is not yet running on resume when the unit is started, this will fail. It can be fixed by adding the following dependency in the _After_ line:
+
+ `/etc/systemd/system/netctl-auto-resume@.service` 
+
+```
+...
+After=suspend.target sys-subsystem-net-devices-%i.device
+...
+
+```
+
 ### netctl-auto suddenly stopped working for WiFi adapters
 
 This problem seems to be related to a recent wpa_supplicant update (see [FS#44731](https://bugs.archlinux.org/task/44731)), but a work-around is quite trivial. Just create a file for your interface (e.g. wlp3s0) in /etc/netctl/interfaces with the following content and make it executable:
@@ -668,4 +679,4 @@ ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=418210](https://wiki.archlinux.org/index.php?title=Netctl&oldid=418210)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=418919](https://wiki.archlinux.org/index.php?title=Netctl&oldid=418919)"

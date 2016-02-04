@@ -619,4 +619,4 @@ And add your user to that group.
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418482](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418482)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418881](https://wiki.archlinux.org/index.php?title=Gamepad&oldid=418881)"

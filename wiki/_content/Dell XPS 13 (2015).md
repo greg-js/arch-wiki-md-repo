@@ -53,7 +53,7 @@ There are no exclusive hardware differences between the Developer Edition and th
 
 ### BIOS updates
 
-[BIOS update A07](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=28M21) was released on 2015-11-26\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/efi`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update A07](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=28M21) was released on 2015-11-26\. With A02 or newer, almost everything should work out of the box, and the kernel boot parameters that were used in conjunction with earlier BIOS versions are no longer necessary. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ### WiFi
 
@@ -166,7 +166,7 @@ Update [xf86-video-intel](https://www.archlinux.org/packages/?name=xf86-video-in
 
 ### Graphical artifacting/instability after S3 resume
 
-If you encounter some artifacts and/or an unusable graphical environment after resuming from a suspend, you may want to [switch your Intel graphics acceleration from SNA to UXA](/index.php/Intel_graphics#SNA_issues "Intel graphics"). Switching to UXA, however, will result in decreased performance.
+If you encounter some artifacts and/or an unusable graphical environment after resuming from a suspend, you may want to [switch your Intel graphics acceleration from SNA to UXA](/index.php/Intel_graphics#SNA_issues "Intel graphics"). Switching to UXA, however, will result in decreased performance. Switching to xf86-video-modesetting (glamor acceleration) should not decrease performance much, however it is still not known if will fix resume.
 
 ### Connection issues with Broadcom wireless
 
@@ -210,4 +210,4 @@ Project Sputnik:
 *   [Update: Dell XPS 13 laptop, developer edition – Sputnik Gen 4](http://bartongeorge.net/2015/02/05/update-dell-xps-13-laptop-developer-edition-sputnik-gen-4/)
 *   [4th gen Dell XPS 13 developer edition available!](http://bartongeorge.net/2015/04/09/4th-gen-dell-xps-13-developer-edition-available/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418831](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418831)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418863](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2015)&oldid=418863)"

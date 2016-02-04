@@ -35,6 +35,19 @@ Here is a sample configuration for the vertical scroll wheel and the two buttons
 
 ```
 
+If using PulseAudio (more info [here](/index.php/Xbindkeys#Xbindkeysrc "Xbindkeys"):
+
+```
+# thumb wheel up => increase volume
+pactl set-sink-volume @DEFAULT_SINK@ +2%
+   b:6
+
+# thumb wheel down => lower volume
+pactl set-sink-volume @DEFAULT_SINK@ -2%
+   b:7
+
+```
+
 Now start `xbindkeys`, preferably add that to the autostart list of your desktop environment.
 
 The thumb button is special, with the Logitech software available for Windows and Mac, you would be able to map up to 5 actions to it: by pressing the button or by pressing the button and moving the mouse in one of four directions. As of November 2015, there is no way to enable the direction feature using Arch.
@@ -61,4 +74,4 @@ $ pkill xbindkeys && xbindkeys
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_MX_Master&oldid=409368](https://wiki.archlinux.org/index.php?title=Logitech_MX_Master&oldid=409368)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Logitech_MX_Master&oldid=418918](https://wiki.archlinux.org/index.php?title=Logitech_MX_Master&oldid=418918)"

@@ -309,6 +309,8 @@ Rebuilding the iso after modifications is not officially supported. However, it 
 
 Furthermore it is required to edit the script `airootfs/root/customize_airootfs.sh`, and add an id command in the beginning of the `useradd` line as shown here. Otherwise the rebuild stops at this point because the user that is to be added already exists [[2]](https://bugs.archlinux.org/task/41865).
 
+**Note:** persistent data such as `created users` or symlinks such as `/etc/sudoers` will require you to do `rm -rf work/*`. (You could probably narrow this down, but this will do the trick)
+
 ```
 ! id arch && useradd -m -p "" -g users -G "adm,audio,floppy,log,network,rfkill,scanner,storage,optical,power,wheel" -s /usr/bin/zsh arch
 
@@ -440,4 +442,4 @@ After all of these, now you can follow the [Beginners' guide#Locale](/index.php/
 
 *   [A live DJ distribution powered by ArchLinux and built with Archiso](http://didjix.blogspot.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533](https://wiki.archlinux.org/index.php?title=Archiso&oldid=414533)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Archiso&oldid=418912](https://wiki.archlinux.org/index.php?title=Archiso&oldid=418912)"

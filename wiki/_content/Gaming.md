@@ -327,7 +327,7 @@ The stock Arch kernel provides a very good baseline for general usage. However, 
 
 ### Using BFQ
 
-BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [Linux-ck](/index.php/Linux-ck "Linux-ck"), and is optimized to be much more simplistic, but provides better interactivity and throughput for non-server workloads. To enable, see [Linux-ck#How to enable the BFQ I/O Scheduler](/index.php/Linux-ck#How_to_enable_the_BFQ_I.2FO_Scheduler "Linux-ck"). It is important to note that although most guides recommend using either _noop_ or _deadline_ for SSDs for their raw throughput, they are actually detrimental to interactivity when more than one thread is attempting to access the device. It is best to use _bfq_ unless you desperately need the throughput advantage.
+BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archlinux.org/packages/?name=linux-zen) and [Linux-ck](/index.php/Linux-ck "Linux-ck"), and is optimized to be much more simplistic, but provides better interactivity and throughput for non-server workloads. To enable, simply add the kernel parameter _elevator=bfq_ to your [bootloader](/index.php/Bootloader "Bootloader"). It is important to note that although most guides recommend using either _noop_ or _deadline_ for SSDs for their raw throughput, they are actually detrimental to interactivity when more than one thread is attempting to access the device. It is best to use _bfq_ unless you desperately need the throughput advantage.
 
 ## See also
 
@@ -340,4 +340,4 @@ BFQ is an io-scheduler that comes as a feature of [linux-zen](https://www.archli
 *   [Games on Linux](http://www.gamesonlinux.com) - Commercial games on Linux
 *   [Gaming on Linux](http://www.gamingonlinux.com/) - Active Linux gaming news and editorial source and community
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gaming&oldid=415249](https://wiki.archlinux.org/index.php?title=Gaming&oldid=415249)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gaming&oldid=418873](https://wiki.archlinux.org/index.php?title=Gaming&oldid=418873)"

@@ -1,5 +1,7 @@
 # User:Horo
 
+[Category:Arch User Repository](/index.php/Category:Arch_User_Repository "Category:Arch User Repository") [Category:Package development](/index.php/Category:Package_development "Category:Package development") [Category:Package management](/index.php/Category:Package_management "Category:Package management")
+
 The Arch User Repository (AUR) is a community-driven repository for Arch users. It contains package descriptions ([PKGBUILDs](/index.php/PKGBUILD "PKGBUILD")) that allow you to compile a package from source with [makepkg](/index.php/Makepkg "Makepkg") and then install it via [pacman](/index.php/Pacman#Additional_commands "Pacman"). The AUR was created to organize and share new packages from the community and to help expedite popular packages' inclusion into the [community](/index.php/Community "Community") repository. This document explains how users can access and utilize the AUR.
 
 A good number of new packages that enter the official repositories start in the AUR. In the AUR, users are able to contribute their own package builds (PKGBUILD and related files). The AUR community has the ability to vote for or against packages in the AUR. If a package becomes popular enough — provided it has a compatible license and good packaging technique — it may be entered into the _community_ repository (directly accessible by [pacman](/index.php/Pacman "Pacman") or [abs](/index.php/Abs "Abs")).
@@ -405,4 +407,4 @@ $ for pkg in $(pacman -Qqm); do cower -s $pkg &>/dev/null || echo "$pkg not in A
 *   [AUR Mailing List](https://www.archlinux.org/mailman/listinfo/aur-general)
 *   [AUR Mirror Git repository](http://pkgbuild.com/git/aur-mirror.git/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=User:Horo&oldid=418806](https://wiki.archlinux.org/index.php?title=User:Horo&oldid=418806)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=User:Horo&oldid=418835](https://wiki.archlinux.org/index.php?title=User:Horo&oldid=418835)"

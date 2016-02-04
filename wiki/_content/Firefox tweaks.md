@@ -28,7 +28,7 @@ This page contains advanced Firefox configuration options and performance tweaks
         *   [2.2.2 Hide button icons](#Hide_button_icons)
         *   [2.2.3 Hiding various tab buttons](#Hiding_various_tab_buttons)
         *   [2.2.4 Horizontal tabs](#Horizontal_tabs)
-        *   [2.2.5 Hide window border and title bar in Plasma](#Hide_window_border_and_title_bar_in_Plasma)
+        *   [2.2.5 Hide window border and title bar](#Hide_window_border_and_title_bar)
         *   [2.2.6 Auto-hide Bookmarks Toolbar](#Auto-hide_Bookmarks_Toolbar)
         *   [2.2.7 Remove sidebar width restrictions](#Remove_sidebar_width_restrictions)
     *   [2.3 Web content CSS settings](#Web_content_CSS_settings)
@@ -315,28 +315,19 @@ To place the tab bar horizontally stacked along the sides of the browser window:
 
 ```
 
-#### Hide window border and title bar in Plasma
+#### Hide window border and title bar
 
-*   Open Settings -> Application Style -> Window Decorations
-*   Select Breeze and click on the Settings-button
-*   Open the tab Window-Specific Overrides and click on the Add button
-*   Select the following options:
-
-| Option | Value |
-| Matching window property | Window Class Name |
-| Regular expression to match | Firefox |
-| Border size | No Border |
-| Hide window title bar | Enable |
-
-Next install [this extension](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/) and set the following settings (leaving other settings to default):
+Install the [Hide Caption Titlebar Plus](https://addons.mozilla.org/en-US/firefox/addon/hide-caption-titlebar-plus-sma/) extension and set the following settings (leaving other settings to default):
 
 | Option | Value |
 | Show Custom Caption/TitleBar | Never |
 | Activate custom borders and corner resizers | Deactivate |
-| Enable Customizable Buttons (min,max,close) | No (Fx. default) |
+| Enable Customizable Buttons (min,max,close) | Using a Glass-like window background |
 | Custom Minimize, Max, Close Buttons | Auto. Current theme's skin (fixed position) |
 | Drag Fx window using Tab-bar background | Enable |
-| Alternative hide-titlebar feature | Don't use |
+| Alternative hide-titlebar feature | Use |
+
+The extension [Classic Theme Restorer](https://addons.mozilla.org/nl/firefox/addon/classicthemerestorer/) provides more tweaking options to get the best result (e.g. set tab height to 28px, enable/disable toolbars/buttons, etc.).
 
 #### Auto-hide Bookmarks Toolbar
 
@@ -698,4 +689,4 @@ This chrome feature can be achieved via [FindBar Tweak](https://addons.mozilla.o
 *   [about:config Entries Explained](http://kb.mozillazine.org/About:config_entries)
 *   [Firefox touch-ups that might be desired](http://linuxtidbits.wordpress.com/2009/08/01/better-fox-cat-and-weasel/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=417146](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=417146)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=418867](https://wiki.archlinux.org/index.php?title=Firefox_tweaks&oldid=418867)"

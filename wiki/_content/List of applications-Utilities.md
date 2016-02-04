@@ -151,7 +151,7 @@ See also [Wikipedia:Comparison of integrated development environments](https://e
 
 	[http://www.editra.org](http://www.editra.org) || [editra-svn](https://aur.archlinux.org/packages/editra-svn/)
 
-*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python 3.x and Ruby IDE in PyQt4.
+*   **[Eric](https://en.wikipedia.org/wiki/Eric_Python_IDE "wikipedia:Eric Python IDE")** — Full-featured Python and Ruby IDE in PyQt5.
 
 	[http://eric-ide.python-projects.org/](http://eric-ide.python-projects.org/) || [eric](https://www.archlinux.org/packages/?name=eric)
 
@@ -1029,4 +1029,4 @@ See [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synch
 
 	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418802](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418802)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418844](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418844)"

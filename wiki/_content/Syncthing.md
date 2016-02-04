@@ -56,10 +56,10 @@ ExecStart=
 ExecStart=/usr/bin/syncthing-relaysrv FLAGS
 ```
 
-A traffic statistics page is available at port 22070, e.g. [http://5.9.90.188:22070/status](http://5.9.90.188:22070/status).
+A traffic statistics page is available at port 22070, e.g. [http://78.47.248.86:22070/status](http://78.47.248.86:22070/status).
 
 ## Troubleshooting
 
 See [Debugging syncthing](http://docs.syncthing.net/dev/debugging.html).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Syncthing&oldid=417260](https://wiki.archlinux.org/index.php?title=Syncthing&oldid=417260)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Syncthing&oldid=418833](https://wiki.archlinux.org/index.php?title=Syncthing&oldid=418833)"

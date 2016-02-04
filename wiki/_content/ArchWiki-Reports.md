@@ -49,5 +49,6 @@ This table is used to report questionable edits as described in [ArchWiki:Mainte
 | [Steam](https://wiki.archlinux.org/index.php?title=Steam&curid=2540&diff=414877&oldid=414674) | 2016-01-10 12:49:57 | content | purely speculative, editor likely didn't configure [ALSA](/index.php/ALSA "ALSA") correctly |
 | [Dell_XPS_13_(2016)](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&curid=21659&diff=414780&oldid=414469) | 2016-01-09 08:12:31 | content | wrong place for [TLP](/index.php/TLP "TLP") workarounds, at least the issue should be restricted to the general case (for which there again is no bug report) |
 | [Steam](https://wiki.archlinux.org/index.php?title=Steam&curid=2540&diff=414674&oldid=414314) | 2016-01-08 02:21:18 | content | needs external reference |
+| [Archiso](https://wiki.archlinux.org/index.php?title=Archiso&curid=6797&diff=418912&oldid=414533) | 2016-02-03 17:34:07 | content | remove the whole dir, then mention "You could probably narrow this down, but this will do the trick", really? |
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=417518](https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=417518)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=418913](https://wiki.archlinux.org/index.php?title=ArchWiki:Reports&oldid=418913)"

@@ -30,12 +30,11 @@ As of kernel 4.3, the Intel Skylake architecture is supported.
 *   [8 Sound](#Sound)
     *   [8.1 PulseAudio Workaround](#PulseAudio_Workaround)
 *   [9 Microphone](#Microphone)
-*   [10 Kernel specific notes](#Kernel_specific_notes)
-*   [11 Links](#Links)
+*   [10 Links](#Links)
 
 ## BIOS updates
 
-[BIOS update 1.2.3](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=T0R1K) was released on 2016-01-29\. Store the update binary on your EFI partition (`/boot/efi`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
+[BIOS update 1.2.3](http://www.dell.com/support/home/us/en/04/Drivers/DriversDetails?driverId=T0R1K) was released on 2016-01-29\. Store the update binary on your EFI partition (`/boot/EFI`) or on a USB flash drive, reboot, and choose BIOS Update in the F12 boot menu.
 
 ## SATA controller
 
@@ -76,7 +75,7 @@ An answer from [Intel Communities](https://communities.intel.com/thread/75161?st
 
 ## Wireless
 
-The built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel in the testing repository (version 4.4.0-3). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
+The built-in Broadcom BCM4350 is now supported in the current [linux](https://www.archlinux.org/packages/?name=linux) kernel (version 4.4.1-1). The wireless module `brcmfmac` also needs the firmware `brcmfmac4350-pcie.bin` from the related [linux-firmware](https://www.archlinux.org/packages/?name=linux-firmware) package.
 
 If you have not already done so, enable the testing repository to retrieve the package in `/etc/pacman.conf`:
 
@@ -223,14 +222,8 @@ This will prevent PulseAudio to fiddle with the gain setting at all. However, yo
 
 For ALSA, increase "Digital" channel for microphone to work.
 
-## Kernel specific notes
-
-The [linux](https://www.archlinux.org/packages/?name=linux) kernel in the core repository (4.3) does not support wifi. It is recommended to install the patch kernel from [linux-bcm4350](https://aur.archlinux.org/packages/linux-bcm4350/) or use the kernel from the testing repository.
-
-The linux kernel in testing repository (4.4) supports wifi out-of-the-box, see [#Wireless](#Wireless).
-
 ## Links
 
 General Discussion Thread on Arch Forum [[3]](https://bbs.archlinux.org/viewtopic.php?pid=1579113)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417855](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=417855)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=418862](https://wiki.archlinux.org/index.php?title=Dell_XPS_13_(2016)&oldid=418862)"

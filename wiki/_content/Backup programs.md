@@ -1,6 +1,6 @@
 # Backup programs
 
-This wiki page contains information about various backup programs. It is a good idea to have regular backups of important data, most notably configuration files (`/etc/*`) and the local pacman database (usually `/var/lib/pacman/local/*`).
+Having backups of important data is a necessary measure to take, since human and machine processing errors are very likely to generate corruption as time passes, and also the physical media where the data is stored is inevitably destined to fail. This page introduces many applications available for the task, subdivided in categories to best suit most use cases.
 
 ## Contents
 
@@ -521,4 +521,4 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=418624](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=418624)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=418846](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=418846)"

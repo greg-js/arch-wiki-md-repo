@@ -557,4 +557,4 @@ To finish, following [Dm-crypt/Encrypting an entire system#Post-installation](/i
 
 **Tip:** You will notice that since the system partition only has "random" data, it does not have a partition table and by that an `UUID` or a `name`. But you can still have a consistent mapping using the disk id under `/dev/disk/by-id/`
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=418423](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=418423)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=418871](https://wiki.archlinux.org/index.php?title=Dm-crypt/Specialties&oldid=418871)"

@@ -112,6 +112,9 @@ Some things that are easy to do with cron are difficult or impossible to do with
 
 *   Complexity: to set up a timed job with _systemd_ you create two files and run a couple `systemctl` commands. Compare that to adding a single line to a crontab.
 *   Emails: there is no built-in equivalent to cron's `MAILTO` for sending emails on job failure. See the next section for an example of setting up an equivalent using `OnFailure=`.
+*   Random delay: there is no built-in equivalent to cron's `RANDOM_DELAY` for randomly spreading timers out across a given interval (see [bug report](https://bugs.freedesktop.org/show_bug.cgi?id=82084), [test results](https://wiki.archlinux.org/index.php?title=Talk:Systemd/Timers&oldid=356408#Parallelization_section_is_confusing)). Services which you do not want to run concurrently must have their timers manually set to minimize overlap.
+
+**Note:** The `AccuracySec` option is **not** useful for randomly staggering timers since it "is synchronized between all local timers units" (`systemd.timer(5)`). In other words, `AccuracySec` shifts all timer activation times by the same amount. For example, all `OnCalendar=daily` timer units with `AccuracySec=15m` will trigger the associated services at the same point in time between 00:00 and 00:15.
 
 ### MAILTO
 
@@ -176,4 +179,4 @@ If you like crontabs just because they provide a unified view of all scheduled j
 
 	[https://github.com/systemd-cron/systemd-cron](https://github.com/systemd-cron/systemd-cron) || [systemd-cron](https://aur.archlinux.org/packages/systemd-cron/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=418832](https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=418832)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=418838](https://wiki.archlinux.org/index.php?title=Systemd/Timers&oldid=418838)"

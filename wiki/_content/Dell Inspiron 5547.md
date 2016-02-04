@@ -73,9 +73,9 @@ Need to configure [PulseAudio](/index.php/PulseAudio/Troubleshooting#Microphone_
 
 ### Video
 
-The notebook comes two GPUs, one power-efficent (Intel Corporation Haswell-ULT Integrated Graphics) and one more powerful and more power-hungry (AMD Radeon R7 M265). Work with [video-hybrid-intel-ati-bumblebee](https://www.archlinux.org/packages/?name=video-hybrid-intel-ati-bumblebee) but you need to read [Hybrid graphics/AMD Dynamic Switchable Graphics](/index.php/ATI#Hybrid_graphics.2FAMD_Dynamic_Switchable_Graphics "ATI") (proper use of hybrid graphics). This has not be testing yet.
+The notebook comes two GPUs, one power-efficent (Intel Corporation Haswell-ULT Integrated Graphics) and one more powerful and more power-hungry (AMD Radeon R7 M265). Please read this [ATI Dynamic Switchable Graphics](/index.php/Hybrid_graphics#ATI_Dynamic_Switchable_Graphics "Hybrid graphics"). This has not be testing yet.
 
-[AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") not tested.
+You can found a topic in the Archlinux forum about the problem [[[1]](https://bbs.archlinux.org/viewtopic.php?id=190236%7Chere)]
 
 ### Keyboard
 
@@ -97,4 +97,4 @@ Wireless worked out of the box.
 
 Not tested.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_5547&oldid=418334](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_5547&oldid=418334)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dell_Inspiron_5547&oldid=418896](https://wiki.archlinux.org/index.php?title=Dell_Inspiron_5547&oldid=418896)"
