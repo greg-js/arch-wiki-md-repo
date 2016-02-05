@@ -388,7 +388,7 @@ Older versions [require](http://source.android.com/source/initializing.html) a w
 
 ### Setting up the build environment
 
-Download the `repo` utility per [Android Downloading the Source guide](https://source.android.com/source/downloading.html).
+Whether use `repo` utility from [AUR](/index.php/AUR "AUR"), [repo](https://aur.archlinux.org/packages/repo/), or download it per [Android Downloading the Source guide](https://source.android.com/source/downloading.html). The later case requires modifying $PATH.
 
 ```
 $ mkdir ~/bin
@@ -632,4 +632,4 @@ rm `find /path/to/android-root -name .repopickle_config`
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=418203](https://wiki.archlinux.org/index.php?title=Android&oldid=418203)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Android&oldid=419061](https://wiki.archlinux.org/index.php?title=Android&oldid=419061)"

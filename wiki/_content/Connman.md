@@ -50,7 +50,7 @@ Before [enabling](/index.php/Enabling "Enabling") `connman.service`, ensure any 
 
 	[https://github.com/taylorchu/connman_dmenu](https://github.com/taylorchu/connman_dmenu) || [connman_dmenu-git](https://aur.archlinux.org/packages/connman_dmenu-git/)
 
-*   **EConnman** — Enlightenment desktop panel applet.
+*   **Econnman** — Enlightenment desktop panel applet.
 
 	[http://www.enlightenment.org](http://www.enlightenment.org) || [econnman](https://aur.archlinux.org/packages/econnman/)
 
@@ -308,4 +308,4 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 For further detailed information on ConnMan you may refer to the documentation in its git repo at [[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=412739](https://wiki.archlinux.org/index.php?title=Connman&oldid=412739)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=419050](https://wiki.archlinux.org/index.php?title=Connman&oldid=419050)"

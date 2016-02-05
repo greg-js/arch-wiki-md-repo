@@ -76,4 +76,4 @@ At first time, you also need to activate OMEMO plugin:
 4.  Use the checkbox on the bottom of each chat tab to enable or disable OMEMO encryption.
 5.  Click on "Get Device Keys".
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gajim&oldid=414921](https://wiki.archlinux.org/index.php?title=Gajim&oldid=414921)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gajim&oldid=419098](https://wiki.archlinux.org/index.php?title=Gajim&oldid=419098)"

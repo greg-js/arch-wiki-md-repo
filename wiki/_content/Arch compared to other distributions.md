@@ -2,6 +2,8 @@
 
 This page attempts to draw a comparison between Arch Linux and other popular GNU/Linux distributions and UNIX-like operating systems. The summaries that follow are brief descriptions that may help a person decide if Arch Linux will suit his or her needs. Although reviews and descriptions can be useful, first-hand experience is invariably the best way to compare distributions.
 
+For a more complete comparison, see [w:Comparison of operating systems](https://en.wikipedia.org/wiki/Comparison_of_operating_systems "w:Comparison of operating systems") and [w:Comparison of Linux distributions](https://en.wikipedia.org/wiki/Comparison_of_Linux_distributions "w:Comparison of Linux distributions").
+
 ## Contents
 
 *   [1 Source-based](#Source-based)
@@ -147,10 +149,10 @@ Mandriva Linux (formerly Mandrake Linux) was created in 1998 with the goal of ma
 
 *   The BSD license is generally more protective of the _coder_, in contrast to the GPL, which favors protection of the _code_ itself. Arch is released under the GPL.
 
-*   To learn more about the *BSD variants, see [Wikipedia:Comparison_of_BSD_operating_systems](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
+*   To learn more about the *BSD variants, see [Wikipedia:Comparison of BSD operating systems](https://en.wikipedia.org/wiki/Comparison_of_BSD_operating_systems "wikipedia:Comparison of BSD operating systems").
 
 ## See also
 
 *   [DistroWatch](http://distrowatch.com/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419017](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419017)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419043](https://wiki.archlinux.org/index.php?title=Arch_compared_to_other_distributions&oldid=419043)"

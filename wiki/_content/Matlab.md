@@ -20,6 +20,7 @@ From the [official website](http://www.mathworks.com/products/matlab/):
     *   [4.5 GPU computing](#GPU_computing)
     *   [4.6 Install supported compilers](#Install_supported_compilers)
     *   [4.7 Help browser](#Help_browser)
+    *   [4.8 Garbled Interface](#Garbled_Interface)
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Static TLS errors](#Static_TLS_errors)
     *   [5.2 MATLAB crashes when displaying graphics](#MATLAB_crashes_when_displaying_graphics)
@@ -207,6 +208,14 @@ This is a persistent change and to reverse it use
 
 ```
 
+### Garbled Interface
+
+```
+export J2D_D3D=false
+export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
+
+```
+
 ## Troubleshooting
 
 ### Static TLS errors
@@ -266,6 +275,14 @@ Then start Matlab.
 
 Set the environment variable `J2D_D3D` to `false`[[2]](https://stackoverflow.com/questions/22737535/swing-rendering-appears-broken-in-jdk-1-8-correct-in-jdk-1-7).
 
+In newer versions of MATLAB (R2015b) [[3]](https://www.reddit.com/r/archlinux/comments/3yaga8/matlab_installer_bonked/) this also requires setting `MATLAB_JAVA` to something openjdk based. Example:
+
+```
+export J2D_D3D=false
+./bin/glnxa64/install_unix -javadir /usr/lib/jvm/java-7-openjdk/jre
+
+```
+
 ### Corrupted text and fonts in menus and fields
 
 If you notice that the menus or the input fields are corrupted or not appearing correctly then you can try to activate the _"**Use antialiasing to smooth desktop fonts**"_ option in Matlab preferences, it seems to solve the problem. Go to _**Preferences -> Matlab -> Fonts**_ and activate it. You will need to restart Matlab in order to take affect.
@@ -302,4 +319,4 @@ export MATLAB_JAVA=/usr/lib/jvm/java-7-openjdk/jre
 
 If Matlab stops working after upgrading [ncurses](https://www.archlinux.org/packages/?name=ncurses) to v6.x, [install](/index.php/Install "Install") the [ncurses5-compat-libs](https://aur.archlinux.org/packages/ncurses5-compat-libs/) package. See [BBS#202575](https://bbs.archlinux.org/viewtopic.php?id=202575).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=415035](https://wiki.archlinux.org/index.php?title=Matlab&oldid=415035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Matlab&oldid=419100](https://wiki.archlinux.org/index.php?title=Matlab&oldid=419100)"

@@ -334,4 +334,4 @@ should then return the list of drivers instead of just the "Success" message.
 
 More information on interfacing CUPS with other printing systems can be found in the CUPS manual, e.g. on [http://localhost:631/sam.html#PRINTING_OTHER](http://localhost:631/sam.html#PRINTING_OTHER)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=408168](https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=408168)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=419092](https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=419092)"

@@ -387,6 +387,8 @@ $ export WINEDLLOVERRIDES="winemenubuilder.exe=d"
 
 If you have issues with dual-head setups and different display resolutions you are probably missing [lib32-libxrandr](https://www.archlinux.org/packages/?name=lib32-libxrandr).
 
+Also installing [lib32-libxinerama](https://www.archlinux.org/packages/?name=lib32-libxinerama) might fix dual-head issues with wine.
+
 ### exe-thumbnailer
 
 This is a small piece of UI code meant to be installed with (or even before) Wine. It provides thumbnails for executable files that show the embedded icons when available, and also gives the user a hint that Wine will be used to open it. Details can be found at [Wine wiki](http://wiki.winehq.org/exe-thumbnailer). Install it with the [gnome-exe-thumbnailer](https://aur.archlinux.org/packages/gnome-exe-thumbnailer/) package.
@@ -582,4 +584,4 @@ It is recommended using winetricks by default to open _.exe_ files, so you can c
 *   [FileInfo](http://wiki.gotux.net/code:perl:fileinfo) - Find Win32 PE/COFF headers in exe/dll/ocx files under Linux/Unix environment.
 *   [Gentoo's Wine Wiki Page](https://wiki.gentoo.org/wiki/Wine)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=417334](https://wiki.archlinux.org/index.php?title=Wine&oldid=417334)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wine&oldid=419070](https://wiki.archlinux.org/index.php?title=Wine&oldid=419070)"

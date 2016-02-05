@@ -51,6 +51,7 @@ An example live version can be found at [GitLab.com](https://gitlab.com/).
     *   [6.1 HTTPS is not green (gravatar not using https)](#HTTPS_is_not_green_.28gravatar_not_using_https.29)
     *   [6.2 Error at push bad line length character: API](#Error_at_push_bad_line_length_character:_API)
     *   [6.3 Errors after updating](#Errors_after_updating)
+    *   [6.4 /etc/webapps/gitlab/secret is empty](#.2Fetc.2Fwebapps.2Fgitlab.2Fsecret_is_empty)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -107,7 +108,7 @@ http_settings:
 
 Update the `/usr/share/webapps/gitlab/config/unicorn.rb` configuration if the port and/or hostname is different from the default:
 
- `/etc/webapps/gitlab-shell/config.yml`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
+ `/etc/webapps/gitlab/config/unicorn.rb`  `listen "127.0.0.1:8080", :tcp_nopush => true # <<-- right here` 
 
 #### GitLab
 
@@ -1049,10 +1050,28 @@ Finally, restart the gitlab services and test your site.
 
 ```
 
+### /etc/webapps/gitlab/secret is empty
+
+This file is usually generated while installing the [gitlab-shell](https://aur.archlinux.org/packages/gitlab-shell/) and the [gitlab](https://aur.archlinux.org/packages/gitlab/) packages, but in some cases it may need to be generated manually.
+
+```
+# hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab-shell/secret
+# chown root:gitlab /etc/webapps/gitlab-shell/secret
+# chmod 640 /etc/webapps/gitlab-shell/secret
+
+```
+
+```
+# hexdump -v -n 64 -e '1/1 "%02x"' /dev/urandom > /etc/webapps/gitlab/secret
+# chown root:gitlab /etc/webapps/gitlab/secret
+# chmod 640 /etc/webapps/gitlab/secret
+
+```
+
 ## See also
 
 *   [Official Documentation](https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/install/installation.md)
 *   [Gitlab recipes with further documentation on running it with several webservers](https://gitlab.com/gitlab-org/gitlab-recipes)
 *   [GitLab source code](https://github.com/gitlabhq/gitlabhq)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=419016](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=419016)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gitlab&oldid=419027](https://wiki.archlinux.org/index.php?title=Gitlab&oldid=419027)"

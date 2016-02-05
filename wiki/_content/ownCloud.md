@@ -222,6 +222,8 @@ server {
   add_header X-Frame-Options "SAMEORIGIN";
   add_header X-XSS-Protection "1; mode=block";
   add_header X-Robots-Tag none;
+  add_header X-Download-Options noopen;
+  add_header X-Permitted-Cross-Domain-Policies none;
 
   # Path to the root of your installation
   root /usr/share/webapps/owncloud/;
@@ -289,6 +291,8 @@ server {
     add_header X-Frame-Options "SAMEORIGIN";
     add_header X-XSS-Protection "1; mode=block";
     add_header X-Robots-Tag none;
+    add_header X-Download-Options noopen;
+    add_header X-Permitted-Cross-Domain-Policies none;
     # Optional: Don't log access to assets
     access_log off;
   }
@@ -821,4 +825,4 @@ You can use the following script to quickly upload and share files to your ownCl
 *   [ownCloud official website](http://owncloud.org/)
 *   [ownCloud 8.2 Admin Documentation](http://doc.owncloud.org/server/8.2/admin_manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418827](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=418827)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=419071](https://wiki.archlinux.org/index.php?title=OwnCloud&oldid=419071)"

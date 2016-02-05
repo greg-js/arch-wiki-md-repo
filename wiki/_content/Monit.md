@@ -1,6 +1,6 @@
 # Monit
 
-[Monit](https://mmonit.com/monit/), not to be confused to [M/Monit](https://mmonit.com/), is an AGPL3.0 licensed system and process monitoring tool. Monit can automatically restart crashed services, display temperatures from standard hardware (through [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) and hard drives from [smartctl](https://www.archlinux.org/packages/?name=smartctl) for example). Service alerts can be sent based on a wide criteria including a single occurrence or occurrences over a period of time. It can be accessed directly through the command line or ran as a web app using it's integrated HTTP(S) server. This allows quick and streamlined snapshot of a given systems status.
+[Monit](https://mmonit.com/monit/), not to be confused to [M/Monit](https://mmonit.com/), is an AGPL3.0 licensed system and process monitoring tool. Monit can automatically restart crashed services, display temperatures from standard hardware (through [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) and hard drives from [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) for example). Service alerts can be sent based on a wide criteria including a single occurrence or occurrences over a period of time. It can be accessed directly through the command line or ran as a web app using its integrated HTTP(S) server. This allows quick and streamlined snapshot of a given systems status.
 
 ## Contents
 
@@ -19,21 +19,21 @@
 *   [4 Alert recipients: global or subsystem based](#Alert_recipients:_global_or_subsystem_based)
     *   [4.1 Global alerts](#Global_alerts)
     *   [4.2 Subsystem alerts](#Subsystem_alerts)
-*   [5 Official documentation and further examples](#Official_documentation_and_further_examples)
+*   [5 See also](#See_also)
 
 ## Installation
 
-[Install](/index.php/Install "Install") the [monit](https://www.archlinux.org/packages/?name=monit) package and any software for optional testing such as [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) or [smartctl](https://www.archlinux.org/packages/?name=smartctl). Once you've completed the configuration, be sure to `enable` and `start` the `monit` service.
+[Install](/index.php/Install "Install") the [monit](https://www.archlinux.org/packages/?name=monit) package and any software for optional testing such as [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) or [smartmontools](https://www.archlinux.org/packages/?name=smartmontools). Once you have completed the configuration, be sure to [enable](/index.php/Enable "Enable") and [start](/index.php/Start "Start") the `monit` service.
 
 ## Configuration
 
-Monit keeps a main configuration file as `/etc/monitrc`. You can choose to edit this file but if you wish to run scripts (such as to get hard drive temperatures or health status) you should uncomment the last directive of `include /etc/monit.d/*`, save `/etc/monitrc` and `mkdir /etc/monit.d`.
+Monit keeps a main configuration file as `/etc/monitrc`. You can choose to edit this file but if you wish to run scripts (such as to get hard drive temperatures or health status) you should uncomment the last directive of `include /etc/monit.d/*`, save `/etc/monitrc` and create `/etc/monit.d/`.
 
-**Note:** Monit requires the `/etc/monitrc` file (and potentially files stored in `/etc/monit.d`) to be USER RWX, GROUP and OTHER ---; or `0700`. Failure to comply will result in Monit failing to start
+**Note:** Monit requires the `/etc/monitrc` file (and potentially files stored in `/etc/monit.d`) to have `0700` permissions. Failure to comply will result in Monit failing to start.
 
 ### Configuration syntax
 
-Monit utilizes a configuration syntax that makes it very easy to read; essentially `check WHAT` followed by `if THING condition THEN action` format. Any occurance of `'if', 'and', 'with(in)', 'has', 'us(ing` in the configuration file is for human readability only and are completely ignored by Monit.
+Monit utilizes a configuration syntax that makes it very easy to read; essentially `check WHAT` followed by `if THING condition THEN action` format. Any occurrence of `if`, `and`, `with(in)`, `has`, `us(ing|e)`, `on(ly)`, `then`, `for`, `of` in the configuration file is for human readability only and are completely ignored by Monit.
 
 ## Configuration examples
 
@@ -100,7 +100,7 @@ check file smbd_bin with path /usr/sbin/smbd
    if failed gid root then unmonitor
 ```
 
-**Note:** For the above [Samba](https://www.archlinux.org/packages/?name=Samba) example, the first block has `depends on smbd_bin`, this makes the _testing_ of Samba require the actual `smbd` process
+**Note:** For the above [samba](https://www.archlinux.org/packages/?name=samba) example, the first block has `depends on smbd_bin`, this makes the _testing_ of Samba require the actual `smbd` process
 
 ### Hard drive health and temperature using scripts
 
@@ -176,18 +176,23 @@ Alerts can be set globally, where a given user / email address is alerted for an
 
 Global alerts are set **outside** of any subsystem checks; for ease of reading they should be set in the same location as the mailserver declaration.
 
- `SET ALERT email@domain` 
+```
+SET ALERT email@domain
+
+```
 
 ### Subsystem alerts
 
 Subsystem alerts are set very similarly to global alerts except they lack the `SET` flag.
 
- `ALERT email@domain` 
+```
+ALERT email@domain
 
-## Official documentation and further examples
+```
 
-[Official Documentation](https://mmonit.com/monit/documentation/monit.html)
+## See also
 
-[Monit Wiki configuration examples](https://mmonit.com/wiki/Monit/ConfigurationExamples)
+*   [Official Documentation](https://mmonit.com/monit/documentation/monit.html)
+*   [Monit Wiki configuration examples](https://mmonit.com/wiki/Monit/ConfigurationExamples)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Monit&oldid=418979](https://wiki.archlinux.org/index.php?title=Monit&oldid=418979)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Monit&oldid=419103](https://wiki.archlinux.org/index.php?title=Monit&oldid=419103)"

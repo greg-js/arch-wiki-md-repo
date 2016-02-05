@@ -1,14 +1,14 @@
 # Wireless bonding
 
-Here is a way to configure a wireless interface "[bonded](https://en.wikipedia.org/wiki/Bonding_protocol)" to a wired interface using only the kernel "[bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt)" module in "active-backup" mode, the sysfs and [iproute2](https://www.archlinux.org/packages/core/x86_64/iproute2/) commands, and systemd "template" Unit files **without** systemd-networkd. This will run wpa_supplicant on the wireless interface and DHCP and DHCPv6 daemons on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be extended to more than two physical network interfaces. Note that no other "connection manager" is used here, for those who prefer a more basic approach.
+Here is a way to provide Automatic Wireless Network Configuration while also "[bonding](https://en.wikipedia.org/wiki/Bonding_protocol)" a wireless interface to a wired interface, using only the kernel "[bonding](https://www.kernel.org/doc/Documentation/networking/bonding.txt)" module in "active-backup" mode, the sysfs and [iproute2](https://www.archlinux.org/packages/core/x86_64/iproute2/) commands, and [systemd](https://www.archlinux.org/packages/?name=systemd) "template" Unit files **without** systemd-networkd. This will run wpa_supplicant on the wireless interface and DHCP and DHCPv6 daemons on a virtual "bond0" interface. This is useful, for instance, with a portable computer when you want to use the wired interface for speed and/or security when available, and the wireless interface when the wired interface is not available. The basic idea is to have two "always active" wired and wireless interfaces, then "bond" or "enslave" them to a virtual interface "master", and then let the kernel bonding module handle switching between the interfaces. Of course, this scheme can be extended to two wireless interfaces or to more than two physical network interfaces. Note that no other "connection manager" is used here, for those who prefer a more basic approach. But then also, note that wpa_supplicant itself can be managed directly using `wpa_gui` from [wpa_supplicant_gui](https://www.archlinux.org/packages/?name=wpa_supplicant_gui) or [wpa_supplicant_gui-qt5](https://aur.archlinux.org/packages/wpa_supplicant_gui-qt5/), to scan for, select, and connect to new access points/base stations.
 
 "systemd Unit Files" can be viewed as a kind of Declarative Program in the "systemd" [Declarative Programming](https://en.wikipedia.org/wiki/Declarative_programming) language, which describes various dependencies between programs and enables the systemd "Declarative [Interpreter](https://en.wikipedia.org/wiki/Interpreter_%28computing%29)" to execute and manage these dependencies. In this example, there are three Unit Files needed, along with the three corresponding configuration files for [wpa_supplicant](https://wiki.archlinux.org/index.php/WPA_supplicant), [dhclient](https://www.archlinux.org/packages/?name=dhclient), and [dhcp6c](https://aur.archlinux.org/packages/wide-dhcpv6/). Additionally, there will be a module configuration file for the kernel "bonding" module.
 
-Something you might find unusual in these Unit Files is the use of "BindsTo" and "WantedBy" to "bind" a "Service Unit File" and its associated program to a systemd "Device Unit File", which is a kind of systemd "special file" corresponding to a linux "[sysfs](https://en.wikipedia.org/wiki/Sysfs)" special file. systemd uses directives in the "Unit" section to describe "forward" dependencies, which "trigger" other Unit Files, and uses directives in the "Install" section to describe "reverse" dependencies, which - "enabled" manually or automatically - cause other Unit Files to "trigger" the defining Unit File. Here, the defining Service Unit File will Start and Stop the associated program whenever the sysfs device "Appears" or "Disappears", as, for instance, with a hot-pluggable wireless or wired device, or with the virtual interface device, "bond0".
+Something you might find unusual in these Unit Files is the use of "BindsTo" and "WantedBy" to "bind" a "Service Unit File" and its associated program to a systemd "Device Unit File", which is a kind of systemd "special file" corresponding to a linux "[sysfs](https://en.wikipedia.org/wiki/Sysfs)" special file. systemd uses directives in the "Unit" section to describe "forward" dependencies, which "trigger" other Unit Files, and uses directives in the "Install" section to describe "reverse" dependencies, which - "enabled" manually to be allowed to trigger automatically - cause other Unit Files to trigger the defining Unit File. Here, the defining Service Unit File will Start and Stop the associated program whenever the sysfs device "Appears" or "Disappears", as, for instance, with a hot-pluggable wireless or wired device, or with the virtual interface device, "bond0".
 
 Note also that systemd "template" Unit File names allow exactly one variable to be specified, the "Instance name". Here, the Instance name will specify the wireless device. And, since there are at least three network interfaces to address - wireless, wired, and virtual - then the wired and virtual interfaces must be specified either as "hard coded" names, or using systemd's "Environment" or EnvironmentFile" directives. In this example, the virtual interface will be hard coded as "bond0", and the Environment directive will be edited manually to specify the wired interface name.
 
-**Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch packages. Copy, paste, and edit.
+**Note:** **All** of the required systemd service files and configuration files from a working example are shown here because they are **not** the same as the standard files provided with the Arch Linux packages. Copy, paste, and edit.
 
  `/etc/dhclient.conf` 
 
@@ -23,7 +23,7 @@ send host-name "laptop";
 send dhcp-client-identifier 00:02:00:02:2e:2d:01:bd:c3:92:9a:44:2a:c4 ;
 ```
 
-For instance, dnsmasq can be configured to give fixed IP addresses based upon multiple MAC addresses, or provided hostname, or provided Client Identifier.
+For instance, [dnsmasq](https://www.archlinux.org/packages/?name=dnsmasq) can be configured to give fixed IP addresses based upon multiple MAC addresses, or provided hostname, or provided Client Identifier.
 
  `/etc/systemd/system/dhclient@.service` 
 
@@ -151,7 +151,7 @@ Type=simple
 # Invoking the bond device will automatically load the bonding module if not already loaded.
 # The bonding module may be configured through a modprobe options file.
 # options bonding max_bonds=0 miimon=100 mode=active-backup fail_over_mac=active
-# NOTE - Using "/usr/bin/echo" does not seem to work for setting the Primary Slave.
+# NOTE - Using "/usr/bin/echo" does not seem to be effective for setting the Primary Slave.
 # NOTE - Be sure to leave a space before the semicolon.
 ExecStartPre=\
 -/usr/bin/ip link add bond0 type bond ;\
@@ -164,6 +164,10 @@ ExecStartPre=\
  /usr/bin/ip address flush dev %I ;\
 -/usr/bin/ip link set %I master bond0 ;\
 
+# NOTE - man 8 wpa_supplicant - if you are bonding more than one wireless interface:
+#   -i ifname - Interface to listen on. Multiple instances of this option can be present,
+#   one per interface, separated by -N option.
+# Environment variables will be needed to specify each additional interface.
 ExecStart=/usr/bin/wpa_supplicant -c/etc/wpa_supplicant/wpa_supplicant.conf -Dnl80211 -i %I -b bond0
 ExecStop=/usr/bin/wpa_cli -i %I terminate
 
@@ -189,6 +193,8 @@ WantedBy=default.target
 
 # WantedBy=sys-subsystem-net-devices-%i.device
 ```
+
+Remember, whenever a Unit File is edited,
 
  `$ sudo systemctl daemon-reload` 
 
@@ -288,7 +294,9 @@ Slave queue ID: 0
 
 ```
 
-This approach to bonded wireless networking leaves wpa_supplicant running continuously for any built-in wireless device. Still, rfkill can be used to actually disable the radio when desired, either using an external switch to turn-off the radio, or using rfkill on the command line. But then also note, some wireless drivers will fail to respond when this external radio switch or rfkill sets the radio back, from "off" to "on". For instance, the ath5k driver has this bug. You might see something like `... wpa_supplicant[5808]: Could not set interface wlp3s0 flags (UP): Operation not possible due to RF-kill`
+This approach to bonded wireless networking leaves wpa_supplicant running continuously for any built-in wireless device. Running [htop](https://www.archlinux.org/packages/?name=htop), wpa_supplicant, and the DHCP and DHCPv6 Client daemons, seem to behave well, and do not use any noticeable CPU time.
+
+Still, rfkill can be used to actually disable the radio when desired, either using an external switch to turn-off the radio, or using `rfkill` on the command line. But then also note, some wireless drivers will fail to respond when this external radio switch or rfkill sets the radio back, from "off" to "on". For instance, the ath5k driver has - or had - this bug. I don't see it anymore. You might see something like `... wpa_supplicant[5808]: Could not set interface wlp3s0 flags (UP): Operation not possible due to RF-kill`
 
 A possible work-around, to recover, is to
 
@@ -301,4 +309,52 @@ $ sudo modprobe ath5k
 
 Note that that will Stop the bond0-wpa_supplicant@.service Unit when the wireless device disappears, but this will not necessarily disable the bond0 interface running on the wired device, especially if the DHCP Client daemon did not remove a configured IP address, as the DHCP client will also be Stopped.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_bonding&oldid=419006](https://wiki.archlinux.org/index.php?title=Wireless_bonding&oldid=419006)"
+Note that the term "rfkill" refers to both a distinct kernel module and a distinct program binary. The rfkill module is loaded automatically by the kernel, and the parameters for the rfkill kernel module can be viewed with
+
+ `$ modinfo rfkill` 
+
+```
+filename:       /lib/modules/4.4.1-2-ARCH/kernel/net/rfkill/rfkill.ko.gz
+license:        GPL
+description:    RF switch support
+author:         Johannes Berg <johannes@sipsolutions.net>
+author:         Ivo van Doorn <IvDoorn@gmail.com>
+depends:
+intree:         Y
+vermagic:       4.4.1-2-ARCH SMP preempt mod_unload modversions
+parm:           master_switch_mode:SW_RFKILL_ALL ON should: 0=do nothing (only unlock); 1=restore; 2=unblock all (uint)
+parm:           default_state:Default initial state for all radio types, 0 = radio off (uint)
+```
+
+After installing the [rfkill](https://www.archlinux.org/packages/?name=rfkill) package, the state of the wireless driver components can be viewed with the `rfkill` command
+
+ `$ rfkill list` 
+
+```
+0: hp-wifi: Wireless LAN
+        Soft blocked: no
+        Hard blocked: no
+1: phy0: Wireless LAN
+        Soft blocked: no
+        Hard blocked: no
+```
+
+And generally
+
+ `$ rfkill help` 
+
+```
+Usage:  rfkill [options] command
+Options:
+        --version       show version (0.5)
+Commands:
+        help
+        event
+        list [IDENTIFIER]
+        block IDENTIFIER
+        unblock IDENTIFIER
+where IDENTIFIER is the index no. of an rfkill switch or one of:
+        <idx> all wifi wlan bluetooth uwb ultrawideband wimax wwan gps fm nfc
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wireless_bonding&oldid=419062](https://wiki.archlinux.org/index.php?title=Wireless_bonding&oldid=419062)"

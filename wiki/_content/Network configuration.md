@@ -405,7 +405,7 @@ By default it is configured to work for the `eth0` device. This and other settin
 
 ### Bonding or LAG
 
-See [netctl#Bonding](/index.php/Netctl#Bonding "Netctl").
+See [netctl#Bonding](/index.php/Netctl#Bonding "Netctl") or [Wireless bonding](/index.php/Wireless_bonding "Wireless bonding").
 
 ### IP address aliasing
 
@@ -670,4 +670,4 @@ With motherboards such as the Gigabyte GA-990FXA-UD3, booting with IOMMU off (wh
 
 When configuring the boot process for your installation, add `iommu=soft` as a [kernel parameter](/index.php/Kernel_parameter "Kernel parameter") to eliminate the error messages on boot and restore USB3.0 functionality.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=417554](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=417554)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=419037](https://wiki.archlinux.org/index.php?title=Network_configuration&oldid=419037)"

@@ -31,6 +31,7 @@ Regular system maintenance is necessary for the proper function of Arch over a p
 *   [6 Tips and tricks](#Tips_and_tricks)
     *   [6.1 Use proven software packages](#Use_proven_software_packages)
     *   [6.2 Install the linux-lts package](#Install_the_linux-lts_package)
+*   [7 See Also](#See_Also)
 
 ## Check for errors
 
@@ -212,4 +213,8 @@ The [linux-lts](https://www.archlinux.org/packages/?name=linux-lts) package is a
 
 To make it available as a boot option, you will need to update your [bootloader](/index.php/Bootloader "Bootloader")'s configuration file to use the LTS kernel and ram disk: `vmlinuz-linux-lts` and `initramfs-linux-lts.img`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=416131](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=416131)"
+## See Also
+
+*   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=419074](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=419074)"

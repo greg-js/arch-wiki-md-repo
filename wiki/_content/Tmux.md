@@ -156,6 +156,13 @@ alias tmux="tmux -2"
 
 ```
 
+To enable xterm-keys in your `tmux.conf`, you have to add the following line
+
+```
+set-option -g xterm-keys on
+
+```
+
 If you enable xterm-keys in your `tmux.conf`, then you need to build a custom terminfo to declare the new escape codes or applications will not know about them. Compile the following with `tic` and you can use "xterm-screen-256color" as your TERM:
 
 ```
@@ -845,4 +852,4 @@ See [[4]](https://gist.github.com/anonymous/6bebae3eb9f7b972e6f0) for a configur
 *   [man page (OpenBSD)](http://www.openbsd.org/cgi-bin/man.cgi?query=tmux)
 *   [Tmux tutorial Part 1](http://blog.hawkhost.com/2010/06/28/tmux-the-terminal-multiplexer/) and [Part 2](http://blog.hawkhost.com/2010/07/02/tmux-%E2%80%93-the-terminal-multiplexer-part-2)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=416876](https://wiki.archlinux.org/index.php?title=Tmux&oldid=416876)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tmux&oldid=419020](https://wiki.archlinux.org/index.php?title=Tmux&oldid=419020)"

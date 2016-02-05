@@ -139,7 +139,7 @@ This is a list of helper utilities that search and/or build packages.
 
 *   **kalu** — Small C application that adds an icon in the systray and can show notifications for Arch Linux News, Upgrades, AUR upgrades, and watched (AUR) upgrades (upgrades for packages not installed). Also includes a GUI system upgrader.
 
-	[https://github.com/jjk-jacky/kalu](https://github.com/jjk-jacky/kalu) || [kalu](https://aur.archlinux.org/packages/kalu/)
+	[https://github.com/jjk-jacky/kalu](https://github.com/jjk-jacky/kalu) || [kalu](https://aur.archlinux.org/packages/kalu/) (or [kalu-kde](https://aur.archlinux.org/packages/kalu-kde/) for auto-hide in KDE's panel)
 
 *   **Yapan** — Written in C++ and Qt. It shows an icon in the system tray and popup notifications for new packages and supports AUR helpers.
 
@@ -175,4 +175,4 @@ This is a list of helper utilities that search and/or build packages.
 
 *   [AUR helpers comparison](http://www.slant.co/topics/1447/~what-is-the-best-aur-helper-for-arch-based-linux-distributions)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=418451](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=418451)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=419064](https://wiki.archlinux.org/index.php?title=AUR_helpers&oldid=419064)"

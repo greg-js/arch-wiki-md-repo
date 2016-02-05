@@ -6,31 +6,151 @@ This article shows how to _customize the personal prompt of a regular user_.
 
 ## Contents
 
-*   [1 Applying changes](#Applying_changes)
-*   [2 Basic prompts](#Basic_prompts)
-    *   [2.1 Regular user](#Regular_user)
-    *   [2.2 Root](#Root)
-*   [3 Professional prompts](#Professional_prompts)
-    *   [3.1 Regular user](#Regular_user_2)
-    *   [3.2 Root](#Root_2)
-*   [4 Ultimate prompts](#Ultimate_prompts)
-    *   [4.1 Load/Mem Status for 256colors](#Load.2FMem_Status_for_256colors)
-    *   [4.2 List of colors for prompt and Bash](#List_of_colors_for_prompt_and_Bash)
-    *   [4.3 Prompt escapes](#Prompt_escapes)
-    *   [4.4 Positioning the cursor](#Positioning_the_cursor)
-    *   [4.5 Return value visualisation](#Return_value_visualisation)
-*   [5 Tips and tricks](#Tips_and_tricks)
-    *   [5.1 Different colors for text entry and console output](#Different_colors_for_text_entry_and_console_output)
-    *   [5.2 Random quotations at logon](#Random_quotations_at_logon)
-    *   [5.3 Colorized Arch latest news at logon](#Colorized_Arch_latest_news_at_logon)
-    *   [5.4 Colors overview](#Colors_overview)
-    *   [5.5 Colorized git prompt](#Colorized_git_prompt)
-    *   [5.6 Colorized existing prompts](#Colorized_existing_prompts)
-*   [6 See also](#See_also)
+*   [1 Prompts](#Prompts)
+*   [2 Techniques](#Techniques)
+    *   [2.1 Bash escape sequences](#Bash_escape_sequences)
+    *   [2.2 Terminfo escape sequences](#Terminfo_escape_sequences)
+    *   [2.3 ANSI escape sequences](#ANSI_escape_sequences)
+    *   [2.4 Embedding commands](#Embedding_commands)
+    *   [2.5 PROMPT_COMMAND](#PROMPT_COMMAND)
+    *   [2.6 Escapes between command input and output](#Escapes_between_command_input_and_output)
+*   [3 Basic prompts](#Basic_prompts)
+    *   [3.1 Regular user](#Regular_user)
+    *   [3.2 Root](#Root)
+*   [4 Professional prompts](#Professional_prompts)
+    *   [4.1 Regular user](#Regular_user_2)
+    *   [4.2 Root](#Root_2)
+*   [5 Ultimate prompts](#Ultimate_prompts)
+    *   [5.1 Load/Mem Status for 256colors](#Load.2FMem_Status_for_256colors)
+    *   [5.2 List of colors for prompt and Bash](#List_of_colors_for_prompt_and_Bash)
+    *   [5.3 Positioning the cursor](#Positioning_the_cursor)
+    *   [5.4 Return value visualisation](#Return_value_visualisation)
+*   [6 Tips and tricks](#Tips_and_tricks)
+    *   [6.1 Random quotations at logon](#Random_quotations_at_logon)
+    *   [6.2 Colors overview](#Colors_overview)
+    *   [6.3 Colorized git prompt](#Colorized_git_prompt)
+*   [7 See also](#See_also)
 
-## Applying changes
+## Prompts
 
-To apply changes made in `~/.bashrc` without restarting your shell, [source](/index.php/Source "Source") the script.
+Bash has four prompts that can be customized:
+
+*   `PS1` is the primary prompt which is displayed before each command, thus it is the one most people customize.
+*   `PS2` is the secondary prompt displayed when a command needs more input (e.g. a multi-line command).
+*   `PS3` is not very commonly used. It is the prompt displayed for Bash's `select` built-in which displays interactive menus. Unlike the other prompts, it does not expand [Bash escape sequences](#Bash_escape_sequences). Usually you would customize it in the script where the `select` is used rather than in your `.bashrc`.
+*   `PS4` is also not commonly used. It is displayed when debugging bash scripts to indicate levels of indirection. The first character is repeated to indicate deeper levels.
+
+All of the prompts are customized by setting the corresponding variable to the desired string (usually in `~/.bashrc`), for example
+
+```
+export PS2='> '
+
+```
+
+## Techniques
+
+While one can simply set their prompt to a plain string, there are a variety of techniques for making the prompt more dynamic and useful.
+
+### Bash escape sequences
+
+When printing the prompt string, Bash looks for certain backslash-escaped characters and will expand them into special strings. For example, `\u` is expanded into the current username and `\A` is expanded to the current time. So a PS1 of `'\A \u $ '` would be printed like `17:35 _username_ $` .
+
+Check the "PROMPTING" section of the Bash man page for a complete list of escape sequences.
+
+### Terminfo escape sequences
+
+Aside from the escape characters recognized by Bash, most terminals recognize special escape sequences that affect the terminal itself rather than printing characters. For example they might change the color of subsequent printed characters, move the cursor to an arbitrary location, or clear the screen. These escape sequences can be somewhat illegible and can vary from terminal to terminal, so they are documented in the terminfo database. To see what capabilities your terminal supports, run
+
+```
+$ infocmp $TERM
+
+```
+
+The capability names (the part before the =) can be looked up in the terminfo man page for a description of what they do. For example, `setaf` sets the foreground color of whatever text is printed after it. To get the escape code for a capability, you can use the `tput` command. For example
+
+```
+$ tput setaf 2
+
+```
+
+prints the escape sequence to set the foreground color to green.
+
+To practically incorporate these capabilities into your prompt, you can use Bash's command substitution and string interpolation. For example
+
+ `~/.bashrc` 
+
+```
+GREEN="\[$(tput setaf 2)\]"
+RESET="\[$(tput sgr0)\]"
+
+export PS1="${GREEN}my prompt${RESET}> "
+```
+
+my prompt>
+
+**Note:** Wrapping the tput output in `\[ \]` is recommended by the Bash man page. This helps Bash ignore non-printable characters so that it correctly calculates the size of the prompt.
+
+### ANSI escape sequences
+
+Unfortunately, valid ANSI escape sequences may be missing from your terminal's terminfo database. This is especially common with escape sequences for newer features such as 256 color support. In that case you cannot use tput, you must input the escape sequence manually.
+
+See [Wikipedia:ANSI escape code](https://en.wikipedia.org/wiki/ANSI_escape_code "wikipedia:ANSI escape code") for examples of escape sequences. Every escape sequence starts with a literal escape character, which you can input using the Bash escape sequence `\e`. So for example,`\e[48;5;209m` sets the background to a peachy color (if you have 256 color support) and `\e[2;2H` moves the cursor near the top-left corner of the screen.
+
+In cases where Bash escape sequences are not supported (such as PS3) you can get a literal escape character using Bash's printf builtin:
+
+```
+ESC=$(printf "\e")
+PEACH="$ESC[48;5;209m"
+
+```
+
+### Embedding commands
+
+If you want to add the output of some command to your prompt, you might be tempted to use command substitution. For example, to add the amount of free memory to your prompt you might try:
+
+ `export PS1="$(awk '/MemFree/{print $2}' /proc/meminfo) prompt > "` 
+
+```
+53718 prompt >
+53718 prompt >
+53718 prompt >
+```
+
+But this doesn't work; the amount of memory shown is the same every time! This is because the command is run once, when PS1 is first set, and never again. The trick is to simply prevent the substitution either by escaping the `$` or by defining it in single quotes—either way it will be substituted when the prompt is actually displayed:
+
+```
+export PS1="\$(awk '/MemFree/{print \$2}' /proc/meminfo) prompt > "
+# or
+export PS1='$(awk "/MemFree/{print \$2}" /proc/meminfo) prompt > '
+
+```
+
+To prevent long commands from making your PS1 huge, you can define functions:
+
+```
+free_mem()
+{
+    awk '/MemFree/{print $2}' /proc/meminfo
+}
+
+export PS1='$(free_mem) prompt > '
+```
+
+**Note:** You can use terminfo/ANSI escape sequences inside substituted functions but **not** Bash escapes. In particular `\[ \]` won't work for surrounding non-printable characters. Instead you can use the octal escapes `\001` and `\002` (e.g. using `printf` or `echo -e`).
+
+### PROMPT_COMMAND
+
+If the `PROMPT_COMMAND` variable is set, it will be evaluated right before PS1 is displayed. This can be used to achieve quite powerful effects. For example it can reassign PS1 based on some condition, or perform some operation on your Bash history every time you run a command.
+
+**Warning:** PROMPT_COMMAND generally should not be used to print characters directly to the prompt. Bash keeps track of the size of PS1 so that it can correctly move the cursor and clear characters; it does not count characters printed outside of PS1\. This can cause strange behavior and overwritten text. Either use PROMPT_COMMAND to set PS1 or look at [embedding commands](#Embedding_commands).
+
+### Escapes between command input and output
+
+You can affect your input text in Bash by not resetting the text properties at the end of your PS1\. For example, inserting `tput blink` at the end of your PS1 will make your typed commands blink. However this effect will also continue through the command's output since the text properties are not reset when you hit Enter.
+
+In order to insert escape sequences after you type a command but before the output is displayed, you can trap Bash's DEBUG signal, which is sent right before each command is executed:
+
+ `~/.bashrc`  `trap 'tput sgr0' DEBUG` 
 
 ## Basic prompts
 
@@ -259,61 +379,6 @@ Double quotes enable `$color` variable expansion and the `\[ \]` escapes around 
 
 **Note:** If experiencing premature line wrapping when entering commands, then missing escapes (`\[ \]`) is most likely the reason.
 
-### Prompt escapes
-
-The various Bash prompt escapes listed in the manpage:
-
-```
-Bash allows these prompt strings to be customized by inserting a
-number of _backslash-escaped special characters_ that are
-decoded as follows:
-
-	\a		an ASCII bell character (07)
-	\d		the date in "Weekday Month Date" format (e.g., "Tue May 26")
-	\D{format}	the format is passed to strftime(3) and the result
-			  is inserted into the prompt string an empty format
-			  results in a locale-specific time representation.
-			  The braces are required
-	\e		an ASCII escape character (033)
-	\h		the hostname up to the first `.'
-	\H		the hostname
-	\j		the number of jobs currently managed by the shell
-	\l		the basename of the shell's terminal device name
-	\n		newline
-	\r		carriage return
-	\s		the name of the shell, the basename of $0 (the portion following
-			  the final slash)
-	\t		the current time in 24-hour HH:MM:SS format
-	\T		the current time in 12-hour HH:MM:SS format
-	\@		the current time in 12-hour am/pm format
-	\A		the current time in 24-hour HH:MM format
-	\u		the username of the current user
-	\v		the version of bash (e.g., 2.00)
-	\V		the release of bash, version + patch level (e.g., 2.00.0)
-	\w		the current working directory, with $HOME abbreviated with a tilde
-	\W		the basename of the current working directory, with $HOME
-			 abbreviated with a tilde
-	\!		the history number of this command
-	\#		the command number of this command
-	\$		if the effective UID is 0, a #, otherwise a $
-	\nnn		the character corresponding to the octal number nnn
-	\\		a backslash
-	\[		begin a sequence of non-printing characters, which could be used
-			  to embed a terminal control sequence into the prompt
-	\]		end a sequence of non-printing characters
-
-	The command number and the history number are usually different:
-	the history number of a command is its position in the history
-	list, which may include commands restored from the history file
-	(see HISTORY below), while the command number is the position in
-	the sequence of commands executed during the current shell session.
-	After the string is decoded, it is expanded via parameter
-	expansion, command substitution, arithmetic expansion, and quote
-	removal, subject to the value of the promptvars shell option (see
-	the description of the shopt command under SHELL BUILTIN COMMANDS
-	below).
-```
-
 ### Positioning the cursor
 
 The following sequence sets the cursor position:
@@ -418,12 +483,6 @@ PS1="${error} ${PS1}"
 
 ## Tips and tricks
 
-### Different colors for text entry and console output
-
-If you do not reset the text color at the end of your prompt, both the text you enter and the console text will simply stay in that color. If you want to edit text in a special color but still use the default color for command output, you will need to reset the color after you press `Enter`, but still before any commands get run. You can do this by installing a DEBUG trap, like this:
-
- `~/.bashrc`  `trap 'printf "\e[0m" "$_"' DEBUG` 
-
 ### Random quotations at logon
 
 For a brown [Fortune](/index.php/Fortune "Fortune") prompt, add:
@@ -433,209 +492,6 @@ For a brown [Fortune](/index.php/Fortune "Fortune") prompt, add:
 ```
 [[ "$PS1" ]] && echo -e "\e[00;33m$(/usr/bin/fortune)\e[00m"
 
-```
-
-### Colorized Arch latest news at logon
-
-To read 10 latest news items from the [Arch official website](https://www.archlinux.org/news/), user [grufo](https://aur.archlinux.org/account.php?Action=AccountInfo&ID=33208) has [written](https://bbs.archlinux.org/viewtopic.php?id=146850) a small and coloured RSS escaping script (_scrollable_):
-
-   :: Arch Linux: Recent news updates ::
- [ https://www.archlinux.org/news/ ]
-
-The latest and greatest news from the Arch Linux distribution.
-
- en-us Sun, 04 Nov 2012 16:09:46 +0000
-
-   :: End of initscripts support ::
- [ https://www.archlinux.org/news/end-of-initscripts-support/ ]
-
-Tom Gundersen wrote:
-As systemd is now the default init system, Arch Linux is receiving minimal testing on initscripts systems. Due to a lack of resources and interest, we are unlikely to work on fixing initscripts-specific bugs, and may close them as WONTFIX.
-We therefore strongly encourage all users to migrate to systemd as soon as possible. See the systemd migration guide [ https://wiki.archlinux.org/index.php/Systemd ].
-To ease the transition, initscripts support will remain in the official repositories for the time being, unless otherwise stated. As of January 2013, we will start removing initscripts support (e.g., rc scripts) from individual packages without further notice.
-
- Tom Gundersen Sun, 04 Nov 2012 16:09:46 +0000 tag:www.archlinux.org,2012-11-04:/news/end-of-initscripts-support/
-
-   :: November release of install media available ::
- [ https://www.archlinux.org/news/november-release-of-install-media-available/ ]
-
-Pierre Schmitz wrote:
-The latest snapshot of our install and rescue media can be found on our Download [ https://www.archlinux.org/download/ ] page. The 2012.11.01 ISO image mainly contains minor bug fixes, cleanups and new packages compared to the previous one:
- * First media with Linux 3.6
- * copytoram=n can be used to not copy the image to RAM on network boot. This is probably unreliable but an option for systems with very low memory.
- * cowfile_size boot parameter mainly for persistent COW on VFAT. See the README [ https://projects.archlinux.org/archiso.git/plain/docs/README.bootparams?id=v4 ] file for details.
-
- Pierre Schmitz Fri, 02 Nov 2012 17:54:15 +0000 tag:www.archlinux.org,2012-11-02:/news/november-release-of-install-media-available/
-
-   :: Bug Squashing Day: Saturday 17th November ::
- [ https://www.archlinux.org/news/bug-squashing-day-saturday-17th-november/ ]
-
-Allan McRae wrote:
-The number of bugs in the Arch Linux bug tracker is creeping up so it is time for some extermination.
-This is a great way for the community to get involved and help the Arch Linux team. The process is simple. First look at a bug for your favorite piece of software in the bug tracker and check if it still occurs. If it does, check the upstream project for a fix and test it to confirm it works. If there is no fix available, make sure the bug has been filed in the upstream tracker.
-Join us on the #archlinux-bugs IRC channel. We are spread across timezones, so people should be around all day.
-
- Allan McRae Thu, 01 Nov 2012 12:28:51 +0000 tag:www.archlinux.org,2012-11-01:/news/bug-squashing-day-saturday-17th-november/
-
-   :: ConsoleKit replaced by logind ::
- [ https://www.archlinux.org/news/consolekit-replaced-by-logind/ ]
-
-Allan McRae wrote:
-With GNOME 3.6, polkit and networkmanager moving to [extra], ConsoleKit has now been removed from the repositories. Any package that previously depended on it now relies on systemd-logind instead. That means that the system must be booted with systemd to be fully functional.
-In addition to GNOME, both KDE and XFCE are also affected by this change.
-
- Allan McRae Tue, 30 Oct 2012 22:17:39 +0000 tag:www.archlinux.org,2012-10-30:/news/consolekit-replaced-by-logind/
-
-   :: systemd is now the default on new installations ::
- [ https://www.archlinux.org/news/systemd-is-now-the-default-on-new-installations/ ]
-
-Thomas Bächler wrote:
-The base group now contains the systemd-sysvcompat package. This means that all new installations will boot with systemd by default.
-As some packages still lack native systemd units, users can install the initscripts package and use the DAEMONS array in /etc/rc.conf to start services using the legacy rc.d scripts.
-This change does not affect existing installations. For the time being, the initscripts and sysvinit packages remain available from our repositories. However, individual packages may now start relying on the system being booted with systemd.
-Please refer to the wiki [ https://wiki.archlinux.org/index.php/Systemd ] for how to transition an existing installation to systemd.
-
- Thomas Bächler Sat, 13 Oct 2012 09:29:38 +0000 tag:www.archlinux.org,2012-10-13:/news/systemd-is-now-the-default-on-new-installations/
-
-   :: Install medium 2012.10.06 introduces systemd ::
- [ https://www.archlinux.org/news/install-medium-20121006-introduces-systemd/ ]
-
-Pierre Schmitz wrote:
-The October release of the Arch Linux install medium is available for Download [ https://www.archlinux.org/download/ ] and can be used for new installs or as a rescue system. It contains a set of updated packages and the following notable changes:
- * systemd is used to boot up the live system.
- * initscripts are no longer available on the live system but are still installed by default on the target system. This is likely to change in the near future.
- * EFI boot and setup has been simplified.
- * gummiboot is used to display a menu on EFI systems.
- * The following new packages are available on the live system: ethtool, fsarchiver, gummiboot-efi, mc, partclone, partimage, refind-efi, rfkill, sudo, testdisk, wget, xl2tpd
-
- Pierre Schmitz Sun, 07 Oct 2012 16:58:03 +0000 tag:www.archlinux.org,2012-10-07:/news/install-medium-20121006-introduces-systemd/
-
-   :: New install medium 2012.09.07 ::
- [ https://www.archlinux.org/news/new-install-medium-20120907/ ]
-
-Pierre Schmitz wrote:
-As is customary by now there is a new install medium available at the beginning of this month. The live system can be downloaded from Download [ https://www.archlinux.org/download/ ] and be used for new installs or as a rescue system.
-In addition to a couple of updated packages and bug fixes the following changes stand out:
- * First medium with Linux 3.5 (3.5.3)
- * The script boot parameter works again (FS#31022 [ https://bugs.archlinux.org/task/31022 ])
- * When booting via PXE and NFS or NBD the ISO will be copied to RAM to ensure a more stable usage.
- * The live medium contains usb_modeswitch and wvdial which e.g. allows to establish a network connection using an UMTS USB dongle
- * Furthermore the newest versions of initscripts, systemd and netcfg are included.
-
- Pierre Schmitz Sat, 08 Sep 2012 09:48:52 +0000 tag:www.archlinux.org,2012-09-08:/news/new-install-medium-20120907/
-
-   :: Fontconfig 2.10.1 update - manual intervention required ::
- [ https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/ ]
-
-Andreas Radke wrote:
-The fontconfig 2.10.1 update overwrites symlinks created by the former package version. These symlinks need to be removed before the update:
-
-rm /etc/fonts/conf.d/20-unhint-small-vera.conf
-rm /etc/fonts/conf.d/20-fix-globaladvance.conf
-rm /etc/fonts/conf.d/29-replace-bitmap-fonts.conf
-rm /etc/fonts/conf.d/30-metric-aliases.conf
-rm /etc/fonts/conf.d/30-urw-aliases.conf
-rm /etc/fonts/conf.d/40-nonlatin.conf
-rm /etc/fonts/conf.d/45-latin.conf
-rm /etc/fonts/conf.d/49-sansserif.conf
-rm /etc/fonts/conf.d/50-user.conf
-rm /etc/fonts/conf.d/51-local.conf
-rm /etc/fonts/conf.d/60-latin.conf
-rm /etc/fonts/conf.d/65-fonts-persian.conf
-rm /etc/fonts/conf.d/65-nonlatin.conf
-rm /etc/fonts/conf.d/69-unifont.conf
-rm /etc/fonts/conf.d/80-delicious.conf
-rm /etc/fonts/conf.d/90-synthetic.conf
-pacman -Syu fontconfig
-
-Main systemwide configuration should be done by symlinks (especially for autohinting, sub-pixel and lcdfilter):
-
-cd /etc/fonts/conf.d
-ln -s ../conf.avail/XX-foo.conf
-
-Also check Font Configuration [ https://wiki.archlinux.org/index.php/Font_Configuration ] and Fonts [ https://wiki.archlinux.org/index.php/Fonts ].
-
- Andreas Radke Thu, 06 Sep 2012 13:54:23 +0000 tag:www.archlinux.org,2012-09-06:/news/fontconfig-2101-update-manual-intervention-required/
-
-   :: netcfg-2.8.9 drops deprecated rc.conf compatibility ::
- [ https://www.archlinux.org/news/netcfg-289-drops-initscripts-compatibility/ ]
-
-Florian Pritz wrote:
-Users of netcfg should configure all interfaces in /etc/conf.d/netcfg rather than /etc/rc.conf.
-
- Florian Pritz Sat, 11 Aug 2012 20:00:02 +0000 tag:www.archlinux.org,2012-08-11:/news/netcfg-289-drops-initscripts-compatibility/
-
-   :: Install media 2012.08.04 available ::
- [ https://www.archlinux.org/news/install-media-20120804-available/ ]
-
-Pierre Schmitz wrote:
-The August snapshot of our live and install media comes with updated packages and the following changes on top of the previous ISO image [ /news/install-media-20120715-released/ ]:
- * GRUB 2.0 instead of the legacy 0.9 version is available.
- * The Installation Guide [ https://wiki.archlinux.org/index.php/Installation_Guide ] can be found at /root/install.txt.
- * ZSH with Grml's configuration [ http://grml.org/zsh/ ] is used as interactive shell to provide a user friendly and more convenient environment. This includes completion support for pacstrap, arch-chroot, pacman and most other tools.
- * The network daemon is started by default which will automatically setup your network if DHCP is available.
-Note that all these changes only affect the live system and not the base system you install using pacstrap. The ISO image can be downloaded from our download page [ /download/ ]. The next snapshot is scheduled for September.
-
- Pierre Schmitz Sat, 04 Aug 2012 17:24:30 +0000 tag:www.archlinux.org,2012-08-04:/news/install-media-20120804-available/
-
-andy@alba _
-
- `~/.bashrc` 
-
-```
-# Arch latest news
-if [ "$PS1" ] && [[ $(ping -c1 www.google.com 2>&-) ]]; then
-	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
-	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/\n/ /g') | \
-		sed -e 's/&amp;/\&/g
-		s/&lt;\|&#60;/</g
-		s/&gt;\|&#62;/>/g
-		s/<\/a>/£/g
-		s/href\=\"/§/g
-		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
-		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
-		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
-		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
-		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
-		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
-		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
-		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
-		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
-		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
-		s/<!\[CDATA\[\|\]\]>//g
-		s/\|>\s*<//g
-		s/ *<[^>]\+> */ /g
-		s/[<>£§]//g')\n\n";
-fi
-```
-
-To only get the absolute latest item, use this:
-
-```
-# Arch latest news
-if [ "$PS1" ] && [[ $(ping -c1 www.google.com 2>&-) ]]; then
-	# The characters "£, §" are used as metacharacters. They should not be encountered in a feed...
-	echo -e "$(echo $(curl --silent https://www.archlinux.org/feeds/news/ | awk ' NR == 1 {while ($0 !~ /<\/item>/) {print;getline} sub(/<\/item>.*/,"</item>") ;print}' | sed -e ':a;N;$!ba;s/\n/ /g') | \
-		sed -e 's/&amp;/\&/g
-		s/&lt;\|&#60;/</g
-		s/&gt;\|&#62;/>/g
-		s/<\/a>/£/g
-		s/href\=\"/§/g
-		s/<title>/\\n\\n\\n   :: \\e[01;31m/g; s/<\/title>/\\e[00m ::\\n/g
-		s/<link>/ [ \\e[01;36m/g; s/<\/link>/\\e[00m ]/g
-		s/<description>/\\n\\n\\e[00;37m/g; s/<\/description>/\\e[00m\\n\\n/g
-		s/<p\( [^>]*\)\?>\|<br\s*\/\?>/\n/g
-		s/<b\( [^>]*\)\?>\|<strong\( [^>]*\)\?>/\\e[01;30m/g; s/<\/b>\|<\/strong>/\\e[00;37m/g
-		s/<i\( [^>]*\)\?>\|<em\( [^>]*\)\?>/\\e[41;37m/g; s/<\/i>\|<\/em>/\\e[00;37m/g
-		s/<u\( [^>]*\)\?>/\\e[4;37m/g; s/<\/u>/\\e[00;37m/g
-		s/<code\( [^>]*\)\?>/\\e[00m/g; s/<\/code>/\\e[00;37m/g
-		s/<a[^§|t]*§\([^\"]*\)\"[^>]*>\([^£]*\)[^£]*£/\\e[01;31m\2\\e[00;37m \\e[01;34m[\\e[00;37m \\e[04m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g
-		s/<li\( [^>]*\)\?>/\n \\e[01;34m*\\e[00;37m /g
-		s/<!\[CDATA\[\|\]\]>//g
-		s/\|>\s*<//g
-		s/ *<[^>]\+> */ /g
-		s/[<>£§]//g')\n\n";
-fi
 ```
 
 ### Colors overview
@@ -687,23 +543,6 @@ source /usr/share/git/completion/git-prompt.sh
 
 and use `__git_ps1` inside `PS1` or `PROMPT_COMMAND`. See [Don't Reinvent the Wheel](http://ithaca.arpinum.org/2013/01/02/git-prompt.html) for details.
 
-### Colorized existing prompts
-
-Add to your `~/.bashrc`:
-
- `~/.bashrc` 
-
-```
-# Colorize prompts
-for i in {1..4}; do
-	PSi="PS$i"
-	export $PSi="\[\e[1;37m\]${!PSi}\[\e[0m\]"
-done
-unset i
-unset PSi
-
-```
-
 ## See also
 
 *   Community examples and screenshots in the Forum thread: [What's your PS1?](https://bbs.archlinux.org/viewtopic.php?id=50885)
@@ -717,4 +556,4 @@ unset PSi
 *   [Bash tips: Colors and formatting](http://misc.flogisoft.com/bash/tip_colors_and_formatting)
 *   [Liquid Prompt — a useful adaptive prompt for Bash & zsh](https://github.com/nojhan/liquidprompt)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=418927](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=418927)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=419091](https://wiki.archlinux.org/index.php?title=Color_Bash_Prompt&oldid=419091)"

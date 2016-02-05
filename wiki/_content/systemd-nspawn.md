@@ -117,6 +117,8 @@ Examples:
 
 **Tip:** Poweroff and reboot operations can be performed from within a container session using the _systemctl_ `poweroff` or `reboot` commands.
 
+*   Download an image: `# machinectl pull-tar _URL_ _name_` 
+
 ### systemd toolchain
 
 Much of the core systemd toolchain has been updated to work with containers. Tools that do usually provide a `-M, --machine=` option which will take a container name as argument.
@@ -223,4 +225,4 @@ It can sometimes be impossible to upgrade some packages on the container, [files
 *   [Presentation by Lennart Pottering on systemd-nspawn](https://www.youtube.com/results?search_query=systemd-nspawn&aq=f)
 *   [Running Firefox in a systemd-nspawn container](http://dabase.com/e/12009/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412459](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=412459)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=419045](https://wiki.archlinux.org/index.php?title=Systemd-nspawn&oldid=419045)"
