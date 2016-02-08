@@ -93,14 +93,14 @@ Let us suppose you kept the previous versions. We will now install the last work
 First, you need to get the kernel details:
 
 ```
-# find /var/cache/pacman/pkg -name 'linux-3*'
+# find /var/cache/pacman/pkg -name 'linux-4*'
 
 ```
 
 Now, use the kernel details in the command below.
 
 ```
-# pacman -U /var/cache/pacman/pkg/linux-3._xx-x_.pkg.tar.xz
+# pacman -U /var/cache/pacman/pkg/linux-4._xx-x_.pkg.tar.xz
 
 ```
 
@@ -112,4 +112,4 @@ Now, use the kernel details in the command below.
 
 Now is the time to reboot and see if the system modifications have stopped the panic. If reverting to an older kernel works, do not forget to [check the arch-newspage](https://www.archlinux.org/news/) to check what went wrong with the kernel build. If there is no mention of the problem there, then go to the bug reporting area and search for it there. If you still do not find it, open a new bug report and attach those files you saved during the troubleshooting step above.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_Panics&oldid=376853](https://wiki.archlinux.org/index.php?title=Kernel_Panics&oldid=376853)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Kernel_Panics&oldid=419299](https://wiki.archlinux.org/index.php?title=Kernel_Panics&oldid=419299)"

@@ -58,11 +58,13 @@ visualizer_sync_interval = "30"
 visualizer_in_stereo = "yes"
 #visualizer_type = "wave" (spectrum/wave)
 visualizer_type = "spectrum" (spectrum/wave)
+visualizer_look = "+|"
 
 ```
 
 *   **visualizer_sync_interval** - Set the interval for synchronizing the visualizer with the audio output from _mpd_. It should be set to greater than 10 to avoid trying to synchronize too frequently, which freezes the visualization. The recommended value is 30, but it can be reduced if the audio becomes desynced with the visualization.
 *   **visualizer_type** - Set the visualization to either a spectrum analyzer or wave form.
+*   **visualizer_look** - Set the visualizer's look (string has to be exactly 2 characters long: first one is for wave whereas second for frequency spectrum).
 
 ## Basic usage
 
@@ -139,4 +141,4 @@ A listing of key bindings and their respective functions is available from withi
 
 [dotshare.it configurations](http://dotshare.it/category/mpd/ncmpcpp/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=412135](https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=412135)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=419394](https://wiki.archlinux.org/index.php?title=Ncmpcpp&oldid=419394)"

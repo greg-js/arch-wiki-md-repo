@@ -45,7 +45,7 @@ Then [enable](/index.php/Enable "Enable") the service.
 
 ## Off-the-Record Messaging
 
-[OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](http://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim doesn not support OTR out of the box.
+[OTR (off-the-record) messaging](https://en.wikipedia.org/wiki/Off-the-Record_Messaging "wikipedia:Off-the-Record Messaging") is strong end-to-end encryption protocol for instant messaging ([read more](http://www.cypherpunks.ca/otr/)). OTR hasn't any XMPP XEP, because OTR is of cross-protocol nature. Gajim does not support OTR out of the box.
 
 Install the [gajim-plugin-otr](https://aur.archlinux.org/packages/gajim-plugin-otr/) package.
 
@@ -76,4 +76,4 @@ At first time, you also need to activate OMEMO plugin:
 4.  Use the checkbox on the bottom of each chat tab to enable or disable OMEMO encryption.
 5.  Click on "Get Device Keys".
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Gajim&oldid=419098](https://wiki.archlinux.org/index.php?title=Gajim&oldid=419098)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Gajim&oldid=419107](https://wiki.archlinux.org/index.php?title=Gajim&oldid=419107)"

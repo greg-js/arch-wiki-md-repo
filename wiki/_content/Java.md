@@ -315,4 +315,4 @@ Non-reparenting window managers user should set the following environment variab
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=417062](https://wiki.archlinux.org/index.php?title=Java&oldid=417062)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Java&oldid=419456](https://wiki.archlinux.org/index.php?title=Java&oldid=419456)"

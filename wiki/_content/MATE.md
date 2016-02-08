@@ -129,7 +129,7 @@ Alternatively, to start MATE with _startx_, append `exec mate-session` to your `
 
 ## Configuration
 
-MATE can be configured with it's _Control Center_ application (_mate-control-center_) provided by the [mate-control-center](https://www.archlinux.org/packages/?name=mate-control-center) package. To manage some hardware, you may need to install additional tools.
+MATE can be configured with its _Control Center_ application (_mate-control-center_) provided by the [mate-control-center](https://www.archlinux.org/packages/?name=mate-control-center) package. To manage some hardware, you may need to install additional tools.
 
 	Audio
 
@@ -458,4 +458,4 @@ Whilst there is no way of disabling this feature through MATE's settings, this f
 *   [_MATE desktop screenshots_](http://mate-desktop.org/gallery/1.8/)
 *   [_The MATE Desktop Environment_](https://bbs.archlinux.org/viewtopic.php?pid=1018647) - Arch Linux forum discussion about MATE
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MATE&oldid=412249](https://wiki.archlinux.org/index.php?title=MATE&oldid=412249)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MATE&oldid=419311](https://wiki.archlinux.org/index.php?title=MATE&oldid=419311)"

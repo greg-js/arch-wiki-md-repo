@@ -1,6 +1,6 @@
 # Monit
 
-[Monit](https://mmonit.com/monit/), not to be confused to [M/Monit](https://mmonit.com/), is an AGPL3.0 licensed system and process monitoring tool. Monit can automatically restart crashed services, display temperatures from standard hardware (through [lm_sensors](https://www.archlinux.org/packages/?name=lm_sensors) and hard drives from [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) for example). Service alerts can be sent based on a wide criteria including a single occurrence or occurrences over a period of time. It can be accessed directly through the command line or ran as a web app using its integrated HTTP(S) server. This allows quick and streamlined snapshot of a given systems status.
+[Monit](https://mmonit.com/monit/), not to be confused to [M/Monit](https://mmonit.com/), is an AGPL3.0 licensed system and process monitoring tool. Monit can automatically restart crashed services, display temperatures from standard hardware (through [lm_sensors](/index.php/Lm_sensors "Lm sensors") and hard drives from [smartmontools](https://www.archlinux.org/packages/?name=smartmontools) for example). Service alerts can be sent based on a wide criteria including a single occurrence or occurrences over a period of time. It can be accessed directly through the command line or ran as a web app using its integrated HTTP(S) server. This allows quick and streamlined snapshot of a given systems status.
 
 ## Contents
 
@@ -195,4 +195,4 @@ ALERT email@domain
 *   [Official Documentation](https://mmonit.com/monit/documentation/monit.html)
 *   [Monit Wiki configuration examples](https://mmonit.com/wiki/Monit/ConfigurationExamples)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Monit&oldid=419103](https://wiki.archlinux.org/index.php?title=Monit&oldid=419103)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Monit&oldid=419213](https://wiki.archlinux.org/index.php?title=Monit&oldid=419213)"

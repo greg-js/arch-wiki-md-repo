@@ -26,6 +26,7 @@ See [GRUB](/index.php/GRUB "GRUB") for the main article.
     *   [10.2 Recall previous entry](#Recall_previous_entry)
     *   [10.3 Changing the default menu entry](#Changing_the_default_menu_entry)
     *   [10.4 Boot non-default entry only once](#Boot_non-default_entry_only_once)
+    *   [10.5 Play a tune](#Play_a_tune)
 
 ## GUI configuration tools
 
@@ -377,4 +378,12 @@ The command `grub-reboot` is very helpful to boot another entry than the default
 
 **Note:** This requires `GRUB_DEFAULT=saved` in `/etc/default/grub` (and then regenerating `grub.cfg`) or, in case of hand-made `grub.cfg`, the line `set default="${saved_entry}"`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=416253](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=416253)"
+### Play a tune
+
+You can play a tune through the PC-speaker while booting by modifying the variable `GRUB_INIT_TUNE`. For example, to play Berlioz's extract from Sabbath Night of Symphonie Fantastique you can add the following: (bassoon part):
+
+`GRUB_INIT_TUNE="312 262 3 247 3 262 3 220 3 247 3 196 3 220 3 220 3 262 3 262 3 294 3 262 3 247 3 220 3 196 3 247 3 262 3 247 5 220 1 220 5"`
+
+For information on this, you can look at `info grub -n play`.
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=419570](https://wiki.archlinux.org/index.php?title=GRUB/Tips_and_tricks&oldid=419570)"

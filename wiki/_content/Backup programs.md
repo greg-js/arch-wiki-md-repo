@@ -32,6 +32,10 @@ These applications simply keep directories synchronized between multiple locatio
 
 See also [Wikipedia:Comparison of file synchronization software](https://en.wikipedia.org/wiki/Comparison_of_file_synchronization_software "wikipedia:Comparison of file synchronization software").
 
+*   **[BitTorrent Sync](/index.php/BitTorrent_Sync "BitTorrent Sync")** — File sharing system that relies on the BitTorrent protocol.
+
+	[https://www.getsync.com/](https://www.getsync.com/) || [btsync](https://aur.archlinux.org/packages/btsync/)
+
 *   **Free File Sync** — Free File Sync helps you synchronize files and synchronize folders for Windows, Linux and Mac OS X. It is designed to save your time setting up and running backup jobs while having nice visual feedback along the way.
 
 	[http://freefilesync.sourceforge.net/](http://freefilesync.sourceforge.net/) || [freefilesync](https://aur.archlinux.org/packages/freefilesync/)
@@ -116,7 +120,7 @@ See also [Dotfiles#Version control](/index.php/Dotfiles#Version_control "Dotfile
 *   **Notes**: additional notes.
 
 | Name | Installation | Implementation | Compressed storage | Encrypted storage | Delta transfer | Encrypted transfer | FS metadata | FS monitoring | Easy access | Resumable | Handles renames | CLI | Other interfaces | Licence | Other platforms | Active | Notes |
-| [Arch Backup](http://code.google.com/p/archlinux-stuff/) | [arch-backup](https://www.archlinux.org/packages/?name=arch-backup) |  ? | configurable | ? | ? | ? | ? | ? | ? | ? | ? | Yes | No |  ? | ? | Multiple backup targets. |
+| [Arch Backup](http://code.google.com/p/archlinux-stuff/) | [arch-backup](https://aur.archlinux.org/packages/arch-backup/) |  ? | configurable | ? | ? | ? | ? | ? | ? | ? | ? | Yes | No |  ? | ? | Multiple backup targets. |
 | [Areca Backup](http://areca.sourceforge.net/) | [areca](https://aur.archlinux.org/packages/areca/) | Java | Zip, Zip64 | AES128, AES256 | Yes | Yes | Yes | No | ? | ? | ? | Yes | Yes | GPLv2 | Windows | Yes |
 | [Attic](https://github.com/jborg/attic/) | [attic](https://aur.archlinux.org/packages/attic/) | Python | Yes | AES | Yes | Yes | Yes | No | Yes | Yes | ? | Yes | No | BSD | Yes |
 | [Back In Time](https://github.com/bit-team/backintime) | [Back In Time](/index.php/Back_In_Time "Back In Time") | python, rsync, diff | No | No | ? | SSH | ? | ? | ? | ? | ? | No | Qt | GPL | Yes |
@@ -166,7 +170,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **Amazon S3** — Amazon Simple Storage Service (Amazon S3), provides developers and IT teams with secure, durable, highly-scalable object storage. Amazon S3 is easy to use, with a simple web service interface to store and retrieve any amount of data from anywhere on the web. With Amazon S3, you pay only for the storage you actually use. There is no minimum fee and no setup cost.
 
-	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://aur.archlinux.org/packages/s3cmd/)
+	[http://aws.amazon.com/s3/](http://aws.amazon.com/s3/) || [s3cmd](https://www.archlinux.org/packages/?name=s3cmd)
 
 *   **CloudBacko** — Enterprise-grade cloud backup tool for Linux, Mac and Windows.
     *   Closed source. Free, Lite and Pro versions available.
@@ -305,7 +309,7 @@ See also [Wikipedia:Comparison of online backup services](https://en.wikipedia.o
 
 *   **rclone** — Rclone is a command line program to sync files and directories to and from Google Drive, Amazon S3, Openstack Swift / Rackspace cloud files / Memset Memstore, Dropbox, Google Cloud Storage and The local filesystem.
 
-	[http://rclone.org/](http://rclone.org/) || [rclone](https://aur.archlinux.org/packages/rclone/)
+	[http://rclone.org/](http://rclone.org/) || [rclone](https://www.archlinux.org/packages/?name=rclone)
 
 ### Cooperative
 
@@ -521,4 +525,4 @@ See also [Wikipedia:Comparison of revision control software](https://en.wikipedi
 *   [Mirroring an Entire Site using Rsync over SSH](http://www.askapache.com/security/mirror-using-rsync-ssh.html)
 *   [Performance comparison of five remote incremental backup tools: Rsync, Rdiff-backup, Duplicity, Areca and Link-Backup](http://www.si-journal.org/index.php/JSI/article/view/205)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=418846](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=418846)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=419302](https://wiki.archlinux.org/index.php?title=Backup_programs&oldid=419302)"

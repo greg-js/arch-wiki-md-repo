@@ -4,11 +4,9 @@
 
 ## Installation
 
-Electron is available is the following forms:
+Electron can be installed with either:
 
-*   as a ready to install package from the unofficial [[atom]](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository
-*   from [AUR](https://aur.archlinux.org/packages/electron/)
+*   the [electron](https://aur.archlinux.org/packages/electron/) package, which uses precompiled binaries downloaded from GitHub; or
+*   the _electron_ package from the unofficial [atom](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository, which uses a different [build method](https://github.com/tensor5/arch-atom/blob/master/README.md#build-method).
 
-Notice that the AUR package uses precompiled binaries downloaded from GitHub, while the package from [[atom]](/index.php/Unofficial_user_repositories#atom "Unofficial user repositories") repository is compiled from source.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Electron&oldid=419093](https://wiki.archlinux.org/index.php?title=Electron&oldid=419093)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Electron&oldid=419182](https://wiki.archlinux.org/index.php?title=Electron&oldid=419182)"

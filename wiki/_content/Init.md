@@ -94,7 +94,7 @@ These components combine to the init _system_. Some inits include the service ma
 
 	[http://cr.yp.to/daemontools.html](http://cr.yp.to/daemontools.html) || [daemontools](https://aur.archlinux.org/packages/daemontools/)
 
-*   **[Monit](https://en.wikipedia.org/wiki/Monit "wikipedia:Monit")** — Monit is a process supervision tool for Unix and Linux. With monit, system status can be viewed directly from the command line, or via the native HTTP(S) web server.
+*   **[Monit](/index.php/Monit "Monit")** — Monit is a process supervision tool for Unix and Linux. With monit, system status can be viewed directly from the command line, or via the native HTTP(S) web server.
 
 	[http://mmonit.com/monit/](http://mmonit.com/monit/) || [monit](https://www.archlinux.org/packages/?name=monit)
 
@@ -204,4 +204,4 @@ To setup a chroot with a new PID namespace you can use jchroot.[[6]](http://vinc
 *   [Demystifying the init system](https://felipec.wordpress.com/2013/11/04/init/)
 *   [A history of modern init systems (1992-2015)](http://blog.darknedgy.net/technology/2015/09/05/0/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=415699](https://wiki.archlinux.org/index.php?title=Init&oldid=415699)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Init&oldid=419212](https://wiki.archlinux.org/index.php?title=Init&oldid=419212)"

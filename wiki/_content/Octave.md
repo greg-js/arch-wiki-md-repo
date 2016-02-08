@@ -244,4 +244,4 @@ undecodable token: b(hex)[23m
 
 when printing, install [grml-zsh-config](https://www.archlinux.org/packages/?name=grml-zsh-config) and relogin.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=416116](https://wiki.archlinux.org/index.php?title=Octave&oldid=416116)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Octave&oldid=419259](https://wiki.archlinux.org/index.php?title=Octave&oldid=419259)"

@@ -36,6 +36,8 @@ Here is an archive of security advisories posted to the [arch-security](https://
 
 ### February 2016
 
+*   [6 February 2016] [ASA-201602-8](https://lists.archlinux.org/pipermail/arch-security/2016-February/000548.html) [libsndfile](https://www.archlinux.org/packages/?name=libsndfile) multiple issues
+*   [6 February 2016] [ASA-201602-9](https://lists.archlinux.org/pipermail/arch-security/2016-February/000549.html) [lib32-libsndfile](https://www.archlinux.org/packages/?name=lib32-libsndfile) multiple issues
 *   [4 February 2016] [ASA-201602-7](https://lists.archlinux.org/pipermail/arch-security/2016-February/000547.html) [libbsd](https://www.archlinux.org/packages/?name=libbsd) denial of service
 *   [3 February 2016] [ASA-201602-6](https://lists.archlinux.org/pipermail/arch-security/2016-February/000546.html) [lib32-nettle](https://www.archlinux.org/packages/?name=lib32-nettle) improper cryptographic calculations
 *   [3 February 2016] [ASA-201602-5](https://lists.archlinux.org/pipermail/arch-security/2016-February/000545.html) [nettle](https://www.archlinux.org/packages/?name=nettle) improper cryptographic calculations
@@ -515,7 +517,7 @@ Vim-Snippet for vim-ultisnips plugin for easy completing the archlinux template.
 ```
 snippet archsec "arch security form"
 Arch Linux Security Advisory ASA-`date -I -u | egrep -o '[0-9]{4}'``date -I -u | egrep -o '[0-9]{2}' | sed '3q;d'`-${1}
-==========================================
+========================================${1/./=/g}
 
 Severity: ${2}
 Date    : `date -I -u`
@@ -537,7 +539,7 @@ Upgrade to $7.
 
 # pacman -Syu "$4>=$7"
 
-${9:The problems have been fixed upstream in version $7}
+${9:The problems have been fixed upstream in version ${7/-\d+$/./}}
 
 Workaround
 ==========
@@ -547,12 +549,12 @@ ${10:None.}
 Description
 ===========
 
-$3
+${3/(CVE-....-....)(\s?)/- $1(?2: : )()\n\n/g}
 
 Impact
 ======
 
-${12}
+A${6/(Yes)|(No)/(?1: remote )(?2: local )/}attacker is able to ${12}
 
 References
 ==========
@@ -562,4 +564,4 @@ endsnippet
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=419059](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=419059)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=419298](https://wiki.archlinux.org/index.php?title=Security_Advisories&oldid=419298)"

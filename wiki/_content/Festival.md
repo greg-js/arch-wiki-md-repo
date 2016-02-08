@@ -39,7 +39,7 @@ If you do not hear anything, see the [Troubleshooting](#Troubleshooting) section
 
 ### Using German IMS festival extension with mbrola
 
-You can use the [AUR Package](https://aur.archlinux.org/packages/festival-ims) with IMS Stuttgart patches.
+You can use the [festival-ims](https://aur.archlinux.org/packages/festival-ims/) package with IMS Stuttgart patches.
 
 The [IMS of the University Stuttgart](http://www.ims.uni-stuttgart.de) developed an extension to festival especially for German language. It uses German voices with [mbrola](https://aur.archlinux.org/packages/mbrola/). To install it, the extension needs to be downloaded from the university's servers (follow the Instructions [here](http://www.ims.uni-stuttgart.de/institut/arbeitsgruppen/phonetik/synthesis/festival_opensource.html)) and the [PKGBUILD](/index.php/PKGBUILD "PKGBUILD") needs to be modified -- use [abs](https://www.archlinux.org/packages/?name=abs) to get it and the patches necessary to install festival under arch linux.
 
@@ -300,4 +300,4 @@ Install [alsa-utils](https://www.archlinux.org/packages/?name=alsa-utils).
 
 *   [Festival manual](http://www.cstr.ed.ac.uk/projects/festival/manual/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Festival&oldid=419077](https://wiki.archlinux.org/index.php?title=Festival&oldid=419077)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Festival&oldid=419183](https://wiki.archlinux.org/index.php?title=Festival&oldid=419183)"

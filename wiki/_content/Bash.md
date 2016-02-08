@@ -18,7 +18,6 @@
 *   [3 Aliases](#Aliases)
 *   [4 Tips and tricks](#Tips_and_tricks)
     *   [4.1 Prompt customization](#Prompt_customization)
-        *   [4.1.1 Customize title](#Customize_title)
     *   [4.2 Command-not-found (AUR)](#Command-not-found_.28AUR.29)
     *   [4.3 Disable Ctrl+z in terminal](#Disable_Ctrl.2Bz_in_terminal)
     *   [4.4 Clear the screen after logging out](#Clear_the_screen_after_logging_out)
@@ -183,44 +182,7 @@ For functions, see [Bash/Functions](/index.php/Bash/Functions "Bash/Functions").
 
 ### Prompt customization
 
-The Bash prompt is governed by the variable `$PS1`. To colorize the Bash prompt, use:
-
- `~/.bashrc` 
-
-```
-#PS1='[\u@\h \W]\$ '  # To leave the default one
-#DO NOT USE RAW ESCAPES, USE TPUT
-reset=$(tput sgr0)
-red=$(tput setaf 1)
-blue=$(tput setaf 4)
-green=$(tput setaf 2)
-
-PS1='\[$red\]\u\[$reset\] \[$blue\]\w\[$reset\] \[$red\]\$ \[$reset\]\[$green\] '
-```
-
-This `$PS1` is useful for a root Bash prompt, with red designation and green console text. The `\[` and `\[` should wrap non-printing characters sequences to avoid wrong estimation of PS1 size which leads to display issues when navigating through history and editing the command line. For more info, see: [Color Bash Prompt](/index.php/Color_Bash_Prompt "Color Bash Prompt").
-
-#### Customize title
-
-The `$PROMPT_COMMAND` variable allows you to execute a command before the prompt. For example, this will change the title to your full current working directory:
-
- `~/.bashrc` 
-
-```
-export PROMPT_COMMAND='echo -ne "\033]0;$PWD\007"'
-
-```
-
-This will change your title to the last command run, and make sure your history file is always up-to-date:
-
- `~/.bashrc` 
-
-```
-export HISTCONTROL=ignoreboth
-export HISTIGNORE='history*'
-export PROMPT_COMMAND='history -a;echo -en "\e]2;";history 1|sed "s/^[ \t]*[0-9]\{1,\}  //g";echo -en "\e\\";'
-
-```
+See [Bash/Prompt customization](/index.php/Bash/Prompt_customization "Bash/Prompt customization").
 
 ### Command-not-found (AUR)
 
@@ -361,4 +323,4 @@ For example:
 
 *   [How to change the title of an xterm](http://tldp.org/HOWTO/Xterm-Title-4.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=413121](https://wiki.archlinux.org/index.php?title=Bash&oldid=413121)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bash&oldid=419218](https://wiki.archlinux.org/index.php?title=Bash&oldid=419218)"

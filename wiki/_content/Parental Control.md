@@ -12,13 +12,9 @@ Several methods exist to protect and limit child activity on a computer.
 
 	|| [timeoutd](https://aur.archlinux.org/packages/timeoutd/)
 
-*   **logkeys** — A daemon that logs keypresses into a logfile for later inspection. The log file resides by default in `/var/log`, but it is recommended to move it to an encrypted partition; it will for example contain every password entered in the system. For supervision purposes, the `--no-func-keys` option is recommended.
+*   **logkeys** — A daemon that logs keypresses into a logfile for later inspection. The log file resides by default in `/var/log`, but it is recommended to move it to an encrypted partition; it will for example contain every password entered in the system. Use the --keymap option if using a localized, non-US keyboard. For supervision purposes, the `--no-func-keys` option is recommended.
 
-	[http://code.google.com/p/logkeys/](http://code.google.com/p/logkeys/) || [logkeys-git](https://aur.archlinux.org/packages/logkeys-git/)
-
-*   **logkeys-keymaps** — Necessary to log keys with logkeys (`--keymap` option) using a localized, non-US keyboard.
-
-	|| [logkeys-keymaps-git](https://aur.archlinux.org/packages/logkeys-keymaps-git/)
+	[https://github.com/kernc/logkeys](https://github.com/kernc/logkeys) || [logkeys-git](https://aur.archlinux.org/packages/logkeys-git/)
 
 ## Whitelist with Tinyproxy and Firehol
 
@@ -67,4 +63,4 @@ myhostname
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Parental_Control&oldid=374735](https://wiki.archlinux.org/index.php?title=Parental_Control&oldid=374735)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Parental_Control&oldid=419291](https://wiki.archlinux.org/index.php?title=Parental_Control&oldid=419291)"

@@ -683,4 +683,4 @@ One needs to adapt VENDOR and MODEL according to the `lsusb` output, the above e
 *   [Torbirdy gpg.conf](https://github.com/ioerror/torbirdy/blob/master/gpg.conf)
 *   [/r/GPGpractice - a subreddit to practice using GnuPG.](https://www.reddit.com/r/GPGpractice/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=416305](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=416305)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GnuPG&oldid=419495](https://wiki.archlinux.org/index.php?title=GnuPG&oldid=419495)"

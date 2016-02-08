@@ -16,7 +16,7 @@
     *   [4.1 ObexFS](#ObexFS)
     *   [4.2 ObexFTP transfers](#ObexFTP_transfers)
     *   [4.3 Obex Object Push](#Obex_Object_Push)
-    *   [4.4 Using your computer's speakers as a bluetooth headset (e.g. play what is on your phone on your computer speakers)](#Using_your_computer.27s_speakers_as_a_bluetooth_headset_.28e.g._play_what_is_on_your_phone_on_your_computer_speakers.29)
+    *   [4.4 Using your computer's speakers as a bluetooth headset](#Using_your_computer.27s_speakers_as_a_bluetooth_headset)
 *   [5 Examples](#Examples)
 *   [6 Troubleshooting](#Troubleshooting)
     *   [6.1 bluetoothctl](#bluetoothctl_2)
@@ -102,7 +102,7 @@ In order to have the device active after a reboot, a udev rule is needed:
 ACTION=="add", KERNEL=="hci0", RUN+="/usr/bin/hciconfig hci0 up"
 ```
 
-After a suspend/resume-cycle, the device can be powered on automatically using something like this _systemd_ service:
+After a suspend/resume-cycle, the device can be powered on automatically using a custom _systemd_ service:
 
  `/etc/systemd/system/bluetooth-auto-power@.service` 
 
@@ -120,6 +120,8 @@ ExecStart=/usr/bin/dbus-send --system --type=method_call --dest=org.bluez /org/b
 WantedBy=suspend.target
 
 ```
+
+[Enable](/index.php/Enable "Enable") an instance of the unit using your bluetooth device name, for example `bluetooth-auto-power@hci0.service`.
 
 ## Configuration with a graphical front-end
 
@@ -209,7 +211,9 @@ Read the output, look for Obex Object Push, remember the channel for this servic
 
 ```
 
-### Using your computer's speakers as a bluetooth headset (e.g. play what is on your phone on your computer speakers)
+### Using your computer's speakers as a bluetooth headset
+
+This can allow you to do things such as playing what is on your phone through your computer speakers.
 
 Add the following to the file `/etc/bluetooth/audio.conf` (create it if not present):
 
@@ -507,4 +511,4 @@ Flash the firmware:
 
 The device should now be available. See [BBS#162688](https://bbs.archlinux.org/viewtopic.php?id=162688) for information on making these changes persistent.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=417690](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=417690)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=419530](https://wiki.archlinux.org/index.php?title=Bluetooth&oldid=419530)"

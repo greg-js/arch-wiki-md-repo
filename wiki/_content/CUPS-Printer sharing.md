@@ -9,7 +9,7 @@ This article contains instruction on sharing printers between systems, be it bet
 *   [1 Between GNU/Linux systems](#Between_GNU.2FLinux_systems)
     *   [1.1 Using the web interface](#Using_the_web_interface)
     *   [1.2 Manual setup](#Manual_setup)
-        *   [1.2.1 Using a CUPS >= 1.6 client with a <= 1.5 server](#Using_a_CUPS_.3E.3D_1.6_client_with_a_.3C.3D_1.5_server)
+    *   [1.3 Enabling browsing](#Enabling_browsing)
 *   [2 Between GNU/Linux and Windows](#Between_GNU.2FLinux_and_Windows)
     *   [2.1 Linux server - Windows client](#Linux_server_-_Windows_client)
         *   [2.1.1 Sharing via IPP](#Sharing_via_IPP)
@@ -27,66 +27,60 @@ This article contains instruction on sharing printers between systems, be it bet
 
 ## Between GNU/Linux systems
 
-Once CUPS has been setup on the GNU/Linux print server, the recommended method of sharing the printer with another GNU/Linux system is through the relatively easy to use web interface, yet manual configuration is also a way.
-
-You will need avahi-daemon running, before you restart cupsd.
+The server can be configured using either the web interface or by manually editing `/etc/cups/cupsd.conf`. To configure the client, see [CUPS#Remote printers](/index.php/CUPS#Remote_printers "CUPS").
 
 ### Using the web interface
 
-Access [http://localhost:631](http://localhost:631) with a browser and the CUPS administration home page will be displayed.
+Open up the web interface to the server, select the _Administration_ tab, look under the _Server_ heading, and enable the "Share printers connected to this system" option. Save your change by clicking on the _Change Settings_ button. The server will automatically restart.
 
-Click on the _Administration_ tab near the top, select the add printer option and it should automatically detect the connected printer. If not, try turning off the printer and then back on before another attempt.
-
-Once the printer has been set up, look under the _Server_ heading and click the checkbox for "Share printers connected to this system". Now, conclude by clicking _change settings_ and the server will automatically restart.
-
-Selecting "Edit Configuration File" allows making direct edits to the `cups.conf` file. This is useful for allowing server access only to certain users or IP addresses, as the example shown below.
+For more complex configurations, you can directly edit the `/etc/cups/cupsd.conf` file by selecting _Edit Configuration File_. See [#Manual setup](#Manual_setup) for more information.
 
 ### Manual setup
 
-On the server computer (the one directly connected to the printer) simply open up `/etc/cups/cupsd.conf` and allow access to the server by modifying the location lines. For instance:
+On the server computer (the one directly connected to the printer), allow access to the server by modifying the location directive. For instance:
+
+ `/etc/cups/cupsd.conf` 
 
 ```
 <Location />
-   Order allow,deny
-   Allow localhost
-   Allow 192.168.0.*
+    Order allow,deny
+    Allow localhost
+    Allow 192.168.0.*
 </Location>
+...
 
 ```
 
-Also make sure the server is listening on the IP address the client will be addressing. Add the following line after "# Listen <serverip>:631" (using the server's IP address instead of client's 192.168.0.100):
+Also make sure the server is listening on the IP address the client will be addressing:
+
+ `/etc/cups/cupsd.conf` 
 
 ```
-Listen 192.168.0.101:631
-
-```
-
-To "Show shared printers on the local network" make sure you have the Browsing directive enabled:
-
-```
-Browsing On
-
-```
-
-This line broadcasts browsing information to the clients on the network; it will let network users know when the printer is available:
-
-```
-BrowseAddress 192.168.0.*:631
+...
+Listen <hostname>:631
+...
 
 ```
 
 There are more configuration possibilities, including automatic methods, which are described in detail in [Using Network Printers](http://localhost:631/help/network.html).
 
-After making modifications, restart CUPS.
+After making any modifications, restart CUPS.
 
-To configure the client, see [CUPS#Remote printers](/index.php/CUPS#Remote_printers "CUPS").
+### Enabling browsing
 
-#### Using a CUPS >= 1.6 client with a <= 1.5 server
+To enable browsing (shared printer discovery), [Avahi](/index.php/Avahi "Avahi") must be installed and running on the server. If you do not need printer discovery, Avahi is not required on either the server or the client.
 
-As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround (undocumented as of 2013-05-07, but see [this bug report](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704238)) is to put the following in `/etc/cups/client.conf`:
+**Note:** Browsing will only work if [Avahi](/index.php/Avahi "Avahi") is running before cupsd is started
+
+To enable browsing, either select _Share printers connected to this system_ in the web interface, or manually turn on Browsing and set the BrowseAddress:
+
+ `/etc/cups/cupsd.conf` 
 
 ```
-ServerName HOSTNAME-OR-IP-ADDRESS[:PORT]/version=1.1
+...
+Browsing On
+BrowseAddress 192.168.0.*:631
+...
 
 ```
 
@@ -292,13 +286,6 @@ ErrorPolicy stop-printer
 
 Then restart the CUPS daemon an try to print a test page.
 
-To set the preferred printer use the following command
-
-```
-# lpoptions -d desired_default_printer_name
-
-```
-
 ## Troubleshooting
 
 See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting") for general troubleshooting tips.
@@ -334,4 +321,4 @@ should then return the list of drivers instead of just the "Success" message.
 
 More information on interfacing CUPS with other printing systems can be found in the CUPS manual, e.g. on [http://localhost:631/sam.html#PRINTING_OTHER](http://localhost:631/sam.html#PRINTING_OTHER)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=419092](https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=419092)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=419159](https://wiki.archlinux.org/index.php?title=CUPS/Printer_sharing&oldid=419159)"

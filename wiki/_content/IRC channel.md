@@ -1,5 +1,7 @@
 # IRC channel
 
+**Warning:** Channel statistics are logged [here](https://theos.kyriasis.com/~kyrias/stats/archlinux.html). Speak to [demize](/index.php/User:Kyrias "User:Kyrias") if you would like to opt-out permanently.
+
 This article is about **#archlinux**, the main Arch Linux support [IRC](https://en.wikipedia.org/wiki/Internet_Relay_Chat "wikipedia:Internet Relay Chat") channel, and **#archlinux-offtopic**, the main Arch Linux social channel, both available on the [Freenode](http://www.freenode.net/) network.
 
 There are also a number of other channels dedicated to Arch Linux maintained by community members: see [IRC channels](/index.php/IRC_channels "IRC channels") for a listing.
@@ -197,4 +199,4 @@ Arch operators are ops in both channels, see [#archlinux operators](#.23archlinu
 
 	Ban / Banned
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=418972](https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=418972)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=419558](https://wiki.archlinux.org/index.php?title=IRC_channel&oldid=419558)"

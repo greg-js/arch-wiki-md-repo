@@ -136,6 +136,8 @@ tail /var/log/cups/error_log
 
 ### Remote printers
 
+**Note:** As of CUPS version 1.6, the client defaults to IPP 2.0\. If the server uses CUPS <= 1.5 / IPP <= 1.1, the client does not downgrade the protocol automatically and thus cannot communicate with the server. A workaround (undocumented as of 2013-05-07, but see [this bug report](http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=704238)) is to put the following in `/etc/cups/client.conf`: ServerName HOSTNAME-OR-IP-ADDRESS[:PORT]/version=1.1
+
 #### Local CUPS server
 
 Remote print servers can be accessed by adding an IPP "printer" to the local CUPS server, with a URI of `ipp://192.168.0.101:631/printers/<name-of-printer>`. See [CUPS/Printer sharing#Between GNU/Linux systems](/index.php/CUPS/Printer_sharing#Between_GNU.2FLinux_systems "CUPS/Printer sharing") for details on setting up the remote print server.
@@ -167,24 +169,7 @@ ServerName printserver.mydomain
 
 ```
 
-The remote system will have a default printer setting which will be used. To change the default printer, use the _lpoptions_ command.
-
-First list the available printers:
-
- `lpstat -a` 
-
-```
-hpljet5p accepting requests since Jan 01 00:00
-hpdjet510 accepting requests since Jan 01 00:00
-
-```
-
-Set the HP LaserJet 5P as the default printer:
-
-```
-lpoptions -d hpljet5p
-
-```
+The remote system's default printer setting will be used by default.
 
 ### Printer sharing
 
@@ -395,4 +380,4 @@ See [CUPS/Troubleshooting](/index.php/CUPS/Troubleshooting "CUPS/Troubleshooting
 *   [OpenPrinting homepage](http://www.linuxfoundation.org/collaborate/workgroups/openprinting)
 *   [Gentoo's printing guide](https://wiki.gentoo.org/wiki/Printing)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS&oldid=417074](https://wiki.archlinux.org/index.php?title=CUPS&oldid=417074)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS&oldid=419158](https://wiki.archlinux.org/index.php?title=CUPS&oldid=419158)"

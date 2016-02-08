@@ -6,7 +6,6 @@
 
 *   [1 Setting up DPMS in X](#Setting_up_DPMS_in_X)
 *   [2 Modifying DPMS and screensaver settings using xset](#Modifying_DPMS_and_screensaver_settings_using_xset)
-    *   [2.1 xset display.sh](#xset_display.sh)
 *   [3 DPMS interaction in a Linux console with setterm](#DPMS_interaction_in_a_Linux_console_with_setterm)
     *   [3.1 Prevent screen from turning off](#Prevent_screen_from_turning_off)
     *   [3.2 Pipe the output to a cat to see the escapes](#Pipe_the_output_to_a_cat_to_see_the_escapes)
@@ -34,7 +33,7 @@ Option "OffTime" "30"
 
 ```
 
-**Note:** If the `"OffTime"` option does not work replace it with the following, (change the `"blanktime"` to `"0"` to disable screen blanking)
+**Note:** If the `"OffTime"` option does not work, use screen blanking instead, which will keep the monitor turned on with a black image. Alternatively, change `"blanktime"` to `"0"` to disable screen blanking
 
 ```
 Option         "BlankTime" "30"
@@ -53,7 +52,8 @@ Section "ServerLayout"
     Identifier "ServerLayout0"
     Option "StandbyTime" "0"
     Option "SuspendTime" "0"
-    Option "OffTime" "0"
+    Option "OffTime"     "0"
+    Option "BlankTime"   "0"
 EndSection
 
 ```
@@ -62,12 +62,7 @@ EndSection
 
 It is possible to turn off your monitor using the _xset_ tool which is provided by the [xorg-xset](https://www.archlinux.org/packages/?name=xorg-xset) package in the [official repositories](/index.php/Official_repositories "Official repositories").
 
-**Note:** If using this command manually in a shell you may need to prefix it with `sleep 1;` for it to work correctly. For example:
-
-```
-$ sleep 1; xset dpms force off
-
-```
+**Note:** If using this command manually in a shell you may need to prefix it with `sleep 1;` for it to work correctly, for example `sleep 1; xset dpms force off`
 
 Example commands:
 
@@ -85,7 +80,6 @@ To query the current settings:
  `$ xset q` 
 
 ```
-
 ...
 
 Screen Saver:
@@ -100,29 +94,9 @@ DPMS (Energy Star):
 
 See `xset` for all available commands.
 
+**Note:** If using `xset` in [xinitrc](/index.php/Xinitrc "Xinitrc") does not work, specify settings within a file in `/etc/X11/xorg.conf.d/`. See [#Setting up DPMS in X](#Setting_up_DPMS_in_X) for details.
+
 **Warning:** [XScreenSaver](/index.php/XScreenSaver "XScreenSaver") and [xfce4-power-manager](https://www.archlinux.org/packages/?name=xfce4-power-manager) use their own DPMS settings and override _xset_ configuration. See [XScreenSaver#DPMS and blanking settings](/index.php/XScreenSaver#DPMS_and_blanking_settings "XScreenSaver") and [Xfce#Display blanking](/index.php/Xfce#Display_blanking "Xfce") for more information.
-
-### xset display.sh
-
-Alternatively, copy this script inside your `$PATH` and make it executable (`chmod +x`):
-
- `/usr/local/bin/display.sh` 
-
-```
-#!/bin/bash
-
-case $1 in
-    standby|suspend|off)
-        xset dpms force $1
-        ;;
-    *)
-        echo "Usage: $0 standby|suspend|off"
-        ;;
-  esac
-
-```
-
-As screensaver settings do not persist across X restarts, consider to [automatically start](/index.php/Autostart "Autostart") the script.
 
 ## DPMS interaction in a Linux console with setterm
 
@@ -183,4 +157,4 @@ $ for i in {0..256}; do setterm -powerdown 0 >> /dev/tty$i; done; unset i;
 *   [PC Monitor DPMS specification explanation](http://webpages.charter.net/dperr/dpms.htm)
 *   [DPMS control in X](http://ptspts.blogspot.be/2009/10/screen-blanking-dpms-screen-saver.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&oldid=398742](https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&oldid=398742)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&oldid=419340](https://wiki.archlinux.org/index.php?title=Display_Power_Management_Signaling&oldid=419340)"

@@ -697,6 +697,7 @@ If PulseAudio fails when changing the profile to A2DP while using GNOME with GDM
 | **Sony SBH80** | bluez 5.36, pulseaudio 7.1 | Media buttons do not work. A2DP works after disabling profiles and enabling A2DP in blueman. | Yes |
 | **Kitsound Manhattan** | bluez 5.37, pulseaudio 7.13 | All appears to work fine. If Pulseaudio is run as root ( --system) rather than as a user, it often resuls in either a refusal to connect once paired, or else a complete system freeze ( asking for the access PIN )! You have been warned. | Yes |
 | **JBL Everest 300** | bluez 5.37, pulseaudio 8.0 | Everything works correctly. Headphones connected with HSP/HFP profile and sound quality was bad, but after switching profile in **pavucontrol** to A2DP sink sound quality went way up (as expected). Pairing went without issues. | Yes |
+| **Logitech UE9000** | bluez 5.37, pulseaudio 7.1, gnome 3.18.2 | Audio playback works correctly after gnome/gdm fix [here](https://wiki.archlinux.org/index.php/Bluetooth_headset#Connecting_works.2C_but_I_cannot_play_sound). Audio profile defaults to HSP/HFP. Microphone works in both HSP/HFP and A2DP profiles. Play/Pause and Fwd/Back functions work correctly in Spotify and VLC | Yes |
 
 ## See also
 
@@ -704,4 +705,4 @@ Using the same device on Windows and Linux without pairing the device over and o
 
 *   [Dual booting with a Bluetooth keyboard](http://ubuntuforums.org/showthread.php?p=9363229#post9363229)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=418407](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=418407)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=419393](https://wiki.archlinux.org/index.php?title=Bluetooth_headset&oldid=419393)"

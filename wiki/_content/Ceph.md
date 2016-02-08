@@ -74,4 +74,4 @@ As an example, for a monitor named `node1` start and enable `ceph-mon@node1.serv
     *   [GitHub organization](https://github.com/ceph)
     *   [Ceph](https://github.com/ceph/ceph)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ceph&oldid=401404](https://wiki.archlinux.org/index.php?title=Ceph&oldid=401404)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ceph&oldid=419278](https://wiki.archlinux.org/index.php?title=Ceph&oldid=419278)"

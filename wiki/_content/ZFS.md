@@ -763,7 +763,7 @@ archzfs-git
 
 ```
 
-Complete [Build the ISO](/index.php/Archiso#Archiso.23Build_the_ISO "Archiso") to finally build the iso.
+Complete [Build the ISO](/index.php/Archiso#Build_the_ISO "Archiso") to finally build the iso.
 
 ### Encryption in ZFS on linux
 
@@ -940,4 +940,4 @@ WantedBy=local-fs.target
 16.  [Get/Set Properties](https://pthree.org/2013/01/02/zfs-administration-part-xvi-getting-and-setting-properties/)
 17.  [ZFS Best Practices](https://pthree.org/2013/01/03/zfs-administration-part-xvii-best-practices-and-caveats/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=418994](https://wiki.archlinux.org/index.php?title=ZFS&oldid=418994)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=ZFS&oldid=419132](https://wiki.archlinux.org/index.php?title=ZFS&oldid=419132)"

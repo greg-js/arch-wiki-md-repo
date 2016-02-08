@@ -215,4 +215,4 @@ parsoidConfig.setInterwiki( 'localhost', 'http://localhost/mediawiki/api.php' );
 
 After that simply [enable](/index.php/Enable "Enable") and start `parsoid.service`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=412002](https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=412002)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=419258](https://wiki.archlinux.org/index.php?title=MediaWiki&oldid=419258)"

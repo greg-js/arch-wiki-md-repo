@@ -242,4 +242,4 @@ If the default paper size in blank Writer and Draw documents is persistently inc
 
 **Note:** [libpaper](https://www.archlinux.org/packages/?name=libpaper) defaults to **Letter** paper size if nothing else has been set.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412817](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=412817)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=419494](https://wiki.archlinux.org/index.php?title=LibreOffice&oldid=419494)"

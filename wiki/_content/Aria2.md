@@ -48,7 +48,7 @@ The executable name for the aria2 package is `aria2c`. This legacy naming conven
 
 ### aria2.conf
 
-aria2 looks to `~/.aria2/aria2.conf` for a set of global configuration options by default. This behavior can be modified with the `--conf-path` switch:
+aria2 looks to `$XDG_CONFIG_HOME/aria2/aria2.conf` for a set of global configuration options by default. This behavior can be modified with the `--conf-path` switch:
 
 *   Download `aria2.example.rar` using the options specified in the configuration file `/file/aria2.rapidshare`
 
@@ -57,7 +57,7 @@ $ aria2c --conf-path=/file/aria2.rapidshare http://rapidshare.com/files/12345678
 
 ```
 
-If `~/.aria2/aria2.conf` exists and the options specified in `/file/aria2.rapidshare` are desired, the `--no-conf` switch must be appended to the command:
+If `$XDG_CONFIG_HOME/aria2/aria2.conf` exists and the options specified in `/file/aria2.rapidshare` are desired, the `--no-conf` switch must be appended to the command:
 
 *   Do not use the default configuration file and download `aria2.example.rar` using the options specified in the configuration file `/file/aria2.rapidshare`
 
@@ -66,10 +66,10 @@ $ aria2c --no-conf --conf-path=/file/aria2.rapidshare http://rapidshare.com/file
 
 ```
 
-If `~/.aria2/aria2.conf` does not yet exist and you wish to simplify the management of configuration options:
+If `$XDG_CONFIG_HOME/aria2/aria2.conf` does not yet exist and you wish to simplify the management of configuration options:
 
 ```
-$ touch ~/.aria2/aria2.conf
+$ touch $XDG_CONFIG_HOME/aria2/aria2.conf
 
 ```
 
@@ -447,4 +447,4 @@ DLAGENTS=('ftp::/usr/bin/aria2c -UWget -s4 %u -o %o'
 *   [aria2 usage examples](http://sourceforge.net/apps/trac/aria2/wiki/UsageExample) - Official site
 *   [aria2c downloader through VPN tunnel](http://gotux.net/arch-linux/aria2c-downloader-through-vpn-tunnel/) - Unofficial site
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Aria2&oldid=416225](https://wiki.archlinux.org/index.php?title=Aria2&oldid=416225)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Aria2&oldid=419572](https://wiki.archlinux.org/index.php?title=Aria2&oldid=419572)"

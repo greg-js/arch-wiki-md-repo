@@ -53,7 +53,7 @@ In this example, we'll initialize the usb system and load the kernel image from 
 
 ```
 armStoneA9 # usb start
-armStoneA9 # ex4load usb 0:1 $(loadaddr) /boot/uImage-fsimx6
+armStoneA9 # ext4load usb 0:1 $(loadaddr) /boot/uImage-fsimx6
 armStoneA9 # nand erase.part Kernel
 armStoneA9 # nand write $loadaddr Kernel $filesize
 
@@ -77,4 +77,4 @@ The command `run bootcmd` initiates the boot process by starting the kernel.
 *   [Hardware documentation (pdf)](https://www.fs-net.de/assets/download/docu/armstone/en/armStoneA9_Hardware_eng.pdf)
 *   [Linux documentation (pdf)](https://www.fs-net.de/assets/download/docu/common/en/FSiMX6_FirstSteps_eng.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=413510](https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=413510)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=419464](https://wiki.archlinux.org/index.php?title=Armstone_A9&oldid=419464)"

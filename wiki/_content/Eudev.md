@@ -60,7 +60,7 @@ and press `Alt-SysRq-S`, `Alt-SysRq-U` and `Alt-SysRq-B` in succession. This syn
 
 ### Fails to start
 
-Check the init script for eudev (aliased to udev, so /etc/openrc/init.d/udev on an OpenRC setup for example) and ensure the command points to /usr/bin/udev.
+Check the init script for eudev (aliased to udev, so /etc/openrc/init.d/udev on an OpenRC setup for example) and ensure the command points to /usr/bin/udevd.
 
 ### netctl
 
@@ -78,4 +78,4 @@ Your files in `/etc/sysctl.d/` might disappear after removing [systemd](https://
 
 *   [Github: Eudev](https://github.com/gentoo/eudev)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Eudev&oldid=403197](https://wiki.archlinux.org/index.php?title=Eudev&oldid=403197)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Eudev&oldid=419147](https://wiki.archlinux.org/index.php?title=Eudev&oldid=419147)"

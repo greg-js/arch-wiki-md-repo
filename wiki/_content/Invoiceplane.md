@@ -37,4 +37,4 @@ Visit the installation wizard page at [http://127.0.0.1/invoiceplane/setup](http
 *   [Offical web page](http://invoiceplane.com)
 *   [Documentation](https://github.com/InvoicePlane/InvoicePlane/wiki)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=392279](https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=392279)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=419489](https://wiki.archlinux.org/index.php?title=Invoiceplane&oldid=419489)"

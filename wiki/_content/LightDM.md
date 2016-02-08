@@ -1,11 +1,14 @@
 # LightDM
 
-[LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager") that aims to be the standard display manager for the X server. Its key features are:
+[LightDM](http://www.freedesktop.org/wiki/Software/LightDM) is a cross-desktop [display manager](/index.php/Display_manager "Display manager"). Its key features are:
 
-*   A lightweight codebase
-*   Standards compliant (PAM, logind, etc)
-*   A well defined interface between the server and the user interface.
-*   Cross-desktop (user interfaces can be written in any toolkit).
+*   Cross-desktop - supports different desktop technologies.
+*   Supports different display technologies (X, Wayland, Mir, ...).
+*   Lightweight - low memory usage and high performance.
+*   Supports guest sessions.
+*   Supports remote login (incoming - XDMCP, VNC, outgoing - XDMCP, pluggable).
+*   Comprehensive test suite.
+*   Low code complexity.
 
 More details about LightDM's design can be found [here](http://www.freedesktop.org/wiki/Software/LightDM/Design).
 
@@ -48,13 +51,16 @@ More details about LightDM's design can be found [here](http://www.freedesktop.o
 
 ### Greeter
 
-You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session and so on. It's also possible to use LightDM without a greeter, but only if an automatic login is configured. The reference greeter is [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter). LightDM attempts to use this greeter when started unless configured to do otherwise.
+You will probably want to install a greeter. A greeter is a GUI that prompts the user for credentials, lets the user select a session, and so on. It's possible to use LightDM without a greeter, but only if an automatic login is configured. The reference greeter is [lightdm-gtk-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk-greeter). LightDM attempts to use this greeter when started unless configured to do otherwise.
 
-The official repositories contains other alternative greeters. Other greeters can be installed from the [AUR](/index.php/AUR "AUR").
+The official repositories contain the following alternative greeters.
 
 *   [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter): A greeter used with KDE4.
 *   lightdm-deepin-greeter ([deepin-session-ui](https://www.archlinux.org/packages/?name=deepin-session-ui)): A greeter from the [Deepin](/index.php/Deepin_Desktop_Environment "Deepin Desktop Environment") project.
-*   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/): A greeter that uses Webkit for theming.
+
+Other alternative greeters are available in the [AUR](/index.php/AUR "AUR").
+
+*   [lightdm-webkit2-greeter](https://aur.archlinux.org/packages/lightdm-webkit2-greeter/): A greeter that uses Webkit2 for theming. It supersedes [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/).
 *   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): The greeter used by Ubuntu's [Unity](/index.php/Unity "Unity").
 *   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): A greeter from the elementary OS project.
 
@@ -405,4 +411,4 @@ See [PulseAudio#Running](/index.php/PulseAudio#Running "PulseAudio").
 *   [Launchpad Page](https://launchpad.net/lightdm)
 *   [LightDM blog](http://www.mattfischer.com/blog/?tag=lightdm)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=415925](https://wiki.archlinux.org/index.php?title=LightDM&oldid=415925)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=LightDM&oldid=419208](https://wiki.archlinux.org/index.php?title=LightDM&oldid=419208)"

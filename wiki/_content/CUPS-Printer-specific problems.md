@@ -336,6 +336,7 @@ Keep in mind you can use the automated installer but doing so will leave the res
 
 | Printer | Driver/filter | Notes |
 | C110 | [foomatic-db](https://www.archlinux.org/packages/?name=foomatic-db) |
+| MC561 | [foomatic-db-nonfree](https://www.archlinux.org/packages/?name=foomatic-db-nonfree) |
 | Printer | Driver/filter | Notes |
 
 ## Samsung
@@ -388,4 +389,4 @@ Now install the driver:
 
 Again, on an x86_64 install, 32 bit libraries will be needed.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=412682](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=412682)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=419459](https://wiki.archlinux.org/index.php?title=CUPS/Printer-specific_problems&oldid=419459)"

@@ -11,7 +11,9 @@
 *   [3 Tips and tricks](#Tips_and_tricks)
     *   [3.1 Audtool](#Audtool)
     *   [3.2 MP3 problems](#MP3_problems)
-*   [4 See also](#See_also)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Audacious sets itself as the default file manager](#Audacious_sets_itself_as_the_default_file_manager)
+*   [5 See also](#See_also)
 
 ## Installation
 
@@ -59,8 +61,14 @@ $ audtool --help
 
 Install [mpg123](https://www.archlinux.org/packages/?name=mpg123).
 
+## Troubleshooting
+
+### Audacious sets itself as the default file manager
+
+See [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").
+
 ## See also
 
 *   [Audacious official site](http://audacious-media-player.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Audacious&oldid=403797](https://wiki.archlinux.org/index.php?title=Audacious&oldid=403797)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Audacious&oldid=419518](https://wiki.archlinux.org/index.php?title=Audacious&oldid=419518)"

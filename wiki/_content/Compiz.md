@@ -67,6 +67,8 @@ Required:
 
 Optional:
 
+**Note:** To have _emerald-themes_ with _emerald0.9_, first install [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/) and then install [emerald-themes](https://aur.archlinux.org/packages/emerald-themes/). Doing the opposite will resolve the wrong dependencies and cause conflicts.
+
 *   **Emerald** — A standalone window decorator for Compiz.
 
 	[http://www.compiz.org/](http://www.compiz.org/) || [emerald0.9](https://aur.archlinux.org/packages/emerald0.9/)
@@ -496,4 +498,4 @@ When Compiz is used with Xfce Panel 4.11 and above, the workspace pager will use
 *   [Compiz Home](http://compiz.org), including wiki and forum (website and wiki are unmaintained)
 *   [Troubleshooting - Compiz Wiki](http://wiki.compiz.org/Troubleshooting), (wiki is unmaintained)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz&oldid=411952](https://wiki.archlinux.org/index.php?title=Compiz&oldid=411952)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Compiz&oldid=419178](https://wiki.archlinux.org/index.php?title=Compiz&oldid=419178)"

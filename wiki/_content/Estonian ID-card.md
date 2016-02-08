@@ -24,4 +24,4 @@ The ID-card utility packages are [qesteidutil](https://aur.archlinux.org/package
 
 These applications will automatically appear in your application menus. You can also start from command line with <tt>qdigidocclient</tt> and <tt>qesteidutil</tt>.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Estonian_ID-card&oldid=411309](https://wiki.archlinux.org/index.php?title=Estonian_ID-card&oldid=411309)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Estonian_ID-card&oldid=419251](https://wiki.archlinux.org/index.php?title=Estonian_ID-card&oldid=419251)"

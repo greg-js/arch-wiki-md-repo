@@ -20,6 +20,7 @@ This document outlines the procedure needed to set up AutoFS, a package that pro
     *   [4.3 Identify multiple devices](#Identify_multiple_devices)
     *   [4.4 AutoFS permissions](#AutoFS_permissions)
     *   [4.5 fusermount problems](#fusermount_problems)
+    *   [4.6 Debugging auto mount issues](#Debugging_auto_mount_issues)
 *   [5 Alternatives to AutoFS](#Alternatives_to_AutoFS)
 *   [6 See also](#See_also)
 
@@ -380,6 +381,23 @@ May  7 19:44:16 peterix automount[15218]: failed to mount /media/cifs/petr
 
 With certain versions of util-linux, you may not be able to unmount a fuse file system drive mounted by autofs, even if you use the "user=" option. See the discussion here: [http://fuse.996288.n3.nabble.com/Cannot-umount-as-non-root-user-anymore-tp689p697.html](http://fuse.996288.n3.nabble.com/Cannot-umount-as-non-root-user-anymore-tp689p697.html)
 
+### Debugging auto mount issues
+
+For better debugging you might try running automount in foreground.
+
+```
+# systemctl stop autofs.service
+# automount -f -v
+
+```
+
+Of if you want more debug info than try:
+
+```
+# automount -f --debug
+
+```
+
 ## Alternatives to AutoFS
 
 *   [Systemd](/index.php/Systemd "Systemd") can automount filesystems upon demand; see [here](/index.php/Fstab#Automount_with_systemd "Fstab") for the description and the article on [sshfs](/index.php/Sshfs#On_demand "Sshfs") for an example.
@@ -391,5 +409,8 @@ With certain versions of util-linux, you may not be able to unmount a fuse file 
 
 *   FTP and SFTP usage with AutoFS is based on this Gentoo Wiki article: [https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares](https://web.archive.org/web/20130414074212/http://en.gentoo-wiki.com/wiki/Mounting_SFTP_and_FTP_shares)
 *   More information on SSH can be found on the [SSH](/index.php/SSH "SSH") and [Using SSH Keys](/index.php/Using_SSH_Keys "Using SSH Keys") pages of this wiki.
+*   Ubuntu's Autofs help wiki is at [https://help.ubuntu.com/community/Autofs](https://help.ubuntu.com/community/Autofs)
+*   For filesystem specific mount options check [http://manpages.ubuntu.com/manpages/natty/en/man8/mount.8.html#contenttoc5](http://manpages.ubuntu.com/manpages/natty/en/man8/mount.8.html#contenttoc5)
+*   For fuse specific mount options check [http://manpages.ubuntu.com/manpages/precise/man8/mount.fuse.8.html](http://manpages.ubuntu.com/manpages/precise/man8/mount.fuse.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Autofs&oldid=412681](https://wiki.archlinux.org/index.php?title=Autofs&oldid=412681)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Autofs&oldid=419560](https://wiki.archlinux.org/index.php?title=Autofs&oldid=419560)"

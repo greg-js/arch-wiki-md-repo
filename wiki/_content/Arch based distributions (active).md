@@ -185,18 +185,11 @@ Includes distributions that are built around kernels or for architectures that a
 
 ### MSYS2
 
-_"MSYS2 is an updated, modern version of MSYS, both of which are Cygwin (POSIX compatibility layer) forks with the aim of better interoperability with native Windows software._
+MSYS2 is the most recent and active fork of Cygwin that provides a small, self-contained UNIX-like environment for Windows. It uses Windows port of [pacman](/index.php/Pacman "Pacman") to manage the whole system of MSYS2 and native packages which are updated in a timely manner.
 
-_The name is a contraction of Minimal SYStem 2, and aims to provide support to facilitate using the bash shell, Autotools, revision control systems and the like for building native Windows applications using MinGW-w64 toolchains._
-
-_We wanted a package management system to provide easy installation of packages, and ported Arch Linux's Pacman. This brings many powerful features such as dependency resolution and simple complete system upgrades, as well as providing the build system (makepkg) which is used to make these packages."_
-
-	Source: [MSYS2 | SourceForge.net](http://sourceforge.net/projects/msys2/)
-
-*   Homepage: [http://sourceforge.net/p/msys2/](http://sourceforge.net/p/msys2/)
+*   Homepage: [http://msys2.github.io/](http://msys2.github.io/)
 *   Forums: [http://sourceforge.net/p/msys2/discussion/](http://sourceforge.net/p/msys2/discussion/)
 *   Wiki: [http://sourceforge.net/p/msys2/wiki/](http://sourceforge.net/p/msys2/wiki/)
-*   Screenshots: [http://msys2.github.io/](http://msys2.github.io/)
 
 ### PacBSD
 
@@ -356,4 +349,4 @@ Manjaro-based operating system developed by Blue Systems. Offers customised KDE 
 
 *   List at distrowatch.com - [http://distrowatch.com/search.php?basedon=Arch&status=Active](http://distrowatch.com/search.php?basedon=Arch&status=Active)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=418860](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=418860)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=419461](https://wiki.archlinux.org/index.php?title=Arch_based_distributions_(active)&oldid=419461)"

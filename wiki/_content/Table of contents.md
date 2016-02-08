@@ -6,7 +6,7 @@
 
 	<small>1.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [Development](/index.php/Category:Development "Category:Development"))</small>
 
-	<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(53)</small>
+	<small>1.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
 
 	<small>1.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
@@ -30,7 +30,7 @@
 
 	<small>2.2.</small> [Application launchers](/index.php/Category:Application_launchers "Category:Application launchers") <small>(9)</small>
 
-	<small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(15)</small>
+	<small>2.3.</small> [Command shells](/index.php/Category:Command_shells "Category:Command shells") <small>(14)</small>
 
 	<small>2.4.</small> [Data compression and archiving](/index.php/Category:Data_compression_and_archiving "Category:Data compression and archiving") <small>(12)</small>
 
@@ -48,7 +48,7 @@
 
 	<small>2.10.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small>
 
-	<small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small>
+	<small>2.10.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(19)</small>
 
 	<small>2.10.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(22)</small>
 
@@ -68,7 +68,7 @@
 
 	<small>2.14.</small> [Search](/index.php/Category:Search "Category:Search") <small>(2)</small>
 
-	<small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(9)</small>
+	<small>2.15.</small> [Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification") <small>(10)</small>
 
 	<small>2.16.</small> [Terminal emulators](/index.php/Category:Terminal_emulators "Category:Terminal emulators") <small>(16)</small>
 
@@ -76,21 +76,19 @@
 
 	<small>2.18.</small> [Wine](/index.php/Category:Wine "Category:Wine") <small>(18)</small>
 
-	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(53)</small>
+	<small>3.</small> [Development](/index.php/Category:Development "Category:Development") <small>(54)</small>
 
 	<small>3.1.</small> [Arch development](/index.php/Category:Arch_development "Category:Arch development") <small>(25) (also in [About Arch](/index.php/Category:About_Arch "Category:About Arch"))</small>
 
-	<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(53)</small>
+	<small>3.1.1.</small> [Package development](/index.php/Category:Package_development "Category:Package development") <small>(54)</small>
 
 	<small>3.1.2.</small> [Pacman development](/index.php/Category:Pacman_development "Category:Pacman development") <small>(4)</small>
 
-	<small>3.2.</small> [Licenses](/index.php/Category:Licenses "Category:Licenses") <small>(25)</small>
+	<small>3.2.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(21)</small>
 
-	<small>3.3.</small> [Programming languages](/index.php/Category:Programming_languages "Category:Programming languages") <small>(22)</small>
+	<small>3.3.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small>
 
-	<small>3.4.</small> [Version Control System](/index.php/Category:Version_Control_System "Category:Version Control System") <small>(16)</small>
-
-	<small>3.5.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small>
+	<small>3.4.</small> [Widget toolkits](/index.php/Category:Widget_toolkits "Category:Widget toolkits") <small>(4)</small>
 
 	<small>4.</small> [Hardware](/index.php/Category:Hardware "Category:Hardware") <small>(2)</small>
 
@@ -114,7 +112,7 @@
 
 	<small>4.7.3.</small> [Mice](/index.php/Category:Mice "Category:Mice") <small>(14)</small>
 
-	<small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(20)</small>
+	<small>4.8.</small> [Laptops](/index.php/Category:Laptops "Category:Laptops") <small>(19)</small>
 
 	<small>4.8.1.</small> [Acer](/index.php/Category:Acer "Category:Acer") <small>(34)</small>
 
@@ -138,7 +136,7 @@
 
 	<small>4.8.11.</small> [Lenovo](/index.php/Category:Lenovo "Category:Lenovo") <small>(65)</small>
 
-	<small>4.8.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(2)</small>
+	<small>4.8.12.</small> [MSI](/index.php/Category:MSI "Category:MSI") <small>(3)</small>
 
 	<small>4.8.13.</small> [Nokia](/index.php/Category:Nokia "Category:Nokia") <small>(1)</small>
 
@@ -180,7 +178,7 @@
 
 	<small>5.5.1.</small> [Email clients](/index.php/Category:Email_clients "Category:Email clients") <small>(18)</small>
 
-	<small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(18)</small>
+	<small>5.5.2.</small> [Internet Relay Chat](/index.php/Category:Internet_Relay_Chat "Category:Internet Relay Chat") <small>(19)</small>
 
 	<small>5.5.3.</small> [Web browser](/index.php/Category:Web_browser "Category:Web browser") <small>(22)</small>
 
@@ -196,7 +194,7 @@
 
 	<small>5.11.</small> [Proxy servers](/index.php/Category:Proxy_servers "Category:Proxy servers") <small>(9) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
-	<small>5.12.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(9)</small>
+	<small>5.12.</small> [Remote desktop](/index.php/Category:Remote_desktop "Category:Remote desktop") <small>(8)</small>
 
 	<small>5.13.</small> [Secure Shell](/index.php/Category:Secure_Shell "Category:Secure Shell") <small>(18) (also in [Security](/index.php/Category:Security "Category:Security"))</small>
 
@@ -206,7 +204,7 @@
 
 	<small>5.16.</small> [Web server](/index.php/Category:Web_server "Category:Web server") <small>(62)</small>
 
-	<small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(9)</small>
+	<small>5.17.</small> [Wireless networking](/index.php/Category:Wireless_networking "Category:Wireless networking") <small>(10)</small>
 
 	<small>6.</small> [System administration](/index.php/Category:System_administration "Category:System administration") <small>(29)</small>
 
@@ -274,4 +272,4 @@
 
 	<small>6.14.</small> [X server](/index.php/Category:X_server "Category:X server") <small>(61)</small>
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=418461](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=418461)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=419358](https://wiki.archlinux.org/index.php?title=Table_of_contents&oldid=419358)"

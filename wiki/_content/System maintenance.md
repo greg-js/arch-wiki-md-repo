@@ -51,11 +51,13 @@ See [Systemd#Analyzing the system state](/index.php/Systemd#Analyzing_the_system
 Look for errors in the log files located at `/var/log`, as well as high priority errors in the systemd journal:
 
 ```
-# journalctl -p 0..3 -xn
+# journalctl -p 3 -xb
 
 ```
 
 See [Systemd#Journal](/index.php/Systemd#Journal "Systemd") for more information.
+
+See [Xorg#Troubleshooting](/index.php/Xorg#Troubleshooting "Xorg") for information on where and how [Xorg](/index.php/Xorg "Xorg") logs errors.
 
 ## Backup
 
@@ -217,4 +219,4 @@ To make it available as a boot option, you will need to update your [bootloader]
 
 *   [Arch News Bash Script](https://bbs.archlinux.org/viewtopic.php?id=146850)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=419074](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=419074)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=419484](https://wiki.archlinux.org/index.php?title=System_maintenance&oldid=419484)"

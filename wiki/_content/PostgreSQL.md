@@ -40,7 +40,7 @@ Before PostgreSQL can function correctly, the database cluster must be initializ
 
 Then [start](/index.php/Start "Start") and enable `postgresql.service`.
 
-**Warning:** If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any database.
+**Warning:** If the database resides on a [Btrfs](/index.php/Btrfs "Btrfs") file system, you should consider disabling [Copy-on-Write](/index.php/Btrfs#Copy-On-Write_.28CoW.29 "Btrfs") for the directory before creating any database. If the database resides on a [ZFS](/index.php/ZFS "ZFS") file system, you should consult [ZFS#Database](/index.php/ZFS#Database "ZFS") before creating any database.
 
 ## Create your first database/user
 
@@ -452,4 +452,4 @@ PostgreSQL periodically updates its internal "statistics" file. By default, this
 
 Install [php-pgsql](https://www.archlinux.org/packages/?name=php-pgsql) and edit the `php.ini` file uncommenting the lines `extension=pdo_pgsql.so` and `extension=pgsql.so`, then restart `httpd`.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412008](https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=412008)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=419370](https://wiki.archlinux.org/index.php?title=PostgreSQL&oldid=419370)"

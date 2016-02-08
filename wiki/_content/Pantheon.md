@@ -241,6 +241,6 @@ The 'gala' window manager is most likely not running. [#Via .xinitrc](#Via_.xini
 
 ### Wingpanel is empty except for Applications
 
-The indicators that are displayed in the wingpanel are split into separate packages. [#Installation](#Installation) Install additional indicators such as [indicator-datetime](https://aur.archlinux.org/packages/indicator-datetime/), [indicator-power](https://aur.archlinux.org/packages/indicator-power/) or [indicator-sound](https://aur.archlinux.org/packages/indicator-sound/).
+The indicators that are displayed in the wingpanel are split into separate packages. [#Installation](#Installation) Install additional indicators such as [wingpanel-indicator-datetime-bzr](https://aur.archlinux.org/packages/wingpanel-indicator-datetime-bzr/), [indicator-power](https://aur.archlinux.org/packages/indicator-power/) or [indicator-sound](https://aur.archlinux.org/packages/indicator-sound/).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pantheon&oldid=404071](https://wiki.archlinux.org/index.php?title=Pantheon&oldid=404071)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pantheon&oldid=419362](https://wiki.archlinux.org/index.php?title=Pantheon&oldid=419362)"

@@ -192,4 +192,4 @@ For further information on [nodejs](https://www.archlinux.org/packages/?name=nod
 *   [API Documentation](https://www.npmjs.org/doc/) Official `npm` API documentation
 *   IRC channel #node.js on irc.freenode.net
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Node.js&oldid=411035](https://wiki.archlinux.org/index.php?title=Node.js&oldid=411035)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Node.js&oldid=419180](https://wiki.archlinux.org/index.php?title=Node.js&oldid=419180)"

@@ -229,7 +229,7 @@ Type=forking
 KillMode=none
 User=rtorrent
 ExecStart=/usr/bin/tmux new-session -c /mnt/storage/rtorrent -s rtorrent -n rtorrent -d rtorrent
-ExecStop=/usr/bin/tmux send-keys -t rtorrent C-q && /usr/bin/tmux kill-session -t rtorrent
+ExecStop=/usr/bin/bash -c "/usr/bin/tmux send-keys -t rtorrent C-q && while pidof rtorrent > /dev/null; do sleep 0.5; done"
 WorkingDirectory=/home/rtorrent/
 Restart=on-failure
 
@@ -797,4 +797,4 @@ Deletes all torrents older than 48 hours:
 
 *   2009-03-11 - Arch Linux - [HOWTO: rTorrent stats in Conky](https://bbs.archlinux.org/viewtopic.php?id=67304)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=RTorrent&oldid=411243](https://wiki.archlinux.org/index.php?title=RTorrent&oldid=411243)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=RTorrent&oldid=419567](https://wiki.archlinux.org/index.php?title=RTorrent&oldid=419567)"

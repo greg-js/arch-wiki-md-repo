@@ -23,7 +23,8 @@ From the project [home page](http://www.videolan.org/vlc/):
     *   [6.2 Segmentation fault](#Segmentation_fault)
     *   [6.3 Missing icons in dropdown menus](#Missing_icons_in_dropdown_menus)
     *   [6.4 Failed to open VDPAU backend](#Failed_to_open_VDPAU_backend)
-    *   [6.5 No playback via SFTP of media files names containing spaces](#No_playback_via_SFTP_of_media_files_names_containing_spaces)
+    *   [6.5 Video output overlaps the desktop, doesn't scale nor position properly](#Video_output_overlaps_the_desktop.2C_doesn.27t_scale_nor_position_properly)
+    *   [6.6 No playback via SFTP of media files names containing spaces](#No_playback_via_SFTP_of_media_files_names_containing_spaces)
 *   [7 See also](#See_also)
 
 ## Installation
@@ -215,6 +216,10 @@ Failed to open VDPAU backend libvdpau_i965.so: cannot open shared object file: N
 
 In _Tools_, _Preferences_, _Video_ tab (v2.2.0 menu) select "OpenGL video output (experimental)" for _Output_ and, in _Input/Codecs_, "VA-API video decoder via X11/DRM" (both are OK) in _Hardware-accelerated decoding_ (_Codecs_ group).[[1]](https://bugs.archlinux.org/task/44569)
 
+### Video output overlaps the desktop, doesn't scale nor position properly
+
+This happens at least on Intel cards, and a fix that solved the problem there is setting the output in the video settings to _OpenGL GLX (XCB)_ and the _Input/Codecs_ decoding to _VA-API_(any of them)
+
 ### No playback via SFTP of media files names containing spaces
 
 If vlc does not play any videos or audio files over SFTP first confirm you have sshfs installed.
@@ -242,4 +247,4 @@ in the vlc.desktop file. [[2]](https://bugs.launchpad.net/ubuntu/+source/vlc/+bu
 *   [playerctl](https://github.com/acrisci/playerctl): A command-line utility and library for controlling media players
 *   [Control VLC via a browser](http://wiki.videolan.org/Control_VLC_via_a_browser)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=414353](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=414353)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=419549](https://wiki.archlinux.org/index.php?title=VLC_media_player&oldid=419549)"

@@ -6,7 +6,7 @@ From the project [home page](https://tox.chat/):
 
 ## Installation
 
-Tox core and Tox clients are developed separatedly. You need to install [toxcore](https://www.archlinux.org/packages/?name=toxcore) and any of [Tox clients](https://wiki.tox.chat/clients):
+Tox core and Tox clients are developed separately. You need to install [toxcore](https://www.archlinux.org/packages/?name=toxcore) and any of [Tox clients](https://wiki.tox.chat/clients):
 
 *   **µTox (uTox)** — Lightweight Tox client
 
@@ -145,4 +145,4 @@ Then edit the config file above to select a node from the [Tox wiki](https://wik
 
  `# ss --listening --numeric --processes | grep _node_port_`  `udp        0      0 *:_node_port_                 *:*                                 576/DHT_bootstrap` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tox&oldid=414272](https://wiki.archlinux.org/index.php?title=Tox&oldid=414272)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tox&oldid=419171](https://wiki.archlinux.org/index.php?title=Tox&oldid=419171)"

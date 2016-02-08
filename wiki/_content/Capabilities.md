@@ -4,24 +4,19 @@
 
 ## Contents
 
-*   [1 Prerequisites](#Prerequisites)
-*   [2 Implementation](#Implementation)
-*   [3 Administration and maintenance](#Administration_and_maintenance)
-*   [4 Other programs that benefit from capabilities](#Other_programs_that_benefit_from_capabilities)
-    *   [4.1 beep](#beep)
-    *   [4.2 chvt](#chvt)
-    *   [4.3 iftop](#iftop)
-    *   [4.4 mii-tool](#mii-tool)
-*   [5 Useful commands](#Useful_commands)
-*   [6 See also](#See_also)
-
-## Prerequisites
-
-You need to [install](/index.php/Install "Install") [libcap](https://www.archlinux.org/packages/?name=libcap), for setting file capabilities that are extended attributes, with the utility _setcap_.
+*   [1 Implementation](#Implementation)
+*   [2 Administration and maintenance](#Administration_and_maintenance)
+*   [3 Other programs that benefit from capabilities](#Other_programs_that_benefit_from_capabilities)
+    *   [3.1 beep](#beep)
+    *   [3.2 chvt](#chvt)
+    *   [3.3 iftop](#iftop)
+    *   [3.4 mii-tool](#mii-tool)
+*   [4 Useful commands](#Useful_commands)
+*   [5 See also](#See_also)
 
 ## Implementation
 
-Capabilities are implemented on Linux using _[extended attributes](/index.php/File_permissions_and_attributes#Extended_attributes "File permissions and attributes")_ (`man 7 xattr`) in the _security_ namespace. Extended attributes are supported by all major Linux filesystems, including Ext2, Ext3, Ext4, Btrfs, JFS, XFS, and Reiserfs. The following example prints the capabilities of ping with `getcap`, and then prints the same data in its encoded form using `getfattr`:
+Capabilities are implemented on Linux using [extended attributes](/index.php/Extended_attributes "Extended attributes") (`man 7 xattr`) in the _security_ namespace. Extended attributes are supported by all major Linux filesystems, including Ext2, Ext3, Ext4, Btrfs, JFS, XFS, and Reiserfs. The following example prints the capabilities of ping with `getcap`, and then prints the same data in its encoded form using `getfattr`:
 
 ```
 $ getcap /bin/ping
@@ -95,4 +90,4 @@ $ find /usr/bin /usr/lib -perm /2000 -group root
 *   Man Page capabilities(7) setcap(8) getcap(8)
 *   [DeveloperWiki:Security#Replacing setuid with capabilities](/index.php/DeveloperWiki:Security#Replacing_setuid_with_capabilities "DeveloperWiki:Security")
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Capabilities&oldid=412049](https://wiki.archlinux.org/index.php?title=Capabilities&oldid=412049)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Capabilities&oldid=419486](https://wiki.archlinux.org/index.php?title=Capabilities&oldid=419486)"

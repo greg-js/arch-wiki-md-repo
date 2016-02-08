@@ -10,7 +10,7 @@
 
 ## Introduction
 
-According to the [project's site](http://code.google.com/p/modwsgi/) :
+According to the [project's site](https://github.com/GrahamDumpleton/mod_wsgi):
 
 	The aim of mod_wsgi is to implement a simple to use Apache module which can host any Python application which supports the Python WSGI interface. The module would be suitable for use in hosting high performance production web sites, as well as your average self managed personal sites running on web hosting services.
 
@@ -29,41 +29,25 @@ Example:
 
 ## Installation
 
-Two packages are present in community :
+Two packages are present in community:
 
-*   **[mod_wsgi](https://www.archlinux.org/packages/?name=mod_wsgi)** provide the module works with all common versions of Python (2.x and 3.x)
-*   **[mod_wsgi2](https://www.archlinux.org/packages/?name=mod_wsgi2)** provide the module can only run with 2.x versions of Python
-
-To install the package with pacman :
-
-```
-pacman -S mod_wsgi
-
-```
-
-or
-
-```
-pacman -S mod_wsgi2
-
-```
+*   [mod_wsgi](https://www.archlinux.org/packages/?name=mod_wsgi) provides the module works with all common versions of Python (2.x and 3.x)
+*   [mod_wsgi2](https://www.archlinux.org/packages/?name=mod_wsgi2) provides the module can only run with 2.x versions of Python
 
 ## Apache configuration
 
-*   As indicated during installation, add the following line to the configuration file of Apache :
+As indicated during installation, add the following line to the configuration file of Apache:
 
  `/etc/httpd/conf/httpd.conf`  `LoadModule wsgi_module modules/mod_wsgi.so` 
 
-*   Restart Apache :
+Restart Apache:
 
 ```
 systemctl restart httpd
 
 ```
 
-*   Check that Apache is running properly
-
-If the previous command returned nothing, It's that the launch of Apache went well. Otherwise, you can see errors with the following command :
+Check that Apache is running properly. If the previous command returned nothing, it means that the launch of Apache went well. Otherwise, you can see errors with the following command:
 
 ```
 systemctl -l status httpd.service
@@ -72,11 +56,11 @@ systemctl -l status httpd.service
 
 ## Module test
 
-*   Add this line in Apache configuration file :
+Add this line in Apache configuration file:
 
  `/etc/httpd/conf/httpd.conf`  `WSGIScriptAlias /wsgi_app /srv/http/wsgi_app.py` 
 
-*   Create a test file :
+Create a test file:
 
  `/srv/http/wsgi_app.py` 
 
@@ -95,19 +79,18 @@ def wsgi_app(environ, start_response):
 application = wsgi_app
 ```
 
-*   Restart Apache :
+Restart Apache:
 
 ```
 systemctl restart httpd
 
 ```
 
-*   You can check the proper functioning by going to the following address : [http://localhost/wsgi_app](http://localhost/wsgi_app)
+You can check the proper functioning by going to the following address : [http://localhost/wsgi_app](http://localhost/wsgi_app)
 
 ## See Also
 
 *   [LAMP](/index.php/LAMP "LAMP")
-*   [mod_wsgi project's site](http://code.google.com/p/modwsgi/)
-*   [Quick Configuration Guide](http://code.google.com/p/modwsgi/wiki/QuickConfigurationGuide)
+*   [Quick Configuration Guide](http://modwsgi.readthedocs.org/en/develop/user-guides/quick-configuration-guide.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=414456](https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=414456)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=419316](https://wiki.archlinux.org/index.php?title=Mod_wsgi&oldid=419316)"

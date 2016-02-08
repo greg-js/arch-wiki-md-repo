@@ -516,4 +516,4 @@ _username_:x:1000:1000:_Full Name_,,,:/home/_username_:/bin/bash
 *   [Gentoo Wiki: Zsh/HOWTO](https://wiki.gentoo.org/wiki/Zsh/HOWTO)
 *   [Bash2Zsh Reference Card](http://www.bash2zsh.com/zsh_refcard/refcard.pdf)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=418615](https://wiki.archlinux.org/index.php?title=Zsh&oldid=418615)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Zsh&oldid=419352](https://wiki.archlinux.org/index.php?title=Zsh&oldid=419352)"

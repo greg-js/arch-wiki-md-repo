@@ -520,4 +520,4 @@ QuickTime/7.6.2 (qtver=7.6.2;os=Windows NT 5.1Service Pack 3)
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=415563](https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=415563)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=419247](https://wiki.archlinux.org/index.php?title=Browser_plugins&oldid=419247)"

@@ -679,4 +679,4 @@ ExecStart=/usr/bin/ip route add default via 192.168.xxx.yyy
 *   [Official news announcement](https://www.archlinux.org/news/netctl-is-now-in-core/)
 *   There is a cinnamon applet available in the AUR: [cinnamon-applet-netctl-systray-menu](https://aur.archlinux.org/packages/cinnamon-applet-netctl-systray-menu/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=418919](https://wiki.archlinux.org/index.php?title=Netctl&oldid=418919)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Netctl&oldid=419538](https://wiki.archlinux.org/index.php?title=Netctl&oldid=419538)"

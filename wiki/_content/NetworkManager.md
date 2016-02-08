@@ -768,4 +768,4 @@ See [IPv6#NetworkManager](/index.php/IPv6#NetworkManager "IPv6")
 
 *   [NetworkManager for Administrators Part 1](http://blogs.gnome.org/dcbw/2015/02/16/networkmanager-for-administrators-part-1/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414909](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=414909)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=419534](https://wiki.archlinux.org/index.php?title=NetworkManager&oldid=419534)"

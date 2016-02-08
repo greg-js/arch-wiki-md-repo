@@ -314,7 +314,7 @@ Labels-based access control means the extended attributes of a file are used to 
 
 ### Access Control Lists
 
-[Access control lists](https://en.wikipedia.org/wiki/Access_control_list "wikipedia:Access control list") (ACLs) are an alternative to attaching rules directly to the filesystem in some way. ACLs implement access control by checking program actions against a list of permitted behavior.
+[Access Control Lists](/index.php/Access_Control_Lists "Access Control Lists") (ACLs) are an alternative to attaching rules directly to the filesystem in some way. ACLs implement access control by checking program actions against a list of permitted behavior.
 
 *   [grsecurity](/index.php/Grsecurity "Grsecurity") implements ACL access control, as well as a complete kernel patchset focused on improving security. Its changes extend to control of memory allocation, improved chroot restrictions, and rules involving specific network behavior.
 
@@ -498,4 +498,4 @@ Note that this will not work if there is some command running in the shell (eg.:
 *   [Linux Foundation's Linux workstation security checklist](https://github.com/lfit/itpol/blob/master/linux-workstation-security.md)
 *   [privacytools.io](https://www.privacytools.io/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=416130](https://wiki.archlinux.org/index.php?title=Security&oldid=416130)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Security&oldid=419286](https://wiki.archlinux.org/index.php?title=Security&oldid=419286)"

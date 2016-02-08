@@ -124,4 +124,4 @@ If opening a new tab through `Ctrl+Shift+t` fails with `no directory uri set`, [
 
 *   [Termite readme](https://github.com/thestinger/termite/blob/master/README.rst)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Termite&oldid=412018](https://wiki.archlinux.org/index.php?title=Termite&oldid=412018)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Termite&oldid=419485](https://wiki.archlinux.org/index.php?title=Termite&oldid=419485)"

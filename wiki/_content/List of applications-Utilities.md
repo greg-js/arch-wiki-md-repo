@@ -791,6 +791,8 @@ See also [Wikipedia:Comparison of file comparison tools](https://en.wikipedia.or
 
 ### System monitoring
 
+See also [Category:Status monitoring and notification](/index.php/Category:Status_monitoring_and_notification "Category:Status monitoring and notification").
+
 *   **adesklet SystemMonitor** — Collection of modular stackable system monitors for [adesklets](https://en.wikipedia.org/wiki/Adesklets "wikipedia:Adesklets").
 
 	[http://adesklets.sourceforge.net/desklets.html](http://adesklets.sourceforge.net/desklets.html) || [adesklet-systemmonitor](https://aur.archlinux.org/packages/adesklet-systemmonitor/)
@@ -1029,4 +1031,4 @@ See [Backup programs#Data synchronization](/index.php/Backup_programs#Data_synch
 
 	[https://rmlint.readthedocs.org/en/latest/](https://rmlint.readthedocs.org/en/latest/) || [rmlint](https://www.archlinux.org/packages/?name=rmlint)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418844](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=418844)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=419214](https://wiki.archlinux.org/index.php?title=List_of_applications/Utilities&oldid=419214)"

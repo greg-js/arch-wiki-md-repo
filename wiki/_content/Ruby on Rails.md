@@ -43,7 +43,7 @@ This document describes how to set up the Ruby on Rails Framework on an Arch Lin
 
 ## Installation
 
-Ruby on Rails requires [Ruby](/index.php/Ruby "Ruby") to be installed, so read that article first for installation instructions. The [nodejs](https://www.archlinux.org/packages/?name=nodejs) package is also required.
+Ruby on Rails requires [Ruby](/index.php/Ruby "Ruby") to be installed, so read that article first for installation instructions. The [nodejs](https://www.archlinux.org/packages/?name=nodejs) package is also required due to uglifier (Ruby wrapper for UglifyJS JavaScript compressor)
 
 ### RubyGems
 
@@ -865,4 +865,4 @@ and to access both CMSs through _refinery.domain.com_ and _browser.domain.com_.
 *   Ruby on Rails [http://rubyonrails.org/download](http://rubyonrails.org/download).
 *   Mongrel [http://mongrel.rubyforge.org](http://mongrel.rubyforge.org).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby_on_Rails&oldid=398965](https://wiki.archlinux.org/index.php?title=Ruby_on_Rails&oldid=398965)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Ruby_on_Rails&oldid=419317](https://wiki.archlinux.org/index.php?title=Ruby_on_Rails&oldid=419317)"

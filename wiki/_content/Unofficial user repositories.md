@@ -17,11 +17,10 @@ For your convenience you can, for example, open them all in a web browser to ins
 *   [1 Adding your repository to this page](#Adding_your_repository_to_this_page)
 *   [2 Any](#Any)
     *   [2.1 Signed](#Signed)
-        *   [2.1.1 bioinformatics-any](#bioinformatics-any)
-        *   [2.1.2 infinality-bundle-fonts](#infinality-bundle-fonts)
-        *   [2.1.3 ivasilev](#ivasilev)
-        *   [2.1.4 pkgbuilder](#pkgbuilder)
-        *   [2.1.5 xyne-any](#xyne-any)
+        *   [2.1.1 infinality-bundle-fonts](#infinality-bundle-fonts)
+        *   [2.1.2 ivasilev](#ivasilev)
+        *   [2.1.3 pkgbuilder](#pkgbuilder)
+        *   [2.1.4 xyne-any](#xyne-any)
     *   [2.2 Unsigned](#Unsigned)
         *   [2.2.1 archlinuxgr-any](#archlinuxgr-any)
 *   [3 Both i686 and x86_64](#Both_i686_and_x86_64)
@@ -158,18 +157,6 @@ If you have your own repository, please add it to this page, so that all the oth
 "Any" repositories are architecture-independent. In other words, they can be used on both i686 and x86_64 systems.
 
 ### Signed
-
-#### bioinformatics-any
-
-*   **Maintainer:** [decryptedepsilon](https://aur.archlinux.org/account/decryptedepsilon/)
-*   **Description:** A repository containing some python packages and genome browser for Bioinformatics
-*   **Key-ID:** 60442BA4
-
-```
-[bioinformatics-any]
-Server = http://decryptedepsilon.bl.ee/repo/any
-
-```
 
 #### infinality-bundle-fonts
 
@@ -1291,7 +1278,7 @@ Server = http://siosm.fr/repo/$repo/
 *   **Maintainer:** Mladen Milinkovic (maxrd2)
 *   **Description:** Subtitle Composer stable and nightly builds
 *   **Upstream page:** [https://github.com/maxrd2/subtitlecomposer](https://github.com/maxrd2/subtitlecomposer)
-*   **Key-ID:** EA8CEBEE
+*   **Key-ID:** EF9D9B26
 
 ```
 [subtitlecomposer]
@@ -1543,4 +1530,4 @@ Server = http://repository.pietma.com/nexus/content/repositories/archlinux/$arch
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=418459](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=418459)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=419399](https://wiki.archlinux.org/index.php?title=Unofficial_user_repositories&oldid=419399)"

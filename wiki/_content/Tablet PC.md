@@ -31,6 +31,7 @@ Intel (x86) tablets that are known to work (well) with Arch:
 
 *   [Samsung Series 7 Slate XE700T1A](/index.php/Samsung_Series_7_Slate_XE700T1A "Samsung Series 7 Slate XE700T1A")
 *   [Microsoft Surface Pro 3](/index.php/Microsoft_Surface_Pro_3 "Microsoft Surface Pro 3")
+*   Asus T300 Chi
 
 ## Stylus
 
@@ -458,4 +459,4 @@ normal left inverted right
 
 **Note:** The following driver(s) are known not to support rotation: fglrx
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Tablet_PC&oldid=409330](https://wiki.archlinux.org/index.php?title=Tablet_PC&oldid=409330)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Tablet_PC&oldid=419148](https://wiki.archlinux.org/index.php?title=Tablet_PC&oldid=419148)"

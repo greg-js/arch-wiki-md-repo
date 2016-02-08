@@ -24,7 +24,7 @@
     *   [3.4 Theming](#Theming)
     *   [3.5 Sound](#Sound)
         *   [3.5.1 Xfce4 mixer](#Xfce4_mixer)
-            *   [3.5.1.1 Change default sound card in Xfce4 Mixer](#Change_default_sound_card_in_Xfce4_Mixer)
+            *   [3.5.1.1 Change default sound card in Xfce4 mixer](#Change_default_sound_card_in_Xfce4_mixer)
         *   [3.5.2 Keyboard volume buttons](#Keyboard_volume_buttons)
             *   [3.5.2.1 Shortcuts](#Shortcuts)
     *   [3.6 Keyboard Shortcuts](#Keyboard_Shortcuts)
@@ -308,7 +308,7 @@ You might need to change the default sound card for Xfce4 mixer to function corr
 
 If you did need to change the default soundcard, logout to ensure that the changes take effect.
 
-##### Change default sound card in Xfce4 Mixer
+##### Change default sound card in Xfce4 mixer
 
 In some cases (when using [PulseAudio](/index.php/PulseAudio "PulseAudio") or [xfce4-volumed](https://aur.archlinux.org/packages/xfce4-volumed/) for instance) it might be necessary to change the default sound card in Xfce4 Mixer in order for volume control to work as expected. [[1]](http://grumbel.blogspot.co.uk/2011/10/fixing-volume-control-in-xfce4.html)
 
@@ -642,4 +642,4 @@ Note that each time the laptop lid settings are changed in the power manager, th
 *   [Xfce Wikia](http://xfce.wikia.com/wiki/Frequently_Asked_Questions) - How to edit the auto generated menu with the menu editor
 *   [Xfce Wiki](http://wiki.xfce.org)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=415455](https://wiki.archlinux.org/index.php?title=Xfce&oldid=415455)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Xfce&oldid=419515](https://wiki.archlinux.org/index.php?title=Xfce&oldid=419515)"

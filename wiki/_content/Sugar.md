@@ -99,4 +99,4 @@ build() {
 *   [The Official Website of Sugar](http://sugarlabs.org/)
 *   [Activities for Sugar](http://activities.sugarlabs.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Sugar&oldid=392693](https://wiki.archlinux.org/index.php?title=Sugar&oldid=392693)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Sugar&oldid=419261](https://wiki.archlinux.org/index.php?title=Sugar&oldid=419261)"

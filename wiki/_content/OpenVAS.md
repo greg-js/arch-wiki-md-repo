@@ -64,7 +64,7 @@ Add an administrator user account:
 
 ## Post-Install
 
-Configure [redis](https://www.archlinux.org/packages/?name=redis) as perscribed by the [OpenVAS redis configuration](https://svn.wald.intevation.org/svn/openvas/tags/openvas-scanner-release-5.0.3/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
+Configure [redis](https://www.archlinux.org/packages/?name=redis) as prescribed by the [OpenVAS redis configuration](https://svn.wald.intevation.org/svn/openvas/tags/openvas-scanner-release-5.0.3/doc/redis_config.txt). In summary, amend the following to your /etc/redis.conf
 
 ```
 unixsocket /var/lib/redis/redis.sock
@@ -154,4 +154,4 @@ The database needs to be migrated when moving to a new major version:
 
 *   [OpenVAS](http://www.openvas.org/) Official OpenVAS website.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=416857](https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=416857)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=419351](https://wiki.archlinux.org/index.php?title=OpenVAS&oldid=419351)"

@@ -26,6 +26,7 @@ This article's purpose is to detail basic Xorg server keyboard configuration. Fo
         *   [5.1.1 Using xset](#Using_xset)
         *   [5.1.2 Using XServer startup options](#Using_XServer_startup_options)
         *   [5.1.3 Using XServer options](#Using_XServer_options)
+    *   [5.2 Notification upon layout switch](#Notification_upon_layout_switch)
 
 ## Overview
 
@@ -312,4 +313,18 @@ Option "AutoRepeat" "_delay_ _rate_"
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=401103](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=401103)"
+### Notification upon layout switch
+
+It is possible to have a popup showing the current active keyboard layout upon change with something similar to the example below. Link it (in your wm.conf) to your `Option "XkbOptions"` keys and edit the numerical value to suit your setup.
+
+```
+ check=$( xset -q | grep LED | cut -c 63 )
+   if [ $check = 1 ]; then
+ notify-send -u low -i input-keyboard -t 3 'BG\nBDS' &
+   else
+ notify-send -u critical -i input-keyboard -t 3 'US\nAltGr-Intl.' &
+   fi
+
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=419228](https://wiki.archlinux.org/index.php?title=Keyboard_configuration_in_Xorg&oldid=419228)"

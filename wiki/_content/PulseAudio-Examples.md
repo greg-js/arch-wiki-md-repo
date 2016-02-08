@@ -531,12 +531,14 @@ In Pulseaudio Volume Control (pavucontrol), under the "Playback" tab, change the
 
 ### The new new way
 
-This configuration only works with jackdbus (JACK2 compiled with D-Bus support). It also requires the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. Add to `/etc/pulse/default.pa`:
+This configuration only works with jackdbus (JACK2 compiled with D-Bus support). It also requires the [pulseaudio-jack](https://www.archlinux.org/packages/?name=pulseaudio-jack) package. Make sure that `/etc/pulse/default.pa` contains a line:
 
 ```
-load-module module-jackdbus-detect
+load-module module-jackdbus-detect [...]
 
 ```
+
+(where [...] can be any options supported by this module, usually `channels=2`.
 
 As described on the [Jack-DBUS Packaging](https://github.com/jackaudio/jackaudio.github.com/wiki/JackDbusPackaging) page:
 
@@ -880,4 +882,4 @@ autospawn = yes
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=418200](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=418200)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=419557](https://wiki.archlinux.org/index.php?title=PulseAudio/Examples&oldid=419557)"

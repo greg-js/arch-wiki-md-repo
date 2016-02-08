@@ -143,7 +143,7 @@ Please note that you can have both the thinkpad-helix-utils **Toggle Touch** and
 
 ### Sensors
 
-For X11 to utilize, install the AUR package [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) to expose the dbus events. For example, [Gnome](https://www.archlinux.org/packages/?name=Gnome) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package to:
+For X11 to utilize, install the AUR package [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) to expose the dbus events. For example, [gnome](https://www.archlinux.org/groups/x86_64/gnome/) will automatically utilize the dbus events exposed by the [iio-sensor-proxy](https://aur.archlinux.org/packages/iio-sensor-proxy/) package to:
 
 *   Adjust the display brightness when moving from dark to bright lighting
 *   Automatically rotate the display based on orientation.
@@ -193,4 +193,4 @@ Helpfully, Lenovo now provides [bootable ISO images](http://support.lenovo.com/e
 
 If you do not have access to a USB optical drive and writable media, the information on [ThinkWiki](http://www.thinkwiki.org/wiki/BIOS_Upgrade/X_Series) is extremely helpful.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418758](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=418758)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=419254](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_Helix&oldid=419254)"

@@ -99,23 +99,7 @@ $ which python
 
 ```
 
-A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv"). When a VirtualEnv is activated, the Python executable pointed to by `PATH` will be the one the VirtualEnv was installed with. Therefore, if the VirtualEnv is installed with Python 2, `python` will refer to Python 2.
-
-To start, [install](/index.php/Install "Install") the [python2-virtualenv](https://www.archlinux.org/packages/?name=python2-virtualenv) package. Then create a directory, containing the VirtualEnv, with the following command:
-
-```
-$ virtualenv2 venv
-
-```
-
-Activate the VirtualEnv, which will update `PATH` to point at Python 2\. Note that this activation is only active for the current terminal session:
-
-```
-$ source venv/bin/activate
-
-```
-
-The desired script should then run using Python 2.
+A similar approach in tricking the environment, which also relies on `#!/usr/bin/env python` to be called by the script in question, is to use a [Python VirtualEnv](/index.php/Python_VirtualEnv "Python VirtualEnv").
 
 ## Dealing with version problem in build scripts
 
@@ -235,4 +219,4 @@ to autostart the browser and run the IPython kernel. You can select the python v
 *   [Think Python: How to Think Like a Computer Scientist](http://www.greenteapress.com/thinkpython/) A great introduction to Python programming for beginners.
 *   [Pythonspot](https://pythonspot.com) Great Python programming tutorials.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Python&oldid=413030](https://wiki.archlinux.org/index.php?title=Python&oldid=413030)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Python&oldid=419492](https://wiki.archlinux.org/index.php?title=Python&oldid=419492)"

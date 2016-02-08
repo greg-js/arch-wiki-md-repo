@@ -167,4 +167,4 @@ SUBSYSTEM=="net", ATTR{address}=="aa:bb:cc:dd:ee:ff", NAME="eth0", DRIVERS=="?*"
 
 A reboot should mean that VLANs configure correctly with the names assigned to them.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=VLAN&oldid=383952](https://wiki.archlinux.org/index.php?title=VLAN&oldid=383952)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=VLAN&oldid=419280](https://wiki.archlinux.org/index.php?title=VLAN&oldid=419280)"

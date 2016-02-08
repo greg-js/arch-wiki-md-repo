@@ -44,7 +44,7 @@ The certificate/key pair is created as `/etc/ssl/certs/dovecot.pem` and `/etc/ss
 
 Run `cp /etc/ssl/certs/dovecot.pem /etc/ca-certificates/trust-source/anchors/dovecot.crt` and then `# trust extract-compat` whenever you have changed your certificate.
 
-**Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration:
+**Warning:** If you plan on implementing SSL/TLS, please respond safely to [POODLE](http://disablessl3.com/) and [FREAK/Logjam](https://weakdh.org/sysadmin.html) by adding the following to your configuration: (What configuration?)
 
 ```
 ssl_protocols = !SSLv2 !SSLv3
@@ -196,4 +196,4 @@ default_pass_scheme = SHA512-CRYPT
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Dovecot&oldid=412648](https://wiki.archlinux.org/index.php?title=Dovecot&oldid=412648)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Dovecot&oldid=419593](https://wiki.archlinux.org/index.php?title=Dovecot&oldid=419593)"

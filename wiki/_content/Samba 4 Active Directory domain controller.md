@@ -5,41 +5,31 @@ This article explains how to setup a new Active Directory Domain Controller. It 
 ## Contents
 
 *   [1 Installation](#Installation)
-*   [2 Hostname](#Hostname)
-*   [3 Provisioning](#Provisioning)
-    *   [3.1 Argument explanations](#Argument_explanations)
-    *   [3.2 Interactive provision explanations](#Interactive_provision_explanations)
-*   [4 Configuring daemons](#Configuring_daemons)
-    *   [4.1 NTPD](#NTPD)
-    *   [4.2 BIND](#BIND)
-    *   [4.3 Kerberos client utilities](#Kerberos_client_utilities)
-    *   [4.4 DNS](#DNS)
-    *   [4.5 Samba](#Samba)
-*   [5 Testing the installation](#Testing_the_installation)
-    *   [5.1 DNS](#DNS_2)
-    *   [5.2 NT authentication](#NT_authentication)
-    *   [5.3 Kerberos](#Kerberos)
-*   [6 Additional configuration](#Additional_configuration)
-    *   [6.1 DNS](#DNS_3)
-    *   [6.2 SSL](#SSL)
-    *   [6.3 DHCP](#DHCP)
+*   [2 Provisioning](#Provisioning)
+    *   [2.1 Argument explanations](#Argument_explanations)
+    *   [2.2 Interactive provision explanations](#Interactive_provision_explanations)
+*   [3 Configuring daemons](#Configuring_daemons)
+    *   [3.1 NTPD](#NTPD)
+    *   [3.2 BIND](#BIND)
+    *   [3.3 Kerberos client utilities](#Kerberos_client_utilities)
+    *   [3.4 DNS](#DNS)
+    *   [3.5 Samba](#Samba)
+*   [4 Testing the installation](#Testing_the_installation)
+    *   [4.1 DNS](#DNS_2)
+    *   [4.2 NT authentication](#NT_authentication)
+    *   [4.3 Kerberos](#Kerberos)
+*   [5 Additional configuration](#Additional_configuration)
+    *   [5.1 DNS](#DNS_3)
+    *   [5.2 SSL](#SSL)
+    *   [5.3 DHCP](#DHCP)
 
 ## Installation
+
+**Note:** Make sure you can access the machines in your network via their hostname. See [Network configuration#Local network hostname resolution](/index.php/Network_configuration#Local_network_hostname_resolution "Network configuration") for more information.
 
 A fully functional samba 4 DC requires several programs beyond those included with the Samba distribution. [Install](/index.php/Install "Install") the [bind-tools](https://www.archlinux.org/packages/?name=bind-tools), [krb5](https://www.archlinux.org/packages/?name=krb5), [ntp](https://www.archlinux.org/packages/?name=ntp), [openldap](https://www.archlinux.org/packages/?name=openldap), [openresolv](https://www.archlinux.org/packages/?name=openresolv) and [samba](https://www.archlinux.org/packages/?name=samba) packages.
 
 Additionally, Samba contains its own fully functional DNS server, but many administrators prefer to use the ISC BIND package. If you need to maintain DNS zones for external domains, you are strongly encouraged to use [bind](https://www.archlinux.org/packages/?name=bind). If you need to share printers, you will also need [cups](https://www.archlinux.org/packages/?name=cups). If needed, install the [bind](https://www.archlinux.org/packages/?name=bind) and/or [cups](https://www.archlinux.org/packages/?name=cups) packages.
-
-## Hostname
-
-Add the [hostname](/index.php/Network_configuration#Set_the_hostname "Network configuration") and domain to `etc/hosts`. In this example, the hostname is set to **server**, and the domain name to **internal.domain.com**:
-
-```
-xxx.xxx.xxx.xxx	server.internal.domain.com	server
-
-```
-
-`xxx.xxx.xxx.xxx` represents the preconfigured static IP address.
 
 ## Provisioning
 
@@ -554,4 +544,4 @@ subnet 192.168.1.0 netmask 255.255.255.0 {
 
 Finally, enable and start (or restart) the `dhcpd4` service.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413977](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=413977)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=419411](https://wiki.archlinux.org/index.php?title=Samba_4_Active_Directory_domain_controller&oldid=419411)"

@@ -308,4 +308,4 @@ Once `connman.service` has been [restarted](/index.php/Systemd#Using_units "Syst
 
 For further detailed information on ConnMan you may refer to the documentation in its git repo at [[1]](https://git.kernel.org/cgit/network/connman/connman.git/tree/doc).
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=419050](https://wiki.archlinux.org/index.php?title=Connman&oldid=419050)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Connman&oldid=419537](https://wiki.archlinux.org/index.php?title=Connman&oldid=419537)"

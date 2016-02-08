@@ -1428,6 +1428,15 @@ LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:
 
 ```
 
+Alternatively, right click on Transistor, go to Properties => Set Launch Options... and enter
+
+```
+LD_PRELOAD='/usr/lib/libstdc++.so.6:/usr/lib/libgcc_s.so.1:/usr/lib/libxcb.so.1:/usr/lib/libasound.so.2' %command%
+
+```
+
+This will force Steam to do the fix whenever Transistor is started, but allows Steam to be launched normally.
+
 Otherwise, run the game via shell and set up proper audio device for FMOD, as discussed there [[6]](https://steamcommunity.com/app/237930/discussions/2/620695877176333955/).
 
 Also, check out this thread [[7]](https://steamcommunity.com/app/237930/discussions/2/492378265893557247/)
@@ -1598,4 +1607,4 @@ XCOM may not recognize sdl2 shared libraries shipped with Steam runtime. Check i
 
  `ldd ~/.local/share/Steam/steamapps/common/XCom-Enemy-Unknown/binaries/linux/game.x86_64 ` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=418356](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=418356)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=419566](https://wiki.archlinux.org/index.php?title=Steam/Game-specific_troubleshooting&oldid=419566)"

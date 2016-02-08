@@ -18,10 +18,11 @@ This article explains some methods for general troubleshooting. For application 
 *   [3 Package management](#Package_management)
 *   [4 fuser](#fuser)
 *   [5 Session permissions](#Session_permissions)
-*   [6 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
-*   [7 Why I can't write on NTFS partitions?](#Why_I_can.27t_write_on_NTFS_partitions.3F)
-*   [8 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
-*   [9 See also](#See_also)
+*   [6 error while loading shared libraries](#error_while_loading_shared_libraries)
+*   [7 file: could not find any magic files!](#file:_could_not_find_any_magic_files.21)
+*   [8 Why I can't write on NTFS partitions?](#Why_I_can.27t_write_on_NTFS_partitions.3F)
+*   [9 Spellcheck is marking all of my text as incorrect!](#Spellcheck_is_marking_all_of_my_text_as_incorrect.21)
+*   [10 See also](#See_also)
 
 ## General procedures
 
@@ -122,6 +123,29 @@ A D-Bus session should also be started along with X. See [D-Bus#Starting the use
 
 Basic [polkit](/index.php/Polkit "Polkit") actions do not require further set-up. Some polkit actions require further authentication, even with a local session. A polkit authentication agent needs to be running for this to work. See [polkit#Authentication agents](/index.php/Polkit#Authentication_agents "Polkit") for more information on this.
 
+## error while loading shared libraries
+
+If, while using a program, you get an error similar to:
+
+```
+error while loading shared libraries: libusb-0.1.so.4: cannot open shared object file: No such file or directory
+
+```
+
+Use [pacman](/index.php/Pacman "Pacman") or [pkgfile](/index.php/Pkgfile "Pkgfile") to search for the package that owns the missing library:
+
+ `$ pacman -Fs libusb-0.1.so.4` 
+
+```
+extra/libusb-compat 0.1.5-1
+    usr/lib/libusb-0.1.so.4
+
+```
+
+In this case, the [libusb-compat](https://www.archlinux.org/packages/?name=libusb-compat) package needs to be [installed](/index.php/Installed "Installed").
+
+The error could also mean that the package that you used to install your program does not list the library as a dependency in its [PKGBUILD](/index.php/PKGBUILD "PKGBUILD"): if it is an official package, [report a bug](/index.php/Report_a_bug "Report a bug"); if it is an [AUR](/index.php/AUR "AUR") package, report it to the maintainer using its page in the AUR website.
+
 ## file: could not find any magic files!
 
 _Example:_ After an every-day routine update or following the installation of a package you are given the following error:
@@ -200,4 +224,4 @@ en_GB:aspell
 *   [Fix the Most Common Problems](http://www.maximumpc.com/article/features/linux_troubleshooting_guide_fix_most_common_problems)
 *   [A how-to in troubleshooting for newcomers](https://www.reddit.com/r/archlinux/comments/tjjwr/archlinux_a_howto_in_troubleshooting_for_newcomers/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=414390](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=414390)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=419498](https://wiki.archlinux.org/index.php?title=General_troubleshooting&oldid=419498)"

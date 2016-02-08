@@ -337,4 +337,4 @@ Alternatively, as a workaround you might consider switching to [dhclient](https:
 *   [Forum post](https://bbs.archlinux.org/viewtopic.php?id=114803) about two instances of wicd-client and `/etc/xdg/autostart`
 *   [Bug report mentioning /etc/xdg/autostart and wicd-client behavior](https://bugs.archlinux.org/task/22423)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211](https://wiki.archlinux.org/index.php?title=Wicd&oldid=412211)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Wicd&oldid=419535](https://wiki.archlinux.org/index.php?title=Wicd&oldid=419535)"

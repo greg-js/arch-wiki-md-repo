@@ -255,7 +255,7 @@ An [LDAP clash (Bugzilla#292127)](https://bugzilla.mozilla.org/show_bug.cgi?id=2
 
 ### Error: Incoming server already exists
 
-It seams Thunderbird (v24) still has that bug which pops up with "Incoming server already exists" if you want to reinstall a previously deleted account with the same account data afterwards. Unfortunately, if you get this error you can now only clean reinstall Thunderbird:
+It seems Thunderbird (v24) still has that bug which pops up with "Incoming server already exists" if you want to reinstall a previously deleted account with the same account data afterwards. Unfortunately, if you get this error you can now only clean reinstall Thunderbird:
 
 1\. Make a backup of your current profile:
 
@@ -286,4 +286,4 @@ $ pacman -S thunderbird
 
 8\. Import all your data.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=416872](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=416872)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=419543](https://wiki.archlinux.org/index.php?title=Thunderbird&oldid=419543)"

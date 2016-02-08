@@ -143,22 +143,6 @@ The new columns should now have been added. To enable them, navigate to Preferen
 
 ### Files is no longer the default file manager
 
-This can happen for a number of reasons, primarily when an installation of another application forces mime type changes. If Files is not recognized as the default file manager, set Files as default handler for the mime type _inode/directory_:
+See [File manager functionality#Directories are not opened in the file manager](/index.php/File_manager_functionality#Directories_are_not_opened_in_the_file_manager "File manager functionality").
 
-```
-$ xdg-mime default org.gnome.Nautilus.desktop inode/directory
-
-```
-
-... which will generate:
-
- `~/.local/share/applications/mimeapps.list` 
-
-```
-[Default Applications]
-inode/directory=org.gnome.Nautilus.desktop
-```
-
-**Tip:** If you want the change to be system-wide, run the command above as root or create/edit the file `/usr/share/applications/mimeapps.list` and add the line there.
-
-Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=412081](https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=412081)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=419521](https://wiki.archlinux.org/index.php?title=GNOME_Files&oldid=419521)"

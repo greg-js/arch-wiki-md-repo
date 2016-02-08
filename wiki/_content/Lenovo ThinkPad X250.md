@@ -92,4 +92,4 @@ action=amixer -c 1 sset Mic toggle -q
 
 Bluetooth was not tested.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=416006](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=416006)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=419408](https://wiki.archlinux.org/index.php?title=Lenovo_ThinkPad_X250&oldid=419408)"

@@ -23,6 +23,8 @@ This article deals with so-called _core_ utilities on a GNU/Linux system, such a
     *   [9.3 Vim as alternative pager](#Vim_as_alternative_pager)
     *   [9.4 Colored output when reading from stdin](#Colored_output_when_reading_from_stdin)
 *   [10 ls](#ls)
+    *   [10.1 Long format](#Long_format)
+    *   [10.2 Colored output](#Colored_output_2)
 *   [11 mkdir](#mkdir)
 *   [12 mv](#mv)
 *   [13 od](#od)
@@ -375,15 +377,58 @@ $ pty _program_ | less
 
 [ls](https://en.wikipedia.org/wiki/ls "wikipedia:ls") (_list_) is a command to list files in Unix and Unix-like operating systems.
 
-*   _ls_ can list [file permissions](/index.php/File_permissions_and_attributes#Viewing_permissions "File permissions and attributes").
+See `info ls` or [the online manual](http://www.gnu.org/software/coreutils/manual/html_node/ls-invocation.html#ls-invocation) for more information.
 
-*   Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
+### Long format
 
-	`alias ls='ls --color=auto'`
+The `-l` option displays some metadata, for example:
+
+ `$ ls -l /path/to/directory` 
+
+```
+total 128
+drwxr-xr-x 2 archie users  4096 Jul  5 21:03 Desktop
+drwxr-xr-x 6 archie users  4096 Jul  5 17:37 Documents
+drwxr-xr-x 2 archie users  4096 Jul  5 13:45 Downloads
+-rw-rw-r-- 1 archie users  5120 Jun 27 08:28 customers.ods
+-rw-r--r-- 1 archie users  3339 Jun 27 08:28 todo
+-rwxr-xr-x 1 archie users  2048 Jul  6 12:56 myscript.sh
+
+```
+
+The `total` value represents the total disk allocation for the files in the directory, by default in number of blocks.
+
+Below, each file and subdirectory is represented by a line divided into 7 metadata fields, in the following order:
+
+*   type and permissions:
+    *   the first character is the entry type, see `info ls -n "What information is listed"` for an explanation of all the possible types; for example:
+        *   `-` denotes a normal file;
+        *   `d` denotes a directory, i.e. a folder containing other files or folders;
+        *   `p` denotes a named pipe (aka FIFO);
+        *   `l` denotes a symbolic link;
+    *   the remaining characters are the entry's [permissions](/index.php/Permissions "Permissions");
+*   number of [hard links](https://en.wikipedia.org/wiki/Hard_link "wikipedia:Hard link") for the entity; files will have at least 1, i.e. the showed reference itself; folders will have at least 2: the showed reference, the self-referencing `.` entry, and then a `..` entry in each of its subfolders;
+*   owner [user](/index.php/User "User") name;
+*   [group](/index.php/Group "Group") name;
+*   size;
+*   last modification timestamp;
+*   entity name.
+
+### Colored output
+
+Colored output can be enabled with a simple alias. File `~/.bashrc` should already have the following entry copied from `/etc/skel/.bashrc`:
+
+```
+alias ls='ls --color=auto'
+
+```
 
 The next step will further enhance the colored _ls_ output; for example, broken (orphan) symlinks will start showing in a red hue. Add the following to your shell configuration file:
 
-	`eval $(dircolors -b)`
+```
+eval $(dircolors -b)
+
+```
 
 ## mkdir
 
@@ -469,7 +514,7 @@ The [which](https://en.wikipedia.org/wiki/Which_(Unix) "wikipedia:Which (Unix)")
 ## See also
 
 *   [A sampling of coreutils](http://www.reddit.com/r/commandline/comments/19garq/a_sampling_of_coreutils_120/) [, part 2](http://www.reddit.com/r/commandline/comments/19ge6v/a_sampling_of_coreutils_2040/) [, part 3](http://www.reddit.com/r/commandline/comments/19j1w3/a_sampling_of_coreutils_4060/) - Overview of commands in coreutils
-*   [GNU Coreutils Manpage](http://www.gnu.org/software/coreutils/manual/coreutils.html)
+*   [GNU Coreutils online documentation](http://www.gnu.org/software/coreutils/manual/coreutils.html)
 *   [Learn the DD command](http://www.linuxquestions.org/questions/linux-newbie-8/learn-the-dd-command-362506/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=418385](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=418385)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=419407](https://wiki.archlinux.org/index.php?title=Core_utilities&oldid=419407)"

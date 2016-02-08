@@ -66,7 +66,7 @@ Detect your device:
 
 If an error is returned, see [troubleshooting libmtp](#libmtp_2).
 
-**Note:** Your regular user must be in the `uucp` group.
+**Note:** Your regular user must be in the `uucp` [group](/index.php/Users_and_groups#Example_adding_a_user "Users and groups").
 
 Connect to your device:
 
@@ -161,7 +161,7 @@ Now mount the device and see if the options "took"
 
 **Note:** Mounting with `go-mtpfs` might fail if an external SD Card is present. If you try to access your device while having an SD card and go-mtpfs complains, try removing the SD card and mounting again.
 
-Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running _mtp-detect_. To the end of the line, add your user `OWNER="<user>"`. First, create the `fuse` group if it doesn't exist:
+Install [android-udev](https://www.archlinux.org/packages/?name=android-udev), which will allow you to edit `/etc/udev/rules.d/51-android.rules` and apply to your `idVendor` and `idProduct`, which you can see after running _mtp-detect_. To the end of the line, add your user `OWNER="<user>"`. First, create the `fuse` group if it does not exist:
 
 ```
 # groupadd fuse
@@ -324,7 +324,7 @@ This appears to be a security feature: MTP does not work when the phone is locke
 
 ### gvfs-mtp
 
-If you have installed the [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) package, and your device doesn't show up in the file manager, you might need to reboot or write a udev rule in order to auto-mount the device.
+If you have installed the [gvfs-mtp](https://www.archlinux.org/packages/?name=gvfs-mtp) package, and your device does not show up in the file manager, you might need to reboot or write a udev rule in order to auto-mount the device.
 
 Plug your device and get the vendor-id and product-id,respectively:
 
@@ -378,4 +378,4 @@ Exec=dolphin "mtp:/"
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=MTP&oldid=411362](https://wiki.archlinux.org/index.php?title=MTP&oldid=411362)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=MTP&oldid=419559](https://wiki.archlinux.org/index.php?title=MTP&oldid=419559)"

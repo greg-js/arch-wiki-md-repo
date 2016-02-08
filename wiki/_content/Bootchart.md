@@ -117,4 +117,4 @@ Note that Bootchart2 can be used along with [E4rat](/index.php/E4rat "E4rat").
 
 *   [Bootchart home page](http://www.bootchart.org/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Bootchart&oldid=400576](https://wiki.archlinux.org/index.php?title=Bootchart&oldid=400576)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Bootchart&oldid=419232](https://wiki.archlinux.org/index.php?title=Bootchart&oldid=419232)"

@@ -455,6 +455,8 @@ NoExtract = usr/share/vim/vim74/lang/*
 
 Later rules override previous ones, and you can negate a rule by prepending `!` — this allows you to keep the locales you need.
 
+**Tip:** Since pacman 5, while updating a package for which locales have been cleared by _localepurge_ or _bleachbit_, _pacman_ issues warning messages about the missing locales. Commenting the `CheckSpace` option in `pacman.conf` suppresses such warnings, but consider that the space-checking functionality will be disabled for all packages.
+
 #### Maintain several configuration files
 
 If you have several configuration files (e.g. main configuration and configuration with [testing](/index.php/Testing "Testing") repository enabled) and would have to share options between configurations you may use `Include` option declared in the configuration files, e.g.:
@@ -663,4 +665,4 @@ If you receive this error message with correct [mirrors](/index.php/Mirrors "Mir
 *   [pacman.conf(5) Manual Page](https://www.archlinux.org/pacman/pacman.conf.5.html)
 *   [repo-add(8) Manual Page](https://www.archlinux.org/pacman/repo-add.8.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=418634](https://wiki.archlinux.org/index.php?title=Pacman&oldid=418634)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Pacman&oldid=419542](https://wiki.archlinux.org/index.php?title=Pacman&oldid=419542)"

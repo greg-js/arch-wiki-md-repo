@@ -21,6 +21,7 @@ This article outlines the additional software packages necessary to expand the f
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 "Not Authorized" when attempting to mount drives](#.22Not_Authorized.22_when_attempting_to_mount_drives)
     *   [3.2 Password required to access partitions](#Password_required_to_access_partitions)
+    *   [3.3 Directories are not opened in the file manager](#Directories_are_not_opened_in_the_file_manager)
 
 ## Overview
 
@@ -159,4 +160,29 @@ File managers using [udisks](/index.php/Udisks "Udisks") require a [polkit](/ind
 
 The need to enter a password to access other partitions or mounted removable media will likely be due to the default permission settings of [udisks2](https://www.archlinux.org/packages/?name=udisks2). More specifically, permission may be set to the root account only, not the user account. See [Udisks#Configuration](/index.php/Udisks#Configuration "Udisks") for details.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=413162](https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=413162)"
+### Directories are not opened in the file manager
+
+You may find that an application that is not a file manager, [Audacious](/index.php/Audacious "Audacious") for example, is set as the default application for opening directories - an application that specifies that it can handle the `inode/directory` MIME type in its desktop entry can become the default. You can query the default application for opening directories with the following command:
+
+```
+$ xdg-mime query default inode/directory
+
+```
+
+To ensure that directories are opened in the file manager, run the following command:
+
+```
+$ xdg-mime default _my-file-manager.desktop_ inode/directory
+
+```
+
+where _my-file-manager.desktop_ is the desktop entry for your file manager - _org.gnome.Nautilus.desktop_ for example.
+
+**Tip:** If you want the change to be system-wide, run the command above as root or create/edit the following file: `/usr/share/applications/mimeapps.list` 
+
+```
+[Default Applications]
+inode/directory=_my-file-manager.desktop_
+```
+
+Retrieved from "[https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=419520](https://wiki.archlinux.org/index.php?title=File_manager_functionality&oldid=419520)"

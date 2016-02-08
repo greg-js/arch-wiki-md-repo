@@ -139,4 +139,4 @@ TRICKLE_SLENGTH=10
 
 ```
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021](https://wiki.archlinux.org/index.php?title=Trickle&oldid=412021)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Trickle&oldid=419490](https://wiki.archlinux.org/index.php?title=Trickle&oldid=419490)"

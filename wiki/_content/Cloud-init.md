@@ -32,6 +32,8 @@ The cloud-init's main configuration file is `/etc/cloud/cloud.cfg`. Optionally t
 
 ### Default user configuration
 
+As of February 2016, the default `/etc/cloud/cloud.cfg` shipped with the package has not been adapted to Arch, and still states that the distro is Ubuntu, therefore it requires editing.
+
 Edit `/etc/cloud/cloud.cfg` to have the following contents:
 
 ```
@@ -109,6 +111,15 @@ The above configuration tells OpenStack datasource to use the url `http://169.25
 *   perform disk resize
 *   perform package update
 
+etc.
+
+The various modules declare to cloud-init which distros they have been verified for. Even if you specify that you want to run them, they will refuse to run unless the distro specified in `cloud.cfg` is one of the verified distros for the given module. If you want to run a module on Arch anyway that does not specify `arch`, add the module to the `unverified_modules:` section in `cloud.cfg`, e.g.:
+
+```
+unverified_modules: ['ssh-import-id']
+
+```
+
 ## Systemd integration
 
 Package cloud-init provides 4 systemd services, and a systemd target, whose dependencies are constructed in a way that they are activated in the sequence listed:
@@ -121,4 +132,4 @@ Package cloud-init provides 4 systemd services, and a systemd target, whose depe
 
 The [Uplink Labs EC2 images](/index.php/Arch_Linux_AMIs_for_Amazon_Web_Services "Arch Linux AMIs for Amazon Web Services") have all of them enabled, although that appears to be overkill due to the dependencies.
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=416551](https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=416551)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=419561](https://wiki.archlinux.org/index.php?title=Cloud-init&oldid=419561)"

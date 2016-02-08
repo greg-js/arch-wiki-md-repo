@@ -129,4 +129,4 @@ From [figlet](https://www.archlinux.org/packages/?name=figlet) 2.2.5-1:
 *   [Arch Linux artwork](https://www.archlinux.org/art/)
 *   [/etc/issue "2.0" - My ASCII art version with Arch logo and text](https://bbs.archlinux.org/viewtopic.php?id=50845)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Artwork&oldid=382089](https://wiki.archlinux.org/index.php?title=Artwork&oldid=382089)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Artwork&oldid=419279](https://wiki.archlinux.org/index.php?title=Artwork&oldid=419279)"

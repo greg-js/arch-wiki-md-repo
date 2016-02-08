@@ -11,8 +11,7 @@ The Master Boot Record (MBR) is the first 512 bytes of a storage device. It cont
 *   [3 Backup and restoration](#Backup_and_restoration)
 *   [4 Restoring a Windows boot record](#Restoring_a_Windows_boot_record)
 *   [5 TestDisk MBRCode](#TestDisk_MBRCode)
-*   [6 Create A New MBR for a USB stick](#Create_A_New_MBR_for_a_USB_stick)
-*   [7 See also](#See_also)
+*   [6 See also](#See_also)
 
 ## Boot process
 
@@ -88,43 +87,9 @@ Then, write the new boot sector (boot record):
 
 [testdisk](https://www.archlinux.org/packages/?name=testdisk) from the [official repositories](/index.php/Official_repositories "Official repositories") can write the MBR with its own [code](http://www.cgsecurity.org/wiki/Menu_MBRCode) (which should be able to boot Windows). The package is also included in the installation media.
 
-## Create A New MBR for a USB stick
-
-You might need to create a new MBR for your USB stick (which is convenient to copy files between your Linux computer and your PC), maybe because of virus or something that make it unusable.
-
-1, Plug the USB stick in and check the name of device by using **fdisk** ([util-linux](https://www.archlinux.org/packages/?name=util-linux)):
-
-```
-# fdisk -l
-
-```
-
-2, Erase the old MBR. For example, if your USB device is /dev/sdd, then erase the first 512 bytes of that device. IMPORTANT NOTE: MAKE SURE YOU SELECT THE CORRECT DEVICE.
-
-```
-# dd if=/dev/zero of=/dev/sdd bs=512 count=1
-
-```
-
-3, Use the **cfdisk** ([util-linux](https://www.archlinux.org/packages/?name=util-linux)) to create a new MBR (select "dos" when **cfdisk** asks you), and then make one (or some) partition(s) as you need. You might need to set the [partition](/index.php/Partition "Partition") type as "c" - FAT32 (LBA).
-
-```
-# cfdisk /dev/sdd
-
-```
-
-4, Use **mkfs.vfat** ([dosfstools](https://www.archlinux.org/packages/?name=dosfstools)) to create FAT partition that Windows computers can access. For example, earlier you used **cfdisk** to create partition /dev/sdd1 as type "c" (FAT32 LBA), then the command to format it is as follows (with the volume name set to MYUSB):
-
-```
-# mkfs.vfat -n MYUSB /dev/sdd1
-
-```
-
-NOTE: MAKE SURE YOU SELECT THE CORRECT DEVICE.
-
 ## See also
 
 *   Wikipedia article: [Master boot record](https://en.wikipedia.org/wiki/Master_boot_record "wikipedia:Master boot record")
 *   [What is a Master Boot Record (MBR)?](http://kb.iu.edu/data/aijw.html)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Master_Boot_Record&oldid=403209](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&oldid=403209)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Master_Boot_Record&oldid=419487](https://wiki.archlinux.org/index.php?title=Master_Boot_Record&oldid=419487)"

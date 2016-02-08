@@ -5,7 +5,6 @@
 ## Contents
 
 *   [1 Installation](#Installation)
-    *   [1.1 Import public keys](#Import_public_keys)
 *   [2 Usage](#Usage)
     *   [2.1 Firefox](#Firefox)
 *   [3 Troubleshooting](#Troubleshooting)
@@ -13,17 +12,11 @@
 
 ## Installation
 
-Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/) package. [eid-viewer](https://aur.archlinux.org/packages/eid-viewer/) is useful to verify a functional setup, before trying to read an eid from within a browser.
+Install the [eid-mw](https://aur.archlinux.org/packages/eid-mw/) package. [eid-viewer](https://aur.archlinux.org/packages/eid-viewer/) is useful to verify a functional setup, before trying to read an eid from within a browser. Before installation, import the (continuous build) keys from [[[1]](http://files.eid.belgium.be/). See [makepkg#Signature checking](/index.php/Makepkg#Signature_checking "Makepkg").
 
 As a driver for the card reader hardware is required, install the [ccid](https://www.archlinux.org/packages/?name=ccid) package. In some cases, [acsccid](https://aur.archlinux.org/packages/acsccid/) is needed instead.
 
 After installing the right driver, [start](/index.php/Start "Start") and enable the `pcscd` service.
-
-### Import public keys
-
-To install [eid-mw](https://aur.archlinux.org/packages/eid-mw/), you will need to import the public keys listed [here](http://files.eid.belgium.be/%7C), i.e. each (or at least the continuous build key) of the `*.asc` files, like so:
-
- `# gpg --import *.asc ` 
 
 ## Usage
 
@@ -43,4 +36,4 @@ You may find hints for troubleshooting in the [official documentation (Dutch)](h
 
  `# systemctl restart pcscd` 
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=411837](https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=411837)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=419497](https://wiki.archlinux.org/index.php?title=Belgian_eID_card_reader&oldid=419497)"

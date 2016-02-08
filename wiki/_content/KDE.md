@@ -813,4 +813,4 @@ If you have any problem and you write about in on the Arch forums, first make su
 *   [KDE Projects](https://projects.kde.org)
 *   [Martin Graesslin's blog](http://blog.martin-graesslin.com/blog/kategorien/kde/)
 
-Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=413672](https://wiki.archlinux.org/index.php?title=KDE&oldid=413672)"
+Retrieved from "[https://wiki.archlinux.org/index.php?title=KDE&oldid=419491](https://wiki.archlinux.org/index.php?title=KDE&oldid=419491)"
