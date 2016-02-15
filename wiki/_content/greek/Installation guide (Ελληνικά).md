@@ -1,0 +1,163 @@
+Το παρόν άρθρο θα σας οδηγήσει στην διαδικασία εγκατάστασης του [Arch Linux](/index.php/Arch_Linux "Arch Linux") χρησιμοποιώντας τα [Arch Install Scripts](https://github.com/falconindy/arch-install-scripts). Πριν την εγκατάσταση, προτείνεται να συμβουλευτείτε το [FAQ](/index.php/FAQ "FAQ").
+
+Το [Arch wiki](/index.php/Main_page "Main page") το οποίο διατηρείται από την κοινότητα είναι μία πολύ καλή πηγή και θα πρέπει να είναι το πρώτο που συμβουλεύεστε. Το κανάλι στο [IRC](https://en.wikipedia.org/wiki/IRC "wikipedia:IRC") ([irc://irc.freenode.net/#archlinux](irc://irc.freenode.net/#archlinux)), και τα [forums](https://bbs.archlinux.org/) είναι επίσης διαθέσιμα αν η απάντηση δεν μπορεί να βρεθεί αλλού. Επίσης, καλό είναι να βλέπετε και τις `man` σελίδες για όποια εντολή δεν ξέρετε καλά· αυτό μπορεί να γίνει καλώντας την `man _εντολή_`.
+
+## Contents
+
+*   [1 Λήψη](#.CE.9B.CE.AE.CF.88.CE.B7)
+*   [2 Γλώσσα πληκτρολογίου](#.CE.93.CE.BB.CF.8E.CF.83.CF.83.CE.B1_.CF.80.CE.BB.CE.B7.CE.BA.CF.84.CF.81.CE.BF.CE.BB.CE.BF.CE.B3.CE.AF.CE.BF.CF.85)
+*   [3 Χώρισμα (Partition) δίσκων](#.CE.A7.CF.8E.CF.81.CE.B9.CF.83.CE.BC.CE.B1_.28Partition.29_.CE.B4.CE.AF.CF.83.CE.BA.CF.89.CE.BD)
+*   [4 Διαμόρφωση των partitions](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.84.CF.89.CE.BD_partitions)
+*   [5 Προσάρτηση των partitions](#.CE.A0.CF.81.CE.BF.CF.83.CE.AC.CF.81.CF.84.CE.B7.CF.83.CE.B7_.CF.84.CF.89.CE.BD_partitions)
+*   [6 Σύνδεση στο internet](#.CE.A3.CF.8D.CE.BD.CE.B4.CE.B5.CF.83.CE.B7_.CF.83.CF.84.CE.BF_internet)
+    *   [6.1 Ασύρματο](#.CE.91.CF.83.CF.8D.CF.81.CE.BC.CE.B1.CF.84.CE.BF)
+*   [7 Εγκατάσταση βασικού συστήματος](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CE.B2.CE.B1.CF.83.CE.B9.CE.BA.CE.BF.CF.8D_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
+*   [8 Εγκατάσταση του bootloader](#.CE.95.CE.B3.CE.BA.CE.B1.CF.84.CE.AC.CF.83.CF.84.CE.B1.CF.83.CE.B7_.CF.84.CE.BF.CF.85_bootloader)
+    *   [8.1 GRUB](#GRUB)
+    *   [8.2 Syslinux](#Syslinux)
+*   [9 Διαμόρφωση συστήματος](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
+*   [10 Αποπροσάρτηση των partitions και επανεκκίνηση](#.CE.91.CF.80.CE.BF.CF.80.CF.81.CE.BF.CF.83.CE.AC.CF.81.CF.84.CE.B7.CF.83.CE.B7_.CF.84.CF.89.CE.BD_partitions_.CE.BA.CE.B1.CE.B9_.CE.B5.CF.80.CE.B1.CE.BD.CE.B5.CE.BA.CE.BA.CE.AF.CE.BD.CE.B7.CF.83.CE.B7)
+*   [11 Διαμόρφωση του pacman](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.84.CE.BF.CF.85_pacman)
+*   [12 Ενημέρωση συστήματος](#.CE.95.CE.BD.CE.B7.CE.BC.CE.AD.CF.81.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)
+*   [13 Προσθήκη χρήστη](#.CE.A0.CF.81.CE.BF.CF.83.CE.B8.CE.AE.CE.BA.CE.B7_.CF.87.CF.81.CE.AE.CF.83.CF.84.CE.B7)
+
+## Λήψη
+
+Κατεβάστε το νέο Arch Linux ISO από τη [σελίδα λήψης](https://www.archlinux.org/download/).
+
+*   Παρέχεται ένα εικονικό αρχείο, το οποίο μπορεί να εκκινήσει σε ένα i686 και x86_64 live σύστημα για την εγκατάσταση του Arch Linux μέσω του διαδικτύου. Μέσα τα οποία περιέχουν το [core] αποθετήριο πλέον δεν παρέχονται.
+*   Τα εικονικά αρχεία είναι υπογεγραμμένα και προτείνεται να πιστοποιήσετε την υπογραφή τους πριν τη χρήση. Στο Arch Linux, αυτό μπορεί να γίνει χρησιμοποιώντας `pacman-key -v <iso-file>.sig` 
+*   Το εικονικό αρχίο μπορεί να καεί σε ένα CD, να προσαρτηθεί σαν ένα αρχείο ISO, ή να γραφτεί κατ' ευθείαν σε ένα USB stick χρησιμοποιώντας την `dd`. Προορίζεται μόνο για νέες εγκαταστάσεις· ένα ήδη υπάρχον σύστημα Arch Linux μπορεί πάντα να ενημερωθεί με `pacman -Syu`.
+
+## Γλώσσα πληκτρολογίου
+
+Για πολλές χώρες και τύπους πληκτρολογίων τα κατάλληλα keymaps είναι ήδη διαθέσιμα, και μία εντολή όπως η `loadkeys uk` μπορεί να κάνει αυτό που θέλετε. Περισσότερα διαθέσιμα αρχεία keymap μπορούν να βρεθούν στο `/usr/share/kbd/keymaps/` (μπορείτε να παραλέιψετε το μονοπάτι του keymap και την κατάληξη όταν χρησιμοποιείτε την εντολή `loadkeys`).
+
+## Χώρισμα (Partition) δίσκων
+
+Δείτε το άρθρο [partitioning](/index.php/Partitioning "Partitioning") για λεπτομέρειες.
+
+Αν θέλετε να δημιουργήσετε μια Στοίβα συσκευών αποθήκευσης (stacked block devices) όπως [LVM](/index.php/Lvm "Lvm"), [LUKS](/index.php/Dm-crypt_with_LUKS "Dm-crypt with LUKS"), ή [RAID](/index.php/RAID "RAID"), κάντε το τώρα.
+
+## Διαμόρφωση των partitions
+
+Δείτε [εδώ](/index.php/Format_a_device#Step_2:_create_the_new_file_system "Format a device") για λεπτομέρειες.
+
+Αν χρησιμοποιείτε (U)EFI πολυ πιθανόν να χρειαστείτε κάποιο άλλο partition για να φιλοξενηθεί το UEFI System partition. Διαβάστε [αυτό το άρθρο](/index.php/Unified_Extensible_Firmware_Interface#Create_an_UEFI_System_Partition_in_Linux "Unified Extensible Firmware Interface").
+
+## Προσάρτηση των partitions
+
+Τώρα πρέπει να προσαρτήσουμε το root partition στο `/mnt`. Θα πρέπει επίσης να δημιουργήσετε καταλόγους και να προσαρτήσετε όποια άλλα partitions φτιάξετε (`/mnt/boot`, `/mnt/home`, ...) αν θέλετε να εντοπιστούν από το `genfstab`.
+
+## Σύνδεση στο internet
+
+Μία υπηρεσία DHCP είναι ήδη ενεργοποιημένη για όλες τις διαθέσιμες συσκευές. Αν κάποιος χρειάζεται να ορίσει μία στατική IP ή να χρησιμοποιήσει κάποιο εργαλείο όπως το [Netctl](/index.php/Netctl "Netctl"), θα πρέπει να σταματήσει την υπηρεσία dhcp πρώτα: `systemctl stop dhcpcd.service`. Για περισσότερες πληροφορίες επισκεφτείτε το [configuring network](/index.php/Configuring_network "Configuring network").
+
+### Ασύρματο
+
+Τρέξτε `wifi-menu` για να διαμορφώσετε το ασύρματο δίκτυο. Για πληροφορίες δείτε το [Wireless network configuration](/index.php/Wireless_network_configuration "Wireless network configuration") και το [Netctl](/index.php/Netctl "Netctl").
+
+## Εγκατάσταση βασικού συστήματος
+
+Πριν την εγκατάσταση, τροποποιήστε το `/etc/pacman.d/mirrorlist` και αφαιρέστε το σύμβολο `#` μπροστά από τους κοντινούς στην τοποθεσία σας διακομιστές (servers). Αυτό το αντίγραφο της mirrorlist θα εγκατασταθεί στο νέο σας σύστημα από το `pacstrap`, οπότε αξίζει να το φτιάξετε σωστά.
+
+Χρησιμοποιώντας το [pacstrap](https://github.com/falconindy/arch-install-scripts/blob/master/pacstrap.in) script εγκαθιστούμε το βασικό σύστημα. Το group πακέτο `base-devel` παρά το ότι είναι προαιρετικό, θα πρέπει επίσης να εγκατασταθεί αν σχεδιάζετε να μεταγλωττίσετε κάποιο πρόγραμμα από το [AUR](/index.php/AUR "AUR") ή αν χρησιμοποιήσετε το [ABS](/index.php/ABS "ABS").
+
+```
+# pacstrap /mnt base base-devel
+
+```
+
+Άλλα πακέτα μπορούν να εγκατασταθούν προσαρτώντας το όνομά τους στην παραπάνω εντολή (χωρισμένα με κενό), περιλαμβανομένου του bootloader αν θέλετε.
+
+## Εγκατάσταση του bootloader
+
+### [GRUB](/index.php/GRUB2 "GRUB2")
+
+*   Για BIOS:
+
+```
+# arch-chroot /mnt pacman -S grub-bios
+
+```
+
+*   Για EFI (σε σπάνιες περιπτώσεις θα χρειαστείτε το `grub-efi-i386`):
+
+```
+# arch-chroot /mnt pacman -S grub-efi-x86_64
+
+```
+
+*   Εγκατάσταση του GRUB μετά το chrooting (αναφερθείτε στο τμήμα [Διαμόρφωση συστήματος](#.CE.94.CE.B9.CE.B1.CE.BC.CF.8C.CF.81.CF.86.CF.89.CF.83.CE.B7_.CF.83.CF.85.CF.83.CF.84.CE.AE.CE.BC.CE.B1.CF.84.CE.BF.CF.82)).
+
+### [Syslinux](/index.php/Syslinux "Syslinux")
+
+```
+# arch-chroot /mnt pacman -S syslinux
+
+```
+
+## Διαμόρφωση συστήματος
+
+Δημιουργήστε το [fstab](/index.php/Fstab "Fstab") με την εξής εντολή (αν προτιμάτε να χρησιμοποιήσετε UUIDs ή labels, προσθέστε την επιλογή `-U` ή `-L`, αντίστοιχα):
+
+```
+# genfstab -p /mnt >> /mnt/etc/fstab
+
+```
+
+Έπειτα κάνουμε [chroot](/index.php/Chroot "Chroot") στο νέο μας εγκατεστημένο σύστημα:
+
+```
+# arch-chroot /mnt
+
+```
+
+*   Γράψτε το hostname στο `/etc/hostname`.
+*   Δημιουργήστε ένα symlink του `/etc/localtime` στο `/usr/share/zoneinfo/Zone/SubZone`. Αντικαταστήστε το `Zone` και το `Subzone` σε αυτό που προτιμάτε. Για παράδειγμα:
+
+```
+# ln -s /usr/share/zoneinfo/Europe/Athens /etc/localtime
+
+```
+
+*   Ρυθμίστε τις προτιμήσεις του [locale](https://wiki.archlinux.org/index.php/Locale#Setting_system-wide_locale) στο `/etc/locale.conf`.
+*   Προσθέστε τις προτίμήσεις του [console keymap και της γραμματοσειράς](/index.php/KEYMAP "KEYMAP") στο `/etc/vconsole.conf`
+*   Αποσχολιάστε το locale που θέλετε να χρησιμοποιήσετε στο `/etc/locale.gen` και δημιουργήστε το με `locale-gen`.
+*   Διαμορφώστε το `/etc/mkinitcpio.conf` όπως χρειάζεται (δείτε [mkinitcpio](/index.php/Mkinitcpio "Mkinitcpio")) και δημιουργήστε το initial RAM disk με:
+
+```
+# mkinitcpio -p linux
+
+```
+
+*   Διαμορφώστε τον bootloader: αναφερθείτε πίσω στο κατάλληλο άρθρο από το τμήμα εγκατάστασης του bootloader.
+
+*   Ορίστε έναν κωδικό για τον root με την εντολή `passwd`.
+
+## Αποπροσάρτηση των partitions και επανεκκίνηση
+
+Αν είστε ακόμα στο chroot περιβάλλον πληκτρολογήστε `exit` ή πατήστε `Ctrl+D` για να βγείτε. Προηγουμένως είχαμε προσαρτήσει τα partitions στο `/mnt`, σε αυτό το βήμα θα τα αποπροσαρτήσουμε:
+
+```
+# umount /mnt/{boot,home,}
+
+```
+
+Τέλος κάντε επανεκκίνηση και συνδεθείτε στο νέο σύστημα με το λογαριασμό root.
+
+## Διαμόρφωση του pacman
+
+Επεξεργαστείτε το `/etc/pacman.conf` και διαμορφώστε τις επιλογές του pacman, ενεργοποιώντας επίσης όσα repositories χρειάζεστε.
+
+Δείτε το [Pacman](/index.php/Pacman "Pacman") και το [Official repositories](/index.php/Official_repositories "Official repositories") για λεπτομέρειες.
+
+## Ενημέρωση συστήματος
+
+Σε αυτό το σημείο πρέπει να ενημερώσετε το σύστημά σας.
+
+Δείτε το [Upgrading packages](/index.php/Pacman#Upgrading_packages "Pacman") για οδηγίες.
+
+## Προσθήκη χρήστη
+
+Τέλος, προσθέστε έναν κανονικό χρήστη όπως περιγράφεται στο [User management](/index.php/Users_and_groups#User_management "Users and groups").

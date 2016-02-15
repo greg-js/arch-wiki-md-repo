@@ -1,0 +1,1 @@
+Esta guía le ayudara a cambiar la versión de un paquete a uno anterior, bajar la versión de un paquete no es normalmente recomendado y solo es necesario cuando un error ha sido introducido con una nueva versión.

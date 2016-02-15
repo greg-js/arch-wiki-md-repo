@@ -1,0 +1,133 @@
+[Lightdm](http://www.freedesktop.org/wiki/Software/LightDM) LighDM es un gestor de sesión inter-escritorio que aspira a ser el estándar para el sistema de ventanas X11 y para [Wayland](/index.php/Wayland "Wayland").
+
+## Contents
+
+*   [1 Instalación](#Instalaci.C3.B3n)
+    *   [1.1 Greeter](#Greeter)
+    *   [1.2 Habilitar Lightdm](#Habilitar_Lightdm)
+*   [2 Configuración](#Configuraci.C3.B3n)
+    *   [2.1 Command line tool](#Command_line_tool)
+        *   [2.1.1 Cambiando la imagen o color de fondo](#Cambiando_la_imagen_o_color_de_fondo)
+            *   [2.1.1.1 GTK+ Greeter](#GTK.2B_Greeter)
+            *   [2.1.1.2 Unity Greeter](#Unity_Greeter)
+            *   [2.1.1.3 KDE Greeter](#KDE_Greeter)
+    *   [2.2 cambiando íconos](#cambiando_.C3.ADconos)
+    *   [2.3 Habilitando el autologin](#Habilitando_el_autologin)
+
+# Instalación
+
+Se puede instalar [lightdm](https://www.archlinux.org/packages/?name=lightdm) desde los repositorios oficiales o si se desea se puede instalar [lightdm-devel](https://aur.archlinux.org/packages/lightdm-devel/) (version desarrollo) o sino [lightdm-bzr](https://aur.archlinux.org/packages/lightdm-bzr/) estos dos últimos desde [AUR](/index.php/AUR "AUR")
+
+puede ser instalado con su gestor de paquetes de AUR preferido, ejemplo:
+
+```
+# pacman -S lightdm #para la version estable
+# packer -S lightdm-devel # para la rama en desarollo
+# yaourt -S lightdm-bzr # para la rama bazaar
+
+```
+
+### Greeter
+
+Después de instalar Ligthdm necesitarás instar un greeter (una interfaz de usuario para LightDM). el greeter recomendado es _lightdm-gtk-greeter_, que es instaldo con [lightdm-gtk2-greeter](https://aur.archlinux.org/packages/lightdm-gtk2-greeter/) o [lightdm-gtk3-greeter](https://www.archlinux.org/packages/?name=lightdm-gtk3-greeter). Los usuarios de KDE pueden instalar [lightdm-kde-greeter](https://www.archlinux.org/packages/?name=lightdm-kde-greeter), un greeter basado en Qt.
+
+Otros greeters que se pueden instalar mediante [AUR](/index.php/AUR "AUR") son:
+
+*   [lightdm-another-gtk-greeter](https://aur.archlinux.org/packages/lightdm-another-gtk-greeter/): Un greeter GTK3 con soporte para themes personalizados.
+*   [lightdm-webkit-greeter](https://aur.archlinux.org/packages/lightdm-webkit-greeter/): Un greeter que usa webkit.
+*   [lightdm-crowd-greeter](https://aur.archlinux.org/packages/lightdm-crowd-greeter/): Un greeter 3D que permite seleccionar un perfil de caracteres 3D.
+*   [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/): El greeter usado por [Unity](/index.php/Unity "Unity") en Ubuntu.
+*   [lightdm-razor-greeter](https://aur.archlinux.org/packages/lightdm-razor-greeter/): un grerter para el entorno de escritorio [Razor-qt](/index.php/Razor-qt "Razor-qt").
+*   [lightdm-pantheon-greeter](https://aur.archlinux.org/packages/lightdm-pantheon-greeter/): Un greeter para el proyecyo ElementaryOS.
+
+Puedes cambiar el greeter por defecto cambiando la configuracion del archivo:
+
+ `/etc/lightdm/lightdm.conf` 
+
+```
+greeter-session=lightdm-yourgreeter-greeter
+
+```
+
+## Habilitar Lightdm
+
+se habilita usando systemd, asegurate de tener activado `lightdm.service` [using systemctl](/index.php/Systemd#Using_units "Systemd") para que se cargue automáticamente al inicio.
+
+# Configuración
+
+En caso de necesitarla, existe el archivo que está bien documentado y que contiene las opciones del LightDM, este está ubicado en:
+
+```
+/etc/lightdm.conf
+
+```
+
+## Command line tool
+
+LightDM ofrece una herramienta para el shell, `dm-tool`, que puede ser usada para bloquear la sesión actual, intercambiar sesiones, etc, que es util con gestores de de escritorio 'minimalistas' y para testing. Para ver una lista completa de las opciones de esta herramienta:
+
+```
+$ dm-tool --help
+
+```
+
+### Cambiando la imagen o color de fondo
+
+Los Usuarios que deseen tener un solo color plano (sin imagen) pueden solo ajustar la variable **background** a un color en formato Hexadecimal.
+
+Por ejemplo:
+
+```
+background=#000000
+
+```
+
+Si por el contrario se desea usar una imagen, leer a continuación
+
+#### GTK+ Greeter
+
+Los Usuarios que deseen personalizar el wallpaper en la pantalla de este greeter, solo tienen que editar `/etc/lightdm/lightdm-gtk-greeter.conf` definiendo la variable **background**
+
+Por ejemplo:
+
+```
+background=/usr/share/pixmaps/black_and_white_photography-wallpaper-1920x1080.jpg
+
+```
+
+#### Unity Greeter
+
+Aquellos que usan [lightdm-unity-greeter](https://aur.archlinux.org/packages/lightdm-unity-greeter/) tienen que editar el archivo `/usr/share/glib-2.0/schemas/com.canonical.unity-greeter.gschema.xml` y luego ejecutar:
+
+```
+# glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+```
+
+De acuerdo con [this](https://bbs.archlinux.org/viewtopic.php?id=149945).
+
+**Note:** Es recomendable colocar el archivo PNG or JPG en `/usr/share/pixmaps` puesto que el usuario LightDM necesita acceso de lectura al archivo de wallpaper.
+
+#### KDE Greeter
+
+Solo es necesario entrar a _System Settings > Login Screen (LightDM)_ y cambiar la imagen de fondo para tu theme.
+
+## cambiando íconos
+
+Usuarios que deseen cambiar el icono de Computador en el login deben seguir 3 pasos:
+
+Copia la imagen a /usr/share/icons/hicolor/64x64/devices , se obvia que debe ser de 64x64. Ejecute gtk-update-icon-cache /usr/share/icons/hicolor Edite /usr/share/lightdm-gtk-greeter/greeter.ui Busque 'image1' y edite la 'propiedad' xml del archivo para apuntar a la imagen deseada (sin la extensión, lightdm la obvia), por defecto 'computer'.
+
+Un buen lugar para encontrar iconos así es el paquete [archlinux-artwork] en extra, éste posee iconos varios en formato 64x64. Para copiarlos siga estas instrucciones:
+
+1.  find /usr/share/archlinux/icons -name "*64*" -exec cp {} /usr/share/icons/hicolor/64x64/devices \;
+
+Una vez copiados los iconos puede, si así lo desea, eliminar el paquete.
+
+## Habilitando el autologin
+
+Edite /etc/lightdm/lightdm.conf y cámbielo por algo como esto:
+
+[SeatDefaults] autologin-user=su_usuario autologin-user-timeout=0 pam-service=lightdm-autologin NumLock ON instale numlockx y modifique /etc/lightdm/lightdm.conf para agregar lo siguiente:
+
+greeter-setup-script=/usr/bin/numlockx on

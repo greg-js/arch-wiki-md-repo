@@ -1,0 +1,81 @@
+**欢迎访问 [ArchWiki](/index.php/AboutWiki_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "AboutWiki (简体中文)")： 您的在线 Arch Linux 中文文档库。**
+
+浏览 ArchWiki 的完整目录 —— [目录表](/index.php/Table_of_Contents_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Table of Contents (简体中文)")
+
+## 关于发行版
+
+	[Arch Linux](/index.php/Arch_Linux_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux (简体中文)")
+
+	Arch Linux 简介：Arch Linux 是什么，能做什么，有何优势？
+
+	[常见问题](/index.php/FAQ_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "FAQ (简体中文)")
+
+	常见问题解答，解决您的疑问。
+
+	[Arch 和其他发行版的比较](/index.php/Arch_Compared_to_Other_Distributions_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Compared to Other Distributions (简体中文)")
+
+	Arch 和其他发行版的相似点和不同点。
+
+	[Arch Linux 新闻报道](/index.php/Arch_Linux_press_coverage_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Arch Linux press coverage (简体中文)")
+
+	别人怎么看我们。
+
+	[新手指南](/index.php/Beginners%27_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Beginners' guide (简体中文)")
+
+	从安装到配置，为新手所写的 Arch Linux 详细指南。
+
+	[安装指南](/index.php/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Installation guide (简体中文)")
+
+	更加简明的安装指南，为有经验的 UNIX/GNU/Linux 用户提供。
+
+	[建议阅读](/index.php/General_Recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "General Recommendations (简体中文)")
+
+	常用文章的索引，特别是包含了国人常用软件的介绍。安装完系统，不知道玩些什么？读一读此文吧！
+
+	[软件列表](/index.php/List_of_Applications_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "List of Applications (简体中文)")
+
+	官方和 AUR 中常用软件的分类描述列表。
+
+## 社区
+
+	[参与贡献](/index.php/Getting_Involved_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Getting Involved (简体中文)")
+
+	无论新手或专家，您都可以参与我们，为 Arch 社区做出贡献。
+
+	[为 Wiki 做贡献](/index.php/ArchWiki:Contributing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "ArchWiki:Contributing (简体中文)")
+
+	如果希望完善 Wiki，请先阅读此文。
+
+	[ArchWiki 编辑指南](/index.php/Help:Editing_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Editing (简体中文)")
+
+	教您如何编辑 Wiki 文章。
+
+	[国际社区](/index.php/International_communities "International communities")
+
+	汇总世界各地的 Arch Linux 社区的信息。
+
+	[论坛礼仪](/index.php/Forum_etiquette_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Forum etiquette (简体中文)")
+
+	Arch 论坛行为规范。
+
+	[IRC channels](/index.php/IRC_channels "IRC channels")
+
+	通过聊天解决问题。
+
+## 帮助
+
+ArchWiki 有一些特殊的语法和标注方式，要了解它们，请阅读 [Help:Reading (简体中文)](/index.php/Help:Reading_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Help:Reading (简体中文)")。
+
+要查找专门的信息，可以使用左侧的搜索框。也可以直接通过搜索引擎进行搜索 (例如加入 `site:wiki.archlinux.org` 语法限定搜索范围). 参阅 [Help:Searching](/index.php/Help:Searching "Help:Searching").
+
+## 相关链接
+
+全世界的 Arch 用户乐于帮助您，您可以通过以下方式找到他们：
+
+*   [Arch Linux 中文论坛](http://bbs.archlinuxcn.org/)（非官方）
+*   [Arch Linux 官方论坛](https://bbs.archlinux.org/)（英文）
+*   [Ubuntu 中文论坛 Arch 发行版](http://forum.ubuntu.org.cn/viewforum.php?f=155)
+*   [arch-cn 中文 IRC 频道](irc://oftc/arch-cn)以及[archlinux-cn 中文 IRC 频道](irc://freenode/archlinux-cn)
+*   [Ubuntu 中文 IRC 频道](irc://freenode/ubuntu-cn)
+*   [百度 archlinux 吧](http://tieba.baidu.com/f?kw=archlinux)
+*   [Tyrant's Arch](http://arch.acgtyrant.com)

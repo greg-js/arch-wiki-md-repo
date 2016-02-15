@@ -1,0 +1,7 @@
+## Introduzione
+
+Poiché [**tetex**](http://www.tug.org/tetex/) -- la distribuzione standard di Tex per i sistemi Unix -- non è più mantenuta, molti utenti hanno espresso la volontà di rimpiazzarlo con [**TeX Live**](http://www.tug.org/texlive/). Si veda [questa discussione](https://bbs.archlinux.org/viewtopic.php?id=35991) per maggiori dettagli. La buona notizia è che i pacchetti TeXLive per Arch Linux (basati su TeXLive 2007 con tutti i pacchetti aggiuntivi di CTAN aggiornati all'ultima versione) si trovano ora in [**community**](https://aur.archlinux.org/packages.php?O=0&K=texlive&PP=50) (Sept. 27, 2007). Installando [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) si avrà a disposizione un sistema di composizione tipografica molto valido.
+
+I pacchetti TeX Live sono raggruppati in due gruppi di pacchetti: [texlive-most](https://www.archlinux.org/groups/x86_64/texlive-most/) e [texlive-lang](https://www.archlinux.org/groups/x86_64/texlive-lang/)
+
+Il pacchetto essenziale [texlive-core](https://www.archlinux.org/packages/?name=texlive-core) contiene l'albero base texmf-dist, mentre [texlive-bin](https://www.archlinux.org/packages/?name=texlive-bin) contiene i binari. Questo è basato sullo schema di installazione “medium” del cd originale di TeX Live. Tutti gli altri pacchetti sono basati sulle relative collezioni di TeX Live. I link portano a una lista dei pacchetti CTAN in ogni pacchetto Arch.
