@@ -32,13 +32,13 @@ At first, note that for _any_ method you use, you should _always_ disable:
 
 ### Late KMS start
 
-[Intel](/index.php/Intel "Intel"), [Nouveau](/index.php/Nouveau "Nouveau") and [ATI](/index.php/ATI "ATI") drivers already enable KMS automatically for all chipsets, so you need not install it manually.
+[Intel](/index.php/Intel "Intel"), [Nouveau](/index.php/Nouveau "Nouveau"), [ATI](/index.php/ATI "ATI") and [AMDGPU](/index.php/AMDGPU "AMDGPU") drivers already enable KMS automatically for all chipsets, so you need not install it manually.
 
 The proprietary [NVIDIA](/index.php/NVIDIA "NVIDIA") and [AMD Catalyst](/index.php/AMD_Catalyst "AMD Catalyst") drivers do not support KMS. In order to use KMS you should replace them with open source drivers.
 
 ### Early KMS start
 
-To load KMS as early as possible in boot process, add the module `radeon` (for ATI/AMD cards), `i915` (for Intel integrated graphics) or `nouveau` (for Nvidia cards) to the `MODULES` line in `/etc/mkinitcpio.conf`. For example:
+To load KMS as early as possible in boot process, add the module `radeon`/`amdgpu` (for ATI/AMD cards), `i915` (for Intel integrated graphics) or `nouveau` (for Nvidia cards) to the `MODULES` line in `/etc/mkinitcpio.conf`. For example:
 
  `/etc/mkinitcpio.conf`  `MODULES="... i915 ..."` 
 **Note:** Intel users might need to add `intel_agp` before `i915` to suppress the ACPI errors.

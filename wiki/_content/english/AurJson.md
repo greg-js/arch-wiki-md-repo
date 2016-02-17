@@ -1,142 +1,138 @@
-The **AurJson** interface is a lightweight remote interface for the [AUR](/index.php/AUR "AUR"). It utilizes http GET queries as the request format, and [json](http://www.json.org/) as the response data exchange format.
+The **AurJson** interface is a lightweight remote interface for the [AUR](/index.php/AUR "AUR"). It utilizes HTTP GET queries as the request format, and [json](http://www.json.org/) as the response data exchange format.
+
+**Note:** This article describes v5 of the RPC Interface API, as released with AUR v4.2.0 on February 15, 2016.
 
 ## Contents
 
 *   [1 API usage](#API_usage)
     *   [1.1 Query types](#Query_types)
         *   [1.1.1 search](#search)
-        *   [1.1.2 msearch](#msearch)
-        *   [1.1.3 info](#info)
-        *   [1.1.4 multiinfo](#multiinfo)
+        *   [1.1.2 info](#info)
     *   [1.2 Return types](#Return_types)
         *   [1.2.1 error](#error)
         *   [1.2.2 search](#search_2)
-        *   [1.2.3 msearch](#msearch_2)
-        *   [1.2.4 info](#info_2)
-        *   [1.2.5 multiinfo](#multiinfo_2)
+        *   [1.2.3 info](#info_2)
     *   [1.3 jsonp](#jsonp)
-*   [2 More examples](#More_examples)
-*   [3 Reference clients](#Reference_clients)
-*   [4 Associated code](#Associated_code)
+*   [2 Reference clients](#Reference_clients)
+*   [3 Associated code](#Associated_code)
 
 ## API usage
 
-The [RPC interface](https://aur.archlinux.org/rpc.php) has four major query types:
+The [RPC interface](https://aur.archlinux.org/rpc.php) has two major query types:
 
 *   search
-*   msearch
 *   info
-*   multiinfo
-
-Each method requires the following HTTP GET syntax:
-
-```
-type=methodname&arg=data
-
-```
-
-Where _**methodname**_ is the name of an allowed method, and _**data**_ is the argument to the call.
 
 Data is returned in json encapsulated format.
 
 ### Query types
 
-As noted above, there are four query types:
+As noted above, there are two query types:
 
 *   search
-*   msearch
 *   info
-*   multiinfo
 
 #### search
 
-A _**search**_ type query takes an argument of a string with which to perform a package search. Possible return types are _**error**_ and _**search**_.
-
-Example:
+Package searches can be performed by issuing requests of the form:
 
 ```
-https://aur.archlinux.org/rpc.php?type=search&arg=foobar
+/rpc/?v=5&type=search&by=field&arg=keywords
 
 ```
 
-The above is a query of type _**search**_ and the search argument is "foobar".
+where _**keywords**_ is the search argument and _**field**_ is one of the following values:
 
-#### msearch
+*   _name_ (search by package name only)
+*   _name-desc_ (search by package name and description)
+*   _maintainer_ (search by package maintainer)
 
-A _**msearch**_ type query takes an argument of a string with which to perform a search by maintainer name. Possible return types are _**error**_ and _**msearch**_.
+The _**by**_ parameter can be skipped and defaults to _name-desc_. Possible return types are _**search**_ and _**error**_.
 
-Example:
+If a maintainer search is performed and the search argument is left empty, a list of orphan packages is returned.
+
+Examples:
 
 ```
-https://aur.archlinux.org/rpc.php?type=msearch&arg=cactus
+https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar
 
 ```
 
-The above is a query of type _**msearch**_ and the search argument is "cactus".
+Search for _foobar_.
+
+```
+https://aur.archlinux.org/rpc/?v=5&type=search&search_by=maintainer&arg=john
+
+```
+
+Search for packages maintained by _john_.
+
+```
+https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar&callback=jsonp1192244621103
+
+```
+
+Search with callback.
 
 #### info
 
-An _**info**_ type query takes an argument of a string _**or**_ an integer. If an integer, the integer must be an exact match to an existing packageID, or an _**error**_ type is returned. If a string, the string must be an exact match to an existing packageName, or an _**error**_ type is returned.
+Package information can be performed by issuing requests of the form:
+
+```
+/rpc/?v=5&type=info&arg[]=pkg1&arg[]=pkg2&…
+
+```
+
+where _**pkg1**_, _**pkg2**_, … are the exact matches of names of packages to retrieve package details for.
+
+Possible return types are _**search**_ and _**error**_.
 
 Examples:
 
 ```
-https://aur.archlinux.org/rpc.php?type=info&arg=1123
-https://aur.archlinux.org/rpc.php?type=info&arg=foobar
+https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foobar
 
 ```
 
-The two examples above are both queries of type _**info**_. The first query is using an integer type argument, and the second is using a packageName argument. If packageID 1123 corresponded to packageName foobar, then both of the above queries would return the details of the foobar package.
-
-#### multiinfo
-
-The majority of "real world" info requests come in hefty batches. AUR can handle these in one request rather than multiple by allowing AUR clients to send multiple arguments.
-
-Examples:
+Info for single _foobar_ package.
 
 ```
-https://aur.archlinux.org/rpc.php?type=multiinfo&arg[]=cups-xerox&arg[]=cups-mc2430dl&arg[]=10673
+https://aur.archlinux.org/rpc/?v=5&type=info&arg[]=foo&arg[]=bar
 
 ```
+
+Info for multiple _foobar_ and _bar_ packages.
 
 ### Return types
 
-The return payload is of one format, and currently has five main types. The response will always return a type so that the user can determine if the result of an operation was an error or not.
+The return payload is of one format, and currently has three main types. The response will always return a type so that the user can determine if the result of an operation was an error or not.
 
 The format of the return payload is:
 
 ```
-{"type":ReturnType,"results":ReturnData}
+{"version":5,"type":"ReturnType","resultcount":0,"results":ReturnData}
 
 ```
 
 ReturnType is a string, and the value is one of:
 
 ```
-* error
 * search
-* msearch
-* info
 * multiinfo
+* error
 
 ```
 
-The type of ReturnData is dependent on the query type:
-
-*   If ReturnType is _**error**_ then ReturnData is a string.
-*   If ReturnType is _**search**_ then ReturnData is an array of dictionary objects.
-*   If ReturnType is _**msearch**_ then ReturnData is an array of dictionary objects.
-*   If ReturnType is _**info**_ then ReturnData is a single dictionary object.
-*   If ReturnType is _**multiinfo**_ then ReturnData is an array of dictionary objects.
+The type of ReturnData is an array of dictionary objects for the _**search**_ and _**multiinfo**_ ReturnType, and an empty array for _**error**_ ReturnType.
 
 #### error
 
-The error type has an error response string as the return value. An error response can be returned from either a _**search**_ or an _**info**_ query type.
+The error type has an error response string as the return value. An error response can be returned from either a **search** or an **info** query type.
 
 Example of ReturnType _**error**_:
 
 ```
-{"type":"error","results":"No results found"}
+{"version":5,"type":"error","resultcount":0,"results":[],"error":"Incorrect by field specified."}
 
 ```
 
@@ -147,58 +143,51 @@ The search type is the result returned from a search request operation. **The ac
 Example of ReturnType _**search**_:
 
 ```
-{"type":"search","results":[{"Name":"pam_abl","ID":1995, ...}]}
-
-```
-
-#### msearch
-
-The msearch type is the result returned from an msearch request operation. **The actual results of an msearch operation will be the same as an info request for each result. See the info section.**
-
-Example of ReturnType _**msearch**_:
-
-```
-{"type":"msearch","results":[{"Name":"pam_abl","ID":1995, ...}]}
+{"version":5,"type":"search","resultcount":2,"results":[{"ID":206807,"Name":"cower-git", ...}]}
 
 ```
 
 #### info
 
-The info type is the result returned from an info request operation. Returning the type as search is useful for detecting whether the response to a search operation is search data or an error.
-
-Example of ReturnType _**info**_:
-
-```
- {
-    "type": "info",
-    "results": {
-        "URL": "http://pam-abl.deksai.com/"
-        "Description": "Automated blacklisting on repeated failed authentication attempts"
-        "Version": "0.4.3-1"
-        "Name": "pam_abl"
-        "FirstSubmitted": 1125707839
-        "License": "BSD GPL"
-        "ID": 1995
-        "OutOfDate": 0
-        "LastModified": 1336659370
-        "Maintainer": "redden0t8"
-        "CategoryID": 16
-        "URLPath": "/packages/pa/pam_abl/pam_abl.tar.gz"
-        "NumVotes": 10
-    }
-
- }
-
-```
-
-#### multiinfo
-
-The multiinfo type is the result returned from a multiinfo request operation. **The actual results of a multiinfo operation will be the same as an info request for each result. See the info section.**
+The info type is the result returned from an info request operation.
 
 Example of ReturnType _**multiinfo**_:
 
 ```
-{"type":"multiinfo","results":[{"Name":"pam_abl","ID":1995, ...}]}
+ {
+    "version":5,
+    "type":"multiinfo",
+    "resultcount":1,
+    "results":[{
+        "ID":229417,
+        "Name":"cower",
+        "PackageBaseID":44921,
+        "PackageBase":"cower",
+        "Version":"14-2",
+        "Description":"A simple AUR agent with a pretentious name",
+        "URL":"http:\/\/github.com\/falconindy\/cower",
+        "NumVotes":590,
+        "Popularity":24.595536,
+        "OutOfDate":null,
+        "Maintainer":"falconindy",
+        "FirstSubmitted":1293676237,
+        "LastModified":1441804093,
+        "URLPath":"\/cgit\/aur.git\/snapshot\/cower.tar.gz",
+        "Depends":[
+            "curl",
+            "openssl",
+            "pacman",
+            "yajl"
+        ],
+        "MakeDepends":[
+            "perl"
+        ],
+        "License":[
+            "MIT"
+        ],
+        "Keywords":[]
+    }]
+ }
 
 ```
 
@@ -209,57 +198,18 @@ If you are working with a javascript page, and need a json callback mechanism, y
 Example Query:
 
 ```
-https://aur.archlinux.org/rpc.php?type=search&arg=foobar&callback=jsonp1192244621103
+https://aur.archlinux.org/rpc/?v=5&type=search&arg=foobar&callback=jsonp1192244621103
 
 ```
 
 Example Result:
 
 ```
-jsonp1192244621103({"type":"error","results":"No results found"})
+/**/jsonp1192244621103({"version":5,"type":"search","resultcount":1,"results":[{"ID":250608,"Name":"foobar2000","PackageBaseID":37068,"PackageBase":"foobar2000","Version":"1.3.9-1","Description":"An advanced freeware audio player (uses Wine).","URL":"http:\/\/www.foobar2000.org\/","NumVotes":39,"Popularity":0.425966,"OutOfDate":null,"Maintainer":"supermario","FirstSubmitted":1273255356,"LastModified":1448326415,"URLPath":"\/cgit\/aur.git\/snapshot\/foobar2000.tar.gz"}]})
 
 ```
 
-This would automatically call the JavaScript function `jsonp1192244621103` with the parameter set to the results of the RPC call. (In this case, `{"type":"error","results":"No results found"}`)
-
-## More examples
-
-Example Query and Result:
-
-```
- https://aur-url/rpc.php?type=search&arg=foobar
- {"type":"error","results":"No results found"}
-
-```
-
-Example Query and Result:
-
-```
- https://aur-url/rpc.php?type=search&arg=pam_abl
- {"type":"search","results":[{"Name":"pam_abl","ID":1995}]}
-
-```
-
-Example Query and Result:
-
-```
- https://aur-url/rpc.php?type=info&arg=pam_abl
- {
-    "type": "info",
-    "results": {       
-        "Description": "Provides auto blacklisting of hosts and users responsible for repeated failed authentication attempts", 
-        "ID": 1995, 
-        "License": "", 
-        "Name": "pam_abl", 
-        "NumVotes": 4,
-        "OutOfDate": 0,
-        "URL": "http://www.hexten.net/pam_abl",
-        "URLPath": "/packages/pam_abl/pam_abl.tar.gz",
-        "Version": "0.2.3-1"
-    }
- }
-
-```
+This would automatically call the JavaScript function `jsonp1192244621103` with the parameter set to the results of the RPC call.
 
 ## Reference clients
 

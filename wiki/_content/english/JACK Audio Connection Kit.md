@@ -14,6 +14,7 @@
     *   [2.5 Playing nice with ALSA](#Playing_nice_with_ALSA)
     *   [2.6 gstreamer](#gstreamer)
     *   [2.7 PulseAudio](#PulseAudio)
+    *   [2.8 Firewire](#Firewire)
 *   [3 MIDI](#MIDI)
 *   [4 Troubleshooting](#Troubleshooting)
     *   [4.1 "Cannot lock down memory area (Cannot allocate memory)" message on startup](#.22Cannot_lock_down_memory_area_.28Cannot_allocate_memory.29.22_message_on_startup)
@@ -56,6 +57,8 @@ Alternatively, there is the older **JACK**. [Install](/index.php/Install "Instal
 ### GUI
 
 If you want a GUI control application, the most widely used one is [qjackctl](https://www.archlinux.org/packages/?name=qjackctl).
+
+Also, [cadence](http://kxstudio.linuxaudio.org/Applications:Cadence) offers a set of applications and eases some advanced jack configurations. It is available on [aur](https://aur.archlinux.org/packages/cadence/).
 
 ## Basic Configuration
 
@@ -340,6 +343,30 @@ autospawn = no
 ```
 
 _If you want both to play along, see: [PulseAudio/Examples#PulseAudio through JACK](/index.php/PulseAudio/Examples#PulseAudio_through_JACK "PulseAudio/Examples")_
+
+### Firewire
+
+In order to prevent ALSA from messing around with your firewire devices you have to blacklist all firewire related kernel modules. This also prevents PulseAudio from using firewire. Create the following file:
+
+ `/etc/modprove.d/alsa-no-jack.conf` 
+
+```
+blacklist snd-fireworks
+blacklist snd-bebob
+blacklist snd-oxfw
+blacklist snd-dice
+blacklist snd-firewire-digi00x
+blacklist snd-firewire-tascam
+blacklist snd-firewire-lib
+blacklist snd-firewire-transceiver
+blacklist snd-fireface
+blacklist snd-firewire-motu
+
+```
+
+_The list of modules is the most recent available at the time of writing at [Alsa Firewire Improve Repository](https://github.com/takaswie/snd-firewire-improve)._
+
+Now you can unload your loaded firewire modules or reboot.
 
 ## MIDI
 

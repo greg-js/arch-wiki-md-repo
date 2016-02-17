@@ -230,7 +230,7 @@ Each function is run [chrooted](/index.php/Chroot "Chroot") inside the _pacman_ 
 
 **Tip:** A prototype `.install` is provided at [/usr/share/pacman/proto.install](https://projects.archlinux.org/pacman.git/plain/proto/proto.install).
 
-Do not end the script with `exit`. This would prevent the contained functions from executing.
+**Note:** Do not end the script with `exit`. This would prevent the contained functions from executing.
 
 ### changelog
 

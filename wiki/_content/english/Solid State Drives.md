@@ -43,6 +43,7 @@ Solid State Drives (SSDs) are not PnP devices. Special considerations such as pa
     *   [6.5 Mushkin](#Mushkin)
     *   [6.6 OCZ](#OCZ)
     *   [6.7 Samsung](#Samsung)
+        *   [6.7.1 Native upgrade](#Native_upgrade)
     *   [6.8 SanDisk](#SanDisk)
 *   [7 Troubleshooting](#Troubleshooting)
     *   [7.1 Resolving NCQ errors](#Resolving_NCQ_errors)
@@ -353,6 +354,80 @@ Samsung notes that update methods other than using their Magician Software are "
 **Note:** Samsung does not make it obvious at all that they actually provide these. They seem to have 4 different firmware update pages, and each references different ways of doing things.
 
 Users preferring to run the firmware update from a live USB created under Linux (without using Samsung's "Magician" software under Microsoft Windows) can refer to [this post](http://fomori.org/blog/?p=933) for reference.
+
+#### Native upgrade
+
+Alternatively, the firmware can be upgraded natively, without making a bootable USB stick, as shown below.
+
+Lookup the Samsung website to get the path of the latest firmware for Windows, which is available as a disk image:
+
+```
+$ wget http://www.samsung.com/global/business/semiconductor/minisite/SSD/downloads/software/Samsung_SSD_840_EVO_EXT0DB6Q.iso
+
+```
+
+Setup the disk image:
+
+```
+$ udisksctl loop-setup -r -f Samsung_SSD_840_EVO_EXT0DB6Q.iso
+
+```
+
+This will make the ISO available as a loop device, and display the device path. Assuming it was `/dev/loop0`:
+
+```
+$ udisksctl mount -b /dev/loop0
+
+```
+
+Get the contents of the disk:
+
+```
+$ mkdir Samsung_SSD_840_EVO_EXT0DB6Q
+$ cp -r /run/media/$USER/CDROM/isolinux/ Samsung_SSD_840_EVO_EXT0DB6Q
+
+```
+
+Unmount the iso:
+
+```
+$ udisksctl unmount -b /dev/loop0
+$ cd Samsung_SSD_840_EVO_EXT0DB6Q/isolinux
+
+```
+
+There is a FreeDOS image here that contains the firmware. Mount the image as before:
+
+```
+$ udisksctl loop-setup -r -f btdsk.img
+$ udisksctl mount -b /dev/loop1
+$ cp -r /run/media/$USER/C04D-1342/ Samsung_SSD_840_EVO_EXT0DB6Q
+$ cd Samsung_SSD_840_EVO_EXT0DB6Q/C04D-1342/samsung
+
+```
+
+Get the disk number from magician:
+
+```
+# magician -L
+
+```
+
+Assuming it was 0:
+
+```
+# magician --disk 0 -F -p DSRD
+
+```
+
+Verify that the latest firmware has been installed:
+
+```
+# magician -L
+
+```
+
+Finally reboot.
 
 ### SanDisk
 

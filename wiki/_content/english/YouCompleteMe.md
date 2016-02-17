@@ -35,13 +35,13 @@ YCM uses a python script called `.ycm_extra_conf.py` to set project wide setting
 
 #### Extra conf structure
 
-A sample `.ycm_extra_conf.py` may be found [here](https://github.com/Valloric/ycmd/blob/master/cpp/ycm/.ycm_extra_conf.py). You should save a copy of this file in your project folder and customize it with adequate settings for your source files. The most important settings (which usually suffices for a minimal configuration) are the `-x` and `--std` options, which respectively tell to the sintax checker the language used in the project and the [standard](https://en.wikipedia.org/wiki/ISO/IEC_JTC_1/SC_22) followed. The `-x` value may be set to `c` or `c++`, while common values for the `--std` are `--std=c89`, `--std=c99`, `--std=c11`, `--std=c14` and their respective c++ version. The standard parameter will determine the warning and the errors in the syntax check (e.g., a line commented with `//` will be marked as unallowed in C89, but not under following versions of the standard).
+A sample `.ycm_extra_conf.py` may be found [here](https://github.com/Valloric/ycmd/blob/master/cpp/ycm/.ycm_extra_conf.py). You should save a copy of this file in your project folder and customize it with adequate settings for your source files. The most important settings (which usually suffices for a minimal configuration) are the `-x` and `--std` options, which respectively tells the syntax checker the language used in the project and the [standard](https://en.wikipedia.org/wiki/ISO/IEC_JTC_1/SC_22) followed. The `-x` value may be set to `c` or `c++`, while common values for the `--std` are `--std=c89`, `--std=c99`, `--std=c11`, `--std=c14` and their respective c++ version. The standard parameter will determine the warning and the errors in the syntax check (e.g., a line commented with `//` will be marked as unallowed in C89, but not under following versions of the standard).
 
-A third party script and vim plugin for the automatic generation of the `.ycm_extra_conf.py` is avaible on [this repo](https://github.com/rdnetto/YCM-Generator).
+A third party script and vim plugin for the automatic generation of the `.ycm_extra_conf.py` is available on [this repo](https://github.com/rdnetto/YCM-Generator).
 
 #### Extra conf location
 
-The program searches for the `.ycm_extra_conf.py` file on startup in the current source file directory and in its parent folders. If the file is not found, YCM features are not avaible. A global file (used as fallback when a local extra conf file is not found) may be set adding the following to `~/.vimrc`:
+The program searches for the `.ycm_extra_conf.py` file on startup in the current source file directory and in its parent folders. If the file is not found, YCM features are not available. A global file (used as fallback when a local extra conf file is not found) may be set adding the following to `~/.vimrc`:
 
  `~/.vimrc`  `let g:ycm_global_ycm_extra_conf = '/path/to/the/file'` 
 
@@ -49,7 +49,7 @@ Being the extra conf file a python script, when a file is found a confirmation i
 
  `~/.vimrc`  `let g:ycm_confirm_extra_conf = 0` 
 
-For a less unsecure solution, when the confirmation is enabled an extra conf file blacklist/whitelist may be set assigning a list of patterns to the `ycm_extra_conf_globlist` variable. A file matching one pattern is blacklisted if the pattern begins with `!`, whitelisted otherwise, confirmation is asked if the file does not match any pattern. Rule precedence is determined by the order, and the first match is applied. Some glob pattern rules are avaible:
+For a less unsecure solution, when the confirmation is enabled an extra conf file blacklist/whitelist may be set assigning a list of patterns to the `ycm_extra_conf_globlist` variable. A file matching one pattern is blacklisted if the pattern begins with `!`, whitelisted otherwise, confirmation is asked if the file does not match any pattern. Rule precedence is determined by the order, and the first match is applied. Some glob pattern rules are available:
 
 *   * matches everything
 *   ? matches any single character
@@ -101,7 +101,7 @@ To run only current file:
 
 ```
 
-A list of avaible commands may be found [here](http://eclim.org/cheatsheet.html).
+A list of available commands may be found [here](http://eclim.org/cheatsheet.html).
 
 ### C#
 

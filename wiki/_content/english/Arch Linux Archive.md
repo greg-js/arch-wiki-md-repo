@@ -13,18 +13,10 @@ The **Arch Linux Archive** (a.k.a **ALA**), formerly known as **Arch Linux Rollb
     *   [2.1 /repos](#.2Frepos)
     *   [2.2 /packages](#.2Fpackages)
     *   [2.3 /iso](#.2Fiso)
-*   [3 agetpkg](#agetpkg)
-    *   [3.1 Download a previous version of ferm package](#Download_a_previous_version_of_ferm_package)
-    *   [3.2 Download xterm version 296](#Download_xterm_version_296)
-    *   [3.3 List all zsh versions](#List_all_zsh_versions)
-    *   [3.4 Install all gvfs packages in version 1.26.0 release 3](#Install_all_gvfs_packages_in_version_1.26.0_release_3)
-    *   [3.5 Download all pwgen packages](#Download_all_pwgen_packages)
-*   [4 FAQ](#FAQ)
-    *   [4.1 How to downgrade one package](#How_to_downgrade_one_package)
-    *   [4.2 How to restore all my packages at a specific date](#How_to_restore_all_my_packages_at_a_specific_date)
-*   [5 Sources](#Sources)
-*   [6 Future plan](#Future_plan)
-*   [7 History](#History)
+*   [3 FAQ](#FAQ)
+    *   [3.1 How to downgrade one package](#How_to_downgrade_one_package)
+    *   [3.2 How to restore all my packages at a specific date](#How_to_restore_all_my_packages_at_a_specific_date)
+*   [4 History](#History)
 
 ## Location
 
@@ -40,6 +32,8 @@ The following locations listed below are now closed:
 *   [http://seblu.net/a/arm](http://seblu.net/a/arm)
 *   [ftp://seblu.net/archlinux/arm](ftp://seblu.net/archlinux/arm)
 
+The [source code](https://github.com/seblu/archivetools) is also available for setting up your own mirror.
+
 ## Directories
 
 The **Archive** is split into 3 main directories detailed below.
@@ -53,7 +47,7 @@ The **Archive** is split into 3 main directories detailed below.
 
 ### /repos
 
-The [repos](http://ala.seblu.net/repos) directory contains daily snapshots of official mirror organized by date like in the following example.
+The [repos](https://archive.archlinux.org/repos) directory contains daily snapshots of official mirror organized by date like in the following example.
 
 ```
 repos
@@ -110,7 +104,7 @@ Note: The last 3 special directories (**last**, **week** and **month**) which li
 
 ### /packages
 
-The [packages](http://ala.seblu.net/packages) directory contains all versions of each package with their signatures. One directory by package and package directories are grouped by their first letter.
+The [packages](https://archive.archlinux.org/packages) directory contains all versions of each package with their signatures. One directory by package and package directories are grouped by their first letter.
 
 ```
 ├── packages
@@ -134,7 +128,7 @@ The [packages](http://ala.seblu.net/packages) directory contains all versions of
 
 ```
 
-You can use the magic subdirectory [.all](http://ala.seblu.net/packages/.all) to access all packages by their name. In a nutshell, all versions of each package in one flat directory. No clear-text listing allowed here.
+You can use the magic subdirectory [.all](https://archive.archlinux.org/packages/.all) to access all packages by their name. It acts as a flat directory containing all versions of every package.
 
 ```
 ├── packages
@@ -147,11 +141,23 @@ You can use the magic subdirectory [.all](http://ala.seblu.net/packages/.all) to
 
 ```
 
-An lightweight index, named [index.0.xz](http://ala.seblu.net/packages/.all/index.0.xz) is available to list all package in once.
+You can download the full package list (there are over a hundred thousand packages) as a compressed index: [index.0.xz](https://archive.archlinux.org/packages/.all/index.0.xz).
+
+ `$ curl https://archive.archlinux.org/packages/.all/index.0.xz | unxz` 
+
+```
+0ad-a14-1-i686
+0ad-a14-1-x86_64
+0ad-a14-2-i686
+...
+zziplib-0.13.62-1-x86_64
+zziplib-0.13.62-2-i686
+zziplib-0.13.62-2-x86_64
+```
 
 ### /iso
 
-The [iso](http://ala.seblu.net/iso) directory contains official ISO images and bootstrap tarballs sorted by release date.
+The [iso](https://archive.archlinux.org/iso) directory contains official ISO images and bootstrap tarballs sorted by release date.
 
 ```
 ├── 2014.09.03
@@ -175,56 +181,13 @@ The [iso](http://ala.seblu.net/iso) directory contains official ISO images and b
 
 ```
 
-## agetpkg
-
-[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) is a command line tool used to quickly list/get/install packages stored in the Archive.
-
-##### Download a previous version of ferm package
-
-```
-agetpkg ferm
-
-```
-
-##### Download xterm version 296
-
-```
-agetpkg ^xterm 296
-
-```
-
-##### List all zsh versions
-
-```
-agetpkg -l zsh$
-
-```
-
-##### Install all gvfs packages in version 1.26.0 release 3
-
-```
-agetpkg -i gvfs 1.26.0 3
-
-```
-
-##### Download all pwgen packages
-
-```
-agetpkg -g -a pwgen
-
-```
-
 ## FAQ
 
 ### How to downgrade one package
 
-You can use [#agetpkg](#agetpkg) to easily download a specific package version from the Archive.
+Find the package you want under [/packages](#.2Fpackages). Download it and install it using `pacman -U`.
 
-Or you can do it manually:
-
-1.  Run your favorite internet browser and go to [https://archive.archlinux.org/packages](https://archive.archlinux.org/packages);
-2.  Go to the package you need and download it;
-3.  Run `pacman -U _pkgname_.pkg.tar.xz` as root.
+See also [Downgrading packages#Automation](/index.php/Downgrading_packages#Automation "Downgrading packages") for tools that simplify the process.
 
 ### How to restore all my packages at a specific date
 
@@ -263,18 +226,7 @@ Then update the database and force downgrade:
 
 ```
 
-**Note:** It's not safe to mix Archive and up-to-date mirrors. In case of download failure, you can fall-back on an upstream package and you will have packages not from the same epoch as the rest of the system.
-
-## Sources
-
-*   [archivetools](https://github.com/seblu/archivetools) -- Software to run an Archive server
-*   [agetpkg](https://github.com/seblu/agetpkg) -- Software to easy downgrade package from the Archive
-
-## Future plan
-
-*   Move to official infrastructure.
-*   Automatic clean-up after a defined amount of time?
-*   Archive more stuff?
+**Note:** It's [not safe](/index.php/Partial_upgrades "Partial upgrades") to mix Archive and up-to-date mirrors. In case of download failure, you can fall-back on an upstream package and you will have packages not from the same epoch as the rest of the system.
 
 ## History
 

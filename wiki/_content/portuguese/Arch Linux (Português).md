@@ -2,19 +2,16 @@ O Arch Linux é uma distribuição GNU/Linux i686/x86_64 de uso geral desenvolvi
 
 ## Contents
 
-*   [1 História](#Hist.C3.B3ria)
-*   [2 Simplicidade](#Simplicidade)
-*   [3 Modernidade](#Modernidade)
-*   [4 Empacotamento de Software](#Empacotamento_de_Software)
-*   [5 Integridade do Código-Fonte](#Integridade_do_C.C3.B3digo-Fonte)
-*   [6 Comunidade](#Comunidade)
-*   [7 Resumo](#Resumo)
-
-## História
-
-O Arch Linux foi fundado pelo programador canadense Judd Vinet. Seu primeiro lançamento formal, o Arch Linux 0.1, foi em 11 de março de 2002\. Embora o Arch seja completamente independente, ele se inspira na simplicidade de outras distribuições, incluindo o [Slackware](http://slackware.com), o [CRUX](http://www.crux.nu) e o [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). Em julho de 2007, Judd Vinet deixou o cargo de Líder de Projeto para perseguir outros interesses e foi substituído por Aaron Griffin, que permanece como líder do projeto até hoje.
-
-Veja também: [History of Arch Linux (Português)](/index.php/History_of_Arch_Linux_(Portugu%C3%AAs) "History of Arch Linux (Português)").
+*   [1 Simplicidade](#Simplicidade)
+*   [2 Modernidade](#Modernidade)
+*   [3 Empacotamento de Software](#Empacotamento_de_Software)
+*   [4 Integridade do Código-Fonte](#Integridade_do_C.C3.B3digo-Fonte)
+*   [5 Comunidade](#Comunidade)
+*   [6 Resumo](#Resumo)
+*   [7 História](#Hist.C3.B3ria)
+    *   [7.1 Os primeiros anos](#Os_primeiros_anos)
+    *   [7.2 Os anos médios](#Os_anos_m.C3.A9dios)
+    *   [7.3 O alvorecer da era A. Griffin](#O_alvorecer_da_era_A._Griffin)
 
 ## Simplicidade
 
@@ -47,3 +44,23 @@ Veja a página [Getting Involved (Português)](/index.php/Getting_Involved_(Port
 ## Resumo
 
 Para resumir: o Arch Linux é uma distribuição simples e versátil, projetada para atender às necessidades de usuários competentes do Linux®. Ele é tanto poderoso quanto fácil de manter, tornando-se a distro ideal para servidores e estações de trabalho. Leve-o à direção que você quiser: se você compartilha essa visão sobre o que uma distribuição GNU/Linux deve ser, então você é bem-vindo e encorajado a usá-lo livremente, envolver-se com o projeto, e contribuir com a comunidade. Bem-vindo ao Arch!
+
+## História
+
+O Arch Linux foi fundado pelo programador canadense Judd Vinet. Seu primeiro lançamento formal, o Arch Linux 0.1, foi em 11 de março de 2002\. Embora o Arch seja completamente independente, ele se inspira na simplicidade de outras distribuições, incluindo o [Slackware](http://slackware.com), o [CRUX](http://www.crux.nu) e o [BSD](http://en.wikipedia.org/wiki/Berkeley_Software_Distribution). Em julho de 2007, Judd Vinet deixou o cargo de Líder de Projeto para perseguir outros interesses e foi substituído por Aaron Griffin, que permanece como líder do projeto até hoje.
+
+### Os primeiros anos
+
+Judd Vinet, um programador canadense e guitarrista ocasional, começou a desenvolveu o Arch Linux no começo de 2001\. Seu primeiro lançamento formal, Arch Linux 0.1, foi em 11 de março de 2002\. Inspirado pela elegante simplicidade do [Slackware](https://en.wikipedia.org/wiki/Slackware "wikipedia:Slackware"), distribuição Linux polonesa, e o [CRUX](https://en.wikipedia.org/wiki/CRUX "wikipedia:CRUX"), mas desapontado com a falta de gerenciamento de pacotes, Vinet construiu sua própria distribuição com princípios similares a outras distros; no entanto, ele também escreveu um gerenciador de programas chamado [pacman](/index.php/Pacman "Pacman"), para manipular automaticamente a instalação, remoção e upgrade de pacotes.
+
+### Os anos médios
+
+A comunidade inicial do Arch cresceu firmemente, como evidencia [esse gráfico do número de posts nos fóruns, usuários e relatórios de bugs](https://dev.archlinux.org/~dan/archgrowth.png). Além disso, foi desde o começo conhecida como [uma comunidade aberta, amigável e prestativa](http://www.osnews.com/story/4827).
+
+### O alvorecer da era A. Griffin
+
+No fim de 2007, Judd Vinet se afastou da participação ativa como desenvolvedor do Arch, e [transferiu sem problemas o reinado para Aaron Griffin](https://bbs.archlinux.org/viewtopic.php?id=38024), também conhecido como Phrakture, que continua como líder do desenvolvimento do Arch até hoje.
+
+Com o passar dos anos, a comunidade do Arch continuou a crescer e maturar, e recentemente tem recebido uma quantidade incomum de [atenção e análises](/index.php?title=Arch_Linux_Press_Review_(Portugu%C3%AAs)&action=edit&redlink=1 "Arch Linux Press Review (Português) (page does not exist)") para uma distro Linux de seu tamanho.
+
+Os desenvolvedores do Arch continuam a ser voluntários não-pagos e de meio expediente, e não existem expectativas de monetizar o Arch Linux, de modo que ele continuará a ser livre em todos os sentidos da palavra. Aqueles curiosos para ler mais detalhes sobre a história do desenvolvimento do Arch podem navegar na [entrada sobre o Arch na Internet Archive Wayback Machine](http://web.archive.org/web/*/archlinux.org).

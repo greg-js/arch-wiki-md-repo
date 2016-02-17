@@ -18,7 +18,8 @@
 *   [4 Adding an authoritative DNS server](#Adding_an_authoritative_DNS_server)
 *   [5 WAN facing DNS](#WAN_facing_DNS)
 *   [6 Issues concerning num-threads](#Issues_concerning_num-threads)
-*   [7 See also](#See_also)
+*   [7 Block advertising](#Block_advertising)
+    *   [7.1 See also](#See_also)
 
 ## Installation
 
@@ -331,6 +332,20 @@ Set the `outgoing-range` to as large a value as possible, see the sections in th
 
 Because of the limit on `outgoing-range` thus also limits `num-queries-per-thread`, it is better to compile with [libevent](https://www.archlinux.org/packages/?name=libevent), so that there is no `1024` limit on `outgoing-range`. If you need to compile this way for a heavy duty DNS server then you will need to compile the programme from source instead of using the [unbound](https://www.archlinux.org/packages/?name=unbound) package.
 
-## See also
+## Block advertising
+
+You can use the following file and simply include it in your unbound configuration: [adservers](https://pgl.yoyo.org/adservers/serverlist.php?hostformat=unbound&showintro=0&startdate%5Bday%5D=&startdate%5Bmonth%5D=&startdate%5Byear%5D=&mimetype=plaintext)
+
+ `/etc/unbound/unbound.conf` 
+
+```
+...
+include: /etc/unbound/adservers
+
+```
+
+**Note:** In order to return some OK statuses on those hosts, you can change the 127.0.0.1 redirection to a server you control and have that server respond with empty 204 replies, see [this page](http://www.shadowandy.net/2014/04/adblocking-nginx-serving-1-pixel-gif-204-content.htm)
+
+### See also
 
 *   [Block hosts that contain advertisements](https://github.com/jodrell/unbound-block-hosts/)

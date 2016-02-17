@@ -33,50 +33,7 @@ Etckeeper supports using pacman as a `LOWLEVEL_PACKAGE_MANAGER` in `etckeeper.co
 
 ### Pacman hooks
 
-With [pacman](https://www.archlinux.org/packages/?name=pacman) >= 5.0.0, support for hooks was added to [pacman](/index.php/Pacman "Pacman") [[1]](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0). To automatically run etckeeper's pre- and post-transaction, create the two hooks files below. You may need to create the hooks directory first:
-
-```
-mkdir -p /etc/pacman.d/hooks
-
-```
-
-`/etc/pacman.d/hooks/etckeeper-pre.hook`
-
-```
-[Trigger]
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Type = Package
-Target = *
-
-[Action]
-Description = Etckeeper Pre-install
-Depends = etckeeper
-When = PreTransaction
-Exec = /usr/bin/etckeeper pre-install
-
-```
-
-`/etc/pacman.d/hooks/etckeeper-post.hook`
-
-```
-[Trigger]
-Operation = Install
-Operation = Upgrade
-Operation = Remove
-Type = Package
-Target = *
-
-[Action]
-Description = Etckeeper Post-install
-Depends = etckeeper
-When = PostTransaction
-Exec = /usr/bin/etckeeper post-install
-
-```
-
-For details on pacman hooks, see `man alpm-hooks`.
+As of _etckeeper_ version 1.18.3-1, the pre-install and post-install commands are executed automatically through [pacman hooks](/index.php/Pacman#Hooks "Pacman").
 
 ### systemd
 

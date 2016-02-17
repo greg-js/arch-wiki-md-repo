@@ -315,7 +315,7 @@ Now create a python function that will decrypt the password:
 from subprocess import check_output
 
 def get_pass(account):
-    return check_output("pass Mail/" + account, shell=True).rstrip()
+    return check_output("pass Mail/" + account, shell=True).splitlines()[0]
 ```
 
 This is an example for a multi-account setup. You can customize the argument to _pass_ as defined previously.

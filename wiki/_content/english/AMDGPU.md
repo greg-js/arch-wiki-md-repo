@@ -1,6 +1,6 @@
 **amdgpu** is the open source graphics driver for the latest AMD Radeon graphics cards.
 
-At the moment there is only support for the [Volcanic Islands](https://wiki.freedesktop.org/xorg/RadeonFeature/#index1h2) and some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family. AMD has yet to decide to add support older cards in the near future.
+At the moment there is only support for the [Volcanic Islands](http://xorg.freedesktop.org/wiki/RadeonFeature/) and some cards of the [Sea Islands](https://www.phoronix.com/scan.php?page=news_item&px=AMD-AMDGPU-Released) family. AMD has yet to decide to add support older cards in the near future.
 
 Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/index.php/ATI "ATI") or [AMD's proprietary](/index.php/AMD_Catalyst "AMD Catalyst") driver instead.
 
@@ -12,6 +12,7 @@ Owners of unsupported AMD/ATI video cards can use the [Radeon open source](/inde
     *   [3.1 Enable early KMS](#Enable_early_KMS)
 *   [4 Performance tuning](#Performance_tuning)
     *   [4.1 Enabling video acceleration](#Enabling_video_acceleration)
+*   [5 Enable amdgpu for Sea Islands Cards](#Enable_amdgpu_for_Sea_Islands_Cards)
 
 ## Installation
 
@@ -76,3 +77,16 @@ The change takes effect at the next reboot.
 ### Enabling video acceleration
 
 [VA-API](/index.php/VA-API "VA-API") and [VDPAU](/index.php/VDPAU "VDPAU") can be installed to provide hardware accelerated video encoding and decoding.
+
+## Enable amdgpu for Sea Islands Cards
+
+`amdgpu` has experimental support for Sea Islands (CI) cards, which is disabled by default. One possible reason why you might want to enable it and switch from radeon to `amdgpu` is that AMD announced their user space [Vulkan](https://www.khronos.org/vulkan/) driver will only be supporting the new `amdgpu` stack [[1]](https://phoronix.com/scan.php?page=news_item&px=AMDGPU-Vulkan-Driver-Only). Same might be the case for the new OpenCL driver, which was also mentioned in the [XDC presentation](http://www.x.org/wiki/Events/XDC2015/Program/deucher_zhou_amdgpu.pdf). If you want to enable `amdgpu` and use it with your Sea Islands product, you have to recompile your kernel. Probably the easiest way to setup a custom kernel is using the ABS, described in the article [Kernels/Arch Build System](/index.php/Kernels/Arch_Build_System "Kernels/Arch Build System"). Set "Enable amdgpu support for CIK parts" to "yes", then compile and install your kernel.
+
+```
+CONFIG_DRM_AMDGPU_CIK=Y
+
+```
+
+To prevent `radeon` from loading, you can disable it in the Kconfig or [blacklist](https://wiki.archlinux.org/index.php/Kernel_modules#Blacklisting) the `radeon` module.
+
+ `/etc/modprobe.d/amdgpu.conf`  `blacklist radeon`

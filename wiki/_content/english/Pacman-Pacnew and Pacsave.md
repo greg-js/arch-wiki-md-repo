@@ -77,6 +77,8 @@ If the user has modified one of the files specified in `backup` then that file w
 
 ### .pacorig
 
+As of [version 5.0](https://projects.archlinux.org/pacman.git/tree/NEWS?h=v5.0.0#n20), pacman no longer creates _.pacorig_ files.
+
 When a file (usually a configuration found in `/etc`) is encountered during package installation or upgrade that does not belong to any installed package but is listed in `backup` for the package in the current operation, it will be saved with a _.pacorig_ extension and replaced with the version of the file from the package. Usually this happens when a configuration file has been moved from one package to another. If such a file were not listed in `backup`, pacman would abort with a file conflict error.
 
 **Note:** Because _.pacorig_ files tend to be created for special circumstances, there is no universal method for handling them. It may be helpful to consult the [Arch News](https://www.archlinux.org/news/) for handling instructions if it is a known case.

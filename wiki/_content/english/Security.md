@@ -45,6 +45,7 @@ This article contains recommendations and best practices for hardening an Arch L
     *   [9.2 Kernel parameters](#Kernel_parameters)
     *   [9.3 SSH](#SSH)
     *   [9.4 DNS](#DNS)
+    *   [9.5 Proxies](#Proxies)
 *   [10 Authenticating packages](#Authenticating_packages)
 *   [11 Follow NVD/CVE alerts](#Follow_NVD.2FCVE_alerts)
 *   [12 Physical security](#Physical_security)
@@ -404,6 +405,12 @@ Avoid using [Secure Shell](/index.php/Secure_Shell "Secure Shell") without [requ
 
 See [DNSSEC](/index.php/DNSSEC "DNSSEC") and [DNSCrypt](/index.php/DNSCrypt "DNSCrypt").
 
+### Proxies
+
+Proxies are commonly used as an extra layer between applications and the network, sanitizing data from untrusted sources. The attack surface of a small proxy running with lower privileges is significantly smaller than a complex application running with the end user privileges.
+
+For example the DNS resolver is implemented in the libc, that is linked with the application (that may be running as root), so a bug in the DNS resolver may lead to a remote code execution. This can be prevented installing a DNS caching server (like [Dnsmasq](/index.php/Dnsmasq "Dnsmasq")), that acts as proxy (running as nobody). [[2]](https://googleonlinesecurity.blogspot.it/2016/02/cve-2015-7547-glibc-getaddrinfo-stack.html)
+
 ## Authenticating packages
 
 [Attacks on package managers](http://www.cs.arizona.edu/stork/packagemanagersecurity/attacks-on-package-managers.html#overview) are possible without proper use of package signing, and can affect even package managers with [proper signature systems](http://www.cs.arizona.edu/stork/packagemanagersecurity/faq.html). Arch uses package signing by default and relies on a web of trust from 5 trusted master keys. See [Pacman-key](/index.php/Pacman-key "Pacman-key") for details.
@@ -420,7 +427,7 @@ Subscribe to the Common Vulnerabilities and Exposure Security Alert updates, mad
 
 Physical access to a computer is root access given enough time and resources. However, a high _practical_ level of security can be obtained by putting up enough barriers.
 
-An attacker can gain full control of your computer on the next boot by simply attaching a malicious IEEE 1394 (FireWire), Thunderbolt or PCI Express device as they are given full memory access.[[2]](http://www.breaknenter.org/projects/inception/) There is little you can do from preventing this, or modification of the hardware itself - such as flashing malicious firmware onto a drive. However, the vast majority of attackers will not be this knowledgeable and determined.
+An attacker can gain full control of your computer on the next boot by simply attaching a malicious IEEE 1394 (FireWire), Thunderbolt or PCI Express device as they are given full memory access.[[3]](http://www.breaknenter.org/projects/inception/) There is little you can do from preventing this, or modification of the hardware itself - such as flashing malicious firmware onto a drive. However, the vast majority of attackers will not be this knowledgeable and determined.
 
 [#Disk encryption](#Disk_encryption) will prevent access to your data if the computer is stolen, but malicious firmware can be installed to obtain this data upon your next log in by a resourceful attacker.
 

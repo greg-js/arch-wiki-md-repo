@@ -9,6 +9,7 @@
 *   [5 Troubleshooting](#Troubleshooting)
     *   [5.1 Default NZBGet credentials](#Default_NZBGet_credentials)
     *   [5.2 NZBGet crashes on start](#NZBGet_crashes_on_start)
+    *   [5.3 Alternative systemd service](#Alternative_systemd_service)
 *   [6 See also](#See_also)
 
 ## Installation
@@ -26,7 +27,27 @@ Copy the template configuration file to a custom directory:
 
 ```
 
-Update the `/var/lib/nzbget/.nzbget` config file.
+Update the configuration before starting NZBGet:
+
+ `/var/lib/nzbget/.nzbget` 
+
+```
+..
+WebDir=/usr/share/nzbget/webui
+ScriptDir=${WebDir}/scripts
+LockFile=/var/lib/nzbget/nzbget.lock
+ConfigTemplate=/usr/share/nzbget/nzbget.conf
+DaemonUsername=nzbget
+..
+```
+
+Make sure the permissions are set correctly:
+
+```
+# chown -R nzbget:nzbget /var/lib/nzbget
+# chmod -R 750 /var/lib/nzbget
+
+```
 
 ## Starting NZBGet
 
@@ -53,15 +74,6 @@ After adding a system user, update the main configuration file using the webinte
 DaemonUsername=nzbget # system user
 MainDir=/home/user/Downloads/NZBGet
 UMask=0022 # 755 for dirs - 644 for files
-```
-
-It may be necessary to update permissions of the `/var/lib/nzbget` directory:
-
-```
-# chown -R nzbget:nzbget /var/lib/nzbget
-# chmod 775 /var/lib/nzbget/
-# chmod 664 /var/lib/nzbget/.nzbget
-
 ```
 
 Create and set permissions for the desired directories:
@@ -91,6 +103,33 @@ The default credentials for NZBGet are `nzbget` as user and `tegbzn6789` as pass
 ### NZBGet crashes on start
 
 This may happen when the user edited the NZBGet configuration by the Web-interface (located at [http://localhost:6789](http://localhost:6789)), corrupting the configuration-file. Clean-up the configuration-file and restart the server/daemon again.
+
+### Alternative systemd service
+
+The following `nzbget.service` provides an alternative solution for (re)starting NZBGet when using [systemd](/index.php/Systemd "Systemd"):
+
+ `/usr/lib/systemd/system/nzbget.service` 
+
+```
+[Unit]
+Description=NZBGet Daemon
+Documentation=[http://nzbget.net/Documentation](http://nzbget.net/Documentation)
+After=network.target
+
+[Service]
+User=nzbget
+Group=nzbget
+Type=forking
+PIDFile=/var/lib/nzbget/nzbget.lock
+ExecStart=/usr/bin/nzbget -D
+ExecStop=/usr/bin/nzbget -Q
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+```
 
 ## See also
 

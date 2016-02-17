@@ -28,6 +28,7 @@ _pacman_ is written in the C programming language and uses the _.pkg.tar.xz_ pac
         *   [2.1.6 Maintain several configuration files](#Maintain_several_configuration_files)
     *   [2.2 Repositories](#Repositories)
     *   [2.3 Package security](#Package_security)
+    *   [2.4 Hooks](#Hooks)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 "Failed to commit transaction (conflicting files)" error](#.22Failed_to_commit_transaction_.28conflicting_files.29.22_error)
     *   [3.2 "Failed to commit transaction (invalid or corrupted package)" error](#.22Failed_to_commit_transaction_.28invalid_or_corrupted_package.29.22_error)
@@ -475,6 +476,12 @@ The order of repositories in the configuration files matters; repositories liste
 ### Package security
 
 _pacman_ 4 supports package signatures, which add an extra layer of security to the packages. The default configuration, `SigLevel = Required DatabaseOptional`, enables signature verification for all the packages on a global level: this can be overridden by per-repository `SigLevel` lines as shown above. For more details on package signing and signature verification, take a look at [pacman-key](/index.php/Pacman-key "Pacman-key").
+
+### Hooks
+
+_pacman_ can run pre- and post-transaction hooks from the `/usr/share/libalpm/hooks/` directory; more directories can be specified with the `HookDir` option in `pacman.conf`.
+
+For more information on the alpm hooks, see the alpm-hooks(5) man page.
 
 ## Troubleshooting
 

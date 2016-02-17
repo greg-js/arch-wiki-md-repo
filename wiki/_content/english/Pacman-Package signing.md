@@ -214,15 +214,29 @@ This might actually be the solution if you get a message like `error: linux: sig
 
 ### Updating keys via proxy
 
-There was a [bug](https://bugs.g10code.com/gnupg/issue1786) in [GnuPG](/index.php/GnuPG "GnuPG") which prevents updating keys via http proxies. As of v.2.1.9, while the bug appears handled, _gnupg_ may not honour the `http_proxy` environment variable. As a workaround, add:
+There was a [bug](https://bugs.g10code.com/gnupg/issue1786) in [GnuPG](/index.php/GnuPG "GnuPG") which prevents updating keys via http proxies. As of v.2.1.9, the bug is fixed, but to make it work, dirmngr (part of gnupg) needs to have "honor-http-proxy" set. As that's a non default option of dirmngr, and gpg uses it in the background, there's a need to add the files `/etc/gnupg/dirmngr.conf` and `/etc/pacman.d/gnupg/dirmngr.conf`, and include in them the line:
+
+```
+honor-http-proxy
+
+```
+
+According to the dirmngr man, home or /etc are used depending on being a daemon or not. If pacman-key was used without "honor-http-proxy" and failed, it seems a reboot is required for it take effect.
+
+Otherwise there's the option to call gpg like:
+
+```
+gpg --keyserver-option http-proxy=HOST:PORT
+
+```
+
+Or to add that option in whether `/etc/pacman.d/gnupg/gpg.conf` or in `/etc/gnupg/gpg.conf`:
 
 ```
 keyserver-options http-proxy = "http://user:password@server:port" 
 keyserver hkp://keyserver.kjsl.com:80
 
 ```
-
-to `/etc/pacman.d/gnupg/gpg.conf`.
 
 ## See also
 

@@ -152,16 +152,16 @@ This is a list of helper utilities that search and/or build packages.
 *   _Git clone_ means that the helper uses git clones instead of tarballs in line with AUR 4.
 
 | Name | Written In | Git clone | Clean build | Pacman-like Syntax | Shell Tab Completion | Secure (<small>see note above</small>) | Multilingual | Specificity |
-| apacman | Bash | No | Yes | Yes | No | Optional | No | Fork of packer. |
-| [aura](/index.php/Aura "Aura") | Haskell | No | Yes | Yes | Yes (bash/zsh/fish) | Yes | Yes | Handles backups, downgrades, ABS Support |
-| aurel | Emacs Lisp | No | N/A | No | No | Yes | No | Emacs integration. |
+| apacman | Bash | No | Yes | Yes | No | Optional | No | Fork of packer |
+| [aura](/index.php/Aura "Aura") | Haskell | No | Yes | Yes | Yes (bash/zsh/fish) | Yes | Yes | Handles backups, downgrades, ABS support |
+| aurel | Emacs Lisp | No | N/A | No | No | Yes | No | Emacs integration |
 | aurget | Bash | No | Yes | Yes | Yes (bash/zsh) | Optional | No | - |
-| bauerbill | Python | No | Yes | Yes | Yes (bash/zsh) | Yes | No | ABS Support, full AUR searches and package lists |
-| burgaur | Python 3 | No | Yes | No | No | Optional, with [mc](/index.php/Mc "Mc") | No | Wrapper around cower. |
-| cower | C | No [[3]](https://github.com/falconindy/cower/commit/5b6009e7c3d006263eee5827dd247ffeefa2dbb5) | N/A | No | Yes (bash/zsh) | Yes | No | No automatic build support. |
+| bauerbill | Python | No | Yes | Yes | Yes (bash/zsh) | Yes | No | Trust management, split package support, ABS support |
+| burgaur | Python 3 | No | Yes | No | No | Optional, with [mc](/index.php/Mc "Mc") | No | Wrapper around cower |
+| cower | C | No [[3]](https://github.com/falconindy/cower/commit/5b6009e7c3d006263eee5827dd247ffeefa2dbb5) | N/A | No | Yes (bash/zsh) | Yes | No | No automatic build support |
 | pacaur | Bash/C | Yes | Yes | Yes | Yes (bash/zsh) | Yes | Yes | Minimizes user interaction, split package support |
 | packer | Bash | No | Yes | Yes | No | Optional | No | - |
-| pbget | Python 3 | No | N/A | No | No | Yes | No | No automatic build support. |
+| pbget | Python 3 | No | N/A | No | No | Yes | No | No automatic build support |
 | PKGBUILDer | Python 3 | Yes | Yes | Yes | No | Optional | Yes | Automatic builds by default, use -F to disable |
 | prm | Bash | Yes | N/A | No | No | Yes | No | ABS support (svn) |
 | trizen | Perl | No | Yes | Yes | No | Yes | No | - |

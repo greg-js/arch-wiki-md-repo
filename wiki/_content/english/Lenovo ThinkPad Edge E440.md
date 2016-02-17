@@ -1,11 +1,11 @@
 | **Device** | **Status** | **Modules** |
 | Graphics | Working | xf86-video-intel |
 | Ethernet | Working | r8169 |
-| Wireless | Working | ath9k |
+| Wireless | Working | iwlwifi or ath9k |
 | Audio | Working | snd_hda_intel |
 | Touchpad | Working | xf86-input-synaptics |
 | Camera | Working | linux-uvc |
-| Card Reader | Not tested |
+| Card Reader | Working |
 | Bluetooth | Not tested |
 | Fingerprint scanner | Not working |
 
@@ -25,6 +25,7 @@ For a general overview of laptop-related articles and recommendations, see [Lapt
     *   [3.2 With Fn and Ctrl_L keys swapped, Ctrl_L+s hotkey is mapped into Alt_L](#With_Fn_and_Ctrl_L_keys_swapped.2C_Ctrl_L.2Bs_hotkey_is_mapped_into_Alt_L)
     *   [3.3 Blinking power LED after resume from suspend](#Blinking_power_LED_after_resume_from_suspend)
 *   [4 BIOS Update](#BIOS_Update)
+*   [5 lspci](#lspci)
 
 ## Hardware
 
@@ -34,18 +35,18 @@ Lenovo ThinkPad E440 comes with a wide range of available configurations.
 
 **Tip:** Below are the tested configurations at the time.
 
-| Feature | Configuration | Configuration |
-| System | E440 20C500FBRT | E440 20C5005LRT |
-| CPU | Intel(R) Core(TM) i3-4000M CPU @ 2.40GHz or i5-4200M @ 2.50 GHz | Intel(R) Pentium(R) CPU 3550M @ 2.30GHz |
-| Graphics | Intel HD 4600 | Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06) |
-| Ram | 4GB | 4GB |
-| Disk | 500GB 7200 rpm HDD | 500GB |
-| Display | 14" TFT 1366x768 | 14" TFT |
-| Wi-Fi | Intel Corporation Wireless 7260 | Intel Corporation Wireless 7260 (rev 73) |
-| Backlit Keyboard | No | No |
-| Fingerprint Scanner | Yes | Yes |
-| Bluetooth | Yes | Yes |
-| Cam | Yes | Yes |
+| Feature | Configuration |
+| System | E440 20C5005LRT |
+| CPU | Intel(R) Pentium(R) CPU 3550M @ 2.30GHz |
+| Graphics | Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06) |
+| RAM | 4GB |
+| Disk | 500GB |
+| Display | 14" TFT |
+| Wi-Fi | Intel Corporation Wireless 7260 (rev 73) |
+| Backlight Keyboard | No |
+| Fingerprint Scanner | Yes |
+| Bluetooth | Yes |
+| Cam | Yes |
 
 ## Configuration
 
@@ -63,7 +64,7 @@ The only tweak you may want is to resize active area. With default config, you c
 
 ### Backlight
 
-Backlight control in GNOME with multimedia keys (**Fn + F[5/6]**) works out of the box. To configure brigthness level on startup see [Backlight#Udev rule](/index.php/Backlight#Udev_rule "Backlight").
+Backlight control in GNOME with multimedia keys (**Fn + F[5/6]**) works out of the box. To configure brightness level on startup see [Backlight#Udev rule](/index.php/Backlight#Udev_rule "Backlight").
 
 ### Audio
 
@@ -100,51 +101,61 @@ For automation, create a script depending on the used [power management](/index.
 
 Steps below were tested by contributors of this page and work perfectly. **Always, do it at your own risk!**
 
-To update BIOS, follow these steps (alternatively, you can download the iso, burn it to a CD, and then boot from the CD):
+To update the BIOS from a USB drive, follow these steps (alternatively, you can download the iso, burn it to a CD, and then boot from the CD):
 
-1) Download firmware from official support page:
+1.  Download the latest firmware from the official [E440 Downloads](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e440?TabName=Downloads) page.
+2.  Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) utility.
+3.  Convert ISO image (change 'XX' to match the filename of downloaded .iso): `geteltorito.pl -o bios.img j9ujXXwd.iso` 
+4.  Write the image to the USB drive. Suppose, your drive is `/dev/sdb`. **Warning:** all information on USB stick will be lost!
+    1.  Unmount the drive: `sudo umount /dev/sdb` 
+    2.  Write image: `sudo dd if=bios.img of=/dev/sdb bs=1M` 
+5.  Reboot you PC and boot from your USB drive.
+6.  **FOLLOW ALL INSTRUCTIONS** written in the update utility!
 
-BIOS v2.16:
+## lspci
 
-```
-wget http://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/j9uj16wd.iso
-
-```
-
-BIOS v2.18:
-
-```
-wget http://download.lenovo.com/ibmdl/pub/pc/pccbbs/mobiles/j9uj18wd.iso
-
-```
-
-Newest version can be found at [E440 Downloads](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e440?TabName=Downloads)
-
-2) Install the [geteltorito](https://aur.archlinux.org/packages/geteltorito/) utility.
-
-3) Convert ISO image (change 'XX' to match the filename of downloaded .iso):
+**Note:** Model: E440 20C500FBRT
 
 ```
-geteltorito.pl -o bios.img j9ujXXwd.iso
-
-```
-
-4) Use USB stick to write image to. Suppose, you stick is **/dev/sdb**. **Warning:** all information on USB stick will be lost!
-
-4.1) Unmount all **/dev/sdb** partitions:
-
-```
-sudo umount /dev/sdbX (where 'X' is a partition of 'sdb')
+00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)
+00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)
+00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)
+00:14.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 04)
+00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)
+00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #1 (rev d4)
+00:1c.2 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3 (rev d4)
+00:1c.3 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #4 (rev d4)
+00:1c.4 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #5 (rev d4)
+00:1f.0 ISA bridge: Intel Corporation HM87 Express LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode] (rev 04)
+00:1f.3 SMBus: Intel Corporation 8 Series/C220 Series Chipset Family SMBus Controller (rev 04)
+02:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01)
+03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 10)
+04:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
 
 ```
 
-4.2) Write image:
+**Note:** Model: E440 20C5004YUS
 
 ```
-sudo dd if=bios.img of=/dev/sdb bs=1M
+00:00.0 Host bridge: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor DRAM Controller (rev 06)
+00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)
+00:03.0 Audio device: Intel Corporation Xeon E3-1200 v3/4th Gen Core Processor HD Audio Controller (rev 06)
+00:14.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB xHCI (rev 04)
+00:16.0 Communication controller: Intel Corporation 8 Series/C220 Series Chipset Family MEI Controller #1 (rev 04)
+00:1a.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #2 (rev 04)
+00:1b.0 Audio device: Intel Corporation 8 Series/C220 Series Chipset High Definition Audio Controller (rev 04)
+00:1c.0 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #1 (rev d4)
+00:1c.2 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #3 (rev d4)
+00:1c.3 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #4 (rev d4)
+00:1c.4 PCI bridge: Intel Corporation 8 Series/C220 Series Chipset Family PCI Express Root Port #5 (rev d4)
+00:1d.0 USB controller: Intel Corporation 8 Series/C220 Series Chipset Family USB EHCI #1 (rev 04)
+00:1f.0 ISA bridge: Intel Corporation HM87 Express LPC Controller (rev 04)
+00:1f.2 SATA controller: Intel Corporation 8 Series/C220 Series Chipset Family 6-port SATA Controller 1 [AHCI mode] (rev 04)
+00:1f.3 SMBus: Intel Corporation 8 Series/C220 Series Chipset Family SMBus Controller (rev 04)
+02:00.0 Unassigned class [ff00]: Realtek Semiconductor Co., Ltd. RTS5227 PCI Express Card Reader (rev 01)
+03:00.0 Ethernet controller: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller (rev 10)
+04:00.0 Network controller: Intel Corporation Wireless 7260 (rev 73)
 
 ```
-
-5) Reboot you PC and boot from your USB stick.
-
-6) FOLLOW ALL INSTRUCTIONS written in the update utility!

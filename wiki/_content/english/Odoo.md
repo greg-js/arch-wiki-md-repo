@@ -12,13 +12,15 @@ A thriving support and development community has grown up around Odoo, providing
     *   [1.3 Configuring Odoo to run with PostgreSQL](#Configuring_Odoo_to_run_with_PostgreSQL)
     *   [1.4 Starting the server](#Starting_the_server)
     *   [1.5 Logging in](#Logging_in)
-*   [2 Additional documentation](#Additional_documentation)
+*   [2 Running Odoo behind a reverse proxy](#Running_Odoo_behind_a_reverse_proxy)
+    *   [2.1 Using Nginx](#Using_Nginx)
+*   [3 Additional documentation](#Additional_documentation)
 
 ## Installation
 
 ### Installing Odoo
 
-Install the [odoo](https://aur.archlinux.org/packages/odoo/) package. Please note that the Odoo package comes with a bunch of python2 packages available in the [AUR](/index.php/AUR "AUR"). These dependencies and the size of Odoo require much disk space to be used (1.8Gio only for the source and the final Odoo pkg without its dependencies). If you are building manually in the current directory (i.e. without [AUR helpers](/index.php/AUR_helpers "AUR helpers")), please make sure your current directory is on a device with enough free space. If you are using an AUR helper, please [increase the size of your tmpfs](/index.php/Tmpfs#Examples "Tmpfs") or use an option specific to your AUR helper. [Yaourt](/index.php/Yaourt "Yaourt") for example allows you to specify your own destination for building packages; for this, see the `TMPDIR` statement from `/etc/yaourtrc`.
+Install the [odoo](https://aur.archlinux.org/packages/odoo/) package. Please note that the Odoo package comes with a bunch of python2 packages available in the [AUR](/index.php/AUR "AUR"). These dependencies and the size of Odoo require much disk space to be used (1.8Gio only for the source and the final Odoo pkg without its dependencies). If you are building manually in the current directory, please make sure your current directory is on a device with enough free space. If you are using an [AUR helper](/index.php/AUR_helper "AUR helper"), please [increase the size of your tmpfs](/index.php/Tmpfs#Examples "Tmpfs") or configure your AUR helper accordingly.
 
 ### Configuring PostgreSQL to run with Odoo
 
@@ -105,6 +107,76 @@ Use the command below to start odoo:
 ### Logging in
 
 Go to [http://localhost:8069](http://localhost:8069) in your web browser to access the Odoo login page.
+
+## Running Odoo behind a reverse proxy
+
+You can run odoo behind a web server such as [Apache](/index.php/Apache "Apache") or [Nginx](/index.php/Nginx "Nginx") in reverse proxy mode. This is useful for making odoo available in a local network, under a domaine name such as `odoo.mydomain.local`. It is also useful to enable caching for static resources, and reduce the load on your odoo application.
+
+For this to work, you need to make sure that your local DNS-server (such as [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq")) resolves the domain name you choose to the web server's IP address. If running on your local machine, you could simply add an entry to `/etc/hosts` like this:
+
+```
+127.0.0.1 odoo.mydomain.local
+
+```
+
+### Using Nginx
+
+Refer to [this guide](/index.php/Nginx#Managing_server_entries "Nginx") for how to create virtual hosts in Nginx.
+
+Assuming your local domain is called `mydomain.local`, and odoo is hosted on the same machine as your Nginx server, create a file inside the `servers-available` directory that contains this server block:
+
+ `/etc/nginx/servers-available/odoo` 
+
+```
+upstream odoo {
+    server 127.0.0.1:8069;
+}
+
+server {
+    listen 80;
+    server_name odoo.mydomain.local;
+    root        /usr/share/nginx/html;
+    index       index.html index.htm;
+    access_log  /var/log/nginx/odoo-mydomain-local.access.log;
+    error_log   /var/log/nginx/odoo-mydomain-local.error.log;
+
+    location / {
+        proxy_pass  http://odoo;
+        # force timeouts if the backend dies
+        proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+        proxy_redirect off;
+
+        # set headers
+        proxy_set_header    Host            $host;
+        proxy_set_header    X-Real-IP       $remote_addr;
+        proxy_set_header    X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header    X-Forwarded-Proto https;
+    }
+
+    # cache some static data in memory for 60mins
+    location ~* /web/static/ {
+        proxy_cache_valid 200 60m;
+        proxy_buffering on;
+        expires 864000;
+        proxy_pass http://odoo;
+    }
+}
+
+```
+
+To enable, simple create a symlink:
+
+```
+# ln -s /etc/nginx/servers-available/odoo /etc/nginx/servers-enabled/odoo
+
+```
+
+Reload or restart `nginx` service to enable the new configuration.
+
+```
+# systemctl restart nginx.service
+
+```
 
 ## Additional documentation
 

@@ -996,7 +996,7 @@ If a custom build of NVIDIA's module is used instead of the package from the _ex
 ### Crashing in general
 
 *   Try disabling `RenderAccel` in xorg.conf.
-*   If Xorg outputs an error about "conflicting memory type" or "failed to allocate primary buffer: out of memory", add `nopat` at the end of the `kernel` line in `/boot/grub/menu.lst`.
+*   If Xorg outputs an error about `"conflicting memory type"` or `"failed to allocate primary buffer: out of memory"`, or crashes with a "Signal 11" while using nvidia-96xx drivers, add `nopat` to your [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 *   If the NVIDIA compiler complains about different versions of GCC between the current one and the one used for compiling the kernel, add in `/etc/profile`:
 
 ```
@@ -1004,7 +1004,7 @@ export IGNORE_CC_MISMATCH=1
 
 ```
 
-*   If Xorg is crashing with a "Signal 11" while using nvidia-96xx drivers, try disabling PAT. Pass the argument `nopat` to [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
+*   If Xorg is crashing , try disabling PAT. Pass the argument `nopat` to [kernel parameters](/index.php/Kernel_parameters "Kernel parameters").
 
 More information about troubleshooting the driver can be found in the [NVIDIA forums.](https://forums.geforce.com/)
 
@@ -1181,7 +1181,7 @@ export VDPAU_NVIDIA_NO_OVERLAY=1
 
 ### Xorg fails to load or Red Screen of Death
 
-If you get a red screen and use GRUB disable the GRUB framebuffer by editing `/etc/default/grub` and uncomment GRUB_TERMINAL_OUTPUT. For more information see [GRUB/Tips and tricks#Disable framebuffer](/index.php/GRUB/Tips_and_tricks#Disable_framebuffer "GRUB/Tips and tricks").
+If you get a red screen and use GRUB, disable the GRUB framebuffer by editing `/etc/default/grub` and uncomment `GRUB_TERMINAL_OUTPUT=console`. For more information see [GRUB/Tips and tricks#Disable framebuffer](/index.php/GRUB/Tips_and_tricks#Disable_framebuffer "GRUB/Tips and tricks").
 
 ### Black screen on systems with Intel integrated GPU
 

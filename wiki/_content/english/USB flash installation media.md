@@ -149,16 +149,16 @@ $ diskutil list
 
 ```
 
-Figure out what your USB device is called with `mount` or `sudo dmesg | tail` (e.g. `/dev/disk1`) and unmount the partitions on the device (i.e., /dev/disk1s1) while keeping the device proper (i.e., /dev/disk1):
+Figure out what your USB device is called with `mount` or `sudo dmesg | tail` (e.g. `/dev/disk2`) and unmount the partitions on the device (i.e., /dev/disk2s1) while keeping the device proper (i.e., /dev/disk2):
 
 ```
-$ diskutil unmountDisk /dev/disk1
+$ diskutil unmountDisk /dev/disk2
 
 ```
 
 Now we can continue in accordance with the instructions above (but, if you are using the OS X `dd`, use `/dev/rdisk` instead of `/dev/disk`, and use `bs=1M`. `rdisk` means "raw disk" and is much faster on OS X, and `bs=1M` indicates a 1 MB block size).
 
- `# dd if=image.iso of=/dev/rdisk1 bs=1M` 
+ `# dd if=image.iso of=/dev/rdisk2 bs=1M` 
 
 ```
 20480+0 records in
@@ -170,7 +170,7 @@ Now we can continue in accordance with the instructions above (but, if you are u
 It is probably a good idea to eject your drive before physical removal at this point:
 
 ```
-$ diskutil eject /dev/disk1
+$ diskutil eject /dev/disk2
 
 ```
 

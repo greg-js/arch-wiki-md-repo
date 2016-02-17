@@ -76,6 +76,8 @@ Old AUR packages can be obtained from [aur-mirror](http://pkgbuild.com/git/aur-m
 
 The [downgrade](https://aur.archlinux.org/packages/downgrade/) package is a Bash script to downgrade one (or multiple) packages, by using the pacman cache or the [Arch Rollback Machine](/index.php/Arch_Rollback_Machine "Arch Rollback Machine"). See `man downgrade` for details.
 
+[agetpkg-git](https://aur.archlinux.org/packages/agetpkg-git/) quickly lists/gets/installs packages from the [Arch Linux Archive](/index.php/Arch_Linux_Archive "Arch Linux Archive").
+
 ## Return from [testing]
 
 See [Official repositories#Disabling testing repositories](/index.php/Official_repositories#Disabling_testing_repositories "Official repositories").

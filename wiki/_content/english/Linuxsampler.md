@@ -1,28 +1,25 @@
-## Contents
-
-*   [1 Overview](#Overview)
-*   [2 Quick Installation](#Quick_Installation)
-*   [3 The (not so) long way](#The_.28not_so.29_long_way)
-    *   [3.1 Installation](#Installation)
-        *   [3.1.1 The backend : Linuxsampler](#The_backend_:_Linuxsampler)
-        *   [3.1.2 The editor : Gigedit](#The_editor_:_Gigedit)
-        *   [3.1.3 The frontend : Qsampler](#The_frontend_:_Qsampler)
-    *   [3.2 Building a default template in qsampler](#Building_a_default_template_in_qsampler)
-    *   [3.3 Building a performance template in qsampler](#Building_a_performance_template_in_qsampler)
-*   [4 Advanced topics](#Advanced_topics)
-    *   [4.1 Filtering midi messages before they reach LS](#Filtering_midi_messages_before_they_reach_LS)
-*   [5 Troubleshooting](#Troubleshooting)
-    *   [5.1 Port conflict with BitTorrent Sync](#Port_conflict_with_BitTorrent_Sync)
-*   [6 External Resources](#External_Resources)
-*   [7 TODO](#TODO)
-
-## Overview
-
 Linuxsampler is a software [audio sampler](http://en.wikipedia.org/wiki/Sampler_%28musical_instrument%29).It can be loaded with sound libraries in the gigasampler format (.gig). One benefit of LS is it can stream the samples directly from hard disk, allowing the usage of huge libraries (several GBs..).LS can be started as a standalone application or lv2 or dssi plugin. By now, "Linuxsampler" refers to a group of software interacting together :
 
 *   the sampler engine itself : linuxsampler
 *   a gig file editor : gigedit
 *   several graphical frontends : qsampler (QT based), jsampler-classic and jsampler-fantasia (both java based)
+
+## Contents
+
+*   [1 Quick Installation](#Quick_Installation)
+*   [2 The (not so) long way](#The_.28not_so.29_long_way)
+    *   [2.1 Installation](#Installation)
+        *   [2.1.1 The backend : Linuxsampler](#The_backend_:_Linuxsampler)
+        *   [2.1.2 The editor : Gigedit](#The_editor_:_Gigedit)
+        *   [2.1.3 The frontend : Qsampler](#The_frontend_:_Qsampler)
+    *   [2.2 Building a default template in qsampler](#Building_a_default_template_in_qsampler)
+    *   [2.3 Building a performance template in qsampler](#Building_a_performance_template_in_qsampler)
+*   [3 Advanced topics](#Advanced_topics)
+    *   [3.1 Filtering midi messages before they reach LS](#Filtering_midi_messages_before_they_reach_LS)
+*   [4 Troubleshooting](#Troubleshooting)
+    *   [4.1 Port conflict with BitTorrent Sync](#Port_conflict_with_BitTorrent_Sync)
+*   [5 External Resources](#External_Resources)
+*   [6 TODO](#TODO)
 
 ## Quick Installation
 

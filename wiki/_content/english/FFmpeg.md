@@ -533,7 +533,7 @@ Once you have created your config file, you can start the server and send media 
 
 ```
 $ ffserver &
-$ ffmpeg -i myvideo.mkv [http://localhost:8090/av_feed.ffm](http://localhost:8090/av_feed.ffm)
+$ ffmpeg -i myvideo.mkv http://localhost:8090/av_feed.ffm
 
 ```
 

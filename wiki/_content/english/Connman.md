@@ -273,9 +273,16 @@ See [WPA2 Enterprise#connman](/index.php/WPA2_Enterprise#connman "WPA2 Enterpris
 
 ### Avoiding conflicts with local DNS server
 
-If you are running a local DNS server, it will likely have problems binding to port 53 (TCP and/or UDP) after installing Connman. This is because Connman includes its own DNS proxy which also tries to bind to those ports. If you see log messages from [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") like `"named[529]: could not listen on UDP socket: address in use"`, this could be the problem. (Verify connmand is listening on that port with `netstat -tulpn`.)
+If you are running a local DNS server, it will likely have problems binding to port 53 (TCP and/or UDP) after installing Connman. This is because Connman includes its own DNS proxy which also tries to bind to those ports. If you see log messages from [BIND](/index.php/BIND "BIND") or [dnsmasq](/index.php/Dnsmasq "Dnsmasq") like
 
-To fix this connmand can be started with the `-r` or `--nodnsproxy` by [overriding](/index.php/Systemd#Editing_provided_units "Systemd") the systemd service file. Create the folder `/etc/systemd/system/connman.service.d/` and add the file `disable_dns_proxy.conf`:
+```
+"named[529]: could not listen on UDP socket: address in use"
+
+```
+
+this could be the problem. To verify which application is listening on the ports, you can execute `ss -tulpn` as root.
+
+To fix this connmand can be started with the options `-r` or `--nodnsproxy` by [overriding](/index.php/Systemd#Editing_provided_units "Systemd") the systemd service file. Create the folder `/etc/systemd/system/connman.service.d/` and add the file `disable_dns_proxy.conf`:
 
 ```
 [Service]

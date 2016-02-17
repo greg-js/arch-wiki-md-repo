@@ -19,8 +19,9 @@ This article provides information on basic system diagnostics relating to perfor
         *   [2.7.1 Kernel parameter (for a single device)](#Kernel_parameter_.28for_a_single_device.29)
         *   [2.7.2 systemd-tmpfiles](#systemd-tmpfiles)
         *   [2.7.3 Using udev for one device or HDD/SSD mixed environment](#Using_udev_for_one_device_or_HDD.2FSSD_mixed_environment)
-    *   [2.8 RAM disks](#RAM_disks)
-    *   [2.9 USB storage devices](#USB_storage_devices)
+    *   [2.8 Power management configuration](#Power_management_configuration)
+    *   [2.9 RAM disks](#RAM_disks)
+    *   [2.10 USB storage devices](#USB_storage_devices)
 *   [3 CPU](#CPU)
     *   [3.1 Verynice](#Verynice)
     *   [3.2 cgroups](#cgroups)
@@ -233,6 +234,10 @@ $ cat /sys/block/sd**X**/queue/scheduler  # where **X** is the device in questio
 ```
 
 **Note:** In the example sixty is chosen because that is the number udev uses for its own persistent naming rules. Thus, it would seem that block devices are at this point able to be modified and this is a safe position for this particular rule. But the rule can be named anything so long as it ends in `.rules`.)
+
+### Power management configuration
+
+When dealing with traditional rotational disks (HDD's) you may want to [lower or disable power saving features](/index.php/Hdparm#Power_management_configuration "Hdparm") completely.
 
 ### RAM disks
 

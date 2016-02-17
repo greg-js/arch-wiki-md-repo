@@ -37,17 +37,17 @@ According to the [official website](http://www.gnupg.org):
     *   [8.5 Change trust model](#Change_trust_model)
     *   [8.6 Hide all recipient id's](#Hide_all_recipient_id.27s)
     *   [8.7 Using caff for keysigning parties](#Using_caff_for_keysigning_parties)
+    *   [8.8 Use a keyserver with an http proxy](#Use_a_keyserver_with_an_http_proxy)
 *   [9 Troubleshooting](#Troubleshooting)
-    *   [9.1 Make it work behind an http proxy](#Make_it_work_behind_an_http_proxy)
-    *   [9.2 Not enough random bytes available](#Not_enough_random_bytes_available)
-    *   [9.3 su](#su)
-    *   [9.4 Agent complains end of file](#Agent_complains_end_of_file)
-    *   [9.5 KGpg configuration permissions](#KGpg_configuration_permissions)
-    *   [9.6 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
-    *   [9.7 mutt and gpg](#mutt_and_gpg)
-    *   [9.8 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
-    *   [9.9 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
-    *   [9.10 Smartcard not detected](#Smartcard_not_detected)
+    *   [9.1 Not enough random bytes available](#Not_enough_random_bytes_available)
+    *   [9.2 su](#su)
+    *   [9.3 Agent complains end of file](#Agent_complains_end_of_file)
+    *   [9.4 KGpg configuration permissions](#KGpg_configuration_permissions)
+    *   [9.5 Conflicts between gnome-keyring and gpg-agent](#Conflicts_between_gnome-keyring_and_gpg-agent)
+    *   [9.6 mutt and gpg](#mutt_and_gpg)
+    *   [9.7 "Lost" keys, upgrading to gnupg version 2.1](#.22Lost.22_keys.2C_upgrading_to_gnupg_version_2.1)
+    *   [9.8 gpg hanged for all keyservers (when trying to receive keys)](#gpg_hanged_for_all_keyservers_.28when_trying_to_receive_keys.29)
+    *   [9.9 Smartcard not detected](#Smartcard_not_detected)
 *   [10 See also](#See_also)
 
 ## Installation
@@ -561,18 +561,22 @@ cpanm GnuPG::Interface
 
 To send the signatures to their owners you need a working [MTA](https://en.wikipedia.org/wiki/Message_transfer_agent "wikipedia:Message transfer agent"). If you do not have already one, install [msmtp](/index.php/Msmtp "Msmtp").
 
-## Troubleshooting
+### Use a keyserver with an http proxy
 
-### Make it work behind an http proxy
-
-Since 2.1.9 the http proxy option can be set like this:
+If you want `http_proxy` environment variable to be used, you can add the files `/etc/gnupg/dirmngr.conf`, `~/.gnupg/dirmngr.conf`, and `/etc/pacman.d/gnupg/dirmngr.conf`, and include in them:
 
 ```
- gpg --keyserver-option http-proxy=HOST:PORT
+ honor-http-proxy
 
 ```
+
+The last file of course is for the pacman gnupg home, if there's a need to make pacman-key to work behind a proxy. Both home and /etc are used depending if working as daemon or not, according to the dirmngr man.
+
+Notice that if gpg was used without that "honor-http-proxy" before, and failed, the changes won't take effect. To work around that a reboot is required, and afterwords the settings will take effect.
 
 See [https://bugs.gnupg.org/gnupg/issue1786](https://bugs.gnupg.org/gnupg/issue1786) for more explanation.
+
+## Troubleshooting
 
 ### Not enough random bytes available
 

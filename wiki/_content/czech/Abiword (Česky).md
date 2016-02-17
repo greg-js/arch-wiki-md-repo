@@ -1,15 +1,12 @@
+**Abiword** je textový procesor, který nabízí odlehčenou alternativu k Writeru z OpenOffice, při stejné rychlosti a zachování skvělé funkcionality. Abiword podporuje mnoho standardních typů dokumentů, např. dokumenty z OpenOffice.org, Microsoft Wordu, WordPerfectu, Rich Text Format dokumenty a HTML stránky.
+
 ## Contents
 
-*   [1 Úvod](#.C3.9Avod)
-*   [2 Instalace](#Instalace)
-*   [3 Oprava krachu dialogu tisku](#Oprava_krachu_dialogu_tisku)
-*   [4 Změna klávesových zkratek](#Zm.C4.9Bna_kl.C3.A1vesov.C3.BDch_zkratek)
-*   [5 Fonty LaTex](#Fonty_LaTex)
-*   [6 Externí odkazy](#Extern.C3.AD_odkazy)
-
-## Úvod
-
-**Abiword** je textový procesor, který nabízí odlehčenou alternativu k Writeru z OpenOffice, při stejné rychlosti a zachování skvělé funkcionality. Abiword podporuje mnoho standardních typů dokumentů, např. dokumenty z OpenOffice.org, Microsoft Wordu, WordPerfectu, Rich Text Format dokumenty a HTML stránky.
+*   [1 Instalace](#Instalace)
+*   [2 Oprava krachu dialogu tisku](#Oprava_krachu_dialogu_tisku)
+*   [3 Změna klávesových zkratek](#Zm.C4.9Bna_kl.C3.A1vesov.C3.BDch_zkratek)
+*   [4 Fonty LaTex](#Fonty_LaTex)
+*   [5 Externí odkazy](#Extern.C3.AD_odkazy)
 
 ## Instalace
 

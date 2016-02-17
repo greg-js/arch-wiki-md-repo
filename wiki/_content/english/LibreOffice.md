@@ -97,7 +97,7 @@ For spell checking, please make sure [hunspell](https://www.archlinux.org/packag
 
 	Finnish
 
-Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [malaga](https://aur.archlinux.org/packages/malaga/), [suomi-malaga-voikko](https://aur.archlinux.org/packages/suomi-malaga-voikko/), [hfstospell](https://aur.archlinux.org/packages/hfstospell/), [libvoikko](https://www.archlinux.org/packages/?name=libvoikko) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/).
+Unlike other languages, Finnish dictionaries use different naming. These four packages should be installed (in this order): [libvoikko](https://www.archlinux.org/packages/?name=libvoikko), [malaga](https://aur.archlinux.org/packages/malaga/), [voikko-fi-malaga](https://aur.archlinux.org/packages/voikko-fi-malaga/), [hfstospell](https://aur.archlinux.org/packages/hfstospell/) and [voikko-libreoffice](https://aur.archlinux.org/packages/voikko-libreoffice/).
 
 ### Hyphenation rules
 

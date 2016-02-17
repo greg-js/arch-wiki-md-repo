@@ -12,6 +12,7 @@ Also be warned that even over USB 3.0, a DisplayLink monitor may exhibit noticea
     *   [2.1 Load the framebuffer device](#Load_the_framebuffer_device)
     *   [2.2 Configuring X Server](#Configuring_X_Server)
         *   [2.2.1 xrandr](#xrandr)
+        *   [2.2.2 Enabling DVI output on startup](#Enabling_DVI_output_on_startup)
 *   [3 Troubleshooting](#Troubleshooting)
     *   [3.1 Screen redraw is broken](#Screen_redraw_is_broken)
     *   [3.2 DisplayLink refresh rate is extremely slow with gnome 3](#DisplayLink_refresh_rate_is_extremely_slow_with_gnome_3)
@@ -51,7 +52,7 @@ In the above output, we can see that provider 0 is the system's regular graphics
 
 ```
 
-and xrandr will add a DVI output you can [use as normal with xrandr](/index.php/Xrandr#Configuration "Xrandr"). This is still experimental but supports hotplugging and when works, it's by far the simplest setup. If it works then everything below is unnecessary.
+and xrandr will add a DVI output you can [use as normal with xrandr](/index.php/Xrandr#Configuration "Xrandr"). This is still experimental but supports hotplugging and when works, it is by far the simplest setup. If it works then everything below is unnecessary.
 
 ## Configuration
 
@@ -87,7 +88,7 @@ To automatically load `udl` at boot, create the file `udl.conf` in `/etc/modules
 
  `/etc/modules-load.d/udl.conf`  `udl` 
 
-For more information on loading kernel modules, see [Kernel modules#Loading](/index.php/Kernel_modules#Loading "Kernel modules").
+For more information on loading kernel modules, see [Kernel modules#Automatic module handling](/index.php/Kernel_modules#Automatic_module_handling "Kernel modules").
 
 ### Configuring X Server
 
@@ -136,6 +137,23 @@ If the above does not list the DisplayLink screen, then you will need to offload
 
 Once the screen is available, refer to [Xrandr](/index.php/Xrandr "Xrandr") for info on setting it up. For automating the configuration process, see [displaylink.sh](https://github.com/nathantypanski/displaylink.sh).
 
+#### Enabling DVI output on startup
+
+The DisplayLink provider will not be automatically connected to the main provider in most cases, therefore the DVI output device will not be available. It can be helpful to automatically do this when X starts to facilitate automatic display configuration by the window manager.
+
+Edit your desktop manager's startup configuration and add commands similar to:
+
+```
+$(xrandr --listproviders | grep -q "modesetting") && xrandr --setprovideroutputsource 1 0
+
+```
+
+For example, the appropriate startup configuration file for [SDDM](/index.php/SDDM "SDDM") is `/usr/share/sddm/scripts/Xsetup`.
+
+Avoid placing these commands in `~/.xprofile` as this breaks the display configuration of some window managers. Instead these commands should be run prior to any display output or setup.
+
+**Note:** If you have additional providers, specify the name of the provider instead of using indexes. The name of the DisplayLink device will be `modesetting`
+
 ## Troubleshooting
 
 ### Screen redraw is broken
@@ -163,11 +181,11 @@ xrandr --addmode DVI-0 1368x768_59.90
 
 Then tell the monitor to use that mode for the DisplayLink monitor, and this should fix the redraw issues. Check the [Xrandr](/index.php/Xrandr "Xrandr") page for information on using a different mode.
 
-If this doesn't solve the problem (or if the correct modeline was already in place because of correct DDC data), it can help to run a compositor. E.g. when using plain i3, running [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr) or [compton](https://www.archlinux.org/packages/?name=compton) can mitigate the problem.
+If this does not solve the problem (or if the correct modeline was already in place because of correct DDC data), it can help to run a compositor. E.g. when using plain i3, running [xcompmgr](https://www.archlinux.org/packages/?name=xcompmgr) or [compton](https://www.archlinux.org/packages/?name=compton) can mitigate the problem.
 
 ### DisplayLink refresh rate is extremely slow with gnome 3
 
-If once you set up your DisplayLink your entire desktop becomes slow, try setting a more 'simpler' background image, such as complete black.
+If once you set up your DisplayLink your entire desktop becomes slow, try setting a "simpler" background image, such as complete black.
 
 ## See Also
 

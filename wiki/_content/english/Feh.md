@@ -273,7 +273,7 @@ WALLPATH=_/home/user/.wallpaper/_
 
 ```
 
-Activate the `feh-wallpaper.timer` and `feh-wallpaper.service` daemons. Read [Daemons](/index.php/Daemons "Daemons") for more details.
+To activate the `feh-wallpaper.timer` see [Systemd/Timers#Management](/index.php/Systemd/Timers#Management "Systemd/Timers").
 
 **Note:** Remember that under _systemd user session_, you should use the `--user` flag on `systemctl`.
 
